@@ -1,0 +1,200 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /users/{document} {
+      allow create: if request.auth.uid == document;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if request.auth.uid == document;
+    }
+
+    match /users/{parent}/my_teamslike/{document} {
+      allow create: if request.auth.uid == parent;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if request.auth.uid == parent;
+    }
+
+    match /{path=**}/my_teamslike/{document} {
+      allow read: if true;
+    }
+
+
+    match /users/{parent}/my_teams/{document} {
+      allow create: if request.auth.uid == parent;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if request.auth.uid == parent;
+    }
+
+    match /{path=**}/my_teams/{document} {
+      allow read: if true;
+    }
+
+
+    match /users/{parent}/cart/{document} {
+      allow create: if request.auth.uid == parent;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if request.auth.uid == parent;
+    }
+
+    match /{path=**}/cart/{document} {
+      allow read: if true;
+    }
+
+
+    match /users/{parent}/my_bets/{document} {
+      allow create: if request.auth.uid == parent;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if request.auth.uid == parent;
+    }
+
+    match /{path=**}/my_bets/{document} {
+      allow read: if true;
+    }
+
+
+    match /users/{parent}/my_posts/{document} {
+      allow create: if request.auth.uid == parent;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if request.auth.uid == parent;
+    }
+
+    match /{path=**}/my_posts/{document} {
+      allow read: if true;
+    }
+
+
+    match /users/{parent}/images/{document} {
+      allow create: if request.auth.uid == parent;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if request.auth.uid == parent;
+    }
+
+    match /{path=**}/images/{document} {
+      allow read: if true;
+    }
+
+
+    match /users/{parent}/my_notifications/{document} {
+      allow create: if request.auth.uid == parent;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if request.auth.uid == parent;
+    }
+
+    match /{path=**}/my_notifications/{document} {
+      allow read: if true;
+    }
+
+
+    match /events/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /events/{parent}/bets/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /{path=**}/bets/{document} {
+      allow read: if true;
+    }
+
+
+    match /teams/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /posts/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /events/{parent}/event_messages/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /{path=**}/event_messages/{document} {
+      allow read: if true;
+    }
+
+
+    match /posts/{parent}/post_messages/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /{path=**}/post_messages/{document} {
+      allow read: if true;
+    }
+
+
+    match /teams/{parent}/team_posts/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /{path=**}/team_posts/{document} {
+      allow read: if true;
+    }
+
+
+    match /teams/{parent}/team_events/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /{path=**}/team_events/{document} {
+      allow read: if true;
+    }
+
+
+    match /teams/{parent}/team_messages/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /{path=**}/team_messages/{document} {
+      allow read: if true;
+    }
+
+
+    match /events/{parent}/rates/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /{path=**}/rates/{document} {
+      allow read: if true;
+    }
+
+  }
+}

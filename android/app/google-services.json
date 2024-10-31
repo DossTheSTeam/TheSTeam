@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "184746316510",
+    "project_id": "the-s-team-sport",
+    "storage_bucket": "the-s-team-sport.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:184746316510:android:2e6aa4bd9e52013c2b284f",
+        "android_client_info": {
+          "package_name": "com.thesteam.sport"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCTAV1fGqJDbWNw8Bkpt3JbXSGTTOAxnBw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
