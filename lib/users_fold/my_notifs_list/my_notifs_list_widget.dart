@@ -1010,6 +1010,7 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                                               await currentUserReference!.update(createUsersRecordData(
                                                                                 eteamRef: containerTeamsRecord.reference,
                                                                                 esportValue: containerTeamsRecord.sportValue,
+                                                                                guest: false,
                                                                               ));
 
                                                                               await columnNotifsMyNotificationsRecord.reference.update(createMyNotificationsRecordData(
@@ -1064,8 +1065,9 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                                                 () async {
                                                                               await MyNotificationsRecord.createDoc(columnNotifsMyNotificationsRecord.userRef!).set({
                                                                                 ...createMyNotificationsRecordData(
-                                                                                  text: 'A refuser de rejoindre votre club.',
+                                                                                  text: 'A refusé de rejoindre votre club.',
                                                                                   userRef: currentUserReference,
+                                                                                  seen: false,
                                                                                 ),
                                                                                 ...mapToFirestore(
                                                                                   {
@@ -1075,6 +1077,9 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                                               });
 
                                                                               await currentUserReference!.update({
+                                                                                ...createUsersRecordData(
+                                                                                  guest: false,
+                                                                                ),
                                                                                 ...mapToFirestore(
                                                                                   {
                                                                                     'eteam_ref': FieldValue.delete(),

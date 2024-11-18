@@ -409,7 +409,7 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                                   formatType:
                                                       FormatType.decimal,
                                                   decimalType:
-                                                      DecimalType.automatic,
+                                                      DecimalType.periodDecimal,
                                                 ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
@@ -547,7 +547,7 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                                   formatType:
                                                       FormatType.decimal,
                                                   decimalType:
-                                                      DecimalType.automatic,
+                                                      DecimalType.periodDecimal,
                                                 ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
@@ -1434,11 +1434,240 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                           ),
                         ),
                       ),
+                      Padding(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
+                            0.0, 200.0, 0.0, 20.0),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 10.0),
+                              child: StreamBuilder<List<TeamEventsRecord>>(
+                                stream: queryTeamEventsRecord(
+                                  parent: modifEventPageEventsRecord.teamdomRef,
+                                  queryBuilder: (teamEventsRecord) =>
+                                      teamEventsRecord.where(
+                                    'events',
+                                    isEqualTo: widget.eventRef,
+                                  ),
+                                  singleRecord: true,
+                                ),
+                                builder: (context, snapshot) {
+                                  // Customize what your widget looks like when it's loading.
+                                  if (!snapshot.hasData) {
+                                    return Center(
+                                      child: SizedBox(
+                                        width: 50.0,
+                                        height: 50.0,
+                                        child: CircularProgressIndicator(
+                                          valueColor:
+                                              AlwaysStoppedAnimation<Color>(
+                                            FlutterFlowTheme.of(context)
+                                                .accent4,
+                                          ),
+                                        ),
+                                      ),
+                                    );
+                                  }
+                                  List<TeamEventsRecord>
+                                      rowTeamEventsRecordList = snapshot.data!;
+                                  // Return an empty Container when the item does not exist.
+                                  if (snapshot.data!.isEmpty) {
+                                    return Container();
+                                  }
+                                  final rowTeamEventsRecord =
+                                      rowTeamEventsRecordList.isNotEmpty
+                                          ? rowTeamEventsRecordList.first
+                                          : null;
+
+                                  return Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 0.0, 5.0, 0.0),
+                                        child: Text(
+                                          modifEventPageEventsRecord.teamdom,
+                                          textAlign: TextAlign.end,
+                                          style: FlutterFlowTheme.of(context)
+                                              .labelSmall
+                                              .override(
+                                                fontFamily: 'Poppins',
+                                                letterSpacing: 0.0,
+                                              ),
+                                        ),
+                                      ),
+                                      if (rowTeamEventsRecord?.reference !=
+                                          null)
+                                        Align(
+                                          alignment:
+                                              const AlignmentDirectional(0.0, 0.0),
+                                          child: FFButtonWidget(
+                                            onPressed: () async {
+                                              await rowTeamEventsRecord!
+                                                  .reference
+                                                  .delete();
+                                            },
+                                            text: 'Supprimer',
+                                            options: FFButtonOptions(
+                                              width: 160.0,
+                                              height: 40.0,
+                                              padding: const EdgeInsetsDirectional
+                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                              iconPadding: const EdgeInsetsDirectional
+                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .error,
+                                              textStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleSmall
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .primaryBackground,
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                              elevation: 3.0,
+                                              borderSide: const BorderSide(
+                                                color: Colors.transparent,
+                                                width: 1.0,
+                                              ),
+                                              borderRadius:
+                                                  BorderRadius.circular(40.0),
+                                              hoverColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .error,
+                                              hoverTextColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                            ),
+                                          ),
+                                        ),
+                                    ],
+                                  );
+                                },
+                              ),
+                            ),
+                            StreamBuilder<List<TeamEventsRecord>>(
+                              stream: queryTeamEventsRecord(
+                                parent: modifEventPageEventsRecord.teamextRef,
+                                queryBuilder: (teamEventsRecord) =>
+                                    teamEventsRecord.where(
+                                  'events',
+                                  isEqualTo: widget.eventRef,
+                                ),
+                                singleRecord: true,
+                              ),
+                              builder: (context, snapshot) {
+                                // Customize what your widget looks like when it's loading.
+                                if (!snapshot.hasData) {
+                                  return Center(
+                                    child: SizedBox(
+                                      width: 50.0,
+                                      height: 50.0,
+                                      child: CircularProgressIndicator(
+                                        valueColor:
+                                            AlwaysStoppedAnimation<Color>(
+                                          FlutterFlowTheme.of(context).accent4,
+                                        ),
+                                      ),
+                                    ),
+                                  );
+                                }
+                                List<TeamEventsRecord> rowTeamEventsRecordList =
+                                    snapshot.data!;
+                                // Return an empty Container when the item does not exist.
+                                if (snapshot.data!.isEmpty) {
+                                  return Container();
+                                }
+                                final rowTeamEventsRecord =
+                                    rowTeamEventsRecordList.isNotEmpty
+                                        ? rowTeamEventsRecordList.first
+                                        : null;
+
+                                return Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          5.0, 0.0, 0.0, 0.0),
+                                      child: Text(
+                                        modifEventPageEventsRecord.teamext,
+                                        textAlign: TextAlign.start,
+                                        style: FlutterFlowTheme.of(context)
+                                            .labelSmall
+                                            .override(
+                                              fontFamily: 'Poppins',
+                                              letterSpacing: 0.0,
+                                            ),
+                                      ),
+                                    ),
+                                    if (rowTeamEventsRecord?.reference != null)
+                                      Align(
+                                        alignment:
+                                            const AlignmentDirectional(0.0, 0.0),
+                                        child: FFButtonWidget(
+                                          onPressed: () async {
+                                            await rowTeamEventsRecord!.reference
+                                                .delete();
+                                          },
+                                          text: 'Supprimer',
+                                          options: FFButtonOptions(
+                                            width: 160.0,
+                                            height: 40.0,
+                                            padding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 0.0, 0.0),
+                                            iconPadding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 0.0, 0.0),
+                                            color: FlutterFlowTheme.of(context)
+                                                .error,
+                                            textStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmall
+                                                    .override(
+                                                      fontFamily: 'Poppins',
+                                                      color: FlutterFlowTheme
+                                                              .of(context)
+                                                          .primaryBackground,
+                                                      letterSpacing: 0.0,
+                                                    ),
+                                            elevation: 3.0,
+                                            borderSide: const BorderSide(
+                                              color: Colors.transparent,
+                                              width: 1.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(40.0),
+                                            hoverColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .error,
+                                            hoverTextColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .primary,
+                                          ),
+                                        ),
+                                      ),
+                                  ],
+                                );
+                              },
+                            ),
+                          ],
+                        ),
+                      ),
                       Align(
                         alignment: const AlignmentDirectional(0.0, 0.0),
                         child: Padding(
                           padding: const EdgeInsetsDirectional.fromSTEB(
-                              0.0, 200.0, 0.0, 16.0),
+                              0.0, 0.0, 0.0, 16.0),
                           child: FFButtonWidget(
                             onPressed: () async {
                               await widget.eventRef!.delete();

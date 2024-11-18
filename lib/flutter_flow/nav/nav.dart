@@ -5,6 +5,8 @@ import 'package:provider/provider.dart';
 
 import '/auth/base_auth_user_provider.dart';
 
+import '/backend/push_notifications/push_notifications_handler.dart'
+    show PushNotificationsHandler;
 import '/index.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -1175,6 +1177,24 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               collectionNamePath: ['events'],
             ),
           ),
+        ),
+        FFRoute(
+          name: 'DeleteEventPage',
+          path: '/deleteEventPage',
+          builder: (context, params) => DeleteEventPageWidget(
+            eventRef: params.getParam(
+              'eventRef',
+              ParamType.DocumentReference,
+              isList: false,
+              collectionNamePath: ['events'],
+            ),
+            eTeamRef: params.getParam(
+              'eTeamRef',
+              ParamType.DocumentReference,
+              isList: false,
+              collectionNamePath: ['teams'],
+            ),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],
@@ -1361,16 +1381,16 @@ class FFRoute {
               : builder(context, ffParams);
           final child = appStateNotifier.loading
               ? Container(
-                  color: FlutterFlowTheme.of(context).primaryBackground,
+                  color: FlutterFlowTheme.of(context).secondaryBackground,
                   child: Center(
                     child: Image.asset(
                       'assets/images/Logo_The_S_Team.png',
-                      width: 90.0,
-                      fit: BoxFit.fitHeight,
+                      width: 150.0,
+                      fit: BoxFit.cover,
                     ),
                   ),
                 )
-              : page;
+              : PushNotificationsHandler(child: page);
 
           final transitionInfo = state.transitionInfo;
           return transitionInfo.hasTransition

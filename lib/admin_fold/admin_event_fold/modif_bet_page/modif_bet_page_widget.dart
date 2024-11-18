@@ -350,7 +350,7 @@ class _ModifBetPageWidgetState extends State<ModifBetPageWidget> {
                                     formatNumber(
                                       modifBetPageBetsRecord.odd,
                                       formatType: FormatType.decimal,
-                                      decimalType: DecimalType.automatic,
+                                      decimalType: DecimalType.commaDecimal,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium

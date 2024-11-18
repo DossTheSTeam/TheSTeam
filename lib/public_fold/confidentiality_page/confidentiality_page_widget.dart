@@ -288,7 +288,7 @@ class _ConfidentialityPageWidgetState extends State<ConfidentialityPageWidget> {
                     padding:
                         const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                     child: Text(
-                      'Les données collectées sont destinées à [Nom de l\'éditeur] et à ses prestataires techniques (hébergeur, etc.). Elles peuvent également être transmises aux autorités compétentes en cas de demande légale.',
+                      'Les données collectées sont destinées à The S Team et à ses prestataires techniques (hébergeur, etc.). Elles peuvent également être transmises aux autorités compétentes en cas de demande légale.',
                       style: FlutterFlowTheme.of(context).bodyLarge.override(
                             fontFamily: 'Poppins',
                             letterSpacing: 0.0,

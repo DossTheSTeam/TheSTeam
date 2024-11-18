@@ -603,7 +603,7 @@ class _TheSTeamPageWidgetState extends State<TheSTeamPageWidget> {
                 Padding(
                   padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                   child: Text(
-                    'thesteam.mod@gmail.com',
+                    'thesteam.sport@gmail.com',
                     style: FlutterFlowTheme.of(context).labelLarge.override(
                           fontFamily: 'Montserrat',
                           letterSpacing: 0.0,

@@ -210,3 +210,5 @@ export '/e_events_fold/rating_players_page/rating_players_page_widget.dart'
     show RatingPlayersPageWidget;
 export '/e_events_fold/add_rating_players_page/add_rating_players_page_widget.dart'
     show AddRatingPlayersPageWidget;
+export '/e_events_fold/delete_event_page/delete_event_page_widget.dart'
+    show DeleteEventPageWidget;

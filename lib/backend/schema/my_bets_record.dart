@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:collection/collection.dart';
 
 import '/backend/schema/util/firestore_util.dart';
+import '/backend/schema/util/schema_util.dart';
 
 import 'index.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -40,11 +41,6 @@ class MyBetsRecord extends FirestoreRecord {
   double get totalOdds => _totalOdds ?? 0.0;
   bool hasTotalOdds() => _totalOdds != null;
 
-  // "seen" field.
-  bool? _seen;
-  bool get seen => _seen ?? false;
-  bool hasSeen() => _seen != null;
-
   // "statut" field.
   bool? _statut;
   bool get statut => _statut ?? false;
@@ -65,6 +61,16 @@ class MyBetsRecord extends FirestoreRecord {
   DocumentReference? get bet3 => _bet3;
   bool hasBet3() => _bet3 != null;
 
+  // "user_seen" field.
+  List<DocumentReference>? _userSeen;
+  List<DocumentReference> get userSeen => _userSeen ?? const [];
+  bool hasUserSeen() => _userSeen != null;
+
+  // "seen" field.
+  bool? _seen;
+  bool get seen => _seen ?? false;
+  bool hasSeen() => _seen != null;
+
   DocumentReference get parentReference => reference.parent.parent!;
 
   void _initializeFields() {
@@ -73,11 +79,12 @@ class MyBetsRecord extends FirestoreRecord {
     _createdTime = snapshotData['created_time'] as DateTime?;
     _updateTime = snapshotData['update_time'] as DateTime?;
     _totalOdds = castToType<double>(snapshotData['total_odds']);
-    _seen = snapshotData['seen'] as bool?;
     _statut = snapshotData['statut'] as bool?;
     _bet1 = snapshotData['bet1'] as DocumentReference?;
     _bet2 = snapshotData['bet2'] as DocumentReference?;
     _bet3 = snapshotData['bet3'] as DocumentReference?;
+    _userSeen = getDataList(snapshotData['user_seen']);
+    _seen = snapshotData['seen'] as bool?;
   }
 
   static Query<Map<String, dynamic>> collection([DocumentReference? parent]) =>
@@ -124,11 +131,11 @@ Map<String, dynamic> createMyBetsRecordData({
   DateTime? createdTime,
   DateTime? updateTime,
   double? totalOdds,
-  bool? seen,
   bool? statut,
   DocumentReference? bet1,
   DocumentReference? bet2,
   DocumentReference? bet3,
+  bool? seen,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -137,11 +144,11 @@ Map<String, dynamic> createMyBetsRecordData({
       'created_time': createdTime,
       'update_time': updateTime,
       'total_odds': totalOdds,
-      'seen': seen,
       'statut': statut,
       'bet1': bet1,
       'bet2': bet2,
       'bet3': bet3,
+      'seen': seen,
     }.withoutNulls,
   );
 
@@ -153,16 +160,18 @@ class MyBetsRecordDocumentEquality implements Equality<MyBetsRecord> {
 
   @override
   bool equals(MyBetsRecord? e1, MyBetsRecord? e2) {
+    const listEquality = ListEquality();
     return e1?.mise == e2?.mise &&
         e1?.potentialy == e2?.potentialy &&
         e1?.createdTime == e2?.createdTime &&
         e1?.updateTime == e2?.updateTime &&
         e1?.totalOdds == e2?.totalOdds &&
-        e1?.seen == e2?.seen &&
         e1?.statut == e2?.statut &&
         e1?.bet1 == e2?.bet1 &&
         e1?.bet2 == e2?.bet2 &&
-        e1?.bet3 == e2?.bet3;
+        e1?.bet3 == e2?.bet3 &&
+        listEquality.equals(e1?.userSeen, e2?.userSeen) &&
+        e1?.seen == e2?.seen;
   }
 
   @override
@@ -172,11 +181,12 @@ class MyBetsRecordDocumentEquality implements Equality<MyBetsRecord> {
         e?.createdTime,
         e?.updateTime,
         e?.totalOdds,
-        e?.seen,
         e?.statut,
         e?.bet1,
         e?.bet2,
-        e?.bet3
+        e?.bet3,
+        e?.userSeen,
+        e?.seen
       ]);
 
   @override

@@ -137,6 +137,8 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                     ),
                                                   },
                                                 );
+
+                                                await widget.cartRef!.delete();
                                               },
                                               child: Icon(
                                                 Icons.menu_rounded,
@@ -158,6 +160,8 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                     Colors.transparent,
                                                 onTap: () async {
                                                   context.safePop();
+                                                  await widget.cartRef!
+                                                      .delete();
                                                 },
                                                 child: Icon(
                                                   Icons
@@ -428,7 +432,7 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                     .decimal,
                                                             decimalType:
                                                                 DecimalType
-                                                                    .automatic,
+                                                                    .periodDecimal,
                                                           ),
                                                           style: FlutterFlowTheme
                                                                   .of(context)
@@ -675,7 +679,7 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                     .decimal,
                                                             decimalType:
                                                                 DecimalType
-                                                                    .automatic,
+                                                                    .periodDecimal,
                                                           ),
                                                           style: FlutterFlowTheme
                                                                   .of(context)
@@ -898,8 +902,8 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                     columnCartBetBetsRecord.odd,
                                                     formatType:
                                                         FormatType.decimal,
-                                                    decimalType:
-                                                        DecimalType.automatic,
+                                                    decimalType: DecimalType
+                                                        .periodDecimal,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -988,7 +992,7 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                 columnMyBetsRecord.mise,
                                                 formatType: FormatType.decimal,
                                                 decimalType:
-                                                    DecimalType.automatic,
+                                                    DecimalType.periodDecimal,
                                               ),
                                               textAlign: TextAlign.center,
                                               style:

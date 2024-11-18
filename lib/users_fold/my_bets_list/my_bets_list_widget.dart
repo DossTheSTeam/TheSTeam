@@ -417,6 +417,25 @@ class _MyBetsListWidgetState extends State<MyBetsListWidget>
                                                 size: 30.0,
                                               ),
                                             ),
+                                            Padding(
+                                              padding: const EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      30.0, 0.0, 0.0, 0.0),
+                                              child: Text(
+                                                dateTimeFormat(
+                                                    "d/M/y",
+                                                    columnMyBetsMyBetsRecord
+                                                        .createdTime!),
+                                                textAlign: TextAlign.center,
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelSmall
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                              ),
+                                            ),
                                             Row(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
@@ -507,7 +526,7 @@ class _MyBetsListWidgetState extends State<MyBetsListWidget>
                                                               columnMyBetsMyBetsRecord
                                                                   .potentialy)
                                                           .toString(),
-                                                      '00.00',
+                                                      '00,00',
                                                     ),
                                                     textAlign: TextAlign.center,
                                                     style: FlutterFlowTheme.of(

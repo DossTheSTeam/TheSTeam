@@ -1,5 +1,6 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
+import '/backend/push_notifications/push_notifications_util.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
@@ -431,6 +432,23 @@ class _TeamListForEventsWidgetState extends State<TeamListForEventsWidget> {
                                                                   },
                                                                 ),
                                                               });
+                                                              triggerPushNotification(
+                                                                notificationTitle:
+                                                                    currentUserDisplayName,
+                                                                notificationText:
+                                                                    'Vous invite à jouer un match contre votre équipe.',
+                                                                notificationImageUrl:
+                                                                    currentUserPhoto,
+                                                                notificationSound:
+                                                                    'default',
+                                                                userRefs: [
+                                                                  columnTeamsTeamsRecord
+                                                                      .boss!
+                                                                ],
+                                                                initialPageName:
+                                                                    'MyNotifsList',
+                                                                parameterData: {},
+                                                              );
 
                                                               await columnTeamsTeamsRecord
                                                                   .reference

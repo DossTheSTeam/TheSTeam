@@ -135,17 +135,22 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                                     ),
                                   ),
                                 ),
-                              ],
-                            ),
-                            Text(
-                              'Détails rencontre',
-                              maxLines: 1,
-                              style: FlutterFlowTheme.of(context)
-                                  .displaySmall
-                                  .override(
-                                    fontFamily: 'Montserrat',
-                                    letterSpacing: 0.0,
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      40.0, 0.0, 0.0, 0.0),
+                                  child: Text(
+                                    'Détails de la\nrencontre',
+                                    textAlign: TextAlign.center,
+                                    maxLines: 2,
+                                    style: FlutterFlowTheme.of(context)
+                                        .displaySmall
+                                        .override(
+                                          fontFamily: 'Montserrat',
+                                          letterSpacing: 0.0,
+                                        ),
                                   ),
+                                ),
+                              ],
                             ),
                             if (true /* Warning: Trying to access variable not yet defined. */)
                               FutureBuilder<List<MyNotificationsRecord>>(
@@ -589,10 +594,10 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                         color: FlutterFlowTheme.of(context).secondaryBackground,
                       ),
                       Align(
-                        alignment: const AlignmentDirectional(-1.0, 0.0),
+                        alignment: const AlignmentDirectional(0.0, 0.0),
                         child: Padding(
                           padding: const EdgeInsetsDirectional.fromSTEB(
-                              20.0, 10.0, 0.0, 0.0),
+                              0.0, 10.0, 0.0, 0.0),
                           child: Text(
                             'Composition domicile',
                             maxLines: 1,
@@ -602,6 +607,7 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                                   fontFamily: 'Montserrat',
                                   color:
                                       FlutterFlowTheme.of(context).primaryText,
+                                  fontSize: 24.0,
                                   letterSpacing: 0.0,
                                 ),
                           ),
@@ -835,10 +841,10 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                                   .secondaryBackground,
                             ),
                             Align(
-                              alignment: const AlignmentDirectional(-1.0, 0.0),
+                              alignment: const AlignmentDirectional(0.0, 0.0),
                               child: Padding(
                                 padding: const EdgeInsetsDirectional.fromSTEB(
-                                    20.0, 10.0, 0.0, 0.0),
+                                    0.0, 10.0, 0.0, 0.0),
                                 child: Text(
                                   'Composition extérieure',
                                   maxLines: 1,
@@ -848,6 +854,7 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                                         fontFamily: 'Montserrat',
                                         color: FlutterFlowTheme.of(context)
                                             .primaryText,
+                                        fontSize: 24.0,
                                         letterSpacing: 0.0,
                                       ),
                                 ),

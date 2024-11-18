@@ -1,5 +1,6 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
+import '/backend/push_notifications/push_notifications_util.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -92,7 +93,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                           ),
                           child: Padding(
                             padding: const EdgeInsetsDirectional.fromSTEB(
-                                20.0, 20.0, 20.0, 0.0),
+                                20.0, 30.0, 20.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -393,6 +394,18 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                               },
                                             ),
                                           });
+                                          triggerPushNotification(
+                                            notificationTitle:
+                                                currentUserDisplayName,
+                                            notificationText:
+                                                'fait partie de vos fans.',
+                                            notificationImageUrl:
+                                                currentUserPhoto,
+                                            notificationSound: 'default',
+                                            userRefs: [widget.userRef!],
+                                            initialPageName: 'MyNotifsList',
+                                            parameterData: {},
+                                          );
                                         },
                                         child: Icon(
                                           Icons.star_border_rounded,
@@ -692,7 +705,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                                         publicProfilPageUsersRecord
                                                             .earningsTotal)
                                                     .toString(),
-                                                '00.00',
+                                                '00,00',
                                               ),
                                               style:
                                                   FlutterFlowTheme.of(context)
@@ -972,9 +985,12 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                                       mainAxisSize:
                                                           MainAxisSize.max,
                                                       children: [
-                                                        if (publicProfilPageUsersRecord
-                                                                .eteamRef ==
-                                                            null)
+                                                        if ((publicProfilPageUsersRecord
+                                                                    .eteamRef ==
+                                                                null) &&
+                                                            (publicProfilPageUsersRecord
+                                                                    .guest ==
+                                                                false))
                                                           Padding(
                                                             padding:
                                                                 const EdgeInsetsDirectional
@@ -1016,6 +1032,30 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                                                     },
                                                                   ),
                                                                 });
+                                                                triggerPushNotification(
+                                                                  notificationTitle:
+                                                                      currentUserDisplayName,
+                                                                  notificationText:
+                                                                      'Vous invite à rejoindre son club.',
+                                                                  notificationImageUrl:
+                                                                      currentUserPhoto,
+                                                                  notificationSound:
+                                                                      'default',
+                                                                  userRefs: [
+                                                                    widget
+                                                                        .userRef!
+                                                                  ],
+                                                                  initialPageName:
+                                                                      'MyNotifsList',
+                                                                  parameterData: {},
+                                                                );
+
+                                                                await widget
+                                                                    .userRef!
+                                                                    .update(
+                                                                        createUsersRecordData(
+                                                                  guest: true,
+                                                                ));
                                                               },
                                                               child: Icon(
                                                                 Icons

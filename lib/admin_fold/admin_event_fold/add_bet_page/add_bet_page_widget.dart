@@ -435,6 +435,7 @@ class _AddBetPageWidgetState extends State<AddBetPageWidget> {
                                             odd: double.tryParse(_model
                                                 .coteDomFieldTextController
                                                 .text),
+                                            statut: false,
                                           ),
                                           ...mapToFirestore(
                                             {
@@ -581,6 +582,7 @@ class _AddBetPageWidgetState extends State<AddBetPageWidget> {
                                             odd: double.tryParse(_model
                                                 .coteDrawFieldTextController
                                                 .text),
+                                            statut: false,
                                           ),
                                           ...mapToFirestore(
                                             {
@@ -728,6 +730,7 @@ class _AddBetPageWidgetState extends State<AddBetPageWidget> {
                                             odd: double.tryParse(_model
                                                 .coteExtFieldTextController
                                                 .text),
+                                            statut: false,
                                           ),
                                           ...mapToFirestore(
                                             {
@@ -870,7 +873,7 @@ class _AddBetPageWidgetState extends State<AddBetPageWidget> {
                                             textAlign: TextAlign.center,
                                             keyboardType: const TextInputType
                                                 .numberWithOptions(
-                                                signed: true, decimal: true),
+                                                decimal: true),
                                             validator: _model
                                                 .coteL2MYesFieldTextControllerValidator
                                                 .asValidator(context),
@@ -894,6 +897,7 @@ class _AddBetPageWidgetState extends State<AddBetPageWidget> {
                                             odd: double.tryParse(_model
                                                 .coteL2MYesFieldTextController
                                                 .text),
+                                            statut: false,
                                           ),
                                           ...mapToFirestore(
                                             {
@@ -1041,6 +1045,7 @@ class _AddBetPageWidgetState extends State<AddBetPageWidget> {
                                             odd: double.tryParse(_model
                                                 .coteL2MNoFieldTextController
                                                 .text),
+                                            statut: false,
                                           ),
                                           ...mapToFirestore(
                                             {

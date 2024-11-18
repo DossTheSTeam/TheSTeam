@@ -293,20 +293,6 @@
       ]
     },
     {
-      "collectionGroup": "users",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "esport_value",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "topsflops",
-          "order": "DESCENDING"
-        }
-      ]
-    },
-    {
       "collectionGroup": "teams",
       "queryScope": "COLLECTION",
       "fields": [
@@ -368,6 +354,16 @@
     }
   ],
   "fieldOverrides": [
+    {
+      "collectionGroup": "fcm_tokens",
+      "fieldPath": "fcm_token",
+      "indexes": [
+        {
+          "order": "ASCENDING",
+          "queryScope": "COLLECTION_GROUP"
+        }
+      ]
+    },
     {
       "collectionGroup": "my_notifications",
       "fieldPath": "team_ref",

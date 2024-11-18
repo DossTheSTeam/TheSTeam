@@ -406,7 +406,7 @@ class _GeneralsCondidtionsPageWidgetState
                         ),
                   ),
                   Text(
-                    'Monnaie virtuelle : La monnaie virtuelle ne peut être achetée ou vendue. Elle est uniquement utilisable au sein de l\'Application pour les paris sportifs. Les gains obtenus avec cette monnaie virtuelle n\'ont aucune valeur réelle et ne peuvent être convertis en argent réel.',
+                    'Monnaie virtuelle : Elle est uniquement utilisable au sein de l\'Application pour les paris sportifs. Les gains obtenus avec cette monnaie virtuelle n\'ont aucune valeur réelle et ne peuvent être convertis en argent réel.',
                     style: FlutterFlowTheme.of(context).bodyLarge.override(
                           fontFamily: 'Poppins',
                           letterSpacing: 0.0,
@@ -425,28 +425,7 @@ class _GeneralsCondidtionsPageWidgetState
                       padding:
                           const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 5.0),
                       child: Text(
-                        'Article 5 – Propriété intellectuelle',
-                        style: FlutterFlowTheme.of(context).labelLarge.override(
-                              fontFamily: 'Montserrat',
-                              letterSpacing: 0.0,
-                            ),
-                      ),
-                    ),
-                  ),
-                  Text(
-                    'Tous les éléments constituant l\'Application (marques, logos, textes, images, etc.) sont la propriété exclusive de l\'Éditeur ou de ses partenaires et sont protégés par les lois de la propriété intellectuelle.',
-                    style: FlutterFlowTheme.of(context).bodyLarge.override(
-                          fontFamily: 'Poppins',
-                          letterSpacing: 0.0,
-                        ),
-                  ),
-                  Align(
-                    alignment: const AlignmentDirectional(-1.0, 0.0),
-                    child: Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 5.0),
-                      child: Text(
-                        'Article 6 – Protection des données personnelles',
+                        'Article 5 – Protection des données personnelles',
                         style: FlutterFlowTheme.of(context).labelLarge.override(
                               fontFamily: 'Montserrat',
                               letterSpacing: 0.0,
@@ -598,7 +577,7 @@ class _GeneralsCondidtionsPageWidgetState
                     padding:
                         const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                     child: Text(
-                      'thesteam.mod@gmail.com',
+                      'thesteam.sport@gmail.com',
                       style: FlutterFlowTheme.of(context).labelLarge.override(
                             fontFamily: 'Montserrat',
                             letterSpacing: 0.0,

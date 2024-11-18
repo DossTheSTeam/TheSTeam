@@ -678,6 +678,19 @@ class _AddSurveyPageWidgetState extends State<AddSurveyPageWidget> {
                           ),
                         });
 
+                        await MyPostsRecord.createDoc(currentUserReference!)
+                            .set({
+                          ...createMyPostsRecordData(
+                            posts: _model.postRef?.reference,
+                            esport: false,
+                          ),
+                          ...mapToFirestore(
+                            {
+                              'date_time': FieldValue.serverTimestamp(),
+                            },
+                          ),
+                        });
+
                         context.pushNamed(
                           'ListSurveys',
                           queryParameters: {

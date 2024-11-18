@@ -1,5 +1,6 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
+import '/backend/push_notifications/push_notifications_util.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/admob_util.dart' as admob;
@@ -490,38 +491,141 @@ class _PublicBetsListWidgetState extends State<PublicBetsListWidget>
                                                       MainAxisAlignment
                                                           .spaceBetween,
                                                   children: [
-                                                    Row(
-                                                      mainAxisSize:
-                                                          MainAxisSize.max,
-                                                      children: [
-                                                        if (columnMyBetsMyBetsRecord
-                                                                .statut ==
-                                                            false)
-                                                          Padding(
-                                                            padding:
-                                                                const EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        0.0,
-                                                                        0.0,
-                                                                        5.0,
-                                                                        0.0),
-                                                            child: Row(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              children: [
-                                                                if (columnMyBetsMyBetsRecord
-                                                                        .seen ==
-                                                                    false)
-                                                                  Padding(
-                                                                    padding: const EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            5.0,
-                                                                            0.0),
-                                                                    child:
-                                                                        InkWell(
+                                                    if (columnUsersRecord
+                                                            .reference !=
+                                                        currentUserReference)
+                                                      Row(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        children: [
+                                                          if (columnMyBetsMyBetsRecord
+                                                                  .statut ==
+                                                              false)
+                                                            Padding(
+                                                              padding:
+                                                                  const EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          5.0,
+                                                                          0.0),
+                                                              child: Row(
+                                                                mainAxisSize:
+                                                                    MainAxisSize
+                                                                        .max,
+                                                                children: [
+                                                                  if (!columnMyBetsMyBetsRecord
+                                                                      .userSeen
+                                                                      .contains(
+                                                                          currentUserReference))
+                                                                    Padding(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          5.0,
+                                                                          0.0),
+                                                                      child:
+                                                                          InkWell(
+                                                                        splashColor:
+                                                                            Colors.transparent,
+                                                                        focusColor:
+                                                                            Colors.transparent,
+                                                                        hoverColor:
+                                                                            Colors.transparent,
+                                                                        highlightColor:
+                                                                            Colors.transparent,
+                                                                        onTap:
+                                                                            () async {
+                                                                          await columnMyBetsMyBetsRecord
+                                                                              .parentReference
+                                                                              .update({
+                                                                            ...mapToFirestore(
+                                                                              {
+                                                                                'stock': FieldValue.increment(5.00),
+                                                                                'click_s_team': FieldValue.increment(1),
+                                                                              },
+                                                                            ),
+                                                                          });
+
+                                                                          await columnMyBetsMyBetsRecord
+                                                                              .reference
+                                                                              .update({
+                                                                            ...mapToFirestore(
+                                                                              {
+                                                                                'user_seen': FieldValue.arrayUnion([
+                                                                                  currentUserReference
+                                                                                ]),
+                                                                              },
+                                                                            ),
+                                                                          });
+
+                                                                          await MyNotificationsRecord.createDoc(columnUsersRecord.reference)
+                                                                              .set({
+                                                                            ...createMyNotificationsRecordData(
+                                                                              text: 'A regarder votre paris en cours.',
+                                                                              userRef: currentUserReference,
+                                                                              seen: false,
+                                                                            ),
+                                                                            ...mapToFirestore(
+                                                                              {
+                                                                                'date_time': FieldValue.serverTimestamp(),
+                                                                              },
+                                                                            ),
+                                                                          });
+                                                                          triggerPushNotification(
+                                                                            notificationTitle:
+                                                                                currentUserDisplayName,
+                                                                            notificationText:
+                                                                                'A regarder votre paris en cours.',
+                                                                            notificationImageUrl:
+                                                                                currentUserPhoto,
+                                                                            notificationSound:
+                                                                                'default',
+                                                                            userRefs: [
+                                                                              columnUsersRecord.reference
+                                                                            ],
+                                                                            initialPageName:
+                                                                                'MyNotifsList',
+                                                                            parameterData: {},
+                                                                          );
+
+                                                                          context
+                                                                              .pushNamed(
+                                                                            'PublicBetPage',
+                                                                            queryParameters:
+                                                                                {
+                                                                              'myBetRef': serializeParam(
+                                                                                columnMyBetsMyBetsRecord.reference,
+                                                                                ParamType.DocumentReference,
+                                                                              ),
+                                                                            }.withoutNulls,
+                                                                            extra: <String,
+                                                                                dynamic>{
+                                                                              kTransitionInfoKey: const TransitionInfo(
+                                                                                hasTransition: true,
+                                                                                transitionType: PageTransitionType.scale,
+                                                                                alignment: Alignment.bottomCenter,
+                                                                                duration: Duration(milliseconds: 600),
+                                                                              ),
+                                                                            },
+                                                                          );
+                                                                        },
+                                                                        child:
+                                                                            Icon(
+                                                                          Icons
+                                                                              .remove_red_eye_outlined,
+                                                                          color:
+                                                                              FlutterFlowTheme.of(context).secondaryText,
+                                                                          size:
+                                                                              30.0,
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                  if (columnMyBetsMyBetsRecord
+                                                                      .userSeen
+                                                                      .contains(
+                                                                          currentUserReference))
+                                                                    InkWell(
                                                                       splashColor:
                                                                           Colors
                                                                               .transparent,
@@ -536,24 +640,6 @@ class _PublicBetsListWidgetState extends State<PublicBetsListWidget>
                                                                               .transparent,
                                                                       onTap:
                                                                           () async {
-                                                                        await columnMyBetsMyBetsRecord
-                                                                            .parentReference
-                                                                            .update({
-                                                                          ...mapToFirestore(
-                                                                            {
-                                                                              'stock': FieldValue.increment(5.00),
-                                                                              'click_s_team': FieldValue.increment(1),
-                                                                            },
-                                                                          ),
-                                                                        });
-
-                                                                        await columnMyBetsMyBetsRecord
-                                                                            .reference
-                                                                            .update(createMyBetsRecordData(
-                                                                          seen:
-                                                                              true,
-                                                                        ));
-
                                                                         context
                                                                             .pushNamed(
                                                                           'PublicBetPage',
@@ -561,7 +647,7 @@ class _PublicBetsListWidgetState extends State<PublicBetsListWidget>
                                                                               {
                                                                             'myBetRef':
                                                                                 serializeParam(
-                                                                              widget.userBetRef,
+                                                                              columnMyBetsMyBetsRecord.reference,
                                                                               ParamType.DocumentReference,
                                                                             ),
                                                                           }.withoutNulls,
@@ -582,125 +668,158 @@ class _PublicBetsListWidgetState extends State<PublicBetsListWidget>
                                                                         Icons
                                                                             .remove_red_eye_outlined,
                                                                         color: FlutterFlowTheme.of(context)
-                                                                            .secondaryText,
+                                                                            .success,
                                                                         size:
                                                                             30.0,
                                                                       ),
                                                                     ),
-                                                                  ),
-                                                                if (columnMyBetsMyBetsRecord
-                                                                        .seen ==
-                                                                    true)
-                                                                  InkWell(
-                                                                    splashColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    focusColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    hoverColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    highlightColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    onTap:
-                                                                        () async {
-                                                                      context
-                                                                          .pushNamed(
-                                                                        'PublicBetPage',
-                                                                        queryParameters:
-                                                                            {
-                                                                          'myBetRef':
-                                                                              serializeParam(
-                                                                            widget.userBetRef,
-                                                                            ParamType.DocumentReference,
-                                                                          ),
-                                                                        }.withoutNulls,
-                                                                        extra: <String,
-                                                                            dynamic>{
-                                                                          kTransitionInfoKey:
-                                                                              const TransitionInfo(
-                                                                            hasTransition:
-                                                                                true,
-                                                                            transitionType:
-                                                                                PageTransitionType.scale,
-                                                                            alignment:
-                                                                                Alignment.bottomCenter,
-                                                                            duration:
-                                                                                Duration(milliseconds: 600),
-                                                                          ),
-                                                                        },
-                                                                      );
-                                                                    },
-                                                                    child: Icon(
-                                                                      Icons
-                                                                          .remove_red_eye_outlined,
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .success,
-                                                                      size:
-                                                                          30.0,
+                                                                ],
+                                                              ),
+                                                            ),
+                                                          if (columnMyBetsMyBetsRecord
+                                                                  .statut ==
+                                                              true)
+                                                            InkWell(
+                                                              splashColor: Colors
+                                                                  .transparent,
+                                                              focusColor: Colors
+                                                                  .transparent,
+                                                              hoverColor: Colors
+                                                                  .transparent,
+                                                              highlightColor:
+                                                                  Colors
+                                                                      .transparent,
+                                                              onTap: () async {
+                                                                context
+                                                                    .pushNamed(
+                                                                  'PublicBetPage',
+                                                                  queryParameters:
+                                                                      {
+                                                                    'myBetRef':
+                                                                        serializeParam(
+                                                                      columnMyBetsMyBetsRecord
+                                                                          .reference,
+                                                                      ParamType
+                                                                          .DocumentReference,
                                                                     ),
-                                                                  ),
-                                                              ],
+                                                                  }.withoutNulls,
+                                                                  extra: <String,
+                                                                      dynamic>{
+                                                                    kTransitionInfoKey:
+                                                                        const TransitionInfo(
+                                                                      hasTransition:
+                                                                          true,
+                                                                      transitionType:
+                                                                          PageTransitionType
+                                                                              .scale,
+                                                                      alignment:
+                                                                          Alignment
+                                                                              .bottomCenter,
+                                                                      duration: Duration(
+                                                                          milliseconds:
+                                                                              600),
+                                                                    ),
+                                                                  },
+                                                                );
+                                                              },
+                                                              child: Icon(
+                                                                Icons
+                                                                    .remove_red_eye_outlined,
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .error,
+                                                                size: 30.0,
+                                                              ),
                                                             ),
+                                                        ],
+                                                      ),
+                                                    if (columnUsersRecord
+                                                            .reference ==
+                                                        currentUserReference)
+                                                      Padding(
+                                                        padding:
+                                                            const EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    0.0,
+                                                                    0.0,
+                                                                    5.0,
+                                                                    0.0),
+                                                        child: InkWell(
+                                                          splashColor: Colors
+                                                              .transparent,
+                                                          focusColor: Colors
+                                                              .transparent,
+                                                          hoverColor: Colors
+                                                              .transparent,
+                                                          highlightColor: Colors
+                                                              .transparent,
+                                                          onTap: () async {
+                                                            context.pushNamed(
+                                                              'PublicBetPage',
+                                                              queryParameters: {
+                                                                'myBetRef':
+                                                                    serializeParam(
+                                                                  columnMyBetsMyBetsRecord
+                                                                      .reference,
+                                                                  ParamType
+                                                                      .DocumentReference,
+                                                                ),
+                                                              }.withoutNulls,
+                                                              extra: <String,
+                                                                  dynamic>{
+                                                                kTransitionInfoKey:
+                                                                    const TransitionInfo(
+                                                                  hasTransition:
+                                                                      true,
+                                                                  transitionType:
+                                                                      PageTransitionType
+                                                                          .scale,
+                                                                  alignment:
+                                                                      Alignment
+                                                                          .bottomCenter,
+                                                                  duration: Duration(
+                                                                      milliseconds:
+                                                                          600),
+                                                                ),
+                                                              },
+                                                            );
+                                                          },
+                                                          child: Icon(
+                                                            Icons
+                                                                .remove_red_eye_outlined,
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .success,
+                                                            size: 30.0,
                                                           ),
-                                                        if (columnMyBetsMyBetsRecord
-                                                                .statut ==
-                                                            true)
-                                                          InkWell(
-                                                            splashColor: Colors
-                                                                .transparent,
-                                                            focusColor: Colors
-                                                                .transparent,
-                                                            hoverColor: Colors
-                                                                .transparent,
-                                                            highlightColor:
-                                                                Colors
-                                                                    .transparent,
-                                                            onTap: () async {
-                                                              context.pushNamed(
-                                                                'PublicBetPage',
-                                                                queryParameters:
-                                                                    {
-                                                                  'myBetRef':
-                                                                      serializeParam(
-                                                                    widget
-                                                                        .userBetRef,
-                                                                    ParamType
-                                                                        .DocumentReference,
-                                                                  ),
-                                                                }.withoutNulls,
-                                                                extra: <String,
-                                                                    dynamic>{
-                                                                  kTransitionInfoKey:
-                                                                      const TransitionInfo(
-                                                                    hasTransition:
-                                                                        true,
-                                                                    transitionType:
-                                                                        PageTransitionType
-                                                                            .scale,
-                                                                    alignment:
-                                                                        Alignment
-                                                                            .bottomCenter,
-                                                                    duration: Duration(
-                                                                        milliseconds:
-                                                                            600),
-                                                                  ),
-                                                                },
-                                                              );
-                                                            },
-                                                            child: Icon(
-                                                              Icons
-                                                                  .remove_red_eye_outlined,
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .error,
-                                                              size: 30.0,
-                                                            ),
-                                                          ),
-                                                      ],
+                                                        ),
+                                                      ),
+                                                    Padding(
+                                                      padding:
+                                                          const EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  30.0,
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0),
+                                                      child: Text(
+                                                        dateTimeFormat(
+                                                            "d/M/y",
+                                                            columnMyBetsMyBetsRecord
+                                                                .createdTime!),
+                                                        textAlign:
+                                                            TextAlign.center,
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelSmall
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Poppins',
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
+                                                      ),
                                                     ),
                                                     Row(
                                                       mainAxisSize:

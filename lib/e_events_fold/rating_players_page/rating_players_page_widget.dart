@@ -1251,60 +1251,74 @@ class _RatingPlayersPageWidgetState extends State<RatingPlayersPageWidget> {
                             color: FlutterFlowTheme.of(context)
                                 .secondaryBackground,
                           ),
-                          Align(
-                            alignment: const AlignmentDirectional(0.0, 0.0),
-                            child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 20.0, 0.0, 16.0),
-                              child: FFButtonWidget(
-                                onPressed: () async {
-                                  await currentUserReference!
-                                      .update(createUsersRecordData(
-                                    boolMvp: false,
-                                    boolTop: false,
-                                    boolFlop: false,
-                                    guest: false,
-                                  ));
+                          if ((valueOrDefault<bool>(
+                                      currentUserDocument?.boolMvp, false) ==
+                                  true) &&
+                              (valueOrDefault<bool>(
+                                      currentUserDocument?.boolTop, false) ==
+                                  true) &&
+                              (valueOrDefault<bool>(
+                                      currentUserDocument?.boolFlop, false) ==
+                                  true))
+                            Align(
+                              alignment: const AlignmentDirectional(0.0, 0.0),
+                              child: Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 20.0, 0.0, 16.0),
+                                child: AuthUserStreamWidget(
+                                  builder: (context) => FFButtonWidget(
+                                    onPressed: () async {
+                                      await currentUserReference!
+                                          .update(createUsersRecordData(
+                                        boolMvp: false,
+                                        boolTop: false,
+                                        boolFlop: false,
+                                        guest: false,
+                                      ));
 
-                                  await widget.notifRef!
-                                      .update(createMyNotificationsRecordData(
-                                    seen: true,
-                                  ));
-                                  await widget.notifRef!.delete();
-                                  context.safePop();
-                                },
-                                text: 'Valider notation',
-                                options: FFButtonOptions(
-                                  width: 160.0,
-                                  height: 40.0,
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 0.0),
-                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 0.0),
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
-                                  textStyle: FlutterFlowTheme.of(context)
-                                      .titleSmall
-                                      .override(
-                                        fontFamily: 'Poppins',
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryText,
-                                        letterSpacing: 0.0,
+                                      await widget.notifRef!.update(
+                                          createMyNotificationsRecordData(
+                                        seen: true,
+                                      ));
+                                      await widget.notifRef!.delete();
+
+                                      context.pushNamed('MyProfilPage');
+                                    },
+                                    text: 'Valider notation',
+                                    options: FFButtonOptions(
+                                      width: 160.0,
+                                      height: 40.0,
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 0.0, 0.0, 0.0),
+                                      iconPadding:
+                                          const EdgeInsetsDirectional.fromSTEB(
+                                              0.0, 0.0, 0.0, 0.0),
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
+                                      textStyle: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                            letterSpacing: 0.0,
+                                          ),
+                                      elevation: 3.0,
+                                      borderSide: const BorderSide(
+                                        color: Colors.transparent,
+                                        width: 1.0,
                                       ),
-                                  elevation: 3.0,
-                                  borderSide: const BorderSide(
-                                    color: Colors.transparent,
-                                    width: 1.0,
+                                      borderRadius: BorderRadius.circular(40.0),
+                                      hoverColor:
+                                          FlutterFlowTheme.of(context).success,
+                                      hoverTextColor:
+                                          FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                    ),
                                   ),
-                                  borderRadius: BorderRadius.circular(40.0),
-                                  hoverColor:
-                                      FlutterFlowTheme.of(context).success,
-                                  hoverTextColor:
-                                      FlutterFlowTheme.of(context).primaryText,
                                 ),
                               ),
                             ),
-                          ),
                         ],
                       ),
                     ],

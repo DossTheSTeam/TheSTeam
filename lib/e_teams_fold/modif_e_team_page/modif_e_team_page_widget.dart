@@ -941,46 +941,220 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                               color: FlutterFlowTheme.of(context)
                                   .secondaryBackground,
                             ),
-                            Align(
-                              alignment: const AlignmentDirectional(0.0, 0.0),
-                              child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 100.0, 0.0, 16.0),
-                                child: FFButtonWidget(
-                                  onPressed: () async {
-                                    await widget.teamRef!.delete();
-                                    context.safePop();
-                                  },
-                                  text: 'Supprimer',
-                                  options: FFButtonOptions(
-                                    width: 130.0,
-                                    height: 40.0,
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 0.0),
-                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 0.0),
-                                    color: FlutterFlowTheme.of(context).error,
-                                    textStyle: FlutterFlowTheme.of(context)
-                                        .titleSmall
-                                        .override(
-                                          fontFamily: 'Poppins',
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryBackground,
-                                          letterSpacing: 0.0,
-                                        ),
-                                    elevation: 3.0,
-                                    borderSide: const BorderSide(
-                                      color: Colors.transparent,
-                                      width: 1.0,
-                                    ),
-                                    borderRadius: BorderRadius.circular(40.0),
-                                    hoverColor:
-                                        FlutterFlowTheme.of(context).error,
-                                    hoverTextColor: FlutterFlowTheme.of(context)
-                                        .primaryBackground,
-                                  ),
+                            StreamBuilder<List<MyTeamsRecord>>(
+                              stream: queryMyTeamsRecord(
+                                parent: currentUserReference,
+                                queryBuilder: (myTeamsRecord) =>
+                                    myTeamsRecord.where(
+                                  'teams',
+                                  arrayContains: widget.teamRef,
                                 ),
+                                singleRecord: true,
                               ),
+                              builder: (context, snapshot) {
+                                // Customize what your widget looks like when it's loading.
+                                if (!snapshot.hasData) {
+                                  return Center(
+                                    child: SizedBox(
+                                      width: 50.0,
+                                      height: 50.0,
+                                      child: CircularProgressIndicator(
+                                        valueColor:
+                                            AlwaysStoppedAnimation<Color>(
+                                          FlutterFlowTheme.of(context).accent4,
+                                        ),
+                                      ),
+                                    ),
+                                  );
+                                }
+                                List<MyTeamsRecord> columnMyTeamsRecordList =
+                                    snapshot.data!;
+                                // Return an empty Container when the item does not exist.
+                                if (snapshot.data!.isEmpty) {
+                                  return Container();
+                                }
+                                final columnMyTeamsRecord =
+                                    columnMyTeamsRecordList.isNotEmpty
+                                        ? columnMyTeamsRecordList.first
+                                        : null;
+
+                                return Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    StreamBuilder<List<MyTeamslikeRecord>>(
+                                      stream: queryMyTeamslikeRecord(
+                                        parent: currentUserReference,
+                                        queryBuilder: (myTeamslikeRecord) =>
+                                            myTeamslikeRecord.where(
+                                          'teams',
+                                          arrayContains: widget.teamRef,
+                                        ),
+                                        singleRecord: true,
+                                      ),
+                                      builder: (context, snapshot) {
+                                        // Customize what your widget looks like when it's loading.
+                                        if (!snapshot.hasData) {
+                                          return Center(
+                                            child: SizedBox(
+                                              width: 50.0,
+                                              height: 50.0,
+                                              child: CircularProgressIndicator(
+                                                valueColor:
+                                                    AlwaysStoppedAnimation<
+                                                        Color>(
+                                                  FlutterFlowTheme.of(context)
+                                                      .accent4,
+                                                ),
+                                              ),
+                                            ),
+                                          );
+                                        }
+                                        List<MyTeamslikeRecord>
+                                            columnMyTeamslikeRecordList =
+                                            snapshot.data!;
+                                        // Return an empty Container when the item does not exist.
+                                        if (snapshot.data!.isEmpty) {
+                                          return Container();
+                                        }
+                                        final columnMyTeamslikeRecord =
+                                            columnMyTeamslikeRecordList
+                                                    .isNotEmpty
+                                                ? columnMyTeamslikeRecordList
+                                                    .first
+                                                : null;
+
+                                        return Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          children: [
+                                            if ((modifETeamPageTeamsRecord
+                                                        .members.length ==
+                                                    1) &&
+                                                (modifETeamPageTeamsRecord
+                                                        .fans.length ==
+                                                    1))
+                                              Align(
+                                                alignment: const AlignmentDirectional(
+                                                    0.0, 0.0),
+                                                child: Padding(
+                                                  padding: const EdgeInsetsDirectional
+                                                      .fromSTEB(0.0, 100.0, 0.0,
+                                                          16.0),
+                                                  child: FFButtonWidget(
+                                                    onPressed: () async {
+                                                      await columnMyTeamsRecord!
+                                                          .reference
+                                                          .delete();
+                                                      await columnMyTeamslikeRecord!
+                                                          .reference
+                                                          .delete();
+                                                      await widget.teamRef!
+                                                          .delete();
+
+                                                      await currentUserReference!
+                                                          .update({
+                                                        ...mapToFirestore(
+                                                          {
+                                                            'eteam_ref':
+                                                                FieldValue
+                                                                    .delete(),
+                                                          },
+                                                        ),
+                                                      });
+
+                                                      context.pushNamed(
+                                                          'MyProfilPage');
+                                                    },
+                                                    text: 'Supprimer',
+                                                    options: FFButtonOptions(
+                                                      width: 130.0,
+                                                      height: 40.0,
+                                                      padding:
+                                                          const EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0),
+                                                      iconPadding:
+                                                          const EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0),
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .error,
+                                                      textStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .titleSmall
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Poppins',
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primaryBackground,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                              ),
+                                                      elevation: 3.0,
+                                                      borderSide: const BorderSide(
+                                                        color:
+                                                            Colors.transparent,
+                                                        width: 1.0,
+                                                      ),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              40.0),
+                                                      hoverColor:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .error,
+                                                      hoverTextColor:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryBackground,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            if ((modifETeamPageTeamsRecord
+                                                        .members.length !=
+                                                    1) &&
+                                                (modifETeamPageTeamsRecord
+                                                        .fans.length !=
+                                                    1))
+                                              Padding(
+                                                padding: const EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 20.0, 0.0, 0.0),
+                                                child: Text(
+                                                  'Enlevez tous vos fans et/ou membres de votre club pour pouvoir supprimer',
+                                                  textAlign: TextAlign.center,
+                                                  maxLines: 2,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .labelLarge
+                                                      .override(
+                                                        fontFamily:
+                                                            'Montserrat',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .error,
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                          ],
+                                        );
+                                      },
+                                    ),
+                                  ],
+                                );
+                              },
                             ),
                           ],
                         ),

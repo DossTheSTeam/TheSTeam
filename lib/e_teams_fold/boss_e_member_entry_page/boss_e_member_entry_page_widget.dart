@@ -1,5 +1,6 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
+import '/backend/push_notifications/push_notifications_util.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -925,6 +926,21 @@ class _BossEMemberEntryPageWidgetState
                                             },
                                           ),
                                         });
+                                        triggerPushNotification(
+                                          notificationTitle:
+                                              currentUserDisplayName,
+                                          notificationText:
+                                              'La demande pour rejoindre mon club a été accepté',
+                                          notificationImageUrl:
+                                              currentUserPhoto,
+                                          notificationSound: 'default',
+                                          userRefs: [
+                                            bossEMemberEntryPageMyNotificationsRecord
+                                                .userRef!
+                                          ],
+                                          initialPageName: 'MyNotifsList',
+                                          parameterData: {},
+                                        );
 
                                         await bossEMemberEntryPageMyNotificationsRecord
                                             .userRef!
@@ -1088,6 +1104,18 @@ class _BossEMemberEntryPageWidgetState
                                   },
                                 ),
                               });
+                              triggerPushNotification(
+                                notificationTitle: currentUserDisplayName,
+                                notificationText:
+                                    'La demande pour rejoindre mon club est refusée.',
+                                notificationImageUrl: currentUserPhoto,
+                                userRefs: [
+                                  bossEMemberEntryPageMyNotificationsRecord
+                                      .userRef!
+                                ],
+                                initialPageName: 'MyNotifsList',
+                                parameterData: {},
+                              );
 
                               await widget.notifRef!
                                   .update(createMyNotificationsRecordData(

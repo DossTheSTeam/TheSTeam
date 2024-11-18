@@ -564,11 +564,15 @@ class _AddETeamPageIUDAdminWidgetState
                                                             .serverTimestamp(),
                                                         'update_time': FieldValue
                                                             .serverTimestamp(),
+                                                        'fans': [
+                                                          currentUserReference
+                                                        ],
                                                       },
                                                     ),
                                                   });
-                                                  _model.teamRef = TeamsRecord
-                                                      .getDocumentFromData({
+                                                  _model.eTeamFootRef =
+                                                      TeamsRecord
+                                                          .getDocumentFromData({
                                                     ...createTeamsRecordData(
                                                       name: _model
                                                           .eTeamNameFieldTextController
@@ -595,6 +599,9 @@ class _AddETeamPageIUDAdminWidgetState
                                                             DateTime.now(),
                                                         'update_time':
                                                             DateTime.now(),
+                                                        'fans': [
+                                                          currentUserReference
+                                                        ],
                                                       },
                                                     ),
                                                   }, teamsRecordReference);
@@ -608,7 +615,7 @@ class _AddETeamPageIUDAdminWidgetState
                                                     ...mapToFirestore(
                                                       {
                                                         'teams': [
-                                                          _model.teamRef
+                                                          _model.eTeamFootRef
                                                               ?.reference
                                                         ],
                                                       },
@@ -624,7 +631,7 @@ class _AddETeamPageIUDAdminWidgetState
                                                     ...mapToFirestore(
                                                       {
                                                         'teams': [
-                                                          _model.teamRef
+                                                          _model.eTeamFootRef
                                                               ?.reference
                                                         ],
                                                       },
@@ -635,7 +642,10 @@ class _AddETeamPageIUDAdminWidgetState
                                                       .update(
                                                           createUsersRecordData(
                                                     eteamRef: _model
-                                                        .teamRef?.reference,
+                                                        .eTeamFootRef
+                                                        ?.reference,
+                                                    esportValue:
+                                                        _model.dropESportsValue,
                                                   ));
 
                                                   context.pushNamed(
@@ -712,25 +722,73 @@ class _AddETeamPageIUDAdminWidgetState
                                                     0.0, 20.0, 0.0, 16.0),
                                             child: FFButtonWidget(
                                               onPressed: () async {
-                                                await TeamsRecord.collection
-                                                    .doc()
-                                                    .set(createTeamsRecordData(
-                                                      name: _model
-                                                          .eTeamNameFieldTextController
-                                                          .text,
-                                                      logo: _model
-                                                          .uploadedFileUrl,
-                                                      sportValue:
-                                                          'esport.basketball',
-                                                      leagueValue: 'pro',
-                                                      boss:
-                                                          currentUserReference,
-                                                      esport: true,
-                                                      divisionValue: '2',
-                                                      adminUser:
-                                                          columnUsersRecord
-                                                              ?.reference,
-                                                    ));
+                                                var teamsRecordReference =
+                                                    TeamsRecord.collection
+                                                        .doc();
+                                                await teamsRecordReference.set({
+                                                  ...createTeamsRecordData(
+                                                    name: _model
+                                                        .eTeamNameFieldTextController
+                                                        .text,
+                                                    logo:
+                                                        _model.uploadedFileUrl,
+                                                    sportValue:
+                                                        'esport.basketball',
+                                                    leagueValue: 'pro',
+                                                    boss: currentUserReference,
+                                                    esport: true,
+                                                    divisionValue: '2',
+                                                    adminUser: columnUsersRecord
+                                                        ?.reference,
+                                                  ),
+                                                  ...mapToFirestore(
+                                                    {
+                                                      'members': [
+                                                        currentUserReference
+                                                      ],
+                                                      'created_time': FieldValue
+                                                          .serverTimestamp(),
+                                                      'update_time': FieldValue
+                                                          .serverTimestamp(),
+                                                      'fans': [
+                                                        currentUserReference
+                                                      ],
+                                                    },
+                                                  ),
+                                                });
+                                                _model.eTeamBasketRef =
+                                                    TeamsRecord
+                                                        .getDocumentFromData({
+                                                  ...createTeamsRecordData(
+                                                    name: _model
+                                                        .eTeamNameFieldTextController
+                                                        .text,
+                                                    logo:
+                                                        _model.uploadedFileUrl,
+                                                    sportValue:
+                                                        'esport.basketball',
+                                                    leagueValue: 'pro',
+                                                    boss: currentUserReference,
+                                                    esport: true,
+                                                    divisionValue: '2',
+                                                    adminUser: columnUsersRecord
+                                                        ?.reference,
+                                                  ),
+                                                  ...mapToFirestore(
+                                                    {
+                                                      'members': [
+                                                        currentUserReference
+                                                      ],
+                                                      'created_time':
+                                                          DateTime.now(),
+                                                      'update_time':
+                                                          DateTime.now(),
+                                                      'fans': [
+                                                        currentUserReference
+                                                      ],
+                                                    },
+                                                  ),
+                                                }, teamsRecordReference);
 
                                                 await MyTeamsRecord.createDoc(
                                                         currentUserReference!)
@@ -741,8 +799,8 @@ class _AddETeamPageIUDAdminWidgetState
                                                   ...mapToFirestore(
                                                     {
                                                       'teams': [
-                                                        _model
-                                                            .teamRef?.reference
+                                                        _model.eTeamBasketRef
+                                                            ?.reference
                                                       ],
                                                     },
                                                   ),
@@ -757,8 +815,8 @@ class _AddETeamPageIUDAdminWidgetState
                                                   ...mapToFirestore(
                                                     {
                                                       'teams': [
-                                                        _model
-                                                            .teamRef?.reference
+                                                        _model.eTeamBasketRef
+                                                            ?.reference
                                                       ],
                                                     },
                                                   ),
@@ -767,12 +825,17 @@ class _AddETeamPageIUDAdminWidgetState
                                                 await currentUserReference!
                                                     .update(
                                                         createUsersRecordData(
-                                                  eteamRef:
-                                                      _model.teamRef?.reference,
+                                                  eteamRef: _model
+                                                      .eTeamBasketRef
+                                                      ?.reference,
+                                                  esportValue:
+                                                      _model.dropESportsValue,
                                                 ));
 
                                                 context
                                                     .pushNamed('MyProfilPage');
+
+                                                safeSetState(() {});
                                               },
                                               text: 'Valider',
                                               options: FFButtonOptions(
@@ -839,24 +902,70 @@ class _AddETeamPageIUDAdminWidgetState
                                                     0.0, 20.0, 0.0, 16.0),
                                             child: FFButtonWidget(
                                               onPressed: () async {
-                                                await TeamsRecord.collection
-                                                    .doc()
-                                                    .set(createTeamsRecordData(
-                                                      name: _model
-                                                          .eTeamNameFieldTextController
-                                                          .text,
-                                                      logo: _model
-                                                          .uploadedFileUrl,
-                                                      sportValue: 'esport.war',
-                                                      leagueValue: 'pro',
-                                                      boss:
-                                                          currentUserReference,
-                                                      esport: true,
-                                                      divisionValue: '2',
-                                                      adminUser:
-                                                          columnUsersRecord
-                                                              ?.reference,
-                                                    ));
+                                                var teamsRecordReference =
+                                                    TeamsRecord.collection
+                                                        .doc();
+                                                await teamsRecordReference.set({
+                                                  ...createTeamsRecordData(
+                                                    name: _model
+                                                        .eTeamNameFieldTextController
+                                                        .text,
+                                                    logo:
+                                                        _model.uploadedFileUrl,
+                                                    sportValue: 'esport.war',
+                                                    leagueValue: 'pro',
+                                                    boss: currentUserReference,
+                                                    esport: true,
+                                                    divisionValue: '2',
+                                                    adminUser: columnUsersRecord
+                                                        ?.reference,
+                                                  ),
+                                                  ...mapToFirestore(
+                                                    {
+                                                      'members': [
+                                                        currentUserReference
+                                                      ],
+                                                      'created_time': FieldValue
+                                                          .serverTimestamp(),
+                                                      'update_time': FieldValue
+                                                          .serverTimestamp(),
+                                                      'fans': [
+                                                        currentUserReference
+                                                      ],
+                                                    },
+                                                  ),
+                                                });
+                                                _model.eTeamWarRef = TeamsRecord
+                                                    .getDocumentFromData({
+                                                  ...createTeamsRecordData(
+                                                    name: _model
+                                                        .eTeamNameFieldTextController
+                                                        .text,
+                                                    logo:
+                                                        _model.uploadedFileUrl,
+                                                    sportValue: 'esport.war',
+                                                    leagueValue: 'pro',
+                                                    boss: currentUserReference,
+                                                    esport: true,
+                                                    divisionValue: '2',
+                                                    adminUser: columnUsersRecord
+                                                        ?.reference,
+                                                  ),
+                                                  ...mapToFirestore(
+                                                    {
+                                                      'members': [
+                                                        currentUserReference
+                                                      ],
+                                                      'created_time':
+                                                          DateTime.now(),
+                                                      'update_time':
+                                                          DateTime.now(),
+                                                      'fans': [
+                                                        currentUserReference
+                                                      ],
+                                                    },
+                                                  ),
+                                                }, teamsRecordReference);
 
                                                 await MyTeamsRecord.createDoc(
                                                         currentUserReference!)
@@ -867,8 +976,8 @@ class _AddETeamPageIUDAdminWidgetState
                                                   ...mapToFirestore(
                                                     {
                                                       'teams': [
-                                                        _model
-                                                            .teamRef?.reference
+                                                        _model.eTeamWarRef
+                                                            ?.reference
                                                       ],
                                                     },
                                                   ),
@@ -883,8 +992,8 @@ class _AddETeamPageIUDAdminWidgetState
                                                   ...mapToFirestore(
                                                     {
                                                       'teams': [
-                                                        _model
-                                                            .teamRef?.reference
+                                                        _model.eTeamWarRef
+                                                            ?.reference
                                                       ],
                                                     },
                                                   ),
@@ -893,12 +1002,16 @@ class _AddETeamPageIUDAdminWidgetState
                                                 await currentUserReference!
                                                     .update(
                                                         createUsersRecordData(
-                                                  eteamRef:
-                                                      _model.teamRef?.reference,
+                                                  eteamRef: _model
+                                                      .eTeamWarRef?.reference,
+                                                  esportValue:
+                                                      _model.dropESportsValue,
                                                 ));
 
                                                 context
                                                     .pushNamed('MyProfilPage');
+
+                                                safeSetState(() {});
                                               },
                                               text: 'Valider',
                                               options: FFButtonOptions(

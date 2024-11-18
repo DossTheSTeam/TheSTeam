@@ -577,14 +577,16 @@ class _ListPostsWidgetState extends State<ListPostsWidget> {
                         builder: (context) => StreamBuilder<List<PostsRecord>>(
                           stream: queryPostsRecord(
                             queryBuilder: (postsRecord) => postsRecord
-                                .where(
-                                  'league_value',
-                                  isEqualTo: _model.dropLigueFootValue,
-                                )
-                                .where(
-                                  'league_value',
-                                  isEqualTo: _model.dropLigueBasketValue,
-                                )
+                                .where(Filter.or(
+                                  Filter(
+                                    'league_value',
+                                    isEqualTo: _model.dropLigueFootValue,
+                                  ),
+                                  Filter(
+                                    'league_value',
+                                    isEqualTo: _model.dropLigueBasketValue,
+                                  ),
+                                ))
                                 .orderBy('created_time', descending: true),
                           ),
                           builder: (context, snapshot) {

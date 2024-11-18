@@ -1,5 +1,6 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
+import '/backend/push_notifications/push_notifications_util.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -593,6 +594,23 @@ class _AddPlayersEventPageWidgetState extends State<AddPlayersEventPageWidget> {
                                                                 },
                                                               ),
                                                             });
+                                                            triggerPushNotification(
+                                                              notificationTitle:
+                                                                  currentUserDisplayName,
+                                                              notificationText:
+                                                                  'Vous êtes sélectionné pour un match à venir.',
+                                                              notificationImageUrl:
+                                                                  currentUserPhoto,
+                                                              notificationSound:
+                                                                  'default',
+                                                              userRefs: [
+                                                                columnMyMembersUsersRecord
+                                                                    .reference
+                                                              ],
+                                                              initialPageName:
+                                                                  'MyNotifsList',
+                                                              parameterData: {},
+                                                            );
 
                                                             await columnMyMembersUsersRecord
                                                                 .reference

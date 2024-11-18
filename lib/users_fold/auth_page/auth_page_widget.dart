@@ -4,7 +4,9 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/permissions_util.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'auth_page_model.dart';
@@ -29,6 +31,11 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
   void initState() {
     super.initState();
     _model = createModel(context, () => AuthPageModel());
+
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      await requestPermission(notificationsPermission);
+    });
 
     _model.tabBarController = TabController(
       vsync: this,
@@ -794,17 +801,17 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                                                         stock:
                                                                             900.0,
                                                                         rankValue:
-                                                                            'pro',
+                                                                            'amateur',
                                                                         divisionValue:
-                                                                            '2',
+                                                                            '1',
                                                                         updateTime:
                                                                             currentUserDocument?.createdTime,
                                                                         esport:
                                                                             false,
                                                                         erankValue:
-                                                                            'pro',
+                                                                            'amateur',
                                                                         edivisionValue:
-                                                                            '2',
+                                                                            '1',
                                                                       ),
                                                                       ...mapToFirestore(
                                                                         {
@@ -905,18 +912,18 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                                                       stock:
                                                                           900.0,
                                                                       rankValue:
-                                                                          'pro',
+                                                                          'amateur',
                                                                       divisionValue:
-                                                                          '2',
+                                                                          '1',
                                                                       updateTime:
                                                                           currentUserDocument
                                                                               ?.createdTime,
                                                                       esport:
                                                                           false,
                                                                       edivisionValue:
-                                                                          '2',
+                                                                          '1',
                                                                       erankValue:
-                                                                          'pro',
+                                                                          'amateur',
                                                                     ),
                                                                     ...mapToFirestore(
                                                                       {

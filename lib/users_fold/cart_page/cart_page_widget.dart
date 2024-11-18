@@ -116,6 +116,8 @@ class _CartPageWidgetState extends State<CartPageWidget> {
                                               ),
                                             },
                                           );
+
+                                          await widget.cartRef!.delete();
                                         },
                                         child: Icon(
                                           Icons.menu_rounded,
@@ -134,6 +136,7 @@ class _CartPageWidgetState extends State<CartPageWidget> {
                                           highlightColor: Colors.transparent,
                                           onTap: () async {
                                             context.safePop();
+                                            await widget.cartRef!.delete();
                                           },
                                           child: Icon(
                                             Icons.arrow_back_ios_new_rounded,
@@ -514,7 +517,7 @@ class _CartPageWidgetState extends State<CartPageWidget> {
                                                   autofocus: false,
                                                   obscureText: false,
                                                   decoration: InputDecoration(
-                                                    hintText: '0000,00',
+                                                    hintText: '0000.00',
                                                     hintStyle: FlutterFlowTheme
                                                             .of(context)
                                                         .titleSmall
@@ -582,10 +585,6 @@ class _CartPageWidgetState extends State<CartPageWidget> {
                                                         letterSpacing: 0.0,
                                                       ),
                                                   textAlign: TextAlign.center,
-                                                  keyboardType:
-                                                      const TextInputType
-                                                          .numberWithOptions(
-                                                          decimal: true),
                                                   validator: _model
                                                       .miseFieldTextControllerValidator
                                                       .asValidator(context),
@@ -635,8 +634,11 @@ class _CartPageWidgetState extends State<CartPageWidget> {
                                           0.0, 0.0, 30.0, 0.0),
                                       child: Text(
                                         valueOrDefault<String>(
-                                          cartPageCartRecord.totalOdds
-                                              .toString(),
+                                          formatNumber(
+                                            cartPageCartRecord.totalOdds,
+                                            formatType: FormatType.decimal,
+                                            decimalType: DecimalType.automatic,
+                                          ),
                                           '0.0',
                                         ),
                                         style: FlutterFlowTheme.of(context)
@@ -651,6 +653,21 @@ class _CartPageWidgetState extends State<CartPageWidget> {
                                       ),
                                     ),
                                   ],
+                                ),
+                              ),
+                              Align(
+                                alignment: const AlignmentDirectional(-1.0, 0.0),
+                                child: Text(
+                                  'Ne pas utiliser de virgule',
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Poppins',
+                                        color:
+                                            FlutterFlowTheme.of(context).error,
+                                        fontSize: 10.0,
+                                        letterSpacing: 0.0,
+                                      ),
                                 ),
                               ),
                               Divider(
@@ -680,19 +697,22 @@ class _CartPageWidgetState extends State<CartPageWidget> {
                                   children: [
                                     Text(
                                       valueOrDefault<String>(
-                                        functions
-                                            .potentialGain(
-                                                valueOrDefault<double>(
-                                                  double.tryParse(_model
-                                                      .miseFieldTextController
-                                                      .text),
-                                                  0.0,
-                                                ),
-                                                valueOrDefault<double>(
-                                                  cartPageCartRecord.totalOdds,
-                                                  0.0,
-                                                ))
-                                            .toString(),
+                                        formatNumber(
+                                          functions.potentialGain(
+                                              valueOrDefault<double>(
+                                                double.tryParse(_model
+                                                    .miseFieldTextController
+                                                    .text),
+                                                00.00,
+                                              ),
+                                              valueOrDefault<double>(
+                                                cartPageCartRecord.totalOdds,
+                                                0.0,
+                                              )),
+                                          formatType: FormatType.decimal,
+                                          decimalType:
+                                              DecimalType.periodDecimal,
+                                        ),
                                         '0.0',
                                       ),
                                       maxLines: 1,

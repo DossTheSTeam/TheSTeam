@@ -1,5 +1,6 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
+import '/backend/push_notifications/push_notifications_util.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -546,7 +547,7 @@ class _AddRatingPlayersPageWidgetState
                                                                     .set({
                                                                   ...createMyNotificationsRecordData(
                                                                     text:
-                                                                        'Rencontre terminée, vous pouvez noter vos co-équipiés.',
+                                                                        'Rencontre terminée, vous pouvez noter vos co-équipiers.',
                                                                     eEvent: widget
                                                                         .eventRef,
                                                                     seen: false,
@@ -563,6 +564,23 @@ class _AddRatingPlayersPageWidgetState
                                                                     },
                                                                   ),
                                                                 });
+                                                                triggerPushNotification(
+                                                                  notificationTitle:
+                                                                      currentUserDisplayName,
+                                                                  notificationText:
+                                                                      'Rencontre terminée, vous pouvez noter vos co-équipiers.',
+                                                                  notificationImageUrl:
+                                                                      currentUserPhoto,
+                                                                  notificationSound:
+                                                                      'default',
+                                                                  userRefs: [
+                                                                    columnPlayersDomUsersRecord
+                                                                        .reference
+                                                                  ],
+                                                                  initialPageName:
+                                                                      'MyNotifsList',
+                                                                  parameterData: {},
+                                                                );
 
                                                                 await RatesRecord
                                                                         .createDoc(widget
@@ -853,6 +871,23 @@ class _AddRatingPlayersPageWidgetState
                                                                     },
                                                                   ),
                                                                 });
+                                                                triggerPushNotification(
+                                                                  notificationTitle:
+                                                                      currentUserDisplayName,
+                                                                  notificationText:
+                                                                      'Rencontre terminée, vous pouvez noter vos co-équipiers.',
+                                                                  notificationImageUrl:
+                                                                      currentUserPhoto,
+                                                                  notificationSound:
+                                                                      'default',
+                                                                  userRefs: [
+                                                                    columnPlayersExtUsersRecord
+                                                                        .reference
+                                                                  ],
+                                                                  initialPageName:
+                                                                      'MyNotifsList',
+                                                                  parameterData: {},
+                                                                );
 
                                                                 await RatesRecord
                                                                         .createDoc(widget
@@ -1913,63 +1948,89 @@ class _AddRatingPlayersPageWidgetState
                             color: FlutterFlowTheme.of(context)
                                 .secondaryBackground,
                           ),
-                          Align(
-                            alignment: const AlignmentDirectional(0.0, 0.0),
-                            child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 20.0, 0.0, 16.0),
-                              child: FFButtonWidget(
-                                onPressed: () async {
-                                  context.pushNamed(
-                                    'ModifETeamPage',
-                                    queryParameters: {
-                                      'teamRef': serializeParam(
-                                        currentUserDocument?.eteamRef,
-                                        ParamType.DocumentReference,
-                                      ),
-                                    }.withoutNulls,
-                                  );
+                          if ((valueOrDefault<bool>(
+                                      currentUserDocument?.boolMvp, false) ==
+                                  true) &&
+                              (valueOrDefault<bool>(
+                                      currentUserDocument?.boolTop, false) ==
+                                  true) &&
+                              (valueOrDefault<bool>(
+                                      currentUserDocument?.boolFlop, false) ==
+                                  true))
+                            Align(
+                              alignment: const AlignmentDirectional(0.0, 0.0),
+                              child: Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 20.0, 0.0, 16.0),
+                                child: AuthUserStreamWidget(
+                                  builder: (context) => FFButtonWidget(
+                                    onPressed: () async {
+                                      context.pushNamed(
+                                        'ModifETeamPage',
+                                        queryParameters: {
+                                          'teamRef': serializeParam(
+                                            currentUserDocument?.eteamRef,
+                                            ParamType.DocumentReference,
+                                          ),
+                                        }.withoutNulls,
+                                      );
 
-                                  await currentUserReference!
-                                      .update(createUsersRecordData(
-                                    boolMvp: false,
-                                    boolTop: false,
-                                    boolFlop: false,
-                                    guest: false,
-                                  ));
-                                },
-                                text: 'Valider notation',
-                                options: FFButtonOptions(
-                                  width: 160.0,
-                                  height: 40.0,
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 0.0),
-                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 0.0),
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
-                                  textStyle: FlutterFlowTheme.of(context)
-                                      .titleSmall
-                                      .override(
-                                        fontFamily: 'Poppins',
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryText,
-                                        letterSpacing: 0.0,
+                                      await currentUserReference!
+                                          .update(createUsersRecordData(
+                                        boolMvp: false,
+                                        boolTop: false,
+                                        boolFlop: false,
+                                        guest: false,
+                                      ));
+
+                                      context.pushNamed(
+                                        'MyProfilPage',
+                                        extra: <String, dynamic>{
+                                          kTransitionInfoKey: const TransitionInfo(
+                                            hasTransition: true,
+                                            transitionType:
+                                                PageTransitionType.bottomToTop,
+                                            duration:
+                                                Duration(milliseconds: 400),
+                                          ),
+                                        },
+                                      );
+                                    },
+                                    text: 'Valider notation',
+                                    options: FFButtonOptions(
+                                      width: 160.0,
+                                      height: 40.0,
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 0.0, 0.0, 0.0),
+                                      iconPadding:
+                                          const EdgeInsetsDirectional.fromSTEB(
+                                              0.0, 0.0, 0.0, 0.0),
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
+                                      textStyle: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                            letterSpacing: 0.0,
+                                          ),
+                                      elevation: 3.0,
+                                      borderSide: const BorderSide(
+                                        color: Colors.transparent,
+                                        width: 1.0,
                                       ),
-                                  elevation: 3.0,
-                                  borderSide: const BorderSide(
-                                    color: Colors.transparent,
-                                    width: 1.0,
+                                      borderRadius: BorderRadius.circular(40.0),
+                                      hoverColor:
+                                          FlutterFlowTheme.of(context).success,
+                                      hoverTextColor:
+                                          FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                    ),
                                   ),
-                                  borderRadius: BorderRadius.circular(40.0),
-                                  hoverColor:
-                                      FlutterFlowTheme.of(context).success,
-                                  hoverTextColor:
-                                      FlutterFlowTheme.of(context).primaryText,
                                 ),
                               ),
                             ),
-                          ),
                         ],
                       ),
                     ],

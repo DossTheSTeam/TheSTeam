@@ -1,5 +1,6 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
+import '/backend/push_notifications/push_notifications_util.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -471,6 +472,23 @@ class _BossNotifEEventPageIUDAdminWidgetState
                                                       },
                                                     ),
                                                   });
+                                                  triggerPushNotification(
+                                                    notificationTitle:
+                                                        currentUserDisplayName,
+                                                    notificationText:
+                                                        'Ok pour la confrontation. ',
+                                                    notificationImageUrl:
+                                                        currentUserPhoto,
+                                                    notificationSound:
+                                                        'default',
+                                                    userRefs: [
+                                                      bossNotifEEventPageIUDAdminMyNotificationsRecord
+                                                          .userRef!
+                                                    ],
+                                                    initialPageName:
+                                                        'MyNotifsList',
+                                                    parameterData: {},
+                                                  );
 
                                                   await TeamEventsRecord.createDoc(
                                                           bossNotifEEventPageIUDAdminMyNotificationsRecord
@@ -673,6 +691,20 @@ class _BossNotifEEventPageIUDAdminWidgetState
                                                 },
                                               ),
                                             });
+                                            triggerPushNotification(
+                                              notificationTitle:
+                                                  currentUserDisplayName,
+                                              notificationText:
+                                                  'A refusé votre invitation à jouer contre votre équipe.',
+                                              notificationImageUrl:
+                                                  currentUserPhoto,
+                                              userRefs: [
+                                                bossNotifEEventPageIUDAdminMyNotificationsRecord
+                                                    .userRef!
+                                              ],
+                                              initialPageName: 'MyNotifsList',
+                                              parameterData: {},
+                                            );
 
                                             await currentUserDocument!.eteamRef!
                                                 .update({

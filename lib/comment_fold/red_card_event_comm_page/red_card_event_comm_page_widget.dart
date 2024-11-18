@@ -1,5 +1,6 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
+import '/backend/push_notifications/push_notifications_util.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -460,6 +461,19 @@ class _RedCardEventCommPageWidgetState
                                     },
                                   ),
                                 });
+                                triggerPushNotification(
+                                  notificationTitle: currentUserDisplayName,
+                                  notificationText:
+                                      'Signale un mauvais comportement.',
+                                  notificationImageUrl: currentUserPhoto,
+                                  notificationSound: 'default',
+                                  userRefs: [
+                                    redCardEventCommPageEventMessagesRecord
+                                        .moderator!
+                                  ],
+                                  initialPageName: 'ModNotifsList',
+                                  parameterData: {},
+                                );
                                 context.safePop();
                               },
                               text:

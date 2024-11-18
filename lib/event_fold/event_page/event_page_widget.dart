@@ -631,7 +631,7 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                               columnBetsAVBetsRecord.odd,
                                               formatType: FormatType.decimal,
                                               decimalType:
-                                                  DecimalType.automatic,
+                                                  DecimalType.periodDecimal,
                                             ),
                                             options: FFButtonOptions(
                                               height: 30.0,

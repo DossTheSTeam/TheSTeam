@@ -1,9 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'my_bests_e_user_rank_page_widget.dart' show MyBestsEUserRankPageWidget;
+import 'delete_event_page_widget.dart' show DeleteEventPageWidget;
 import 'package:flutter/material.dart';
 
-class MyBestsEUserRankPageModel
-    extends FlutterFlowModel<MyBestsEUserRankPageWidget> {
+class DeleteEventPageModel extends FlutterFlowModel<DeleteEventPageWidget> {
   @override
   void initState(BuildContext context) {}
 

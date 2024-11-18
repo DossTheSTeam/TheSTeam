@@ -23,7 +23,11 @@ class AddETeamPageIUDAdminModel
   String uploadedFileUrl = '';
 
   // Stores action output result for [Backend Call - Create Document] action in Button widget.
-  TeamsRecord? teamRef;
+  TeamsRecord? eTeamFootRef;
+  // Stores action output result for [Backend Call - Create Document] action in Button widget.
+  TeamsRecord? eTeamBasketRef;
+  // Stores action output result for [Backend Call - Create Document] action in Button widget.
+  TeamsRecord? eTeamWarRef;
 
   @override
   void initState(BuildContext context) {}

@@ -294,7 +294,7 @@ class _ShoppingPageWidgetState extends State<ShoppingPageWidget> {
                           ],
                           onChanged: (val) =>
                               safeSetState(() => _model.dropPriceValue = val),
-                          width: 100.0,
+                          width: 110.0,
                           height: 40.0,
                           textStyle:
                               FlutterFlowTheme.of(context).labelMedium.override(
@@ -302,7 +302,7 @@ class _ShoppingPageWidgetState extends State<ShoppingPageWidget> {
                                     letterSpacing: 0.0,
                                   ),
                           icon: Icon(
-                            Icons.euro_rounded,
+                            Icons.keyboard_arrow_down,
                             color: FlutterFlowTheme.of(context).secondaryText,
                             size: 24.0,
                           ),
@@ -313,7 +313,7 @@ class _ShoppingPageWidgetState extends State<ShoppingPageWidget> {
                           borderWidth: 0.0,
                           borderRadius: 8.0,
                           margin: const EdgeInsetsDirectional.fromSTEB(
-                              12.0, 0.0, 12.0, 0.0),
+                              0.0, 0.0, 12.0, 0.0),
                           hidesUnderline: true,
                           isOverButton: false,
                           isSearchable: false,

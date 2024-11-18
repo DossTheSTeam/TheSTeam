@@ -1,5 +1,6 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
+import '/backend/push_notifications/push_notifications_util.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -401,6 +402,16 @@ class _EMemberEntryPageWidgetState extends State<EMemberEntryPageWidget> {
                                   },
                                 ),
                               });
+                              triggerPushNotification(
+                                notificationTitle: currentUserDisplayName,
+                                notificationText:
+                                    'Souhaite rejoindre votre club.',
+                                notificationImageUrl: currentUserPhoto,
+                                notificationSound: 'default',
+                                userRefs: [eMemberEntryPageTeamsRecord.boss!],
+                                initialPageName: 'MyNotifsList',
+                                parameterData: {},
+                              );
                               context.safePop();
                             },
                             text: 'Confirmer ma candidature ',

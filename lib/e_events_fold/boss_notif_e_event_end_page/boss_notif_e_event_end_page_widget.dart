@@ -1,6 +1,7 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/firebase_storage/storage.dart';
+import '/backend/push_notifications/push_notifications_util.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -751,6 +752,21 @@ class _BossNotifEEventEndPageWidgetState
                                             },
                                           ),
                                         });
+                                        triggerPushNotification(
+                                          notificationTitle:
+                                              currentUserDisplayName,
+                                          notificationText:
+                                              'Validation du résultat.',
+                                          notificationImageUrl:
+                                              currentUserPhoto,
+                                          notificationSound: 'default',
+                                          userRefs: [
+                                            bossNotifEEventEndPageMyNotificationsRecord
+                                                .userRef!
+                                          ],
+                                          initialPageName: 'MyNotifsList',
+                                          parameterData: {},
+                                        );
 
                                         await columnEventEventsRecord.reference
                                             .update(createEventsRecordData(
@@ -810,12 +826,6 @@ class _BossNotifEEventEndPageWidgetState
                                           guest: false,
                                         ));
 
-                                        await widget.notifRef!.update(
-                                            createMyNotificationsRecordData(
-                                          seen: true,
-                                        ));
-                                        await widget.notifRef!.delete();
-
                                         context.pushNamed(
                                           'AddRatingPlayersPage',
                                           queryParameters: {
@@ -825,6 +835,12 @@ class _BossNotifEEventEndPageWidgetState
                                             ),
                                           }.withoutNulls,
                                         );
+
+                                        await widget.notifRef!.update(
+                                            createMyNotificationsRecordData(
+                                          seen: true,
+                                        ));
+                                        await widget.notifRef!.delete();
                                       },
                                       text: 'Publier le résultat Dom',
                                       options: FFButtonOptions(
@@ -887,6 +903,21 @@ class _BossNotifEEventEndPageWidgetState
                                             },
                                           ),
                                         });
+                                        triggerPushNotification(
+                                          notificationTitle:
+                                              currentUserDisplayName,
+                                          notificationText:
+                                              'Validation du résultat.',
+                                          notificationImageUrl:
+                                              currentUserPhoto,
+                                          notificationSound: 'default',
+                                          userRefs: [
+                                            bossNotifEEventEndPageMyNotificationsRecord
+                                                .userRef!
+                                          ],
+                                          initialPageName: 'MyNotifsList',
+                                          parameterData: {},
+                                        );
 
                                         await columnEventEventsRecord.reference
                                             .update(createEventsRecordData(
@@ -946,12 +977,6 @@ class _BossNotifEEventEndPageWidgetState
                                           guest: false,
                                         ));
 
-                                        await widget.notifRef!.update(
-                                            createMyNotificationsRecordData(
-                                          seen: true,
-                                        ));
-                                        await widget.notifRef!.delete();
-
                                         context.pushNamed(
                                           'AddRatingPlayersPage',
                                           queryParameters: {
@@ -961,6 +986,12 @@ class _BossNotifEEventEndPageWidgetState
                                             ),
                                           }.withoutNulls,
                                         );
+
+                                        await widget.notifRef!.update(
+                                            createMyNotificationsRecordData(
+                                          seen: true,
+                                        ));
+                                        await widget.notifRef!.delete();
                                       },
                                       text: 'Publier le résultat Draw',
                                       options: FFButtonOptions(
@@ -1023,6 +1054,21 @@ class _BossNotifEEventEndPageWidgetState
                                             },
                                           ),
                                         });
+                                        triggerPushNotification(
+                                          notificationTitle:
+                                              currentUserDisplayName,
+                                          notificationText:
+                                              'Validation du résultat.',
+                                          notificationImageUrl:
+                                              currentUserPhoto,
+                                          notificationSound: 'default',
+                                          userRefs: [
+                                            bossNotifEEventEndPageMyNotificationsRecord
+                                                .userRef!
+                                          ],
+                                          initialPageName: 'MyNotifsList',
+                                          parameterData: {},
+                                        );
 
                                         await columnEventEventsRecord.reference
                                             .update(createEventsRecordData(
@@ -1082,12 +1128,6 @@ class _BossNotifEEventEndPageWidgetState
                                           guest: false,
                                         ));
 
-                                        await widget.notifRef!.update(
-                                            createMyNotificationsRecordData(
-                                          seen: true,
-                                        ));
-                                        await widget.notifRef!.delete();
-
                                         context.pushNamed(
                                           'AddRatingPlayersPage',
                                           queryParameters: {
@@ -1097,6 +1137,12 @@ class _BossNotifEEventEndPageWidgetState
                                             ),
                                           }.withoutNulls,
                                         );
+
+                                        await widget.notifRef!.update(
+                                            createMyNotificationsRecordData(
+                                          seen: true,
+                                        ));
+                                        await widget.notifRef!.delete();
                                       },
                                       text: 'Publier le résultat Ext',
                                       options: FFButtonOptions(
@@ -1443,6 +1489,20 @@ class _BossNotifEEventEndPageWidgetState
                                             },
                                           ),
                                         });
+                                        triggerPushNotification(
+                                          notificationTitle:
+                                              currentUserDisplayName,
+                                          notificationText:
+                                              'Il y a un litige dans cette rencontre.',
+                                          notificationImageUrl:
+                                              currentUserPhoto,
+                                          notificationSound: 'default',
+                                          userRefs: [
+                                            columnEventEventsRecord.adminUser!
+                                          ],
+                                          initialPageName: 'ModNotifsList',
+                                          parameterData: {},
+                                        );
 
                                         await currentUserReference!
                                             .update(createUsersRecordData(

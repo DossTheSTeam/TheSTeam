@@ -704,7 +704,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                                     .decimal,
                                                             decimalType:
                                                                 DecimalType
-                                                                    .automatic,
+                                                                    .periodDecimal,
                                                           ),
                                                           '0.0',
                                                         ),
@@ -1215,7 +1215,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                                       .decimal,
                                                               decimalType:
                                                                   DecimalType
-                                                                      .automatic,
+                                                                      .periodDecimal,
                                                             ),
                                                             '0.0',
                                                           ),
@@ -1726,7 +1726,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                                       .decimal,
                                                               decimalType:
                                                                   DecimalType
-                                                                      .automatic,
+                                                                      .periodDecimal,
                                                             ),
                                                             '0.0',
                                                           ),
@@ -1852,7 +1852,14 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Text(
-                                  myBetPageMyBetsRecord.mise.toString(),
+                                  valueOrDefault<String>(
+                                    formatNumber(
+                                      myBetPageMyBetsRecord.mise,
+                                      formatType: FormatType.decimal,
+                                      decimalType: DecimalType.periodDecimal,
+                                    ),
+                                    '0.0',
+                                  ),
                                   textAlign: TextAlign.center,
                                   style: FlutterFlowTheme.of(context)
                                       .titleLarge
@@ -1918,10 +1925,12 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                               children: [
                                 Text(
                                   valueOrDefault<String>(
-                                    functions
-                                        .limitOf2Decimal(
-                                            myBetPageMyBetsRecord.totalOdds)
-                                        .toString(),
+                                    formatNumber(
+                                      functions.limitOf2Decimal(
+                                          myBetPageMyBetsRecord.totalOdds),
+                                      formatType: FormatType.decimal,
+                                      decimalType: DecimalType.periodDecimal,
+                                    ),
                                     '00.00',
                                   ),
                                   textAlign: TextAlign.center,
@@ -2106,11 +2115,12 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                   children: [
                                     Text(
                                       valueOrDefault<String>(
-                                        functions
-                                            .limitOf2Decimal(
-                                                myBetPageMyBetsRecord
-                                                    .potentialy)
-                                            .toString(),
+                                        formatNumber(
+                                          functions.limitOf2Decimal(
+                                              myBetPageMyBetsRecord.potentialy),
+                                          formatType: FormatType.decimal,
+                                          decimalType: DecimalType.commaDecimal,
+                                        ),
                                         '00.00',
                                       ),
                                       textAlign: TextAlign.center,
@@ -2192,11 +2202,14 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                         children: [
                                           Text(
                                             valueOrDefault<String>(
-                                              functions
-                                                  .limitOf2Decimal(
-                                                      myBetPageMyBetsRecord
-                                                          .potentialy)
-                                                  .toString(),
+                                              formatNumber(
+                                                functions.limitOf2Decimal(
+                                                    myBetPageMyBetsRecord
+                                                        .potentialy),
+                                                formatType: FormatType.decimal,
+                                                decimalType:
+                                                    DecimalType.periodDecimal,
+                                              ),
                                               '00.00',
                                             ),
                                             textAlign: TextAlign.center,
@@ -2374,7 +2387,8 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                         ),
                       ),
                       if ((myBetPageMyBetsRecord.bet3 == null) &&
-                          (myBetPageMyBetsRecord.seen == false))
+                          (myBetPageMyBetsRecord.seen == false) &&
+                          (myBetPageMyBetsRecord.bet2 == null))
                         Padding(
                           padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 20.0, 0.0, 0.0),
@@ -2413,6 +2427,100 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                               ),
                               borderRadius: BorderRadius.circular(40.0),
                               hoverColor: FlutterFlowTheme.of(context).success,
+                            ),
+                          ),
+                        ),
+                      if ((myBetPageMyBetsRecord.bet3 == null) &&
+                          (myBetPageMyBetsRecord.seen == false) &&
+                          (myBetPageMyBetsRecord.bet2 != null))
+                        Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              0.0, 20.0, 0.0, 0.0),
+                          child: FFButtonWidget(
+                            onPressed: () async {
+                              context.pushNamed(
+                                'ListEventsAdd3Bet',
+                                queryParameters: {
+                                  'myBetRef': serializeParam(
+                                    widget.myBetRef,
+                                    ParamType.DocumentReference,
+                                  ),
+                                }.withoutNulls,
+                              );
+                            },
+                            text: 'Ajouter un paris',
+                            options: FFButtonOptions(
+                              height: 30.0,
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  12.0, 0.0, 12.0, 0.0),
+                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 0.0),
+                              color: FlutterFlowTheme.of(context).success,
+                              textStyle: FlutterFlowTheme.of(context)
+                                  .labelMedium
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryBackground,
+                                    letterSpacing: 0.0,
+                                  ),
+                              elevation: 3.0,
+                              borderSide: const BorderSide(
+                                color: Colors.transparent,
+                                width: 1.0,
+                              ),
+                              borderRadius: BorderRadius.circular(40.0),
+                              hoverColor: FlutterFlowTheme.of(context).success,
+                            ),
+                          ),
+                        ),
+                      if (myBetPageMyBetsRecord.bet1 == null)
+                        Align(
+                          alignment: const AlignmentDirectional(-1.0, 0.0),
+                          child: Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                0.0, 20.0, 0.0, 0.0),
+                            child: FFButtonWidget(
+                              onPressed: () async {
+                                await widget.myBetRef!.delete();
+
+                                context.pushNamed(
+                                  'MyBetsList',
+                                  extra: <String, dynamic>{
+                                    kTransitionInfoKey: const TransitionInfo(
+                                      hasTransition: true,
+                                      transitionType:
+                                          PageTransitionType.leftToRight,
+                                      duration: Duration(milliseconds: 400),
+                                    ),
+                                  },
+                                );
+                              },
+                              text: 'Supprimer',
+                              options: FFButtonOptions(
+                                height: 30.0,
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    12.0, 0.0, 12.0, 0.0),
+                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 0.0),
+                                color:
+                                    FlutterFlowTheme.of(context).secondaryText,
+                                textStyle: FlutterFlowTheme.of(context)
+                                    .labelMedium
+                                    .override(
+                                      fontFamily: 'Poppins',
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryBackground,
+                                      letterSpacing: 0.0,
+                                    ),
+                                elevation: 3.0,
+                                borderSide: const BorderSide(
+                                  color: Colors.transparent,
+                                  width: 1.0,
+                                ),
+                                borderRadius: BorderRadius.circular(40.0),
+                                hoverColor: FlutterFlowTheme.of(context).error,
+                              ),
                             ),
                           ),
                         ),

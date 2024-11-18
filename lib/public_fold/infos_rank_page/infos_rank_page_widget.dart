@@ -240,7 +240,7 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                   Align(
                     alignment: const AlignmentDirectional(-1.0, 0.0),
                     child: Text(
-                      'Les montées et descentes de divisions s\'effectuent le 1er et le 15 de chaques mois',
+                      'Les montées et descentes de divisions s\'effectuent le 1er et le 15 de chaque mois',
                       textAlign: TextAlign.start,
                       style: FlutterFlowTheme.of(context).bodyLarge.override(
                             fontFamily: 'Poppins',
@@ -263,7 +263,7 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                   Align(
                     alignment: const AlignmentDirectional(-1.0, 0.0),
                     child: Text(
-                      'A l\'issue de chaques périodes',
+                      'A l\'issue de chaque période',
                       textAlign: TextAlign.start,
                       style: FlutterFlowTheme.of(context).bodyLarge.override(
                             fontFamily: 'Poppins',
@@ -400,7 +400,7 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                           alignment: const AlignmentDirectional(-1.0, 0.0),
                           child: Text(
                             'Vos pronostiques de\nmanière responsable',
-                            textAlign: TextAlign.start,
+                            textAlign: TextAlign.end,
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
@@ -488,7 +488,7 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                   Align(
                     alignment: const AlignmentDirectional(-1.0, 0.0),
                     child: Text(
-                      'il met en llumière les meilleurs pronostiqueurs de la communauté.',
+                      'il met en lumière les meilleurs pronostiqueurs de la communauté.',
                       textAlign: TextAlign.start,
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Poppins',
@@ -876,7 +876,7 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                   Align(
                     alignment: const AlignmentDirectional(-1.0, 0.0),
                     child: Text(
-                      'Les montées et descentes de divisions s\'effectuent le 1er et le 15 de chaques mois',
+                      'Les montées et descentes de divisions s\'effectuent le 1er et le 15 de chaque mois',
                       textAlign: TextAlign.start,
                       style: FlutterFlowTheme.of(context).bodyLarge.override(
                             fontFamily: 'Poppins',
@@ -970,7 +970,7 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                   Align(
                     alignment: const AlignmentDirectional(-1.0, 0.0),
                     child: Text(
-                      'Le classement prend en compte vos performance, Tops / Flops.',
+                      'Le classement prend en compte vos performances, Tops / Flops.',
                       textAlign: TextAlign.center,
                       style: FlutterFlowTheme.of(context).bodyLarge.override(
                             fontFamily: 'Poppins',
@@ -1095,7 +1095,7 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                   Align(
                     alignment: const AlignmentDirectional(-1.0, 0.0),
                     child: Text(
-                      'A l\'issue de chaque match, les participant seront invité à noter leurs coéquipiés selon leurs performances',
+                      'A l\'issue de chaque match, les participants seront invités à noter leurs coéquipiers selon leurs performances.',
                       textAlign: TextAlign.start,
                       style: FlutterFlowTheme.of(context).bodyLarge.override(
                             fontFamily: 'Poppins',
@@ -1157,7 +1157,7 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                   Align(
                     alignment: const AlignmentDirectional(-1.0, 0.0),
                     child: Text(
-                      'Les montées et descentes de divisions s\'effectuent le 1er et le 15 de chaques mois',
+                      'Les montées et descentes de divisions s\'effectuent le 1er et le 15 de chaque mois',
                       textAlign: TextAlign.start,
                       style: FlutterFlowTheme.of(context).bodyLarge.override(
                             fontFamily: 'Poppins',
@@ -1251,7 +1251,7 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                   Align(
                     alignment: const AlignmentDirectional(-1.0, 0.0),
                     child: Text(
-                      'Le classement prend en compte vos performances, sur la période donnée, vous aurez 10 matchs à faire. ',
+                      'Le classement prend en compte vos performances.',
                       textAlign: TextAlign.center,
                       style: FlutterFlowTheme.of(context).bodyLarge.override(
                             fontFamily: 'Poppins',

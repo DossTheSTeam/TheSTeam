@@ -36,11 +36,11 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
     _model.titleFieldTextController ??= TextEditingController();
     _model.titleFieldFocusNode ??= FocusNode();
 
-    _model.textController2 ??= TextEditingController();
-    _model.textFieldFocusNode ??= FocusNode();
-
     _model.descriptionFieldTextController ??= TextEditingController();
     _model.descriptionFieldFocusNode ??= FocusNode();
+
+    _model.textController3 ??= TextEditingController();
+    _model.textFieldFocusNode ??= FocusNode();
   }
 
   @override
@@ -257,6 +257,66 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
                         ],
                       ),
                     ),
+                    Expanded(
+                      child: Padding(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
+                            10.0, 0.0, 10.0, 0.0),
+                        child: TextFormField(
+                          controller: _model.descriptionFieldTextController,
+                          focusNode: _model.descriptionFieldFocusNode,
+                          autofocus: false,
+                          obscureText: false,
+                          decoration: InputDecoration(
+                            hintText: 'Description',
+                            hintStyle: FlutterFlowTheme.of(context)
+                                .labelMedium
+                                .override(
+                                  fontFamily: 'Poppins',
+                                  letterSpacing: 0.0,
+                                ),
+                            enabledBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(
+                                color: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
+                                width: 2.0,
+                              ),
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                            focusedBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(
+                                color: FlutterFlowTheme.of(context).primary,
+                                width: 2.0,
+                              ),
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                            errorBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(
+                                color: FlutterFlowTheme.of(context).error,
+                                width: 2.0,
+                              ),
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                            focusedErrorBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(
+                                color: FlutterFlowTheme.of(context).error,
+                                width: 2.0,
+                              ),
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                          ),
+                          style:
+                              FlutterFlowTheme.of(context).bodyMedium.override(
+                                    fontFamily: 'Poppins',
+                                    letterSpacing: 0.0,
+                                  ),
+                          textAlign: TextAlign.start,
+                          maxLines: null,
+                          validator: _model
+                              .descriptionFieldTextControllerValidator
+                              .asValidator(context),
+                        ),
+                      ),
+                    ),
                     Padding(
                       padding:
                           const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
@@ -414,7 +474,7 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
                                 padding: const EdgeInsetsDirectional.fromSTEB(
                                     8.0, 0.0, 8.0, 0.0),
                                 child: TextFormField(
-                                  controller: _model.textController2,
+                                  controller: _model.textController3,
                                   focusNode: _model.textFieldFocusNode,
                                   autofocus: true,
                                   obscureText: false,
@@ -465,7 +525,7 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
                                         fontFamily: 'Poppins',
                                         letterSpacing: 0.0,
                                       ),
-                                  validator: _model.textController2Validator
+                                  validator: _model.textController3Validator
                                       .asValidator(context),
                                 ),
                               ),
@@ -546,299 +606,266 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
                         ],
                       ),
                     ),
-                    Expanded(
-                      child: Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
-                            10.0, 0.0, 10.0, 0.0),
-                        child: TextFormField(
-                          controller: _model.descriptionFieldTextController,
-                          focusNode: _model.descriptionFieldFocusNode,
-                          autofocus: false,
-                          obscureText: false,
-                          decoration: InputDecoration(
-                            hintText: 'Description',
-                            hintStyle: FlutterFlowTheme.of(context)
-                                .labelMedium
-                                .override(
-                                  fontFamily: 'Poppins',
-                                  letterSpacing: 0.0,
-                                ),
-                            enabledBorder: UnderlineInputBorder(
-                              borderSide: BorderSide(
-                                color: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
-                                width: 2.0,
-                              ),
-                              borderRadius: BorderRadius.circular(8.0),
-                            ),
-                            focusedBorder: UnderlineInputBorder(
-                              borderSide: BorderSide(
-                                color: FlutterFlowTheme.of(context).primary,
-                                width: 2.0,
-                              ),
-                              borderRadius: BorderRadius.circular(8.0),
-                            ),
-                            errorBorder: UnderlineInputBorder(
-                              borderSide: BorderSide(
-                                color: FlutterFlowTheme.of(context).error,
-                                width: 2.0,
-                              ),
-                              borderRadius: BorderRadius.circular(8.0),
-                            ),
-                            focusedErrorBorder: UnderlineInputBorder(
-                              borderSide: BorderSide(
-                                color: FlutterFlowTheme.of(context).error,
-                                width: 2.0,
-                              ),
-                              borderRadius: BorderRadius.circular(8.0),
-                            ),
-                          ),
-                          style:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Poppins',
-                                    letterSpacing: 0.0,
+                    Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          if ((_model.titleFieldTextController.text != '') &&
+                              (addPostPageTeamsRecord.leagueValue != 'admin'))
+                            FFButtonWidget(
+                              onPressed: () async {
+                                var postsRecordReference =
+                                    PostsRecord.collection.doc();
+                                await postsRecordReference.set({
+                                  ...createPostsRecordData(
+                                    member: currentUserReference,
+                                    title: _model.titleFieldTextController.text,
+                                    description: _model
+                                        .descriptionFieldTextController.text,
+                                    image: _model.uploadedFileUrl,
+                                    leagueValue:
+                                        addPostPageTeamsRecord.leagueValue,
+                                    moderator: addPostPageTeamsRecord.adminUser,
+                                    teamRef: widget.teamRef,
+                                    esport: addPostPageTeamsRecord.esport,
+                                    sportValue:
+                                        addPostPageTeamsRecord.sportValue,
                                   ),
-                          textAlign: TextAlign.start,
-                          maxLines: null,
-                          validator: _model
-                              .descriptionFieldTextControllerValidator
-                              .asValidator(context),
-                        ),
+                                  ...mapToFirestore(
+                                    {
+                                      'created_time':
+                                          FieldValue.serverTimestamp(),
+                                    },
+                                  ),
+                                });
+                                _model.postRef =
+                                    PostsRecord.getDocumentFromData({
+                                  ...createPostsRecordData(
+                                    member: currentUserReference,
+                                    title: _model.titleFieldTextController.text,
+                                    description: _model
+                                        .descriptionFieldTextController.text,
+                                    image: _model.uploadedFileUrl,
+                                    leagueValue:
+                                        addPostPageTeamsRecord.leagueValue,
+                                    moderator: addPostPageTeamsRecord.adminUser,
+                                    teamRef: widget.teamRef,
+                                    esport: addPostPageTeamsRecord.esport,
+                                    sportValue:
+                                        addPostPageTeamsRecord.sportValue,
+                                  ),
+                                  ...mapToFirestore(
+                                    {
+                                      'created_time': DateTime.now(),
+                                    },
+                                  ),
+                                }, postsRecordReference);
+
+                                await MyPostsRecord.createDoc(
+                                        currentUserReference!)
+                                    .set({
+                                  ...createMyPostsRecordData(
+                                    posts: _model.postRef?.reference,
+                                    esport: addPostPageTeamsRecord.esport,
+                                  ),
+                                  ...mapToFirestore(
+                                    {
+                                      'date_time': FieldValue.serverTimestamp(),
+                                    },
+                                  ),
+                                });
+
+                                await TeamPostsRecord.createDoc(
+                                        widget.teamRef!)
+                                    .set({
+                                  ...createTeamPostsRecordData(
+                                    posts: _model.postRef?.reference,
+                                  ),
+                                  ...mapToFirestore(
+                                    {
+                                      'created_time':
+                                          FieldValue.serverTimestamp(),
+                                    },
+                                  ),
+                                });
+
+                                context.pushNamed(
+                                  'ListPostsTeam',
+                                  queryParameters: {
+                                    'teamRef': serializeParam(
+                                      widget.teamRef,
+                                      ParamType.DocumentReference,
+                                    ),
+                                  }.withoutNulls,
+                                  extra: <String, dynamic>{
+                                    kTransitionInfoKey: const TransitionInfo(
+                                      hasTransition: true,
+                                      transitionType: PageTransitionType.scale,
+                                      alignment: Alignment.bottomCenter,
+                                      duration: Duration(milliseconds: 600),
+                                    ),
+                                  },
+                                );
+
+                                safeSetState(() {});
+                              },
+                              text: 'Valider',
+                              options: FFButtonOptions(
+                                height: 30.0,
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    25.0, 0.0, 25.0, 0.0),
+                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 0.0),
+                                color: FlutterFlowTheme.of(context).success,
+                                textStyle: FlutterFlowTheme.of(context)
+                                    .labelMedium
+                                    .override(
+                                      fontFamily: 'Poppins',
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryBackground,
+                                      letterSpacing: 0.0,
+                                    ),
+                                elevation: 3.0,
+                                borderSide: const BorderSide(
+                                  color: Colors.transparent,
+                                  width: 1.0,
+                                ),
+                                borderRadius: BorderRadius.circular(40.0),
+                                hoverColor:
+                                    FlutterFlowTheme.of(context).success,
+                              ),
+                            ),
+                          if ((_model.titleFieldTextController.text != '') &&
+                              (addPostPageTeamsRecord.leagueValue == 'admin'))
+                            FFButtonWidget(
+                              onPressed: () async {
+                                var postsRecordReference =
+                                    PostsRecord.collection.doc();
+                                await postsRecordReference.set({
+                                  ...createPostsRecordData(
+                                    member: currentUserReference,
+                                    title: _model.titleFieldTextController.text,
+                                    description: _model
+                                        .descriptionFieldTextController.text,
+                                    image: _model.uploadedFileUrl,
+                                    leagueValue:
+                                        addPostPageTeamsRecord.leagueValue,
+                                    moderator: addPostPageTeamsRecord.adminUser,
+                                    teamRef: widget.teamRef,
+                                    esport: addPostPageTeamsRecord.esport,
+                                    sportValue:
+                                        addPostPageTeamsRecord.sportValue,
+                                  ),
+                                  ...mapToFirestore(
+                                    {
+                                      'created_time':
+                                          FieldValue.serverTimestamp(),
+                                    },
+                                  ),
+                                });
+                                _model.adminPostRef =
+                                    PostsRecord.getDocumentFromData({
+                                  ...createPostsRecordData(
+                                    member: currentUserReference,
+                                    title: _model.titleFieldTextController.text,
+                                    description: _model
+                                        .descriptionFieldTextController.text,
+                                    image: _model.uploadedFileUrl,
+                                    leagueValue:
+                                        addPostPageTeamsRecord.leagueValue,
+                                    moderator: addPostPageTeamsRecord.adminUser,
+                                    teamRef: widget.teamRef,
+                                    esport: addPostPageTeamsRecord.esport,
+                                    sportValue:
+                                        addPostPageTeamsRecord.sportValue,
+                                  ),
+                                  ...mapToFirestore(
+                                    {
+                                      'created_time': DateTime.now(),
+                                    },
+                                  ),
+                                }, postsRecordReference);
+
+                                await TeamPostsRecord.createDoc(
+                                        widget.teamRef!)
+                                    .set({
+                                  ...createTeamPostsRecordData(
+                                    posts: _model.adminPostRef?.reference,
+                                    survey: false,
+                                  ),
+                                  ...mapToFirestore(
+                                    {
+                                      'created_time':
+                                          FieldValue.serverTimestamp(),
+                                    },
+                                  ),
+                                });
+
+                                await MyPostsRecord.createDoc(
+                                        currentUserReference!)
+                                    .set({
+                                  ...createMyPostsRecordData(
+                                    posts: _model.postRef?.reference,
+                                    esport: false,
+                                  ),
+                                  ...mapToFirestore(
+                                    {
+                                      'date_time': FieldValue.serverTimestamp(),
+                                    },
+                                  ),
+                                });
+
+                                context.pushNamed(
+                                  'ListAdvices',
+                                  queryParameters: {
+                                    'teamRef': serializeParam(
+                                      widget.teamRef,
+                                      ParamType.DocumentReference,
+                                    ),
+                                  }.withoutNulls,
+                                  extra: <String, dynamic>{
+                                    kTransitionInfoKey: const TransitionInfo(
+                                      hasTransition: true,
+                                      transitionType: PageTransitionType.scale,
+                                      alignment: Alignment.bottomCenter,
+                                      duration: Duration(milliseconds: 600),
+                                    ),
+                                  },
+                                );
+
+                                safeSetState(() {});
+                              },
+                              text: 'Valider',
+                              options: FFButtonOptions(
+                                height: 30.0,
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    25.0, 0.0, 25.0, 0.0),
+                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 0.0),
+                                color: FlutterFlowTheme.of(context).success,
+                                textStyle: FlutterFlowTheme.of(context)
+                                    .labelMedium
+                                    .override(
+                                      fontFamily: 'Poppins',
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryBackground,
+                                      letterSpacing: 0.0,
+                                    ),
+                                elevation: 3.0,
+                                borderSide: const BorderSide(
+                                  color: Colors.transparent,
+                                  width: 1.0,
+                                ),
+                                borderRadius: BorderRadius.circular(40.0),
+                                hoverColor:
+                                    FlutterFlowTheme.of(context).success,
+                              ),
+                            ),
+                        ],
                       ),
-                    ),
-                    Row(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        if ((_model.titleFieldTextController.text != '') &&
-                            (addPostPageTeamsRecord.leagueValue != 'admin'))
-                          FFButtonWidget(
-                            onPressed: () async {
-                              var postsRecordReference =
-                                  PostsRecord.collection.doc();
-                              await postsRecordReference.set({
-                                ...createPostsRecordData(
-                                  member: currentUserReference,
-                                  title: _model.titleFieldTextController.text,
-                                  description: _model
-                                      .descriptionFieldTextController.text,
-                                  image: _model.uploadedFileUrl,
-                                  leagueValue:
-                                      addPostPageTeamsRecord.leagueValue,
-                                  moderator: addPostPageTeamsRecord.adminUser,
-                                  teamRef: widget.teamRef,
-                                  esport: addPostPageTeamsRecord.esport,
-                                  sportValue: addPostPageTeamsRecord.sportValue,
-                                ),
-                                ...mapToFirestore(
-                                  {
-                                    'created_time':
-                                        FieldValue.serverTimestamp(),
-                                  },
-                                ),
-                              });
-                              _model.postRef = PostsRecord.getDocumentFromData({
-                                ...createPostsRecordData(
-                                  member: currentUserReference,
-                                  title: _model.titleFieldTextController.text,
-                                  description: _model
-                                      .descriptionFieldTextController.text,
-                                  image: _model.uploadedFileUrl,
-                                  leagueValue:
-                                      addPostPageTeamsRecord.leagueValue,
-                                  moderator: addPostPageTeamsRecord.adminUser,
-                                  teamRef: widget.teamRef,
-                                  esport: addPostPageTeamsRecord.esport,
-                                  sportValue: addPostPageTeamsRecord.sportValue,
-                                ),
-                                ...mapToFirestore(
-                                  {
-                                    'created_time': DateTime.now(),
-                                  },
-                                ),
-                              }, postsRecordReference);
-
-                              await MyPostsRecord.createDoc(
-                                      currentUserReference!)
-                                  .set({
-                                ...createMyPostsRecordData(
-                                  posts: _model.postRef?.reference,
-                                  esport: addPostPageTeamsRecord.esport,
-                                ),
-                                ...mapToFirestore(
-                                  {
-                                    'date_time': FieldValue.serverTimestamp(),
-                                  },
-                                ),
-                              });
-
-                              await TeamPostsRecord.createDoc(widget.teamRef!)
-                                  .set({
-                                ...createTeamPostsRecordData(
-                                  posts: _model.postRef?.reference,
-                                ),
-                                ...mapToFirestore(
-                                  {
-                                    'created_time':
-                                        FieldValue.serverTimestamp(),
-                                  },
-                                ),
-                              });
-
-                              context.pushNamed(
-                                'ListPostsTeam',
-                                queryParameters: {
-                                  'teamRef': serializeParam(
-                                    widget.teamRef,
-                                    ParamType.DocumentReference,
-                                  ),
-                                }.withoutNulls,
-                                extra: <String, dynamic>{
-                                  kTransitionInfoKey: const TransitionInfo(
-                                    hasTransition: true,
-                                    transitionType: PageTransitionType.scale,
-                                    alignment: Alignment.bottomCenter,
-                                    duration: Duration(milliseconds: 600),
-                                  ),
-                                },
-                              );
-
-                              safeSetState(() {});
-                            },
-                            text: 'Valider',
-                            options: FFButtonOptions(
-                              height: 30.0,
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  25.0, 0.0, 25.0, 0.0),
-                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 0.0, 0.0),
-                              color: FlutterFlowTheme.of(context).success,
-                              textStyle: FlutterFlowTheme.of(context)
-                                  .labelMedium
-                                  .override(
-                                    fontFamily: 'Poppins',
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryBackground,
-                                    letterSpacing: 0.0,
-                                  ),
-                              elevation: 3.0,
-                              borderSide: const BorderSide(
-                                color: Colors.transparent,
-                                width: 1.0,
-                              ),
-                              borderRadius: BorderRadius.circular(40.0),
-                              hoverColor: FlutterFlowTheme.of(context).success,
-                            ),
-                          ),
-                        if ((_model.titleFieldTextController.text != '') &&
-                            (addPostPageTeamsRecord.leagueValue == 'admin'))
-                          FFButtonWidget(
-                            onPressed: () async {
-                              var postsRecordReference =
-                                  PostsRecord.collection.doc();
-                              await postsRecordReference.set({
-                                ...createPostsRecordData(
-                                  member: currentUserReference,
-                                  title: _model.titleFieldTextController.text,
-                                  description: _model
-                                      .descriptionFieldTextController.text,
-                                  image: _model.uploadedFileUrl,
-                                  leagueValue:
-                                      addPostPageTeamsRecord.leagueValue,
-                                  moderator: addPostPageTeamsRecord.adminUser,
-                                  teamRef: widget.teamRef,
-                                  esport: addPostPageTeamsRecord.esport,
-                                  sportValue: addPostPageTeamsRecord.sportValue,
-                                ),
-                                ...mapToFirestore(
-                                  {
-                                    'created_time':
-                                        FieldValue.serverTimestamp(),
-                                  },
-                                ),
-                              });
-                              _model.adminPostRef =
-                                  PostsRecord.getDocumentFromData({
-                                ...createPostsRecordData(
-                                  member: currentUserReference,
-                                  title: _model.titleFieldTextController.text,
-                                  description: _model
-                                      .descriptionFieldTextController.text,
-                                  image: _model.uploadedFileUrl,
-                                  leagueValue:
-                                      addPostPageTeamsRecord.leagueValue,
-                                  moderator: addPostPageTeamsRecord.adminUser,
-                                  teamRef: widget.teamRef,
-                                  esport: addPostPageTeamsRecord.esport,
-                                  sportValue: addPostPageTeamsRecord.sportValue,
-                                ),
-                                ...mapToFirestore(
-                                  {
-                                    'created_time': DateTime.now(),
-                                  },
-                                ),
-                              }, postsRecordReference);
-
-                              await TeamPostsRecord.createDoc(widget.teamRef!)
-                                  .set({
-                                ...createTeamPostsRecordData(
-                                  posts: _model.adminPostRef?.reference,
-                                  survey: false,
-                                ),
-                                ...mapToFirestore(
-                                  {
-                                    'created_time':
-                                        FieldValue.serverTimestamp(),
-                                  },
-                                ),
-                              });
-
-                              context.pushNamed(
-                                'ListAdvices',
-                                queryParameters: {
-                                  'teamRef': serializeParam(
-                                    widget.teamRef,
-                                    ParamType.DocumentReference,
-                                  ),
-                                }.withoutNulls,
-                                extra: <String, dynamic>{
-                                  kTransitionInfoKey: const TransitionInfo(
-                                    hasTransition: true,
-                                    transitionType: PageTransitionType.scale,
-                                    alignment: Alignment.bottomCenter,
-                                    duration: Duration(milliseconds: 600),
-                                  ),
-                                },
-                              );
-
-                              safeSetState(() {});
-                            },
-                            text: 'Valider',
-                            options: FFButtonOptions(
-                              height: 30.0,
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  25.0, 0.0, 25.0, 0.0),
-                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 0.0, 0.0),
-                              color: FlutterFlowTheme.of(context).success,
-                              textStyle: FlutterFlowTheme.of(context)
-                                  .labelMedium
-                                  .override(
-                                    fontFamily: 'Poppins',
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryBackground,
-                                    letterSpacing: 0.0,
-                                  ),
-                              elevation: 3.0,
-                              borderSide: const BorderSide(
-                                color: Colors.transparent,
-                                width: 1.0,
-                              ),
-                              borderRadius: BorderRadius.circular(40.0),
-                              hoverColor: FlutterFlowTheme.of(context).success,
-                            ),
-                          ),
-                      ],
                     ),
                   ],
                 ),

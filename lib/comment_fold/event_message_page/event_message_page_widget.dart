@@ -1,6 +1,7 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/firebase_storage/storage.dart';
+import '/backend/push_notifications/push_notifications_util.dart';
 import '/flutter_flow/flutter_flow_audio_player.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -1197,6 +1198,20 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                                   },
                                                 ),
                                               }, eventMessagesRecordReference);
+                                              triggerPushNotification(
+                                                notificationTitle:
+                                                    currentUserDisplayName,
+                                                notificationText:
+                                                    'A commenté votre commentaire :',
+                                                notificationImageUrl:
+                                                    currentUserPhoto,
+                                                userRefs: [
+                                                  eventMessagePageEventMessagesRecord
+                                                      .commUser!
+                                                ],
+                                                initialPageName: 'MyNotifsList',
+                                                parameterData: {},
+                                              );
 
                                               await widget.startedCommRef!
                                                   .update({
@@ -1591,6 +1606,20 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                                   },
                                                 ),
                                               }, eventMessagesRecordReference);
+                                              triggerPushNotification(
+                                                notificationTitle:
+                                                    currentUserDisplayName,
+                                                notificationText:
+                                                    'A commenté votre commentaire :',
+                                                notificationImageUrl:
+                                                    currentUserPhoto,
+                                                userRefs: [
+                                                  eventMessagePageEventMessagesRecord
+                                                      .commUser!
+                                                ],
+                                                initialPageName: 'MyNotifsList',
+                                                parameterData: {},
+                                              );
 
                                               await widget.startedCommRef!
                                                   .update({

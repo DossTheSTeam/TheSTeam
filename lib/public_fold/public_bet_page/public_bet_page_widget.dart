@@ -697,7 +697,7 @@ class _PublicBetPageWidgetState extends State<PublicBetPageWidget> {
                                                               .decimal,
                                                           decimalType:
                                                               DecimalType
-                                                                  .automatic,
+                                                                  .periodDecimal,
                                                         ),
                                                         style:
                                                             FlutterFlowTheme.of(
@@ -1171,7 +1171,7 @@ class _PublicBetPageWidgetState extends State<PublicBetPageWidget> {
                                                                     .decimal,
                                                             decimalType:
                                                                 DecimalType
-                                                                    .automatic,
+                                                                    .periodDecimal,
                                                           ),
                                                           style: FlutterFlowTheme
                                                                   .of(context)
@@ -1645,7 +1645,7 @@ class _PublicBetPageWidgetState extends State<PublicBetPageWidget> {
                                                                     .decimal,
                                                             decimalType:
                                                                 DecimalType
-                                                                    .automatic,
+                                                                    .periodDecimal,
                                                           ),
                                                           style: FlutterFlowTheme
                                                                   .of(context)

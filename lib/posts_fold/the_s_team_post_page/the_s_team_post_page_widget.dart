@@ -172,29 +172,146 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                           letterSpacing: 0.0,
                                         ),
                                   ),
-                                  if (valueOrDefault(
-                                          currentUserDocument?.stsocialapp,
-                                          '') ==
-                                      'administrateur')
-                                    AuthUserStreamWidget(
-                                      builder: (context) => InkWell(
-                                        splashColor: Colors.transparent,
-                                        focusColor: Colors.transparent,
-                                        hoverColor: Colors.transparent,
-                                        highlightColor: Colors.transparent,
-                                        onTap: () async {
-                                          await widget.postRef!.delete();
-
-                                          context.pushNamed('MenuPage');
-                                        },
-                                        child: Icon(
-                                          Icons.delete_forever,
-                                          color: FlutterFlowTheme.of(context)
-                                              .error,
-                                          size: 25.0,
-                                        ),
+                                  StreamBuilder<List<MyPostsRecord>>(
+                                    stream: queryMyPostsRecord(
+                                      parent:
+                                          theSTeamPostPagePostsRecord.member,
+                                      queryBuilder: (myPostsRecord) =>
+                                          myPostsRecord.where(
+                                        'posts',
+                                        isEqualTo: widget.postRef,
                                       ),
+                                      singleRecord: true,
                                     ),
+                                    builder: (context, snapshot) {
+                                      // Customize what your widget looks like when it's loading.
+                                      if (!snapshot.hasData) {
+                                        return Center(
+                                          child: SizedBox(
+                                            width: 50.0,
+                                            height: 50.0,
+                                            child: CircularProgressIndicator(
+                                              valueColor:
+                                                  AlwaysStoppedAnimation<Color>(
+                                                FlutterFlowTheme.of(context)
+                                                    .accent4,
+                                              ),
+                                            ),
+                                          ),
+                                        );
+                                      }
+                                      List<MyPostsRecord> rowMyPostsRecordList =
+                                          snapshot.data!;
+                                      // Return an empty Container when the item does not exist.
+                                      if (snapshot.data!.isEmpty) {
+                                        return Container();
+                                      }
+                                      final rowMyPostsRecord =
+                                          rowMyPostsRecordList.isNotEmpty
+                                              ? rowMyPostsRecordList.first
+                                              : null;
+
+                                      return Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          StreamBuilder<List<TeamPostsRecord>>(
+                                            stream: queryTeamPostsRecord(
+                                              parent:
+                                                  theSTeamPostPagePostsRecord
+                                                      .teamRef,
+                                              queryBuilder: (teamPostsRecord) =>
+                                                  teamPostsRecord.where(
+                                                'posts',
+                                                isEqualTo: widget.postRef,
+                                              ),
+                                              singleRecord: true,
+                                            ),
+                                            builder: (context, snapshot) {
+                                              // Customize what your widget looks like when it's loading.
+                                              if (!snapshot.hasData) {
+                                                return Center(
+                                                  child: SizedBox(
+                                                    width: 50.0,
+                                                    height: 50.0,
+                                                    child:
+                                                        CircularProgressIndicator(
+                                                      valueColor:
+                                                          AlwaysStoppedAnimation<
+                                                              Color>(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .accent4,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                );
+                                              }
+                                              List<TeamPostsRecord>
+                                                  rowTeamPostsRecordList =
+                                                  snapshot.data!;
+                                              // Return an empty Container when the item does not exist.
+                                              if (snapshot.data!.isEmpty) {
+                                                return Container();
+                                              }
+                                              final rowTeamPostsRecord =
+                                                  rowTeamPostsRecordList
+                                                          .isNotEmpty
+                                                      ? rowTeamPostsRecordList
+                                                          .first
+                                                      : null;
+
+                                              return Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                children: [
+                                                  if ((valueOrDefault(
+                                                              currentUserDocument
+                                                                  ?.stsocialapp,
+                                                              '') ==
+                                                          'administrateur') &&
+                                                      (theSTeamPostPagePostsRecord
+                                                              .member ==
+                                                          currentUserReference))
+                                                    AuthUserStreamWidget(
+                                                      builder: (context) =>
+                                                          InkWell(
+                                                        splashColor:
+                                                            Colors.transparent,
+                                                        focusColor:
+                                                            Colors.transparent,
+                                                        hoverColor:
+                                                            Colors.transparent,
+                                                        highlightColor:
+                                                            Colors.transparent,
+                                                        onTap: () async {
+                                                          await widget.postRef!
+                                                              .delete();
+                                                          await rowTeamPostsRecord!
+                                                              .reference
+                                                              .delete();
+                                                          await rowMyPostsRecord!
+                                                              .reference
+                                                              .delete();
+
+                                                          context.pushNamed(
+                                                              'MenuPage');
+                                                        },
+                                                        child: Icon(
+                                                          Icons.delete_forever,
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .error,
+                                                          size: 25.0,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                ],
+                                              );
+                                            },
+                                          ),
+                                        ],
+                                      );
+                                    },
+                                  ),
                                 ],
                               ),
                               if (theSTeamPostPagePostsRecord.title != '')

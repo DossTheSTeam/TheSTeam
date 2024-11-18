@@ -1,5 +1,6 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
+import '/backend/push_notifications/push_notifications_util.dart';
 import '/flutter_flow/flutter_flow_calendar.dart';
 import '/flutter_flow/flutter_flow_count_controller.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -717,6 +718,27 @@ class _AddDateForEEventWidgetState extends State<AddDateForEEventWidget> {
                                             minute: _model.countMinuteValue,
                                             dateDom: true,
                                           ));
+                                          triggerPushNotification(
+                                            notificationTitle:
+                                                currentUserDisplayName,
+                                            notificationText:
+                                                'Date et horaire de la rencontre configurés.',
+                                            notificationImageUrl:
+                                                currentUserPhoto,
+                                            notificationSound: 'default',
+                                            userRefs: [
+                                              addDateForEEventEventsRecord
+                                                  .bossExt!
+                                            ],
+                                            initialPageName:
+                                                'ListMessagesBossEvent',
+                                            parameterData: {
+                                              'eventRef': widget.eventRef,
+                                              'eTeamRef':
+                                                  addDateForEEventEventsRecord
+                                                      .teamextRef,
+                                            },
+                                          );
                                           await buttonTeamEventsRecord!
                                               .reference
                                               .delete();
@@ -821,6 +843,27 @@ class _AddDateForEEventWidgetState extends State<AddDateForEEventWidget> {
                                             minute: _model.countMinuteValue,
                                             dateExt: true,
                                           ));
+                                          triggerPushNotification(
+                                            notificationTitle:
+                                                currentUserDisplayName,
+                                            notificationText:
+                                                'Date et horaire de la rencontre configurés.',
+                                            notificationImageUrl:
+                                                currentUserPhoto,
+                                            notificationSound: 'default',
+                                            userRefs: [
+                                              addDateForEEventEventsRecord
+                                                  .bossDom!
+                                            ],
+                                            initialPageName:
+                                                'ListMessagesBossEvent',
+                                            parameterData: {
+                                              'eventRef': widget.eventRef,
+                                              'eTeamRef':
+                                                  addDateForEEventEventsRecord
+                                                      .teamdomRef,
+                                            },
+                                          );
                                           await buttonTeamEventsRecord!
                                               .reference
                                               .delete();
