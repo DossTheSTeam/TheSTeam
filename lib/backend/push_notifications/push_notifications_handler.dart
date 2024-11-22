@@ -503,6 +503,7 @@ final parametersBuilderMap =
           'eTeamRef': getParameter<DocumentReference>(data, 'eTeamRef'),
         },
       ),
+  'TeamListCup': ParameterData.none(),
 };
 
 Map<String, dynamic> getInitialParameterData(Map<String, dynamic> data) {

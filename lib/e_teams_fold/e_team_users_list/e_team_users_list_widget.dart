@@ -67,188 +67,190 @@ class _ETeamUsersListWidgetState extends State<ETeamUsersListWidget> {
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             body: Align(
-              alignment: const AlignmentDirectional(0.0, 0.0),
+              alignment: const AlignmentDirectional(0.0, -1.0),
               child: Padding(
                 padding: const EdgeInsets.all(10.0),
-                child: Column(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Row(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              InkWell(
-                                splashColor: Colors.transparent,
-                                focusColor: Colors.transparent,
-                                hoverColor: Colors.transparent,
-                                highlightColor: Colors.transparent,
-                                onTap: () async {
-                                  context.pushNamed(
-                                    'ModifETeamPage',
-                                    queryParameters: {
-                                      'teamRef': serializeParam(
-                                        widget.teamRef,
-                                        ParamType.DocumentReference,
-                                      ),
-                                    }.withoutNulls,
-                                    extra: <String, dynamic>{
-                                      kTransitionInfoKey: const TransitionInfo(
-                                        hasTransition: true,
-                                        transitionType:
-                                            PageTransitionType.leftToRight,
-                                        duration: Duration(milliseconds: 400),
-                                      ),
-                                    },
-                                  );
-                                },
-                                child: Icon(
-                                  Icons.menu_rounded,
-                                  color:
-                                      FlutterFlowTheme.of(context).primaryText,
-                                  size: 30.0,
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    10.0, 0.0, 0.0, 0.0),
-                                child: InkWell(
-                                  splashColor: Colors.transparent,
-                                  focusColor: Colors.transparent,
-                                  hoverColor: Colors.transparent,
-                                  highlightColor: Colors.transparent,
-                                  onTap: () async {
-                                    context.safePop();
-                                  },
-                                  child: Icon(
-                                    Icons.arrow_back_ios_new_rounded,
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryText,
-                                    size: 30.0,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                10.0, 0.0, 10.0, 10.0),
-                            child: Row(
+                child: SingleChildScrollView(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Padding(
+                        padding:
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Row(
                               mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.start,
                               children: [
-                                Container(
-                                  width: 55.0,
-                                  height: 40.0,
-                                  decoration: BoxDecoration(
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryBackground,
-                                  ),
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(0.0),
-                                    child: Image.network(
-                                      eTeamUsersListTeamsRecord.logo,
-                                      width: 300.0,
-                                      height: 200.0,
-                                      fit: BoxFit.scaleDown,
-                                    ),
-                                  ),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      10.0, 0.0, 0.0, 0.0),
-                                  child: Text(
-                                    eTeamUsersListTeamsRecord.name,
-                                    style: FlutterFlowTheme.of(context)
-                                        .labelMedium
-                                        .override(
-                                          fontFamily: 'Poppins',
-                                          letterSpacing: 0.0,
-                                        ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    if (true /* Warning: Trying to access variable not yet defined. */)
-                      FutureBuilder<List<MyNotificationsRecord>>(
-                        future: queryMyNotificationsRecordOnce(
-                          parent: currentUserReference,
-                          singleRecord: true,
-                        ),
-                        builder: (context, snapshot) {
-                          // Customize what your widget looks like when it's loading.
-                          if (!snapshot.hasData) {
-                            return Center(
-                              child: SizedBox(
-                                width: 50.0,
-                                height: 50.0,
-                                child: CircularProgressIndicator(
-                                  valueColor: AlwaysStoppedAnimation<Color>(
-                                    FlutterFlowTheme.of(context).accent4,
-                                  ),
-                                ),
-                              ),
-                            );
-                          }
-                          List<MyNotificationsRecord>
-                              rowNotifsMyNotificationsRecordList =
-                              snapshot.data!;
-                          // Return an empty Container when the item does not exist.
-                          if (snapshot.data!.isEmpty) {
-                            return Container();
-                          }
-                          final rowNotifsMyNotificationsRecord =
-                              rowNotifsMyNotificationsRecordList.isNotEmpty
-                                  ? rowNotifsMyNotificationsRecordList.first
-                                  : null;
-
-                          return Row(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    10.0, 0.0, 10.0, 0.0),
-                                child: InkWell(
+                                InkWell(
                                   splashColor: Colors.transparent,
                                   focusColor: Colors.transparent,
                                   hoverColor: Colors.transparent,
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
                                     context.pushNamed(
-                                      'MyNotifsList',
+                                      'ModifETeamPage',
+                                      queryParameters: {
+                                        'teamRef': serializeParam(
+                                          widget.teamRef,
+                                          ParamType.DocumentReference,
+                                        ),
+                                      }.withoutNulls,
                                       extra: <String, dynamic>{
                                         kTransitionInfoKey: const TransitionInfo(
                                           hasTransition: true,
                                           transitionType:
-                                              PageTransitionType.rightToLeft,
+                                              PageTransitionType.leftToRight,
                                           duration: Duration(milliseconds: 400),
                                         ),
                                       },
                                     );
                                   },
                                   child: Icon(
-                                    Icons.notifications_active_outlined,
-                                    color: FlutterFlowTheme.of(context).accent3,
-                                    size: 40.0,
+                                    Icons.menu_rounded,
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryText,
+                                    size: 30.0,
                                   ),
                                 ),
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      10.0, 0.0, 0.0, 0.0),
+                                  child: InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      context.safePop();
+                                    },
+                                    child: Icon(
+                                      Icons.arrow_back_ios_new_rounded,
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryText,
+                                      size: 30.0,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  10.0, 0.0, 10.0, 10.0),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  Container(
+                                    width: 55.0,
+                                    height: 40.0,
+                                    decoration: BoxDecoration(
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryBackground,
+                                    ),
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(0.0),
+                                      child: Image.network(
+                                        eTeamUsersListTeamsRecord.logo,
+                                        width: 300.0,
+                                        height: 200.0,
+                                        fit: BoxFit.scaleDown,
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        10.0, 0.0, 0.0, 0.0),
+                                    child: Text(
+                                      eTeamUsersListTeamsRecord.name,
+                                      style: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            letterSpacing: 0.0,
+                                          ),
+                                    ),
+                                  ),
+                                ],
                               ),
-                            ],
-                          );
-                        },
+                            ),
+                          ],
+                        ),
                       ),
-                    SingleChildScrollView(
-                      child: Column(
+                      if (true /* Warning: Trying to access variable not yet defined. */)
+                        FutureBuilder<List<MyNotificationsRecord>>(
+                          future: queryMyNotificationsRecordOnce(
+                            parent: currentUserReference,
+                            singleRecord: true,
+                          ),
+                          builder: (context, snapshot) {
+                            // Customize what your widget looks like when it's loading.
+                            if (!snapshot.hasData) {
+                              return Center(
+                                child: SizedBox(
+                                  width: 50.0,
+                                  height: 50.0,
+                                  child: CircularProgressIndicator(
+                                    valueColor: AlwaysStoppedAnimation<Color>(
+                                      FlutterFlowTheme.of(context).accent4,
+                                    ),
+                                  ),
+                                ),
+                              );
+                            }
+                            List<MyNotificationsRecord>
+                                rowNotifsMyNotificationsRecordList =
+                                snapshot.data!;
+                            // Return an empty Container when the item does not exist.
+                            if (snapshot.data!.isEmpty) {
+                              return Container();
+                            }
+                            final rowNotifsMyNotificationsRecord =
+                                rowNotifsMyNotificationsRecordList.isNotEmpty
+                                    ? rowNotifsMyNotificationsRecordList.first
+                                    : null;
+
+                            return Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      10.0, 0.0, 10.0, 0.0),
+                                  child: InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      context.pushNamed(
+                                        'MyNotifsList',
+                                        extra: <String, dynamic>{
+                                          kTransitionInfoKey: const TransitionInfo(
+                                            hasTransition: true,
+                                            transitionType:
+                                                PageTransitionType.rightToLeft,
+                                            duration:
+                                                Duration(milliseconds: 400),
+                                          ),
+                                        },
+                                      );
+                                    },
+                                    child: Icon(
+                                      Icons.notifications_active_outlined,
+                                      color:
+                                          FlutterFlowTheme.of(context).accent3,
+                                      size: 40.0,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            );
+                          },
+                        ),
+                      Column(
                         mainAxisSize: MainAxisSize.max,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -1254,8 +1256,8 @@ class _ETeamUsersListWidgetState extends State<ETeamUsersListWidget> {
                           ),
                         ],
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ),

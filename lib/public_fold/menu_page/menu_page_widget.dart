@@ -47,7 +47,7 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
           child: Stack(
             children: [
               Align(
-                alignment: const AlignmentDirectional(0.0, 0.0),
+                alignment: const AlignmentDirectional(0.0, -1.0),
                 child: Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: SingleChildScrollView(

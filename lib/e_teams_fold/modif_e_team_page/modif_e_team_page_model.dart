@@ -5,6 +5,10 @@ import 'package:flutter/material.dart';
 class ModifETeamPageModel extends FlutterFlowModel<ModifETeamPageWidget> {
   ///  State fields for stateful widgets in this page.
 
+  // State field(s) for CommField widget.
+  FocusNode? commFieldFocusNode;
+  TextEditingController? commFieldTextController;
+  String? Function(BuildContext, String?)? commFieldTextControllerValidator;
   bool isDataUploading = false;
   FFUploadedFile uploadedLocalFile =
       FFUploadedFile(bytes: Uint8List.fromList([]));
@@ -14,5 +18,8 @@ class ModifETeamPageModel extends FlutterFlowModel<ModifETeamPageWidget> {
   void initState(BuildContext context) {}
 
   @override
-  void dispose() {}
+  void dispose() {
+    commFieldFocusNode?.dispose();
+    commFieldTextController?.dispose();
+  }
 }

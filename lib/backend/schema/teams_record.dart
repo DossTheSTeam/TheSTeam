@@ -136,6 +136,11 @@ class TeamsRecord extends FirestoreRecord {
   String get additionalLeague => _additionalLeague ?? '';
   bool hasAdditionalLeague() => _additionalLeague != null;
 
+  // "bio" field.
+  String? _bio;
+  String get bio => _bio ?? '';
+  bool hasBio() => _bio != null;
+
   void _initializeFields() {
     _name = snapshotData['name'] as String?;
     _value = snapshotData['value'] as String?;
@@ -161,6 +166,7 @@ class TeamsRecord extends FirestoreRecord {
     _redCards = castToType<int>(snapshotData['red_cards']);
     _guest = snapshotData['guest'] as bool?;
     _additionalLeague = snapshotData['additional_league'] as String?;
+    _bio = snapshotData['bio'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -218,6 +224,7 @@ Map<String, dynamic> createTeamsRecordData({
   int? redCards,
   bool? guest,
   String? additionalLeague,
+  String? bio,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -242,6 +249,7 @@ Map<String, dynamic> createTeamsRecordData({
       'red_cards': redCards,
       'guest': guest,
       'additional_league': additionalLeague,
+      'bio': bio,
     }.withoutNulls,
   );
 
@@ -277,7 +285,8 @@ class TeamsRecordDocumentEquality implements Equality<TeamsRecord> {
         e1?.createdTime == e2?.createdTime &&
         e1?.redCards == e2?.redCards &&
         e1?.guest == e2?.guest &&
-        e1?.additionalLeague == e2?.additionalLeague;
+        e1?.additionalLeague == e2?.additionalLeague &&
+        e1?.bio == e2?.bio;
   }
 
   @override
@@ -305,7 +314,8 @@ class TeamsRecordDocumentEquality implements Equality<TeamsRecord> {
         e?.createdTime,
         e?.redCards,
         e?.guest,
-        e?.additionalLeague
+        e?.additionalLeague,
+        e?.bio
       ]);
 
   @override

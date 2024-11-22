@@ -67,113 +67,113 @@ class _TeamUsersListWidgetState extends State<TeamUsersListWidget> {
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             body: Align(
-              alignment: const AlignmentDirectional(0.0, 0.0),
+              alignment: const AlignmentDirectional(0.0, -1.0),
               child: Padding(
                 padding: const EdgeInsets.all(10.0),
-                child: Column(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Row(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              InkWell(
-                                splashColor: Colors.transparent,
-                                focusColor: Colors.transparent,
-                                hoverColor: Colors.transparent,
-                                highlightColor: Colors.transparent,
-                                onTap: () async {
-                                  context.pushNamed(
-                                    'MenuPage',
-                                    extra: <String, dynamic>{
-                                      kTransitionInfoKey: const TransitionInfo(
-                                        hasTransition: true,
-                                        transitionType:
-                                            PageTransitionType.leftToRight,
-                                        duration: Duration(milliseconds: 400),
-                                      ),
-                                    },
-                                  );
-                                },
-                                child: Icon(
-                                  Icons.menu_rounded,
-                                  color:
-                                      FlutterFlowTheme.of(context).primaryText,
-                                  size: 30.0,
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    10.0, 0.0, 0.0, 0.0),
-                                child: InkWell(
+                child: SingleChildScrollView(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Padding(
+                        padding:
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                InkWell(
                                   splashColor: Colors.transparent,
                                   focusColor: Colors.transparent,
                                   hoverColor: Colors.transparent,
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
-                                    context.safePop();
+                                    context.pushNamed(
+                                      'MenuPage',
+                                      extra: <String, dynamic>{
+                                        kTransitionInfoKey: const TransitionInfo(
+                                          hasTransition: true,
+                                          transitionType:
+                                              PageTransitionType.leftToRight,
+                                          duration: Duration(milliseconds: 400),
+                                        ),
+                                      },
+                                    );
                                   },
                                   child: Icon(
-                                    Icons.arrow_back_ios_new_rounded,
+                                    Icons.menu_rounded,
                                     color: FlutterFlowTheme.of(context)
                                         .primaryText,
                                     size: 30.0,
                                   ),
                                 ),
-                              ),
-                            ],
-                          ),
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                10.0, 0.0, 10.0, 10.0),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                Container(
-                                  width: 55.0,
-                                  height: 40.0,
-                                  decoration: BoxDecoration(
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryBackground,
-                                  ),
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(0.0),
-                                    child: Image.network(
-                                      teamUsersListTeamsRecord.logo,
-                                      width: 300.0,
-                                      height: 200.0,
-                                      fit: BoxFit.scaleDown,
-                                    ),
-                                  ),
-                                ),
                                 Padding(
                                   padding: const EdgeInsetsDirectional.fromSTEB(
                                       10.0, 0.0, 0.0, 0.0),
-                                  child: Text(
-                                    teamUsersListTeamsRecord.name,
-                                    style: FlutterFlowTheme.of(context)
-                                        .labelMedium
-                                        .override(
-                                          fontFamily: 'Poppins',
-                                          letterSpacing: 0.0,
-                                        ),
+                                  child: InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      context.safePop();
+                                    },
+                                    child: Icon(
+                                      Icons.arrow_back_ios_new_rounded,
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryText,
+                                      size: 30.0,
+                                    ),
                                   ),
                                 ),
                               ],
                             ),
-                          ),
-                        ],
+                            Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  10.0, 0.0, 10.0, 10.0),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  Container(
+                                    width: 55.0,
+                                    height: 40.0,
+                                    decoration: BoxDecoration(
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryBackground,
+                                    ),
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(0.0),
+                                      child: Image.network(
+                                        teamUsersListTeamsRecord.logo,
+                                        width: 300.0,
+                                        height: 200.0,
+                                        fit: BoxFit.scaleDown,
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        10.0, 0.0, 0.0, 0.0),
+                                    child: Text(
+                                      teamUsersListTeamsRecord.name,
+                                      style: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            letterSpacing: 0.0,
+                                          ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
-                    ),
-                    SingleChildScrollView(
-                      child: Column(
+                      Column(
                         mainAxisSize: MainAxisSize.max,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -1047,8 +1047,8 @@ class _TeamUsersListWidgetState extends State<TeamUsersListWidget> {
                           ),
                         ],
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ),

@@ -75,460 +75,480 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             body: SafeArea(
               top: true,
-              child: Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: Column(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Row(
+              child: Align(
+                alignment: const AlignmentDirectional(0.0, -1.0),
+                child: Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: SingleChildScrollView(
+                    child: Column(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Row(
                           mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            InkWell(
-                              splashColor: Colors.transparent,
-                              focusColor: Colors.transparent,
-                              hoverColor: Colors.transparent,
-                              highlightColor: Colors.transparent,
-                              onTap: () async {
-                                context.pushNamed(
-                                  'MenuPage',
-                                  extra: <String, dynamic>{
-                                    kTransitionInfoKey: const TransitionInfo(
-                                      hasTransition: true,
-                                      transitionType:
-                                          PageTransitionType.leftToRight,
-                                      duration: Duration(milliseconds: 400),
-                                    ),
-                                  },
-                                );
-                              },
-                              child: Icon(
-                                Icons.menu_rounded,
-                                color: FlutterFlowTheme.of(context).primaryText,
-                                size: 30.0,
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  10.0, 0.0, 0.0, 0.0),
-                              child: InkWell(
-                                splashColor: Colors.transparent,
-                                focusColor: Colors.transparent,
-                                hoverColor: Colors.transparent,
-                                highlightColor: Colors.transparent,
-                                onTap: () async {
-                                  context.safePop();
-                                },
-                                child: Icon(
-                                  Icons.arrow_back_ios_new_rounded,
-                                  color:
-                                      FlutterFlowTheme.of(context).primaryText,
-                                  size: 30.0,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                        Container(
-                          width: 260.0,
-                          height: 50.0,
-                          decoration: BoxDecoration(
-                            color:
-                                FlutterFlowTheme.of(context).primaryBackground,
-                          ),
-                          child: Align(
-                            alignment: const AlignmentDirectional(0.0, 0.0),
-                            child: Text(
-                              valueOrDefault<String>(
-                                discusionETeamPageTeamsRecord.name,
-                                'NewTeam',
-                              ),
-                              textAlign: TextAlign.center,
-                              maxLines: 2,
-                              style: FlutterFlowTheme.of(context)
-                                  .titleSmall
-                                  .override(
-                                    fontFamily: 'Poppins',
-                                    letterSpacing: 0.0,
-                                  ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                    if (true /* Warning: Trying to access variable not yet defined. */)
-                      FutureBuilder<List<MyNotificationsRecord>>(
-                        future: queryMyNotificationsRecordOnce(
-                          parent: currentUserReference,
-                          singleRecord: true,
-                        ),
-                        builder: (context, snapshot) {
-                          // Customize what your widget looks like when it's loading.
-                          if (!snapshot.hasData) {
-                            return Center(
-                              child: SizedBox(
-                                width: 50.0,
-                                height: 50.0,
-                                child: CircularProgressIndicator(
-                                  valueColor: AlwaysStoppedAnimation<Color>(
-                                    FlutterFlowTheme.of(context).accent4,
-                                  ),
-                                ),
-                              ),
-                            );
-                          }
-                          List<MyNotificationsRecord>
-                              rowNotifsMyNotificationsRecordList =
-                              snapshot.data!;
-                          // Return an empty Container when the item does not exist.
-                          if (snapshot.data!.isEmpty) {
-                            return Container();
-                          }
-                          final rowNotifsMyNotificationsRecord =
-                              rowNotifsMyNotificationsRecordList.isNotEmpty
-                                  ? rowNotifsMyNotificationsRecordList.first
-                                  : null;
-
-                          return Row(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    10.0, 0.0, 10.0, 0.0),
-                                child: InkWell(
+                            Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                InkWell(
                                   splashColor: Colors.transparent,
                                   focusColor: Colors.transparent,
                                   hoverColor: Colors.transparent,
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
                                     context.pushNamed(
-                                      'MyNotifsList',
+                                      'MenuPage',
                                       extra: <String, dynamic>{
                                         kTransitionInfoKey: const TransitionInfo(
                                           hasTransition: true,
                                           transitionType:
-                                              PageTransitionType.rightToLeft,
+                                              PageTransitionType.leftToRight,
                                           duration: Duration(milliseconds: 400),
                                         ),
                                       },
                                     );
                                   },
                                   child: Icon(
-                                    Icons.notifications_active_outlined,
-                                    color: FlutterFlowTheme.of(context).accent3,
-                                    size: 40.0,
+                                    Icons.menu_rounded,
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryText,
+                                    size: 30.0,
                                   ),
                                 ),
-                              ),
-                            ],
-                          );
-                        },
-                      ),
-                    Column(
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        Divider(
-                          thickness: 1.0,
-                          color:
-                              FlutterFlowTheme.of(context).secondaryBackground,
-                        ),
-                        Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
-                              5.0, 10.0, 5.0, 10.0),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Row(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 5.0, 0.0),
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      10.0, 0.0, 0.0, 0.0),
+                                  child: InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      context.safePop();
+                                    },
                                     child: Icon(
-                                      Icons.mic_rounded,
-                                      color: FlutterFlowTheme.of(context).error,
+                                      Icons.arrow_back_ios_new_rounded,
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryText,
                                       size: 30.0,
                                     ),
                                   ),
+                                ),
+                              ],
+                            ),
+                            Container(
+                              width: 260.0,
+                              height: 50.0,
+                              decoration: BoxDecoration(
+                                color: FlutterFlowTheme.of(context)
+                                    .primaryBackground,
+                              ),
+                              child: Align(
+                                alignment: const AlignmentDirectional(0.0, 0.0),
+                                child: Text(
+                                  valueOrDefault<String>(
+                                    discusionETeamPageTeamsRecord.name,
+                                    'NewTeam',
+                                  ),
+                                  textAlign: TextAlign.center,
+                                  maxLines: 2,
+                                  style: FlutterFlowTheme.of(context)
+                                      .titleSmall
+                                      .override(
+                                        fontFamily: 'Poppins',
+                                        letterSpacing: 0.0,
+                                      ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        if (true /* Warning: Trying to access variable not yet defined. */)
+                          FutureBuilder<List<MyNotificationsRecord>>(
+                            future: queryMyNotificationsRecordOnce(
+                              parent: currentUserReference,
+                              singleRecord: true,
+                            ),
+                            builder: (context, snapshot) {
+                              // Customize what your widget looks like when it's loading.
+                              if (!snapshot.hasData) {
+                                return Center(
+                                  child: SizedBox(
+                                    width: 50.0,
+                                    height: 50.0,
+                                    child: CircularProgressIndicator(
+                                      valueColor: AlwaysStoppedAnimation<Color>(
+                                        FlutterFlowTheme.of(context).accent4,
+                                      ),
+                                    ),
+                                  ),
+                                );
+                              }
+                              List<MyNotificationsRecord>
+                                  rowNotifsMyNotificationsRecordList =
+                                  snapshot.data!;
+                              // Return an empty Container when the item does not exist.
+                              if (snapshot.data!.isEmpty) {
+                                return Container();
+                              }
+                              final rowNotifsMyNotificationsRecord =
+                                  rowNotifsMyNotificationsRecordList.isNotEmpty
+                                      ? rowNotifsMyNotificationsRecordList.first
+                                      : null;
+
+                              return Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
                                   Padding(
                                     padding: const EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 10.0, 0.0),
+                                        10.0, 0.0, 10.0, 0.0),
                                     child: InkWell(
                                       splashColor: Colors.transparent,
                                       focusColor: Colors.transparent,
                                       hoverColor: Colors.transparent,
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
-                                        final selectedMedia =
-                                            await selectMediaWithSourceBottomSheet(
-                                          context: context,
-                                          maxWidth: 1000.00,
-                                          maxHeight: 1000.00,
-                                          allowPhoto: true,
+                                        context.pushNamed(
+                                          'MyNotifsList',
+                                          extra: <String, dynamic>{
+                                            kTransitionInfoKey: const TransitionInfo(
+                                              hasTransition: true,
+                                              transitionType: PageTransitionType
+                                                  .rightToLeft,
+                                              duration:
+                                                  Duration(milliseconds: 400),
+                                            ),
+                                          },
                                         );
-                                        if (selectedMedia != null &&
-                                            selectedMedia.every((m) =>
-                                                validateFileFormat(
-                                                    m.storagePath, context))) {
-                                          safeSetState(() =>
-                                              _model.isDataUploading = true);
-                                          var selectedUploadedFiles =
-                                              <FFUploadedFile>[];
-
-                                          var downloadUrls = <String>[];
-                                          try {
-                                            selectedUploadedFiles =
-                                                selectedMedia
-                                                    .map((m) => FFUploadedFile(
-                                                          name: m.storagePath
-                                                              .split('/')
-                                                              .last,
-                                                          bytes: m.bytes,
-                                                          height: m.dimensions
-                                                              ?.height,
-                                                          width: m.dimensions
-                                                              ?.width,
-                                                          blurHash: m.blurHash,
-                                                        ))
-                                                    .toList();
-
-                                            downloadUrls = (await Future.wait(
-                                              selectedMedia.map(
-                                                (m) async => await uploadData(
-                                                    m.storagePath, m.bytes),
-                                              ),
-                                            ))
-                                                .where((u) => u != null)
-                                                .map((u) => u!)
-                                                .toList();
-                                          } finally {
-                                            _model.isDataUploading = false;
-                                          }
-                                          if (selectedUploadedFiles.length ==
-                                                  selectedMedia.length &&
-                                              downloadUrls.length ==
-                                                  selectedMedia.length) {
-                                            safeSetState(() {
-                                              _model.uploadedLocalFile =
-                                                  selectedUploadedFiles.first;
-                                              _model.uploadedFileUrl =
-                                                  downloadUrls.first;
-                                            });
-                                          } else {
-                                            safeSetState(() {});
-                                            return;
-                                          }
-                                        }
                                       },
                                       child: Icon(
-                                        Icons.image_search_rounded,
+                                        Icons.notifications_active_outlined,
+                                        color: FlutterFlowTheme.of(context)
+                                            .accent3,
+                                        size: 40.0,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              );
+                            },
+                          ),
+                        Column(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Divider(
+                              thickness: 1.0,
+                              color: FlutterFlowTheme.of(context)
+                                  .secondaryBackground,
+                            ),
+                            Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  5.0, 10.0, 5.0, 10.0),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 0.0, 5.0, 0.0),
+                                        child: Icon(
+                                          Icons.mic_rounded,
+                                          color: FlutterFlowTheme.of(context)
+                                              .error,
+                                          size: 30.0,
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 0.0, 10.0, 0.0),
+                                        child: InkWell(
+                                          splashColor: Colors.transparent,
+                                          focusColor: Colors.transparent,
+                                          hoverColor: Colors.transparent,
+                                          highlightColor: Colors.transparent,
+                                          onTap: () async {
+                                            final selectedMedia =
+                                                await selectMediaWithSourceBottomSheet(
+                                              context: context,
+                                              maxWidth: 1000.00,
+                                              maxHeight: 1000.00,
+                                              allowPhoto: true,
+                                            );
+                                            if (selectedMedia != null &&
+                                                selectedMedia.every((m) =>
+                                                    validateFileFormat(
+                                                        m.storagePath,
+                                                        context))) {
+                                              safeSetState(() => _model
+                                                  .isDataUploading = true);
+                                              var selectedUploadedFiles =
+                                                  <FFUploadedFile>[];
+
+                                              var downloadUrls = <String>[];
+                                              try {
+                                                selectedUploadedFiles =
+                                                    selectedMedia
+                                                        .map((m) =>
+                                                            FFUploadedFile(
+                                                              name: m
+                                                                  .storagePath
+                                                                  .split('/')
+                                                                  .last,
+                                                              bytes: m.bytes,
+                                                              height: m
+                                                                  .dimensions
+                                                                  ?.height,
+                                                              width: m
+                                                                  .dimensions
+                                                                  ?.width,
+                                                              blurHash:
+                                                                  m.blurHash,
+                                                            ))
+                                                        .toList();
+
+                                                downloadUrls =
+                                                    (await Future.wait(
+                                                  selectedMedia.map(
+                                                    (m) async =>
+                                                        await uploadData(
+                                                            m.storagePath,
+                                                            m.bytes),
+                                                  ),
+                                                ))
+                                                        .where((u) => u != null)
+                                                        .map((u) => u!)
+                                                        .toList();
+                                              } finally {
+                                                _model.isDataUploading = false;
+                                              }
+                                              if (selectedUploadedFiles
+                                                          .length ==
+                                                      selectedMedia.length &&
+                                                  downloadUrls.length ==
+                                                      selectedMedia.length) {
+                                                safeSetState(() {
+                                                  _model.uploadedLocalFile =
+                                                      selectedUploadedFiles
+                                                          .first;
+                                                  _model.uploadedFileUrl =
+                                                      downloadUrls.first;
+                                                });
+                                              } else {
+                                                safeSetState(() {});
+                                                return;
+                                              }
+                                            }
+                                          },
+                                          child: Icon(
+                                            Icons.image_search_rounded,
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondaryText,
+                                            size: 30.0,
+                                          ),
+                                        ),
+                                      ),
+                                      if (_model.uploadedFileUrl != '')
+                                        Container(
+                                          width: 50.0,
+                                          height: 40.0,
+                                          decoration: BoxDecoration(
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondaryBackground,
+                                            borderRadius:
+                                                BorderRadius.circular(6.0),
+                                          ),
+                                          child: Padding(
+                                            padding: const EdgeInsets.all(2.0),
+                                            child: ClipRRect(
+                                              borderRadius:
+                                                  BorderRadius.circular(4.0),
+                                              child: Image.network(
+                                                _model.uploadedFileUrl,
+                                                width: 300.0,
+                                                height: 200.0,
+                                                fit: BoxFit.cover,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                    ],
+                                  ),
+                                  Expanded(
+                                    child: Padding(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          8.0, 0.0, 8.0, 0.0),
+                                      child: TextFormField(
+                                        controller:
+                                            _model.commFieldTextController,
+                                        focusNode: _model.commFieldFocusNode,
+                                        autofocus: false,
+                                        obscureText: false,
+                                        decoration: InputDecoration(
+                                          labelStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMedium
+                                                  .override(
+                                                    fontFamily: 'Poppins',
+                                                    letterSpacing: 0.0,
+                                                  ),
+                                          hintText: '.......................',
+                                          hintStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyLarge
+                                                  .override(
+                                                    fontFamily: 'Poppins',
+                                                    letterSpacing: 0.0,
+                                                  ),
+                                          enabledBorder: UnderlineInputBorder(
+                                            borderSide: BorderSide(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryBackground,
+                                              width: 2.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                          ),
+                                          focusedBorder: UnderlineInputBorder(
+                                            borderSide: BorderSide(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                              width: 2.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                          ),
+                                          errorBorder: UnderlineInputBorder(
+                                            borderSide: BorderSide(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .error,
+                                              width: 2.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                          ),
+                                          focusedErrorBorder:
+                                              UnderlineInputBorder(
+                                            borderSide: BorderSide(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .error,
+                                              width: 2.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                          ),
+                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Poppins',
+                                              letterSpacing: 0.0,
+                                            ),
+                                        validator: _model
+                                            .commFieldTextControllerValidator
+                                            .asValidator(context),
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        10.0, 0.0, 5.0, 0.0),
+                                    child: InkWell(
+                                      splashColor: Colors.transparent,
+                                      focusColor: Colors.transparent,
+                                      hoverColor: Colors.transparent,
+                                      highlightColor: Colors.transparent,
+                                      onTap: () async {
+                                        var teamMessagesRecordReference =
+                                            TeamMessagesRecord.createDoc(
+                                                widget.eTeamRef!);
+                                        await teamMessagesRecordReference.set({
+                                          ...createTeamMessagesRecordData(
+                                            text: _model
+                                                .commFieldTextController.text,
+                                            userRef: currentUserReference,
+                                            image: _model.uploadedFileUrl,
+                                          ),
+                                          ...mapToFirestore(
+                                            {
+                                              'date_time':
+                                                  FieldValue.serverTimestamp(),
+                                            },
+                                          ),
+                                        });
+                                        _model.teamMessage = TeamMessagesRecord
+                                            .getDocumentFromData({
+                                          ...createTeamMessagesRecordData(
+                                            text: _model
+                                                .commFieldTextController.text,
+                                            userRef: currentUserReference,
+                                            image: _model.uploadedFileUrl,
+                                          ),
+                                          ...mapToFirestore(
+                                            {
+                                              'date_time': DateTime.now(),
+                                            },
+                                          ),
+                                        }, teamMessagesRecordReference);
+                                        safeSetState(() {
+                                          _model.commFieldTextController
+                                              ?.clear();
+                                        });
+
+                                        safeSetState(() {});
+                                      },
+                                      child: Icon(
+                                        Icons.send_rounded,
                                         color: FlutterFlowTheme.of(context)
                                             .secondaryText,
                                         size: 30.0,
                                       ),
                                     ),
                                   ),
-                                  if (_model.uploadedFileUrl != '')
-                                    Container(
-                                      width: 50.0,
-                                      height: 40.0,
-                                      decoration: BoxDecoration(
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondaryBackground,
-                                        borderRadius:
-                                            BorderRadius.circular(6.0),
-                                      ),
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(2.0),
-                                        child: ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(4.0),
-                                          child: Image.network(
-                                            _model.uploadedFileUrl,
-                                            width: 300.0,
-                                            height: 200.0,
-                                            fit: BoxFit.cover,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
                                 ],
                               ),
-                              Expanded(
-                                child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      8.0, 0.0, 8.0, 0.0),
-                                  child: TextFormField(
-                                    controller: _model.commFieldTextController,
-                                    focusNode: _model.commFieldFocusNode,
-                                    autofocus: true,
-                                    obscureText: false,
-                                    decoration: InputDecoration(
-                                      labelStyle: FlutterFlowTheme.of(context)
-                                          .labelMedium
-                                          .override(
-                                            fontFamily: 'Poppins',
-                                            letterSpacing: 0.0,
-                                          ),
-                                      hintText: '.......................',
-                                      hintStyle: FlutterFlowTheme.of(context)
-                                          .bodyLarge
-                                          .override(
-                                            fontFamily: 'Poppins',
-                                            letterSpacing: 0.0,
-                                          ),
-                                      enabledBorder: UnderlineInputBorder(
-                                        borderSide: BorderSide(
-                                          color: FlutterFlowTheme.of(context)
-                                              .secondaryBackground,
-                                          width: 2.0,
-                                        ),
-                                        borderRadius:
-                                            BorderRadius.circular(8.0),
-                                      ),
-                                      focusedBorder: UnderlineInputBorder(
-                                        borderSide: BorderSide(
-                                          color: FlutterFlowTheme.of(context)
-                                              .primary,
-                                          width: 2.0,
-                                        ),
-                                        borderRadius:
-                                            BorderRadius.circular(8.0),
-                                      ),
-                                      errorBorder: UnderlineInputBorder(
-                                        borderSide: BorderSide(
-                                          color: FlutterFlowTheme.of(context)
-                                              .error,
-                                          width: 2.0,
-                                        ),
-                                        borderRadius:
-                                            BorderRadius.circular(8.0),
-                                      ),
-                                      focusedErrorBorder: UnderlineInputBorder(
-                                        borderSide: BorderSide(
-                                          color: FlutterFlowTheme.of(context)
-                                              .error,
-                                          width: 2.0,
-                                        ),
-                                        borderRadius:
-                                            BorderRadius.circular(8.0),
-                                      ),
-                                    ),
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Poppins',
-                                          letterSpacing: 0.0,
-                                        ),
-                                    validator: _model
-                                        .commFieldTextControllerValidator
-                                        .asValidator(context),
-                                  ),
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    10.0, 0.0, 5.0, 0.0),
-                                child: InkWell(
-                                  splashColor: Colors.transparent,
-                                  focusColor: Colors.transparent,
-                                  hoverColor: Colors.transparent,
-                                  highlightColor: Colors.transparent,
-                                  onTap: () async {
-                                    var teamMessagesRecordReference =
-                                        TeamMessagesRecord.createDoc(
-                                            widget.eTeamRef!);
-                                    await teamMessagesRecordReference.set({
-                                      ...createTeamMessagesRecordData(
-                                        text:
-                                            _model.commFieldTextController.text,
-                                        userRef: currentUserReference,
-                                        image: _model.uploadedFileUrl,
-                                      ),
-                                      ...mapToFirestore(
-                                        {
-                                          'date_time':
-                                              FieldValue.serverTimestamp(),
-                                        },
-                                      ),
-                                    });
-                                    _model.teamMessage =
-                                        TeamMessagesRecord.getDocumentFromData({
-                                      ...createTeamMessagesRecordData(
-                                        text:
-                                            _model.commFieldTextController.text,
-                                        userRef: currentUserReference,
-                                        image: _model.uploadedFileUrl,
-                                      ),
-                                      ...mapToFirestore(
-                                        {
-                                          'date_time': DateTime.now(),
-                                        },
-                                      ),
-                                    }, teamMessagesRecordReference);
-                                    safeSetState(() {
-                                      _model.commFieldTextController?.clear();
-                                    });
-
-                                    safeSetState(() {});
-                                  },
-                                  child: Icon(
-                                    Icons.send_rounded,
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryText,
-                                    size: 30.0,
-                                  ),
-                                ),
-                              ),
-                            ],
+                            ),
+                            Divider(
+                              thickness: 1.0,
+                              color: FlutterFlowTheme.of(context)
+                                  .secondaryBackground,
+                            ),
+                          ],
+                        ),
+                        StreamBuilder<List<TeamMessagesRecord>>(
+                          stream: queryTeamMessagesRecord(
+                            parent: widget.eTeamRef,
+                            queryBuilder: (teamMessagesRecord) =>
+                                teamMessagesRecord.orderBy('date_time',
+                                    descending: true),
                           ),
-                        ),
-                        Divider(
-                          thickness: 1.0,
-                          color:
-                              FlutterFlowTheme.of(context).secondaryBackground,
-                        ),
-                      ],
-                    ),
-                    Container(
-                      width: 350.0,
-                      height: 545.0,
-                      decoration: BoxDecoration(
-                        color: FlutterFlowTheme.of(context).primaryBackground,
-                      ),
-                      child: StreamBuilder<List<TeamMessagesRecord>>(
-                        stream: queryTeamMessagesRecord(
-                          parent: widget.eTeamRef,
-                          queryBuilder: (teamMessagesRecord) =>
-                              teamMessagesRecord.orderBy('date_time',
-                                  descending: true),
-                        ),
-                        builder: (context, snapshot) {
-                          // Customize what your widget looks like when it's loading.
-                          if (!snapshot.hasData) {
-                            return Center(
-                              child: SizedBox(
-                                width: 50.0,
-                                height: 50.0,
-                                child: CircularProgressIndicator(
-                                  valueColor: AlwaysStoppedAnimation<Color>(
-                                    FlutterFlowTheme.of(context).accent4,
+                          builder: (context, snapshot) {
+                            // Customize what your widget looks like when it's loading.
+                            if (!snapshot.hasData) {
+                              return Center(
+                                child: SizedBox(
+                                  width: 50.0,
+                                  height: 50.0,
+                                  child: CircularProgressIndicator(
+                                    valueColor: AlwaysStoppedAnimation<Color>(
+                                      FlutterFlowTheme.of(context).accent4,
+                                    ),
                                   ),
                                 ),
-                              ),
-                            );
-                          }
-                          List<TeamMessagesRecord>
-                              columnETeamMessagesTeamMessagesRecordList =
-                              snapshot.data!;
+                              );
+                            }
+                            List<TeamMessagesRecord>
+                                columnETeamMessagesTeamMessagesRecordList =
+                                snapshot.data!;
 
-                          return SingleChildScrollView(
-                            child: Column(
+                            return Column(
                               mainAxisSize: MainAxisSize.max,
                               children: List.generate(
                                   columnETeamMessagesTeamMessagesRecordList
@@ -750,7 +770,7 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                                                       audio: Audio.network(
                                                         'https://filesamples.com/samples/audio/mp3/sample3.mp3',
                                                         metas: Metas(
-                                                          id: 'sample3.mp3-c1ebcb4d',
+                                                          id: 'sample3.mp3-cad6b09b',
                                                           title: ' ',
                                                         ),
                                                       ),
@@ -1014,7 +1034,7 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                                                       audio: Audio.network(
                                                         'https://filesamples.com/samples/audio/mp3/sample3.mp3',
                                                         metas: Metas(
-                                                          id: 'sample3.mp3-0b2a4710',
+                                                          id: 'sample3.mp3-5a8f842d',
                                                           title: ' ',
                                                         ),
                                                       ),
@@ -1099,12 +1119,12 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                                   ],
                                 );
                               }),
-                            ),
-                          );
-                        },
-                      ),
+                            );
+                          },
+                        ),
+                      ],
                     ),
-                  ],
+                  ),
                 ),
               ),
             ),

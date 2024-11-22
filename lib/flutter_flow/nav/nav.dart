@@ -1195,6 +1195,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               collectionNamePath: ['teams'],
             ),
           ),
+        ),
+        FFRoute(
+          name: 'TeamListCup',
+          path: '/teamListCup',
+          builder: (context, params) => const TeamListCupWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],

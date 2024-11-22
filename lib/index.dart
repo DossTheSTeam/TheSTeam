@@ -212,3 +212,5 @@ export '/e_events_fold/add_rating_players_page/add_rating_players_page_widget.da
     show AddRatingPlayersPageWidget;
 export '/e_events_fold/delete_event_page/delete_event_page_widget.dart'
     show DeleteEventPageWidget;
+export '/team_fold/team_list_cup/team_list_cup_widget.dart'
+    show TeamListCupWidget;
