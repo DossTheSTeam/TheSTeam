@@ -1,11 +1,16 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'profil_public_admin_model.dart';
 export 'profil_public_admin_model.dart';
 
@@ -43,7 +48,7 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<UsersRecord>(
-      stream: UsersRecord.getDocument(widget.userRef!),
+      stream: UsersRecord.getDocument(widget!.userRef!),
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
@@ -71,12 +76,12 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             body: Align(
-              alignment: const AlignmentDirectional(0.0, -1.0),
+              alignment: AlignmentDirectional(0.0, -1.0),
               child: SingleChildScrollView(
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   children: [
-                    SizedBox(
+                    Container(
                       height: 250.0,
                       child: Stack(
                         children: [
@@ -94,7 +99,7 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                               ),
                             ),
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   20.0, 20.0, 20.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -138,7 +143,7 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                                       context.pushNamed(
                                         'MenuPage',
                                         extra: <String, dynamic>{
-                                          kTransitionInfoKey: const TransitionInfo(
+                                          kTransitionInfoKey: TransitionInfo(
                                             hasTransition: true,
                                             transitionType:
                                                 PageTransitionType.leftToRight,
@@ -154,9 +159,9 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                             ),
                           ),
                           Align(
-                            alignment: const AlignmentDirectional(-1.0, 1.0),
+                            alignment: AlignmentDirectional(-1.0, 1.0),
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   24.0, 0.0, 0.0, 0.0),
                               child: Container(
                                 width: 90.0,
@@ -172,14 +177,14 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                                   ),
                                 ),
                                 child: Padding(
-                                  padding: const EdgeInsets.all(4.0),
+                                  padding: EdgeInsets.all(4.0),
                                   child: ClipRRect(
                                     borderRadius: BorderRadius.circular(50.0),
                                     child: CachedNetworkImage(
                                       fadeInDuration:
-                                          const Duration(milliseconds: 500),
+                                          Duration(milliseconds: 500),
                                       fadeOutDuration:
-                                          const Duration(milliseconds: 500),
+                                          Duration(milliseconds: 500),
                                       imageUrl:
                                           profilPublicAdminUsersRecord.photoUrl,
                                       width: 100.0,
@@ -192,9 +197,9 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                             ),
                           ),
                           Align(
-                            alignment: const AlignmentDirectional(0.0, 1.0),
+                            alignment: AlignmentDirectional(0.0, 1.0),
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   125.0, 20.0, 20.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -202,9 +207,9 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                                 crossAxisAlignment: CrossAxisAlignment.end,
                                 children: [
                                   Align(
-                                    alignment: const AlignmentDirectional(0.0, 1.0),
+                                    alignment: AlignmentDirectional(0.0, 1.0),
                                     child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 5.0),
                                       child: Text(
                                         valueOrDefault<String>(
@@ -230,7 +235,7 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -248,7 +253,7 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                                     ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     2.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   dateTimeFormat(
@@ -270,7 +275,7 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 5.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 5.0),
                       child: SingleChildScrollView(
                         scrollDirection: Axis.horizontal,
                         child: Row(
@@ -345,7 +350,7 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                                     hoverColor: Colors.transparent,
                                     highlightColor: Colors.transparent,
                                     onTap: () async {
-                                      await widget.userRef!.update({
+                                      await widget!.userRef!.update({
                                         ...mapToFirestore(
                                           {
                                             'stsocialapp': FieldValue.delete(),
@@ -389,7 +394,7 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                                       size: 30.0,
                                     ),
                                     onPressed: () async {
-                                      await widget.userRef!.update({
+                                      await widget!.userRef!.update({
                                         ...mapToFirestore(
                                           {
                                             'stsocialapp': FieldValue.delete(),
@@ -428,7 +433,7 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                                       size: 30.0,
                                     ),
                                     onPressed: () async {
-                                      await widget.userRef!.update({
+                                      await widget!.userRef!.update({
                                         ...mapToFirestore(
                                           {
                                             'stsocialapp': FieldValue.delete(),
@@ -445,10 +450,10 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 30.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 30.0, 0.0),
                       child: StreamBuilder<List<MyBetsRecord>>(
                         stream: queryMyBetsRecord(
-                          parent: widget.userRef,
+                          parent: widget!.userRef,
                           singleRecord: true,
                         ),
                         builder: (context, snapshot) {
@@ -505,7 +510,7 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                                       ),
                                     }.withoutNulls,
                                     extra: <String, dynamic>{
-                                      kTransitionInfoKey: const TransitionInfo(
+                                      kTransitionInfoKey: TransitionInfo(
                                         hasTransition: true,
                                         transitionType:
                                             PageTransitionType.rightToLeft,
@@ -532,7 +537,7 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 30.0, 5.0),
+                          EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 30.0, 5.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -556,7 +561,7 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                                 'PublicStats',
                                 queryParameters: {
                                   'userRef': serializeParam(
-                                    widget.userRef,
+                                    widget!.userRef,
                                     ParamType.DocumentReference,
                                   ),
                                 }.withoutNulls,
@@ -573,7 +578,7 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(20.0, 5.0, 30.0, 5.0),
+                          EdgeInsetsDirectional.fromSTEB(20.0, 5.0, 30.0, 5.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -589,7 +594,7 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                                 ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 3.0, 0.0, 0.0, 0.0),
                             child: Text(
                               valueOrDefault<String>(
@@ -609,7 +614,7 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(20.0, 5.0, 30.0, 5.0),
+                          EdgeInsetsDirectional.fromSTEB(20.0, 5.0, 30.0, 5.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -625,7 +630,7 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                                 ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 3.0, 0.0, 0.0, 0.0),
                             child: Text(
                               valueOrDefault<String>(
@@ -646,7 +651,7 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(20.0, 10.0, 30.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(20.0, 10.0, 30.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -674,7 +679,7 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                                     ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     5.0, 0.0, 0.0, 0.0),
                                 child: Container(
                                   width: 30.0,
@@ -688,7 +693,7 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                                     ),
                                   ),
                                   child: Padding(
-                                    padding: const EdgeInsets.all(2.0),
+                                    padding: EdgeInsets.all(2.0),
                                     child: ClipRRect(
                                       borderRadius: BorderRadius.circular(24.0),
                                       child: Image.asset(
@@ -712,7 +717,7 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 30.0, 5.0),
+                          EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 30.0, 5.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -731,7 +736,7 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(20.0, 5.0, 20.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(20.0, 5.0, 20.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -768,10 +773,10 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 30.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 30.0, 0.0),
                       child: StreamBuilder<List<MyPostsRecord>>(
                         stream: queryMyPostsRecord(
-                          parent: widget.userRef,
+                          parent: widget!.userRef,
                           singleRecord: true,
                         ),
                         builder: (context, snapshot) {
@@ -853,10 +858,10 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                       color: FlutterFlowTheme.of(context).secondaryBackground,
                     ),
                     Align(
-                      alignment: const AlignmentDirectional(-1.0, 0.0),
+                      alignment: AlignmentDirectional(-1.0, 0.0),
                       child: Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
                         child: Text(
                           'Réseaux',
                           style:
@@ -869,7 +874,7 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(20.0, 5.0, 30.0, 5.0),
+                          EdgeInsetsDirectional.fromSTEB(20.0, 5.0, 30.0, 5.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.end,
@@ -878,7 +883,7 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 10.0, 0.0),
                                 child: Text(
                                   valueOrDefault<String>(
@@ -906,7 +911,7 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(20.0, 5.0, 30.0, 5.0),
+                          EdgeInsetsDirectional.fromSTEB(20.0, 5.0, 30.0, 5.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.end,
@@ -915,7 +920,7 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 10.0, 0.0),
                                 child: Text(
                                   valueOrDefault<String>(
@@ -943,7 +948,7 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(20.0, 5.0, 30.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(20.0, 5.0, 30.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.end,
@@ -952,7 +957,7 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 10.0, 0.0),
                                 child: Text(
                                   valueOrDefault<String>(
@@ -984,7 +989,7 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 5.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 5.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -996,7 +1001,7 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                             ),
                             options: List<String>.from(
                                 ['amateur', 'pro', 'champion', 'legende']),
-                            optionLabels: const [
+                            optionLabels: [
                               'Amateur',
                               'Pro',
                               'Champion',
@@ -1024,7 +1029,7 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                             borderColor: FlutterFlowTheme.of(context).alternate,
                             borderWidth: 2.0,
                             borderRadius: 8.0,
-                            margin: const EdgeInsetsDirectional.fromSTEB(
+                            margin: EdgeInsetsDirectional.fromSTEB(
                                 16.0, 4.0, 16.0, 4.0),
                             hidesUnderline: true,
                             isOverButton: true,
@@ -1053,7 +1058,7 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                                       hoverColor: Colors.transparent,
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
-                                        await widget.userRef!.update({
+                                        await widget!.userRef!.update({
                                           ...createUsersRecordData(
                                             rankValue: 'amateur',
                                             divisionValue: '1',
@@ -1100,7 +1105,7 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                                             hoverColor: Colors.transparent,
                                             highlightColor: Colors.transparent,
                                             onTap: () async {
-                                              await widget.userRef!.update({
+                                              await widget!.userRef!.update({
                                                 ...createUsersRecordData(
                                                   rankValue: 'pro',
                                                   divisionValue: '3',
@@ -1144,7 +1149,7 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                                             hoverColor: Colors.transparent,
                                             highlightColor: Colors.transparent,
                                             onTap: () async {
-                                              await widget.userRef!.update({
+                                              await widget!.userRef!.update({
                                                 ...createUsersRecordData(
                                                   rankValue: 'pro',
                                                   divisionValue: '1',
@@ -1194,7 +1199,7 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                                             hoverColor: Colors.transparent,
                                             highlightColor: Colors.transparent,
                                             onTap: () async {
-                                              await widget.userRef!.update({
+                                              await widget!.userRef!.update({
                                                 ...createUsersRecordData(
                                                   rankValue: 'champion',
                                                   divisionValue: '3',
@@ -1238,7 +1243,7 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                                             hoverColor: Colors.transparent,
                                             highlightColor: Colors.transparent,
                                             onTap: () async {
-                                              await widget.userRef!.update({
+                                              await widget!.userRef!.update({
                                                 ...createUsersRecordData(
                                                   rankValue: 'champion',
                                                   divisionValue: '1',
@@ -1282,7 +1287,7 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                                       hoverColor: Colors.transparent,
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
-                                        await widget.userRef!.update({
+                                        await widget!.userRef!.update({
                                           ...createUsersRecordData(
                                             rankValue: 'legende',
                                             divisionValue: '3',
@@ -1311,7 +1316,7 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 5.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 5.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -1322,7 +1327,7 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                               _model.dropDivisionValue ??= '',
                             ),
                             options: List<String>.from(['1', '2', '3']),
-                            optionLabels: const [
+                            optionLabels: [
                               'Division 1',
                               'Division 2',
                               'Division 3'
@@ -1349,7 +1354,7 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                             borderColor: FlutterFlowTheme.of(context).alternate,
                             borderWidth: 2.0,
                             borderRadius: 8.0,
-                            margin: const EdgeInsetsDirectional.fromSTEB(
+                            margin: EdgeInsetsDirectional.fromSTEB(
                                 16.0, 4.0, 16.0, 4.0),
                             hidesUnderline: true,
                             isOverButton: true,
@@ -1365,7 +1370,7 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                                 hoverColor: Colors.transparent,
                                 highlightColor: Colors.transparent,
                                 onTap: () async {
-                                  await widget.userRef!.update({
+                                  await widget!.userRef!.update({
                                     ...createUsersRecordData(
                                       divisionValue: _model.dropDivisionValue,
                                     ),
@@ -1391,7 +1396,7 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 10.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 10.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -1407,7 +1412,7 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                               'administrateur',
                               'typster'
                             ]),
-                            optionLabels: const [
+                            optionLabels: [
                               'Suspendu',
                               'Modérateur',
                               'Administrateur',
@@ -1435,7 +1440,7 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                             borderColor: FlutterFlowTheme.of(context).alternate,
                             borderWidth: 2.0,
                             borderRadius: 8.0,
-                            margin: const EdgeInsetsDirectional.fromSTEB(
+                            margin: EdgeInsetsDirectional.fromSTEB(
                                 16.0, 4.0, 16.0, 4.0),
                             hidesUnderline: true,
                             isOverButton: true,
@@ -1451,7 +1456,7 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                                 hoverColor: Colors.transparent,
                                 highlightColor: Colors.transparent,
                                 onTap: () async {
-                                  await widget.userRef!.update({
+                                  await widget!.userRef!.update({
                                     ...createUsersRecordData(
                                       stsocialapp: _model.dropStatutValue,
                                     ),
@@ -1479,7 +1484,7 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 100.0, 0.0, 30.0),
                           child: Text(
                             profilPublicAdminUsersRecord.uid,
@@ -1491,14 +1496,14 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               10.0, 0.0, 10.0, 20.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: [
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     2.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   'Supprimer',
@@ -1526,7 +1531,7 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                                   size: 35.0,
                                 ),
                                 onPressed: () async {
-                                  await widget.userRef!.delete();
+                                  await widget!.userRef!.delete();
                                 },
                               ),
                             ],

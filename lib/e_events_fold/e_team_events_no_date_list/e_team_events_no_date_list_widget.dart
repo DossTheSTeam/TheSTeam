@@ -2,7 +2,11 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'e_team_events_no_date_list_model.dart';
 export 'e_team_events_no_date_list_model.dart';
 
@@ -41,7 +45,7 @@ class _ETeamEventsNoDateListWidgetState
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<TeamsRecord>(
-      stream: TeamsRecord.getDocument(widget.teamRef!),
+      stream: TeamsRecord.getDocument(widget!.teamRef!),
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
@@ -69,9 +73,9 @@ class _ETeamEventsNoDateListWidgetState
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             body: Align(
-              alignment: const AlignmentDirectional(0.0, -1.0),
+              alignment: AlignmentDirectional(0.0, -1.0),
               child: Padding(
-                padding: const EdgeInsets.all(10.0),
+                padding: EdgeInsets.all(10.0),
                 child: SingleChildScrollView(
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
@@ -79,7 +83,7 @@ class _ETeamEventsNoDateListWidgetState
                     children: [
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
                         child: SingleChildScrollView(
                           scrollDirection: Axis.horizontal,
                           child: Row(
@@ -99,12 +103,12 @@ class _ETeamEventsNoDateListWidgetState
                                         'ModifETeamPage',
                                         queryParameters: {
                                           'teamRef': serializeParam(
-                                            widget.teamRef,
+                                            widget!.teamRef,
                                             ParamType.DocumentReference,
                                           ),
                                         }.withoutNulls,
                                         extra: <String, dynamic>{
-                                          kTransitionInfoKey: const TransitionInfo(
+                                          kTransitionInfoKey: TransitionInfo(
                                             hasTransition: true,
                                             transitionType:
                                                 PageTransitionType.leftToRight,
@@ -122,7 +126,7 @@ class _ETeamEventsNoDateListWidgetState
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 0.0, 0.0),
                                     child: InkWell(
                                       splashColor: Colors.transparent,
@@ -146,7 +150,7 @@ class _ETeamEventsNoDateListWidgetState
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 6.0, 0.0),
                                     child: Container(
                                       width: 65.0,
@@ -168,7 +172,7 @@ class _ETeamEventsNoDateListWidgetState
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         5.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       eTeamEventsNoDateListTeamsRecord.name,
@@ -191,9 +195,9 @@ class _ETeamEventsNoDateListWidgetState
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Align(
-                            alignment: const AlignmentDirectional(0.0, -1.0),
+                            alignment: AlignmentDirectional(0.0, -1.0),
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 5.0, 0.0, 10.0),
                               child: Text(
                                 'Rencontres\nDates à définir',
@@ -221,7 +225,7 @@ class _ETeamEventsNoDateListWidgetState
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     50.0, 0.0, 50.0, 0.0),
                                 child: InkWell(
                                   splashColor: Colors.transparent,
@@ -233,7 +237,7 @@ class _ETeamEventsNoDateListWidgetState
                                       'ETeamEventsList',
                                       queryParameters: {
                                         'teamRef': serializeParam(
-                                          widget.teamRef,
+                                          widget!.teamRef,
                                           ParamType.DocumentReference,
                                         ),
                                       }.withoutNulls,
@@ -261,7 +265,7 @@ class _ETeamEventsNoDateListWidgetState
                                     'ETeamEventsList',
                                     queryParameters: {
                                       'teamRef': serializeParam(
-                                        widget.teamRef,
+                                        widget!.teamRef,
                                         ParamType.DocumentReference,
                                       ),
                                     }.withoutNulls,
@@ -279,12 +283,86 @@ class _ETeamEventsNoDateListWidgetState
                               ),
                             ],
                           ),
+                          if (valueOrDefault<bool>(
+                                  currentUserDocument?.helpNav, false) ==
+                              true)
+                            Align(
+                              alignment: AlignmentDirectional(0.0, 0.0),
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 5.0, 0.0, 0.0),
+                                child: AuthUserStreamWidget(
+                                  builder: (context) => Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      if (eTeamEventsNoDateListTeamsRecord
+                                              .boss ==
+                                          currentUserReference)
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  28.0, 0.0, 0.0, 0.0),
+                                          child: Text(
+                                            'A configurer',
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Poppins',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .warning,
+                                                  fontSize: 10.0,
+                                                  letterSpacing: 0.0,
+                                                ),
+                                          ),
+                                        ),
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 0.0, 8.0, 0.0),
+                                        child: Text(
+                                          'A venir',
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Poppins',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .success,
+                                                fontSize: 10.0,
+                                                letterSpacing: 0.0,
+                                              ),
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 0.0, 33.0, 0.0),
+                                        child: Text(
+                                          'Terminés',
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Poppins',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .error,
+                                                fontSize: 10.0,
+                                                letterSpacing: 0.0,
+                                              ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 10.0, 0.0, 0.0),
                             child: StreamBuilder<List<TeamEventsRecord>>(
                               stream: queryTeamEventsRecord(
-                                parent: widget.teamRef,
+                                parent: widget!.teamRef,
                               ),
                               builder: (context, snapshot) {
                                 // Customize what your widget looks like when it's loading.
@@ -325,7 +403,7 @@ class _ETeamEventsNoDateListWidgetState
                                                 currentUserReference))
                                           Align(
                                             alignment:
-                                                const AlignmentDirectional(1.0, 0.0),
+                                                AlignmentDirectional(1.0, 0.0),
                                             child: InkWell(
                                               splashColor: Colors.transparent,
                                               focusColor: Colors.transparent,
@@ -348,7 +426,7 @@ class _ETeamEventsNoDateListWidgetState
                                           ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   5.0, 0.0, 5.0, 0.0),
                                           child: StreamBuilder<EventsRecord>(
                                             stream: EventsRecord.getDocument(
@@ -434,7 +512,7 @@ class _ETeamEventsNoDateListWidgetState
                                                             ),
                                                             child: Align(
                                                               alignment:
-                                                                  const AlignmentDirectional(
+                                                                  AlignmentDirectional(
                                                                       0.0, 0.0),
                                                               child: Column(
                                                                 mainAxisSize:
@@ -474,7 +552,7 @@ class _ETeamEventsNoDateListWidgetState
                                                                   ),
                                                                   Align(
                                                                     alignment:
-                                                                        const AlignmentDirectional(
+                                                                        AlignmentDirectional(
                                                                             0.0,
                                                                             0.0),
                                                                     child: Text(
@@ -555,7 +633,7 @@ class _ETeamEventsNoDateListWidgetState
                                                                         extra: <String,
                                                                             dynamic>{
                                                                           kTransitionInfoKey:
-                                                                              const TransitionInfo(
+                                                                              TransitionInfo(
                                                                             hasTransition:
                                                                                 true,
                                                                             transitionType:
@@ -579,11 +657,11 @@ class _ETeamEventsNoDateListWidgetState
                                                                   if ((columnEventEventsRecord
                                                                               .domReady ==
                                                                           false) &&
-                                                                      (widget.teamRef ==
+                                                                      (widget!.teamRef ==
                                                                           columnEventEventsRecord
                                                                               .teamdomRef))
                                                                     Padding(
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           10.0,
                                                                           0.0,
@@ -610,13 +688,13 @@ class _ETeamEventsNoDateListWidgetState
                                                                                 ParamType.DocumentReference,
                                                                               ),
                                                                               'myETeamRef': serializeParam(
-                                                                                widget.teamRef,
+                                                                                widget!.teamRef,
                                                                                 ParamType.DocumentReference,
                                                                               ),
                                                                             }.withoutNulls,
                                                                             extra: <String,
                                                                                 dynamic>{
-                                                                              kTransitionInfoKey: const TransitionInfo(
+                                                                              kTransitionInfoKey: TransitionInfo(
                                                                                 hasTransition: true,
                                                                                 transitionType: PageTransitionType.bottomToTop,
                                                                                 duration: Duration(milliseconds: 400),
@@ -638,11 +716,11 @@ class _ETeamEventsNoDateListWidgetState
                                                                   if ((columnEventEventsRecord
                                                                               .extReady ==
                                                                           false) &&
-                                                                      (widget.teamRef ==
+                                                                      (widget!.teamRef ==
                                                                           columnEventEventsRecord
                                                                               .teamextRef))
                                                                     Padding(
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           10.0,
                                                                           0.0,
@@ -669,13 +747,13 @@ class _ETeamEventsNoDateListWidgetState
                                                                                 ParamType.DocumentReference,
                                                                               ),
                                                                               'myETeamRef': serializeParam(
-                                                                                widget.teamRef,
+                                                                                widget!.teamRef,
                                                                                 ParamType.DocumentReference,
                                                                               ),
                                                                             }.withoutNulls,
                                                                             extra: <String,
                                                                                 dynamic>{
-                                                                              kTransitionInfoKey: const TransitionInfo(
+                                                                              kTransitionInfoKey: TransitionInfo(
                                                                                 hasTransition: true,
                                                                                 transitionType: PageTransitionType.bottomToTop,
                                                                                 duration: Duration(milliseconds: 400),
@@ -741,7 +819,7 @@ class _ETeamEventsNoDateListWidgetState
                                                             ),
                                                             child: Align(
                                                               alignment:
-                                                                  const AlignmentDirectional(
+                                                                  AlignmentDirectional(
                                                                       0.0, 0.0),
                                                               child: Column(
                                                                 mainAxisSize:
@@ -781,7 +859,7 @@ class _ETeamEventsNoDateListWidgetState
                                                                   ),
                                                                   Align(
                                                                     alignment:
-                                                                        const AlignmentDirectional(
+                                                                        AlignmentDirectional(
                                                                             0.0,
                                                                             0.0),
                                                                     child: Text(

@@ -6,8 +6,12 @@ import '/flutter_flow/flutter_flow_audio_player.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_video_player.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'post_page_model.dart';
 export 'post_page_model.dart';
 
@@ -47,7 +51,7 @@ class _PostPageWidgetState extends State<PostPageWidget> {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<PostsRecord>(
-      stream: PostsRecord.getDocument(widget.postRef!),
+      stream: PostsRecord.getDocument(widget!.postRef!),
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
@@ -77,9 +81,9 @@ class _PostPageWidgetState extends State<PostPageWidget> {
             body: SafeArea(
               top: true,
               child: Align(
-                alignment: const AlignmentDirectional(0.0, -1.0),
+                alignment: AlignmentDirectional(0.0, -1.0),
                 child: Padding(
-                  padding: const EdgeInsets.all(10.0),
+                  padding: EdgeInsets.all(10.0),
                   child: StreamBuilder<UsersRecord>(
                     stream:
                         UsersRecord.getDocument(postPagePostsRecord.member!),
@@ -117,37 +121,92 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                     Row(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
-                                        InkWell(
-                                          splashColor: Colors.transparent,
-                                          focusColor: Colors.transparent,
-                                          hoverColor: Colors.transparent,
-                                          highlightColor: Colors.transparent,
-                                          onTap: () async {
-                                            context.pushNamed(
-                                              'MenuPage',
-                                              extra: <String, dynamic>{
-                                                kTransitionInfoKey:
-                                                    const TransitionInfo(
-                                                  hasTransition: true,
-                                                  transitionType:
-                                                      PageTransitionType
-                                                          .leftToRight,
-                                                  duration: Duration(
-                                                      milliseconds: 400),
-                                                ),
+                                        Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          children: [
+                                            InkWell(
+                                              splashColor: Colors.transparent,
+                                              focusColor: Colors.transparent,
+                                              hoverColor: Colors.transparent,
+                                              highlightColor:
+                                                  Colors.transparent,
+                                              onTap: () async {
+                                                context.pushNamed(
+                                                  'MenuPage',
+                                                  extra: <String, dynamic>{
+                                                    kTransitionInfoKey:
+                                                        TransitionInfo(
+                                                      hasTransition: true,
+                                                      transitionType:
+                                                          PageTransitionType
+                                                              .leftToRight,
+                                                      duration: Duration(
+                                                          milliseconds: 400),
+                                                    ),
+                                                  },
+                                                );
                                               },
-                                            );
-                                          },
-                                          child: Icon(
-                                            Icons.menu_rounded,
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryText,
-                                            size: 30.0,
-                                          ),
+                                              child: Icon(
+                                                Icons.menu_rounded,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryText,
+                                                size: 30.0,
+                                              ),
+                                            ),
+                                            if (valueOrDefault<bool>(
+                                                    currentUserDocument
+                                                        ?.helpNav,
+                                                    false) ==
+                                                true)
+                                              Align(
+                                                alignment: AlignmentDirectional(
+                                                    0.0, 0.0),
+                                                child: AuthUserStreamWidget(
+                                                  builder: (context) => Row(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment.end,
+                                                    children: [
+                                                      Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    0.0,
+                                                                    3.0,
+                                                                    0.0,
+                                                                    0.0),
+                                                        child: Text(
+                                                          'Menu',
+                                                          textAlign:
+                                                              TextAlign.center,
+                                                          maxLines: 2,
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Poppins',
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primaryText,
+                                                                fontSize: 10.0,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                lineHeight: 1.0,
+                                                              ),
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ),
+                                              ),
+                                          ],
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   10.0, 0.0, 0.0, 0.0),
                                           child: InkWell(
                                             splashColor: Colors.transparent,
@@ -168,7 +227,7 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   45.0, 0.0, 0.0, 0.0),
                                           child: Text(
                                             'Détails de \nl\'actualité',
@@ -190,7 +249,7 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                         queryBuilder: (myPostsRecord) =>
                                             myPostsRecord.where(
                                           'posts',
-                                          isEqualTo: widget.postRef,
+                                          isEqualTo: widget!.postRef,
                                         ),
                                         singleRecord: true,
                                       ),
@@ -236,7 +295,7 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                                     (teamPostsRecord) =>
                                                         teamPostsRecord.where(
                                                   'posts',
-                                                  isEqualTo: widget.postRef,
+                                                  isEqualTo: widget!.postRef,
                                                 ),
                                                 singleRecord: true,
                                               ),
@@ -298,7 +357,7 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                                           highlightColor: Colors
                                                               .transparent,
                                                           onTap: () async {
-                                                            await widget
+                                                            await widget!
                                                                 .postRef!
                                                                 .delete();
                                                             await rowTeamPostsRecord!
@@ -331,11 +390,12 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                     ),
                                   ],
                                 ),
-                                if (postPagePostsRecord.title != '')
+                                if (postPagePostsRecord.title != null &&
+                                    postPagePostsRecord.title != '')
                                   Align(
-                                    alignment: const AlignmentDirectional(0.0, 0.0),
+                                    alignment: AlignmentDirectional(0.0, 0.0),
                                     child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 20.0, 0.0, 0.0),
                                       child: Text(
                                         postPagePostsRecord.title,
@@ -349,9 +409,10 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                       ),
                                     ),
                                   ),
-                                if (postPagePostsRecord.image != '')
+                                if (postPagePostsRecord.image != null &&
+                                    postPagePostsRecord.image != '')
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 20.0, 0.0, 20.0),
                                     child: Container(
                                       width: 350.0,
@@ -363,7 +424,7 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                             BorderRadius.circular(18.0),
                                       ),
                                       child: Padding(
-                                        padding: const EdgeInsets.all(3.0),
+                                        padding: EdgeInsets.all(3.0),
                                         child: ClipRRect(
                                           borderRadius:
                                               BorderRadius.circular(15.0),
@@ -377,8 +438,9 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                       ),
                                     ),
                                   ),
-                                if (postPagePostsRecord.video != '')
-                                  const Padding(
+                                if (postPagePostsRecord.video != null &&
+                                    postPagePostsRecord.video != '')
+                                  Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 20.0, 0.0, 0.0),
                                     child: FlutterFlowVideoPlayer(
@@ -392,11 +454,12 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                       allowPlaybackSpeedMenu: false,
                                     ),
                                   ),
-                                if (postPagePostsRecord.audio != '')
+                                if (postPagePostsRecord.audio != null &&
+                                    postPagePostsRecord.audio != '')
                                   Align(
-                                    alignment: const AlignmentDirectional(0.0, 0.0),
+                                    alignment: AlignmentDirectional(0.0, 0.0),
                                     child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 6.0, 0.0, 0.0),
                                       child: Container(
                                         width: 350.0,
@@ -406,7 +469,7 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                               .primaryBackground,
                                         ),
                                         child: Padding(
-                                          padding: const EdgeInsets.all(3.0),
+                                          padding: EdgeInsets.all(3.0),
                                           child: FlutterFlowAudioPlayer(
                                             audio: Audio.network(
                                               postPagePostsRecord.audio,
@@ -450,18 +513,19 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                   ),
                               ],
                             ),
-                            if (postPagePostsRecord.description != '')
+                            if (postPagePostsRecord.description != null &&
+                                postPagePostsRecord.description != '')
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 20.0, 0.0, 20.0),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Align(
                                       alignment:
-                                          const AlignmentDirectional(-1.0, 0.0),
+                                          AlignmentDirectional(-1.0, 0.0),
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             10.0, 0.0, 10.0, 0.0),
                                         child: Text(
                                           postPagePostsRecord.description,
@@ -484,9 +548,9 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Align(
-                                    alignment: const AlignmentDirectional(-1.0, 0.0),
+                                    alignment: AlignmentDirectional(-1.0, 0.0),
                                     child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           20.0, 0.0, 10.0, 0.0),
                                       child: Text(
                                         dateTimeFormat("d/M H:mm",
@@ -502,7 +566,7 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 10.0, 0.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -511,7 +575,7 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                       children: [
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   20.0, 3.0, 0.0, 0.0),
                                           child: Text(
                                             'Ecrit par',
@@ -525,13 +589,13 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   5.0, 0.0, 0.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         5.0, 0.0, 6.0, 0.0),
                                                 child: Container(
@@ -583,7 +647,7 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                                       }.withoutNulls,
                                                       extra: <String, dynamic>{
                                                         kTransitionInfoKey:
-                                                            const TransitionInfo(
+                                                            TransitionInfo(
                                                           hasTransition: true,
                                                           transitionType:
                                                               PageTransitionType
@@ -624,7 +688,7 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                         .secondaryBackground,
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 10.0, 0.0),
                                     child: SingleChildScrollView(
                                       scrollDirection: Axis.horizontal,
@@ -635,13 +699,13 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                         children: [
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 10.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 5.0, 0.0),
                                                   child: InkWell(
@@ -668,7 +732,7 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                                         extra: <String,
                                                             dynamic>{
                                                           kTransitionInfoKey:
-                                                              const TransitionInfo(
+                                                              TransitionInfo(
                                                             hasTransition: true,
                                                             transitionType:
                                                                 PageTransitionType
@@ -712,7 +776,7 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     5.0, 0.0, 10.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -722,7 +786,7 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                                         currentUserReference))
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 5.0, 0.0),
                                                     child: InkWell(
@@ -735,7 +799,7 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                                       highlightColor:
                                                           Colors.transparent,
                                                       onTap: () async {
-                                                        await widget.postRef!
+                                                        await widget!.postRef!
                                                             .update({
                                                           ...mapToFirestore(
                                                             {
@@ -763,7 +827,7 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                                                 currentUserReference,
                                                             seen: false,
                                                             post:
-                                                                widget.postRef,
+                                                                widget!.postRef,
                                                           ),
                                                           ...mapToFirestore(
                                                             {
@@ -802,7 +866,7 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                                         currentUserReference))
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 5.0, 0.0),
                                                     child: InkWell(
@@ -815,7 +879,7 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                                       highlightColor:
                                                           Colors.transparent,
                                                       onTap: () async {
-                                                        await widget.postRef!
+                                                        await widget!.postRef!
                                                             .update({
                                                           ...mapToFirestore(
                                                             {
@@ -873,7 +937,7 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     5.0, 0.0, 10.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -884,7 +948,7 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                                         currentUserReference))
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 5.0, 0.0),
                                                     child: InkWell(
@@ -897,7 +961,7 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                                       highlightColor:
                                                           Colors.transparent,
                                                       onTap: () async {
-                                                        await widget.postRef!
+                                                        await widget!.postRef!
                                                             .update({
                                                           ...mapToFirestore(
                                                             {
@@ -926,7 +990,7 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                                                 currentUserReference,
                                                             seen: false,
                                                             post:
-                                                                widget.postRef,
+                                                                widget!.postRef,
                                                           ),
                                                           ...mapToFirestore(
                                                             {
@@ -965,7 +1029,7 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                                         currentUserReference))
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 5.0, 0.0),
                                                     child: InkWell(
@@ -978,7 +1042,7 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                                       highlightColor:
                                                           Colors.transparent,
                                                       onTap: () async {
-                                                        await widget.postRef!
+                                                        await widget!.postRef!
                                                             .update({
                                                           ...mapToFirestore(
                                                             {
@@ -1038,7 +1102,7 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     5.0, 0.0, 0.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -1049,7 +1113,7 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                                         currentUserReference))
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 5.0, 0.0),
                                                     child: InkWell(
@@ -1067,7 +1131,7 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                                           queryParameters: {
                                                             'postRef':
                                                                 serializeParam(
-                                                              widget.postRef,
+                                                              widget!.postRef,
                                                               ParamType
                                                                   .DocumentReference,
                                                             ),
@@ -1101,7 +1165,7 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                                         currentUserReference))
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 5.0, 0.0),
                                                     child: Container(
@@ -1147,7 +1211,7 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                         .secondaryBackground,
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         5.0, 0.0, 5.0, 20.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -1156,7 +1220,7 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 5.0, 0.0),
                                               child: Icon(
                                                 Icons.mic_rounded,
@@ -1167,7 +1231,7 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                               ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 0.0, 10.0, 0.0),
                                               child: InkWell(
@@ -1266,7 +1330,9 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                                 ),
                                               ),
                                             ),
-                                            if (_model.uploadedFileUrl != '')
+                                            if (_model.uploadedFileUrl !=
+                                                    null &&
+                                                _model.uploadedFileUrl != '')
                                               Container(
                                                 width: 50.0,
                                                 height: 40.0,
@@ -1279,7 +1345,7 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                                           6.0),
                                                 ),
                                                 child: Padding(
-                                                  padding: const EdgeInsets.all(2.0),
+                                                  padding: EdgeInsets.all(2.0),
                                                   child: ClipRRect(
                                                     borderRadius:
                                                         BorderRadius.circular(
@@ -1298,7 +1364,7 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                         Expanded(
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     8.0, 0.0, 8.0, 0.0),
                                             child: TextFormField(
                                               controller: _model
@@ -1388,7 +1454,7 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   10.0, 0.0, 5.0, 0.0),
                                           child: InkWell(
                                             splashColor: Colors.transparent,
@@ -1398,7 +1464,7 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                             onTap: () async {
                                               var postMessagesRecordReference =
                                                   PostMessagesRecord.createDoc(
-                                                      widget.postRef!);
+                                                      widget!.postRef!);
                                               await postMessagesRecordReference
                                                   .set({
                                                 ...createPostMessagesRecordData(
@@ -1452,7 +1518,7 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                                 parameterData: {},
                                               );
 
-                                              await widget.postRef!.update({
+                                              await widget!.postRef!.update({
                                                 ...mapToFirestore(
                                                   {
                                                     'num_comments':
@@ -1471,7 +1537,7 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                                       'a commenté votre actualité :',
                                                   userRef: currentUserReference,
                                                   seen: false,
-                                                  post: widget.postRef,
+                                                  post: widget!.postRef,
                                                 ),
                                                 ...mapToFirestore(
                                                   {
@@ -1485,13 +1551,13 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                                 'ListPostMessages',
                                                 queryParameters: {
                                                   'postRef': serializeParam(
-                                                    widget.postRef,
+                                                    widget!.postRef,
                                                     ParamType.DocumentReference,
                                                   ),
                                                 }.withoutNulls,
                                                 extra: <String, dynamic>{
                                                   kTransitionInfoKey:
-                                                      const TransitionInfo(
+                                                      TransitionInfo(
                                                     hasTransition: true,
                                                     transitionType:
                                                         PageTransitionType

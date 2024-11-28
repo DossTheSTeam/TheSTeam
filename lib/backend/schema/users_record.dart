@@ -10,9 +10,9 @@ import '/flutter_flow/flutter_flow_util.dart';
 
 class UsersRecord extends FirestoreRecord {
   UsersRecord._(
-    super.reference,
-    super.data,
-  ) {
+    DocumentReference reference,
+    Map<String, dynamic> data,
+  ) : super(reference, data) {
     _initializeFields();
   }
 
@@ -226,6 +226,11 @@ class UsersRecord extends FirestoreRecord {
   int get topsflops => _topsflops ?? 0;
   bool hasTopsflops() => _topsflops != null;
 
+  // "help_nav" field.
+  bool? _helpNav;
+  bool get helpNav => _helpNav ?? false;
+  bool hasHelpNav() => _helpNav != null;
+
   void _initializeFields() {
     _email = snapshotData['email'] as String?;
     _displayName = snapshotData['display_name'] as String?;
@@ -269,6 +274,7 @@ class UsersRecord extends FirestoreRecord {
     _boolFlop = snapshotData['bool_flop'] as bool?;
     _eUpdateTime = snapshotData['e_update_time'] as DateTime?;
     _topsflops = castToType<int>(snapshotData['topsflops']);
+    _helpNav = snapshotData['help_nav'] as bool?;
   }
 
   static CollectionReference get collection =>
@@ -344,6 +350,7 @@ Map<String, dynamic> createUsersRecordData({
   bool? boolFlop,
   DateTime? eUpdateTime,
   int? topsflops,
+  bool? helpNav,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -386,6 +393,7 @@ Map<String, dynamic> createUsersRecordData({
       'bool_flop': boolFlop,
       'e_update_time': eUpdateTime,
       'topsflops': topsflops,
+      'help_nav': helpNav,
     }.withoutNulls,
   );
 
@@ -439,7 +447,8 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e1?.boolTop == e2?.boolTop &&
         e1?.boolFlop == e2?.boolFlop &&
         e1?.eUpdateTime == e2?.eUpdateTime &&
-        e1?.topsflops == e2?.topsflops;
+        e1?.topsflops == e2?.topsflops &&
+        e1?.helpNav == e2?.helpNav;
   }
 
   @override
@@ -485,7 +494,8 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e?.boolTop,
         e?.boolFlop,
         e?.eUpdateTime,
-        e?.topsflops
+        e?.topsflops,
+        e?.helpNav
       ]);
 
   @override

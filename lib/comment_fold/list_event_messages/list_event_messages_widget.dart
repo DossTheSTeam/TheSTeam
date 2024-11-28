@@ -3,9 +3,13 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'list_event_messages_model.dart';
 export 'list_event_messages_model.dart';
 
@@ -43,7 +47,7 @@ class _ListEventMessagesWidgetState extends State<ListEventMessagesWidget> {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<EventsRecord>(
-      stream: EventsRecord.getDocument(widget.eventRef!),
+      stream: EventsRecord.getDocument(widget!.eventRef!),
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
@@ -73,9 +77,9 @@ class _ListEventMessagesWidgetState extends State<ListEventMessagesWidget> {
             body: SafeArea(
               top: true,
               child: Align(
-                alignment: const AlignmentDirectional(0.0, -1.0),
+                alignment: AlignmentDirectional(0.0, -1.0),
                 child: Padding(
-                  padding: const EdgeInsets.all(10.0),
+                  padding: EdgeInsets.all(10.0),
                   child: SingleChildScrollView(
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
@@ -85,7 +89,7 @@ class _ListEventMessagesWidgetState extends State<ListEventMessagesWidget> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 10.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -104,7 +108,7 @@ class _ListEventMessagesWidgetState extends State<ListEventMessagesWidget> {
                                             'MenuPage',
                                             extra: <String, dynamic>{
                                               kTransitionInfoKey:
-                                                  const TransitionInfo(
+                                                  TransitionInfo(
                                                 hasTransition: true,
                                                 transitionType:
                                                     PageTransitionType
@@ -123,7 +127,7 @@ class _ListEventMessagesWidgetState extends State<ListEventMessagesWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             10.0, 0.0, 0.0, 0.0),
                                         child: InkWell(
                                           splashColor: Colors.transparent,
@@ -144,7 +148,7 @@ class _ListEventMessagesWidgetState extends State<ListEventMessagesWidget> {
                                     ],
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         40.0, 0.0, 0.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -163,7 +167,7 @@ class _ListEventMessagesWidgetState extends State<ListEventMessagesWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   3.0, 0.0, 3.0, 0.0),
                                           child: Text(
                                             '-',
@@ -190,7 +194,7 @@ class _ListEventMessagesWidgetState extends State<ListEventMessagesWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   2.0, 0.0, 2.0, 0.0),
                                           child: Text(
                                             ':',
@@ -223,7 +227,7 @@ class _ListEventMessagesWidgetState extends State<ListEventMessagesWidget> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 5.0, 0.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -264,10 +268,10 @@ class _ListEventMessagesWidgetState extends State<ListEventMessagesWidget> {
                                         ),
                                         child: Align(
                                           alignment:
-                                              const AlignmentDirectional(1.0, 0.0),
+                                              AlignmentDirectional(1.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 5.0, 0.0),
                                             child: Text(
                                               valueOrDefault<String>(
@@ -331,10 +335,10 @@ class _ListEventMessagesWidgetState extends State<ListEventMessagesWidget> {
                                         ),
                                         child: Align(
                                           alignment:
-                                              const AlignmentDirectional(-1.0, 0.0),
+                                              AlignmentDirectional(-1.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     5.0, 0.0, 0.0, 0.0),
                                             child: Text(
                                               valueOrDefault<String>(
@@ -360,16 +364,16 @@ class _ListEventMessagesWidgetState extends State<ListEventMessagesWidget> {
                             ),
                             if (listEventMessagesEventsRecord.seenScore == true)
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 5.0, 0.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Align(
-                                      alignment: const AlignmentDirectional(1.0, 0.0),
+                                      alignment: AlignmentDirectional(1.0, 0.0),
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 10.0, 0.0),
                                         child: Text(
                                           listEventMessagesEventsRecord.scoreDom
@@ -395,9 +399,9 @@ class _ListEventMessagesWidgetState extends State<ListEventMessagesWidget> {
                                     ),
                                     Align(
                                       alignment:
-                                          const AlignmentDirectional(-1.0, 0.0),
+                                          AlignmentDirectional(-1.0, 0.0),
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             10.0, 0.0, 0.0, 0.0),
                                         child: Text(
                                           listEventMessagesEventsRecord.scoreExt
@@ -421,7 +425,7 @@ class _ListEventMessagesWidgetState extends State<ListEventMessagesWidget> {
                                   .secondaryBackground,
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 10.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -440,7 +444,7 @@ class _ListEventMessagesWidgetState extends State<ListEventMessagesWidget> {
                                       'champion',
                                       'legende'
                                     ]),
-                                    optionLabels: const [
+                                    optionLabels: [
                                       'Amateur',
                                       'Pro',
                                       'Champion',
@@ -470,7 +474,7 @@ class _ListEventMessagesWidgetState extends State<ListEventMessagesWidget> {
                                         FlutterFlowTheme.of(context).alternate,
                                     borderWidth: 2.0,
                                     borderRadius: 8.0,
-                                    margin: const EdgeInsetsDirectional.fromSTEB(
+                                    margin: EdgeInsetsDirectional.fromSTEB(
                                         16.0, 4.0, 16.0, 4.0),
                                     hidesUnderline: true,
                                     isOverButton: true,
@@ -521,7 +525,7 @@ class _ListEventMessagesWidgetState extends State<ListEventMessagesWidget> {
                                               MainAxisAlignment.end,
                                           children: [
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       10.0, 0.0, 10.0, 0.0),
                                               child: InkWell(
@@ -535,7 +539,7 @@ class _ListEventMessagesWidgetState extends State<ListEventMessagesWidget> {
                                                     'MyNotifsList',
                                                     extra: <String, dynamic>{
                                                       kTransitionInfoKey:
-                                                          const TransitionInfo(
+                                                          TransitionInfo(
                                                         hasTransition: true,
                                                         transitionType:
                                                             PageTransitionType
@@ -593,11 +597,11 @@ class _ListEventMessagesWidgetState extends State<ListEventMessagesWidget> {
                         ),
                         if (listEventMessagesEventsRecord.esport == false)
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 5.0, 5.0, 5.0, 0.0),
                             child: StreamBuilder<List<EventMessagesRecord>>(
                               stream: queryEventMessagesRecord(
-                                parent: widget.eventRef,
+                                parent: widget!.eventRef,
                                 queryBuilder: (eventMessagesRecord) =>
                                     eventMessagesRecord.orderBy('created_time',
                                         descending: true),
@@ -631,7 +635,7 @@ class _ListEventMessagesWidgetState extends State<ListEventMessagesWidget> {
                                         columnCommsSportEventMessagesRecordList[
                                             columnCommsSportIndex];
                                     return Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 5.0, 0.0, 5.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
@@ -685,7 +689,7 @@ class _ListEventMessagesWidgetState extends State<ListEventMessagesWidget> {
                                                             children: [
                                                               Padding(
                                                                 padding:
-                                                                    const EdgeInsetsDirectional
+                                                                    EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             10.0,
                                                                             0.0,
@@ -697,7 +701,7 @@ class _ListEventMessagesWidgetState extends State<ListEventMessagesWidget> {
                                                                           .max,
                                                                   children: [
                                                                     Padding(
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           6.0,
@@ -733,7 +737,7 @@ class _ListEventMessagesWidgetState extends State<ListEventMessagesWidget> {
                                                                       ),
                                                                     ),
                                                                     Padding(
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
                                                                           10.0,
                                                                           0.0,
                                                                           0.0,
@@ -762,7 +766,7 @@ class _ListEventMessagesWidgetState extends State<ListEventMessagesWidget> {
                                                                             }.withoutNulls,
                                                                             extra: <String,
                                                                                 dynamic>{
-                                                                              kTransitionInfoKey: const TransitionInfo(
+                                                                              kTransitionInfoKey: TransitionInfo(
                                                                                 hasTransition: true,
                                                                                 transitionType: PageTransitionType.bottomToTop,
                                                                                 duration: Duration(milliseconds: 400),
@@ -793,7 +797,7 @@ class _ListEventMessagesWidgetState extends State<ListEventMessagesWidget> {
                                                               ),
                                                               Padding(
                                                                 padding:
-                                                                    const EdgeInsetsDirectional
+                                                                    EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -820,7 +824,7 @@ class _ListEventMessagesWidgetState extends State<ListEventMessagesWidget> {
                                                                       child:
                                                                           Padding(
                                                                         padding:
-                                                                            const EdgeInsets.all(5.0),
+                                                                            EdgeInsets.all(5.0),
                                                                         child:
                                                                             Text(
                                                                           columnCommsSportEventMessagesRecord
@@ -861,7 +865,7 @@ class _ListEventMessagesWidgetState extends State<ListEventMessagesWidget> {
                                                                                 ),
                                                                               }.withoutNulls,
                                                                               extra: <String, dynamic>{
-                                                                                kTransitionInfoKey: const TransitionInfo(
+                                                                                kTransitionInfoKey: TransitionInfo(
                                                                                   hasTransition: true,
                                                                                   transitionType: PageTransitionType.scale,
                                                                                   alignment: Alignment.bottomCenter,
@@ -886,11 +890,11 @@ class _ListEventMessagesWidgetState extends State<ListEventMessagesWidget> {
                                                               ),
                                                               Align(
                                                                 alignment:
-                                                                    const AlignmentDirectional(
+                                                                    AlignmentDirectional(
                                                                         -1.0,
                                                                         0.0),
                                                                 child: Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -915,7 +919,7 @@ class _ListEventMessagesWidgetState extends State<ListEventMessagesWidget> {
                                                                 ),
                                                               ),
                                                               Padding(
-                                                                padding: const EdgeInsetsDirectional
+                                                                padding: EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         10.0,
                                                                         5.0,
@@ -934,7 +938,7 @@ class _ListEventMessagesWidgetState extends State<ListEventMessagesWidget> {
                                                                             .spaceBetween,
                                                                     children: [
                                                                       Padding(
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             10.0,
@@ -945,7 +949,7 @@ class _ListEventMessagesWidgetState extends State<ListEventMessagesWidget> {
                                                                               MainAxisSize.max,
                                                                           children: [
                                                                             Padding(
-                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
                                                                               child: Icon(
                                                                                 Icons.insert_comment_rounded,
                                                                                 color: FlutterFlowTheme.of(context).secondaryText,
@@ -967,7 +971,7 @@ class _ListEventMessagesWidgetState extends State<ListEventMessagesWidget> {
                                                                         ),
                                                                       ),
                                                                       Padding(
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             10.0,
@@ -978,7 +982,7 @@ class _ListEventMessagesWidgetState extends State<ListEventMessagesWidget> {
                                                                               MainAxisSize.max,
                                                                           children: [
                                                                             Padding(
-                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
                                                                               child: Icon(
                                                                                 Icons.favorite_rounded,
                                                                                 color: FlutterFlowTheme.of(context).secondaryText,
@@ -1000,7 +1004,7 @@ class _ListEventMessagesWidgetState extends State<ListEventMessagesWidget> {
                                                                         ),
                                                                       ),
                                                                       Padding(
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             10.0,
@@ -1011,7 +1015,7 @@ class _ListEventMessagesWidgetState extends State<ListEventMessagesWidget> {
                                                                               MainAxisSize.max,
                                                                           children: [
                                                                             Padding(
-                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
                                                                               child: Icon(
                                                                                 Icons.heart_broken_rounded,
                                                                                 color: FlutterFlowTheme.of(context).secondaryText,
@@ -1037,7 +1041,7 @@ class _ListEventMessagesWidgetState extends State<ListEventMessagesWidget> {
                                                                             MainAxisSize.max,
                                                                         children: [
                                                                           Padding(
-                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: EdgeInsetsDirectional.fromSTEB(
                                                                                 0.0,
                                                                                 0.0,
                                                                                 5.0,
@@ -1094,11 +1098,11 @@ class _ListEventMessagesWidgetState extends State<ListEventMessagesWidget> {
                           ),
                         if (listEventMessagesEventsRecord.esport == true)
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 5.0, 5.0, 5.0, 0.0),
                             child: StreamBuilder<List<EventMessagesRecord>>(
                               stream: queryEventMessagesRecord(
-                                parent: widget.eventRef,
+                                parent: widget!.eventRef,
                                 queryBuilder: (eventMessagesRecord) =>
                                     eventMessagesRecord.orderBy('created_time',
                                         descending: true),
@@ -1132,7 +1136,7 @@ class _ListEventMessagesWidgetState extends State<ListEventMessagesWidget> {
                                         columnCommsSportEventMessagesRecordList[
                                             columnCommsSportIndex];
                                     return Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 5.0, 0.0, 5.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
@@ -1186,7 +1190,7 @@ class _ListEventMessagesWidgetState extends State<ListEventMessagesWidget> {
                                                             children: [
                                                               Padding(
                                                                 padding:
-                                                                    const EdgeInsetsDirectional
+                                                                    EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             10.0,
                                                                             0.0,
@@ -1198,7 +1202,7 @@ class _ListEventMessagesWidgetState extends State<ListEventMessagesWidget> {
                                                                           .max,
                                                                   children: [
                                                                     Padding(
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           6.0,
@@ -1234,7 +1238,7 @@ class _ListEventMessagesWidgetState extends State<ListEventMessagesWidget> {
                                                                       ),
                                                                     ),
                                                                     Padding(
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
                                                                           10.0,
                                                                           0.0,
                                                                           0.0,
@@ -1263,7 +1267,7 @@ class _ListEventMessagesWidgetState extends State<ListEventMessagesWidget> {
                                                                             }.withoutNulls,
                                                                             extra: <String,
                                                                                 dynamic>{
-                                                                              kTransitionInfoKey: const TransitionInfo(
+                                                                              kTransitionInfoKey: TransitionInfo(
                                                                                 hasTransition: true,
                                                                                 transitionType: PageTransitionType.bottomToTop,
                                                                                 duration: Duration(milliseconds: 400),
@@ -1294,7 +1298,7 @@ class _ListEventMessagesWidgetState extends State<ListEventMessagesWidget> {
                                                               ),
                                                               Padding(
                                                                 padding:
-                                                                    const EdgeInsetsDirectional
+                                                                    EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -1321,7 +1325,7 @@ class _ListEventMessagesWidgetState extends State<ListEventMessagesWidget> {
                                                                       child:
                                                                           Padding(
                                                                         padding:
-                                                                            const EdgeInsets.all(5.0),
+                                                                            EdgeInsets.all(5.0),
                                                                         child:
                                                                             Text(
                                                                           columnCommsSportEventMessagesRecord
@@ -1362,7 +1366,7 @@ class _ListEventMessagesWidgetState extends State<ListEventMessagesWidget> {
                                                                                 ),
                                                                               }.withoutNulls,
                                                                               extra: <String, dynamic>{
-                                                                                kTransitionInfoKey: const TransitionInfo(
+                                                                                kTransitionInfoKey: TransitionInfo(
                                                                                   hasTransition: true,
                                                                                   transitionType: PageTransitionType.scale,
                                                                                   alignment: Alignment.bottomCenter,
@@ -1387,11 +1391,11 @@ class _ListEventMessagesWidgetState extends State<ListEventMessagesWidget> {
                                                               ),
                                                               Align(
                                                                 alignment:
-                                                                    const AlignmentDirectional(
+                                                                    AlignmentDirectional(
                                                                         -1.0,
                                                                         0.0),
                                                                 child: Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -1416,7 +1420,7 @@ class _ListEventMessagesWidgetState extends State<ListEventMessagesWidget> {
                                                                 ),
                                                               ),
                                                               Padding(
-                                                                padding: const EdgeInsetsDirectional
+                                                                padding: EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         10.0,
                                                                         5.0,
@@ -1435,7 +1439,7 @@ class _ListEventMessagesWidgetState extends State<ListEventMessagesWidget> {
                                                                             .spaceBetween,
                                                                     children: [
                                                                       Padding(
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             10.0,
@@ -1446,7 +1450,7 @@ class _ListEventMessagesWidgetState extends State<ListEventMessagesWidget> {
                                                                               MainAxisSize.max,
                                                                           children: [
                                                                             Padding(
-                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
                                                                               child: Icon(
                                                                                 Icons.insert_comment_rounded,
                                                                                 color: FlutterFlowTheme.of(context).secondaryText,
@@ -1468,7 +1472,7 @@ class _ListEventMessagesWidgetState extends State<ListEventMessagesWidget> {
                                                                         ),
                                                                       ),
                                                                       Padding(
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             10.0,
@@ -1479,7 +1483,7 @@ class _ListEventMessagesWidgetState extends State<ListEventMessagesWidget> {
                                                                               MainAxisSize.max,
                                                                           children: [
                                                                             Padding(
-                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
                                                                               child: Icon(
                                                                                 Icons.favorite_rounded,
                                                                                 color: FlutterFlowTheme.of(context).secondaryText,
@@ -1501,7 +1505,7 @@ class _ListEventMessagesWidgetState extends State<ListEventMessagesWidget> {
                                                                         ),
                                                                       ),
                                                                       Padding(
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             10.0,
@@ -1512,7 +1516,7 @@ class _ListEventMessagesWidgetState extends State<ListEventMessagesWidget> {
                                                                               MainAxisSize.max,
                                                                           children: [
                                                                             Padding(
-                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
                                                                               child: Icon(
                                                                                 Icons.heart_broken_rounded,
                                                                                 color: FlutterFlowTheme.of(context).secondaryText,
@@ -1538,7 +1542,7 @@ class _ListEventMessagesWidgetState extends State<ListEventMessagesWidget> {
                                                                             MainAxisSize.max,
                                                                         children: [
                                                                           Padding(
-                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: EdgeInsetsDirectional.fromSTEB(
                                                                                 0.0,
                                                                                 0.0,
                                                                                 5.0,

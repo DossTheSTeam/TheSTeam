@@ -2,9 +2,13 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'rank_typsters_page_model.dart';
 export 'rank_typsters_page_model.dart';
 
@@ -46,9 +50,9 @@ class _RankTypstersPageWidgetState extends State<RankTypstersPageWidget> {
             visible: valueOrDefault<bool>(currentUserDocument?.esport, false) ==
                 false,
             child: Align(
-              alignment: const AlignmentDirectional(0.0, -1.0),
+              alignment: AlignmentDirectional(0.0, -1.0),
               child: Padding(
-                padding: const EdgeInsets.all(10.0),
+                padding: EdgeInsets.all(10.0),
                 child: AuthUserStreamWidget(
                   builder: (context) => SingleChildScrollView(
                     child: Column(
@@ -71,7 +75,7 @@ class _RankTypstersPageWidgetState extends State<RankTypstersPageWidget> {
                                     context.pushNamed(
                                       'MenuPage',
                                       extra: <String, dynamic>{
-                                        kTransitionInfoKey: const TransitionInfo(
+                                        kTransitionInfoKey: TransitionInfo(
                                           hasTransition: true,
                                           transitionType:
                                               PageTransitionType.leftToRight,
@@ -88,7 +92,7 @@ class _RankTypstersPageWidgetState extends State<RankTypstersPageWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       10.0, 0.0, 0.0, 0.0),
                                   child: InkWell(
                                     splashColor: Colors.transparent,
@@ -116,9 +120,9 @@ class _RankTypstersPageWidgetState extends State<RankTypstersPageWidget> {
                                     .primaryBackground,
                               ),
                               child: Align(
-                                alignment: const AlignmentDirectional(0.0, 0.0),
+                                alignment: AlignmentDirectional(0.0, 0.0),
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 5.0),
                                   child: Text(
                                     'Classement des Typters',
@@ -138,7 +142,7 @@ class _RankTypstersPageWidgetState extends State<RankTypstersPageWidget> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 10.0, 0.0),
                                   child: InkWell(
                                     splashColor: Colors.transparent,
@@ -149,7 +153,7 @@ class _RankTypstersPageWidgetState extends State<RankTypstersPageWidget> {
                                       context.pushNamed(
                                         'RankPage',
                                         extra: <String, dynamic>{
-                                          kTransitionInfoKey: const TransitionInfo(
+                                          kTransitionInfoKey: TransitionInfo(
                                             hasTransition: true,
                                             transitionType:
                                                 PageTransitionType.rightToLeft,
@@ -171,7 +175,7 @@ class _RankTypstersPageWidgetState extends State<RankTypstersPageWidget> {
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 10.0, 0.0),
                                       child: InkWell(
                                         splashColor: Colors.transparent,
@@ -183,7 +187,7 @@ class _RankTypstersPageWidgetState extends State<RankTypstersPageWidget> {
                                             'MyBestsRankPage',
                                             extra: <String, dynamic>{
                                               kTransitionInfoKey:
-                                                  const TransitionInfo(
+                                                  TransitionInfo(
                                                 hasTransition: true,
                                                 transitionType:
                                                     PageTransitionType
@@ -204,7 +208,7 @@ class _RankTypstersPageWidgetState extends State<RankTypstersPageWidget> {
                                     ),
                                     if (true /* Warning: Trying to access variable not yet defined. */)
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 10.0, 0.0, 0.0),
                                         child: FutureBuilder<
                                             List<MyNotificationsRecord>>(
@@ -253,7 +257,7 @@ class _RankTypstersPageWidgetState extends State<RankTypstersPageWidget> {
                                                   MainAxisAlignment.end,
                                               children: [
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 10.0, 0.0),
                                                   child: InkWell(
@@ -271,7 +275,7 @@ class _RankTypstersPageWidgetState extends State<RankTypstersPageWidget> {
                                                         extra: <String,
                                                             dynamic>{
                                                           kTransitionInfoKey:
-                                                              const TransitionInfo(
+                                                              TransitionInfo(
                                                             hasTransition: true,
                                                             transitionType:
                                                                 PageTransitionType
@@ -314,7 +318,7 @@ class _RankTypstersPageWidgetState extends State<RankTypstersPageWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 20.0, 0.0, 0.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
@@ -323,7 +327,7 @@ class _RankTypstersPageWidgetState extends State<RankTypstersPageWidget> {
                                       children: [
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 9.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -363,7 +367,7 @@ class _RankTypstersPageWidgetState extends State<RankTypstersPageWidget> {
                                                 ),
                                                 child: Align(
                                                   alignment:
-                                                      const AlignmentDirectional(
+                                                      AlignmentDirectional(
                                                           1.0, 0.0),
                                                   child: Text(
                                                     'Pseudo',
@@ -396,7 +400,7 @@ class _RankTypstersPageWidgetState extends State<RankTypstersPageWidget> {
                                                 ),
                                                 child: Align(
                                                   alignment:
-                                                      const AlignmentDirectional(
+                                                      AlignmentDirectional(
                                                           0.0, 0.0),
                                                   child: Text(
                                                     'Total bénéfices',
@@ -430,7 +434,7 @@ class _RankTypstersPageWidgetState extends State<RankTypstersPageWidget> {
                                                 ),
                                                 child: Align(
                                                   alignment:
-                                                      const AlignmentDirectional(
+                                                      AlignmentDirectional(
                                                           0.0, 0.0),
                                                   child: Text(
                                                     'Stock',
@@ -463,7 +467,7 @@ class _RankTypstersPageWidgetState extends State<RankTypstersPageWidget> {
                                                 ),
                                                 child: Align(
                                                   alignment:
-                                                      const AlignmentDirectional(
+                                                      AlignmentDirectional(
                                                           0.0, 0.0),
                                                   child: Text(
                                                     'Gagnés',
@@ -496,7 +500,7 @@ class _RankTypstersPageWidgetState extends State<RankTypstersPageWidget> {
                                                 ),
                                                 child: Align(
                                                   alignment:
-                                                      const AlignmentDirectional(
+                                                      AlignmentDirectional(
                                                           0.0, 0.0),
                                                   child: Text(
                                                     'Cote moyenne',
@@ -533,7 +537,7 @@ class _RankTypstersPageWidgetState extends State<RankTypstersPageWidget> {
                                                 ),
                                                 child: Align(
                                                   alignment:
-                                                      const AlignmentDirectional(
+                                                      AlignmentDirectional(
                                                           0.0, 0.0),
                                                   child: Text(
                                                     'Perdus',
@@ -566,7 +570,7 @@ class _RankTypstersPageWidgetState extends State<RankTypstersPageWidget> {
                                                 ),
                                                 child: Align(
                                                   alignment:
-                                                      const AlignmentDirectional(
+                                                      AlignmentDirectional(
                                                           0.0, 0.0),
                                                   child: Text(
                                                     'ClickSTeam',
@@ -599,7 +603,7 @@ class _RankTypstersPageWidgetState extends State<RankTypstersPageWidget> {
                                                 ),
                                                 child: Align(
                                                   alignment:
-                                                      const AlignmentDirectional(
+                                                      AlignmentDirectional(
                                                           0.0, 0.0),
                                                   child: Text(
                                                     'Signals',
@@ -689,7 +693,7 @@ class _RankTypstersPageWidgetState extends State<RankTypstersPageWidget> {
                                                         ),
                                                         child: Align(
                                                           alignment:
-                                                              const AlignmentDirectional(
+                                                              AlignmentDirectional(
                                                                   0.0, 0.0),
                                                           child: Text(
                                                             valueOrDefault<
@@ -731,7 +735,7 @@ class _RankTypstersPageWidgetState extends State<RankTypstersPageWidget> {
                                                         ),
                                                         child: Align(
                                                           alignment:
-                                                              const AlignmentDirectional(
+                                                              AlignmentDirectional(
                                                                   1.0, 0.0),
                                                           child: InkWell(
                                                             splashColor: Colors
@@ -794,7 +798,7 @@ class _RankTypstersPageWidgetState extends State<RankTypstersPageWidget> {
                                                         ),
                                                         child: Align(
                                                           alignment:
-                                                              const AlignmentDirectional(
+                                                              AlignmentDirectional(
                                                                   0.0, 0.0),
                                                           child: Text(
                                                             valueOrDefault<
@@ -836,7 +840,7 @@ class _RankTypstersPageWidgetState extends State<RankTypstersPageWidget> {
                                                         ),
                                                         child: Align(
                                                           alignment:
-                                                              const AlignmentDirectional(
+                                                              AlignmentDirectional(
                                                                   0.0, 0.0),
                                                           child: Text(
                                                             valueOrDefault<
@@ -876,7 +880,7 @@ class _RankTypstersPageWidgetState extends State<RankTypstersPageWidget> {
                                                         ),
                                                         child: Align(
                                                           alignment:
-                                                              const AlignmentDirectional(
+                                                              AlignmentDirectional(
                                                                   0.0, 0.0),
                                                           child: Text(
                                                             valueOrDefault<
@@ -914,7 +918,7 @@ class _RankTypstersPageWidgetState extends State<RankTypstersPageWidget> {
                                                         ),
                                                         child: Align(
                                                           alignment:
-                                                              const AlignmentDirectional(
+                                                              AlignmentDirectional(
                                                                   0.0, 0.0),
                                                           child: Text(
                                                             valueOrDefault<
@@ -946,7 +950,7 @@ class _RankTypstersPageWidgetState extends State<RankTypstersPageWidget> {
                                                       ),
                                                       Align(
                                                         alignment:
-                                                            const AlignmentDirectional(
+                                                            AlignmentDirectional(
                                                                 0.0, 0.0),
                                                         child: Container(
                                                           width: 65.0,
@@ -964,7 +968,7 @@ class _RankTypstersPageWidgetState extends State<RankTypstersPageWidget> {
                                                           ),
                                                           child: Align(
                                                             alignment:
-                                                                const AlignmentDirectional(
+                                                                AlignmentDirectional(
                                                                     0.0, 0.0),
                                                             child: Text(
                                                               valueOrDefault<
@@ -1010,7 +1014,7 @@ class _RankTypstersPageWidgetState extends State<RankTypstersPageWidget> {
                                                         ),
                                                         child: Align(
                                                           alignment:
-                                                              const AlignmentDirectional(
+                                                              AlignmentDirectional(
                                                                   0.0, 0.0),
                                                           child: Text(
                                                             valueOrDefault<
@@ -1041,7 +1045,7 @@ class _RankTypstersPageWidgetState extends State<RankTypstersPageWidget> {
                                                                   .of(context)
                                                               .primaryBackground,
                                                           borderRadius:
-                                                              const BorderRadius.only(
+                                                              BorderRadius.only(
                                                             bottomLeft:
                                                                 Radius.circular(
                                                                     0.0),
@@ -1063,7 +1067,7 @@ class _RankTypstersPageWidgetState extends State<RankTypstersPageWidget> {
                                                         ),
                                                         child: Align(
                                                           alignment:
-                                                              const AlignmentDirectional(
+                                                              AlignmentDirectional(
                                                                   0.0, 0.0),
                                                           child: Text(
                                                             valueOrDefault<
@@ -1099,7 +1103,7 @@ class _RankTypstersPageWidgetState extends State<RankTypstersPageWidget> {
                                                                     .of(context)
                                                                 .primaryBackground,
                                                             borderRadius:
-                                                                const BorderRadius
+                                                                BorderRadius
                                                                     .only(
                                                               bottomLeft: Radius
                                                                   .circular(

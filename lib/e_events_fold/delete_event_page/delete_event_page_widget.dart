@@ -4,7 +4,10 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'delete_event_page_model.dart';
 export 'delete_event_page_model.dart';
 
@@ -43,7 +46,7 @@ class _DeleteEventPageWidgetState extends State<DeleteEventPageWidget> {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<EventsRecord>(
-      stream: EventsRecord.getDocument(widget.eventRef!),
+      stream: EventsRecord.getDocument(widget!.eventRef!),
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
@@ -73,7 +76,7 @@ class _DeleteEventPageWidgetState extends State<DeleteEventPageWidget> {
             body: SafeArea(
               top: true,
               child: Padding(
-                padding: const EdgeInsets.all(10.0),
+                padding: EdgeInsets.all(10.0),
                 child: SingleChildScrollView(
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
@@ -83,7 +86,7 @@ class _DeleteEventPageWidgetState extends State<DeleteEventPageWidget> {
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 10.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -102,12 +105,12 @@ class _DeleteEventPageWidgetState extends State<DeleteEventPageWidget> {
                                           'ModifETeamPage',
                                           queryParameters: {
                                             'teamRef': serializeParam(
-                                              widget.eTeamRef,
+                                              widget!.eTeamRef,
                                               ParamType.DocumentReference,
                                             ),
                                           }.withoutNulls,
                                           extra: <String, dynamic>{
-                                            kTransitionInfoKey: const TransitionInfo(
+                                            kTransitionInfoKey: TransitionInfo(
                                               hasTransition: true,
                                               transitionType: PageTransitionType
                                                   .leftToRight,
@@ -125,7 +128,7 @@ class _DeleteEventPageWidgetState extends State<DeleteEventPageWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           10.0, 0.0, 0.0, 0.0),
                                       child: InkWell(
                                         splashColor: Colors.transparent,
@@ -160,7 +163,7 @@ class _DeleteEventPageWidgetState extends State<DeleteEventPageWidget> {
                                             ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             2.0, 0.0, 2.0, 0.0),
                                         child: Text(
                                           '-',
@@ -186,7 +189,7 @@ class _DeleteEventPageWidgetState extends State<DeleteEventPageWidget> {
                                             ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             2.0, 0.0, 2.0, 0.0),
                                         child: Text(
                                           ':',
@@ -258,7 +261,7 @@ class _DeleteEventPageWidgetState extends State<DeleteEventPageWidget> {
                                         children: [
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 10.0, 0.0),
                                             child: InkWell(
                                               splashColor: Colors.transparent,
@@ -271,7 +274,7 @@ class _DeleteEventPageWidgetState extends State<DeleteEventPageWidget> {
                                                   'MyNotifsList',
                                                   extra: <String, dynamic>{
                                                     kTransitionInfoKey:
-                                                        const TransitionInfo(
+                                                        TransitionInfo(
                                                       hasTransition: true,
                                                       transitionType:
                                                           PageTransitionType
@@ -300,7 +303,7 @@ class _DeleteEventPageWidgetState extends State<DeleteEventPageWidget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 5.0, 0.0),
                             child: Text(
                               'Supprimer la rencontre lorsque celle ci est terminée ou en cas de litige avant accord horaire.',
@@ -315,7 +318,7 @@ class _DeleteEventPageWidgetState extends State<DeleteEventPageWidget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 5.0, 0.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -353,10 +356,10 @@ class _DeleteEventPageWidgetState extends State<DeleteEventPageWidget> {
                                       ),
                                       child: Align(
                                         alignment:
-                                            const AlignmentDirectional(1.0, 0.0),
+                                            AlignmentDirectional(1.0, 0.0),
                                         child: Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 5.0, 0.0),
                                           child: Text(
                                             valueOrDefault<String>(
@@ -417,10 +420,10 @@ class _DeleteEventPageWidgetState extends State<DeleteEventPageWidget> {
                                       ),
                                       child: Align(
                                         alignment:
-                                            const AlignmentDirectional(-1.0, 0.0),
+                                            AlignmentDirectional(-1.0, 0.0),
                                         child: Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   5.0, 0.0, 0.0, 0.0),
                                           child: Text(
                                             valueOrDefault<String>(
@@ -445,16 +448,16 @@ class _DeleteEventPageWidgetState extends State<DeleteEventPageWidget> {
                           ),
                           if (deleteEventPageEventsRecord.seenScore == true)
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 5.0, 0.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Align(
-                                    alignment: const AlignmentDirectional(1.0, 0.0),
+                                    alignment: AlignmentDirectional(1.0, 0.0),
                                     child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 10.0, 0.0),
                                       child: Text(
                                         deleteEventPageEventsRecord.scoreDom
@@ -479,9 +482,9 @@ class _DeleteEventPageWidgetState extends State<DeleteEventPageWidget> {
                                         ),
                                   ),
                                   Align(
-                                    alignment: const AlignmentDirectional(-1.0, 0.0),
+                                    alignment: AlignmentDirectional(-1.0, 0.0),
                                     child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           10.0, 0.0, 0.0, 0.0),
                                       child: Text(
                                         deleteEventPageEventsRecord.scoreExt
@@ -505,7 +508,7 @@ class _DeleteEventPageWidgetState extends State<DeleteEventPageWidget> {
                                 .secondaryBackground,
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 5.0, 0.0),
                             child: Text(
                               'Avant cela...',
@@ -520,7 +523,7 @@ class _DeleteEventPageWidgetState extends State<DeleteEventPageWidget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 5.0, 0.0),
                             child: Text(
                               'Supprimer les éventuelles réferences\nci-dessous liées à la rencontre.',
@@ -536,13 +539,13 @@ class _DeleteEventPageWidgetState extends State<DeleteEventPageWidget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 50.0),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 10.0),
                                   child: StreamBuilder<List<TeamEventsRecord>>(
                                     stream: queryTeamEventsRecord(
@@ -551,7 +554,7 @@ class _DeleteEventPageWidgetState extends State<DeleteEventPageWidget> {
                                       queryBuilder: (teamEventsRecord) =>
                                           teamEventsRecord.where(
                                         'events',
-                                        isEqualTo: widget.eventRef,
+                                        isEqualTo: widget!.eventRef,
                                       ),
                                       singleRecord: true,
                                     ),
@@ -591,7 +594,7 @@ class _DeleteEventPageWidgetState extends State<DeleteEventPageWidget> {
                                         children: [
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     5.0, 0.0, 5.0, 0.0),
                                             child: Text(
                                               'Référence Rencontre\nDomicile',
@@ -612,10 +615,10 @@ class _DeleteEventPageWidgetState extends State<DeleteEventPageWidget> {
                                           if (rowTeamEventsRecord?.reference !=
                                               null)
                                             Align(
-                                              alignment: const AlignmentDirectional(
+                                              alignment: AlignmentDirectional(
                                                   0.0, 0.0),
                                               child: Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 0.0, 20.0, 0.0),
                                                 child: FFButtonWidget(
@@ -628,11 +631,11 @@ class _DeleteEventPageWidgetState extends State<DeleteEventPageWidget> {
                                                   options: FFButtonOptions(
                                                     height: 30.0,
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(5.0, 0.0,
                                                                 5.0, 0.0),
                                                     iconPadding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 0.0),
                                                     color: FlutterFlowTheme.of(
@@ -649,7 +652,7 @@ class _DeleteEventPageWidgetState extends State<DeleteEventPageWidget> {
                                                           letterSpacing: 0.0,
                                                         ),
                                                     elevation: 3.0,
-                                                    borderSide: const BorderSide(
+                                                    borderSide: BorderSide(
                                                       color: Colors.transparent,
                                                       width: 1.0,
                                                     ),
@@ -674,7 +677,7 @@ class _DeleteEventPageWidgetState extends State<DeleteEventPageWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 10.0, 0.0, 0.0),
                                   child: StreamBuilder<List<TeamEventsRecord>>(
                                     stream: queryTeamEventsRecord(
@@ -683,7 +686,7 @@ class _DeleteEventPageWidgetState extends State<DeleteEventPageWidget> {
                                       queryBuilder: (teamEventsRecord) =>
                                           teamEventsRecord.where(
                                         'events',
-                                        isEqualTo: widget.eventRef,
+                                        isEqualTo: widget!.eventRef,
                                       ),
                                       singleRecord: true,
                                     ),
@@ -723,7 +726,7 @@ class _DeleteEventPageWidgetState extends State<DeleteEventPageWidget> {
                                         children: [
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     5.0, 0.0, 0.0, 0.0),
                                             child: Text(
                                               'Référence Rencontre\nExtérieure',
@@ -744,10 +747,10 @@ class _DeleteEventPageWidgetState extends State<DeleteEventPageWidget> {
                                           if (rowTeamEventsRecord?.reference !=
                                               null)
                                             Align(
-                                              alignment: const AlignmentDirectional(
+                                              alignment: AlignmentDirectional(
                                                   0.0, 0.0),
                                               child: Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 0.0, 20.0, 0.0),
                                                 child: FFButtonWidget(
@@ -760,11 +763,11 @@ class _DeleteEventPageWidgetState extends State<DeleteEventPageWidget> {
                                                   options: FFButtonOptions(
                                                     height: 30.0,
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(5.0, 0.0,
                                                                 5.0, 0.0),
                                                     iconPadding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 0.0),
                                                     color: FlutterFlowTheme.of(
@@ -781,7 +784,7 @@ class _DeleteEventPageWidgetState extends State<DeleteEventPageWidget> {
                                                           letterSpacing: 0.0,
                                                         ),
                                                     elevation: 3.0,
-                                                    borderSide: const BorderSide(
+                                                    borderSide: BorderSide(
                                                       color: Colors.transparent,
                                                       width: 1.0,
                                                     ),
@@ -809,7 +812,7 @@ class _DeleteEventPageWidgetState extends State<DeleteEventPageWidget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 5.0, 5.0, 0.0),
                             child: Text(
                               'Les références ci-dessus ne sont pas visibles...',
@@ -824,7 +827,7 @@ class _DeleteEventPageWidgetState extends State<DeleteEventPageWidget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 5.0, 10.0),
                             child: Text(
                               'Supprimer la rencontre',
@@ -843,13 +846,13 @@ class _DeleteEventPageWidgetState extends State<DeleteEventPageWidget> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Align(
-                                alignment: const AlignmentDirectional(0.0, 0.0),
+                                alignment: AlignmentDirectional(0.0, 0.0),
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 20.0),
                                   child: FFButtonWidget(
                                     onPressed: () async {
-                                      await widget.eventRef!.delete();
+                                      await widget!.eventRef!.delete();
 
                                       context.pushNamed(
                                         'ModifETeamPage',
@@ -864,10 +867,10 @@ class _DeleteEventPageWidgetState extends State<DeleteEventPageWidget> {
                                     text: 'Supprimer',
                                     options: FFButtonOptions(
                                       height: 30.0,
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           16.0, 0.0, 16.0, 0.0),
                                       iconPadding:
-                                          const EdgeInsetsDirectional.fromSTEB(
+                                          EdgeInsetsDirectional.fromSTEB(
                                               0.0, 0.0, 0.0, 0.0),
                                       color: FlutterFlowTheme.of(context)
                                           .secondaryBackground,

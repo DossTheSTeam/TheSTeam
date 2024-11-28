@@ -6,7 +6,10 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'red_card_post_page_model.dart';
 export 'red_card_post_page_model.dart';
 
@@ -46,7 +49,7 @@ class _RedCardPostPageWidgetState extends State<RedCardPostPageWidget> {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<PostsRecord>(
-      stream: PostsRecord.getDocument(widget.postRef!),
+      stream: PostsRecord.getDocument(widget!.postRef!),
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
@@ -76,9 +79,9 @@ class _RedCardPostPageWidgetState extends State<RedCardPostPageWidget> {
             body: SafeArea(
               top: true,
               child: Align(
-                alignment: const AlignmentDirectional(0.0, -1.0),
+                alignment: AlignmentDirectional(0.0, -1.0),
                 child: Padding(
-                  padding: const EdgeInsets.all(10.0),
+                  padding: EdgeInsets.all(10.0),
                   child: SingleChildScrollView(
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
@@ -99,7 +102,7 @@ class _RedCardPostPageWidgetState extends State<RedCardPostPageWidget> {
                                     context.pushNamed(
                                       'MenuPage',
                                       extra: <String, dynamic>{
-                                        kTransitionInfoKey: const TransitionInfo(
+                                        kTransitionInfoKey: TransitionInfo(
                                           hasTransition: true,
                                           transitionType:
                                               PageTransitionType.leftToRight,
@@ -116,7 +119,7 @@ class _RedCardPostPageWidgetState extends State<RedCardPostPageWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       10.0, 0.0, 0.0, 0.0),
                                   child: InkWell(
                                     splashColor: Colors.transparent,
@@ -137,7 +140,7 @@ class _RedCardPostPageWidgetState extends State<RedCardPostPageWidget> {
                               ],
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   30.0, 0.0, 0.0, 0.0),
                               child: Text(
                                 'Appel à la VAR',
@@ -153,9 +156,9 @@ class _RedCardPostPageWidgetState extends State<RedCardPostPageWidget> {
                           ],
                         ),
                         Align(
-                          alignment: const AlignmentDirectional(-1.0, 0.0),
+                          alignment: AlignmentDirectional(-1.0, 0.0),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 10.0, 20.0, 10.0, 10.0),
                             child: Text(
                               'Coupable sous vos yeux d\'une faute grossière.',
@@ -170,9 +173,9 @@ class _RedCardPostPageWidgetState extends State<RedCardPostPageWidget> {
                           ),
                         ),
                         Align(
-                          alignment: const AlignmentDirectional(-1.0, 0.0),
+                          alignment: AlignmentDirectional(-1.0, 0.0),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 10.0, 0.0, 0.0, 0.0),
                             child: Text(
                               'Vous allez mettre un carton rouge à',
@@ -212,7 +215,7 @@ class _RedCardPostPageWidgetState extends State<RedCardPostPageWidget> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       5.0, 0.0, 6.0, 0.0),
                                   child: Container(
                                     width: 35.0,
@@ -256,9 +259,9 @@ class _RedCardPostPageWidgetState extends State<RedCardPostPageWidget> {
                               FlutterFlowTheme.of(context).secondaryBackground,
                         ),
                         Align(
-                          alignment: const AlignmentDirectional(0.0, 0.0),
+                          alignment: AlignmentDirectional(0.0, 0.0),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 20.0, 0.0, 10.0),
                             child: Text(
                               'Pour la raison suivante ',
@@ -283,7 +286,7 @@ class _RedCardPostPageWidgetState extends State<RedCardPostPageWidget> {
                             'homophopie',
                             'droit.dauteur'
                           ]),
-                          optionLabels: const [
+                          optionLabels: [
                             'Violent',
                             'Racisme',
                             'Homophobie',
@@ -310,7 +313,7 @@ class _RedCardPostPageWidgetState extends State<RedCardPostPageWidget> {
                           borderColor: Colors.transparent,
                           borderWidth: 0.0,
                           borderRadius: 8.0,
-                          margin: const EdgeInsetsDirectional.fromSTEB(
+                          margin: EdgeInsetsDirectional.fromSTEB(
                               12.0, 0.0, 12.0, 0.0),
                           hidesUnderline: true,
                           isOverButton: false,
@@ -318,7 +321,7 @@ class _RedCardPostPageWidgetState extends State<RedCardPostPageWidget> {
                           isMultiSelect: false,
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               8.0, 10.0, 8.0, 10.0),
                           child: TextFormField(
                             controller: _model.textFoulTextController,
@@ -375,9 +378,9 @@ class _RedCardPostPageWidgetState extends State<RedCardPostPageWidget> {
                           ),
                         ),
                         Align(
-                          alignment: const AlignmentDirectional(-1.0, 0.0),
+                          alignment: AlignmentDirectional(-1.0, 0.0),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 10.0, 10.0, 0.0, 10.0),
                             child: Text(
                               'Preuves dans l\'actualité suivante',
@@ -395,7 +398,7 @@ class _RedCardPostPageWidgetState extends State<RedCardPostPageWidget> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Align(
-                              alignment: const AlignmentDirectional(0.0, 0.0),
+                              alignment: AlignmentDirectional(0.0, 0.0),
                               child: Text(
                                 redCardPostPagePostsRecord.title,
                                 style: FlutterFlowTheme.of(context)
@@ -407,7 +410,7 @@ class _RedCardPostPageWidgetState extends State<RedCardPostPageWidget> {
                               ),
                             ),
                             Align(
-                              alignment: const AlignmentDirectional(-1.0, 0.0),
+                              alignment: AlignmentDirectional(-1.0, 0.0),
                               child: Text(
                                 redCardPostPagePostsRecord.description,
                                 maxLines: 5,
@@ -420,7 +423,7 @@ class _RedCardPostPageWidgetState extends State<RedCardPostPageWidget> {
                               ),
                             ),
                             Align(
-                              alignment: const AlignmentDirectional(-1.0, 0.0),
+                              alignment: AlignmentDirectional(-1.0, 0.0),
                               child: Text(
                                 dateTimeFormat("d/M H:mm",
                                     redCardPostPagePostsRecord.createdTime!),
@@ -440,7 +443,7 @@ class _RedCardPostPageWidgetState extends State<RedCardPostPageWidget> {
                               FlutterFlowTheme.of(context).secondaryBackground,
                         ),
                         Align(
-                          alignment: const AlignmentDirectional(-1.0, 0.0),
+                          alignment: AlignmentDirectional(-1.0, 0.0),
                           child: Text(
                             'Après verifications de vos informations, la plateforme procedera à des sanctions avec l\'appui de votre signalement.',
                             style: FlutterFlowTheme.of(context)
@@ -452,9 +455,9 @@ class _RedCardPostPageWidgetState extends State<RedCardPostPageWidget> {
                           ),
                         ),
                         Align(
-                          alignment: const AlignmentDirectional(0.0, -1.0),
+                          alignment: AlignmentDirectional(0.0, -1.0),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 20.0, 0.0, 0.0),
                             child: FFButtonWidget(
                               onPressed: () async {
@@ -465,7 +468,7 @@ class _RedCardPostPageWidgetState extends State<RedCardPostPageWidget> {
                                     userRef: currentUserReference,
                                     textFouls:
                                         _model.textFoulTextController.text,
-                                    post: widget.postRef,
+                                    post: widget!.postRef,
                                     modSeen: false,
                                     text: _model.dropFoulsValue,
                                     teamRef: redCardPostPagePostsRecord.teamRef,
@@ -494,8 +497,8 @@ class _RedCardPostPageWidgetState extends State<RedCardPostPageWidget> {
                               options: FFButtonOptions(
                                 width: 350.0,
                                 height: 50.0,
-                                padding: const EdgeInsets.all(0.0),
-                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsets.all(0.0),
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color:
                                     FlutterFlowTheme.of(context).secondaryText,
@@ -508,7 +511,7 @@ class _RedCardPostPageWidgetState extends State<RedCardPostPageWidget> {
                                       letterSpacing: 0.0,
                                     ),
                                 elevation: 3.0,
-                                borderSide: const BorderSide(
+                                borderSide: BorderSide(
                                   color: Colors.transparent,
                                   width: 1.0,
                                 ),
@@ -521,9 +524,9 @@ class _RedCardPostPageWidgetState extends State<RedCardPostPageWidget> {
                           ),
                         ),
                         Align(
-                          alignment: const AlignmentDirectional(0.0, 0.0),
+                          alignment: AlignmentDirectional(0.0, 0.0),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 10.0, 0.0, 0.0),
                             child: Text(
                               'Merci pour votre aide, par votre action vous maintenez une bonne entente entre les utilisateurs.',

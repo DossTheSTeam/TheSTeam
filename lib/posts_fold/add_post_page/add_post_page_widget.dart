@@ -7,7 +7,10 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_video_player.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'add_post_page_model.dart';
 export 'add_post_page_model.dart';
 
@@ -53,7 +56,7 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<TeamsRecord>(
-      stream: TeamsRecord.getDocument(widget.teamRef!),
+      stream: TeamsRecord.getDocument(widget!.teamRef!),
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
@@ -83,9 +86,9 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
             body: SafeArea(
               top: true,
               child: Align(
-                alignment: const AlignmentDirectional(0.0, -1.0),
+                alignment: AlignmentDirectional(0.0, -1.0),
                 child: Padding(
-                  padding: const EdgeInsets.all(10.0),
+                  padding: EdgeInsets.all(10.0),
                   child: SingleChildScrollView(
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
@@ -106,7 +109,7 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
                                     context.pushNamed(
                                       'MenuPage',
                                       extra: <String, dynamic>{
-                                        kTransitionInfoKey: const TransitionInfo(
+                                        kTransitionInfoKey: TransitionInfo(
                                           hasTransition: true,
                                           transitionType:
                                               PageTransitionType.leftToRight,
@@ -123,7 +126,7 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       10.0, 0.0, 0.0, 0.0),
                                   child: InkWell(
                                     splashColor: Colors.transparent,
@@ -144,13 +147,13 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
                               ],
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 0.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 6.0, 0.0),
                                     child: Container(
                                       width: 65.0,
@@ -172,7 +175,7 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       addPostPageTeamsRecord.name,
@@ -191,14 +194,14 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
                           ],
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               10.0, 5.0, 10.0, 5.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Expanded(
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       10.0, 0.0, 10.0, 0.0),
                                   child: TextFormField(
                                     controller: _model.titleFieldTextController,
@@ -270,7 +273,7 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
                         ),
                         Expanded(
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 10.0, 0.0, 10.0, 0.0),
                             child: TextFormField(
                               controller: _model.descriptionFieldTextController,
@@ -330,7 +333,7 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 10.0, 0.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -416,7 +419,7 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
                                   borderRadius: BorderRadius.circular(18.0),
                                 ),
                                 child: Padding(
-                                  padding: const EdgeInsets.all(3.0),
+                                  padding: EdgeInsets.all(3.0),
                                   child: ClipRRect(
                                     borderRadius: BorderRadius.circular(15.0),
                                     child: Image.network(
@@ -435,7 +438,7 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 10.0, 0.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -446,7 +449,7 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 30.0),
                                         child: Icon(
                                           Icons.video_camera_back_outlined,
@@ -471,7 +474,7 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
                                           .secondaryBackground,
                                       borderRadius: BorderRadius.circular(18.0),
                                     ),
-                                    child: const FlutterFlowVideoPlayer(
+                                    child: FlutterFlowVideoPlayer(
                                       path:
                                           'https://assets.mixkit.co/videos/preview/mixkit-forest-stream-in-the-sunlight-529-large.mp4',
                                       videoType: VideoType.network,
@@ -490,7 +493,7 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
                               children: [
                                 Expanded(
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         8.0, 0.0, 8.0, 0.0),
                                     child: TextFormField(
                                       controller: _model.textController3,
@@ -567,7 +570,7 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
                           ],
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 5.0, 0.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -579,9 +582,9 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
                                 size: 30.0,
                               ),
                               Align(
-                                alignment: const AlignmentDirectional(0.0, 0.0),
+                                alignment: AlignmentDirectional(0.0, 0.0),
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 6.0, 0.0, 0.0),
                                   child: Container(
                                     width: 300.0,
@@ -591,7 +594,7 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
                                           .primaryBackground,
                                     ),
                                     child: Padding(
-                                      padding: const EdgeInsets.all(3.0),
+                                      padding: EdgeInsets.all(3.0),
                                       child: FlutterFlowAudioPlayer(
                                         audio: Audio.network(
                                           'https://filesamples.com/samples/audio/mp3/sample3.mp3',
@@ -635,13 +638,15 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 20.0, 0.0, 20.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               if ((_model.titleFieldTextController.text !=
+                                          null &&
+                                      _model.titleFieldTextController.text !=
                                           '') &&
                                   (addPostPageTeamsRecord.leagueValue !=
                                       'admin'))
@@ -662,7 +667,7 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
                                             addPostPageTeamsRecord.leagueValue,
                                         moderator:
                                             addPostPageTeamsRecord.adminUser,
-                                        teamRef: widget.teamRef,
+                                        teamRef: widget!.teamRef,
                                         esport: addPostPageTeamsRecord.esport,
                                         sportValue:
                                             addPostPageTeamsRecord.sportValue,
@@ -688,7 +693,7 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
                                             addPostPageTeamsRecord.leagueValue,
                                         moderator:
                                             addPostPageTeamsRecord.adminUser,
-                                        teamRef: widget.teamRef,
+                                        teamRef: widget!.teamRef,
                                         esport: addPostPageTeamsRecord.esport,
                                         sportValue:
                                             addPostPageTeamsRecord.sportValue,
@@ -716,7 +721,7 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
                                     });
 
                                     await TeamPostsRecord.createDoc(
-                                            widget.teamRef!)
+                                            widget!.teamRef!)
                                         .set({
                                       ...createTeamPostsRecordData(
                                         posts: _model.postRef?.reference,
@@ -733,12 +738,12 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
                                       'ListPostsTeam',
                                       queryParameters: {
                                         'teamRef': serializeParam(
-                                          widget.teamRef,
+                                          widget!.teamRef,
                                           ParamType.DocumentReference,
                                         ),
                                       }.withoutNulls,
                                       extra: <String, dynamic>{
-                                        kTransitionInfoKey: const TransitionInfo(
+                                        kTransitionInfoKey: TransitionInfo(
                                           hasTransition: true,
                                           transitionType:
                                               PageTransitionType.scale,
@@ -753,9 +758,9 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
                                   text: 'Valider',
                                   options: FFButtonOptions(
                                     height: 30.0,
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         25.0, 0.0, 25.0, 0.0),
-                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
                                     color: FlutterFlowTheme.of(context).success,
                                     textStyle: FlutterFlowTheme.of(context)
@@ -767,7 +772,7 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
                                           letterSpacing: 0.0,
                                         ),
                                     elevation: 3.0,
-                                    borderSide: const BorderSide(
+                                    borderSide: BorderSide(
                                       color: Colors.transparent,
                                       width: 1.0,
                                     ),
@@ -777,6 +782,8 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
                                   ),
                                 ),
                               if ((_model.titleFieldTextController.text !=
+                                          null &&
+                                      _model.titleFieldTextController.text !=
                                           '') &&
                                   (addPostPageTeamsRecord.leagueValue ==
                                       'admin'))
@@ -797,7 +804,7 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
                                             addPostPageTeamsRecord.leagueValue,
                                         moderator:
                                             addPostPageTeamsRecord.adminUser,
-                                        teamRef: widget.teamRef,
+                                        teamRef: widget!.teamRef,
                                         esport: addPostPageTeamsRecord.esport,
                                         sportValue:
                                             addPostPageTeamsRecord.sportValue,
@@ -823,7 +830,7 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
                                             addPostPageTeamsRecord.leagueValue,
                                         moderator:
                                             addPostPageTeamsRecord.adminUser,
-                                        teamRef: widget.teamRef,
+                                        teamRef: widget!.teamRef,
                                         esport: addPostPageTeamsRecord.esport,
                                         sportValue:
                                             addPostPageTeamsRecord.sportValue,
@@ -836,7 +843,7 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
                                     }, postsRecordReference);
 
                                     await TeamPostsRecord.createDoc(
-                                            widget.teamRef!)
+                                            widget!.teamRef!)
                                         .set({
                                       ...createTeamPostsRecordData(
                                         posts: _model.adminPostRef?.reference,
@@ -869,12 +876,12 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
                                       'ListAdvices',
                                       queryParameters: {
                                         'teamRef': serializeParam(
-                                          widget.teamRef,
+                                          widget!.teamRef,
                                           ParamType.DocumentReference,
                                         ),
                                       }.withoutNulls,
                                       extra: <String, dynamic>{
-                                        kTransitionInfoKey: const TransitionInfo(
+                                        kTransitionInfoKey: TransitionInfo(
                                           hasTransition: true,
                                           transitionType:
                                               PageTransitionType.scale,
@@ -889,9 +896,9 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
                                   text: 'Valider',
                                   options: FFButtonOptions(
                                     height: 30.0,
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         25.0, 0.0, 25.0, 0.0),
-                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
                                     color: FlutterFlowTheme.of(context).success,
                                     textStyle: FlutterFlowTheme.of(context)
@@ -903,7 +910,7 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
                                           letterSpacing: 0.0,
                                         ),
                                     elevation: 3.0,
-                                    borderSide: const BorderSide(
+                                    borderSide: BorderSide(
                                       color: Colors.transparent,
                                       width: 1.0,
                                     ),

@@ -4,7 +4,10 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'cart_page_add3_bet_model.dart';
 export 'cart_page_add3_bet_model.dart';
 
@@ -43,7 +46,7 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<CartRecord>(
-      stream: CartRecord.getDocument(widget.cartRef!),
+      stream: CartRecord.getDocument(widget!.cartRef!),
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
@@ -73,11 +76,11 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
             body: SafeArea(
               top: true,
               child: Align(
-                alignment: const AlignmentDirectional(0.0, -1.0),
+                alignment: AlignmentDirectional(0.0, -1.0),
                 child: Padding(
-                  padding: const EdgeInsets.all(10.0),
+                  padding: EdgeInsets.all(10.0),
                   child: StreamBuilder<MyBetsRecord>(
-                    stream: MyBetsRecord.getDocument(widget.myBetRef!),
+                    stream: MyBetsRecord.getDocument(widget!.myBetRef!),
                     builder: (context, snapshot) {
                       // Customize what your widget looks like when it's loading.
                       if (!snapshot.hasData) {
@@ -105,7 +108,7 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 5.0, 0.0, 5.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -129,7 +132,7 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                     'MenuPage',
                                                     extra: <String, dynamic>{
                                                       kTransitionInfoKey:
-                                                          const TransitionInfo(
+                                                          TransitionInfo(
                                                         hasTransition: true,
                                                         transitionType:
                                                             PageTransitionType
@@ -140,7 +143,7 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                     },
                                                   );
 
-                                                  await widget.cartRef!
+                                                  await widget!.cartRef!
                                                       .delete();
                                                 },
                                                 child: Icon(
@@ -152,7 +155,7 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                 ),
                                               ),
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         10.0, 0.0, 0.0, 0.0),
                                                 child: InkWell(
@@ -166,7 +169,7 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                       Colors.transparent,
                                                   onTap: () async {
                                                     context.safePop();
-                                                    await widget.cartRef!
+                                                    await widget!.cartRef!
                                                         .delete();
                                                   },
                                                   child: Icon(
@@ -183,7 +186,7 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     10.0, 0.0, 0.0, 0.0),
                                             child: Text(
                                               'Ajouter le 3ème paris ?',
@@ -244,7 +247,7 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 10.0, 0.0, 0.0),
                                               child: Column(
@@ -252,7 +255,7 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                 children: [
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 5.0,
                                                                 0.0, 0.0),
                                                     child: StreamBuilder<
@@ -304,11 +307,11 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                               ),
                                                               child: Align(
                                                                 alignment:
-                                                                    const AlignmentDirectional(
+                                                                    AlignmentDirectional(
                                                                         1.0,
                                                                         0.0),
                                                                 child: Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -356,11 +359,11 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                               ),
                                                               child: Align(
                                                                 alignment:
-                                                                    const AlignmentDirectional(
+                                                                    AlignmentDirectional(
                                                                         -1.0,
                                                                         0.0),
                                                                 child: Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           5.0,
                                                                           0.0,
@@ -392,7 +395,7 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 5.0,
                                                                 0.0, 5.0),
                                                     child: Row(
@@ -404,7 +407,7 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                       children: [
                                                         Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       20.0,
                                                                       0.0,
@@ -426,7 +429,7 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -493,7 +496,7 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 10.0, 0.0, 0.0),
                                               child: Column(
@@ -501,7 +504,7 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                 children: [
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 5.0,
                                                                 0.0, 0.0),
                                                     child: StreamBuilder<
@@ -553,11 +556,11 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                               ),
                                                               child: Align(
                                                                 alignment:
-                                                                    const AlignmentDirectional(
+                                                                    AlignmentDirectional(
                                                                         1.0,
                                                                         0.0),
                                                                 child: Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -605,11 +608,11 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                               ),
                                                               child: Align(
                                                                 alignment:
-                                                                    const AlignmentDirectional(
+                                                                    AlignmentDirectional(
                                                                         -1.0,
                                                                         0.0),
                                                                 child: Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           5.0,
                                                                           0.0,
@@ -641,7 +644,7 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 5.0,
                                                                 0.0, 5.0),
                                                     child: Row(
@@ -653,7 +656,7 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                       children: [
                                                         Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       20.0,
                                                                       0.0,
@@ -675,7 +678,7 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -721,7 +724,7 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                       .secondaryBackground,
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 10.0, 0.0, 0.0),
                                   child: StreamBuilder<BetsRecord>(
                                     stream: BetsRecord.getDocument(
@@ -752,7 +755,7 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                         children: [
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 5.0, 0.0, 0.0),
                                             child: StreamBuilder<EventsRecord>(
                                               stream: EventsRecord.getDocument(
@@ -799,11 +802,11 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                       ),
                                                       child: Align(
                                                         alignment:
-                                                            const AlignmentDirectional(
+                                                            AlignmentDirectional(
                                                                 1.0, 0.0),
                                                         child: Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -848,11 +851,11 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                       ),
                                                       child: Align(
                                                         alignment:
-                                                            const AlignmentDirectional(
+                                                            AlignmentDirectional(
                                                                 -1.0, 0.0),
                                                         child: Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       5.0,
                                                                       0.0,
@@ -883,7 +886,7 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 5.0, 0.0, 5.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -892,7 +895,7 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                       .spaceBetween,
                                               children: [
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           20.0, 0.0, 0.0, 0.0),
                                                   child: Text(
@@ -908,7 +911,7 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 30.0, 0.0),
                                                   child: Text(
@@ -941,7 +944,7 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                               ],
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 10.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
@@ -952,7 +955,7 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                         .secondaryBackground,
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 10.0, 0.0, 10.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -961,7 +964,7 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                       children: [
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   25.0, 0.0, 0.0, 0.0),
                                           child: Text(
                                             'Mise',
@@ -975,7 +978,7 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 33.0, 0.0),
                                           child: Text(
                                             'Cote totale',
@@ -991,7 +994,7 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 5.0, 0.0, 5.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -1000,7 +1003,7 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                       children: [
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   10.0, 0.0, 0.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -1023,7 +1026,7 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                         ),
                                               ),
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         5.0, 0.0, 0.0, 0.0),
                                                 child: Container(
@@ -1043,7 +1046,7 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                   ),
                                                   child: Padding(
                                                     padding:
-                                                        const EdgeInsets.all(2.0),
+                                                        EdgeInsets.all(2.0),
                                                     child: ClipRRect(
                                                       borderRadius:
                                                           BorderRadius.circular(
@@ -1063,7 +1066,7 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 30.0, 0.0),
                                           child: Text(
                                             valueOrDefault<String>(
@@ -1102,7 +1105,7 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                         .secondaryBackground,
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 10.0, 0.0, 0.0),
                                     child: Text(
                                       'Gain potentiel',
@@ -1115,7 +1118,7 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 5.0, 0.0, 5.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -1152,7 +1155,7 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   5.0, 0.0, 0.0, 0.0),
                                           child: Container(
                                             width: 30.0,
@@ -1169,7 +1172,7 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                               ),
                                             ),
                                             child: Padding(
-                                              padding: const EdgeInsets.all(2.0),
+                                              padding: EdgeInsets.all(2.0),
                                               child: ClipRRect(
                                                 borderRadius:
                                                     BorderRadius.circular(24.0),
@@ -1187,7 +1190,7 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 20.0, 0.0, 10.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -1196,7 +1199,7 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                       children: [
                                         FFButtonWidget(
                                           onPressed: () async {
-                                            await widget.cartRef!.update({
+                                            await widget!.cartRef!.update({
                                               ...mapToFirestore(
                                                 {
                                                   'bet': FieldValue.delete(),
@@ -1209,10 +1212,10 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                           options: FFButtonOptions(
                                             height: 30.0,
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     12.0, 0.0, 12.0, 0.0),
                                             iconPadding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
                                             color: FlutterFlowTheme.of(context)
                                                 .error,
@@ -1227,7 +1230,7 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                       letterSpacing: 0.0,
                                                     ),
                                             elevation: 3.0,
-                                            borderSide: const BorderSide(
+                                            borderSide: BorderSide(
                                               color: Colors.transparent,
                                               width: 1.0,
                                             ),
@@ -1240,7 +1243,7 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                         ),
                                         FFButtonWidget(
                                           onPressed: () async {
-                                            await widget.myBetRef!.update({
+                                            await widget!.myBetRef!.update({
                                               ...createMyBetsRecordData(
                                                 potentialy:
                                                     valueOrDefault<double>(
@@ -1301,7 +1304,7 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                               'MyProfilPage',
                                               extra: <String, dynamic>{
                                                 kTransitionInfoKey:
-                                                    const TransitionInfo(
+                                                    TransitionInfo(
                                                   hasTransition: true,
                                                   transitionType:
                                                       PageTransitionType.scale,
@@ -1313,16 +1316,16 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                               },
                                             );
 
-                                            await widget.cartRef!.delete();
+                                            await widget!.cartRef!.delete();
                                           },
                                           text: 'Valider',
                                           options: FFButtonOptions(
                                             height: 30.0,
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     12.0, 0.0, 12.0, 0.0),
                                             iconPadding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
                                             color: FlutterFlowTheme.of(context)
                                                 .success,
@@ -1337,7 +1340,7 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                       letterSpacing: 0.0,
                                                     ),
                                             elevation: 3.0,
-                                            borderSide: const BorderSide(
+                                            borderSide: BorderSide(
                                               color: Colors.transparent,
                                               width: 1.0,
                                             ),

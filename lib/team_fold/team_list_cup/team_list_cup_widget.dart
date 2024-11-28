@@ -3,8 +3,11 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'team_list_cup_model.dart';
 export 'team_list_cup_model.dart';
 
@@ -43,16 +46,16 @@ class _TeamListCupWidgetState extends State<TeamListCupWidget> {
         body: SafeArea(
           top: true,
           child: Align(
-            alignment: const AlignmentDirectional(0.0, -1.0),
+            alignment: AlignmentDirectional(0.0, -1.0),
             child: Padding(
-              padding: const EdgeInsets.all(10.0),
+              padding: EdgeInsets.all(10.0),
               child: SingleChildScrollView(
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -69,7 +72,7 @@ class _TeamListCupWidgetState extends State<TeamListCupWidget> {
                                   context.pushNamed(
                                     'MenuPage',
                                     extra: <String, dynamic>{
-                                      kTransitionInfoKey: const TransitionInfo(
+                                      kTransitionInfoKey: TransitionInfo(
                                         hasTransition: true,
                                         transitionType:
                                             PageTransitionType.leftToRight,
@@ -86,7 +89,7 @@ class _TeamListCupWidgetState extends State<TeamListCupWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     10.0, 0.0, 0.0, 0.0),
                                 child: InkWell(
                                   splashColor: Colors.transparent,
@@ -107,7 +110,7 @@ class _TeamListCupWidgetState extends State<TeamListCupWidget> {
                             ],
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 40.0, 0.0),
                             child: Text(
                               'Equipes',
@@ -129,7 +132,7 @@ class _TeamListCupWidgetState extends State<TeamListCupWidget> {
                               context.pushNamed(
                                 'MyTeamList',
                                 extra: <String, dynamic>{
-                                  kTransitionInfoKey: const TransitionInfo(
+                                  kTransitionInfoKey: TransitionInfo(
                                     hasTransition: true,
                                     transitionType:
                                         PageTransitionType.rightToLeft,
@@ -155,7 +158,7 @@ class _TeamListCupWidgetState extends State<TeamListCupWidget> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 10.0),
                               child: SingleChildScrollView(
                                 scrollDirection: Axis.horizontal,
@@ -165,7 +168,7 @@ class _TeamListCupWidgetState extends State<TeamListCupWidget> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           5.0, 0.0, 0.0, 0.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
@@ -174,7 +177,7 @@ class _TeamListCupWidgetState extends State<TeamListCupWidget> {
                                         children: [
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 10.0, 5.0),
                                             child: FlutterFlowDropDown<String>(
                                               controller: _model
@@ -188,7 +191,7 @@ class _TeamListCupWidgetState extends State<TeamListCupWidget> {
                                                 'europa.league',
                                                 'conference.league'
                                               ]),
-                                              optionLabels: const [
+                                              optionLabels: [
                                                 'Champions League',
                                                 'Europa League',
                                                 'Conférence League'
@@ -222,7 +225,7 @@ class _TeamListCupWidgetState extends State<TeamListCupWidget> {
                                               borderColor: Colors.transparent,
                                               borderWidth: 0.0,
                                               borderRadius: 8.0,
-                                              margin: const EdgeInsetsDirectional
+                                              margin: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       12.0, 0.0, 12.0, 0.0),
                                               hidesUnderline: true,
@@ -237,7 +240,7 @@ class _TeamListCupWidgetState extends State<TeamListCupWidget> {
                                                 MainAxisAlignment.spaceBetween,
                                             children: [
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         10.0, 0.0, 5.0, 0.0),
                                                 child: Text(
@@ -252,7 +255,7 @@ class _TeamListCupWidgetState extends State<TeamListCupWidget> {
                                                 ),
                                               ),
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         10.0, 0.0, 0.0, 0.0),
                                                 child: InkWell(
@@ -269,7 +272,7 @@ class _TeamListCupWidgetState extends State<TeamListCupWidget> {
                                                       'TeamList',
                                                       extra: <String, dynamic>{
                                                         kTransitionInfoKey:
-                                                            const TransitionInfo(
+                                                            TransitionInfo(
                                                           hasTransition: true,
                                                           transitionType:
                                                               PageTransitionType
@@ -300,7 +303,7 @@ class _TeamListCupWidgetState extends State<TeamListCupWidget> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 10.0, 0.0, 0.0),
                               child: StreamBuilder<List<TeamsRecord>>(
                                 stream: queryTeamsRecord(
@@ -344,7 +347,7 @@ class _TeamListCupWidgetState extends State<TeamListCupWidget> {
                                           if (!columnTeamsTeamsRecord.blocks
                                               .contains(currentUserReference))
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       10.0, 0.0, 10.0, 10.0),
                                               child: Row(
@@ -355,7 +358,7 @@ class _TeamListCupWidgetState extends State<TeamListCupWidget> {
                                                 children: [
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(20.0, 0.0,
                                                                 0.0, 0.0),
                                                     child: Text(
@@ -373,7 +376,7 @@ class _TeamListCupWidgetState extends State<TeamListCupWidget> {
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 25.0, 0.0),
                                                     child: InkWell(
@@ -400,7 +403,7 @@ class _TeamListCupWidgetState extends State<TeamListCupWidget> {
                                                           extra: <String,
                                                               dynamic>{
                                                             kTransitionInfoKey:
-                                                                const TransitionInfo(
+                                                                TransitionInfo(
                                                               hasTransition:
                                                                   true,
                                                               transitionType:

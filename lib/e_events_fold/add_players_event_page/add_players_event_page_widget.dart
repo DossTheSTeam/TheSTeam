@@ -4,7 +4,10 @@ import '/backend/push_notifications/push_notifications_util.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'add_players_event_page_model.dart';
 export 'add_players_event_page_model.dart';
 
@@ -44,7 +47,7 @@ class _AddPlayersEventPageWidgetState extends State<AddPlayersEventPageWidget> {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<EventsRecord>(
-      stream: EventsRecord.getDocument(widget.eventRef!),
+      stream: EventsRecord.getDocument(widget!.eventRef!),
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
@@ -74,14 +77,14 @@ class _AddPlayersEventPageWidgetState extends State<AddPlayersEventPageWidget> {
             body: SafeArea(
               top: true,
               child: Padding(
-                padding: const EdgeInsets.all(10.0),
+                padding: EdgeInsets.all(10.0),
                 child: SingleChildScrollView(
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.start,
@@ -99,12 +102,12 @@ class _AddPlayersEventPageWidgetState extends State<AddPlayersEventPageWidget> {
                                       'ModifETeamPage',
                                       queryParameters: {
                                         'teamRef': serializeParam(
-                                          widget.myETeamRef,
+                                          widget!.myETeamRef,
                                           ParamType.DocumentReference,
                                         ),
                                       }.withoutNulls,
                                       extra: <String, dynamic>{
-                                        kTransitionInfoKey: const TransitionInfo(
+                                        kTransitionInfoKey: TransitionInfo(
                                           hasTransition: true,
                                           transitionType:
                                               PageTransitionType.leftToRight,
@@ -121,7 +124,7 @@ class _AddPlayersEventPageWidgetState extends State<AddPlayersEventPageWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       10.0, 0.0, 0.0, 0.0),
                                   child: InkWell(
                                     splashColor: Colors.transparent,
@@ -142,7 +145,7 @@ class _AddPlayersEventPageWidgetState extends State<AddPlayersEventPageWidget> {
                               ],
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   35.0, 0.0, 0.0, 0.0),
                               child: Text(
                                 'Composition de\nmon équipe',
@@ -167,7 +170,7 @@ class _AddPlayersEventPageWidgetState extends State<AddPlayersEventPageWidget> {
                       ),
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -202,7 +205,7 @@ class _AddPlayersEventPageWidgetState extends State<AddPlayersEventPageWidget> {
                                         .primaryBackground,
                                   ),
                                   child: Align(
-                                    alignment: const AlignmentDirectional(0.0, 0.0),
+                                    alignment: AlignmentDirectional(0.0, 0.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
@@ -228,7 +231,7 @@ class _AddPlayersEventPageWidgetState extends State<AddPlayersEventPageWidget> {
                                         ),
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(0.0, 0.0),
+                                              AlignmentDirectional(0.0, 0.0),
                                           child: Text(
                                             contDomTeamsRecord.name,
                                             textAlign: TextAlign.start,
@@ -286,7 +289,7 @@ class _AddPlayersEventPageWidgetState extends State<AddPlayersEventPageWidget> {
                                         .primaryBackground,
                                   ),
                                   child: Align(
-                                    alignment: const AlignmentDirectional(0.0, 0.0),
+                                    alignment: AlignmentDirectional(0.0, 0.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
@@ -312,7 +315,7 @@ class _AddPlayersEventPageWidgetState extends State<AddPlayersEventPageWidget> {
                                         ),
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(0.0, 0.0),
+                                              AlignmentDirectional(0.0, 0.0),
                                           child: Text(
                                             contExtTeamsRecord.name,
                                             textAlign: TextAlign.start,
@@ -341,9 +344,9 @@ class _AddPlayersEventPageWidgetState extends State<AddPlayersEventPageWidget> {
                       if (!addPlayersEventPageEventsRecord.players
                           .contains(currentUserReference))
                         Align(
-                          alignment: const AlignmentDirectional(-1.0, 0.0),
+                          alignment: AlignmentDirectional(-1.0, 0.0),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 20.0, 0.0, 0.0, 0.0),
                             child: Text(
                               'M\'ajouter aux participants ?',
@@ -360,7 +363,7 @@ class _AddPlayersEventPageWidgetState extends State<AddPlayersEventPageWidget> {
                       if (!addPlayersEventPageEventsRecord.players
                           .contains(currentUserReference))
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               10.0, 5.0, 0.0, 5.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -384,13 +387,13 @@ class _AddPlayersEventPageWidgetState extends State<AddPlayersEventPageWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 10.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 10.0, 0.0),
                                       child: InkWell(
                                         splashColor: Colors.transparent,
@@ -425,9 +428,9 @@ class _AddPlayersEventPageWidgetState extends State<AddPlayersEventPageWidget> {
                           ),
                         ),
                       Align(
-                        alignment: const AlignmentDirectional(-1.0, 0.0),
+                        alignment: AlignmentDirectional(-1.0, 0.0),
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               20.0, 0.0, 0.0, 0.0),
                           child: Text(
                             'Ajouter des participants',
@@ -442,7 +445,7 @@ class _AddPlayersEventPageWidgetState extends State<AddPlayersEventPageWidget> {
                         ),
                       ),
                       StreamBuilder<TeamsRecord>(
-                        stream: TeamsRecord.getDocument(widget.myETeamRef!),
+                        stream: TeamsRecord.getDocument(widget!.myETeamRef!),
                         builder: (context, snapshot) {
                           // Customize what your widget looks like when it's loading.
                           if (!snapshot.hasData) {
@@ -465,7 +468,7 @@ class _AddPlayersEventPageWidgetState extends State<AddPlayersEventPageWidget> {
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 10.0, 0.0, 10.0),
                                 child: StreamBuilder<List<UsersRecord>>(
                                   stream: queryUsersRecord(
@@ -518,7 +521,7 @@ class _AddPlayersEventPageWidgetState extends State<AddPlayersEventPageWidget> {
                                                   true),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     10.0, 5.0, 0.0, 5.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -546,7 +549,7 @@ class _AddPlayersEventPageWidgetState extends State<AddPlayersEventPageWidget> {
                                                       ),
                                                 ),
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 10.0, 0.0),
                                                   child: Row(
@@ -555,7 +558,7 @@ class _AddPlayersEventPageWidgetState extends State<AddPlayersEventPageWidget> {
                                                     children: [
                                                       Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     0.0,
@@ -579,7 +582,7 @@ class _AddPlayersEventPageWidgetState extends State<AddPlayersEventPageWidget> {
                                                               ...createMyNotificationsRecordData(
                                                                 text:
                                                                     'Vous êtes sélectionné pour un match à venir.',
-                                                                eEvent: widget
+                                                                eEvent: widget!
                                                                     .eventRef,
                                                                 seen: false,
                                                                 userRef:
@@ -642,9 +645,9 @@ class _AddPlayersEventPageWidgetState extends State<AddPlayersEventPageWidget> {
                                 ),
                               ),
                               Align(
-                                alignment: const AlignmentDirectional(-1.0, 0.0),
+                                alignment: AlignmentDirectional(-1.0, 0.0),
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       20.0, 0.0, 0.0, 10.0),
                                   child: Text(
                                     'Liste participants',
@@ -663,7 +666,7 @@ class _AddPlayersEventPageWidgetState extends State<AddPlayersEventPageWidget> {
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 children: [
                                   Align(
-                                    alignment: const AlignmentDirectional(-1.0, 0.0),
+                                    alignment: AlignmentDirectional(-1.0, 0.0),
                                     child: Text(
                                       'Prêt',
                                       style: FlutterFlowTheme.of(context)
@@ -677,9 +680,9 @@ class _AddPlayersEventPageWidgetState extends State<AddPlayersEventPageWidget> {
                                     ),
                                   ),
                                   Align(
-                                    alignment: const AlignmentDirectional(-1.0, 0.0),
+                                    alignment: AlignmentDirectional(-1.0, 0.0),
                                     child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           2.0, 0.0, 2.0, 0.0),
                                       child: Text(
                                         '/',
@@ -694,7 +697,7 @@ class _AddPlayersEventPageWidgetState extends State<AddPlayersEventPageWidget> {
                                     ),
                                   ),
                                   Align(
-                                    alignment: const AlignmentDirectional(-1.0, 0.0),
+                                    alignment: AlignmentDirectional(-1.0, 0.0),
                                     child: Text(
                                       'Enlever',
                                       style: FlutterFlowTheme.of(context)
@@ -712,18 +715,18 @@ class _AddPlayersEventPageWidgetState extends State<AddPlayersEventPageWidget> {
                               Column(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
-                                  if (widget.myETeamRef ==
+                                  if (widget!.myETeamRef ==
                                       addPlayersEventPageEventsRecord
                                           .teamdomRef)
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 10.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 10.0, 0.0, 10.0),
                                             child: StreamBuilder<
                                                 List<UsersRecord>>(
@@ -778,7 +781,7 @@ class _AddPlayersEventPageWidgetState extends State<AddPlayersEventPageWidget> {
                                                                   .reference),
                                                       child: Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     10.0,
                                                                     5.0,
@@ -821,7 +824,7 @@ class _AddPlayersEventPageWidgetState extends State<AddPlayersEventPageWidget> {
                                                                         .statut ==
                                                                     false)
                                                                   Padding(
-                                                                    padding: const EdgeInsetsDirectional
+                                                                    padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -833,7 +836,7 @@ class _AddPlayersEventPageWidgetState extends State<AddPlayersEventPageWidget> {
                                                                               .max,
                                                                       children: [
                                                                         Padding(
-                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
                                                                               0.0,
                                                                               0.0,
                                                                               10.0,
@@ -852,7 +855,7 @@ class _AddPlayersEventPageWidgetState extends State<AddPlayersEventPageWidget> {
                                                                           ),
                                                                         ),
                                                                         Padding(
-                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
                                                                               0.0,
                                                                               0.0,
                                                                               10.0,
@@ -869,7 +872,7 @@ class _AddPlayersEventPageWidgetState extends State<AddPlayersEventPageWidget> {
                                                                                 Colors.transparent,
                                                                             onTap:
                                                                                 () async {
-                                                                              await widget.eventRef!.update({
+                                                                              await widget!.eventRef!.update({
                                                                                 ...mapToFirestore(
                                                                                   {
                                                                                     'players': FieldValue.arrayRemove([
@@ -903,9 +906,9 @@ class _AddPlayersEventPageWidgetState extends State<AddPlayersEventPageWidget> {
                                           ),
                                           Align(
                                             alignment:
-                                                const AlignmentDirectional(0.0, 0.0),
+                                                AlignmentDirectional(0.0, 0.0),
                                             child: Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       10.0, 0.0, 10.0, 0.0),
                                               child: Text(
@@ -932,15 +935,15 @@ class _AddPlayersEventPageWidgetState extends State<AddPlayersEventPageWidget> {
                                                 MainAxisAlignment.center,
                                             children: [
                                               Align(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 20.0, 0.0, 16.0),
                                                   child: FFButtonWidget(
                                                     onPressed: () async {
-                                                      await widget.eventRef!
+                                                      await widget!.eventRef!
                                                           .update(
                                                               createEventsRecordData(
                                                         domReady: true,
@@ -953,14 +956,14 @@ class _AddPlayersEventPageWidgetState extends State<AddPlayersEventPageWidget> {
                                                       width: 150.0,
                                                       height: 40.0,
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   0.0,
                                                                   0.0,
                                                                   0.0),
                                                       iconPadding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   0.0,
@@ -984,7 +987,7 @@ class _AddPlayersEventPageWidgetState extends State<AddPlayersEventPageWidget> {
                                                                     0.0,
                                                               ),
                                                       elevation: 3.0,
-                                                      borderSide: const BorderSide(
+                                                      borderSide: BorderSide(
                                                         color:
                                                             Colors.transparent,
                                                         width: 1.0,
@@ -1009,18 +1012,18 @@ class _AddPlayersEventPageWidgetState extends State<AddPlayersEventPageWidget> {
                                         ],
                                       ),
                                     ),
-                                  if (widget.myETeamRef ==
+                                  if (widget!.myETeamRef ==
                                       addPlayersEventPageEventsRecord
                                           .teamextRef)
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 10.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 10.0, 0.0, 10.0),
                                             child: StreamBuilder<
                                                 List<UsersRecord>>(
@@ -1075,7 +1078,7 @@ class _AddPlayersEventPageWidgetState extends State<AddPlayersEventPageWidget> {
                                                                   .reference),
                                                       child: Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     10.0,
                                                                     5.0,
@@ -1118,7 +1121,7 @@ class _AddPlayersEventPageWidgetState extends State<AddPlayersEventPageWidget> {
                                                                         .statut ==
                                                                     false)
                                                                   Padding(
-                                                                    padding: const EdgeInsetsDirectional
+                                                                    padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -1130,7 +1133,7 @@ class _AddPlayersEventPageWidgetState extends State<AddPlayersEventPageWidget> {
                                                                               .max,
                                                                       children: [
                                                                         Padding(
-                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
                                                                               0.0,
                                                                               0.0,
                                                                               10.0,
@@ -1149,7 +1152,7 @@ class _AddPlayersEventPageWidgetState extends State<AddPlayersEventPageWidget> {
                                                                           ),
                                                                         ),
                                                                         Padding(
-                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
                                                                               0.0,
                                                                               0.0,
                                                                               10.0,
@@ -1166,7 +1169,7 @@ class _AddPlayersEventPageWidgetState extends State<AddPlayersEventPageWidget> {
                                                                                 Colors.transparent,
                                                                             onTap:
                                                                                 () async {
-                                                                              await widget.eventRef!.update({
+                                                                              await widget!.eventRef!.update({
                                                                                 ...mapToFirestore(
                                                                                   {
                                                                                     'players': FieldValue.arrayRemove([
@@ -1200,9 +1203,9 @@ class _AddPlayersEventPageWidgetState extends State<AddPlayersEventPageWidget> {
                                           ),
                                           Align(
                                             alignment:
-                                                const AlignmentDirectional(0.0, 0.0),
+                                                AlignmentDirectional(0.0, 0.0),
                                             child: Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       10.0, 0.0, 10.0, 0.0),
                                               child: Text(
@@ -1225,7 +1228,7 @@ class _AddPlayersEventPageWidgetState extends State<AddPlayersEventPageWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 10.0, 0.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -1234,16 +1237,16 @@ class _AddPlayersEventPageWidgetState extends State<AddPlayersEventPageWidget> {
                                               children: [
                                                 Align(
                                                   alignment:
-                                                      const AlignmentDirectional(
+                                                      AlignmentDirectional(
                                                           0.0, 0.0),
                                                   child: Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 20.0,
                                                                 0.0, 16.0),
                                                     child: FFButtonWidget(
                                                       onPressed: () async {
-                                                        await widget.eventRef!
+                                                        await widget!.eventRef!
                                                             .update(
                                                                 createEventsRecordData(
                                                           extReady: true,
@@ -1256,14 +1259,14 @@ class _AddPlayersEventPageWidgetState extends State<AddPlayersEventPageWidget> {
                                                         width: 150.0,
                                                         height: 40.0,
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     0.0,
                                                                     0.0,
                                                                     0.0),
                                                         iconPadding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     0.0,
@@ -1287,7 +1290,7 @@ class _AddPlayersEventPageWidgetState extends State<AddPlayersEventPageWidget> {
                                                                       0.0,
                                                                 ),
                                                         elevation: 3.0,
-                                                        borderSide: const BorderSide(
+                                                        borderSide: BorderSide(
                                                           color: Colors
                                                               .transparent,
                                                           width: 1.0,

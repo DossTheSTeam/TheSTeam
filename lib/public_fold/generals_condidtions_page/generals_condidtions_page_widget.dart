@@ -2,7 +2,10 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'generals_condidtions_page_model.dart';
 export 'generals_condidtions_page_model.dart';
 
@@ -43,14 +46,14 @@ class _GeneralsCondidtionsPageWidgetState
         body: SafeArea(
           top: true,
           child: Padding(
-            padding: const EdgeInsets.all(10.0),
+            padding: EdgeInsets.all(10.0),
             child: SingleChildScrollView(
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -67,7 +70,7 @@ class _GeneralsCondidtionsPageWidgetState
                                 context.pushNamed(
                                   'MenuPage',
                                   extra: <String, dynamic>{
-                                    kTransitionInfoKey: const TransitionInfo(
+                                    kTransitionInfoKey: TransitionInfo(
                                       hasTransition: true,
                                       transitionType:
                                           PageTransitionType.leftToRight,
@@ -99,7 +102,7 @@ class _GeneralsCondidtionsPageWidgetState
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   50.0, 0.0, 0.0, 0.0),
                               child: Text(
                                 'Conditions\ngénérales',
@@ -152,7 +155,7 @@ class _GeneralsCondidtionsPageWidgetState
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 10.0, 0.0),
                                     child: InkWell(
                                       splashColor: Colors.transparent,
@@ -163,7 +166,7 @@ class _GeneralsCondidtionsPageWidgetState
                                         context.pushNamed(
                                           'MyNotifsList',
                                           extra: <String, dynamic>{
-                                            kTransitionInfoKey: const TransitionInfo(
+                                            kTransitionInfoKey: TransitionInfo(
                                               hasTransition: true,
                                               transitionType: PageTransitionType
                                                   .rightToLeft,
@@ -189,10 +192,10 @@ class _GeneralsCondidtionsPageWidgetState
                     ),
                   ),
                   Align(
-                    alignment: const AlignmentDirectional(-1.0, 0.0),
+                    alignment: AlignmentDirectional(-1.0, 0.0),
                     child: Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 5.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 5.0),
                       child: Text(
                         'Article 1 –Dans cette application ...\nTout est publique',
                         textAlign: TextAlign.start,
@@ -204,7 +207,7 @@ class _GeneralsCondidtionsPageWidgetState
                     ),
                   ),
                   Align(
-                    alignment: const AlignmentDirectional(-1.0, 0.0),
+                    alignment: AlignmentDirectional(-1.0, 0.0),
                     child: Text(
                       'La visibilité des pronostiques, des classements , des commentaires...',
                       textAlign: TextAlign.start,
@@ -215,10 +218,10 @@ class _GeneralsCondidtionsPageWidgetState
                     ),
                   ),
                   Align(
-                    alignment: const AlignmentDirectional(-1.0, 0.0),
+                    alignment: AlignmentDirectional(-1.0, 0.0),
                     child: Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 5.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 5.0),
                       child: Text(
                         'Mais vous ne pourrez pas commenter dans une ligue plus haute que la votre.',
                         textAlign: TextAlign.start,
@@ -237,10 +240,10 @@ class _GeneralsCondidtionsPageWidgetState
                         ),
                   ),
                   Align(
-                    alignment: const AlignmentDirectional(-1.0, 0.0),
+                    alignment: AlignmentDirectional(-1.0, 0.0),
                     child: Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 5.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 5.0),
                       child: Text(
                         'Article 2 – Définitions',
                         style: FlutterFlowTheme.of(context).labelLarge.override(
@@ -272,7 +275,7 @@ class _GeneralsCondidtionsPageWidgetState
                         ),
                   ),
                   Align(
-                    alignment: const AlignmentDirectional(-1.0, 0.0),
+                    alignment: AlignmentDirectional(-1.0, 0.0),
                     child: Text(
                       'Modérateurs : utilsateur actif de notre communauté qui a été désigné pour maintenir un environnement sain et respectueux pour tous les utilisateurs. Il est chargé de surveiller les activités sur la plateforme, de traiter les signalements d\'utilisateurs et de prendre les mesures nécessaires pour faire respecter nos règles communautaires.',
                       style: FlutterFlowTheme.of(context).bodyLarge.override(
@@ -282,7 +285,7 @@ class _GeneralsCondidtionsPageWidgetState
                     ),
                   ),
                   Align(
-                    alignment: const AlignmentDirectional(-1.0, 0.0),
+                    alignment: AlignmentDirectional(-1.0, 0.0),
                     child: Text(
                       'Typsters : utilsateur actif de notre communauté qui a été désigné pour guider les utilisateurs dans l\'univers des paris sportifs, qui se distingue par son taux de réussite élevé et sa capacité à identifier les meilleures opportunités. Transforme sa connaissance en valeur ajoutée pour la communauté.',
                       style: FlutterFlowTheme.of(context).bodyLarge.override(
@@ -292,10 +295,10 @@ class _GeneralsCondidtionsPageWidgetState
                     ),
                   ),
                   Align(
-                    alignment: const AlignmentDirectional(-1.0, 0.0),
+                    alignment: AlignmentDirectional(-1.0, 0.0),
                     child: Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 5.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 5.0),
                       child: Text(
                         'Article 3 – Objet de l\'Application',
                         style: FlutterFlowTheme.of(context).labelLarge.override(
@@ -327,7 +330,7 @@ class _GeneralsCondidtionsPageWidgetState
                         ),
                   ),
                   Align(
-                    alignment: const AlignmentDirectional(-1.0, 0.0),
+                    alignment: AlignmentDirectional(-1.0, 0.0),
                     child: Text(
                       'Un classement des utilisateurs, à jour selon plusieurs critères.',
                       style: FlutterFlowTheme.of(context).bodyLarge.override(
@@ -337,10 +340,10 @@ class _GeneralsCondidtionsPageWidgetState
                     ),
                   ),
                   Align(
-                    alignment: const AlignmentDirectional(1.0, 0.0),
+                    alignment: AlignmentDirectional(1.0, 0.0),
                     child: Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
                       child: InkWell(
                         splashColor: Colors.transparent,
                         focusColor: Colors.transparent,
@@ -350,7 +353,7 @@ class _GeneralsCondidtionsPageWidgetState
                           context.pushNamed(
                             'InfosRankPage',
                             extra: <String, dynamic>{
-                              kTransitionInfoKey: const TransitionInfo(
+                              kTransitionInfoKey: TransitionInfo(
                                 hasTransition: true,
                                 transitionType: PageTransitionType.bottomToTop,
                                 duration: Duration(milliseconds: 400),
@@ -371,10 +374,10 @@ class _GeneralsCondidtionsPageWidgetState
                     ),
                   ),
                   Align(
-                    alignment: const AlignmentDirectional(-1.0, 0.0),
+                    alignment: AlignmentDirectional(-1.0, 0.0),
                     child: Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 5.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 5.0),
                       child: Text(
                         'Article 4 – Conditions d\'utilisation',
                         style: FlutterFlowTheme.of(context).labelLarge.override(
@@ -420,10 +423,10 @@ class _GeneralsCondidtionsPageWidgetState
                         ),
                   ),
                   Align(
-                    alignment: const AlignmentDirectional(-1.0, 0.0),
+                    alignment: AlignmentDirectional(-1.0, 0.0),
                     child: Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 5.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 5.0),
                       child: Text(
                         'Article 5 – Protection des données personnelles',
                         style: FlutterFlowTheme.of(context).labelLarge.override(
@@ -441,10 +444,10 @@ class _GeneralsCondidtionsPageWidgetState
                         ),
                   ),
                   Align(
-                    alignment: const AlignmentDirectional(1.0, 0.0),
+                    alignment: AlignmentDirectional(1.0, 0.0),
                     child: Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
                       child: InkWell(
                         splashColor: Colors.transparent,
                         focusColor: Colors.transparent,
@@ -454,7 +457,7 @@ class _GeneralsCondidtionsPageWidgetState
                           context.pushNamed(
                             'ConfidentialityPage',
                             extra: <String, dynamic>{
-                              kTransitionInfoKey: const TransitionInfo(
+                              kTransitionInfoKey: TransitionInfo(
                                 hasTransition: true,
                                 transitionType: PageTransitionType.bottomToTop,
                                 duration: Duration(milliseconds: 400),
@@ -475,10 +478,10 @@ class _GeneralsCondidtionsPageWidgetState
                     ),
                   ),
                   Align(
-                    alignment: const AlignmentDirectional(-1.0, 0.0),
+                    alignment: AlignmentDirectional(-1.0, 0.0),
                     child: Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 5.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 5.0),
                       child: Text(
                         'Article 6 – Règles de la communauté',
                         style: FlutterFlowTheme.of(context).labelLarge.override(
@@ -524,10 +527,10 @@ class _GeneralsCondidtionsPageWidgetState
                         ),
                   ),
                   Align(
-                    alignment: const AlignmentDirectional(-1.0, 0.0),
+                    alignment: AlignmentDirectional(-1.0, 0.0),
                     child: Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 5.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 5.0),
                       child: Text(
                         'Article 7 – Modification des CGU',
                         style: FlutterFlowTheme.of(context).labelLarge.override(
@@ -545,10 +548,10 @@ class _GeneralsCondidtionsPageWidgetState
                         ),
                   ),
                   Align(
-                    alignment: const AlignmentDirectional(-1.0, 0.0),
+                    alignment: AlignmentDirectional(-1.0, 0.0),
                     child: Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(12.0, 5.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(12.0, 5.0, 0.0, 0.0),
                       child: Text(
                         'Article 8 – Loi applicable et juridiction compétente',
                         style: FlutterFlowTheme.of(context).labelLarge.override(
@@ -562,7 +565,7 @@ class _GeneralsCondidtionsPageWidgetState
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                     child: Text(
                       'Les présentes CGU sont soumises au droit français. Tout litige relatif à l\'interprétation ou à l\'exécution des présentes CGU sera soumis à la compétence exclusive des tribunaux de Ville',
                       style: FlutterFlowTheme.of(context).bodyLarge.override(
@@ -575,7 +578,7 @@ class _GeneralsCondidtionsPageWidgetState
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                     child: Text(
                       'thesteam.sport@gmail.com',
                       style: FlutterFlowTheme.of(context).labelLarge.override(

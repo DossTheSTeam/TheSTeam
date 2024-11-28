@@ -3,9 +3,13 @@ import '/backend/backend.dart';
 import '/backend/firebase_storage/storage.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'e_event_page_model.dart';
 export 'e_event_page_model.dart';
 
@@ -45,7 +49,7 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<EventsRecord>(
-      stream: EventsRecord.getDocument(widget.eventRef!),
+      stream: EventsRecord.getDocument(widget!.eventRef!),
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
@@ -75,16 +79,16 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
             body: SafeArea(
               top: true,
               child: Align(
-                alignment: const AlignmentDirectional(0.0, -1.0),
+                alignment: AlignmentDirectional(0.0, -1.0),
                 child: Padding(
-                  padding: const EdgeInsets.all(10.0),
+                  padding: EdgeInsets.all(10.0),
                   child: SingleChildScrollView(
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 10.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -102,7 +106,7 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                                       context.pushNamed(
                                         'MenuPage',
                                         extra: <String, dynamic>{
-                                          kTransitionInfoKey: const TransitionInfo(
+                                          kTransitionInfoKey: TransitionInfo(
                                             hasTransition: true,
                                             transitionType:
                                                 PageTransitionType.leftToRight,
@@ -120,7 +124,7 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 0.0, 0.0),
                                     child: InkWell(
                                       splashColor: Colors.transparent,
@@ -139,7 +143,7 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         40.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       'Détails de la\nrencontre',
@@ -198,7 +202,7 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                                       children: [
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   10.0, 0.0, 10.0, 0.0),
                                           child: InkWell(
                                             splashColor: Colors.transparent,
@@ -210,7 +214,7 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                                                 'MyNotifsList',
                                                 extra: <String, dynamic>{
                                                   kTransitionInfoKey:
-                                                      const TransitionInfo(
+                                                      TransitionInfo(
                                                     hasTransition: true,
                                                     transitionType:
                                                         PageTransitionType
@@ -256,7 +260,7 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                                       ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       3.0, 0.0, 3.0, 0.0),
                                   child: Text(
                                     '-',
@@ -281,7 +285,7 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                                       ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       2.0, 0.0, 2.0, 0.0),
                                   child: Text(
                                     ':',
@@ -323,7 +327,7 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                                   ),
                                 if (eEventPageEventsRecord.statut == false)
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         5.0, 0.0, 0.0, 0.0),
                                     child: Container(
                                       width: 25.0,
@@ -340,7 +344,7 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                           ],
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 5.0, 0.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -377,7 +381,7 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                                           .primaryBackground,
                                     ),
                                     child: Align(
-                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                      alignment: AlignmentDirectional(0.0, 0.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
@@ -404,7 +408,7 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                                           ),
                                           Align(
                                             alignment:
-                                                const AlignmentDirectional(0.0, 0.0),
+                                                AlignmentDirectional(0.0, 0.0),
                                             child: InkWell(
                                               splashColor: Colors.transparent,
                                               focusColor: Colors.transparent,
@@ -484,7 +488,7 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                                           .primaryBackground,
                                     ),
                                     child: Align(
-                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                      alignment: AlignmentDirectional(0.0, 0.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
@@ -511,7 +515,7 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                                           ),
                                           Align(
                                             alignment:
-                                                const AlignmentDirectional(0.0, 0.0),
+                                                AlignmentDirectional(0.0, 0.0),
                                             child: InkWell(
                                               splashColor: Colors.transparent,
                                               focusColor: Colors.transparent,
@@ -556,7 +560,7 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                         ),
                         if (eEventPageEventsRecord.seenScore == true)
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 5.0, 0.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -570,7 +574,7 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                                         FlutterFlowTheme.of(context).alternate,
                                   ),
                                   child: Align(
-                                    alignment: const AlignmentDirectional(0.0, 0.0),
+                                    alignment: AlignmentDirectional(0.0, 0.0),
                                     child: Text(
                                       eEventPageEventsRecord.scoreDom
                                           .toString(),
@@ -592,7 +596,7 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                                         FlutterFlowTheme.of(context).alternate,
                                   ),
                                   child: Align(
-                                    alignment: const AlignmentDirectional(0.0, 0.0),
+                                    alignment: AlignmentDirectional(0.0, 0.0),
                                     child: Text(
                                       eEventPageEventsRecord.scoreExt
                                           .toString(),
@@ -615,9 +619,9 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                               FlutterFlowTheme.of(context).secondaryBackground,
                         ),
                         Align(
-                          alignment: const AlignmentDirectional(0.0, 0.0),
+                          alignment: AlignmentDirectional(0.0, 0.0),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 10.0, 0.0, 0.0),
                             child: Text(
                               'Composition domicile',
@@ -635,17 +639,17 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 10.0),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 10.0, 0.0, 10.0),
                                 child: StreamBuilder<List<RatesRecord>>(
                                   stream: queryRatesRecord(
-                                    parent: widget.eventRef,
+                                    parent: widget!.eventRef,
                                     queryBuilder: (ratesRecord) =>
                                         ratesRecord.where(
                                       'eteam',
@@ -684,7 +688,7 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                                                 columnPlayersDomIndex];
                                         return Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   10.0, 5.0, 0.0, 5.0),
                                           child: StreamBuilder<UsersRecord>(
                                             stream: UsersRecord.getDocument(
@@ -753,7 +757,7 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                                                     children: [
                                                       Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     0.0,
@@ -783,7 +787,7 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                                                       ),
                                                       Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     0.0,
@@ -799,7 +803,7 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                                                       ),
                                                       Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     0.0,
@@ -829,7 +833,7 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                                                       ),
                                                       Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     0.0,
@@ -862,9 +866,9 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                                     .secondaryBackground,
                               ),
                               Align(
-                                alignment: const AlignmentDirectional(0.0, 0.0),
+                                alignment: AlignmentDirectional(0.0, 0.0),
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 10.0, 0.0, 0.0),
                                   child: Text(
                                     'Composition extérieure',
@@ -882,11 +886,11 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 10.0, 0.0, 10.0),
                                 child: StreamBuilder<List<RatesRecord>>(
                                   stream: queryRatesRecord(
-                                    parent: widget.eventRef,
+                                    parent: widget!.eventRef,
                                     queryBuilder: (ratesRecord) =>
                                         ratesRecord.where(
                                       'eteam',
@@ -925,7 +929,7 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                                                 columnPlayersExtIndex];
                                         return Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   10.0, 5.0, 0.0, 5.0),
                                           child: StreamBuilder<UsersRecord>(
                                             stream: UsersRecord.getDocument(
@@ -994,7 +998,7 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                                                     children: [
                                                       Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     0.0,
@@ -1024,7 +1028,7 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                                                       ),
                                                       Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     0.0,
@@ -1040,7 +1044,7 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                                                       ),
                                                       Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     0.0,
@@ -1070,7 +1074,7 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                                                       ),
                                                       Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     0.0,
@@ -1106,9 +1110,9 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                               FlutterFlowTheme.of(context).secondaryBackground,
                         ),
                         Align(
-                          alignment: const AlignmentDirectional(-1.0, 0.0),
+                          alignment: AlignmentDirectional(-1.0, 0.0),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 20.0, 10.0, 0.0, 0.0),
                             child: Text(
                               'Commentaires',
@@ -1122,7 +1126,7 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               10.0, 10.0, 10.0, 10.0),
                           child: SingleChildScrollView(
                             scrollDirection: Axis.horizontal,
@@ -1131,13 +1135,13 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 10.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 5.0, 0.0),
                                         child: InkWell(
                                           splashColor: Colors.transparent,
@@ -1149,13 +1153,13 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                                               'ListEventMessages',
                                               queryParameters: {
                                                 'eventRef': serializeParam(
-                                                  widget.eventRef,
+                                                  widget!.eventRef,
                                                   ParamType.DocumentReference,
                                                 ),
                                               }.withoutNulls,
                                               extra: <String, dynamic>{
                                                 kTransitionInfoKey:
-                                                    const TransitionInfo(
+                                                    TransitionInfo(
                                                   hasTransition: true,
                                                   transitionType:
                                                       PageTransitionType
@@ -1192,7 +1196,7 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       5.0, 0.0, 10.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -1201,7 +1205,7 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                                           .contains(currentUserReference))
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 5.0, 0.0),
                                           child: InkWell(
                                             splashColor: Colors.transparent,
@@ -1237,7 +1241,7 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                                           .contains(currentUserReference))
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 5.0, 0.0),
                                           child: InkWell(
                                             splashColor: Colors.transparent,
@@ -1288,7 +1292,7 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       5.0, 0.0, 10.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -1297,7 +1301,7 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                                           .contains(currentUserReference))
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 5.0, 0.0),
                                           child: InkWell(
                                             splashColor: Colors.transparent,
@@ -1333,7 +1337,7 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                                           .contains(currentUserReference))
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 5.0, 0.0),
                                           child: InkWell(
                                             splashColor: Colors.transparent,
@@ -1393,11 +1397,11 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                               FlutterFlowTheme.of(context).secondaryBackground,
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               10.0, 0.0, 10.0, 0.0),
                           child: StreamBuilder<List<EventMessagesRecord>>(
                             stream: queryEventMessagesRecord(
-                              parent: widget.eventRef,
+                              parent: widget!.eventRef,
                               queryBuilder: (eventMessagesRecord) =>
                                   eventMessagesRecord.orderBy('created_time'),
                               limit: 3,
@@ -1477,7 +1481,7 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                                                   children: [
                                                     Padding(
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   10.0,
                                                                   0.0,
@@ -1489,7 +1493,7 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                                                         children: [
                                                           Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
@@ -1525,7 +1529,7 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                                                           ),
                                                           Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         10.0,
                                                                         0.0,
@@ -1558,7 +1562,7 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                                                                   extra: <String,
                                                                       dynamic>{
                                                                     kTransitionInfoKey:
-                                                                        const TransitionInfo(
+                                                                        TransitionInfo(
                                                                       hasTransition:
                                                                           true,
                                                                       transitionType:
@@ -1612,7 +1616,7 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                                                           ),
                                                           child: Padding(
                                                             padding:
-                                                                const EdgeInsets.all(
+                                                                EdgeInsets.all(
                                                                     3.0),
                                                             child: Text(
                                                               rowCommsEventMessagesRecord
@@ -1636,7 +1640,7 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                                                           children: [
                                                             Padding(
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -1670,7 +1674,7 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                                                                     extra: <String,
                                                                         dynamic>{
                                                                       kTransitionInfoKey:
-                                                                          const TransitionInfo(
+                                                                          TransitionInfo(
                                                                         hasTransition:
                                                                             true,
                                                                         transitionType:
@@ -1699,7 +1703,7 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                                                     ),
                                                     Align(
                                                       alignment:
-                                                          const AlignmentDirectional(
+                                                          AlignmentDirectional(
                                                               -1.0, 0.0),
                                                       child: Text(
                                                         dateTimeFormat(
@@ -1721,7 +1725,7 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                                                     ),
                                                     Padding(
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   5.0,
                                                                   5.0,
@@ -1740,7 +1744,7 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                                                           children: [
                                                             Padding(
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -1752,7 +1756,7 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                                                                         .max,
                                                                 children: [
                                                                   Padding(
-                                                                    padding: const EdgeInsetsDirectional
+                                                                    padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -1792,7 +1796,7 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                                                             ),
                                                             Padding(
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -1804,7 +1808,7 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                                                                         .max,
                                                                 children: [
                                                                   Padding(
-                                                                    padding: const EdgeInsetsDirectional
+                                                                    padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -1844,7 +1848,7 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                                                             ),
                                                             Padding(
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -1856,7 +1860,7 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                                                                         .max,
                                                                 children: [
                                                                   Padding(
-                                                                    padding: const EdgeInsetsDirectional
+                                                                    padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -1900,7 +1904,7 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                                                                       .max,
                                                               children: [
                                                                 Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -1967,7 +1971,7 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               5.0, 0.0, 5.0, 15.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -1976,7 +1980,7 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 5.0, 0.0),
                                     child: Icon(
                                       Icons.mic_rounded,
@@ -1985,7 +1989,7 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 10.0, 0.0),
                                     child: InkWell(
                                       splashColor: Colors.transparent,
@@ -2062,7 +2066,8 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                                       ),
                                     ),
                                   ),
-                                  if (_model.uploadedFileUrl != '')
+                                  if (_model.uploadedFileUrl != null &&
+                                      _model.uploadedFileUrl != '')
                                     Container(
                                       width: 50.0,
                                       height: 40.0,
@@ -2073,7 +2078,7 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                                             BorderRadius.circular(6.0),
                                       ),
                                       child: Padding(
-                                        padding: const EdgeInsets.all(2.0),
+                                        padding: EdgeInsets.all(2.0),
                                         child: ClipRRect(
                                           borderRadius:
                                               BorderRadius.circular(4.0),
@@ -2090,7 +2095,7 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                               ),
                               Expanded(
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       8.0, 0.0, 8.0, 0.0),
                                   child: TextFormField(
                                     controller: _model.commFieldTextController,
@@ -2161,7 +2166,7 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     10.0, 0.0, 5.0, 0.0),
                                 child: InkWell(
                                   splashColor: Colors.transparent,
@@ -2205,7 +2210,7 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                                       ),
                                     }, eventMessagesRecordReference);
 
-                                    await widget.eventRef!.update({
+                                    await widget!.eventRef!.update({
                                       ...mapToFirestore(
                                         {
                                           'num_comms': FieldValue.increment(1),
@@ -2220,12 +2225,12 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                                       'ListEventMessages',
                                       queryParameters: {
                                         'eventRef': serializeParam(
-                                          widget.eventRef,
+                                          widget!.eventRef,
                                           ParamType.DocumentReference,
                                         ),
                                       }.withoutNulls,
                                       extra: <String, dynamic>{
-                                        kTransitionInfoKey: const TransitionInfo(
+                                        kTransitionInfoKey: TransitionInfo(
                                           hasTransition: true,
                                           transitionType:
                                               PageTransitionType.scale,

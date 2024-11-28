@@ -5,11 +5,15 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:math';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'my_profil_page_model.dart';
 export 'my_profil_page_model.dart';
 
@@ -34,7 +38,7 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
     _model = createModel(context, () => MyProfilPageModel());
 
     animationsMap.addAll({
-      'buttonOnPageLoadAnimation1': AnimationInfo(
+      'buttonOnPageLoadAnimation': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
         effectsBuilder: () => [
           VisibilityEffect(duration: 400.ms),
@@ -49,28 +53,8 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
             curve: Curves.easeInOut,
             delay: 400.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(0.0, 60.0),
-            end: const Offset(0.0, 0.0),
-          ),
-        ],
-      ),
-      'buttonOnPageLoadAnimation2': AnimationInfo(
-        trigger: AnimationTrigger.onPageLoad,
-        effectsBuilder: () => [
-          VisibilityEffect(duration: 400.ms),
-          FadeEffect(
-            curve: Curves.easeInOut,
-            delay: 400.0.ms,
-            duration: 600.0.ms,
-            begin: 0.0,
-            end: 1.0,
-          ),
-          MoveEffect(
-            curve: Curves.easeInOut,
-            delay: 400.0.ms,
-            duration: 600.0.ms,
-            begin: const Offset(0.0, 60.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 60.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -98,15 +82,15 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         body: Align(
-          alignment: const AlignmentDirectional(0.0, -1.0),
+          alignment: AlignmentDirectional(0.0, -1.0),
           child: SingleChildScrollView(
             child: Column(
               mainAxisSize: MainAxisSize.max,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
-                  child: SizedBox(
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
+                  child: Container(
                     height: 300.0,
                     child: Stack(
                       children: [
@@ -128,16 +112,16 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                           ),
                         ),
                         Align(
-                          alignment: const AlignmentDirectional(-1.0, 1.0),
+                          alignment: AlignmentDirectional(-1.0, 1.0),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 24.0, 0.0, 0.0, 0.0),
                             child: Container(
                               width: 90.0,
                               height: 90.0,
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context).alternate,
-                                boxShadow: const [
+                                boxShadow: [
                                   BoxShadow(
                                     blurRadius: 4.0,
                                     color: Color(0x53000000),
@@ -157,9 +141,9 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                                 builder: (context) => ClipRRect(
                                   borderRadius: BorderRadius.circular(50.0),
                                   child: CachedNetworkImage(
-                                    fadeInDuration: const Duration(milliseconds: 500),
+                                    fadeInDuration: Duration(milliseconds: 500),
                                     fadeOutDuration:
-                                        const Duration(milliseconds: 500),
+                                        Duration(milliseconds: 500),
                                     imageUrl: currentUserPhoto,
                                     width: 100.0,
                                     height: 100.0,
@@ -171,9 +155,9 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                           ),
                         ),
                         Align(
-                          alignment: const AlignmentDirectional(0.0, 1.0),
+                          alignment: AlignmentDirectional(0.0, 1.0),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 110.0, 0.0, 10.0, 0.0),
                             child: SingleChildScrollView(
                               scrollDirection: Axis.horizontal,
@@ -190,7 +174,7 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                                           .alternate,
                                     ),
                                     child: Align(
-                                      alignment: const AlignmentDirectional(0.0, 1.0),
+                                      alignment: AlignmentDirectional(0.0, 1.0),
                                       child: AuthUserStreamWidget(
                                         builder: (context) => Text(
                                           valueOrDefault<String>(
@@ -214,56 +198,67 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                           ),
                         ),
                         Align(
-                          alignment: const AlignmentDirectional(0.0, 0.0),
+                          alignment: AlignmentDirectional(0.0, 0.0),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 30.0, 0.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Align(
-                                  alignment: const AlignmentDirectional(0.0, -1.0),
-                                  child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        29.0, 0.0, 0.0, 9.0),
-                                    child: FlutterFlowIconButton(
-                                      borderColor:
-                                          FlutterFlowTheme.of(context).primary,
-                                      borderRadius: 50.0,
-                                      borderWidth: 1.0,
-                                      buttonSize: 50.0,
-                                      fillColor:
-                                          FlutterFlowTheme.of(context).tertiary,
-                                      icon: Icon(
-                                        Icons.menu_rounded,
-                                        color: FlutterFlowTheme.of(context)
-                                            .primary,
-                                        size: 30.0,
-                                      ),
-                                      onPressed: () async {
-                                        context.pushNamed(
-                                          'MenuPage',
-                                          extra: <String, dynamic>{
-                                            kTransitionInfoKey: const TransitionInfo(
-                                              hasTransition: true,
-                                              transitionType: PageTransitionType
-                                                  .leftToRight,
-                                              duration:
-                                                  Duration(milliseconds: 400),
-                                            ),
+                                Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  crossAxisAlignment: CrossAxisAlignment.end,
+                                  children: [
+                                    Align(
+                                      alignment:
+                                          AlignmentDirectional(0.0, -1.0),
+                                      child: Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            29.0, 0.0, 0.0, 0.0),
+                                        child: FlutterFlowIconButton(
+                                          borderColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .primary,
+                                          borderRadius: 50.0,
+                                          borderWidth: 1.0,
+                                          buttonSize: 50.0,
+                                          fillColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .tertiary,
+                                          icon: Icon(
+                                            Icons.menu_rounded,
+                                            color: FlutterFlowTheme.of(context)
+                                                .primary,
+                                            size: 30.0,
+                                          ),
+                                          onPressed: () async {
+                                            context.pushNamed(
+                                              'MenuPage',
+                                              extra: <String, dynamic>{
+                                                kTransitionInfoKey:
+                                                    TransitionInfo(
+                                                  hasTransition: true,
+                                                  transitionType:
+                                                      PageTransitionType
+                                                          .leftToRight,
+                                                  duration: Duration(
+                                                      milliseconds: 400),
+                                                ),
+                                              },
+                                            );
                                           },
-                                        );
-                                      },
+                                        ),
+                                      ),
                                     ),
-                                  ),
+                                  ],
                                 ),
                                 if (valueOrDefault(
                                         currentUserDocument?.stsocialapp, '') ==
                                     'moderateur')
                                   Align(
-                                    alignment: const AlignmentDirectional(0.0, -1.0),
+                                    alignment: AlignmentDirectional(0.0, -1.0),
                                     child: AuthUserStreamWidget(
                                       builder: (context) =>
                                           FlutterFlowIconButton(
@@ -291,7 +286,7 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                                         currentUserDocument?.stsocialapp, '') ==
                                     'administrateur')
                                   Align(
-                                    alignment: const AlignmentDirectional(0.0, -1.0),
+                                    alignment: AlignmentDirectional(0.0, -1.0),
                                     child: AuthUserStreamWidget(
                                       builder: (context) =>
                                           FlutterFlowIconButton(
@@ -316,7 +311,7 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                                     ),
                                   ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 20.0, 9.0),
                                   child: FlutterFlowIconButton(
                                     borderColor:
@@ -336,7 +331,7 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                                       context.pushNamed(
                                         'MyImagePage',
                                         extra: <String, dynamic>{
-                                          kTransitionInfoKey: const TransitionInfo(
+                                          kTransitionInfoKey: TransitionInfo(
                                             hasTransition: true,
                                             transitionType:
                                                 PageTransitionType.scale,
@@ -358,7 +353,7 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(30.0, 0.0, 30.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(30.0, 0.0, 30.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -398,7 +393,7 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 5.0, 0.0),
                                         child: Text(
                                           'Division',
@@ -461,7 +456,7 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 5.0, 0.0),
                                         child: Text(
                                           'E Division',
@@ -529,14 +524,14 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     5.0, 0.0, 0.0, 0.0),
                                 child: Container(
                                   width: 25.0,
                                   height: 25.0,
                                   decoration: BoxDecoration(
                                     color: FlutterFlowTheme.of(context).primary,
-                                    boxShadow: const [
+                                    boxShadow: [
                                       BoxShadow(
                                         blurRadius: 4.0,
                                         color: Color(0x53000000),
@@ -553,7 +548,7 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                                     ),
                                   ),
                                   child: Padding(
-                                    padding: const EdgeInsets.all(2.0),
+                                    padding: EdgeInsets.all(2.0),
                                     child: ClipRRect(
                                       borderRadius: BorderRadius.circular(24.0),
                                       child: Image.asset(
@@ -617,7 +612,7 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                                 if (columnMyNotificationsRecord?.reference !=
                                     null)
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         20.0, 10.0, 30.0, 5.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -626,7 +621,7 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                                       children: [
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   12.0, 0.0, 0.0, 0.0),
                                           child: Text(
                                             'Mes notifications',
@@ -699,7 +694,7 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                                                       'MyNotifsList',
                                                       extra: <String, dynamic>{
                                                         kTransitionInfoKey:
-                                                            const TransitionInfo(
+                                                            TransitionInfo(
                                                           hasTransition: true,
                                                           transitionType:
                                                               PageTransitionType
@@ -737,7 +732,7 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     20.0, 10.0, 30.0, 5.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -745,7 +740,7 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                                       MainAxisAlignment.spaceBetween,
                                   children: [
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           12.0, 0.0, 0.0, 0.0),
                                       child: Text(
                                         'Mes paris sportifs',
@@ -766,7 +761,7 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                                         context.pushNamed(
                                           'MyBetsList',
                                           extra: <String, dynamic>{
-                                            kTransitionInfoKey: const TransitionInfo(
+                                            kTransitionInfoKey: TransitionInfo(
                                               hasTransition: true,
                                               transitionType: PageTransitionType
                                                   .rightToLeft,
@@ -787,7 +782,7 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     20.0, 10.0, 30.0, 5.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -795,7 +790,7 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                                       MainAxisAlignment.spaceBetween,
                                   children: [
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           12.0, 0.0, 0.0, 0.0),
                                       child: Text(
                                         'Mes statistiques',
@@ -816,7 +811,7 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                                         context.pushNamed(
                                           'MyProfilStats',
                                           extra: <String, dynamic>{
-                                            kTransitionInfoKey: const TransitionInfo(
+                                            kTransitionInfoKey: TransitionInfo(
                                               hasTransition: true,
                                               transitionType: PageTransitionType
                                                   .rightToLeft,
@@ -837,7 +832,7 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     20.0, 10.0, 30.0, 5.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -845,7 +840,7 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                                       MainAxisAlignment.spaceBetween,
                                   children: [
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           12.0, 0.0, 0.0, 0.0),
                                       child: Text(
                                         'Mon classement',
@@ -866,7 +861,7 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                                         context.pushNamed(
                                           'MyBestsRankPage',
                                           extra: <String, dynamic>{
-                                            kTransitionInfoKey: const TransitionInfo(
+                                            kTransitionInfoKey: TransitionInfo(
                                               hasTransition: true,
                                               transitionType: PageTransitionType
                                                   .rightToLeft,
@@ -887,7 +882,7 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     20.0, 10.0, 30.0, 5.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -895,7 +890,7 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                                       MainAxisAlignment.spaceBetween,
                                   children: [
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           12.0, 0.0, 0.0, 0.0),
                                       child: Text(
                                         'Mes équipes',
@@ -916,7 +911,7 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                                         context.pushNamed(
                                           'MyTeamList',
                                           extra: <String, dynamic>{
-                                            kTransitionInfoKey: const TransitionInfo(
+                                            kTransitionInfoKey: TransitionInfo(
                                               hasTransition: true,
                                               transitionType: PageTransitionType
                                                   .rightToLeft,
@@ -945,7 +940,7 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     20.0, 10.0, 30.0, 5.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -953,7 +948,7 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                                       MainAxisAlignment.spaceBetween,
                                   children: [
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           12.0, 0.0, 0.0, 0.0),
                                       child: Text(
                                         'Mes E stats',
@@ -974,7 +969,7 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                                         context.pushNamed(
                                           'MyProfilStats',
                                           extra: <String, dynamic>{
-                                            kTransitionInfoKey: const TransitionInfo(
+                                            kTransitionInfoKey: TransitionInfo(
                                               hasTransition: true,
                                               transitionType: PageTransitionType
                                                   .rightToLeft,
@@ -995,7 +990,7 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     20.0, 10.0, 30.0, 5.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -1003,7 +998,7 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                                       MainAxisAlignment.spaceBetween,
                                   children: [
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           12.0, 0.0, 0.0, 0.0),
                                       child: Text(
                                         'Mon E classement',
@@ -1024,7 +1019,7 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                                         context.pushNamed(
                                           'MyBestsEUserRankPage',
                                           extra: <String, dynamic>{
-                                            kTransitionInfoKey: const TransitionInfo(
+                                            kTransitionInfoKey: TransitionInfo(
                                               hasTransition: true,
                                               transitionType: PageTransitionType
                                                   .rightToLeft,
@@ -1045,7 +1040,7 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     20.0, 10.0, 30.0, 5.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -1053,7 +1048,7 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                                       MainAxisAlignment.spaceBetween,
                                   children: [
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           12.0, 0.0, 0.0, 0.0),
                                       child: Text(
                                         'Mes E Teams',
@@ -1074,7 +1069,7 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                                         context.pushNamed(
                                           'MyTeamList',
                                           extra: <String, dynamic>{
-                                            kTransitionInfoKey: const TransitionInfo(
+                                            kTransitionInfoKey: TransitionInfo(
                                               hasTransition: true,
                                               transitionType: PageTransitionType
                                                   .rightToLeft,
@@ -1097,14 +1092,14 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                             ],
                           ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               20.0, 10.0, 30.0, 5.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     12.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   'Mes actualités',
@@ -1125,7 +1120,7 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                                   context.pushNamed(
                                     'MyPostsList',
                                     extra: <String, dynamic>{
-                                      kTransitionInfoKey: const TransitionInfo(
+                                      kTransitionInfoKey: TransitionInfo(
                                         hasTransition: true,
                                         transitionType:
                                             PageTransitionType.rightToLeft,
@@ -1145,14 +1140,14 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               20.0, 10.0, 30.0, 5.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     12.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   'Mon reseau',
@@ -1173,7 +1168,7 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                                   context.pushNamed(
                                     'MyProfilSocial',
                                     extra: <String, dynamic>{
-                                      kTransitionInfoKey: const TransitionInfo(
+                                      kTransitionInfoKey: TransitionInfo(
                                         hasTransition: true,
                                         transitionType:
                                             PageTransitionType.rightToLeft,
@@ -1196,14 +1191,14 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                     ),
                   ),
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 5.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 5.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(25.0, 0.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(25.0, 0.0, 0.0, 0.0),
                         child: Text(
                           'Membre depuis le',
                           style:
@@ -1215,7 +1210,7 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                       ),
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(2.0, 0.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(2.0, 0.0, 0.0, 0.0),
                         child: AuthUserStreamWidget(
                           builder: (context) => Text(
                             dateTimeFormat(
@@ -1234,7 +1229,7 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                 ),
                 Padding(
                   padding:
-                      const EdgeInsetsDirectional.fromSTEB(20.0, 10.0, 30.0, 10.0),
+                      EdgeInsetsDirectional.fromSTEB(20.0, 10.0, 30.0, 10.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -1248,7 +1243,7 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                       ),
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
                           focusColor: Colors.transparent,
@@ -1258,7 +1253,7 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                             context.pushNamed(
                               'MyEditProfil',
                               extra: <String, dynamic>{
-                                kTransitionInfoKey: const TransitionInfo(
+                                kTransitionInfoKey: TransitionInfo(
                                   hasTransition: true,
                                   transitionType:
                                       PageTransitionType.rightToLeft,
@@ -1278,10 +1273,10 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                   ),
                 ),
                 Align(
-                  alignment: const AlignmentDirectional(-1.0, 0.0),
+                  alignment: AlignmentDirectional(-1.0, 0.0),
                   child: Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(25.0, 5.0, 0.0, 5.0),
+                        EdgeInsetsDirectional.fromSTEB(25.0, 5.0, 0.0, 5.0),
                     child: AuthUserStreamWidget(
                       builder: (context) => Text(
                         valueOrDefault<String>(
@@ -1298,10 +1293,10 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                   ),
                 ),
                 Align(
-                  alignment: const AlignmentDirectional(-1.0, 0.0),
+                  alignment: AlignmentDirectional(-1.0, 0.0),
                   child: Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(25.0, 5.0, 0.0, 5.0),
+                        EdgeInsetsDirectional.fromSTEB(25.0, 5.0, 0.0, 5.0),
                     child: AuthUserStreamWidget(
                       builder: (context) => Text(
                         valueOrDefault<String>(
@@ -1318,10 +1313,10 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                   ),
                 ),
                 Align(
-                  alignment: const AlignmentDirectional(-1.0, 0.0),
+                  alignment: AlignmentDirectional(-1.0, 0.0),
                   child: Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(25.0, 5.0, 0.0, 5.0),
+                        EdgeInsetsDirectional.fromSTEB(25.0, 5.0, 0.0, 5.0),
                     child: Text(
                       currentUserEmail,
                       style: FlutterFlowTheme.of(context).labelMedium.override(
@@ -1332,10 +1327,10 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                   ),
                 ),
                 Align(
-                  alignment: const AlignmentDirectional(-1.0, 0.0),
+                  alignment: AlignmentDirectional(-1.0, 0.0),
                   child: Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(25.0, 5.0, 0.0, 5.0),
+                        EdgeInsetsDirectional.fromSTEB(25.0, 5.0, 0.0, 5.0),
                     child: AuthUserStreamWidget(
                       builder: (context) => Text(
                         valueOrDefault<String>(
@@ -1352,9 +1347,9 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                   ),
                 ),
                 Align(
-                  alignment: const AlignmentDirectional(0.0, 0.0),
+                  alignment: AlignmentDirectional(0.0, 0.0),
                   child: Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 5.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 5.0),
                     child: Text(
                       currentUserUid,
                       style: FlutterFlowTheme.of(context).labelMedium.override(
@@ -1366,10 +1361,10 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                   ),
                 ),
                 Align(
-                  alignment: const AlignmentDirectional(0.0, 0.0),
+                  alignment: AlignmentDirectional(0.0, 0.0),
                   child: Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                     child: FFButtonWidget(
                       onPressed: () async {
                         GoRouter.of(context).prepareAuthEvent();
@@ -1383,9 +1378,9 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                         width: 150.0,
                         height: 44.0,
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         iconPadding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         color: FlutterFlowTheme.of(context).primaryBackground,
                         textStyle:
                             FlutterFlowTheme.of(context).labelLarge.override(
@@ -1401,43 +1396,7 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                         borderRadius: BorderRadius.circular(38.0),
                       ),
                     ).animateOnPageLoad(
-                        animationsMap['buttonOnPageLoadAnimation1']!),
-                  ),
-                ),
-                Align(
-                  alignment: const AlignmentDirectional(0.0, 0.0),
-                  child: Padding(
-                    padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 50.0, 0.0, 0.0),
-                    child: FFButtonWidget(
-                      onPressed: () async {
-                        await authManager.deleteUser(context);
-
-                        context.goNamedAuth('MyProfilPage', context.mounted);
-                      },
-                      text: 'Supprimer mon compte',
-                      options: FFButtonOptions(
-                        width: 225.0,
-                        height: 44.0,
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                        iconPadding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                        color: FlutterFlowTheme.of(context).error,
-                        textStyle:
-                            FlutterFlowTheme.of(context).labelLarge.override(
-                                  fontFamily: 'Montserrat',
-                                  color: FlutterFlowTheme.of(context).primary,
-                                  letterSpacing: 0.0,
-                                ),
-                        elevation: 0.0,
-                        borderSide: const BorderSide(
-                          width: 2.0,
-                        ),
-                        borderRadius: BorderRadius.circular(38.0),
-                      ),
-                    ).animateOnPageLoad(
-                        animationsMap['buttonOnPageLoadAnimation2']!),
+                        animationsMap['buttonOnPageLoadAnimation']!),
                   ),
                 ),
               ],

@@ -7,7 +7,10 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/upload_data.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'add_e_team_page_i_u_d_admin_model.dart';
 export 'add_e_team_page_i_u_d_admin_model.dart';
 
@@ -51,14 +54,14 @@ class _AddETeamPageIUDAdminWidgetState
         body: SafeArea(
           top: true,
           child: Padding(
-            padding: const EdgeInsets.all(10.0),
+            padding: EdgeInsets.all(10.0),
             child: SingleChildScrollView(
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.start,
@@ -75,7 +78,7 @@ class _AddETeamPageIUDAdminWidgetState
                                 context.pushNamed(
                                   'MenuPage',
                                   extra: <String, dynamic>{
-                                    kTransitionInfoKey: const TransitionInfo(
+                                    kTransitionInfoKey: TransitionInfo(
                                       hasTransition: true,
                                       transitionType:
                                           PageTransitionType.leftToRight,
@@ -91,7 +94,7 @@ class _AddETeamPageIUDAdminWidgetState
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 0.0, 0.0),
                               child: InkWell(
                                 splashColor: Colors.transparent,
@@ -112,7 +115,7 @@ class _AddETeamPageIUDAdminWidgetState
                           ],
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               20.0, 0.0, 0.0, 0.0),
                           child: Text(
                             'Céer une E Team',
@@ -129,7 +132,7 @@ class _AddETeamPageIUDAdminWidgetState
                     ),
                   ),
                   Align(
-                    alignment: const AlignmentDirectional(-1.0, 0.0),
+                    alignment: AlignmentDirectional(-1.0, 0.0),
                     child: Text(
                       'Vous allez créer une E Team',
                       style: FlutterFlowTheme.of(context).labelMedium.override(
@@ -139,7 +142,7 @@ class _AddETeamPageIUDAdminWidgetState
                     ),
                   ),
                   Align(
-                    alignment: const AlignmentDirectional(-1.0, 0.0),
+                    alignment: AlignmentDirectional(-1.0, 0.0),
                     child: Text(
                       'Qu\'est ce que cela implique',
                       style: FlutterFlowTheme.of(context).labelMedium.override(
@@ -150,7 +153,7 @@ class _AddETeamPageIUDAdminWidgetState
                     ),
                   ),
                   Align(
-                    alignment: const AlignmentDirectional(-1.0, 0.0),
+                    alignment: AlignmentDirectional(-1.0, 0.0),
                     child: Text(
                       'Si ce n\'est pas déjà fait, nous vous conseillons de consulter les conditions générales d\'utilisation afin de vous informer sur les risques liés à un comportement inapproprié.',
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -160,10 +163,10 @@ class _AddETeamPageIUDAdminWidgetState
                     ),
                   ),
                   Align(
-                    alignment: const AlignmentDirectional(1.0, 0.0),
+                    alignment: AlignmentDirectional(1.0, 0.0),
                     child: Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
                       child: InkWell(
                         splashColor: Colors.transparent,
                         focusColor: Colors.transparent,
@@ -173,7 +176,7 @@ class _AddETeamPageIUDAdminWidgetState
                           context.pushNamed(
                             'GeneralsCondidtionsPage',
                             extra: <String, dynamic>{
-                              kTransitionInfoKey: const TransitionInfo(
+                              kTransitionInfoKey: TransitionInfo(
                                 hasTransition: true,
                                 transitionType: PageTransitionType.bottomToTop,
                                 duration: Duration(milliseconds: 400),
@@ -194,7 +197,7 @@ class _AddETeamPageIUDAdminWidgetState
                     ),
                   ),
                   Align(
-                    alignment: const AlignmentDirectional(-1.0, 0.0),
+                    alignment: AlignmentDirectional(-1.0, 0.0),
                     child: Text(
                       'Après avoir pris connaissance des règles de jeux et de conduite, je débute la création de ma E Team.',
                       style: FlutterFlowTheme.of(context).labelMedium.override(
@@ -209,7 +212,7 @@ class _AddETeamPageIUDAdminWidgetState
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Align(
-                        alignment: const AlignmentDirectional(0.0, 0.0),
+                        alignment: AlignmentDirectional(0.0, 0.0),
                         child: Text(
                           'Choisir',
                           maxLines: 1,
@@ -222,7 +225,7 @@ class _AddETeamPageIUDAdminWidgetState
                       ),
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           children: [
@@ -236,7 +239,7 @@ class _AddETeamPageIUDAdminWidgetState
                                 'esport.basketball',
                                 'esport.war'
                               ]),
-                              optionLabels: const [
+                              optionLabels: [
                                 'E Sport Football',
                                 'E Sport Basketball',
                                 'E Sport War'
@@ -265,7 +268,7 @@ class _AddETeamPageIUDAdminWidgetState
                               borderColor: Colors.transparent,
                               borderWidth: 0.0,
                               borderRadius: 8.0,
-                              margin: const EdgeInsetsDirectional.fromSTEB(
+                              margin: EdgeInsetsDirectional.fromSTEB(
                                   12.0, 0.0, 12.0, 0.0),
                               hidesUnderline: true,
                               isOverButton: false,
@@ -278,10 +281,10 @@ class _AddETeamPageIUDAdminWidgetState
                     ],
                   ),
                   Align(
-                    alignment: const AlignmentDirectional(0.0, 0.0),
+                    alignment: AlignmentDirectional(0.0, 0.0),
                     child: Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                       child: Text(
                         'Ajouter le nom de club',
                         maxLines: 1,
@@ -294,10 +297,10 @@ class _AddETeamPageIUDAdminWidgetState
                     ),
                   ),
                   Align(
-                    alignment: const AlignmentDirectional(0.0, 0.0),
+                    alignment: AlignmentDirectional(0.0, 0.0),
                     child: Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
                       child: Text(
                         'Pour simplifier, il serait judicieux de choisir le même \"Nom de club\" que celui avec lequel vous jouez réellement',
                         textAlign: TextAlign.center,
@@ -314,7 +317,7 @@ class _AddETeamPageIUDAdminWidgetState
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(15.0, 5.0, 15.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(15.0, 5.0, 15.0, 0.0),
                     child: TextFormField(
                       controller: _model.eTeamNameFieldTextController,
                       focusNode: _model.eTeamNameFieldFocusNode,
@@ -376,13 +379,13 @@ class _AddETeamPageIUDAdminWidgetState
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 20.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 20.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 6.0, 0.0),
                           child: Container(
                             width: 65.0,
@@ -392,7 +395,7 @@ class _AddETeamPageIUDAdminWidgetState
                                   .primaryBackground,
                             ),
                             child: Padding(
-                              padding: const EdgeInsets.all(3.0),
+                              padding: EdgeInsets.all(3.0),
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(0.0),
                                 child: Image.network(
@@ -512,7 +515,7 @@ class _AddETeamPageIUDAdminWidgetState
                           children: [
                             if (_model.dropESportsValue == 'esport.football')
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 30.0, 0.0, 5.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -520,15 +523,18 @@ class _AddETeamPageIUDAdminWidgetState
                                   children: [
                                     if (_model.eTeamNameFieldTextController
                                                 .text !=
+                                            null &&
+                                        _model.eTeamNameFieldTextController
+                                                .text !=
                                             '')
                                       Row(
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
                                           Align(
                                             alignment:
-                                                const AlignmentDirectional(0.0, 0.0),
+                                                AlignmentDirectional(0.0, 0.0),
                                             child: Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 20.0, 0.0, 16.0),
                                               child: FFButtonWidget(
@@ -657,11 +663,11 @@ class _AddETeamPageIUDAdminWidgetState
                                                 options: FFButtonOptions(
                                                   width: 180.0,
                                                   height: 40.0,
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 0.0, 0.0),
                                                   iconPadding:
-                                                      const EdgeInsetsDirectional
+                                                      EdgeInsetsDirectional
                                                           .fromSTEB(0.0, 0.0,
                                                               0.0, 0.0),
                                                   color: FlutterFlowTheme.of(
@@ -678,7 +684,7 @@ class _AddETeamPageIUDAdminWidgetState
                                                         letterSpacing: 0.0,
                                                       ),
                                                   elevation: 3.0,
-                                                  borderSide: const BorderSide(
+                                                  borderSide: BorderSide(
                                                     color: Colors.transparent,
                                                     width: 1.0,
                                                   ),
@@ -709,16 +715,19 @@ class _AddETeamPageIUDAdminWidgetState
                                 children: [
                                   if (_model.eTeamNameFieldTextController
                                               .text !=
+                                          null &&
+                                      _model.eTeamNameFieldTextController
+                                              .text !=
                                           '')
                                     Row(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(0.0, 0.0),
+                                              AlignmentDirectional(0.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 20.0, 0.0, 16.0),
                                             child: FFButtonWidget(
                                               onPressed: () async {
@@ -841,11 +850,11 @@ class _AddETeamPageIUDAdminWidgetState
                                               options: FFButtonOptions(
                                                 width: 180.0,
                                                 height: 40.0,
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 0.0, 0.0, 0.0),
                                                 iconPadding:
-                                                    const EdgeInsetsDirectional
+                                                    EdgeInsetsDirectional
                                                         .fromSTEB(
                                                             0.0, 0.0, 0.0, 0.0),
                                                 color:
@@ -862,7 +871,7 @@ class _AddETeamPageIUDAdminWidgetState
                                                           letterSpacing: 0.0,
                                                         ),
                                                 elevation: 3.0,
-                                                borderSide: const BorderSide(
+                                                borderSide: BorderSide(
                                                   color: Colors.transparent,
                                                   width: 1.0,
                                                 ),
@@ -889,16 +898,19 @@ class _AddETeamPageIUDAdminWidgetState
                                 children: [
                                   if (_model.eTeamNameFieldTextController
                                               .text !=
+                                          null &&
+                                      _model.eTeamNameFieldTextController
+                                              .text !=
                                           '')
                                     Row(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(0.0, 0.0),
+                                              AlignmentDirectional(0.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 20.0, 0.0, 16.0),
                                             child: FFButtonWidget(
                                               onPressed: () async {
@@ -1017,11 +1029,11 @@ class _AddETeamPageIUDAdminWidgetState
                                               options: FFButtonOptions(
                                                 width: 180.0,
                                                 height: 40.0,
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 0.0, 0.0, 0.0),
                                                 iconPadding:
-                                                    const EdgeInsetsDirectional
+                                                    EdgeInsetsDirectional
                                                         .fromSTEB(
                                                             0.0, 0.0, 0.0, 0.0),
                                                 color:
@@ -1038,7 +1050,7 @@ class _AddETeamPageIUDAdminWidgetState
                                                           letterSpacing: 0.0,
                                                         ),
                                                 elevation: 3.0,
-                                                borderSide: const BorderSide(
+                                                borderSide: BorderSide(
                                                   color: Colors.transparent,
                                                   width: 1.0,
                                                 ),

@@ -5,8 +5,12 @@ import '/backend/push_notifications/push_notifications_util.dart';
 import '/flutter_flow/flutter_flow_audio_player.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'event_message_page_model.dart';
 export 'event_message_page_model.dart';
 
@@ -49,7 +53,7 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<EventMessagesRecord>(
-      stream: EventMessagesRecord.getDocument(widget.startedCommRef!),
+      stream: EventMessagesRecord.getDocument(widget!.startedCommRef!),
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
@@ -79,9 +83,9 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
             body: SafeArea(
               top: true,
               child: Align(
-                alignment: const AlignmentDirectional(0.0, -1.0),
+                alignment: AlignmentDirectional(0.0, -1.0),
                 child: Padding(
-                  padding: const EdgeInsets.all(10.0),
+                  padding: EdgeInsets.all(10.0),
                   child: StreamBuilder<UsersRecord>(
                     stream: UsersRecord.getDocument(
                         eventMessagePageEventMessagesRecord.commUser!),
@@ -109,12 +113,12 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Align(
-                              alignment: const AlignmentDirectional(0.0, -1.0),
+                              alignment: AlignmentDirectional(0.0, -1.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 10.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -135,7 +139,7 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                                   'MenuPage',
                                                   extra: <String, dynamic>{
                                                     kTransitionInfoKey:
-                                                        const TransitionInfo(
+                                                        TransitionInfo(
                                                       hasTransition: true,
                                                       transitionType:
                                                           PageTransitionType
@@ -155,7 +159,7 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                               ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       10.0, 0.0, 0.0, 0.0),
                                               child: InkWell(
@@ -183,13 +187,13 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                             .contains(currentUserReference))
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     5.0, 0.0, 0.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           5.0, 0.0, 6.0, 0.0),
                                                   child: Container(
@@ -242,7 +246,7 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                                         extra: <String,
                                                             dynamic>{
                                                           kTransitionInfoKey:
-                                                              const TransitionInfo(
+                                                              TransitionInfo(
                                                             hasTransition: true,
                                                             transitionType:
                                                                 PageTransitionType
@@ -279,9 +283,12 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                   ),
                                   if (eventMessagePageEventMessagesRecord
                                               .image !=
+                                          null &&
+                                      eventMessagePageEventMessagesRecord
+                                              .image !=
                                           '')
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 20.0, 0.0, 0.0),
                                       child: Container(
                                         width: 350.0,
@@ -293,7 +300,7 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                               BorderRadius.circular(18.0),
                                         ),
                                         child: Padding(
-                                          padding: const EdgeInsets.all(3.0),
+                                          padding: EdgeInsets.all(3.0),
                                           child: ClipRRect(
                                             borderRadius:
                                                 BorderRadius.circular(15.0),
@@ -310,11 +317,14 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                     ),
                                   if (eventMessagePageEventMessagesRecord
                                               .audio !=
+                                          null &&
+                                      eventMessagePageEventMessagesRecord
+                                              .audio !=
                                           '')
                                     Align(
-                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                      alignment: AlignmentDirectional(0.0, 0.0),
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 6.0, 0.0, 0.0),
                                         child: Container(
                                           width: 350.0,
@@ -324,7 +334,7 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                                 .primaryBackground,
                                           ),
                                           child: Padding(
-                                            padding: const EdgeInsets.all(3.0),
+                                            padding: EdgeInsets.all(3.0),
                                             child: FlutterFlowAudioPlayer(
                                               audio: Audio.network(
                                                 eventMessagePageEventMessagesRecord
@@ -371,9 +381,9 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                               ),
                             ),
                             Align(
-                              alignment: const AlignmentDirectional(-1.0, 0.0),
+                              alignment: AlignmentDirectional(-1.0, 0.0),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     10.0, 10.0, 10.0, 0.0),
                                 child: Text(
                                   eventMessagePageEventMessagesRecord.text,
@@ -393,9 +403,9 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Align(
-                                    alignment: const AlignmentDirectional(-1.0, 0.0),
+                                    alignment: AlignmentDirectional(-1.0, 0.0),
                                     child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           20.0, 20.0, 10.0, 0.0),
                                       child: Text(
                                         dateTimeFormat(
@@ -418,7 +428,7 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                         .secondaryBackground,
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 10.0, 0.0),
                                     child: SingleChildScrollView(
                                       scrollDirection: Axis.horizontal,
@@ -429,13 +439,13 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                         children: [
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 10.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 5.0, 0.0),
                                                   child: InkWell(
@@ -453,7 +463,7 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                                         queryParameters: {
                                                           'startedCommRef':
                                                               serializeParam(
-                                                            widget
+                                                            widget!
                                                                 .startedCommRef,
                                                             ParamType
                                                                 .DocumentReference,
@@ -462,7 +472,7 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                                         extra: <String,
                                                             dynamic>{
                                                           kTransitionInfoKey:
-                                                              const TransitionInfo(
+                                                              TransitionInfo(
                                                             hasTransition: true,
                                                             transitionType:
                                                                 PageTransitionType
@@ -506,7 +516,7 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     5.0, 0.0, 10.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -517,7 +527,7 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                                         currentUserReference))
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 5.0, 0.0),
                                                     child: InkWell(
@@ -558,7 +568,7 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                                             userRef:
                                                                 currentUserReference,
                                                             seen: false,
-                                                            eventMessage: widget
+                                                            eventMessage: widget!
                                                                 .startedCommRef,
                                                           ),
                                                           ...mapToFirestore(
@@ -599,7 +609,7 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                                         currentUserReference))
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 5.0, 0.0),
                                                     child: InkWell(
@@ -672,7 +682,7 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     5.0, 0.0, 10.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -683,7 +693,7 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                                         currentUserReference))
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 5.0, 0.0),
                                                     child: InkWell(
@@ -725,7 +735,7 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                                             userRef:
                                                                 currentUserReference,
                                                             seen: false,
-                                                            eventMessage: widget
+                                                            eventMessage: widget!
                                                                 .startedCommRef,
                                                           ),
                                                           ...mapToFirestore(
@@ -766,7 +776,7 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                                         currentUserReference))
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 5.0, 0.0),
                                                     child: InkWell(
@@ -840,7 +850,7 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     5.0, 0.0, 0.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -851,7 +861,7 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                                         currentUserReference))
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 5.0, 0.0),
                                                     child: InkWell(
@@ -869,7 +879,7 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                                           queryParameters: {
                                                             'commRef':
                                                                 serializeParam(
-                                                              widget
+                                                              widget!
                                                                   .startedCommRef,
                                                               ParamType
                                                                   .DocumentReference,
@@ -905,7 +915,7 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                                         currentUserReference))
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 5.0, 0.0),
                                                     child: Container(
@@ -959,7 +969,7 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                               false) ==
                                           false))
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           5.0, 10.0, 5.0, 10.0),
                                       child: AuthUserStreamWidget(
                                         builder: (context) => Row(
@@ -969,7 +979,7 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 5.0, 0.0),
                                                   child: Icon(
@@ -981,7 +991,7 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 10.0, 0.0),
                                                   child: InkWell(
@@ -1090,6 +1100,8 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                                   ),
                                                 ),
                                                 if (_model.uploadedFileUrl1 !=
+                                                        null &&
+                                                    _model.uploadedFileUrl1 !=
                                                         '')
                                                   Container(
                                                     width: 50.0,
@@ -1104,7 +1116,7 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                                     ),
                                                     child: Padding(
                                                       padding:
-                                                          const EdgeInsets.all(2.0),
+                                                          EdgeInsets.all(2.0),
                                                       child: ClipRRect(
                                                         borderRadius:
                                                             BorderRadius
@@ -1123,7 +1135,7 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                             ),
                                             Expanded(
                                               child: Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         8.0, 0.0, 8.0, 0.0),
                                                 child: TextFormField(
@@ -1216,7 +1228,7 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                               ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       10.0, 0.0, 5.0, 0.0),
                                               child: InkWell(
@@ -1243,7 +1255,7 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                                       moderator:
                                                           eventMessagePageEventMessagesRecord
                                                               .moderator,
-                                                      startedComm: widget
+                                                      startedComm: widget!
                                                           .startedCommRef,
                                                     ),
                                                     ...mapToFirestore(
@@ -1267,7 +1279,7 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                                       moderator:
                                                           eventMessagePageEventMessagesRecord
                                                               .moderator,
-                                                      startedComm: widget
+                                                      startedComm: widget!
                                                           .startedCommRef,
                                                     ),
                                                     ...mapToFirestore(
@@ -1293,7 +1305,7 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                                     parameterData: {},
                                                   );
 
-                                                  await widget.startedCommRef!
+                                                  await widget!.startedCommRef!
                                                       .update({
                                                     ...mapToFirestore(
                                                       {
@@ -1315,7 +1327,7 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                                       userRef:
                                                           currentUserReference,
                                                       seen: false,
-                                                      eventMessage: widget
+                                                      eventMessage: widget!
                                                           .startedCommRef,
                                                     ),
                                                     ...mapToFirestore(
@@ -1331,14 +1343,14 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                                     queryParameters: {
                                                       'startedCommRef':
                                                           serializeParam(
-                                                        widget.startedCommRef,
+                                                        widget!.startedCommRef,
                                                         ParamType
                                                             .DocumentReference,
                                                       ),
                                                     }.withoutNulls,
                                                     extra: <String, dynamic>{
                                                       kTransitionInfoKey:
-                                                          const TransitionInfo(
+                                                          TransitionInfo(
                                                         hasTransition: true,
                                                         transitionType:
                                                             PageTransitionType
@@ -1391,7 +1403,7 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                               false) ==
                                           true))
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           5.0, 10.0, 5.0, 10.0),
                                       child: AuthUserStreamWidget(
                                         builder: (context) => Row(
@@ -1401,7 +1413,7 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 5.0, 0.0),
                                                   child: Icon(
@@ -1413,7 +1425,7 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 10.0, 0.0),
                                                   child: InkWell(
@@ -1522,6 +1534,8 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                                   ),
                                                 ),
                                                 if (_model.uploadedFileUrl2 !=
+                                                        null &&
+                                                    _model.uploadedFileUrl2 !=
                                                         '')
                                                   Container(
                                                     width: 50.0,
@@ -1536,7 +1550,7 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                                     ),
                                                     child: Padding(
                                                       padding:
-                                                          const EdgeInsets.all(2.0),
+                                                          EdgeInsets.all(2.0),
                                                       child: ClipRRect(
                                                         borderRadius:
                                                             BorderRadius
@@ -1555,7 +1569,7 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                             ),
                                             Expanded(
                                               child: Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         8.0, 0.0, 8.0, 0.0),
                                                 child: TextFormField(
@@ -1648,7 +1662,7 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                               ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       10.0, 0.0, 5.0, 0.0),
                                               child: InkWell(
@@ -1675,7 +1689,7 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                                       moderator:
                                                           eventMessagePageEventMessagesRecord
                                                               .moderator,
-                                                      startedComm: widget
+                                                      startedComm: widget!
                                                           .startedCommRef,
                                                     ),
                                                     ...mapToFirestore(
@@ -1699,7 +1713,7 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                                       moderator:
                                                           eventMessagePageEventMessagesRecord
                                                               .moderator,
-                                                      startedComm: widget
+                                                      startedComm: widget!
                                                           .startedCommRef,
                                                     ),
                                                     ...mapToFirestore(
@@ -1725,7 +1739,7 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                                     parameterData: {},
                                                   );
 
-                                                  await widget.startedCommRef!
+                                                  await widget!.startedCommRef!
                                                       .update({
                                                     ...mapToFirestore(
                                                       {
@@ -1747,7 +1761,7 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                                       userRef:
                                                           currentUserReference,
                                                       seen: false,
-                                                      eventMessage: widget
+                                                      eventMessage: widget!
                                                           .startedCommRef,
                                                     ),
                                                     ...mapToFirestore(
@@ -1763,14 +1777,14 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                                     queryParameters: {
                                                       'startedCommRef':
                                                           serializeParam(
-                                                        widget.startedCommRef,
+                                                        widget!.startedCommRef,
                                                         ParamType
                                                             .DocumentReference,
                                                       ),
                                                     }.withoutNulls,
                                                     extra: <String, dynamic>{
                                                       kTransitionInfoKey:
-                                                          const TransitionInfo(
+                                                          TransitionInfo(
                                                         hasTransition: true,
                                                         transitionType:
                                                             PageTransitionType

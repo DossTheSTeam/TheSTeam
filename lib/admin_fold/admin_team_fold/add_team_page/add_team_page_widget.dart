@@ -7,7 +7,10 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/upload_data.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'add_team_page_model.dart';
 export 'add_team_page_model.dart';
 
@@ -52,16 +55,16 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
         body: SafeArea(
           top: true,
           child: Align(
-            alignment: const AlignmentDirectional(0.0, -1.0),
+            alignment: AlignmentDirectional(0.0, -1.0),
             child: Padding(
-              padding: const EdgeInsets.all(10.0),
+              padding: EdgeInsets.all(10.0),
               child: SingleChildScrollView(
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.start,
@@ -78,7 +81,7 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                   context.pushNamed(
                                     'MenuPage',
                                     extra: <String, dynamic>{
-                                      kTransitionInfoKey: const TransitionInfo(
+                                      kTransitionInfoKey: TransitionInfo(
                                         hasTransition: true,
                                         transitionType:
                                             PageTransitionType.leftToRight,
@@ -95,7 +98,7 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     10.0, 0.0, 0.0, 0.0),
                                 child: InkWell(
                                   splashColor: Colors.transparent,
@@ -116,7 +119,7 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                             ],
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 20.0, 0.0, 0.0, 0.0),
                             child: Text(
                               'Add Team',
@@ -138,7 +141,7 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 10.0, 0.0, 0.0),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
@@ -146,7 +149,7 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 29.0),
                                 child: Text(
                                   'Football',
@@ -159,7 +162,7 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 26.0),
                                 child: Text(
                                   'Basketball',
@@ -172,7 +175,7 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 26.0),
                                 child: Text(
                                   'Tennis',
@@ -188,13 +191,13 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               10.0, 0.0, 0.0, 0.0),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 5.0),
                                 child: FlutterFlowDropDown<String>(
                                   controller:
@@ -212,7 +215,7 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                     'pays.football',
                                     'football'
                                   ]),
-                                  optionLabels: const [
+                                  optionLabels: [
                                     'Premier League',
                                     'LaLiga',
                                     'Bundesliga',
@@ -245,7 +248,7 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                   borderColor: Colors.transparent,
                                   borderWidth: 0.0,
                                   borderRadius: 8.0,
-                                  margin: const EdgeInsetsDirectional.fromSTEB(
+                                  margin: EdgeInsetsDirectional.fromSTEB(
                                       12.0, 0.0, 12.0, 0.0),
                                   hidesUnderline: true,
                                   isOverButton: false,
@@ -254,7 +257,7 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 5.0),
                                 child: FlutterFlowDropDown<String>(
                                   controller:
@@ -264,7 +267,7 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                   ),
                                   options: List<String>.from(
                                       ['nba', 'pays.basketball']),
-                                  optionLabels: const ['NBA', 'Pays Basketball'],
+                                  optionLabels: ['NBA', 'Pays Basketball'],
                                   onChanged: (val) => safeSetState(
                                       () => _model.dropLigueBasketValue = val),
                                   width: 180.0,
@@ -288,7 +291,7 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                   borderColor: Colors.transparent,
                                   borderWidth: 0.0,
                                   borderRadius: 8.0,
-                                  margin: const EdgeInsetsDirectional.fromSTEB(
+                                  margin: EdgeInsetsDirectional.fromSTEB(
                                       12.0, 0.0, 12.0, 0.0),
                                   hidesUnderline: true,
                                   isOverButton: false,
@@ -297,7 +300,7 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 5.0),
                                 child: FlutterFlowDropDown<String>(
                                   controller:
@@ -306,7 +309,7 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                     _model.dropLigueTennisValue ??= '',
                                   ),
                                   options: List<String>.from(['atp', 'wta']),
-                                  optionLabels: const ['ATP', 'WTA'],
+                                  optionLabels: ['ATP', 'WTA'],
                                   onChanged: (val) => safeSetState(
                                       () => _model.dropLigueTennisValue = val),
                                   width: 180.0,
@@ -330,7 +333,7 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                   borderColor: Colors.transparent,
                                   borderWidth: 0.0,
                                   borderRadius: 8.0,
-                                  margin: const EdgeInsetsDirectional.fromSTEB(
+                                  margin: EdgeInsetsDirectional.fromSTEB(
                                       12.0, 0.0, 12.0, 0.0),
                                   hidesUnderline: true,
                                   isOverButton: false,
@@ -345,7 +348,7 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
                       child: TextFormField(
                         controller: _model.teamNameFieldTextController,
                         focusNode: _model.teamNameFieldFocusNode,
@@ -398,7 +401,7 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(8.0, 5.0, 8.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(8.0, 5.0, 8.0, 0.0),
                       child: TextFormField(
                         controller: _model.teamvalueFieldTextController,
                         focusNode: _model.teamvalueFieldFocusNode,
@@ -451,13 +454,13 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 20.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 20.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 6.0, 0.0),
                             child: Container(
                               width: 65.0,
@@ -467,7 +470,7 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                     .primaryBackground,
                               ),
                               child: Padding(
-                                padding: const EdgeInsets.all(3.0),
+                                padding: EdgeInsets.all(3.0),
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(0.0),
                                   child: Image.network(
@@ -555,7 +558,7 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 5.0),
                               child: FlutterFlowDropDown<String>(
                                 controller:
@@ -568,7 +571,7 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                   'europa.league',
                                   'conference.league'
                                 ]),
-                                optionLabels: const [
+                                optionLabels: [
                                   'Champions League',
                                   'Europa League',
                                   'Conference League'
@@ -596,7 +599,7 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                 borderColor: Colors.transparent,
                                 borderWidth: 0.0,
                                 borderRadius: 8.0,
-                                margin: const EdgeInsetsDirectional.fromSTEB(
+                                margin: EdgeInsetsDirectional.fromSTEB(
                                     12.0, 0.0, 12.0, 0.0),
                                 hidesUnderline: true,
                                 isOverButton: false,
@@ -605,9 +608,9 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                               ),
                             ),
                             Align(
-                              alignment: const AlignmentDirectional(0.0, 0.0),
+                              alignment: AlignmentDirectional(0.0, 0.0),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 20.0, 0.0, 16.0),
                                 child: FFButtonWidget(
                                   onPressed: () async {
@@ -633,9 +636,9 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                   options: FFButtonOptions(
                                     width: 180.0,
                                     height: 40.0,
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
-                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryBackground,
@@ -648,7 +651,7 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                           letterSpacing: 0.0,
                                         ),
                                     elevation: 3.0,
-                                    borderSide: const BorderSide(
+                                    borderSide: BorderSide(
                                       color: Colors.transparent,
                                       width: 1.0,
                                     ),
@@ -673,9 +676,9 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Align(
-                              alignment: const AlignmentDirectional(0.0, 0.0),
+                              alignment: AlignmentDirectional(0.0, 0.0),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 20.0, 0.0, 16.0),
                                 child: FFButtonWidget(
                                   onPressed: () async {
@@ -699,9 +702,9 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                   options: FFButtonOptions(
                                     width: 180.0,
                                     height: 40.0,
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
-                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryBackground,
@@ -714,7 +717,7 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                           letterSpacing: 0.0,
                                         ),
                                     elevation: 3.0,
-                                    borderSide: const BorderSide(
+                                    borderSide: BorderSide(
                                       color: Colors.transparent,
                                       width: 1.0,
                                     ),
@@ -739,9 +742,9 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Align(
-                              alignment: const AlignmentDirectional(0.0, 0.0),
+                              alignment: AlignmentDirectional(0.0, 0.0),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 20.0, 0.0, 16.0),
                                 child: FFButtonWidget(
                                   onPressed: () async {
@@ -765,9 +768,9 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                   options: FFButtonOptions(
                                     width: 180.0,
                                     height: 40.0,
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
-                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryBackground,
@@ -780,7 +783,7 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                           letterSpacing: 0.0,
                                         ),
                                     elevation: 3.0,
-                                    borderSide: const BorderSide(
+                                    borderSide: BorderSide(
                                       color: Colors.transparent,
                                       width: 1.0,
                                     ),

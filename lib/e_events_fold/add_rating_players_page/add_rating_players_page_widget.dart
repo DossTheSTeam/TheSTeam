@@ -4,8 +4,11 @@ import '/backend/push_notifications/push_notifications_util.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'add_rating_players_page_model.dart';
 export 'add_rating_players_page_model.dart';
 
@@ -44,7 +47,7 @@ class _AddRatingPlayersPageWidgetState
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<EventsRecord>(
-      stream: EventsRecord.getDocument(widget.eventRef!),
+      stream: EventsRecord.getDocument(widget!.eventRef!),
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
@@ -74,14 +77,14 @@ class _AddRatingPlayersPageWidgetState
             body: SafeArea(
               top: true,
               child: Padding(
-                padding: const EdgeInsets.all(10.0),
+                padding: EdgeInsets.all(10.0),
                 child: SingleChildScrollView(
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.start,
@@ -98,7 +101,7 @@ class _AddRatingPlayersPageWidgetState
                                     context.pushNamed(
                                       'MenuPage',
                                       extra: <String, dynamic>{
-                                        kTransitionInfoKey: const TransitionInfo(
+                                        kTransitionInfoKey: TransitionInfo(
                                           hasTransition: true,
                                           transitionType:
                                               PageTransitionType.leftToRight,
@@ -115,7 +118,7 @@ class _AddRatingPlayersPageWidgetState
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       10.0, 0.0, 0.0, 0.0),
                                   child: InkWell(
                                     splashColor: Colors.transparent,
@@ -136,7 +139,7 @@ class _AddRatingPlayersPageWidgetState
                               ],
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   15.0, 0.0, 0.0, 0.0),
                               child: Text(
                                 'Noter mes co-équipiés',
@@ -161,7 +164,7 @@ class _AddRatingPlayersPageWidgetState
                       ),
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -196,7 +199,7 @@ class _AddRatingPlayersPageWidgetState
                                         .primaryBackground,
                                   ),
                                   child: Align(
-                                    alignment: const AlignmentDirectional(0.0, 0.0),
+                                    alignment: AlignmentDirectional(0.0, 0.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
@@ -222,7 +225,7 @@ class _AddRatingPlayersPageWidgetState
                                         ),
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(0.0, 0.0),
+                                              AlignmentDirectional(0.0, 0.0),
                                           child: Text(
                                             contDomTeamsRecord.name,
                                             textAlign: TextAlign.start,
@@ -280,7 +283,7 @@ class _AddRatingPlayersPageWidgetState
                                         .primaryBackground,
                                   ),
                                   child: Align(
-                                    alignment: const AlignmentDirectional(0.0, 0.0),
+                                    alignment: AlignmentDirectional(0.0, 0.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
@@ -306,7 +309,7 @@ class _AddRatingPlayersPageWidgetState
                                         ),
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(0.0, 0.0),
+                                              AlignmentDirectional(0.0, 0.0),
                                           child: Text(
                                             contExtTeamsRecord.name,
                                             textAlign: TextAlign.start,
@@ -333,9 +336,9 @@ class _AddRatingPlayersPageWidgetState
                         color: FlutterFlowTheme.of(context).secondaryBackground,
                       ),
                       Align(
-                        alignment: const AlignmentDirectional(0.0, 0.0),
+                        alignment: AlignmentDirectional(0.0, 0.0),
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 10.0),
                           child: Text(
                             'Confirmez la\nComposition de départ',
@@ -361,7 +364,7 @@ class _AddRatingPlayersPageWidgetState
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Align(
-                                    alignment: const AlignmentDirectional(-1.0, 0.0),
+                                    alignment: AlignmentDirectional(-1.0, 0.0),
                                     child: Text(
                                       'Présent',
                                       style: FlutterFlowTheme.of(context)
@@ -375,7 +378,7 @@ class _AddRatingPlayersPageWidgetState
                                     ),
                                   ),
                                   Align(
-                                    alignment: const AlignmentDirectional(-1.0, 0.0),
+                                    alignment: AlignmentDirectional(-1.0, 0.0),
                                     child: Text(
                                       '/',
                                       maxLines: 4,
@@ -388,9 +391,9 @@ class _AddRatingPlayersPageWidgetState
                                     ),
                                   ),
                                   Align(
-                                    alignment: const AlignmentDirectional(-1.0, 0.0),
+                                    alignment: AlignmentDirectional(-1.0, 0.0),
                                     child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 10.0, 0.0),
                                       child: Text(
                                         'Absent',
@@ -413,7 +416,7 @@ class _AddRatingPlayersPageWidgetState
                           if (addRatingPlayersPageEventsRecord.teamdomRef ==
                               currentUserDocument?.eteamRef)
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 10.0, 0.0, 10.0),
                               child: AuthUserStreamWidget(
                                 builder: (context) =>
@@ -465,7 +468,7 @@ class _AddRatingPlayersPageWidgetState
                                                           .reference),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     10.0, 5.0, 0.0, 5.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -497,7 +500,7 @@ class _AddRatingPlayersPageWidgetState
                                                     false)
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 10.0, 0.0),
                                                     child: Row(
@@ -509,7 +512,7 @@ class _AddRatingPlayersPageWidgetState
                                                             currentUserReference)
                                                           Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
@@ -548,7 +551,7 @@ class _AddRatingPlayersPageWidgetState
                                                                   ...createMyNotificationsRecordData(
                                                                     text:
                                                                         'Rencontre terminée, vous pouvez noter vos co-équipiers.',
-                                                                    eEvent: widget
+                                                                    eEvent: widget!
                                                                         .eventRef,
                                                                     seen: false,
                                                                     userRef:
@@ -583,7 +586,7 @@ class _AddRatingPlayersPageWidgetState
                                                                 );
 
                                                                 await RatesRecord
-                                                                        .createDoc(widget
+                                                                        .createDoc(widget!
                                                                             .eventRef!)
                                                                     .set(
                                                                         createRatesRecordData(
@@ -608,7 +611,7 @@ class _AddRatingPlayersPageWidgetState
                                                             currentUserReference)
                                                           Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
@@ -640,7 +643,7 @@ class _AddRatingPlayersPageWidgetState
                                                                 });
 
                                                                 await RatesRecord
-                                                                        .createDoc(widget
+                                                                        .createDoc(widget!
                                                                             .eventRef!)
                                                                     .set(
                                                                         createRatesRecordData(
@@ -662,7 +665,7 @@ class _AddRatingPlayersPageWidgetState
                                                           ),
                                                         Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -679,7 +682,7 @@ class _AddRatingPlayersPageWidgetState
                                                                 Colors
                                                                     .transparent,
                                                             onTap: () async {
-                                                              await widget
+                                                              await widget!
                                                                   .eventRef!
                                                                   .update({
                                                                 ...mapToFirestore(
@@ -720,7 +723,7 @@ class _AddRatingPlayersPageWidgetState
                           if (addRatingPlayersPageEventsRecord.teamextRef ==
                               currentUserDocument?.eteamRef)
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 10.0, 0.0, 10.0),
                               child: AuthUserStreamWidget(
                                 builder: (context) =>
@@ -772,7 +775,7 @@ class _AddRatingPlayersPageWidgetState
                                                           .reference),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     10.0, 5.0, 0.0, 5.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -804,7 +807,7 @@ class _AddRatingPlayersPageWidgetState
                                                     false)
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 10.0, 0.0),
                                                     child: Row(
@@ -816,7 +819,7 @@ class _AddRatingPlayersPageWidgetState
                                                             currentUserReference)
                                                           Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
@@ -855,7 +858,7 @@ class _AddRatingPlayersPageWidgetState
                                                                   ...createMyNotificationsRecordData(
                                                                     text:
                                                                         'Rencontre terminée, vous pouvez noter vos co-équipiés.',
-                                                                    eEvent: widget
+                                                                    eEvent: widget!
                                                                         .eventRef,
                                                                     seen: false,
                                                                     userRef:
@@ -890,7 +893,7 @@ class _AddRatingPlayersPageWidgetState
                                                                 );
 
                                                                 await RatesRecord
-                                                                        .createDoc(widget
+                                                                        .createDoc(widget!
                                                                             .eventRef!)
                                                                     .set(
                                                                         createRatesRecordData(
@@ -915,7 +918,7 @@ class _AddRatingPlayersPageWidgetState
                                                             currentUserReference)
                                                           Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
@@ -947,7 +950,7 @@ class _AddRatingPlayersPageWidgetState
                                                                 });
 
                                                                 await RatesRecord
-                                                                        .createDoc(widget
+                                                                        .createDoc(widget!
                                                                             .eventRef!)
                                                                     .set(
                                                                         createRatesRecordData(
@@ -969,7 +972,7 @@ class _AddRatingPlayersPageWidgetState
                                                           ),
                                                         Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -986,7 +989,7 @@ class _AddRatingPlayersPageWidgetState
                                                                 Colors
                                                                     .transparent,
                                                             onTap: () async {
-                                                              await widget
+                                                              await widget!
                                                                   .eventRef!
                                                                   .update({
                                                                 ...mapToFirestore(
@@ -1025,9 +1028,9 @@ class _AddRatingPlayersPageWidgetState
                               ),
                             ),
                           Align(
-                            alignment: const AlignmentDirectional(0.0, 0.0),
+                            alignment: AlignmentDirectional(0.0, 0.0),
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 10.0),
                               child: Text(
                                 'Liste participants',
@@ -1046,7 +1049,7 @@ class _AddRatingPlayersPageWidgetState
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [
                               Align(
-                                alignment: const AlignmentDirectional(-1.0, 0.0),
+                                alignment: AlignmentDirectional(-1.0, 0.0),
                                 child: Text(
                                   'MVP',
                                   style: FlutterFlowTheme.of(context)
@@ -1058,9 +1061,9 @@ class _AddRatingPlayersPageWidgetState
                                 ),
                               ),
                               Align(
-                                alignment: const AlignmentDirectional(-1.0, 0.0),
+                                alignment: AlignmentDirectional(-1.0, 0.0),
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       4.0, 0.0, 4.0, 0.0),
                                   child: Text(
                                     '/',
@@ -1075,7 +1078,7 @@ class _AddRatingPlayersPageWidgetState
                                 ),
                               ),
                               Align(
-                                alignment: const AlignmentDirectional(-1.0, 0.0),
+                                alignment: AlignmentDirectional(-1.0, 0.0),
                                 child: Text(
                                   'Top',
                                   style: FlutterFlowTheme.of(context)
@@ -1089,9 +1092,9 @@ class _AddRatingPlayersPageWidgetState
                                 ),
                               ),
                               Align(
-                                alignment: const AlignmentDirectional(-1.0, 0.0),
+                                alignment: AlignmentDirectional(-1.0, 0.0),
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       4.0, 0.0, 4.0, 0.0),
                                   child: Text(
                                     '/',
@@ -1106,9 +1109,9 @@ class _AddRatingPlayersPageWidgetState
                                 ),
                               ),
                               Align(
-                                alignment: const AlignmentDirectional(-1.0, 0.0),
+                                alignment: AlignmentDirectional(-1.0, 0.0),
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 10.0, 0.0),
                                   child: Text(
                                     'Flop',
@@ -1126,7 +1129,7 @@ class _AddRatingPlayersPageWidgetState
                             ],
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 10.0),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
@@ -1135,13 +1138,13 @@ class _AddRatingPlayersPageWidgetState
                                         .teamdomRef ==
                                     currentUserDocument?.eteamRef)
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 10.0, 0.0, 10.0),
                                     child: AuthUserStreamWidget(
                                       builder: (context) =>
                                           StreamBuilder<List<RatesRecord>>(
                                         stream: queryRatesRecord(
-                                          parent: widget.eventRef,
+                                          parent: widget!.eventRef,
                                           queryBuilder: (ratesRecord) =>
                                               ratesRecord.where(
                                             'eteam',
@@ -1183,7 +1186,7 @@ class _AddRatingPlayersPageWidgetState
                                                   columnPlayersDomRatesRecordList[
                                                       columnPlayersDomIndex];
                                               return Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         10.0, 5.0, 0.0, 5.0),
                                                 child:
@@ -1257,7 +1260,7 @@ class _AddRatingPlayersPageWidgetState
                                                                 true))
                                                           Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
@@ -1275,7 +1278,7 @@ class _AddRatingPlayersPageWidgetState
                                                                         false) ==
                                                                     false)
                                                                   Padding(
-                                                                    padding: const EdgeInsetsDirectional
+                                                                    padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -1346,7 +1349,7 @@ class _AddRatingPlayersPageWidgetState
                                                                         false) ==
                                                                     false)
                                                                   Padding(
-                                                                    padding: const EdgeInsetsDirectional
+                                                                    padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             5.0,
                                                                             0.0,
@@ -1494,13 +1497,13 @@ class _AddRatingPlayersPageWidgetState
                                         .teamextRef ==
                                     currentUserDocument?.eteamRef)
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 10.0, 0.0, 10.0),
                                     child: AuthUserStreamWidget(
                                       builder: (context) =>
                                           StreamBuilder<List<RatesRecord>>(
                                         stream: queryRatesRecord(
-                                          parent: widget.eventRef,
+                                          parent: widget!.eventRef,
                                           queryBuilder: (ratesRecord) =>
                                               ratesRecord.where(
                                             'eteam',
@@ -1542,7 +1545,7 @@ class _AddRatingPlayersPageWidgetState
                                                   columnPlayersExtRatesRecordList[
                                                       columnPlayersExtIndex];
                                               return Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         10.0, 5.0, 0.0, 5.0),
                                                 child:
@@ -1616,7 +1619,7 @@ class _AddRatingPlayersPageWidgetState
                                                                 true))
                                                           Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
@@ -1634,7 +1637,7 @@ class _AddRatingPlayersPageWidgetState
                                                                         false) ==
                                                                     false)
                                                                   Padding(
-                                                                    padding: const EdgeInsetsDirectional
+                                                                    padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -1705,7 +1708,7 @@ class _AddRatingPlayersPageWidgetState
                                                                         false) ==
                                                                     false)
                                                                   Padding(
-                                                                    padding: const EdgeInsetsDirectional
+                                                                    padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             5.0,
                                                                             0.0,
@@ -1855,7 +1858,7 @@ class _AddRatingPlayersPageWidgetState
                                   children: [
                                     Align(
                                       alignment:
-                                          const AlignmentDirectional(-1.0, 0.0),
+                                          AlignmentDirectional(-1.0, 0.0),
                                       child: Text(
                                         '+ 2',
                                         style: FlutterFlowTheme.of(context)
@@ -1868,9 +1871,9 @@ class _AddRatingPlayersPageWidgetState
                                     ),
                                     Align(
                                       alignment:
-                                          const AlignmentDirectional(-1.0, 0.0),
+                                          AlignmentDirectional(-1.0, 0.0),
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             10.0, 0.0, 10.0, 0.0),
                                         child: Text(
                                           '/',
@@ -1886,7 +1889,7 @@ class _AddRatingPlayersPageWidgetState
                                     ),
                                     Align(
                                       alignment:
-                                          const AlignmentDirectional(-1.0, 0.0),
+                                          AlignmentDirectional(-1.0, 0.0),
                                       child: Text(
                                         '+ 1',
                                         style: FlutterFlowTheme.of(context)
@@ -1902,9 +1905,9 @@ class _AddRatingPlayersPageWidgetState
                                     ),
                                     Align(
                                       alignment:
-                                          const AlignmentDirectional(-1.0, 0.0),
+                                          AlignmentDirectional(-1.0, 0.0),
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             10.0, 0.0, 10.0, 0.0),
                                         child: Text(
                                           '/',
@@ -1920,9 +1923,9 @@ class _AddRatingPlayersPageWidgetState
                                     ),
                                     Align(
                                       alignment:
-                                          const AlignmentDirectional(-1.0, 0.0),
+                                          AlignmentDirectional(-1.0, 0.0),
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 15.0, 0.0),
                                         child: Text(
                                           '- 1',
@@ -1958,9 +1961,9 @@ class _AddRatingPlayersPageWidgetState
                                       currentUserDocument?.boolFlop, false) ==
                                   true))
                             Align(
-                              alignment: const AlignmentDirectional(0.0, 0.0),
+                              alignment: AlignmentDirectional(0.0, 0.0),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 20.0, 0.0, 16.0),
                                 child: AuthUserStreamWidget(
                                   builder: (context) => FFButtonWidget(
@@ -1986,7 +1989,7 @@ class _AddRatingPlayersPageWidgetState
                                       context.pushNamed(
                                         'MyProfilPage',
                                         extra: <String, dynamic>{
-                                          kTransitionInfoKey: const TransitionInfo(
+                                          kTransitionInfoKey: TransitionInfo(
                                             hasTransition: true,
                                             transitionType:
                                                 PageTransitionType.bottomToTop,
@@ -2000,10 +2003,10 @@ class _AddRatingPlayersPageWidgetState
                                     options: FFButtonOptions(
                                       width: 160.0,
                                       height: 40.0,
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 0.0),
                                       iconPadding:
-                                          const EdgeInsetsDirectional.fromSTEB(
+                                          EdgeInsetsDirectional.fromSTEB(
                                               0.0, 0.0, 0.0, 0.0),
                                       color: FlutterFlowTheme.of(context)
                                           .secondaryBackground,
@@ -2016,7 +2019,7 @@ class _AddRatingPlayersPageWidgetState
                                             letterSpacing: 0.0,
                                           ),
                                       elevation: 3.0,
-                                      borderSide: const BorderSide(
+                                      borderSide: BorderSide(
                                         color: Colors.transparent,
                                         width: 1.0,
                                       ),

@@ -2,8 +2,11 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'admin_teams_list_model.dart';
 export 'admin_teams_list_model.dart';
 
@@ -42,16 +45,16 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
         body: SafeArea(
           top: true,
           child: Align(
-            alignment: const AlignmentDirectional(0.0, -1.0),
+            alignment: AlignmentDirectional(0.0, -1.0),
             child: Padding(
-              padding: const EdgeInsets.all(10.0),
+              padding: EdgeInsets.all(10.0),
               child: SingleChildScrollView(
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.start,
@@ -68,7 +71,7 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                   context.pushNamed(
                                     'MenuPage',
                                     extra: <String, dynamic>{
-                                      kTransitionInfoKey: const TransitionInfo(
+                                      kTransitionInfoKey: TransitionInfo(
                                         hasTransition: true,
                                         transitionType:
                                             PageTransitionType.leftToRight,
@@ -85,7 +88,7 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     10.0, 0.0, 0.0, 0.0),
                                 child: InkWell(
                                   splashColor: Colors.transparent,
@@ -106,7 +109,7 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                             ],
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 20.0, 0.0, 0.0, 0.0),
                             child: Text(
                               'Liste des équipes',
@@ -128,7 +131,7 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 10.0, 0.0, 0.0),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
@@ -136,7 +139,7 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 29.0),
                                 child: Text(
                                   'E Sport',
@@ -149,7 +152,7 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 29.0),
                                 child: Text(
                                   'E Ligue',
@@ -162,7 +165,7 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 29.0),
                                 child: Text(
                                   'Football',
@@ -175,7 +178,7 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 26.0),
                                 child: Text(
                                   'Basketball',
@@ -188,7 +191,7 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 26.0),
                                 child: Text(
                                   'Tennis',
@@ -204,13 +207,13 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               10.0, 0.0, 0.0, 0.0),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 5.0),
                                 child: FlutterFlowDropDown<String>(
                                   controller:
@@ -220,7 +223,7 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                   ),
                                   options: List<String>.from(
                                       ['esport.football', 'esport.basketball']),
-                                  optionLabels: const [
+                                  optionLabels: [
                                     'E Sport Football',
                                     'E Sport Basketball'
                                   ],
@@ -247,7 +250,7 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                   borderColor: Colors.transparent,
                                   borderWidth: 0.0,
                                   borderRadius: 8.0,
-                                  margin: const EdgeInsetsDirectional.fromSTEB(
+                                  margin: EdgeInsetsDirectional.fromSTEB(
                                       12.0, 0.0, 12.0, 0.0),
                                   hidesUnderline: true,
                                   isOverButton: false,
@@ -256,7 +259,7 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 5.0),
                                 child: FlutterFlowDropDown<String>(
                                   controller:
@@ -270,7 +273,7 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                     'champion',
                                     'legende'
                                   ]),
-                                  optionLabels: const [
+                                  optionLabels: [
                                     'Amateur',
                                     'Pro',
                                     'Champion',
@@ -300,7 +303,7 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                       FlutterFlowTheme.of(context).alternate,
                                   borderWidth: 2.0,
                                   borderRadius: 8.0,
-                                  margin: const EdgeInsetsDirectional.fromSTEB(
+                                  margin: EdgeInsetsDirectional.fromSTEB(
                                       12.0, 0.0, 12.0, 0.0),
                                   hidesUnderline: true,
                                   isOverButton: false,
@@ -309,7 +312,7 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 5.0),
                                 child: FlutterFlowDropDown<String>(
                                   controller:
@@ -327,7 +330,7 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                     'pays.football',
                                     'football'
                                   ]),
-                                  optionLabels: const [
+                                  optionLabels: [
                                     'Premier League',
                                     'LaLiga',
                                     'Bundesliga',
@@ -360,7 +363,7 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                   borderColor: Colors.transparent,
                                   borderWidth: 0.0,
                                   borderRadius: 8.0,
-                                  margin: const EdgeInsetsDirectional.fromSTEB(
+                                  margin: EdgeInsetsDirectional.fromSTEB(
                                       12.0, 0.0, 12.0, 0.0),
                                   hidesUnderline: true,
                                   isOverButton: false,
@@ -369,7 +372,7 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 5.0),
                                 child: FlutterFlowDropDown<String>(
                                   controller:
@@ -379,7 +382,7 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                   ),
                                   options: List<String>.from(
                                       ['nba', 'pays.basektball']),
-                                  optionLabels: const ['NBA', 'Pays Baketball'],
+                                  optionLabels: ['NBA', 'Pays Baketball'],
                                   onChanged: (val) => safeSetState(
                                       () => _model.dropLigueBasketValue = val),
                                   width: 180.0,
@@ -403,7 +406,7 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                   borderColor: Colors.transparent,
                                   borderWidth: 0.0,
                                   borderRadius: 8.0,
-                                  margin: const EdgeInsetsDirectional.fromSTEB(
+                                  margin: EdgeInsetsDirectional.fromSTEB(
                                       12.0, 0.0, 12.0, 0.0),
                                   hidesUnderline: true,
                                   isOverButton: false,
@@ -412,7 +415,7 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 5.0),
                                 child: FlutterFlowDropDown<String>(
                                   controller:
@@ -421,7 +424,7 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                     _model.dropLigueTennisValue ??= '',
                                   ),
                                   options: List<String>.from(['atp', 'wta']),
-                                  optionLabels: const ['ATP', 'WTA'],
+                                  optionLabels: ['ATP', 'WTA'],
                                   onChanged: (val) => safeSetState(
                                       () => _model.dropLigueTennisValue = val),
                                   width: 180.0,
@@ -445,7 +448,7 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                   borderColor: Colors.transparent,
                                   borderWidth: 0.0,
                                   borderRadius: 8.0,
-                                  margin: const EdgeInsetsDirectional.fromSTEB(
+                                  margin: EdgeInsetsDirectional.fromSTEB(
                                       12.0, 0.0, 12.0, 0.0),
                                   hidesUnderline: true,
                                   isOverButton: false,
@@ -460,7 +463,7 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                       child: StreamBuilder<List<TeamsRecord>>(
                         stream: queryTeamsRecord(
                           queryBuilder: (teamsRecord) =>
@@ -508,7 +511,7 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 10.0, 10.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -517,7 +520,7 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                       children: [
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   20.0, 0.0, 0.0, 0.0),
                                           child: Text(
                                             columnTeamsTeamsRecord.name,
@@ -531,7 +534,7 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 35.0, 0.0),
                                           child: Container(
                                             width: 55.0,
@@ -557,7 +560,7 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         20.0, 0.0, 20.0, 20.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -624,7 +627,7 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                                     null)
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(10.0, 0.0,
                                                                 10.0, 0.0),
                                                     child: InkWell(
@@ -667,7 +670,7 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   10.0, 0.0, 10.0, 0.0),
                                           child: InkWell(
                                             splashColor: Colors.transparent,
@@ -697,7 +700,7 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   10.0, 0.0, 10.0, 0.0),
                                           child: InkWell(
                                             splashColor: Colors.transparent,
@@ -737,7 +740,7 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                       child: StreamBuilder<List<TeamsRecord>>(
                         stream: queryTeamsRecord(
                           queryBuilder: (teamsRecord) => teamsRecord
@@ -779,7 +782,7 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 10.0, 10.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -788,7 +791,7 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                       children: [
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   20.0, 0.0, 0.0, 0.0),
                                           child: Text(
                                             columnTeamsTeamsRecord.name,
@@ -802,7 +805,7 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 35.0, 0.0),
                                           child: Container(
                                             width: 55.0,
@@ -828,7 +831,7 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         20.0, 0.0, 20.0, 20.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -895,7 +898,7 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                                     null)
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(10.0, 0.0,
                                                                 10.0, 0.0),
                                                     child: InkWell(
@@ -938,7 +941,7 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   10.0, 0.0, 10.0, 0.0),
                                           child: InkWell(
                                             splashColor: Colors.transparent,
@@ -968,7 +971,7 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   10.0, 0.0, 10.0, 0.0),
                                           child: InkWell(
                                             splashColor: Colors.transparent,

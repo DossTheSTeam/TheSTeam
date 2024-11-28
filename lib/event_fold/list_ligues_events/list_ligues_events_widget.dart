@@ -3,10 +3,13 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'list_ligues_events_model.dart';
 export 'list_ligues_events_model.dart';
 
@@ -45,16 +48,16 @@ class _ListLiguesEventsWidgetState extends State<ListLiguesEventsWidget> {
         body: SafeArea(
           top: true,
           child: Align(
-            alignment: const AlignmentDirectional(0.0, -1.0),
+            alignment: AlignmentDirectional(0.0, -1.0),
             child: Padding(
-              padding: const EdgeInsets.all(10.0),
+              padding: EdgeInsets.all(10.0),
               child: SingleChildScrollView(
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -71,7 +74,7 @@ class _ListLiguesEventsWidgetState extends State<ListLiguesEventsWidget> {
                                   context.pushNamed(
                                     'MenuPage',
                                     extra: <String, dynamic>{
-                                      kTransitionInfoKey: const TransitionInfo(
+                                      kTransitionInfoKey: TransitionInfo(
                                         hasTransition: true,
                                         transitionType:
                                             PageTransitionType.leftToRight,
@@ -88,7 +91,7 @@ class _ListLiguesEventsWidgetState extends State<ListLiguesEventsWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     10.0, 0.0, 0.0, 0.0),
                                 child: InkWell(
                                   splashColor: Colors.transparent,
@@ -109,7 +112,7 @@ class _ListLiguesEventsWidgetState extends State<ListLiguesEventsWidget> {
                             ],
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 30.0, 0.0),
                             child: Text(
                               'Rencontres',
@@ -122,53 +125,129 @@ class _ListLiguesEventsWidgetState extends State<ListLiguesEventsWidget> {
                                   ),
                             ),
                           ),
-                          InkWell(
-                            splashColor: Colors.transparent,
-                            focusColor: Colors.transparent,
-                            hoverColor: Colors.transparent,
-                            highlightColor: Colors.transparent,
-                            onTap: () async {
-                              context.pushNamed(
-                                'ListEvents',
-                                extra: <String, dynamic>{
-                                  kTransitionInfoKey: const TransitionInfo(
-                                    hasTransition: true,
-                                    transitionType:
-                                        PageTransitionType.rightToLeft,
-                                    duration: Duration(milliseconds: 400),
+                          Column(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Row(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 7.0, 0.0),
+                                    child: InkWell(
+                                      splashColor: Colors.transparent,
+                                      focusColor: Colors.transparent,
+                                      hoverColor: Colors.transparent,
+                                      highlightColor: Colors.transparent,
+                                      onTap: () async {
+                                        context.pushNamed(
+                                          'ListEvents',
+                                          extra: <String, dynamic>{
+                                            kTransitionInfoKey: TransitionInfo(
+                                              hasTransition: true,
+                                              transitionType: PageTransitionType
+                                                  .rightToLeft,
+                                              duration:
+                                                  Duration(milliseconds: 400),
+                                            ),
+                                          },
+                                        );
+                                      },
+                                      child: FaIcon(
+                                        FontAwesomeIcons.clock,
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryText,
+                                        size: 30.0,
+                                      ),
+                                    ),
                                   ),
-                                },
-                              );
-                            },
-                            child: FaIcon(
-                              FontAwesomeIcons.clock,
-                              color: FlutterFlowTheme.of(context).secondaryText,
-                              size: 30.0,
-                            ),
-                          ),
-                          InkWell(
-                            splashColor: Colors.transparent,
-                            focusColor: Colors.transparent,
-                            hoverColor: Colors.transparent,
-                            highlightColor: Colors.transparent,
-                            onTap: () async {
-                              context.pushNamed(
-                                'MyTeamsListEvents',
-                                extra: <String, dynamic>{
-                                  kTransitionInfoKey: const TransitionInfo(
-                                    hasTransition: true,
-                                    transitionType:
-                                        PageTransitionType.rightToLeft,
-                                    duration: Duration(milliseconds: 400),
+                                  InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      context.pushNamed(
+                                        'MyTeamsListEvents',
+                                        extra: <String, dynamic>{
+                                          kTransitionInfoKey: TransitionInfo(
+                                            hasTransition: true,
+                                            transitionType:
+                                                PageTransitionType.rightToLeft,
+                                            duration:
+                                                Duration(milliseconds: 400),
+                                          ),
+                                        },
+                                      );
+                                    },
+                                    child: Icon(
+                                      Icons.favorite_rounded,
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryText,
+                                      size: 30.0,
+                                    ),
                                   ),
-                                },
-                              );
-                            },
-                            child: Icon(
-                              Icons.favorite_rounded,
-                              color: FlutterFlowTheme.of(context).secondaryText,
-                              size: 30.0,
-                            ),
+                                ],
+                              ),
+                              if (valueOrDefault<bool>(
+                                      currentUserDocument?.helpNav, false) ==
+                                  true)
+                                Align(
+                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  child: Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 3.0, 0.0, 0.0),
+                                    child: AuthUserStreamWidget(
+                                      builder: (context) => Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.end,
+                                        children: [
+                                          Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 6.0, 0.0),
+                                            child: Text(
+                                              'Par\ndates',
+                                              textAlign: TextAlign.center,
+                                              maxLines: 2,
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primaryText,
+                                                        fontSize: 10.0,
+                                                        letterSpacing: 0.0,
+                                                        lineHeight: 1.0,
+                                                      ),
+                                            ),
+                                          ),
+                                          Text(
+                                            'Mes \n Teams',
+                                            textAlign: TextAlign.center,
+                                            maxLines: 2,
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Poppins',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryText,
+                                                  fontSize: 10.0,
+                                                  letterSpacing: 0.0,
+                                                  lineHeight: 1.0,
+                                                ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                            ],
                           ),
                         ],
                       ),
@@ -178,7 +257,7 @@ class _ListLiguesEventsWidgetState extends State<ListLiguesEventsWidget> {
                         true)
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
                         child: AuthUserStreamWidget(
                           builder: (context) => Row(
                             mainAxisSize: MainAxisSize.max,
@@ -195,7 +274,7 @@ class _ListLiguesEventsWidgetState extends State<ListLiguesEventsWidget> {
                                   'esport.basketball',
                                   'esport.war'
                                 ]),
-                                optionLabels: const [
+                                optionLabels: [
                                   'E Sport Football',
                                   'E Sport Basketball',
                                   'E Sport War'
@@ -223,7 +302,7 @@ class _ListLiguesEventsWidgetState extends State<ListLiguesEventsWidget> {
                                 borderColor: Colors.transparent,
                                 borderWidth: 0.0,
                                 borderRadius: 8.0,
-                                margin: const EdgeInsetsDirectional.fromSTEB(
+                                margin: EdgeInsetsDirectional.fromSTEB(
                                     12.0, 0.0, 12.0, 0.0),
                                 hidesUnderline: true,
                                 isOverButton: false,
@@ -237,7 +316,7 @@ class _ListLiguesEventsWidgetState extends State<ListLiguesEventsWidget> {
                                 ),
                                 options: List<String>.from(
                                     ['amateur', 'pro', 'champion', 'legende']),
-                                optionLabels: const [
+                                optionLabels: [
                                   'Amateur',
                                   'Pro',
                                   'Champion',
@@ -267,7 +346,7 @@ class _ListLiguesEventsWidgetState extends State<ListLiguesEventsWidget> {
                                     FlutterFlowTheme.of(context).alternate,
                                 borderWidth: 2.0,
                                 borderRadius: 8.0,
-                                margin: const EdgeInsetsDirectional.fromSTEB(
+                                margin: EdgeInsetsDirectional.fromSTEB(
                                     12.0, 0.0, 12.0, 0.0),
                                 hidesUnderline: true,
                                 isOverButton: false,
@@ -283,7 +362,7 @@ class _ListLiguesEventsWidgetState extends State<ListLiguesEventsWidget> {
                         false)
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 5.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 5.0),
                         child: AuthUserStreamWidget(
                           builder: (context) => SingleChildScrollView(
                             scrollDirection: Axis.horizontal,
@@ -297,7 +376,7 @@ class _ListLiguesEventsWidgetState extends State<ListLiguesEventsWidget> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 10.0, 0.0),
                                       child: FlutterFlowDropDown<String>(
                                         controller: _model
@@ -318,7 +397,7 @@ class _ListLiguesEventsWidgetState extends State<ListLiguesEventsWidget> {
                                           'conference.league',
                                           'empty'
                                         ]),
-                                        optionLabels: const [
+                                        optionLabels: [
                                           'Premier League',
                                           'LaLiga',
                                           'Bundesliga',
@@ -354,7 +433,7 @@ class _ListLiguesEventsWidgetState extends State<ListLiguesEventsWidget> {
                                         borderColor: Colors.transparent,
                                         borderWidth: 0.0,
                                         borderRadius: 8.0,
-                                        margin: const EdgeInsetsDirectional.fromSTEB(
+                                        margin: EdgeInsetsDirectional.fromSTEB(
                                             12.0, 0.0, 12.0, 0.0),
                                         hidesUnderline: true,
                                         isOverButton: false,
@@ -365,7 +444,7 @@ class _ListLiguesEventsWidgetState extends State<ListLiguesEventsWidget> {
                                   ],
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 20.0, 5.0),
                                   child: FlutterFlowDropDown<String>(
                                     controller: _model
@@ -375,7 +454,7 @@ class _ListLiguesEventsWidgetState extends State<ListLiguesEventsWidget> {
                                     ),
                                     options: List<String>.from(
                                         ['nba', 'pays.basketball', 'empty']),
-                                    optionLabels: const [
+                                    optionLabels: [
                                       'NBA',
                                       'Pays Basketball',
                                       'Retirer filtre'
@@ -403,7 +482,7 @@ class _ListLiguesEventsWidgetState extends State<ListLiguesEventsWidget> {
                                     borderColor: Colors.transparent,
                                     borderWidth: 0.0,
                                     borderRadius: 8.0,
-                                    margin: const EdgeInsetsDirectional.fromSTEB(
+                                    margin: EdgeInsetsDirectional.fromSTEB(
                                         12.0, 0.0, 12.0, 0.0),
                                     hidesUnderline: true,
                                     isOverButton: false,
@@ -412,7 +491,7 @@ class _ListLiguesEventsWidgetState extends State<ListLiguesEventsWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 20.0, 5.0),
                                   child: FlutterFlowDropDown<String>(
                                     controller: _model
@@ -421,7 +500,7 @@ class _ListLiguesEventsWidgetState extends State<ListLiguesEventsWidget> {
                                       _model.dropLigueTennisValue ??= '',
                                     ),
                                     options: List<String>.from(['atp', 'wta']),
-                                    optionLabels: const ['ATP', 'WTA'],
+                                    optionLabels: ['ATP', 'WTA'],
                                     onChanged: (val) => safeSetState(() =>
                                         _model.dropLigueTennisValue = val),
                                     width: 180.0,
@@ -445,7 +524,7 @@ class _ListLiguesEventsWidgetState extends State<ListLiguesEventsWidget> {
                                     borderColor: Colors.transparent,
                                     borderWidth: 0.0,
                                     borderRadius: 8.0,
-                                    margin: const EdgeInsetsDirectional.fromSTEB(
+                                    margin: EdgeInsetsDirectional.fromSTEB(
                                         12.0, 0.0, 12.0, 0.0),
                                     hidesUnderline: true,
                                     isOverButton: false,
@@ -485,7 +564,7 @@ class _ListLiguesEventsWidgetState extends State<ListLiguesEventsWidget> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   50.0, 0.0, 0.0, 0.0),
                               child: InkWell(
                                 splashColor: Colors.transparent,
@@ -510,10 +589,63 @@ class _ListLiguesEventsWidgetState extends State<ListLiguesEventsWidget> {
                           ],
                         ),
                         if (valueOrDefault<bool>(
+                                currentUserDocument?.helpNav, false) ==
+                            true)
+                          Align(
+                            alignment: AlignmentDirectional(0.0, 0.0),
+                            child: Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 5.0, 0.0, 0.0),
+                              child: AuthUserStreamWidget(
+                                builder: (context) => Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  children: [
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          19.0, 0.0, 0.0, 0.0),
+                                      child: Text(
+                                        'A venir',
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Poppins',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .success,
+                                              fontSize: 10.0,
+                                              letterSpacing: 0.0,
+                                            ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 0.0, 9.0, 0.0),
+                                      child: Text(
+                                        'Terminés',
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Poppins',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .error,
+                                              fontSize: 10.0,
+                                              letterSpacing: 0.0,
+                                            ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                        if (valueOrDefault<bool>(
                                 currentUserDocument?.esport, false) ==
                             false)
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 10.0, 0.0, 0.0),
                             child: AuthUserStreamWidget(
                               builder: (context) =>
@@ -568,7 +700,7 @@ class _ListLiguesEventsWidgetState extends State<ListLiguesEventsWidget> {
                                                 _model.statusEvents,
                                         child: Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   5.0, 5.0, 5.0, 0.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
@@ -601,7 +733,7 @@ class _ListLiguesEventsWidgetState extends State<ListLiguesEventsWidget> {
                                                       ),
                                                       Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     3.0,
                                                                     0.0,
@@ -640,7 +772,7 @@ class _ListLiguesEventsWidgetState extends State<ListLiguesEventsWidget> {
                                                       ),
                                                       Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     2.0,
                                                                     0.0,
@@ -705,7 +837,7 @@ class _ListLiguesEventsWidgetState extends State<ListLiguesEventsWidget> {
                                                       ),
                                                       Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     5.0,
                                                                     0.0,
@@ -755,7 +887,7 @@ class _ListLiguesEventsWidgetState extends State<ListLiguesEventsWidget> {
                                                           false)
                                                         Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       5.0,
                                                                       0.0,
@@ -779,7 +911,7 @@ class _ListLiguesEventsWidgetState extends State<ListLiguesEventsWidget> {
                                                 ],
                                               ),
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 5.0, 0.0, 0.0),
                                                 child: Row(
@@ -830,7 +962,7 @@ class _ListLiguesEventsWidgetState extends State<ListLiguesEventsWidget> {
                                                           ),
                                                           child: Align(
                                                             alignment:
-                                                                const AlignmentDirectional(
+                                                                AlignmentDirectional(
                                                                     0.0, 0.0),
                                                             child: Column(
                                                               mainAxisSize:
@@ -869,7 +1001,7 @@ class _ListLiguesEventsWidgetState extends State<ListLiguesEventsWidget> {
                                                                 ),
                                                                 Align(
                                                                   alignment:
-                                                                      const AlignmentDirectional(
+                                                                      AlignmentDirectional(
                                                                           0.0,
                                                                           0.0),
                                                                   child:
@@ -936,7 +1068,7 @@ class _ListLiguesEventsWidgetState extends State<ListLiguesEventsWidget> {
                                                             false)
                                                           Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         5.0,
@@ -969,7 +1101,7 @@ class _ListLiguesEventsWidgetState extends State<ListLiguesEventsWidget> {
                                                                   extra: <String,
                                                                       dynamic>{
                                                                     kTransitionInfoKey:
-                                                                        const TransitionInfo(
+                                                                        TransitionInfo(
                                                                       hasTransition:
                                                                           true,
                                                                       transitionType:
@@ -1035,7 +1167,7 @@ class _ListLiguesEventsWidgetState extends State<ListLiguesEventsWidget> {
                                                           ),
                                                           child: Align(
                                                             alignment:
-                                                                const AlignmentDirectional(
+                                                                AlignmentDirectional(
                                                                     0.0, 0.0),
                                                             child: Column(
                                                               mainAxisSize:
@@ -1074,7 +1206,7 @@ class _ListLiguesEventsWidgetState extends State<ListLiguesEventsWidget> {
                                                                 ),
                                                                 Align(
                                                                   alignment:
-                                                                      const AlignmentDirectional(
+                                                                      AlignmentDirectional(
                                                                           0.0,
                                                                           0.0),
                                                                   child:
@@ -1156,7 +1288,7 @@ class _ListLiguesEventsWidgetState extends State<ListLiguesEventsWidget> {
                                                       ),
                                                       child: Align(
                                                         alignment:
-                                                            const AlignmentDirectional(
+                                                            AlignmentDirectional(
                                                                 0.0, 0.0),
                                                         child: Text(
                                                           columnEventsEventsRecord
@@ -1187,7 +1319,7 @@ class _ListLiguesEventsWidgetState extends State<ListLiguesEventsWidget> {
                                                       ),
                                                       child: Align(
                                                         alignment:
-                                                            const AlignmentDirectional(
+                                                            AlignmentDirectional(
                                                                 0.0, 0.0),
                                                         child: Text(
                                                           columnEventsEventsRecord
@@ -1229,7 +1361,7 @@ class _ListLiguesEventsWidgetState extends State<ListLiguesEventsWidget> {
                                 currentUserDocument?.esport, false) ==
                             true)
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 10.0, 0.0, 0.0),
                             child: AuthUserStreamWidget(
                               builder: (context) =>
@@ -1285,7 +1417,7 @@ class _ListLiguesEventsWidgetState extends State<ListLiguesEventsWidget> {
                                                 null,
                                         child: Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   5.0, 5.0, 5.0, 0.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
@@ -1318,7 +1450,7 @@ class _ListLiguesEventsWidgetState extends State<ListLiguesEventsWidget> {
                                                       ),
                                                       Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     3.0,
                                                                     0.0,
@@ -1357,7 +1489,7 @@ class _ListLiguesEventsWidgetState extends State<ListLiguesEventsWidget> {
                                                       ),
                                                       Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     2.0,
                                                                     0.0,
@@ -1422,7 +1554,7 @@ class _ListLiguesEventsWidgetState extends State<ListLiguesEventsWidget> {
                                                       ),
                                                       Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     5.0,
                                                                     0.0,
@@ -1472,7 +1604,7 @@ class _ListLiguesEventsWidgetState extends State<ListLiguesEventsWidget> {
                                                           false)
                                                         Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       5.0,
                                                                       0.0,
@@ -1496,7 +1628,7 @@ class _ListLiguesEventsWidgetState extends State<ListLiguesEventsWidget> {
                                                 ],
                                               ),
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 5.0, 0.0, 0.0),
                                                 child: Row(
@@ -1547,7 +1679,7 @@ class _ListLiguesEventsWidgetState extends State<ListLiguesEventsWidget> {
                                                           ),
                                                           child: Align(
                                                             alignment:
-                                                                const AlignmentDirectional(
+                                                                AlignmentDirectional(
                                                                     0.0, 0.0),
                                                             child: Column(
                                                               mainAxisSize:
@@ -1586,7 +1718,7 @@ class _ListLiguesEventsWidgetState extends State<ListLiguesEventsWidget> {
                                                                 ),
                                                                 Align(
                                                                   alignment:
-                                                                      const AlignmentDirectional(
+                                                                      AlignmentDirectional(
                                                                           0.0,
                                                                           0.0),
                                                                   child:
@@ -1677,7 +1809,7 @@ class _ListLiguesEventsWidgetState extends State<ListLiguesEventsWidget> {
                                                                 extra: <String,
                                                                     dynamic>{
                                                                   kTransitionInfoKey:
-                                                                      const TransitionInfo(
+                                                                      TransitionInfo(
                                                                     hasTransition:
                                                                         true,
                                                                     transitionType:
@@ -1742,7 +1874,7 @@ class _ListLiguesEventsWidgetState extends State<ListLiguesEventsWidget> {
                                                           ),
                                                           child: Align(
                                                             alignment:
-                                                                const AlignmentDirectional(
+                                                                AlignmentDirectional(
                                                                     0.0, 0.0),
                                                             child: Column(
                                                               mainAxisSize:
@@ -1781,7 +1913,7 @@ class _ListLiguesEventsWidgetState extends State<ListLiguesEventsWidget> {
                                                                 ),
                                                                 Align(
                                                                   alignment:
-                                                                      const AlignmentDirectional(
+                                                                      AlignmentDirectional(
                                                                           0.0,
                                                                           0.0),
                                                                   child:
@@ -1863,7 +1995,7 @@ class _ListLiguesEventsWidgetState extends State<ListLiguesEventsWidget> {
                                                       ),
                                                       child: Align(
                                                         alignment:
-                                                            const AlignmentDirectional(
+                                                            AlignmentDirectional(
                                                                 0.0, 0.0),
                                                         child: Text(
                                                           columnEventsEventsRecord
@@ -1894,7 +2026,7 @@ class _ListLiguesEventsWidgetState extends State<ListLiguesEventsWidget> {
                                                       ),
                                                       child: Align(
                                                         alignment:
-                                                            const AlignmentDirectional(
+                                                            AlignmentDirectional(
                                                                 0.0, 0.0),
                                                         child: Text(
                                                           columnEventsEventsRecord

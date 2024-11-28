@@ -1,12 +1,19 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/push_notifications/push_notifications_util.dart';
+import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:math';
 import '/flutter_flow/admob_util.dart' as admob;
 import '/flutter_flow/custom_functions.dart' as functions;
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter_animate/flutter_animate.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'public_bets_list_model.dart';
 export 'public_bets_list_model.dart';
 
@@ -53,7 +60,7 @@ class _PublicBetsListWidgetState extends State<PublicBetsListWidget>
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<MyBetsRecord>(
-      stream: MyBetsRecord.getDocument(widget.userBetRef!),
+      stream: MyBetsRecord.getDocument(widget!.userBetRef!),
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
@@ -83,9 +90,9 @@ class _PublicBetsListWidgetState extends State<PublicBetsListWidget>
             body: SafeArea(
               top: true,
               child: Align(
-                alignment: const AlignmentDirectional(0.0, -1.0),
+                alignment: AlignmentDirectional(0.0, -1.0),
                 child: Padding(
-                  padding: const EdgeInsets.all(10.0),
+                  padding: EdgeInsets.all(10.0),
                   child: StreamBuilder<UsersRecord>(
                     stream: UsersRecord.getDocument(
                         publicBetsListMyBetsRecord.parentReference),
@@ -112,7 +119,7 @@ class _PublicBetsListWidgetState extends State<PublicBetsListWidget>
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 5.0, 0.0, 5.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -134,7 +141,7 @@ class _PublicBetsListWidgetState extends State<PublicBetsListWidget>
                                                 'MenuPage',
                                                 extra: <String, dynamic>{
                                                   kTransitionInfoKey:
-                                                      const TransitionInfo(
+                                                      TransitionInfo(
                                                     hasTransition: true,
                                                     transitionType:
                                                         PageTransitionType
@@ -155,7 +162,7 @@ class _PublicBetsListWidgetState extends State<PublicBetsListWidget>
                                           ),
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     10.0, 0.0, 0.0, 0.0),
                                             child: InkWell(
                                               splashColor: Colors.transparent,
@@ -181,14 +188,14 @@ class _PublicBetsListWidgetState extends State<PublicBetsListWidget>
                                     ],
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         5.0, 0.0, 0.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   5.0, 0.0, 6.0, 0.0),
                                           child: Container(
                                             width: 35.0,
@@ -251,7 +258,7 @@ class _PublicBetsListWidgetState extends State<PublicBetsListWidget>
                                       ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       5.0, 0.0, 0.0, 0.0),
                                   child: Container(
                                     width: 30.0,
@@ -266,7 +273,7 @@ class _PublicBetsListWidgetState extends State<PublicBetsListWidget>
                                       ),
                                     ),
                                     child: Padding(
-                                      padding: const EdgeInsets.all(2.0),
+                                      padding: EdgeInsets.all(2.0),
                                       child: ClipRRect(
                                         borderRadius:
                                             BorderRadius.circular(24.0),
@@ -324,7 +331,7 @@ class _PublicBetsListWidgetState extends State<PublicBetsListWidget>
                                         children: [
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     10.0, 0.0, 10.0, 0.0),
                                             child: InkWell(
                                               splashColor: Colors.transparent,
@@ -337,7 +344,7 @@ class _PublicBetsListWidgetState extends State<PublicBetsListWidget>
                                                   'MyNotifsList',
                                                   extra: <String, dynamic>{
                                                     kTransitionInfoKey:
-                                                        const TransitionInfo(
+                                                        TransitionInfo(
                                                       hasTransition: true,
                                                       transitionType:
                                                           PageTransitionType
@@ -365,14 +372,14 @@ class _PublicBetsListWidgetState extends State<PublicBetsListWidget>
                               ],
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 10.0, 0.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 15.0, 0.0),
                                     child: InkWell(
                                       splashColor: Colors.transparent,
@@ -397,7 +404,7 @@ class _PublicBetsListWidgetState extends State<PublicBetsListWidget>
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         15.0, 0.0, 0.0, 0.0),
                                     child: InkWell(
                                       splashColor: Colors.transparent,
@@ -425,7 +432,7 @@ class _PublicBetsListWidgetState extends State<PublicBetsListWidget>
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 10.0, 0.0, 0.0),
                               child: StreamBuilder<List<MyBetsRecord>>(
                                 stream: queryMyBetsRecord(
@@ -469,7 +476,7 @@ class _PublicBetsListWidgetState extends State<PublicBetsListWidget>
                                                 _model.statutFilter,
                                         child: Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 10.0),
                                           child: Container(
                                             width: MediaQuery.sizeOf(context)
@@ -480,7 +487,7 @@ class _PublicBetsListWidgetState extends State<PublicBetsListWidget>
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryBackground,
-                                              boxShadow: const [
+                                              boxShadow: [
                                                 BoxShadow(
                                                   blurRadius: 4.0,
                                                   color: Color(0x33000000),
@@ -494,7 +501,7 @@ class _PublicBetsListWidgetState extends State<PublicBetsListWidget>
                                                   BorderRadius.circular(24.0),
                                             ),
                                             child: Padding(
-                                              padding: const EdgeInsets.all(12.0),
+                                              padding: EdgeInsets.all(12.0),
                                               child: Column(
                                                 mainAxisSize: MainAxisSize.max,
                                                 mainAxisAlignment:
@@ -519,7 +526,7 @@ class _PublicBetsListWidgetState extends State<PublicBetsListWidget>
                                                                 false)
                                                               Padding(
                                                                 padding:
-                                                                    const EdgeInsetsDirectional
+                                                                    EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -535,7 +542,7 @@ class _PublicBetsListWidgetState extends State<PublicBetsListWidget>
                                                                         .contains(
                                                                             currentUserReference))
                                                                       Padding(
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             5.0,
@@ -604,7 +611,7 @@ class _PublicBetsListWidgetState extends State<PublicBetsListWidget>
                                                                                 ),
                                                                               }.withoutNulls,
                                                                               extra: <String, dynamic>{
-                                                                                kTransitionInfoKey: const TransitionInfo(
+                                                                                kTransitionInfoKey: TransitionInfo(
                                                                                   hasTransition: true,
                                                                                   transitionType: PageTransitionType.scale,
                                                                                   alignment: Alignment.bottomCenter,
@@ -650,7 +657,7 @@ class _PublicBetsListWidgetState extends State<PublicBetsListWidget>
                                                                             }.withoutNulls,
                                                                             extra: <String,
                                                                                 dynamic>{
-                                                                              kTransitionInfoKey: const TransitionInfo(
+                                                                              kTransitionInfoKey: TransitionInfo(
                                                                                 hasTransition: true,
                                                                                 transitionType: PageTransitionType.scale,
                                                                                 alignment: Alignment.bottomCenter,
@@ -703,7 +710,7 @@ class _PublicBetsListWidgetState extends State<PublicBetsListWidget>
                                                                     extra: <String,
                                                                         dynamic>{
                                                                       kTransitionInfoKey:
-                                                                          const TransitionInfo(
+                                                                          TransitionInfo(
                                                                         hasTransition:
                                                                             true,
                                                                         transitionType:
@@ -732,7 +739,7 @@ class _PublicBetsListWidgetState extends State<PublicBetsListWidget>
                                                           currentUserReference)
                                                         Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -764,7 +771,7 @@ class _PublicBetsListWidgetState extends State<PublicBetsListWidget>
                                                                 extra: <String,
                                                                     dynamic>{
                                                                   kTransitionInfoKey:
-                                                                      const TransitionInfo(
+                                                                      TransitionInfo(
                                                                     hasTransition:
                                                                         true,
                                                                     transitionType:
@@ -792,7 +799,7 @@ class _PublicBetsListWidgetState extends State<PublicBetsListWidget>
                                                         ),
                                                       Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     30.0,
                                                                     0.0,
@@ -820,63 +827,66 @@ class _PublicBetsListWidgetState extends State<PublicBetsListWidget>
                                                         mainAxisSize:
                                                             MainAxisSize.max,
                                                         children: [
-                                                          Row(
-                                                            mainAxisSize:
-                                                                MainAxisSize
-                                                                    .max,
-                                                            children: [
-                                                              if (columnMyBetsMyBetsRecord
-                                                                      .statut ==
-                                                                  false)
-                                                                Padding(
-                                                                  padding: const EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          10.0,
-                                                                          0.0),
-                                                                  child:
-                                                                      Container(
-                                                                    width:
-                                                                        25.0,
-                                                                    height:
-                                                                        25.0,
-                                                                    decoration:
-                                                                        BoxDecoration(
-                                                                      color: FlutterFlowTheme.of(context)
-                                                                          .error,
-                                                                      shape: BoxShape
-                                                                          .circle,
+                                                          if (columnMyBetsMyBetsRecord
+                                                                  .statut !=
+                                                              null)
+                                                            Row(
+                                                              mainAxisSize:
+                                                                  MainAxisSize
+                                                                      .max,
+                                                              children: [
+                                                                if (columnMyBetsMyBetsRecord
+                                                                        .statut ==
+                                                                    false)
+                                                                  Padding(
+                                                                    padding: EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            10.0,
+                                                                            0.0),
+                                                                    child:
+                                                                        Container(
+                                                                      width:
+                                                                          25.0,
+                                                                      height:
+                                                                          25.0,
+                                                                      decoration:
+                                                                          BoxDecoration(
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .error,
+                                                                        shape: BoxShape
+                                                                            .circle,
+                                                                      ),
                                                                     ),
                                                                   ),
-                                                                ),
-                                                              if (columnMyBetsMyBetsRecord
-                                                                      .statut ==
-                                                                  true)
-                                                                Padding(
-                                                                  padding: const EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          10.0,
-                                                                          0.0),
-                                                                  child:
-                                                                      Container(
-                                                                    width:
-                                                                        25.0,
-                                                                    height:
-                                                                        25.0,
-                                                                    decoration:
-                                                                        BoxDecoration(
-                                                                      color: FlutterFlowTheme.of(context)
-                                                                          .success,
-                                                                      shape: BoxShape
-                                                                          .circle,
+                                                                if (columnMyBetsMyBetsRecord
+                                                                        .statut ==
+                                                                    true)
+                                                                  Padding(
+                                                                    padding: EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            10.0,
+                                                                            0.0),
+                                                                    child:
+                                                                        Container(
+                                                                      width:
+                                                                          25.0,
+                                                                      height:
+                                                                          25.0,
+                                                                      decoration:
+                                                                          BoxDecoration(
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .success,
+                                                                        shape: BoxShape
+                                                                            .circle,
+                                                                      ),
                                                                     ),
                                                                   ),
-                                                                ),
-                                                            ],
-                                                          ),
+                                                              ],
+                                                            ),
                                                         ],
                                                       ),
                                                     ],
@@ -930,7 +940,7 @@ class _PublicBetsListWidgetState extends State<PublicBetsListWidget>
                                                           ),
                                                           Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         5.0,
                                                                         0.0,
@@ -944,7 +954,7 @@ class _PublicBetsListWidgetState extends State<PublicBetsListWidget>
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primary,
-                                                                boxShadow: const [
+                                                                boxShadow: [
                                                                   BoxShadow(
                                                                     blurRadius:
                                                                         4.0,
@@ -968,7 +978,7 @@ class _PublicBetsListWidgetState extends State<PublicBetsListWidget>
                                                               ),
                                                               child: Padding(
                                                                 padding:
-                                                                    const EdgeInsets
+                                                                    EdgeInsets
                                                                         .all(
                                                                             2.0),
                                                                 child:
@@ -1042,7 +1052,7 @@ class _PublicBetsListWidgetState extends State<PublicBetsListWidget>
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       5.0,
                                                                       0.0,
@@ -1067,7 +1077,7 @@ class _PublicBetsListWidgetState extends State<PublicBetsListWidget>
                                                             ),
                                                             child: Padding(
                                                               padding:
-                                                                  const EdgeInsets
+                                                                  EdgeInsets
                                                                       .all(2.0),
                                                               child: ClipRRect(
                                                                 borderRadius:
@@ -1117,7 +1127,7 @@ class _PublicBetsListWidgetState extends State<PublicBetsListWidget>
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       5.0,
                                                                       0.0,
@@ -1142,7 +1152,7 @@ class _PublicBetsListWidgetState extends State<PublicBetsListWidget>
                                                             ),
                                                             child: Padding(
                                                               padding:
-                                                                  const EdgeInsets
+                                                                  EdgeInsets
                                                                       .all(2.0),
                                                               child: ClipRRect(
                                                                 borderRadius:

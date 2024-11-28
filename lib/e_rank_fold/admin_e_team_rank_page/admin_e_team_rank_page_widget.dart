@@ -4,10 +4,14 @@ import '/flutter_flow/flutter_flow_calendar.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'admin_e_team_rank_page_model.dart';
 export 'admin_e_team_rank_page_model.dart';
 
@@ -50,9 +54,9 @@ class _AdminETeamRankPageWidgetState extends State<AdminETeamRankPageWidget> {
             visible: valueOrDefault<bool>(currentUserDocument?.esport, false) ==
                 true,
             child: Align(
-              alignment: const AlignmentDirectional(0.0, -1.0),
+              alignment: AlignmentDirectional(0.0, -1.0),
               child: Padding(
-                padding: const EdgeInsets.all(10.0),
+                padding: EdgeInsets.all(10.0),
                 child: AuthUserStreamWidget(
                   builder: (context) => SingleChildScrollView(
                     child: Column(
@@ -74,7 +78,7 @@ class _AdminETeamRankPageWidgetState extends State<AdminETeamRankPageWidget> {
                                     context.pushNamed(
                                       'MenuPage',
                                       extra: <String, dynamic>{
-                                        kTransitionInfoKey: const TransitionInfo(
+                                        kTransitionInfoKey: TransitionInfo(
                                           hasTransition: true,
                                           transitionType:
                                               PageTransitionType.leftToRight,
@@ -91,7 +95,7 @@ class _AdminETeamRankPageWidgetState extends State<AdminETeamRankPageWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       10.0, 0.0, 0.0, 0.0),
                                   child: InkWell(
                                     splashColor: Colors.transparent,
@@ -112,9 +116,9 @@ class _AdminETeamRankPageWidgetState extends State<AdminETeamRankPageWidget> {
                               ],
                             ),
                             Align(
-                              alignment: const AlignmentDirectional(-1.0, 0.0),
+                              alignment: AlignmentDirectional(-1.0, 0.0),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     10.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   'Admin Classement',
@@ -177,7 +181,7 @@ class _AdminETeamRankPageWidgetState extends State<AdminETeamRankPageWidget> {
                             'esport.basketball',
                             'esport.war'
                           ]),
-                          optionLabels: const [
+                          optionLabels: [
                             'E Sport Football',
                             'E Sport Basketball',
                             'E Sport War'
@@ -205,7 +209,7 @@ class _AdminETeamRankPageWidgetState extends State<AdminETeamRankPageWidget> {
                           borderColor: Colors.transparent,
                           borderWidth: 0.0,
                           borderRadius: 8.0,
-                          margin: const EdgeInsetsDirectional.fromSTEB(
+                          margin: EdgeInsetsDirectional.fromSTEB(
                               12.0, 0.0, 12.0, 0.0),
                           hidesUnderline: true,
                           isOverButton: false,
@@ -223,7 +227,7 @@ class _AdminETeamRankPageWidgetState extends State<AdminETeamRankPageWidget> {
                               ),
                               options: List<String>.from(
                                   ['legende', 'champion', 'pro', 'amateur']),
-                              optionLabels: const [
+                              optionLabels: [
                                 'Légende',
                                 'Champion',
                                 'Pro',
@@ -253,7 +257,7 @@ class _AdminETeamRankPageWidgetState extends State<AdminETeamRankPageWidget> {
                                   FlutterFlowTheme.of(context).alternate,
                               borderWidth: 2.0,
                               borderRadius: 8.0,
-                              margin: const EdgeInsetsDirectional.fromSTEB(
+                              margin: EdgeInsetsDirectional.fromSTEB(
                                   16.0, 4.0, 16.0, 4.0),
                               hidesUnderline: true,
                               isOverButton: true,
@@ -266,7 +270,7 @@ class _AdminETeamRankPageWidgetState extends State<AdminETeamRankPageWidget> {
                                 _model.dropDivisionValue ??= '',
                               ),
                               options: List<String>.from(['1', '2', '3']),
-                              optionLabels: const [
+                              optionLabels: [
                                 'Division 1',
                                 'Division 2',
                                 'Division 3'
@@ -295,7 +299,7 @@ class _AdminETeamRankPageWidgetState extends State<AdminETeamRankPageWidget> {
                                   FlutterFlowTheme.of(context).alternate,
                               borderWidth: 2.0,
                               borderRadius: 8.0,
-                              margin: const EdgeInsetsDirectional.fromSTEB(
+                              margin: EdgeInsetsDirectional.fromSTEB(
                                   16.0, 4.0, 16.0, 4.0),
                               hidesUnderline: true,
                               isOverButton: true,
@@ -308,7 +312,7 @@ class _AdminETeamRankPageWidgetState extends State<AdminETeamRankPageWidget> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 0.0, 0.0),
                               child: FutureBuilder<int>(
                                 future: queryTeamsRecordCount(
@@ -347,7 +351,7 @@ class _AdminETeamRankPageWidgetState extends State<AdminETeamRankPageWidget> {
                                         CrossAxisAlignment.start,
                                     children: [
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             30.0, 0.0, 0.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -362,7 +366,7 @@ class _AdminETeamRankPageWidgetState extends State<AdminETeamRankPageWidget> {
                                               size: 30.0,
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       10.0, 0.0, 0.0, 0.0),
                                               child: Text(
@@ -426,7 +430,7 @@ class _AdminETeamRankPageWidgetState extends State<AdminETeamRankPageWidget> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 10.0, 10.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -435,7 +439,7 @@ class _AdminETeamRankPageWidgetState extends State<AdminETeamRankPageWidget> {
                                         children: [
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 10.0, 0.0),
                                             child: Text(
                                               valueOrDefault<String>(
@@ -481,7 +485,7 @@ class _AdminETeamRankPageWidgetState extends State<AdminETeamRankPageWidget> {
                                         CrossAxisAlignment.start,
                                     children: [
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 9.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -518,7 +522,7 @@ class _AdminETeamRankPageWidgetState extends State<AdminETeamRankPageWidget> {
                                                 ),
                                               ),
                                               child: Align(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Text(
                                                   'Equipes',
@@ -549,7 +553,7 @@ class _AdminETeamRankPageWidgetState extends State<AdminETeamRankPageWidget> {
                                                 ),
                                               ),
                                               child: Align(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Text(
                                                   'Pts/MJ',
@@ -580,7 +584,7 @@ class _AdminETeamRankPageWidgetState extends State<AdminETeamRankPageWidget> {
                                                 ),
                                               ),
                                               child: Align(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Text(
                                                   'Pts',
@@ -611,7 +615,7 @@ class _AdminETeamRankPageWidgetState extends State<AdminETeamRankPageWidget> {
                                                 ),
                                               ),
                                               child: Align(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Text(
                                                   'G',
@@ -642,7 +646,7 @@ class _AdminETeamRankPageWidgetState extends State<AdminETeamRankPageWidget> {
                                                 ),
                                               ),
                                               child: Align(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Text(
                                                   'N',
@@ -672,7 +676,7 @@ class _AdminETeamRankPageWidgetState extends State<AdminETeamRankPageWidget> {
                                                 ),
                                               ),
                                               child: Align(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Text(
                                                   'P',
@@ -702,7 +706,7 @@ class _AdminETeamRankPageWidgetState extends State<AdminETeamRankPageWidget> {
                                                 ),
                                               ),
                                               child: Align(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Text(
                                                   'Diff',
@@ -732,7 +736,7 @@ class _AdminETeamRankPageWidgetState extends State<AdminETeamRankPageWidget> {
                                                 ),
                                               ),
                                               child: Align(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Text(
                                                   'Pour',
@@ -762,7 +766,7 @@ class _AdminETeamRankPageWidgetState extends State<AdminETeamRankPageWidget> {
                                                 ),
                                               ),
                                               child: Align(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Text(
                                                   'Contre',
@@ -792,7 +796,7 @@ class _AdminETeamRankPageWidgetState extends State<AdminETeamRankPageWidget> {
                                                 ),
                                               ),
                                               child: Align(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Text(
                                                   'MJ',
@@ -822,7 +826,7 @@ class _AdminETeamRankPageWidgetState extends State<AdminETeamRankPageWidget> {
                                                 ),
                                               ),
                                               child: Align(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Text(
                                                   'Up ',
@@ -868,7 +872,7 @@ class _AdminETeamRankPageWidgetState extends State<AdminETeamRankPageWidget> {
                                                 ),
                                               ),
                                               child: Align(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Text(
                                                   'Down',
@@ -899,7 +903,7 @@ class _AdminETeamRankPageWidgetState extends State<AdminETeamRankPageWidget> {
                                                 ),
                                               ),
                                               child: Align(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Text(
                                                   'Up',
@@ -929,7 +933,7 @@ class _AdminETeamRankPageWidgetState extends State<AdminETeamRankPageWidget> {
                                                 ),
                                               ),
                                               child: Align(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Text(
                                                   'Down',
@@ -960,7 +964,7 @@ class _AdminETeamRankPageWidgetState extends State<AdminETeamRankPageWidget> {
                                                 ),
                                               ),
                                               child: Align(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Text(
                                                   'Dernière MAJ',
@@ -1057,7 +1061,7 @@ class _AdminETeamRankPageWidgetState extends State<AdminETeamRankPageWidget> {
                                                       ),
                                                       child: Align(
                                                         alignment:
-                                                            const AlignmentDirectional(
+                                                            AlignmentDirectional(
                                                                 0.0, 0.0),
                                                         child: Text(
                                                           valueOrDefault<
@@ -1098,7 +1102,7 @@ class _AdminETeamRankPageWidgetState extends State<AdminETeamRankPageWidget> {
                                                       ),
                                                       child: Align(
                                                         alignment:
-                                                            const AlignmentDirectional(
+                                                            AlignmentDirectional(
                                                                 1.0, 0.0),
                                                         child: InkWell(
                                                           splashColor: Colors
@@ -1154,7 +1158,7 @@ class _AdminETeamRankPageWidgetState extends State<AdminETeamRankPageWidget> {
                                                       ),
                                                       child: Align(
                                                         alignment:
-                                                            const AlignmentDirectional(
+                                                            AlignmentDirectional(
                                                                 0.0, 0.0),
                                                         child: Text(
                                                           valueOrDefault<
@@ -1197,7 +1201,7 @@ class _AdminETeamRankPageWidgetState extends State<AdminETeamRankPageWidget> {
                                                       ),
                                                       child: Align(
                                                         alignment:
-                                                            const AlignmentDirectional(
+                                                            AlignmentDirectional(
                                                                 0.0, 0.0),
                                                         child: Text(
                                                           valueOrDefault<
@@ -1236,7 +1240,7 @@ class _AdminETeamRankPageWidgetState extends State<AdminETeamRankPageWidget> {
                                                       ),
                                                       child: Align(
                                                         alignment:
-                                                            const AlignmentDirectional(
+                                                            AlignmentDirectional(
                                                                 0.0, 0.0),
                                                         child: Text(
                                                           valueOrDefault<
@@ -1273,7 +1277,7 @@ class _AdminETeamRankPageWidgetState extends State<AdminETeamRankPageWidget> {
                                                       ),
                                                       child: Align(
                                                         alignment:
-                                                            const AlignmentDirectional(
+                                                            AlignmentDirectional(
                                                                 0.0, 0.0),
                                                         child: Text(
                                                           valueOrDefault<
@@ -1312,7 +1316,7 @@ class _AdminETeamRankPageWidgetState extends State<AdminETeamRankPageWidget> {
                                                       ),
                                                       child: Align(
                                                         alignment:
-                                                            const AlignmentDirectional(
+                                                            AlignmentDirectional(
                                                                 0.0, 0.0),
                                                         child: Text(
                                                           valueOrDefault<
@@ -1342,7 +1346,7 @@ class _AdminETeamRankPageWidgetState extends State<AdminETeamRankPageWidget> {
                                                                 .of(context)
                                                             .primaryBackground,
                                                         borderRadius:
-                                                            const BorderRadius.only(
+                                                            BorderRadius.only(
                                                           bottomLeft:
                                                               Radius.circular(
                                                                   0.0),
@@ -1364,7 +1368,7 @@ class _AdminETeamRankPageWidgetState extends State<AdminETeamRankPageWidget> {
                                                       ),
                                                       child: Align(
                                                         alignment:
-                                                            const AlignmentDirectional(
+                                                            AlignmentDirectional(
                                                                 0.0, 0.0),
                                                         child: Text(
                                                           valueOrDefault<
@@ -1395,7 +1399,7 @@ class _AdminETeamRankPageWidgetState extends State<AdminETeamRankPageWidget> {
                                                     ),
                                                     Align(
                                                       alignment:
-                                                          const AlignmentDirectional(
+                                                          AlignmentDirectional(
                                                               0.0, 0.0),
                                                       child: Container(
                                                         width: 55.0,
@@ -1413,7 +1417,7 @@ class _AdminETeamRankPageWidgetState extends State<AdminETeamRankPageWidget> {
                                                         ),
                                                         child: Align(
                                                           alignment:
-                                                              const AlignmentDirectional(
+                                                              AlignmentDirectional(
                                                                   0.0, 0.0),
                                                           child: Text(
                                                             valueOrDefault<
@@ -1456,7 +1460,7 @@ class _AdminETeamRankPageWidgetState extends State<AdminETeamRankPageWidget> {
                                                       ),
                                                       child: Align(
                                                         alignment:
-                                                            const AlignmentDirectional(
+                                                            AlignmentDirectional(
                                                                 0.0, 0.0),
                                                         child: Text(
                                                           valueOrDefault<
@@ -1496,7 +1500,7 @@ class _AdminETeamRankPageWidgetState extends State<AdminETeamRankPageWidget> {
                                                       ),
                                                       child: Align(
                                                         alignment:
-                                                            const AlignmentDirectional(
+                                                            AlignmentDirectional(
                                                                 0.0, 0.0),
                                                         child: Text(
                                                           valueOrDefault<
@@ -1528,7 +1532,7 @@ class _AdminETeamRankPageWidgetState extends State<AdminETeamRankPageWidget> {
                                                                 .of(context)
                                                             .primaryBackground,
                                                         borderRadius:
-                                                            const BorderRadius.only(
+                                                            BorderRadius.only(
                                                           bottomLeft:
                                                               Radius.circular(
                                                                   0.0),
@@ -1661,7 +1665,7 @@ class _AdminETeamRankPageWidgetState extends State<AdminETeamRankPageWidget> {
                                                                 .of(context)
                                                             .primaryBackground,
                                                         borderRadius:
-                                                            const BorderRadius.only(
+                                                            BorderRadius.only(
                                                           bottomLeft:
                                                               Radius.circular(
                                                                   0.0),
@@ -1740,7 +1744,7 @@ class _AdminETeamRankPageWidgetState extends State<AdminETeamRankPageWidget> {
                                                                 .of(context)
                                                             .primaryBackground,
                                                         borderRadius:
-                                                            const BorderRadius.only(
+                                                            BorderRadius.only(
                                                           bottomLeft:
                                                               Radius.circular(
                                                                   0.0),
@@ -1873,7 +1877,7 @@ class _AdminETeamRankPageWidgetState extends State<AdminETeamRankPageWidget> {
                                                                 .of(context)
                                                             .primaryBackground,
                                                         borderRadius:
-                                                            const BorderRadius.only(
+                                                            BorderRadius.only(
                                                           bottomLeft:
                                                               Radius.circular(
                                                                   0.0),
@@ -2075,7 +2079,7 @@ class _AdminETeamRankPageWidgetState extends State<AdminETeamRankPageWidget> {
                                                                 .of(context)
                                                             .primaryBackground,
                                                         borderRadius:
-                                                            const BorderRadius.only(
+                                                            BorderRadius.only(
                                                           bottomLeft:
                                                               Radius.circular(
                                                                   0.0),
@@ -2277,7 +2281,7 @@ class _AdminETeamRankPageWidgetState extends State<AdminETeamRankPageWidget> {
                                                                 .of(context)
                                                             .primaryBackground,
                                                         borderRadius:
-                                                            const BorderRadius.only(
+                                                            BorderRadius.only(
                                                           bottomLeft:
                                                               Radius.circular(
                                                                   0.0),

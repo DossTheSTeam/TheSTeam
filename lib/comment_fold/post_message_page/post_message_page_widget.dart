@@ -5,8 +5,12 @@ import '/backend/push_notifications/push_notifications_util.dart';
 import '/flutter_flow/flutter_flow_audio_player.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'post_message_page_model.dart';
 export 'post_message_page_model.dart';
 
@@ -49,7 +53,7 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<PostMessagesRecord>(
-      stream: PostMessagesRecord.getDocument(widget.startedCommRef!),
+      stream: PostMessagesRecord.getDocument(widget!.startedCommRef!),
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
@@ -79,9 +83,9 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
             body: SafeArea(
               top: true,
               child: Align(
-                alignment: const AlignmentDirectional(0.0, -1.0),
+                alignment: AlignmentDirectional(0.0, -1.0),
                 child: Padding(
-                  padding: const EdgeInsets.all(10.0),
+                  padding: EdgeInsets.all(10.0),
                   child: StreamBuilder<UsersRecord>(
                     stream: UsersRecord.getDocument(
                         postMessagePagePostMessagesRecord.commUser!),
@@ -109,12 +113,12 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Align(
-                              alignment: const AlignmentDirectional(0.0, -1.0),
+                              alignment: AlignmentDirectional(0.0, -1.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 10.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -135,7 +139,7 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
                                                   'MenuPage',
                                                   extra: <String, dynamic>{
                                                     kTransitionInfoKey:
-                                                        const TransitionInfo(
+                                                        TransitionInfo(
                                                       hasTransition: true,
                                                       transitionType:
                                                           PageTransitionType
@@ -155,7 +159,7 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
                                               ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       10.0, 0.0, 0.0, 0.0),
                                               child: InkWell(
@@ -183,13 +187,13 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
                                             .contains(currentUserReference))
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     5.0, 0.0, 0.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           5.0, 0.0, 6.0, 0.0),
                                                   child: Container(
@@ -242,7 +246,7 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
                                                         extra: <String,
                                                             dynamic>{
                                                           kTransitionInfoKey:
-                                                              const TransitionInfo(
+                                                              TransitionInfo(
                                                             hasTransition: true,
                                                             transitionType:
                                                                 PageTransitionType
@@ -278,9 +282,11 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
                                     ),
                                   ),
                                   if (postMessagePagePostMessagesRecord.image !=
+                                          null &&
+                                      postMessagePagePostMessagesRecord.image !=
                                           '')
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 20.0, 0.0, 0.0),
                                       child: Container(
                                         width: 350.0,
@@ -292,7 +298,7 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
                                               BorderRadius.circular(18.0),
                                         ),
                                         child: Padding(
-                                          padding: const EdgeInsets.all(3.0),
+                                          padding: EdgeInsets.all(3.0),
                                           child: ClipRRect(
                                             borderRadius:
                                                 BorderRadius.circular(15.0),
@@ -308,11 +314,13 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
                                       ),
                                     ),
                                   if (postMessagePagePostMessagesRecord.audio !=
+                                          null &&
+                                      postMessagePagePostMessagesRecord.audio !=
                                           '')
                                     Align(
-                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                      alignment: AlignmentDirectional(0.0, 0.0),
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 6.0, 0.0, 0.0),
                                         child: Container(
                                           width: 350.0,
@@ -322,7 +330,7 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
                                                 .primaryBackground,
                                           ),
                                           child: Padding(
-                                            padding: const EdgeInsets.all(3.0),
+                                            padding: EdgeInsets.all(3.0),
                                             child: FlutterFlowAudioPlayer(
                                               audio: Audio.network(
                                                 postMessagePagePostMessagesRecord
@@ -369,9 +377,9 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
                               ),
                             ),
                             Align(
-                              alignment: const AlignmentDirectional(-1.0, 0.0),
+                              alignment: AlignmentDirectional(-1.0, 0.0),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     10.0, 10.0, 10.0, 0.0),
                                 child: Text(
                                   postMessagePagePostMessagesRecord.text,
@@ -391,9 +399,9 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Align(
-                                    alignment: const AlignmentDirectional(-1.0, 0.0),
+                                    alignment: AlignmentDirectional(-1.0, 0.0),
                                     child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           20.0, 20.0, 10.0, 0.0),
                                       child: Text(
                                         dateTimeFormat(
@@ -416,7 +424,7 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
                                         .secondaryBackground,
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 10.0, 0.0),
                                     child: SingleChildScrollView(
                                       scrollDirection: Axis.horizontal,
@@ -427,13 +435,13 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
                                         children: [
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 10.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 5.0, 0.0),
                                                   child: InkWell(
@@ -451,7 +459,7 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
                                                         queryParameters: {
                                                           'startedCommRef':
                                                               serializeParam(
-                                                            widget
+                                                            widget!
                                                                 .startedCommRef,
                                                             ParamType
                                                                 .DocumentReference,
@@ -460,7 +468,7 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
                                                         extra: <String,
                                                             dynamic>{
                                                           kTransitionInfoKey:
-                                                              const TransitionInfo(
+                                                              TransitionInfo(
                                                             hasTransition: true,
                                                             transitionType:
                                                                 PageTransitionType
@@ -504,7 +512,7 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     5.0, 0.0, 10.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -515,7 +523,7 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
                                                         currentUserReference))
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 5.0, 0.0),
                                                     child: InkWell(
@@ -556,7 +564,7 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
                                                             userRef:
                                                                 currentUserReference,
                                                             seen: false,
-                                                            postMessage: widget
+                                                            postMessage: widget!
                                                                 .startedCommRef,
                                                           ),
                                                           ...mapToFirestore(
@@ -597,7 +605,7 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
                                                         currentUserReference))
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 5.0, 0.0),
                                                     child: InkWell(
@@ -670,7 +678,7 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     5.0, 0.0, 10.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -681,7 +689,7 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
                                                         currentUserReference))
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 5.0, 0.0),
                                                     child: InkWell(
@@ -723,7 +731,7 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
                                                             userRef:
                                                                 currentUserReference,
                                                             seen: false,
-                                                            postMessage: widget
+                                                            postMessage: widget!
                                                                 .startedCommRef,
                                                           ),
                                                           ...mapToFirestore(
@@ -764,7 +772,7 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
                                                         currentUserReference))
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 5.0, 0.0),
                                                     child: InkWell(
@@ -838,7 +846,7 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     5.0, 0.0, 0.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -849,7 +857,7 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
                                                         currentUserReference))
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 5.0, 0.0),
                                                     child: InkWell(
@@ -867,7 +875,7 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
                                                           queryParameters: {
                                                             'commRef':
                                                                 serializeParam(
-                                                              widget
+                                                              widget!
                                                                   .startedCommRef,
                                                               ParamType
                                                                   .DocumentReference,
@@ -903,7 +911,7 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
                                                         currentUserReference))
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 5.0, 0.0),
                                                     child: Container(
@@ -957,7 +965,7 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
                                               false) ==
                                           false))
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           5.0, 10.0, 5.0, 10.0),
                                       child: AuthUserStreamWidget(
                                         builder: (context) => Row(
@@ -967,7 +975,7 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 5.0, 0.0),
                                                   child: Icon(
@@ -979,7 +987,7 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 10.0, 0.0),
                                                   child: InkWell(
@@ -1088,6 +1096,8 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
                                                   ),
                                                 ),
                                                 if (_model.uploadedFileUrl1 !=
+                                                        null &&
+                                                    _model.uploadedFileUrl1 !=
                                                         '')
                                                   Container(
                                                     width: 50.0,
@@ -1102,7 +1112,7 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
                                                     ),
                                                     child: Padding(
                                                       padding:
-                                                          const EdgeInsets.all(2.0),
+                                                          EdgeInsets.all(2.0),
                                                       child: ClipRRect(
                                                         borderRadius:
                                                             BorderRadius
@@ -1121,7 +1131,7 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
                                             ),
                                             Expanded(
                                               child: Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         8.0, 0.0, 8.0, 0.0),
                                                 child: TextFormField(
@@ -1214,7 +1224,7 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
                                               ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       10.0, 0.0, 5.0, 0.0),
                                               child: InkWell(
@@ -1238,7 +1248,7 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
                                                           .text,
                                                       image: _model
                                                           .uploadedFileUrl1,
-                                                      startedComm: widget
+                                                      startedComm: widget!
                                                           .startedCommRef,
                                                       moderator:
                                                           postMessagePagePostMessagesRecord
@@ -1262,7 +1272,7 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
                                                           .text,
                                                       image: _model
                                                           .uploadedFileUrl1,
-                                                      startedComm: widget
+                                                      startedComm: widget!
                                                           .startedCommRef,
                                                       moderator:
                                                           postMessagePagePostMessagesRecord
@@ -1291,7 +1301,7 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
                                                     parameterData: {},
                                                   );
 
-                                                  await widget.startedCommRef!
+                                                  await widget!.startedCommRef!
                                                       .update({
                                                     ...mapToFirestore(
                                                       {
@@ -1313,7 +1323,7 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
                                                       userRef:
                                                           currentUserReference,
                                                       seen: false,
-                                                      postMessage: widget
+                                                      postMessage: widget!
                                                           .startedCommRef,
                                                     ),
                                                     ...mapToFirestore(
@@ -1329,14 +1339,14 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
                                                     queryParameters: {
                                                       'startedCommRef':
                                                           serializeParam(
-                                                        widget.startedCommRef,
+                                                        widget!.startedCommRef,
                                                         ParamType
                                                             .DocumentReference,
                                                       ),
                                                     }.withoutNulls,
                                                     extra: <String, dynamic>{
                                                       kTransitionInfoKey:
-                                                          const TransitionInfo(
+                                                          TransitionInfo(
                                                         hasTransition: true,
                                                         transitionType:
                                                             PageTransitionType
@@ -1389,7 +1399,7 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
                                               false) ==
                                           true))
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           5.0, 10.0, 5.0, 10.0),
                                       child: AuthUserStreamWidget(
                                         builder: (context) => Row(
@@ -1399,7 +1409,7 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 5.0, 0.0),
                                                   child: Icon(
@@ -1411,7 +1421,7 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 10.0, 0.0),
                                                   child: InkWell(
@@ -1520,6 +1530,8 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
                                                   ),
                                                 ),
                                                 if (_model.uploadedFileUrl2 !=
+                                                        null &&
+                                                    _model.uploadedFileUrl2 !=
                                                         '')
                                                   Container(
                                                     width: 50.0,
@@ -1534,7 +1546,7 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
                                                     ),
                                                     child: Padding(
                                                       padding:
-                                                          const EdgeInsets.all(2.0),
+                                                          EdgeInsets.all(2.0),
                                                       child: ClipRRect(
                                                         borderRadius:
                                                             BorderRadius
@@ -1553,7 +1565,7 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
                                             ),
                                             Expanded(
                                               child: Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         8.0, 0.0, 8.0, 0.0),
                                                 child: TextFormField(
@@ -1646,7 +1658,7 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
                                               ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       10.0, 0.0, 5.0, 0.0),
                                               child: InkWell(
@@ -1670,7 +1682,7 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
                                                           .text,
                                                       image: _model
                                                           .uploadedFileUrl2,
-                                                      startedComm: widget
+                                                      startedComm: widget!
                                                           .startedCommRef,
                                                       moderator:
                                                           postMessagePagePostMessagesRecord
@@ -1694,7 +1706,7 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
                                                           .text,
                                                       image: _model
                                                           .uploadedFileUrl2,
-                                                      startedComm: widget
+                                                      startedComm: widget!
                                                           .startedCommRef,
                                                       moderator:
                                                           postMessagePagePostMessagesRecord
@@ -1723,7 +1735,7 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
                                                     parameterData: {},
                                                   );
 
-                                                  await widget.startedCommRef!
+                                                  await widget!.startedCommRef!
                                                       .update({
                                                     ...mapToFirestore(
                                                       {
@@ -1745,7 +1757,7 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
                                                       userRef:
                                                           currentUserReference,
                                                       seen: false,
-                                                      postMessage: widget
+                                                      postMessage: widget!
                                                           .startedCommRef,
                                                     ),
                                                     ...mapToFirestore(
@@ -1761,14 +1773,14 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
                                                     queryParameters: {
                                                       'startedCommRef':
                                                           serializeParam(
-                                                        widget.startedCommRef,
+                                                        widget!.startedCommRef,
                                                         ParamType
                                                             .DocumentReference,
                                                       ),
                                                     }.withoutNulls,
                                                     extra: <String, dynamic>{
                                                       kTransitionInfoKey:
-                                                          const TransitionInfo(
+                                                          TransitionInfo(
                                                         hasTransition: true,
                                                         transitionType:
                                                             PageTransitionType

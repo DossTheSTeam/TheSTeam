@@ -1,9 +1,17 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
+import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:math';
 import '/flutter_flow/custom_functions.dart' as functions;
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
+import 'package:flutter_animate/flutter_animate.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'team_page_model.dart';
 export 'team_page_model.dart';
 
@@ -41,7 +49,7 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<TeamsRecord>(
-      stream: TeamsRecord.getDocument(widget.teamRef!),
+      stream: TeamsRecord.getDocument(widget!.teamRef!),
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
@@ -69,9 +77,9 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             body: Align(
-              alignment: const AlignmentDirectional(0.0, -1.0),
+              alignment: AlignmentDirectional(0.0, -1.0),
               child: Padding(
-                padding: const EdgeInsets.all(10.0),
+                padding: EdgeInsets.all(10.0),
                 child: SingleChildScrollView(
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
@@ -80,7 +88,7 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                     children: [
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
                         child: SingleChildScrollView(
                           scrollDirection: Axis.horizontal,
                           child: Row(
@@ -90,34 +98,80 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                               Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
-                                  InkWell(
-                                    splashColor: Colors.transparent,
-                                    focusColor: Colors.transparent,
-                                    hoverColor: Colors.transparent,
-                                    highlightColor: Colors.transparent,
-                                    onTap: () async {
-                                      context.pushNamed(
-                                        'MenuPage',
-                                        extra: <String, dynamic>{
-                                          kTransitionInfoKey: const TransitionInfo(
-                                            hasTransition: true,
-                                            transitionType:
-                                                PageTransitionType.leftToRight,
-                                            duration:
-                                                Duration(milliseconds: 400),
-                                          ),
+                                  Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      InkWell(
+                                        splashColor: Colors.transparent,
+                                        focusColor: Colors.transparent,
+                                        hoverColor: Colors.transparent,
+                                        highlightColor: Colors.transparent,
+                                        onTap: () async {
+                                          context.pushNamed(
+                                            'MenuPage',
+                                            extra: <String, dynamic>{
+                                              kTransitionInfoKey:
+                                                  TransitionInfo(
+                                                hasTransition: true,
+                                                transitionType:
+                                                    PageTransitionType
+                                                        .leftToRight,
+                                                duration:
+                                                    Duration(milliseconds: 400),
+                                              ),
+                                            },
+                                          );
                                         },
-                                      );
-                                    },
-                                    child: Icon(
-                                      Icons.menu_rounded,
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
-                                      size: 30.0,
-                                    ),
+                                        child: Icon(
+                                          Icons.menu_rounded,
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                          size: 30.0,
+                                        ),
+                                      ),
+                                      if (valueOrDefault<bool>(
+                                              currentUserDocument?.helpNav,
+                                              false) ==
+                                          true)
+                                        Align(
+                                          alignment:
+                                              AlignmentDirectional(0.0, 0.0),
+                                          child: AuthUserStreamWidget(
+                                            builder: (context) => Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.end,
+                                              children: [
+                                                Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 3.0, 0.0, 0.0),
+                                                  child: Text(
+                                                    'Menu',
+                                                    textAlign: TextAlign.center,
+                                                    maxLines: 2,
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primaryText,
+                                                          fontSize: 10.0,
+                                                          letterSpacing: 0.0,
+                                                          lineHeight: 1.0,
+                                                        ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                    ],
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 0.0, 0.0),
                                     child: InkWell(
                                       splashColor: Colors.transparent,
@@ -141,7 +195,7 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 6.0, 0.0),
                                     child: Container(
                                       width: 65.0,
@@ -183,7 +237,7 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   5.0, 5.0, 10.0, 5.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -194,7 +248,7 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             10.0, 0.0, 0.0, 0.0),
                                         child: Text(
                                           'Créé le :',
@@ -207,7 +261,7 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                         ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             5.0, 0.0, 0.0, 0.0),
                                         child: Text(
                                           dateTimeFormat("d/M/y",
@@ -231,7 +285,7 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 0.0, 20.0, 0.0),
                                               child: InkWell(
@@ -245,14 +299,14 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                     'ModifETeamPage',
                                                     queryParameters: {
                                                       'teamRef': serializeParam(
-                                                        widget.teamRef,
+                                                        widget!.teamRef,
                                                         ParamType
                                                             .DocumentReference,
                                                       ),
                                                     }.withoutNulls,
                                                     extra: <String, dynamic>{
                                                       kTransitionInfoKey:
-                                                          const TransitionInfo(
+                                                          TransitionInfo(
                                                         hasTransition: true,
                                                         transitionType:
                                                             PageTransitionType
@@ -274,75 +328,78 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                             ),
                                           ],
                                         ),
-                                      Padding(
-                                        padding:
-                                            const EdgeInsetsDirectional.fromSTEB(
-                                                10.0, 0.0, 0.0, 0.0),
-                                        child: Row(
-                                          mainAxisSize: MainAxisSize.max,
-                                          children: [
-                                            if (teamPageTeamsRecord.members
-                                                .contains(
-                                                    currentUserReference))
-                                              Padding(
-                                                padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        0.0, 0.0, 10.0, 0.0),
-                                                child: InkWell(
-                                                  splashColor:
-                                                      Colors.transparent,
-                                                  focusColor:
-                                                      Colors.transparent,
-                                                  hoverColor:
-                                                      Colors.transparent,
-                                                  highlightColor:
-                                                      Colors.transparent,
-                                                  onTap: () async {
-                                                    context.pushNamed(
-                                                      'DiscusionETeamPage',
-                                                      queryParameters: {
-                                                        'eTeamRef':
-                                                            serializeParam(
-                                                          widget.teamRef,
-                                                          ParamType
-                                                              .DocumentReference,
-                                                        ),
-                                                      }.withoutNulls,
-                                                      extra: <String,
-                                                          dynamic>{
-                                                        kTransitionInfoKey:
-                                                            const TransitionInfo(
-                                                          hasTransition: true,
-                                                          transitionType:
-                                                              PageTransitionType
-                                                                  .bottomToTop,
-                                                          duration: Duration(
-                                                              milliseconds:
-                                                                  400),
-                                                        ),
-                                                      },
-                                                    );
-                                                  },
-                                                  child: Icon(
-                                                    Icons.comment_rounded,
-                                                    color:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .secondaryText,
-                                                    size: 30.0,
+                                      if (teamPageTeamsRecord.members
+                                              .contains(currentUserReference) !=
+                                          null)
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  10.0, 0.0, 0.0, 0.0),
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              if (teamPageTeamsRecord.members
+                                                  .contains(
+                                                      currentUserReference))
+                                                Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 0.0, 10.0, 0.0),
+                                                  child: InkWell(
+                                                    splashColor:
+                                                        Colors.transparent,
+                                                    focusColor:
+                                                        Colors.transparent,
+                                                    hoverColor:
+                                                        Colors.transparent,
+                                                    highlightColor:
+                                                        Colors.transparent,
+                                                    onTap: () async {
+                                                      context.pushNamed(
+                                                        'DiscusionETeamPage',
+                                                        queryParameters: {
+                                                          'eTeamRef':
+                                                              serializeParam(
+                                                            widget!.teamRef,
+                                                            ParamType
+                                                                .DocumentReference,
+                                                          ),
+                                                        }.withoutNulls,
+                                                        extra: <String,
+                                                            dynamic>{
+                                                          kTransitionInfoKey:
+                                                              TransitionInfo(
+                                                            hasTransition: true,
+                                                            transitionType:
+                                                                PageTransitionType
+                                                                    .bottomToTop,
+                                                            duration: Duration(
+                                                                milliseconds:
+                                                                    400),
+                                                          ),
+                                                        },
+                                                      );
+                                                    },
+                                                    child: Icon(
+                                                      Icons.comment_rounded,
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .secondaryText,
+                                                      size: 30.0,
+                                                    ),
                                                   ),
                                                 ),
-                                              ),
-                                          ],
+                                            ],
+                                          ),
                                         ),
-                                      ),
                                     ],
                                   ),
                                 ],
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   5.0, 5.0, 10.0, 5.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -363,7 +420,7 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   5.0, 0.0, 10.0, 5.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -371,7 +428,7 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       teamPageTeamsRecord.sportValue,
@@ -384,7 +441,7 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       valueOrDefault<String>(
@@ -403,7 +460,7 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   5.0, 0.0, 10.0, 5.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -425,7 +482,7 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                             ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 5.0, 0.0),
                                         child: Text(
                                           valueOrDefault<String>(
@@ -449,7 +506,7 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   5.0, 0.0, 10.0, 5.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -457,7 +514,7 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       'Statistiques',
@@ -479,7 +536,7 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                         'EteamStats',
                                         queryParameters: {
                                           'eTeamRef': serializeParam(
-                                            widget.teamRef,
+                                            widget!.teamRef,
                                             ParamType.DocumentReference,
                                           ),
                                         }.withoutNulls,
@@ -499,14 +556,14 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                         ),
                       if (teamPageTeamsRecord.esport == false)
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               5.0, 0.0, 10.0, 5.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     10.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   'Classement',
@@ -527,7 +584,7 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                   context.pushNamed(
                                     'LiguesRankPage',
                                     extra: <String, dynamic>{
-                                      kTransitionInfoKey: const TransitionInfo(
+                                      kTransitionInfoKey: TransitionInfo(
                                         hasTransition: true,
                                         transitionType:
                                             PageTransitionType.rightToLeft,
@@ -554,16 +611,16 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   16.0, 10.0, 16.0, 16.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Align(
-                                    alignment: const AlignmentDirectional(0.0, 0.0),
+                                    alignment: AlignmentDirectional(0.0, 0.0),
                                     child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 10.0, 0.0, 0.0),
                                       child: Wrap(
                                         spacing: 16.0,
@@ -586,7 +643,7 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryBackground,
-                                              boxShadow: const [
+                                              boxShadow: [
                                                 BoxShadow(
                                                   blurRadius: 4.0,
                                                   color: Color(0x33000000),
@@ -600,7 +657,7 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                   BorderRadius.circular(24.0),
                                             ),
                                             child: Padding(
-                                              padding: const EdgeInsets.all(12.0),
+                                              padding: EdgeInsets.all(12.0),
                                               child: Column(
                                                 mainAxisSize: MainAxisSize.max,
                                                 mainAxisAlignment:
@@ -642,7 +699,7 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                 ...mapToFirestore(
                                                                   {
                                                                     'teams': [
-                                                                      widget
+                                                                      widget!
                                                                           .teamRef
                                                                     ],
                                                                   },
@@ -691,7 +748,7 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                 extra: <String,
                                                                     dynamic>{
                                                                   kTransitionInfoKey:
-                                                                      const TransitionInfo(
+                                                                      TransitionInfo(
                                                                     hasTransition:
                                                                         true,
                                                                     transitionType:
@@ -720,7 +777,7 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                     ),
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 12.0,
                                                                 0.0, 4.0),
                                                     child: Text(
@@ -766,7 +823,7 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryBackground,
-                                              boxShadow: const [
+                                              boxShadow: [
                                                 BoxShadow(
                                                   blurRadius: 4.0,
                                                   color: Color(0x33000000),
@@ -780,7 +837,7 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                   BorderRadius.circular(24.0),
                                             ),
                                             child: Padding(
-                                              padding: const EdgeInsets.all(12.0),
+                                              padding: EdgeInsets.all(12.0),
                                               child: Column(
                                                 mainAxisSize: MainAxisSize.max,
                                                 mainAxisAlignment:
@@ -830,7 +887,7 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                           {
                                                                         'teamRef':
                                                                             serializeParam(
-                                                                          widget
+                                                                          widget!
                                                                               .teamRef,
                                                                           ParamType
                                                                               .DocumentReference,
@@ -889,7 +946,7 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                           {
                                                                         'teamRef':
                                                                             serializeParam(
-                                                                          widget
+                                                                          widget!
                                                                               .teamRef,
                                                                           ParamType
                                                                               .DocumentReference,
@@ -939,7 +996,7 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 12.0,
                                                                 0.0, 4.0),
                                                     child: Text(
@@ -984,7 +1041,7 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   5.0, 0.0, 10.0, 5.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -992,7 +1049,7 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       'Rencontres',
@@ -1018,13 +1075,13 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                               'TeamEventsList',
                                               queryParameters: {
                                                 'teamRef': serializeParam(
-                                                  widget.teamRef,
+                                                  widget!.teamRef,
                                                   ParamType.DocumentReference,
                                                 ),
                                               }.withoutNulls,
                                               extra: <String, dynamic>{
                                                 kTransitionInfoKey:
-                                                    const TransitionInfo(
+                                                    TransitionInfo(
                                                   hasTransition: true,
                                                   transitionType:
                                                       PageTransitionType
@@ -1053,13 +1110,13 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                               'ETeamEventsList',
                                               queryParameters: {
                                                 'teamRef': serializeParam(
-                                                  widget.teamRef,
+                                                  widget!.teamRef,
                                                   ParamType.DocumentReference,
                                                 ),
                                               }.withoutNulls,
                                               extra: <String, dynamic>{
                                                 kTransitionInfoKey:
-                                                    const TransitionInfo(
+                                                    TransitionInfo(
                                                   hasTransition: true,
                                                   transitionType:
                                                       PageTransitionType
@@ -1084,7 +1141,7 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                             ),
                             StreamBuilder<List<TeamEventsRecord>>(
                               stream: queryTeamEventsRecord(
-                                parent: widget.teamRef,
+                                parent: widget!.teamRef,
                                 queryBuilder: (teamEventsRecord) =>
                                     teamEventsRecord.orderBy('started_time',
                                         descending: true),
@@ -1121,7 +1178,7 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                           roweventsTeamEventsRecordList[
                                               roweventsIndex];
                                       return Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             5.0, 5.0, 5.0, 0.0),
                                         child: Container(
                                           width: 350.0,
@@ -1132,7 +1189,7 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                           ),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     5.0, 5.0, 5.0, 0.0),
                                             child: StreamBuilder<EventsRecord>(
                                               stream: EventsRecord.getDocument(
@@ -1194,7 +1251,7 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                             ),
                                                             Padding(
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           3.0,
                                                                           0.0,
@@ -1233,7 +1290,7 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                             ),
                                                             Padding(
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           2.0,
                                                                           0.0,
@@ -1296,7 +1353,7 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                 false)
                                                               Padding(
                                                                 padding:
-                                                                    const EdgeInsetsDirectional
+                                                                    EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             5.0,
                                                                             0.0,
@@ -1322,7 +1379,7 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                     ),
                                                     Padding(
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   5.0,
@@ -1380,7 +1437,7 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                 ),
                                                                 child: Align(
                                                                   alignment:
-                                                                      const AlignmentDirectional(
+                                                                      AlignmentDirectional(
                                                                           0.0,
                                                                           0.0),
                                                                   child: Column(
@@ -1418,7 +1475,7 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                         ),
                                                                       ),
                                                                       Align(
-                                                                        alignment: const AlignmentDirectional(
+                                                                        alignment: AlignmentDirectional(
                                                                             0.0,
                                                                             0.0),
                                                                         child:
@@ -1472,7 +1529,7 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                       .esport ==
                                                                   false)
                                                                 Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           5.0,
@@ -1508,7 +1565,7 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                         extra: <String,
                                                                             dynamic>{
                                                                           kTransitionInfoKey:
-                                                                              const TransitionInfo(
+                                                                              TransitionInfo(
                                                                             hasTransition:
                                                                                 true,
                                                                             transitionType:
@@ -1562,7 +1619,7 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                       extra: <String,
                                                                           dynamic>{
                                                                         kTransitionInfoKey:
-                                                                            const TransitionInfo(
+                                                                            TransitionInfo(
                                                                           hasTransition:
                                                                               true,
                                                                           transitionType:
@@ -1629,7 +1686,7 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                 ),
                                                                 child: Align(
                                                                   alignment:
-                                                                      const AlignmentDirectional(
+                                                                      AlignmentDirectional(
                                                                           0.0,
                                                                           0.0),
                                                                   child: Column(
@@ -1667,7 +1724,7 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                         ),
                                                                       ),
                                                                       Align(
-                                                                        alignment: const AlignmentDirectional(
+                                                                        alignment: AlignmentDirectional(
                                                                             0.0,
                                                                             0.0),
                                                                         child:
@@ -1778,13 +1835,13 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                               },
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   5.0, 5.0, 10.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       'Actualités',
@@ -1798,7 +1855,7 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                   ),
                                   Expanded(
                                     child: Align(
-                                      alignment: const AlignmentDirectional(1.0, 0.0),
+                                      alignment: AlignmentDirectional(1.0, 0.0),
                                       child: InkWell(
                                         splashColor: Colors.transparent,
                                         focusColor: Colors.transparent,
@@ -1809,13 +1866,13 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                             'ListPostsTeam',
                                             queryParameters: {
                                               'teamRef': serializeParam(
-                                                widget.teamRef,
+                                                widget!.teamRef,
                                                 ParamType.DocumentReference,
                                               ),
                                             }.withoutNulls,
                                             extra: <String, dynamic>{
                                               kTransitionInfoKey:
-                                                  const TransitionInfo(
+                                                  TransitionInfo(
                                                 hasTransition: true,
                                                 transitionType:
                                                     PageTransitionType
@@ -1839,11 +1896,11 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 10.0, 0.0),
                               child: StreamBuilder<List<TeamPostsRecord>>(
                                 stream: queryTeamPostsRecord(
-                                  parent: widget.teamRef,
+                                  parent: widget!.teamRef,
                                   queryBuilder: (teamPostsRecord) =>
                                       teamPostsRecord.orderBy('created_time',
                                           descending: true),
@@ -1917,7 +1974,7 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                         .primaryBackground,
                                               ),
                                               child: Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 5.0, 0.0, 5.0),
                                                 child: Column(
@@ -1942,7 +1999,7 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                           ),
                                                           child: Align(
                                                             alignment:
-                                                                const AlignmentDirectional(
+                                                                AlignmentDirectional(
                                                                     0.0, 0.0),
                                                             child: Text(
                                                               contPostPostsRecord
@@ -1980,7 +2037,7 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                           ),
                                                           child: Align(
                                                             alignment:
-                                                                const AlignmentDirectional(
+                                                                AlignmentDirectional(
                                                                     -1.0, 0.0),
                                                             child: Text(
                                                               contPostPostsRecord
@@ -2000,7 +2057,7 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -2032,7 +2089,7 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                 extra: <String,
                                                                     dynamic>{
                                                                   kTransitionInfoKey:
-                                                                      const TransitionInfo(
+                                                                      TransitionInfo(
                                                                     hasTransition:
                                                                         true,
                                                                     transitionType:
@@ -2062,7 +2119,7 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                     ),
                                                     Padding(
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   10.0,
                                                                   0.0,
@@ -2085,7 +2142,7 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                       .max,
                                                               children: [
                                                                 Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -2127,7 +2184,7 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                       .max,
                                                               children: [
                                                                 Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -2169,7 +2226,7 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                       .max,
                                                               children: [
                                                                 Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -2211,7 +2268,7 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                       .max,
                                                               children: [
                                                                 Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -2274,7 +2331,7 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                         ),
                       if (teamPageTeamsRecord.esport == true)
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 20.0),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
@@ -2290,9 +2347,9 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                     ),
                               ),
                               Align(
-                                alignment: const AlignmentDirectional(-1.0, 0.0),
+                                alignment: AlignmentDirectional(-1.0, 0.0),
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       10.0, 0.0, 10.0, 10.0),
                                   child: Text(
                                     teamPageTeamsRecord.bio,

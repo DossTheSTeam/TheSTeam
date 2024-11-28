@@ -1,9 +1,13 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'modif_event_page_model.dart';
 export 'modif_event_page_model.dart';
 
@@ -46,7 +50,7 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<EventsRecord>(
-      stream: EventsRecord.getDocument(widget.eventRef!),
+      stream: EventsRecord.getDocument(widget!.eventRef!),
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
@@ -76,15 +80,15 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
             body: SafeArea(
               top: true,
               child: Align(
-                alignment: const AlignmentDirectional(0.0, -1.0),
+                alignment: AlignmentDirectional(0.0, -1.0),
                 child: Padding(
-                  padding: const EdgeInsets.all(10.0),
+                  padding: EdgeInsets.all(10.0),
                   child: SingleChildScrollView(
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 10.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -102,7 +106,7 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                       context.pushNamed(
                                         'MenuPage',
                                         extra: <String, dynamic>{
-                                          kTransitionInfoKey: const TransitionInfo(
+                                          kTransitionInfoKey: TransitionInfo(
                                             hasTransition: true,
                                             transitionType:
                                                 PageTransitionType.leftToRight,
@@ -120,7 +124,7 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 0.0, 0.0),
                                     child: InkWell(
                                       splashColor: Colors.transparent,
@@ -141,7 +145,7 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                 ],
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     20.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   'Modifier les statuts',
@@ -163,7 +167,7 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                               FlutterFlowTheme.of(context).secondaryBackground,
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               10.0, 5.0, 10.0, 5.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -183,7 +187,7 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                         ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         2.0, 0.0, 2.0, 0.0),
                                     child: Text(
                                       '-',
@@ -209,7 +213,7 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                         ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         2.0, 0.0, 2.0, 0.0),
                                     child: Text(
                                       ':',
@@ -252,7 +256,7 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                   if (modifEventPageEventsRecord.statut ==
                                       false)
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           5.0, 0.0, 0.0, 0.0),
                                       child: Container(
                                         width: 25.0,
@@ -270,7 +274,7 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 5.0, 0.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -280,7 +284,7 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 5.0, 0.0),
                                     child: Text(
                                       modifEventPageEventsRecord.teamdom,
@@ -308,7 +312,7 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         5.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       modifEventPageEventsRecord.teamext,
@@ -332,9 +336,9 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                               FlutterFlowTheme.of(context).secondaryBackground,
                         ),
                         Align(
-                          alignment: const AlignmentDirectional(-1.0, 0.0),
+                          alignment: AlignmentDirectional(-1.0, 0.0),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 20.0, 0.0, 0.0, 0.0),
                             child: Text(
                               'Modifier les statuts Bets',
@@ -349,11 +353,11 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 10.0, 0.0, 0.0),
                           child: StreamBuilder<List<BetsRecord>>(
                             stream: queryBetsRecord(
-                              parent: widget.eventRef,
+                              parent: widget!.eventRef,
                               queryBuilder: (betsRecord) =>
                                   betsRecord.orderBy('created_time'),
                             ),
@@ -383,7 +387,7 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                   final columnBetsBetsRecord =
                                       columnBetsBetsRecordList[columnBetsIndex];
                                   return Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         10.0, 5.0, 0.0, 5.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -402,13 +406,13 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 10.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 0.0, 10.0, 0.0),
                                                 child: Text(
@@ -429,7 +433,7 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                                 ),
                                               ),
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 0.0, 10.0, 0.0),
                                                 child: InkWell(
@@ -476,9 +480,9 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                           ),
                         ),
                         Align(
-                          alignment: const AlignmentDirectional(-1.0, 0.0),
+                          alignment: AlignmentDirectional(-1.0, 0.0),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 20.0, 0.0, 0.0, 0.0),
                             child: Text(
                               'Liste Bets',
@@ -493,11 +497,11 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 10.0, 0.0, 0.0),
                           child: StreamBuilder<List<BetsRecord>>(
                             stream: queryBetsRecord(
-                              parent: widget.eventRef,
+                              parent: widget!.eventRef,
                               queryBuilder: (betsRecord) =>
                                   betsRecord.orderBy('created_time'),
                             ),
@@ -530,7 +534,7 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                     visible:
                                         columnBetsBetsRecord.statut != null,
                                     child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           10.0, 5.0, 0.0, 5.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -551,7 +555,7 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 0.0, 10.0, 0.0),
                                                 child: Text(
@@ -575,7 +579,7 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                                       .statut ==
                                                   false)
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 10.0, 0.0),
                                                   child: Row(
@@ -587,7 +591,7 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                                           true)
                                                         Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -611,7 +615,7 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                                           false)
                                                         Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -637,7 +641,7 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                                       .statut ==
                                                   true)
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 10.0, 0.0),
                                                   child: Container(
@@ -668,13 +672,13 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Align(
-                              alignment: const AlignmentDirectional(0.0, 0.0),
+                              alignment: AlignmentDirectional(0.0, 0.0),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 20.0, 0.0, 16.0),
                                 child: FFButtonWidget(
                                   onPressed: () async {
-                                    await widget.eventRef!
+                                    await widget!.eventRef!
                                         .update(createEventsRecordData(
                                       statut: true,
                                     ));
@@ -685,9 +689,9 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                   options: FFButtonOptions(
                                     width: 150.0,
                                     height: 40.0,
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
-                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
                                     color: FlutterFlowTheme.of(context).success,
                                     textStyle: FlutterFlowTheme.of(context)
@@ -700,7 +704,7 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                           letterSpacing: 0.0,
                                         ),
                                     elevation: 3.0,
-                                    borderSide: const BorderSide(
+                                    borderSide: BorderSide(
                                       color: Colors.transparent,
                                       width: 1.0,
                                     ),
@@ -714,13 +718,13 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                               ),
                             ),
                             Align(
-                              alignment: const AlignmentDirectional(0.0, 0.0),
+                              alignment: AlignmentDirectional(0.0, 0.0),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 20.0, 0.0, 16.0),
                                 child: FFButtonWidget(
                                   onPressed: () async {
-                                    await widget.eventRef!
+                                    await widget!.eventRef!
                                         .update(createEventsRecordData(
                                       statut: false,
                                     ));
@@ -731,9 +735,9 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                   options: FFButtonOptions(
                                     width: 150.0,
                                     height: 40.0,
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
-                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
                                     color: FlutterFlowTheme.of(context).warning,
                                     textStyle: FlutterFlowTheme.of(context)
@@ -746,7 +750,7 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                           letterSpacing: 0.0,
                                         ),
                                     elevation: 3.0,
-                                    borderSide: const BorderSide(
+                                    borderSide: BorderSide(
                                       color: Colors.transparent,
                                       width: 1.0,
                                     ),
@@ -767,9 +771,9 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                               FlutterFlowTheme.of(context).secondaryBackground,
                         ),
                         Align(
-                          alignment: const AlignmentDirectional(0.0, 0.0),
+                          alignment: AlignmentDirectional(0.0, 0.0),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 10.0, 0.0, 0.0),
                             child: Text(
                               'Fin de match',
@@ -784,9 +788,9 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                           ),
                         ),
                         Align(
-                          alignment: const AlignmentDirectional(-1.0, 0.0),
+                          alignment: AlignmentDirectional(-1.0, 0.0),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 20.0, 0.0, 0.0, 0.0),
                             child: Text(
                               'Score',
@@ -801,13 +805,13 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 10.0, 0.0, 10.0),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 10.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -815,7 +819,7 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                       MainAxisAlignment.spaceAround,
                                   children: [
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           5.0, 0.0, 0.0, 0.0),
                                       child: Text(
                                         modifEventPageEventsRecord.teamdom,
@@ -833,7 +837,7 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                       children: [
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 20.0, 0.0),
                                           child: Container(
                                             width: 70.0,
@@ -846,7 +850,7 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                                   BorderRadius.circular(0.0),
                                             ),
                                             child: Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(8.0, 0.0, 8.0, 0.0),
                                               child: TextFormField(
                                                 controller: _model
@@ -939,7 +943,7 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 10.0, 0.0, 10.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -947,7 +951,7 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                       MainAxisAlignment.spaceAround,
                                   children: [
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           5.0, 0.0, 0.0, 0.0),
                                       child: Text(
                                         modifEventPageEventsRecord.teamext,
@@ -965,7 +969,7 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                       children: [
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 20.0, 0.0),
                                           child: Container(
                                             width: 70.0,
@@ -978,7 +982,7 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                                   BorderRadius.circular(0.0),
                                             ),
                                             child: Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(8.0, 0.0, 8.0, 0.0),
                                               child: TextFormField(
                                                 controller: _model
@@ -1071,9 +1075,9 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                 ),
                               ),
                               Align(
-                                alignment: const AlignmentDirectional(0.0, 0.0),
+                                alignment: AlignmentDirectional(0.0, 0.0),
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 10.0, 0.0, 0.0),
                                   child: Text(
                                     'Finaliser résultat Championnat',
@@ -1088,7 +1092,7 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 10.0, 0.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -1097,7 +1101,7 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                   children: [
                                     Align(
                                       alignment:
-                                          const AlignmentDirectional(-1.0, 0.0),
+                                          AlignmentDirectional(-1.0, 0.0),
                                       child: FFButtonWidget(
                                         onPressed: () async {
                                           await modifEventPageEventsRecord
@@ -1157,7 +1161,7 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                             ),
                                           });
 
-                                          await widget.eventRef!
+                                          await widget!.eventRef!
                                               .update(createEventsRecordData(
                                             statut: false,
                                           ));
@@ -1169,10 +1173,10 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                           width: 130.0,
                                           height: 40.0,
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
                                           iconPadding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
                                           color: FlutterFlowTheme.of(context)
                                               .secondaryBackground,
@@ -1187,7 +1191,7 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                                 letterSpacing: 0.0,
                                               ),
                                           elevation: 3.0,
-                                          borderSide: const BorderSide(
+                                          borderSide: BorderSide(
                                             color: Colors.transparent,
                                             width: 1.0,
                                           ),
@@ -1204,7 +1208,7 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                     ),
                                     Align(
                                       alignment:
-                                          const AlignmentDirectional(-1.0, 0.0),
+                                          AlignmentDirectional(-1.0, 0.0),
                                       child: FFButtonWidget(
                                         onPressed: () async {
                                           await modifEventPageEventsRecord
@@ -1265,7 +1269,7 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                             ),
                                           });
 
-                                          await widget.eventRef!
+                                          await widget!.eventRef!
                                               .update(createEventsRecordData(
                                             statut: false,
                                           ));
@@ -1277,10 +1281,10 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                           width: 60.0,
                                           height: 40.0,
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
                                           iconPadding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
                                           color: FlutterFlowTheme.of(context)
                                               .secondaryBackground,
@@ -1295,7 +1299,7 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                                 letterSpacing: 0.0,
                                               ),
                                           elevation: 3.0,
-                                          borderSide: const BorderSide(
+                                          borderSide: BorderSide(
                                             color: Colors.transparent,
                                             width: 1.0,
                                           ),
@@ -1312,7 +1316,7 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                     ),
                                     Align(
                                       alignment:
-                                          const AlignmentDirectional(-1.0, 0.0),
+                                          AlignmentDirectional(-1.0, 0.0),
                                       child: FFButtonWidget(
                                         onPressed: () async {
                                           await modifEventPageEventsRecord
@@ -1372,7 +1376,7 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                             ),
                                           });
 
-                                          await widget.eventRef!
+                                          await widget!.eventRef!
                                               .update(createEventsRecordData(
                                             statut: false,
                                           ));
@@ -1384,10 +1388,10 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                           width: 130.0,
                                           height: 40.0,
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
                                           iconPadding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
                                           color: FlutterFlowTheme.of(context)
                                               .secondaryBackground,
@@ -1402,7 +1406,7 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                                 letterSpacing: 0.0,
                                               ),
                                           elevation: 3.0,
-                                          borderSide: const BorderSide(
+                                          borderSide: BorderSide(
                                             color: Colors.transparent,
                                             width: 1.0,
                                           ),
@@ -1424,7 +1428,7 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                           ),
                         ),
                         Align(
-                          alignment: const AlignmentDirectional(0.0, 0.0),
+                          alignment: AlignmentDirectional(0.0, 0.0),
                           child: Text(
                             'Finaliser résultat si Coupe',
                             maxLines: 1,
@@ -1438,15 +1442,19 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                           ),
                         ),
                         Align(
-                          alignment: const AlignmentDirectional(0.0, 0.0),
+                          alignment: AlignmentDirectional(0.0, 0.0),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 20.0, 0.0, 16.0),
                             child: FFButtonWidget(
                               onPressed: () async {
-                                await widget.eventRef!
+                                await modifEventPageEventsRecord.reference
                                     .update(createEventsRecordData(
-                                  statut: false,
+                                  seenScore: true,
+                                  scoreDom: int.tryParse(
+                                      _model.scoreDomFieldTextController.text),
+                                  scoreExt: int.tryParse(
+                                      _model.scoreExtFieldTextController.text),
                                 ));
 
                                 context.pushNamed('ListEventsAdmin');
@@ -1455,9 +1463,9 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                               options: FFButtonOptions(
                                 width: 130.0,
                                 height: 40.0,
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
-                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: FlutterFlowTheme.of(context).error,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -1469,7 +1477,7 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                       letterSpacing: 0.0,
                                     ),
                                 elevation: 3.0,
-                                borderSide: const BorderSide(
+                                borderSide: BorderSide(
                                   color: Colors.transparent,
                                   width: 1.0,
                                 ),
@@ -1483,13 +1491,13 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 200.0, 0.0, 20.0),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 10.0),
                                 child: StreamBuilder<List<TeamEventsRecord>>(
                                   stream: queryTeamEventsRecord(
@@ -1498,7 +1506,7 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                     queryBuilder: (teamEventsRecord) =>
                                         teamEventsRecord.where(
                                       'events',
-                                      isEqualTo: widget.eventRef,
+                                      isEqualTo: widget!.eventRef,
                                     ),
                                     singleRecord: true,
                                   ),
@@ -1538,7 +1546,7 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                       children: [
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 5.0, 0.0),
                                           child: Text(
                                             modifEventPageEventsRecord.teamdom,
@@ -1555,7 +1563,7 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                             null)
                                           Align(
                                             alignment:
-                                                const AlignmentDirectional(0.0, 0.0),
+                                                AlignmentDirectional(0.0, 0.0),
                                             child: FFButtonWidget(
                                               onPressed: () async {
                                                 await rowTeamEventsRecord!
@@ -1566,11 +1574,11 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                               options: FFButtonOptions(
                                                 width: 160.0,
                                                 height: 40.0,
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 0.0, 0.0, 0.0),
                                                 iconPadding:
-                                                    const EdgeInsetsDirectional
+                                                    EdgeInsetsDirectional
                                                         .fromSTEB(
                                                             0.0, 0.0, 0.0, 0.0),
                                                 color:
@@ -1587,7 +1595,7 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                                           letterSpacing: 0.0,
                                                         ),
                                                 elevation: 3.0,
-                                                borderSide: const BorderSide(
+                                                borderSide: BorderSide(
                                                   color: Colors.transparent,
                                                   width: 1.0,
                                                 ),
@@ -1613,7 +1621,7 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                   queryBuilder: (teamEventsRecord) =>
                                       teamEventsRecord.where(
                                     'events',
-                                    isEqualTo: widget.eventRef,
+                                    isEqualTo: widget!.eventRef,
                                   ),
                                   singleRecord: true,
                                 ),
@@ -1651,7 +1659,7 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                         MainAxisAlignment.spaceBetween,
                                     children: [
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             5.0, 0.0, 0.0, 0.0),
                                         child: Text(
                                           modifEventPageEventsRecord.teamext,
@@ -1668,7 +1676,7 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                           null)
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(0.0, 0.0),
+                                              AlignmentDirectional(0.0, 0.0),
                                           child: FFButtonWidget(
                                             onPressed: () async {
                                               await rowTeamEventsRecord!
@@ -1679,9 +1687,9 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                             options: FFButtonOptions(
                                               width: 160.0,
                                               height: 40.0,
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                              iconPadding: const EdgeInsetsDirectional
+                                              iconPadding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
                                               color:
                                                   FlutterFlowTheme.of(context)
@@ -1697,7 +1705,7 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                                         letterSpacing: 0.0,
                                                       ),
                                               elevation: 3.0,
-                                              borderSide: const BorderSide(
+                                              borderSide: BorderSide(
                                                 color: Colors.transparent,
                                                 width: 1.0,
                                               ),
@@ -1720,13 +1728,13 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                           ),
                         ),
                         Align(
-                          alignment: const AlignmentDirectional(0.0, 0.0),
+                          alignment: AlignmentDirectional(0.0, 0.0),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 16.0),
                             child: FFButtonWidget(
                               onPressed: () async {
-                                await widget.eventRef!.delete();
+                                await widget!.eventRef!.delete();
 
                                 context.pushNamed('AdminPage');
                               },
@@ -1734,9 +1742,9 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                               options: FFButtonOptions(
                                 width: 160.0,
                                 height: 40.0,
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
-                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: FlutterFlowTheme.of(context).error,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -1748,7 +1756,7 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                       letterSpacing: 0.0,
                                     ),
                                 elevation: 3.0,
-                                borderSide: const BorderSide(
+                                borderSide: BorderSide(
                                   color: Colors.transparent,
                                   width: 1.0,
                                 ),

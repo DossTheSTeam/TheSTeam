@@ -4,9 +4,13 @@ import '/backend/push_notifications/push_notifications_util.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'public_profil_page_model.dart';
 export 'public_profil_page_model.dart';
 
@@ -43,7 +47,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<UsersRecord>(
-      stream: UsersRecord.getDocument(widget.userRef!),
+      stream: UsersRecord.getDocument(widget!.userRef!),
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
@@ -74,7 +78,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
-                  SizedBox(
+                  Container(
                     height: 290.0,
                     child: Stack(
                       children: [
@@ -92,7 +96,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                             ),
                           ),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 20.0, 30.0, 20.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -133,7 +137,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                     context.pushNamed(
                                       'MenuPage',
                                       extra: <String, dynamic>{
-                                        kTransitionInfoKey: const TransitionInfo(
+                                        kTransitionInfoKey: TransitionInfo(
                                           hasTransition: true,
                                           transitionType:
                                               PageTransitionType.leftToRight,
@@ -148,16 +152,16 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                           ),
                         ),
                         Align(
-                          alignment: const AlignmentDirectional(-1.0, 1.0),
+                          alignment: AlignmentDirectional(-1.0, 1.0),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 24.0, 0.0, 0.0, 0.0),
                             child: Container(
                               width: 90.0,
                               height: 90.0,
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context).alternate,
-                                boxShadow: const [
+                                boxShadow: [
                                   BoxShadow(
                                     blurRadius: 4.0,
                                     color: Color(0x53000000),
@@ -177,8 +181,8 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(50.0),
                                 child: CachedNetworkImage(
-                                  fadeInDuration: const Duration(milliseconds: 500),
-                                  fadeOutDuration: const Duration(milliseconds: 500),
+                                  fadeInDuration: Duration(milliseconds: 500),
+                                  fadeOutDuration: Duration(milliseconds: 500),
                                   imageUrl:
                                       publicProfilPageUsersRecord.photoUrl,
                                   width: 100.0,
@@ -190,9 +194,9 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                           ),
                         ),
                         Align(
-                          alignment: const AlignmentDirectional(0.0, 1.0),
+                          alignment: AlignmentDirectional(0.0, 1.0),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 125.0, 20.0, 20.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -200,7 +204,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                               crossAxisAlignment: CrossAxisAlignment.end,
                               children: [
                                 Align(
-                                  alignment: const AlignmentDirectional(0.0, 1.0),
+                                  alignment: AlignmentDirectional(0.0, 1.0),
                                   child: Text(
                                     valueOrDefault<String>(
                                       publicProfilPageUsersRecord.displayName,
@@ -224,7 +228,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 10.0),
+                        EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 10.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -233,7 +237,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   20.0, 0.0, 0.0, 0.0),
                               child: Text(
                                 'Membre depuis le',
@@ -246,7 +250,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   2.0, 0.0, 0.0, 0.0),
                               child: Text(
                                 dateTimeFormat("d/M/y",
@@ -299,7 +303,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 10.0, 0.0),
                                     child: InkWell(
                                       splashColor: Colors.transparent,
@@ -310,7 +314,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                         context.pushNamed(
                                           'MyNotifsList',
                                           extra: <String, dynamic>{
-                                            kTransitionInfoKey: const TransitionInfo(
+                                            kTransitionInfoKey: TransitionInfo(
                                               hasTransition: true,
                                               transitionType: PageTransitionType
                                                   .rightToLeft,
@@ -341,14 +345,14 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 10.0, 0.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 10.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -361,7 +365,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                         hoverColor: Colors.transparent,
                                         highlightColor: Colors.transparent,
                                         onTap: () async {
-                                          await widget.userRef!.update({
+                                          await widget!.userRef!.update({
                                             ...mapToFirestore(
                                               {
                                                 'fans': FieldValue.arrayUnion(
@@ -374,13 +378,13 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                             ...mapToFirestore(
                                               {
                                                 'bests': FieldValue.arrayUnion(
-                                                    [widget.userRef]),
+                                                    [widget!.userRef]),
                                               },
                                             ),
                                           });
 
                                           await MyNotificationsRecord.createDoc(
-                                                  widget.userRef!)
+                                                  widget!.userRef!)
                                               .set({
                                             ...createMyNotificationsRecordData(
                                               text: 'fait partie de vos fans.',
@@ -402,7 +406,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                             notificationImageUrl:
                                                 currentUserPhoto,
                                             notificationSound: 'default',
-                                            userRefs: [widget.userRef!],
+                                            userRefs: [widget!.userRef!],
                                             initialPageName: 'MyNotifsList',
                                             parameterData: {},
                                           );
@@ -422,7 +426,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                         hoverColor: Colors.transparent,
                                         highlightColor: Colors.transparent,
                                         onTap: () async {
-                                          await widget.userRef!.update({
+                                          await widget!.userRef!.update({
                                             ...mapToFirestore(
                                               {
                                                 'fans': FieldValue.arrayRemove(
@@ -435,7 +439,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                             ...mapToFirestore(
                                               {
                                                 'bests': FieldValue.arrayRemove(
-                                                    [widget.userRef]),
+                                                    [widget!.userRef]),
                                               },
                                             ),
                                           });
@@ -476,7 +480,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                                   {
                                                     'blocks':
                                                         FieldValue.arrayUnion(
-                                                            [widget.userRef]),
+                                                            [widget!.userRef]),
                                                   },
                                                 ),
                                               });
@@ -503,7 +507,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                                   {
                                                     'blocks':
                                                         FieldValue.arrayRemove(
-                                                            [widget.userRef]),
+                                                            [widget!.userRef]),
                                                   },
                                                 ),
                                               });
@@ -527,20 +531,20 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                 currentUserDocument?.esport, false) ==
                             false)
                           Align(
-                            alignment: const AlignmentDirectional(0.0, 0.0),
+                            alignment: AlignmentDirectional(0.0, 0.0),
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 10.0, 0.0, 10.0),
                               child: AuthUserStreamWidget(
                                 builder: (context) => Column(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           20.0, 4.0, 30.0, 5.0),
                                       child: StreamBuilder<List<MyBetsRecord>>(
                                         stream: queryMyBetsRecord(
-                                          parent: widget.userRef,
+                                          parent: widget!.userRef,
                                           singleRecord: true,
                                         ),
                                         builder: (context, snapshot) {
@@ -631,7 +635,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                           .secondaryBackground,
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           20.0, 0.0, 30.0, 5.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -657,7 +661,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                                 'PublicStats',
                                                 queryParameters: {
                                                   'userRef': serializeParam(
-                                                    widget.userRef,
+                                                    widget!.userRef,
                                                     ParamType.DocumentReference,
                                                   ),
                                                 }.withoutNulls,
@@ -675,7 +679,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           20.0, 5.0, 30.0, 5.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -696,7 +700,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     3.0, 0.0, 0.0, 0.0),
                                             child: Text(
                                               valueOrDefault<String>(
@@ -721,7 +725,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           20.0, 10.0, 30.0, 5.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -759,7 +763,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                                         ),
                                               ),
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         5.0, 0.0, 0.0, 0.0),
                                                 child: Container(
@@ -769,7 +773,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .primary,
-                                                    boxShadow: const [
+                                                    boxShadow: [
                                                       BoxShadow(
                                                         blurRadius: 4.0,
                                                         color:
@@ -790,7 +794,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                                   ),
                                                   child: Padding(
                                                     padding:
-                                                        const EdgeInsets.all(2.0),
+                                                        EdgeInsets.all(2.0),
                                                     child: ClipRRect(
                                                       borderRadius:
                                                           BorderRadius.circular(
@@ -816,7 +820,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                           .secondaryBackground,
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           20.0, 0.0, 30.0, 5.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -845,7 +849,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           20.0, 5.0, 30.0, 5.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -902,9 +906,9 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                 currentUserDocument?.esport, false) ==
                             true)
                           Align(
-                            alignment: const AlignmentDirectional(0.0, 0.0),
+                            alignment: AlignmentDirectional(0.0, 0.0),
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 10.0, 0.0, 10.0),
                               child: AuthUserStreamWidget(
                                 builder: (context) => Column(
@@ -915,7 +919,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                       children: [
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   20.0, 4.0, 30.0, 10.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -993,7 +997,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                                                 false))
                                                           Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         10.0,
                                                                         0.0,
@@ -1012,7 +1016,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                                               onTap: () async {
                                                                 await MyNotificationsRecord
                                                                         .createDoc(
-                                                                            widget.userRef!)
+                                                                            widget!.userRef!)
                                                                     .set({
                                                                   ...createMyNotificationsRecordData(
                                                                     text:
@@ -1042,7 +1046,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                                                   notificationSound:
                                                                       'default',
                                                                   userRefs: [
-                                                                    widget
+                                                                    widget!
                                                                         .userRef!
                                                                   ],
                                                                   initialPageName:
@@ -1050,7 +1054,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                                                   parameterData: {},
                                                                 );
 
-                                                                await widget
+                                                                await widget!
                                                                     .userRef!
                                                                     .update(
                                                                         createUsersRecordData(
@@ -1079,7 +1083,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                             null)
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     20.0, 4.0, 30.0, 10.0),
                                             child: StreamBuilder<TeamsRecord>(
                                               stream: TeamsRecord.getDocument(
@@ -1161,7 +1165,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                                         ),
                                                         child: Padding(
                                                           padding:
-                                                              const EdgeInsets.all(
+                                                              EdgeInsets.all(
                                                                   3.0),
                                                           child: ClipRRect(
                                                             borderRadius:
@@ -1194,7 +1198,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                           .secondaryBackground,
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           20.0, 0.0, 30.0, 5.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -1220,7 +1224,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                                 'PublicStats',
                                                 queryParameters: {
                                                   'userRef': serializeParam(
-                                                    widget.userRef,
+                                                    widget!.userRef,
                                                     ParamType.DocumentReference,
                                                   ),
                                                 }.withoutNulls,
@@ -1238,7 +1242,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           20.0, 5.0, 30.0, 5.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -1259,7 +1263,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     3.0, 0.0, 0.0, 0.0),
                                             child: Text(
                                               valueOrDefault<String>(
@@ -1289,7 +1293,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                           .secondaryBackground,
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           20.0, 0.0, 30.0, 5.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -1318,7 +1322,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           20.0, 5.0, 30.0, 5.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -1378,11 +1382,11 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                             ),
                           ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               20.0, 0.0, 30.0, 5.0),
                           child: StreamBuilder<List<MyPostsRecord>>(
                             stream: queryMyPostsRecord(
-                              parent: widget.userRef,
+                              parent: widget!.userRef,
                               singleRecord: true,
                             ),
                             builder: (context, snapshot) {
@@ -1467,9 +1471,9 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                               FlutterFlowTheme.of(context).secondaryBackground,
                         ),
                         Align(
-                          alignment: const AlignmentDirectional(-1.0, 0.0),
+                          alignment: AlignmentDirectional(-1.0, 0.0),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 20.0, 0.0, 0.0, 5.0),
                             child: Text(
                               'Réseaux',
@@ -1483,7 +1487,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               20.0, 5.0, 30.0, 5.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -1493,7 +1497,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 10.0, 0.0),
                                     child: Text(
                                       valueOrDefault<String>(
@@ -1520,7 +1524,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               20.0, 5.0, 30.0, 5.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -1530,7 +1534,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 10.0, 0.0),
                                     child: Text(
                                       valueOrDefault<String>(

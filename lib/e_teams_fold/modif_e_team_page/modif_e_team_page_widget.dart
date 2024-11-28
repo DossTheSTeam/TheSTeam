@@ -5,8 +5,11 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'modif_e_team_page_model.dart';
 export 'modif_e_team_page_model.dart';
 
@@ -46,7 +49,7 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<TeamsRecord>(
-      stream: TeamsRecord.getDocument(widget.teamRef!),
+      stream: TeamsRecord.getDocument(widget!.teamRef!),
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
@@ -76,13 +79,13 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
             body: SafeArea(
               top: true,
               child: Align(
-                alignment: const AlignmentDirectional(0.0, -1.0),
+                alignment: AlignmentDirectional(0.0, -1.0),
                 child: SingleChildScrollView(
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             10.0, 0.0, 10.0, 20.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
@@ -100,7 +103,7 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                                     context.pushNamed(
                                       'MenuPage',
                                       extra: <String, dynamic>{
-                                        kTransitionInfoKey: const TransitionInfo(
+                                        kTransitionInfoKey: TransitionInfo(
                                           hasTransition: true,
                                           transitionType:
                                               PageTransitionType.leftToRight,
@@ -117,7 +120,7 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       35.0, 0.0, 0.0, 0.0),
                                   child: Text(
                                     'Menu de ma E Team',
@@ -174,7 +177,7 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                                     mainAxisAlignment: MainAxisAlignment.end,
                                     children: [
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 10.0, 0.0),
                                         child: InkWell(
                                           splashColor: Colors.transparent,
@@ -186,7 +189,7 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                                               'MyNotifsList',
                                               extra: <String, dynamic>{
                                                 kTransitionInfoKey:
-                                                    const TransitionInfo(
+                                                    TransitionInfo(
                                                   hasTransition: true,
                                                   transitionType:
                                                       PageTransitionType
@@ -221,7 +224,7 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                             ),
                       ),
                       Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             20.0, 0.0, 20.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
@@ -231,7 +234,7 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 5.0, 0.0),
                                   child: Text(
                                     'E Ligue',
@@ -265,7 +268,7 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 5.0, 0.0),
                                   child: Text(
                                     'E Division',
@@ -299,13 +302,13 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             10.0, 20.0, 10.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 6.0, 0.0),
                               child: Container(
                                 width: 65.0,
@@ -315,7 +318,7 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                                       .primaryBackground,
                                 ),
                                 child: Padding(
-                                  padding: const EdgeInsets.all(3.0),
+                                  padding: EdgeInsets.all(3.0),
                                   child: ClipRRect(
                                     borderRadius: BorderRadius.circular(0.0),
                                     child: Image.network(
@@ -338,7 +341,7 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                                   'TeamPage',
                                   queryParameters: {
                                     'teamRef': serializeParam(
-                                      widget.teamRef,
+                                      widget!.teamRef,
                                       ParamType.DocumentReference,
                                     ),
                                   }.withoutNulls,
@@ -361,12 +364,12 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                       if (modifETeamPageTeamsRecord.boss ==
                           currentUserReference)
                         Padding(
-                          padding: const EdgeInsets.all(10.0),
+                          padding: EdgeInsets.all(10.0),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 20.0, 0.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -384,7 +387,7 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                                           ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 20.0, 0.0),
                                       child: InkWell(
                                         splashColor: Colors.transparent,
@@ -396,7 +399,7 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                                             'TeamListForEvents',
                                             queryParameters: {
                                               'eTeamRef': serializeParam(
-                                                widget.teamRef,
+                                                widget!.teamRef,
                                                 ParamType.DocumentReference,
                                               ),
                                             }.withoutNulls,
@@ -414,7 +417,7 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 20.0, 0.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -448,7 +451,7 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                                       ],
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 20.0, 0.0),
                                       child: InkWell(
                                         splashColor: Colors.transparent,
@@ -460,7 +463,7 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                                             'ETeamEventsNoDateList',
                                             queryParameters: {
                                               'teamRef': serializeParam(
-                                                widget.teamRef,
+                                                widget!.teamRef,
                                                 ParamType.DocumentReference,
                                               ),
                                             }.withoutNulls,
@@ -478,7 +481,7 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 20.0, 0.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -512,7 +515,7 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                                       ],
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 20.0, 0.0),
                                       child: InkWell(
                                         splashColor: Colors.transparent,
@@ -524,7 +527,7 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                                             'ETeamEventsList',
                                             queryParameters: {
                                               'teamRef': serializeParam(
-                                                widget.teamRef,
+                                                widget!.teamRef,
                                                 ParamType.DocumentReference,
                                               ),
                                             }.withoutNulls,
@@ -542,7 +545,7 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 20.0, 0.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -560,7 +563,7 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                                           ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 20.0, 0.0),
                                       child: InkWell(
                                         splashColor: Colors.transparent,
@@ -572,13 +575,13 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                                             'AddPostPage',
                                             queryParameters: {
                                               'teamRef': serializeParam(
-                                                widget.teamRef,
+                                                widget!.teamRef,
                                                 ParamType.DocumentReference,
                                               ),
                                             }.withoutNulls,
                                             extra: <String, dynamic>{
                                               kTransitionInfoKey:
-                                                  const TransitionInfo(
+                                                  TransitionInfo(
                                                 hasTransition: true,
                                                 transitionType:
                                                     PageTransitionType
@@ -601,7 +604,7 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 20.0, 0.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -619,7 +622,7 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                                           ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 20.0, 0.0),
                                       child: InkWell(
                                         splashColor: Colors.transparent,
@@ -631,7 +634,7 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                                             'DiscusionETeamPage',
                                             queryParameters: {
                                               'eTeamRef': serializeParam(
-                                                widget.teamRef,
+                                                widget!.teamRef,
                                                 ParamType.DocumentReference,
                                               ),
                                             }.withoutNulls,
@@ -649,7 +652,7 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 20.0, 0.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -667,7 +670,7 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                                           ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 20.0, 0.0),
                                       child: InkWell(
                                         splashColor: Colors.transparent,
@@ -679,13 +682,13 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                                             'ETeamUsersList',
                                             queryParameters: {
                                               'teamRef': serializeParam(
-                                                widget.teamRef,
+                                                widget!.teamRef,
                                                 ParamType.DocumentReference,
                                               ),
                                             }.withoutNulls,
                                             extra: <String, dynamic>{
                                               kTransitionInfoKey:
-                                                  const TransitionInfo(
+                                                  TransitionInfo(
                                                 hasTransition: true,
                                                 transitionType:
                                                     PageTransitionType
@@ -708,7 +711,7 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 20.0, 0.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -726,7 +729,7 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                                           ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 20.0, 0.0),
                                       child: InkWell(
                                         splashColor: Colors.transparent,
@@ -738,7 +741,7 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                                             'MyBestsETeamRankPage',
                                             extra: <String, dynamic>{
                                               kTransitionInfoKey:
-                                                  const TransitionInfo(
+                                                  TransitionInfo(
                                                 hasTransition: true,
                                                 transitionType:
                                                     PageTransitionType
@@ -766,7 +769,7 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                                     .secondaryBackground,
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 20.0, 0.0, 0.0),
                                 child: Text(
                                   'Changer la Bio de l\'équipe',
@@ -780,7 +783,7 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                                 ),
                               ),
                               Text(
-                                'Décrivvez votre équipe, plateforme utilisée, jeux privilégier,  l\'ambiance dans votre club, manière de jouer, vos objectifs, etc...',
+                                'Décrivez votre équipe, plateforme utilisée, jeux privilégier,  l\'ambiance dans votre club, manière de jouer, vos objectifs, etc...',
                                 textAlign: TextAlign.center,
                                 maxLines: 2,
                                 style: FlutterFlowTheme.of(context)
@@ -794,14 +797,14 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                                     ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     5.0, 10.0, 5.0, 10.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Expanded(
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             8.0, 0.0, 8.0, 0.0),
                                         child: TextFormField(
                                           controller:
@@ -880,7 +883,7 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           10.0, 0.0, 5.0, 0.0),
                                       child: InkWell(
                                         splashColor: Colors.transparent,
@@ -888,7 +891,7 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                                         hoverColor: Colors.transparent,
                                         highlightColor: Colors.transparent,
                                         onTap: () async {
-                                          await widget.teamRef!
+                                          await widget!.teamRef!
                                               .update(createTeamsRecordData(
                                             bio: _model
                                                 .commFieldTextController.text,
@@ -902,7 +905,7 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                                             'TeamPage',
                                             queryParameters: {
                                               'teamRef': serializeParam(
-                                                widget.teamRef,
+                                                widget!.teamRef,
                                                 ParamType.DocumentReference,
                                               ),
                                             }.withoutNulls,
@@ -920,7 +923,7 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 20.0, 0.0, 0.0),
                                 child: Text(
                                   'Changer le logo',
@@ -934,7 +937,7 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 10.0, 0.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -942,7 +945,7 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                                       MainAxisAlignment.spaceAround,
                                   children: [
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 6.0, 0.0),
                                       child: Container(
                                         width: 65.0,
@@ -952,7 +955,7 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                                               .primaryBackground,
                                         ),
                                         child: Padding(
-                                          padding: const EdgeInsets.all(3.0),
+                                          padding: EdgeInsets.all(3.0),
                                           child: ClipRRect(
                                             borderRadius:
                                                 BorderRadius.circular(0.0),
@@ -1044,20 +1047,20 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 20.0, 0.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Align(
-                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                      alignment: AlignmentDirectional(0.0, 0.0),
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 20.0, 0.0, 16.0),
                                         child: FFButtonWidget(
                                           onPressed: () async {
-                                            await widget.teamRef!
+                                            await widget!.teamRef!
                                                 .update(createTeamsRecordData(
                                               logo: _model.uploadedFileUrl,
                                             ));
@@ -1068,10 +1071,10 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                                             width: 130.0,
                                             height: 40.0,
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
                                             iconPadding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
                                             color: FlutterFlowTheme.of(context)
                                                 .secondaryBackground,
@@ -1086,7 +1089,7 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                                                       letterSpacing: 0.0,
                                                     ),
                                             elevation: 3.0,
-                                            borderSide: const BorderSide(
+                                            borderSide: BorderSide(
                                               color: Colors.transparent,
                                               width: 1.0,
                                             ),
@@ -1116,7 +1119,7 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                                   queryBuilder: (myTeamsRecord) =>
                                       myTeamsRecord.where(
                                     'teams',
-                                    arrayContains: widget.teamRef,
+                                    arrayContains: widget!.teamRef,
                                   ),
                                   singleRecord: true,
                                 ),
@@ -1157,7 +1160,7 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                                           queryBuilder: (myTeamslikeRecord) =>
                                               myTeamslikeRecord.where(
                                             'teams',
-                                            arrayContains: widget.teamRef,
+                                            arrayContains: widget!.teamRef,
                                           ),
                                           singleRecord: true,
                                         ),
@@ -1205,11 +1208,11 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                                                       1))
                                                 Align(
                                                   alignment:
-                                                      const AlignmentDirectional(
+                                                      AlignmentDirectional(
                                                           0.0, 0.0),
                                                   child: Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(
                                                                 0.0,
                                                                 100.0,
@@ -1223,7 +1226,7 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                                                         await columnMyTeamslikeRecord!
                                                             .reference
                                                             .delete();
-                                                        await widget.teamRef!
+                                                        await widget!.teamRef!
                                                             .delete();
 
                                                         await currentUserReference!
@@ -1245,14 +1248,14 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                                                         width: 130.0,
                                                         height: 40.0,
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     0.0,
                                                                     0.0,
                                                                     0.0),
                                                         iconPadding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     0.0,
@@ -1276,7 +1279,7 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                                                                       0.0,
                                                                 ),
                                                         elevation: 3.0,
-                                                        borderSide: const BorderSide(
+                                                        borderSide: BorderSide(
                                                           color: Colors
                                                               .transparent,
                                                           width: 1.0,
@@ -1303,7 +1306,7 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                                                           .fans.length !=
                                                       1))
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 20.0, 0.0, 0.0),
                                                   child: Text(

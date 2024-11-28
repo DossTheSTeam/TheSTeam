@@ -3,7 +3,11 @@ import '/backend/backend.dart';
 import '/backend/push_notifications/push_notifications_util.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'team_list_for_events_model.dart';
 export 'team_list_for_events_model.dart';
 
@@ -41,7 +45,7 @@ class _TeamListForEventsWidgetState extends State<TeamListForEventsWidget> {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<TeamsRecord>(
-      stream: TeamsRecord.getDocument(widget.eTeamRef!),
+      stream: TeamsRecord.getDocument(widget!.eTeamRef!),
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
@@ -71,15 +75,15 @@ class _TeamListForEventsWidgetState extends State<TeamListForEventsWidget> {
             body: SafeArea(
               top: true,
               child: Align(
-                alignment: const AlignmentDirectional(0.0, -1.0),
+                alignment: AlignmentDirectional(0.0, -1.0),
                 child: Padding(
-                  padding: const EdgeInsets.all(10.0),
+                  padding: EdgeInsets.all(10.0),
                   child: SingleChildScrollView(
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 10.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -98,12 +102,12 @@ class _TeamListForEventsWidgetState extends State<TeamListForEventsWidget> {
                                         'ModifETeamPage',
                                         queryParameters: {
                                           'teamRef': serializeParam(
-                                            widget.eTeamRef,
+                                            widget!.eTeamRef,
                                             ParamType.DocumentReference,
                                           ),
                                         }.withoutNulls,
                                         extra: <String, dynamic>{
-                                          kTransitionInfoKey: const TransitionInfo(
+                                          kTransitionInfoKey: TransitionInfo(
                                             hasTransition: true,
                                             transitionType:
                                                 PageTransitionType.leftToRight,
@@ -121,7 +125,7 @@ class _TeamListForEventsWidgetState extends State<TeamListForEventsWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 0.0, 0.0),
                                     child: InkWell(
                                       splashColor: Colors.transparent,
@@ -140,7 +144,7 @@ class _TeamListForEventsWidgetState extends State<TeamListForEventsWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         70.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       'E Teams',
@@ -198,7 +202,7 @@ class _TeamListForEventsWidgetState extends State<TeamListForEventsWidget> {
                                       children: [
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   10.0, 0.0, 10.0, 0.0),
                                           child: InkWell(
                                             splashColor: Colors.transparent,
@@ -210,7 +214,7 @@ class _TeamListForEventsWidgetState extends State<TeamListForEventsWidget> {
                                                 'MyNotifsList',
                                                 extra: <String, dynamic>{
                                                   kTransitionInfoKey:
-                                                      const TransitionInfo(
+                                                      TransitionInfo(
                                                     hasTransition: true,
                                                     transitionType:
                                                         PageTransitionType
@@ -239,9 +243,9 @@ class _TeamListForEventsWidgetState extends State<TeamListForEventsWidget> {
                           ),
                         ),
                         Align(
-                          alignment: const AlignmentDirectional(1.0, 0.0),
+                          alignment: AlignmentDirectional(1.0, 0.0),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 10.0, 0.0),
                             child: Text(
                               'Inviter',
@@ -264,7 +268,7 @@ class _TeamListForEventsWidgetState extends State<TeamListForEventsWidget> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 10.0, 0.0, 0.0),
                                   child: StreamBuilder<List<TeamsRecord>>(
                                     stream: queryTeamsRecord(
@@ -320,7 +324,7 @@ class _TeamListForEventsWidgetState extends State<TeamListForEventsWidget> {
                                           return Visibility(
                                             visible: (columnTeamsTeamsRecord
                                                         .reference !=
-                                                    widget.eTeamRef) &&
+                                                    widget!.eTeamRef) &&
                                                 (columnTeamsTeamsRecord.guest !=
                                                     true),
                                             child: Column(
@@ -332,7 +336,7 @@ class _TeamListForEventsWidgetState extends State<TeamListForEventsWidget> {
                                                         currentUserReference))
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(10.0, 0.0,
                                                                 10.0, 10.0),
                                                     child: Row(
@@ -344,7 +348,7 @@ class _TeamListForEventsWidgetState extends State<TeamListForEventsWidget> {
                                                       children: [
                                                         Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       20.0,
                                                                       0.0,
@@ -370,7 +374,7 @@ class _TeamListForEventsWidgetState extends State<TeamListForEventsWidget> {
                                                           children: [
                                                             Padding(
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -425,7 +429,7 @@ class _TeamListForEventsWidgetState extends State<TeamListForEventsWidget> {
                                                                         'Vous invite à jouer un match contre votre équipe.',
                                                                     seen: false,
                                                                     eteamDom:
-                                                                        widget
+                                                                        widget!
                                                                             .eTeamRef,
                                                                     eteamExt:
                                                                         columnTeamsTeamsRecord

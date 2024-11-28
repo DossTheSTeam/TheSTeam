@@ -5,7 +5,10 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'signal_post_page_model.dart';
 export 'signal_post_page_model.dart';
 
@@ -42,7 +45,7 @@ class _SignalPostPageWidgetState extends State<SignalPostPageWidget> {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<MyNotificationsRecord>(
-      stream: MyNotificationsRecord.getDocument(widget.notifRef!),
+      stream: MyNotificationsRecord.getDocument(widget!.notifRef!),
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
@@ -72,9 +75,9 @@ class _SignalPostPageWidgetState extends State<SignalPostPageWidget> {
             body: SafeArea(
               top: true,
               child: Align(
-                alignment: const AlignmentDirectional(0.0, -1.0),
+                alignment: AlignmentDirectional(0.0, -1.0),
                 child: Padding(
-                  padding: const EdgeInsets.all(10.0),
+                  padding: EdgeInsets.all(10.0),
                   child: StreamBuilder<PostsRecord>(
                     stream: PostsRecord.getDocument(
                         signalPostPageMyNotificationsRecord.post!),
@@ -116,7 +119,7 @@ class _SignalPostPageWidgetState extends State<SignalPostPageWidget> {
                                         context.pushNamed(
                                           'MenuPage',
                                           extra: <String, dynamic>{
-                                            kTransitionInfoKey: const TransitionInfo(
+                                            kTransitionInfoKey: TransitionInfo(
                                               hasTransition: true,
                                               transitionType: PageTransitionType
                                                   .leftToRight,
@@ -134,7 +137,7 @@ class _SignalPostPageWidgetState extends State<SignalPostPageWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           10.0, 0.0, 0.0, 0.0),
                                       child: InkWell(
                                         splashColor: Colors.transparent,
@@ -172,7 +175,7 @@ class _SignalPostPageWidgetState extends State<SignalPostPageWidget> {
                                   .secondaryBackground,
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 10.0, 0.0, 0.0),
                               child: StreamBuilder<UsersRecord>(
                                 stream: UsersRecord.getDocument(
@@ -203,7 +206,7 @@ class _SignalPostPageWidgetState extends State<SignalPostPageWidget> {
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 5.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -211,7 +214,7 @@ class _SignalPostPageWidgetState extends State<SignalPostPageWidget> {
                                               MainAxisAlignment.start,
                                           children: [
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(5.0, 0.0, 6.0, 0.0),
                                               child: Container(
                                                 width: 35.0,
@@ -255,7 +258,7 @@ class _SignalPostPageWidgetState extends State<SignalPostPageWidget> {
                                                   }.withoutNulls,
                                                   extra: <String, dynamic>{
                                                     kTransitionInfoKey:
-                                                        const TransitionInfo(
+                                                        TransitionInfo(
                                                       hasTransition: true,
                                                       transitionType:
                                                           PageTransitionType
@@ -286,7 +289,7 @@ class _SignalPostPageWidgetState extends State<SignalPostPageWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             20.0, 10.0, 30.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -310,7 +313,7 @@ class _SignalPostPageWidgetState extends State<SignalPostPageWidget> {
                                                       ),
                                                 ),
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           5.0, 0.0, 0.0, 0.0),
                                                   child: Container(
@@ -331,7 +334,7 @@ class _SignalPostPageWidgetState extends State<SignalPostPageWidget> {
                                                     ),
                                                     child: Padding(
                                                       padding:
-                                                          const EdgeInsets.all(2.0),
+                                                          EdgeInsets.all(2.0),
                                                       child: ClipRRect(
                                                         borderRadius:
                                                             BorderRadius
@@ -352,7 +355,7 @@ class _SignalPostPageWidgetState extends State<SignalPostPageWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             20.0, 10.0, 30.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -363,7 +366,7 @@ class _SignalPostPageWidgetState extends State<SignalPostPageWidget> {
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 10.0, 0.0),
                                                   child: Text(
@@ -396,7 +399,7 @@ class _SignalPostPageWidgetState extends State<SignalPostPageWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             20.0, 10.0, 30.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -407,7 +410,7 @@ class _SignalPostPageWidgetState extends State<SignalPostPageWidget> {
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 10.0, 0.0),
                                                   child: Text(
@@ -440,7 +443,7 @@ class _SignalPostPageWidgetState extends State<SignalPostPageWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             20.0, 10.0, 30.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -451,7 +454,7 @@ class _SignalPostPageWidgetState extends State<SignalPostPageWidget> {
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 10.0, 0.0),
                                                   child: Text(
@@ -489,9 +492,9 @@ class _SignalPostPageWidgetState extends State<SignalPostPageWidget> {
                               ),
                             ),
                             Align(
-                              alignment: const AlignmentDirectional(-1.0, 0.0),
+                              alignment: AlignmentDirectional(-1.0, 0.0),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     10.0, 10.0, 0.0, 10.0),
                                 child: Text(
                                   'veut mettre un carton rouge à',
@@ -506,7 +509,7 @@ class _SignalPostPageWidgetState extends State<SignalPostPageWidget> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 10.0, 0.0, 0.0),
                               child: StreamBuilder<UsersRecord>(
                                 stream: UsersRecord.getDocument(
@@ -536,7 +539,7 @@ class _SignalPostPageWidgetState extends State<SignalPostPageWidget> {
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 5.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -544,7 +547,7 @@ class _SignalPostPageWidgetState extends State<SignalPostPageWidget> {
                                               MainAxisAlignment.start,
                                           children: [
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(5.0, 0.0, 6.0, 0.0),
                                               child: Container(
                                                 width: 35.0,
@@ -588,7 +591,7 @@ class _SignalPostPageWidgetState extends State<SignalPostPageWidget> {
                                                   }.withoutNulls,
                                                   extra: <String, dynamic>{
                                                     kTransitionInfoKey:
-                                                        const TransitionInfo(
+                                                        TransitionInfo(
                                                       hasTransition: true,
                                                       transitionType:
                                                           PageTransitionType
@@ -619,7 +622,7 @@ class _SignalPostPageWidgetState extends State<SignalPostPageWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             20.0, 10.0, 30.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -642,7 +645,7 @@ class _SignalPostPageWidgetState extends State<SignalPostPageWidget> {
                                                       ),
                                                 ),
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           5.0, 0.0, 0.0, 0.0),
                                                   child: Container(
@@ -663,7 +666,7 @@ class _SignalPostPageWidgetState extends State<SignalPostPageWidget> {
                                                     ),
                                                     child: Padding(
                                                       padding:
-                                                          const EdgeInsets.all(2.0),
+                                                          EdgeInsets.all(2.0),
                                                       child: ClipRRect(
                                                         borderRadius:
                                                             BorderRadius
@@ -684,7 +687,7 @@ class _SignalPostPageWidgetState extends State<SignalPostPageWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             20.0, 10.0, 30.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -695,7 +698,7 @@ class _SignalPostPageWidgetState extends State<SignalPostPageWidget> {
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 10.0, 0.0),
                                                   child: Text(
@@ -728,7 +731,7 @@ class _SignalPostPageWidgetState extends State<SignalPostPageWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             20.0, 10.0, 30.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -739,7 +742,7 @@ class _SignalPostPageWidgetState extends State<SignalPostPageWidget> {
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 10.0, 0.0),
                                                   child: Text(
@@ -772,7 +775,7 @@ class _SignalPostPageWidgetState extends State<SignalPostPageWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             20.0, 10.0, 30.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -783,7 +786,7 @@ class _SignalPostPageWidgetState extends State<SignalPostPageWidget> {
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 10.0, 0.0),
                                                   child: Text(
@@ -821,9 +824,9 @@ class _SignalPostPageWidgetState extends State<SignalPostPageWidget> {
                               ),
                             ),
                             Align(
-                              alignment: const AlignmentDirectional(-1.0, 0.0),
+                              alignment: AlignmentDirectional(-1.0, 0.0),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     10.0, 20.0, 0.0, 10.0),
                                 child: Text(
                                   'Pour la raison suivante',
@@ -838,9 +841,9 @@ class _SignalPostPageWidgetState extends State<SignalPostPageWidget> {
                               ),
                             ),
                             Align(
-                              alignment: const AlignmentDirectional(-1.0, 0.0),
+                              alignment: AlignmentDirectional(-1.0, 0.0),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     10.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   signalPostPageMyNotificationsRecord.text,
@@ -854,9 +857,9 @@ class _SignalPostPageWidgetState extends State<SignalPostPageWidget> {
                               ),
                             ),
                             Align(
-                              alignment: const AlignmentDirectional(-1.0, 0.0),
+                              alignment: AlignmentDirectional(-1.0, 0.0),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     10.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   signalPostPageMyNotificationsRecord.textFouls,
@@ -870,9 +873,9 @@ class _SignalPostPageWidgetState extends State<SignalPostPageWidget> {
                               ),
                             ),
                             Align(
-                              alignment: const AlignmentDirectional(-1.0, 0.0),
+                              alignment: AlignmentDirectional(-1.0, 0.0),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 20.0, 0.0, 0.0),
                                 child: Text(
                                   dateTimeFormat(
@@ -888,11 +891,12 @@ class _SignalPostPageWidgetState extends State<SignalPostPageWidget> {
                                 ),
                               ),
                             ),
-                            if (columnPostPostsRecord.title != '')
+                            if (columnPostPostsRecord.title != null &&
+                                columnPostPostsRecord.title != '')
                               Align(
-                                alignment: const AlignmentDirectional(-1.0, 0.0),
+                                alignment: AlignmentDirectional(-1.0, 0.0),
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       10.0, 10.0, 0.0, 10.0),
                                   child: Text(
                                     'Dans l\'actualité suivante',
@@ -906,11 +910,12 @@ class _SignalPostPageWidgetState extends State<SignalPostPageWidget> {
                                   ),
                                 ),
                               ),
-                            if (columnPostPostsRecord.title == '')
+                            if (columnPostPostsRecord.title == null ||
+                                columnPostPostsRecord.title == '')
                               Align(
-                                alignment: const AlignmentDirectional(-1.0, 0.0),
+                                alignment: AlignmentDirectional(-1.0, 0.0),
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       10.0, 10.0, 0.0, 10.0),
                                   child: Text(
                                     'Dans le commentaire suivante',
@@ -928,7 +933,7 @@ class _SignalPostPageWidgetState extends State<SignalPostPageWidget> {
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Align(
-                                  alignment: const AlignmentDirectional(0.0, 0.0),
+                                  alignment: AlignmentDirectional(0.0, 0.0),
                                   child: InkWell(
                                     splashColor: Colors.transparent,
                                     focusColor: Colors.transparent,
@@ -957,7 +962,7 @@ class _SignalPostPageWidgetState extends State<SignalPostPageWidget> {
                                   ),
                                 ),
                                 Align(
-                                  alignment: const AlignmentDirectional(-1.0, 0.0),
+                                  alignment: AlignmentDirectional(-1.0, 0.0),
                                   child: Text(
                                     columnPostPostsRecord.description,
                                     style: FlutterFlowTheme.of(context)
@@ -969,7 +974,7 @@ class _SignalPostPageWidgetState extends State<SignalPostPageWidget> {
                                   ),
                                 ),
                                 Align(
-                                  alignment: const AlignmentDirectional(-1.0, 0.0),
+                                  alignment: AlignmentDirectional(-1.0, 0.0),
                                   child: Text(
                                     dateTimeFormat("d/M H:mm",
                                         columnPostPostsRecord.createdTime!),
@@ -984,9 +989,9 @@ class _SignalPostPageWidgetState extends State<SignalPostPageWidget> {
                               ],
                             ),
                             Align(
-                              alignment: const AlignmentDirectional(0.0, -1.0),
+                              alignment: AlignmentDirectional(0.0, -1.0),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 40.0, 0.0, 20.0),
                                 child: FFButtonWidget(
                                   onPressed: () async {
@@ -1061,15 +1066,15 @@ class _SignalPostPageWidgetState extends State<SignalPostPageWidget> {
                                         },
                                       ),
                                     });
-                                    await widget.notifRef!.delete();
+                                    await widget!.notifRef!.delete();
                                     context.safePop();
                                   },
                                   text: 'Confirmer le carton rouge',
                                   options: FFButtonOptions(
                                     width: 350.0,
                                     height: 50.0,
-                                    padding: const EdgeInsets.all(0.0),
-                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsets.all(0.0),
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
                                     color: FlutterFlowTheme.of(context).error,
                                     textStyle: FlutterFlowTheme.of(context)
@@ -1081,7 +1086,7 @@ class _SignalPostPageWidgetState extends State<SignalPostPageWidget> {
                                           letterSpacing: 0.0,
                                         ),
                                     elevation: 3.0,
-                                    borderSide: const BorderSide(
+                                    borderSide: BorderSide(
                                       color: Colors.transparent,
                                       width: 1.0,
                                     ),
@@ -1095,9 +1100,9 @@ class _SignalPostPageWidgetState extends State<SignalPostPageWidget> {
                               ),
                             ),
                             Align(
-                              alignment: const AlignmentDirectional(0.0, 0.0),
+                              alignment: AlignmentDirectional(0.0, 0.0),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 20.0, 0.0, 0.0),
                                 child: Text(
                                   'Refuser la demande',
@@ -1112,9 +1117,9 @@ class _SignalPostPageWidgetState extends State<SignalPostPageWidget> {
                               ),
                             ),
                             Align(
-                              alignment: const AlignmentDirectional(0.0, 0.0),
+                              alignment: AlignmentDirectional(0.0, 0.0),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 10.0),
                                 child: Text(
                                   'pour la raison suivante',
@@ -1138,7 +1143,7 @@ class _SignalPostPageWidgetState extends State<SignalPostPageWidget> {
                                 'chambrage',
                                 'pas.dans.cgu'
                               ]),
-                              optionLabels: const [
+                              optionLabels: [
                                 'Manque d\'elements',
                                 'Chambrage ',
                                 'Pas mentionnés dans CGU'
@@ -1167,7 +1172,7 @@ class _SignalPostPageWidgetState extends State<SignalPostPageWidget> {
                                   FlutterFlowTheme.of(context).alternate,
                               borderWidth: 2.0,
                               borderRadius: 8.0,
-                              margin: const EdgeInsetsDirectional.fromSTEB(
+                              margin: EdgeInsetsDirectional.fromSTEB(
                                   16.0, 4.0, 16.0, 4.0),
                               hidesUnderline: true,
                               isOverButton: true,
@@ -1175,9 +1180,9 @@ class _SignalPostPageWidgetState extends State<SignalPostPageWidget> {
                               isMultiSelect: false,
                             ),
                             Align(
-                              alignment: const AlignmentDirectional(0.0, -1.0),
+                              alignment: AlignmentDirectional(0.0, -1.0),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 40.0, 0.0, 40.0),
                                 child: FFButtonWidget(
                                   onPressed: () async {
@@ -1206,15 +1211,15 @@ class _SignalPostPageWidgetState extends State<SignalPostPageWidget> {
                                         .update(createMyNotificationsRecordData(
                                       modSeen: true,
                                     ));
-                                    await widget.notifRef!.delete();
+                                    await widget!.notifRef!.delete();
                                     context.safePop();
                                   },
                                   text: 'Pas de carton',
                                   options: FFButtonOptions(
                                     width: 350.0,
                                     height: 50.0,
-                                    padding: const EdgeInsets.all(0.0),
-                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsets.all(0.0),
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryText,
@@ -1227,7 +1232,7 @@ class _SignalPostPageWidgetState extends State<SignalPostPageWidget> {
                                           letterSpacing: 0.0,
                                         ),
                                     elevation: 3.0,
-                                    borderSide: const BorderSide(
+                                    borderSide: BorderSide(
                                       color: Colors.transparent,
                                       width: 1.0,
                                     ),
@@ -1237,9 +1242,9 @@ class _SignalPostPageWidgetState extends State<SignalPostPageWidget> {
                               ),
                             ),
                             Align(
-                              alignment: const AlignmentDirectional(0.0, -1.0),
+                              alignment: AlignmentDirectional(0.0, -1.0),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 20.0, 0.0, 20.0),
                                 child: FFButtonWidget(
                                   onPressed: () async {
@@ -1304,15 +1309,15 @@ class _SignalPostPageWidgetState extends State<SignalPostPageWidget> {
                                     });
                                     await columnPostPostsRecord.reference
                                         .delete();
-                                    await widget.notifRef!.delete();
+                                    await widget!.notifRef!.delete();
                                     context.safePop();
                                   },
                                   text: 'Suppprimer l\'actualité',
                                   options: FFButtonOptions(
                                     width: 350.0,
                                     height: 50.0,
-                                    padding: const EdgeInsets.all(0.0),
-                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsets.all(0.0),
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
                                     color: FlutterFlowTheme.of(context).error,
                                     textStyle: FlutterFlowTheme.of(context)
@@ -1324,7 +1329,7 @@ class _SignalPostPageWidgetState extends State<SignalPostPageWidget> {
                                           letterSpacing: 0.0,
                                         ),
                                     elevation: 3.0,
-                                    borderSide: const BorderSide(
+                                    borderSide: BorderSide(
                                       color: Colors.transparent,
                                       width: 1.0,
                                     ),

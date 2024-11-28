@@ -2,7 +2,11 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'public_posts_list_model.dart';
 export 'public_posts_list_model.dart';
 
@@ -39,7 +43,7 @@ class _PublicPostsListWidgetState extends State<PublicPostsListWidget> {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<MyPostsRecord>(
-      stream: MyPostsRecord.getDocument(widget.userPostRef!),
+      stream: MyPostsRecord.getDocument(widget!.userPostRef!),
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
@@ -69,7 +73,7 @@ class _PublicPostsListWidgetState extends State<PublicPostsListWidget> {
             body: SafeArea(
               top: true,
               child: Padding(
-                padding: const EdgeInsets.all(10.0),
+                padding: EdgeInsets.all(10.0),
                 child: SingleChildScrollView(
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
@@ -90,7 +94,7 @@ class _PublicPostsListWidgetState extends State<PublicPostsListWidget> {
                                   context.pushNamed(
                                     'MenuPage',
                                     extra: <String, dynamic>{
-                                      kTransitionInfoKey: const TransitionInfo(
+                                      kTransitionInfoKey: TransitionInfo(
                                         hasTransition: true,
                                         transitionType:
                                             PageTransitionType.leftToRight,
@@ -107,7 +111,7 @@ class _PublicPostsListWidgetState extends State<PublicPostsListWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     10.0, 0.0, 0.0, 0.0),
                                 child: InkWell(
                                   splashColor: Colors.transparent,
@@ -128,7 +132,7 @@ class _PublicPostsListWidgetState extends State<PublicPostsListWidget> {
                             ],
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 5.0, 0.0, 0.0, 0.0),
                             child: StreamBuilder<UsersRecord>(
                               stream: UsersRecord.getDocument(
@@ -156,7 +160,7 @@ class _PublicPostsListWidgetState extends State<PublicPostsListWidget> {
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           5.0, 0.0, 6.0, 0.0),
                                       child: Container(
                                         width: 35.0,
@@ -199,9 +203,9 @@ class _PublicPostsListWidgetState extends State<PublicPostsListWidget> {
                         ],
                       ),
                       Align(
-                        alignment: const AlignmentDirectional(0.0, 0.0),
+                        alignment: AlignmentDirectional(0.0, 0.0),
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 10.0, 0.0, 0.0),
                           child: Text(
                             'Actualités',
@@ -279,7 +283,7 @@ class _PublicPostsListWidgetState extends State<PublicPostsListWidget> {
                                   mainAxisAlignment: MainAxisAlignment.end,
                                   children: [
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           10.0, 0.0, 10.0, 0.0),
                                       child: InkWell(
                                         splashColor: Colors.transparent,
@@ -291,7 +295,7 @@ class _PublicPostsListWidgetState extends State<PublicPostsListWidget> {
                                             'MyNotifsList',
                                             extra: <String, dynamic>{
                                               kTransitionInfoKey:
-                                                  const TransitionInfo(
+                                                  TransitionInfo(
                                                 hasTransition: true,
                                                 transitionType:
                                                     PageTransitionType
@@ -322,7 +326,7 @@ class _PublicPostsListWidgetState extends State<PublicPostsListWidget> {
                       ),
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(5.0, 5.0, 5.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(5.0, 5.0, 5.0, 0.0),
                         child: StreamBuilder<List<MyPostsRecord>>(
                           stream: queryMyPostsRecord(
                             parent:
@@ -389,7 +393,7 @@ class _PublicPostsListWidgetState extends State<PublicPostsListWidget> {
                                                 false))
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 5.0, 0.0, 5.0),
                                             child: AuthUserStreamWidget(
                                               builder: (context) => Column(
@@ -397,7 +401,7 @@ class _PublicPostsListWidgetState extends State<PublicPostsListWidget> {
                                                 children: [
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(10.0, 0.0,
                                                                 10.0, 0.0),
                                                     child: StreamBuilder<
@@ -465,7 +469,7 @@ class _PublicPostsListWidgetState extends State<PublicPostsListWidget> {
                                                             ),
                                                             Padding(
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           10.0,
                                                                           0.0,
@@ -499,7 +503,7 @@ class _PublicPostsListWidgetState extends State<PublicPostsListWidget> {
                                                                     extra: <String,
                                                                         dynamic>{
                                                                       kTransitionInfoKey:
-                                                                          const TransitionInfo(
+                                                                          TransitionInfo(
                                                                         hasTransition:
                                                                             true,
                                                                         transitionType:
@@ -532,7 +536,7 @@ class _PublicPostsListWidgetState extends State<PublicPostsListWidget> {
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 10.0,
                                                                 0.0, 10.0),
                                                     child: Row(
@@ -577,7 +581,7 @@ class _PublicPostsListWidgetState extends State<PublicPostsListWidget> {
                                                         ),
                                                         child: Padding(
                                                           padding:
-                                                              const EdgeInsets.all(
+                                                              EdgeInsets.all(
                                                                   5.0),
                                                           child: Text(
                                                             columnPostPostsRecord
@@ -597,10 +601,13 @@ class _PublicPostsListWidgetState extends State<PublicPostsListWidget> {
                                                       ),
                                                       if (columnPostPostsRecord
                                                                   .choice1 ==
+                                                              null ||
+                                                          columnPostPostsRecord
+                                                                  .choice1 ==
                                                               '')
                                                         Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -632,7 +639,7 @@ class _PublicPostsListWidgetState extends State<PublicPostsListWidget> {
                                                                 extra: <String,
                                                                     dynamic>{
                                                                   kTransitionInfoKey:
-                                                                      const TransitionInfo(
+                                                                      TransitionInfo(
                                                                     hasTransition:
                                                                         true,
                                                                     transitionType:
@@ -660,10 +667,13 @@ class _PublicPostsListWidgetState extends State<PublicPostsListWidget> {
                                                         ),
                                                       if (columnPostPostsRecord
                                                                   .choice1 !=
+                                                              null &&
+                                                          columnPostPostsRecord
+                                                                  .choice1 !=
                                                               '')
                                                         Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -695,7 +705,7 @@ class _PublicPostsListWidgetState extends State<PublicPostsListWidget> {
                                                                 extra: <String,
                                                                     dynamic>{
                                                                   kTransitionInfoKey:
-                                                                      const TransitionInfo(
+                                                                      TransitionInfo(
                                                                     hasTransition:
                                                                         true,
                                                                     transitionType:
@@ -725,7 +735,7 @@ class _PublicPostsListWidgetState extends State<PublicPostsListWidget> {
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(10.0, 5.0,
                                                                 10.0, 0.0),
                                                     child:
@@ -741,7 +751,7 @@ class _PublicPostsListWidgetState extends State<PublicPostsListWidget> {
                                                         children: [
                                                           Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
@@ -753,7 +763,7 @@ class _PublicPostsListWidgetState extends State<PublicPostsListWidget> {
                                                                       .max,
                                                               children: [
                                                                 Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -792,7 +802,7 @@ class _PublicPostsListWidgetState extends State<PublicPostsListWidget> {
                                                           ),
                                                           Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
@@ -804,7 +814,7 @@ class _PublicPostsListWidgetState extends State<PublicPostsListWidget> {
                                                                       .max,
                                                               children: [
                                                                 Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -843,7 +853,7 @@ class _PublicPostsListWidgetState extends State<PublicPostsListWidget> {
                                                           ),
                                                           Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
@@ -855,7 +865,7 @@ class _PublicPostsListWidgetState extends State<PublicPostsListWidget> {
                                                                       .max,
                                                               children: [
                                                                 Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -899,7 +909,7 @@ class _PublicPostsListWidgetState extends State<PublicPostsListWidget> {
                                                             children: [
                                                               Padding(
                                                                 padding:
-                                                                    const EdgeInsetsDirectional
+                                                                    EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,

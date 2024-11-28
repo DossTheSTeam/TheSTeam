@@ -1,8 +1,11 @@
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'moderator_page_model.dart';
 export 'moderator_page_model.dart';
 
@@ -41,16 +44,16 @@ class _ModeratorPageWidgetState extends State<ModeratorPageWidget> {
         body: SafeArea(
           top: true,
           child: Align(
-            alignment: const AlignmentDirectional(0.0, -1.0),
+            alignment: AlignmentDirectional(0.0, -1.0),
             child: Padding(
-              padding: const EdgeInsets.all(10.0),
+              padding: EdgeInsets.all(10.0),
               child: SingleChildScrollView(
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -86,7 +89,7 @@ class _ModeratorPageWidgetState extends State<ModeratorPageWidget> {
                               color: FlutterFlowTheme.of(context).alternate,
                             ),
                             child: Align(
-                              alignment: const AlignmentDirectional(0.0, 0.0),
+                              alignment: AlignmentDirectional(0.0, 0.0),
                               child: Container(
                                 width: 35.0,
                                 height: 50.0,
@@ -95,7 +98,7 @@ class _ModeratorPageWidgetState extends State<ModeratorPageWidget> {
                                   borderRadius: BorderRadius.circular(6.0),
                                 ),
                                 child: Padding(
-                                  padding: const EdgeInsets.all(3.0),
+                                  padding: EdgeInsets.all(3.0),
                                   child: ClipRRect(
                                     borderRadius: BorderRadius.circular(0.0),
                                     child: Image.asset(
@@ -113,7 +116,7 @@ class _ModeratorPageWidgetState extends State<ModeratorPageWidget> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(12.0),
+                      padding: EdgeInsets.all(12.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -124,7 +127,7 @@ class _ModeratorPageWidgetState extends State<ModeratorPageWidget> {
                             size: 24.0,
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 12.0, 0.0, 0.0, 0.0),
                             child: Text(
                               'Notifications',
@@ -138,7 +141,7 @@ class _ModeratorPageWidgetState extends State<ModeratorPageWidget> {
                           ),
                           Expanded(
                             child: Align(
-                              alignment: const AlignmentDirectional(1.0, 0.0),
+                              alignment: AlignmentDirectional(1.0, 0.0),
                               child: InkWell(
                                 splashColor: Colors.transparent,
                                 focusColor: Colors.transparent,
@@ -160,10 +163,10 @@ class _ModeratorPageWidgetState extends State<ModeratorPageWidget> {
                       ),
                     ),
                     Align(
-                      alignment: const AlignmentDirectional(-1.0, 0.0),
+                      alignment: AlignmentDirectional(-1.0, 0.0),
                       child: Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
                         child: Text(
                           'Equipes',
                           maxLines: 1,
@@ -177,7 +180,7 @@ class _ModeratorPageWidgetState extends State<ModeratorPageWidget> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(12.0),
+                      padding: EdgeInsets.all(12.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -188,7 +191,7 @@ class _ModeratorPageWidgetState extends State<ModeratorPageWidget> {
                             size: 24.0,
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 12.0, 0.0, 0.0, 0.0),
                             child: Text(
                               'Voir utilisateurs',
@@ -202,7 +205,7 @@ class _ModeratorPageWidgetState extends State<ModeratorPageWidget> {
                           ),
                           Expanded(
                             child: Align(
-                              alignment: const AlignmentDirectional(1.0, 0.0),
+                              alignment: AlignmentDirectional(1.0, 0.0),
                               child: InkWell(
                                 splashColor: Colors.transparent,
                                 focusColor: Colors.transparent,
@@ -224,10 +227,10 @@ class _ModeratorPageWidgetState extends State<ModeratorPageWidget> {
                       ),
                     ),
                     Align(
-                      alignment: const AlignmentDirectional(-1.0, 0.0),
+                      alignment: AlignmentDirectional(-1.0, 0.0),
                       child: Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
                         child: Text(
                           'Discussion Moderateurs',
                           maxLines: 1,
@@ -241,7 +244,7 @@ class _ModeratorPageWidgetState extends State<ModeratorPageWidget> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(12.0),
+                      padding: EdgeInsets.all(12.0),
                       child: StreamBuilder<List<TeamsRecord>>(
                         stream: queryTeamsRecord(
                           queryBuilder: (teamsRecord) => teamsRecord.where(
@@ -287,7 +290,7 @@ class _ModeratorPageWidgetState extends State<ModeratorPageWidget> {
                                 size: 24.0,
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     12.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   'Voir discussion',
@@ -301,7 +304,7 @@ class _ModeratorPageWidgetState extends State<ModeratorPageWidget> {
                               ),
                               Expanded(
                                 child: Align(
-                                  alignment: const AlignmentDirectional(1.0, 0.0),
+                                  alignment: AlignmentDirectional(1.0, 0.0),
                                   child: InkWell(
                                     splashColor: Colors.transparent,
                                     focusColor: Colors.transparent,
@@ -333,10 +336,10 @@ class _ModeratorPageWidgetState extends State<ModeratorPageWidget> {
                       ),
                     ),
                     Align(
-                      alignment: const AlignmentDirectional(-1.0, 0.0),
+                      alignment: AlignmentDirectional(-1.0, 0.0),
                       child: Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
                         child: Text(
                           'Actualités / Conseils',
                           maxLines: 1,
@@ -350,7 +353,7 @@ class _ModeratorPageWidgetState extends State<ModeratorPageWidget> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(12.0),
+                      padding: EdgeInsets.all(12.0),
                       child: StreamBuilder<List<TeamsRecord>>(
                         stream: queryTeamsRecord(
                           queryBuilder: (teamsRecord) => teamsRecord.where(
@@ -396,7 +399,7 @@ class _ModeratorPageWidgetState extends State<ModeratorPageWidget> {
                                 size: 24.0,
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     12.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   'Ecrire un conseil / stratégie',
@@ -410,7 +413,7 @@ class _ModeratorPageWidgetState extends State<ModeratorPageWidget> {
                               ),
                               Expanded(
                                 child: Align(
-                                  alignment: const AlignmentDirectional(1.0, 0.0),
+                                  alignment: AlignmentDirectional(1.0, 0.0),
                                   child: InkWell(
                                     splashColor: Colors.transparent,
                                     focusColor: Colors.transparent,

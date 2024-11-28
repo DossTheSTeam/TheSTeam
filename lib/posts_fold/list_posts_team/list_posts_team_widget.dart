@@ -2,7 +2,11 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'list_posts_team_model.dart';
 export 'list_posts_team_model.dart';
 
@@ -39,7 +43,7 @@ class _ListPostsTeamWidgetState extends State<ListPostsTeamWidget> {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<TeamsRecord>(
-      stream: TeamsRecord.getDocument(widget.teamRef!),
+      stream: TeamsRecord.getDocument(widget!.teamRef!),
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
@@ -69,9 +73,9 @@ class _ListPostsTeamWidgetState extends State<ListPostsTeamWidget> {
             body: SafeArea(
               top: true,
               child: Align(
-                alignment: const AlignmentDirectional(0.0, -1.0),
+                alignment: AlignmentDirectional(0.0, -1.0),
                 child: Padding(
-                  padding: const EdgeInsets.all(10.0),
+                  padding: EdgeInsets.all(10.0),
                   child: SingleChildScrollView(
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
@@ -92,7 +96,7 @@ class _ListPostsTeamWidgetState extends State<ListPostsTeamWidget> {
                                     context.pushNamed(
                                       'MenuPage',
                                       extra: <String, dynamic>{
-                                        kTransitionInfoKey: const TransitionInfo(
+                                        kTransitionInfoKey: TransitionInfo(
                                           hasTransition: true,
                                           transitionType:
                                               PageTransitionType.leftToRight,
@@ -109,7 +113,7 @@ class _ListPostsTeamWidgetState extends State<ListPostsTeamWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       10.0, 0.0, 0.0, 0.0),
                                   child: InkWell(
                                     splashColor: Colors.transparent,
@@ -130,13 +134,13 @@ class _ListPostsTeamWidgetState extends State<ListPostsTeamWidget> {
                               ],
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 0.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 6.0, 0.0),
                                     child: Container(
                                       width: 65.0,
@@ -158,7 +162,7 @@ class _ListPostsTeamWidgetState extends State<ListPostsTeamWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       listPostsTeamTeamsRecord.name,
@@ -177,13 +181,13 @@ class _ListPostsTeamWidgetState extends State<ListPostsTeamWidget> {
                           ],
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 5.0, 0.0, 0.0),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     10.0, 5.0, 10.0, 5.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -192,7 +196,7 @@ class _ListPostsTeamWidgetState extends State<ListPostsTeamWidget> {
                                   children: [
                                     Align(
                                       alignment:
-                                          const AlignmentDirectional(0.0, -1.0),
+                                          AlignmentDirectional(0.0, -1.0),
                                       child: Text(
                                         'Rencontres',
                                         style: FlutterFlowTheme.of(context)
@@ -218,13 +222,13 @@ class _ListPostsTeamWidgetState extends State<ListPostsTeamWidget> {
                                                 'TeamEventsList',
                                                 queryParameters: {
                                                   'teamRef': serializeParam(
-                                                    widget.teamRef,
+                                                    widget!.teamRef,
                                                     ParamType.DocumentReference,
                                                   ),
                                                 }.withoutNulls,
                                                 extra: <String, dynamic>{
                                                   kTransitionInfoKey:
-                                                      const TransitionInfo(
+                                                      TransitionInfo(
                                                     hasTransition: true,
                                                     transitionType:
                                                         PageTransitionType
@@ -255,13 +259,13 @@ class _ListPostsTeamWidgetState extends State<ListPostsTeamWidget> {
                                                 'ETeamEventsList',
                                                 queryParameters: {
                                                   'teamRef': serializeParam(
-                                                    widget.teamRef,
+                                                    widget!.teamRef,
                                                     ParamType.DocumentReference,
                                                   ),
                                                 }.withoutNulls,
                                                 extra: <String, dynamic>{
                                                   kTransitionInfoKey:
-                                                      const TransitionInfo(
+                                                      TransitionInfo(
                                                     hasTransition: true,
                                                     transitionType:
                                                         PageTransitionType
@@ -292,7 +296,7 @@ class _ListPostsTeamWidgetState extends State<ListPostsTeamWidget> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 5.0, 0.0, 0.0),
                               child: Text(
                                 'Actualités',
@@ -372,7 +376,7 @@ class _ListPostsTeamWidgetState extends State<ListPostsTeamWidget> {
                                         children: [
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     10.0, 0.0, 10.0, 0.0),
                                             child: InkWell(
                                               splashColor: Colors.transparent,
@@ -385,7 +389,7 @@ class _ListPostsTeamWidgetState extends State<ListPostsTeamWidget> {
                                                   'MyNotifsList',
                                                   extra: <String, dynamic>{
                                                     kTransitionInfoKey:
-                                                        const TransitionInfo(
+                                                        TransitionInfo(
                                                       hasTransition: true,
                                                       transitionType:
                                                           PageTransitionType
@@ -418,11 +422,11 @@ class _ListPostsTeamWidgetState extends State<ListPostsTeamWidget> {
                                   .secondaryBackground,
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   5.0, 5.0, 5.0, 0.0),
                               child: StreamBuilder<List<TeamPostsRecord>>(
                                 stream: queryTeamPostsRecord(
-                                  parent: widget.teamRef,
+                                  parent: widget!.teamRef,
                                   queryBuilder: (teamPostsRecord) =>
                                       teamPostsRecord.orderBy('created_time',
                                           descending: true),
@@ -489,9 +493,12 @@ class _ListPostsTeamWidgetState extends State<ListPostsTeamWidget> {
                                             children: [
                                               if (columnPostsPostsRecord
                                                           .title !=
+                                                      null &&
+                                                  columnPostsPostsRecord
+                                                          .title !=
                                                       '')
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 5.0, 0.0, 5.0),
                                                   child: Column(
@@ -516,7 +523,7 @@ class _ListPostsTeamWidgetState extends State<ListPostsTeamWidget> {
                                                             ),
                                                             child: Align(
                                                               alignment:
-                                                                  const AlignmentDirectional(
+                                                                  AlignmentDirectional(
                                                                       0.0, 0.0),
                                                               child: Text(
                                                                 columnPostsPostsRecord
@@ -557,7 +564,7 @@ class _ListPostsTeamWidgetState extends State<ListPostsTeamWidget> {
                                                             ),
                                                             child: Padding(
                                                               padding:
-                                                                  const EdgeInsets
+                                                                  EdgeInsets
                                                                       .all(5.0),
                                                               child: Text(
                                                                 columnPostsPostsRecord
@@ -577,7 +584,7 @@ class _ListPostsTeamWidgetState extends State<ListPostsTeamWidget> {
                                                           ),
                                                           Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
@@ -594,7 +601,7 @@ class _ListPostsTeamWidgetState extends State<ListPostsTeamWidget> {
                                                           ),
                                                           Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
@@ -627,7 +634,7 @@ class _ListPostsTeamWidgetState extends State<ListPostsTeamWidget> {
                                                                   extra: <String,
                                                                       dynamic>{
                                                                     kTransitionInfoKey:
-                                                                        const TransitionInfo(
+                                                                        TransitionInfo(
                                                                       hasTransition:
                                                                           true,
                                                                       transitionType:
@@ -657,7 +664,7 @@ class _ListPostsTeamWidgetState extends State<ListPostsTeamWidget> {
                                                       ),
                                                       Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     10.0,
                                                                     0.0,
@@ -677,7 +684,7 @@ class _ListPostsTeamWidgetState extends State<ListPostsTeamWidget> {
                                                             children: [
                                                               Padding(
                                                                 padding:
-                                                                    const EdgeInsetsDirectional
+                                                                    EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -689,7 +696,7 @@ class _ListPostsTeamWidgetState extends State<ListPostsTeamWidget> {
                                                                           .max,
                                                                   children: [
                                                                     Padding(
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           5.0,
@@ -729,7 +736,7 @@ class _ListPostsTeamWidgetState extends State<ListPostsTeamWidget> {
                                                               ),
                                                               Padding(
                                                                 padding:
-                                                                    const EdgeInsetsDirectional
+                                                                    EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -741,7 +748,7 @@ class _ListPostsTeamWidgetState extends State<ListPostsTeamWidget> {
                                                                           .max,
                                                                   children: [
                                                                     Padding(
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           5.0,
@@ -781,7 +788,7 @@ class _ListPostsTeamWidgetState extends State<ListPostsTeamWidget> {
                                                               ),
                                                               Padding(
                                                                 padding:
-                                                                    const EdgeInsetsDirectional
+                                                                    EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -793,7 +800,7 @@ class _ListPostsTeamWidgetState extends State<ListPostsTeamWidget> {
                                                                           .max,
                                                                   children: [
                                                                     Padding(
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           5.0,
@@ -837,7 +844,7 @@ class _ListPostsTeamWidgetState extends State<ListPostsTeamWidget> {
                                                                         .max,
                                                                 children: [
                                                                   Padding(
-                                                                    padding: const EdgeInsetsDirectional
+                                                                    padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,

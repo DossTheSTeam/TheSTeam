@@ -2,7 +2,11 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'my_notifs_list_model.dart';
 export 'my_notifs_list_model.dart';
 
@@ -41,9 +45,9 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
         body: SafeArea(
           top: true,
           child: Align(
-            alignment: const AlignmentDirectional(0.0, -1.0),
+            alignment: AlignmentDirectional(0.0, -1.0),
             child: Padding(
-              padding: const EdgeInsets.all(10.0),
+              padding: EdgeInsets.all(10.0),
               child: SingleChildScrollView(
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
@@ -64,7 +68,7 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                 context.pushNamed(
                                   'MenuPage',
                                   extra: <String, dynamic>{
-                                    kTransitionInfoKey: const TransitionInfo(
+                                    kTransitionInfoKey: TransitionInfo(
                                       hasTransition: true,
                                       transitionType:
                                           PageTransitionType.leftToRight,
@@ -80,7 +84,7 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 0.0, 0.0),
                               child: InkWell(
                                 splashColor: Colors.transparent,
@@ -101,9 +105,9 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                           ],
                         ),
                         Align(
-                          alignment: const AlignmentDirectional(0.0, 0.0),
+                          alignment: AlignmentDirectional(0.0, 0.0),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 15.0, 0.0, 0.0, 0.0),
                             child: Text(
                               'Mes notifications',
@@ -120,7 +124,7 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
                       child: StreamBuilder<List<MyNotificationsRecord>>(
                         stream: queryMyNotificationsRecord(
                           parent: currentUserReference,
@@ -170,13 +174,13 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                             .moderator ==
                                         null)
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 5.0, 0.0, 0.0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(5.0, 0.0, 0.0, 5.0),
                                               child: StreamBuilder<UsersRecord>(
                                                 stream: UsersRecord.getDocument(
@@ -219,7 +223,7 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                         children: [
                                                           Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         5.0,
                                                                         0.0,
@@ -279,7 +283,7 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                                 extra: <String,
                                                                     dynamic>{
                                                                   kTransitionInfoKey:
-                                                                      const TransitionInfo(
+                                                                      TransitionInfo(
                                                                     hasTransition:
                                                                         true,
                                                                     transitionType:
@@ -362,10 +366,10 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                               ),
                                             ),
                                             Align(
-                                              alignment: const AlignmentDirectional(
+                                              alignment: AlignmentDirectional(
                                                   -1.0, 0.0),
                                               child: Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         10.0, 0.0, 0.0, 0.0),
                                                 child: Text(
@@ -385,12 +389,15 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                             ),
                                             if (columnNotifsMyNotificationsRecord
                                                         .textFouls !=
+                                                    null &&
+                                                columnNotifsMyNotificationsRecord
+                                                        .textFouls !=
                                                     '')
                                               Align(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     -1.0, 0.0),
                                                 child: Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           10.0, 0.0, 0.0, 0.0),
                                                   child: Text(
@@ -409,12 +416,15 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                               ),
                                             if (columnNotifsMyNotificationsRecord
                                                         .textReasons !=
+                                                    null &&
+                                                columnNotifsMyNotificationsRecord
+                                                        .textReasons !=
                                                     '')
                                               Align(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     -1.0, 0.0),
                                                 child: Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           10.0, 0.0, 0.0, 0.0),
                                                   child: Text(
@@ -484,12 +494,12 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                             ),
                                                             child: Align(
                                                               alignment:
-                                                                  const AlignmentDirectional(
+                                                                  AlignmentDirectional(
                                                                       -1.0,
                                                                       0.0),
                                                               child: Padding(
                                                                 padding:
-                                                                    const EdgeInsetsDirectional
+                                                                    EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             10.0,
                                                                             0.0,
@@ -610,11 +620,11 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                         ),
                                                         child: Align(
                                                           alignment:
-                                                              const AlignmentDirectional(
+                                                              AlignmentDirectional(
                                                                   -1.0, 0.0),
                                                           child: Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         10.0,
                                                                         0.0,
@@ -731,11 +741,11 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                         ),
                                                         child: Align(
                                                           alignment:
-                                                              const AlignmentDirectional(
+                                                              AlignmentDirectional(
                                                                   -1.0, 0.0),
                                                           child: Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         10.0,
                                                                         0.0,
@@ -812,7 +822,7 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                 children: [
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(10.0, 0.0,
                                                                 0.0, 0.0),
                                                     child: StreamBuilder<
@@ -904,12 +914,12 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                                     ),
                                                                     Align(
                                                                       alignment:
-                                                                          const AlignmentDirectional(
+                                                                          AlignmentDirectional(
                                                                               -1.0,
                                                                               0.0),
                                                                       child:
                                                                           Padding(
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
                                                                             5.0,
                                                                             0.0,
                                                                             0.0,
@@ -940,7 +950,7 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                                             .boss ==
                                                                         currentUserReference)
                                                                       Padding(
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             10.0,
@@ -989,7 +999,7 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                                             MainAxisSize.max,
                                                                         children: [
                                                                           Padding(
-                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: EdgeInsetsDirectional.fromSTEB(
                                                                                 0.0,
                                                                                 0.0,
                                                                                 10.0,
@@ -1170,7 +1180,7 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                         ),
                                                         child: Align(
                                                           alignment:
-                                                              const AlignmentDirectional(
+                                                              AlignmentDirectional(
                                                                   -1.0, 0.0),
                                                           child: Text(
                                                             containerTeamsRecord
@@ -1275,7 +1285,7 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                         ),
                                                         child: Align(
                                                           alignment:
-                                                              const AlignmentDirectional(
+                                                              AlignmentDirectional(
                                                                   1.0, 0.0),
                                                           child: Text(
                                                             containerTeamsRecord
@@ -1305,7 +1315,7 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                         .eEvent !=
                                                     null))
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 5.0, 0.0, 0.0),
                                                 child:
@@ -1343,7 +1353,7 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                       children: [
                                                         Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       5.0,
@@ -1404,7 +1414,7 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                                     child:
                                                                         Align(
                                                                       alignment:
-                                                                          const AlignmentDirectional(
+                                                                          AlignmentDirectional(
                                                                               -1.0,
                                                                               0.0),
                                                                       child:
@@ -1479,6 +1489,8 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                                               .eteamWin !=
                                                                           null) ||
                                                                       (columnNotifsMyNotificationsRecord.eteamDraw !=
+                                                                              null &&
+                                                                          columnNotifsMyNotificationsRecord.eteamDraw !=
                                                                               '') ||
                                                                       (columnNotifsMyNotificationsRecord
                                                                               .teamRef !=
@@ -1625,7 +1637,7 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                                     child:
                                                                         Align(
                                                                       alignment:
-                                                                          const AlignmentDirectional(
+                                                                          AlignmentDirectional(
                                                                               1.0,
                                                                               0.0),
                                                                       child:
@@ -1672,7 +1684,7 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                         children: [
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     5.0, 0.0, 0.0, 5.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -1681,7 +1693,7 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                       .spaceBetween,
                                               children: [
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           5.0, 0.0, 6.0, 0.0),
                                                   child: Container(
@@ -1706,7 +1718,7 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           5.0, 0.0, 6.0, 0.0),
                                                   child: Container(
@@ -1729,7 +1741,7 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                     ),
                                                     child: Padding(
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   2.0,
@@ -1793,9 +1805,9 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                           ),
                                           Align(
                                             alignment:
-                                                const AlignmentDirectional(-1.0, 0.0),
+                                                AlignmentDirectional(-1.0, 0.0),
                                             child: Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       10.0, 0.0, 0.0, 0.0),
                                               child: Text(
@@ -1814,12 +1826,15 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                           ),
                                           if (columnNotifsMyNotificationsRecord
                                                       .textFouls !=
+                                                  null &&
+                                              columnNotifsMyNotificationsRecord
+                                                      .textFouls !=
                                                   '')
                                             Align(
-                                              alignment: const AlignmentDirectional(
+                                              alignment: AlignmentDirectional(
                                                   -1.0, 0.0),
                                               child: Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         10.0, 0.0, 0.0, 0.0),
                                                 child: Text(
@@ -1915,11 +1930,11 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                           ),
                                                           Align(
                                                             alignment:
-                                                                const AlignmentDirectional(
+                                                                AlignmentDirectional(
                                                                     -1.0, 0.0),
                                                             child: Padding(
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           10.0,
                                                                           0.0,
@@ -2025,6 +2040,9 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                   children: [
                                                     if (columnPostPostsRecord
                                                                 .title !=
+                                                            null &&
+                                                        columnPostPostsRecord
+                                                                .title !=
                                                             '')
                                                       Row(
                                                         mainAxisSize:
@@ -2046,7 +2064,7 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                                   currentUserReference)
                                                                 Align(
                                                                   alignment:
-                                                                      const AlignmentDirectional(
+                                                                      AlignmentDirectional(
                                                                           1.0,
                                                                           0.0),
                                                                   child: Text(
@@ -2087,12 +2105,12 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                                     child:
                                                                         Align(
                                                                       alignment:
-                                                                          const AlignmentDirectional(
+                                                                          AlignmentDirectional(
                                                                               -1.0,
                                                                               0.0),
                                                                       child:
                                                                           Padding(
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
                                                                             10.0,
                                                                             0.0,
                                                                             0.0,
@@ -2240,7 +2258,7 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                             currentUserReference)
                                                           Align(
                                                             alignment:
-                                                                const AlignmentDirectional(
+                                                                AlignmentDirectional(
                                                                     1.0, 0.0),
                                                             child: Text(
                                                               'Supprimer ?',
@@ -2273,11 +2291,11 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                               ),
                                                               child: Align(
                                                                 alignment:
-                                                                    const AlignmentDirectional(
+                                                                    AlignmentDirectional(
                                                                         -1.0,
                                                                         0.0),
                                                                 child: Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           10.0,
                                                                           0.0,
@@ -2439,7 +2457,7 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                             currentUserReference)
                                                           Align(
                                                             alignment:
-                                                                const AlignmentDirectional(
+                                                                AlignmentDirectional(
                                                                     1.0, 0.0),
                                                             child: Text(
                                                               'Supprimer ?',
@@ -2472,11 +2490,11 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                               ),
                                                               child: Align(
                                                                 alignment:
-                                                                    const AlignmentDirectional(
+                                                                    AlignmentDirectional(
                                                                         -1.0,
                                                                         0.0),
                                                                 child: Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           10.0,
                                                                           0.0,

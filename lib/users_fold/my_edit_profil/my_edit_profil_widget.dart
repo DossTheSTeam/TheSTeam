@@ -4,8 +4,13 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:math';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'my_edit_profil_model.dart';
 export 'my_edit_profil_model.dart';
 
@@ -57,8 +62,8 @@ class _MyEditProfilWidgetState extends State<MyEditProfilWidget>
             curve: Curves.easeInOut,
             delay: 400.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(0.0, 60.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 60.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -88,16 +93,16 @@ class _MyEditProfilWidgetState extends State<MyEditProfilWidget>
         body: SafeArea(
           top: true,
           child: Align(
-            alignment: const AlignmentDirectional(0.0, -1.0),
+            alignment: AlignmentDirectional(0.0, -1.0),
             child: Padding(
-              padding: const EdgeInsets.all(10.0),
+              padding: EdgeInsets.all(10.0),
               child: SingleChildScrollView(
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -135,7 +140,7 @@ class _MyEditProfilWidgetState extends State<MyEditProfilWidget>
                               context.pushNamed(
                                 'MyImagePage',
                                 extra: <String, dynamic>{
-                                  kTransitionInfoKey: const TransitionInfo(
+                                  kTransitionInfoKey: TransitionInfo(
                                     hasTransition: true,
                                     transitionType:
                                         PageTransitionType.rightToLeft,
@@ -153,11 +158,173 @@ class _MyEditProfilWidgetState extends State<MyEditProfilWidget>
                         ],
                       ),
                     ),
-                    if (currentUserDisplayName == '')
+                    Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Column(
+                          mainAxisSize: MainAxisSize.max,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Align(
+                              alignment: AlignmentDirectional(0.0, 0.0),
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    10.0, 10.0, 10.0, 0.0),
+                                child: Text(
+                                  'Aide à la navigation ',
+                                  textAlign: TextAlign.center,
+                                  maxLines: 6,
+                                  style: FlutterFlowTheme.of(context)
+                                      .labelMedium
+                                      .override(
+                                        fontFamily: 'Poppins',
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                        letterSpacing: 0.0,
+                                      ),
+                                ),
+                              ),
+                            ),
+                            Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                if (valueOrDefault<bool>(
+                                        currentUserDocument?.helpNav, false) ==
+                                    true)
+                                  Align(
+                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    child: Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          13.0, 0.0, 0.0, 0.0),
+                                      child: AuthUserStreamWidget(
+                                        builder: (context) => Text(
+                                          'Activée',
+                                          textAlign: TextAlign.center,
+                                          maxLines: 6,
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Poppins',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .success,
+                                                fontSize: 10.0,
+                                                letterSpacing: 0.0,
+                                              ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                if (valueOrDefault<bool>(
+                                        currentUserDocument?.helpNav, false) ==
+                                    false)
+                                  Align(
+                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    child: Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          13.0, 0.0, 0.0, 0.0),
+                                      child: AuthUserStreamWidget(
+                                        builder: (context) => Text(
+                                          'Désactivée',
+                                          textAlign: TextAlign.center,
+                                          maxLines: 6,
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Poppins',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .error,
+                                                fontSize: 10.0,
+                                                letterSpacing: 0.0,
+                                              ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                              ],
+                            ),
+                          ],
+                        ),
+                        Row(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 20.0, 0.0),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  if (valueOrDefault<bool>(
+                                          currentUserDocument?.helpNav,
+                                          false) ==
+                                      false)
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 0.0, 5.0, 0.0),
+                                      child: AuthUserStreamWidget(
+                                        builder: (context) => InkWell(
+                                          splashColor: Colors.transparent,
+                                          focusColor: Colors.transparent,
+                                          hoverColor: Colors.transparent,
+                                          highlightColor: Colors.transparent,
+                                          onTap: () async {
+                                            await currentUserReference!
+                                                .update(createUsersRecordData(
+                                              helpNav: true,
+                                            ));
+                                          },
+                                          child: Icon(
+                                            Icons.check,
+                                            color: FlutterFlowTheme.of(context)
+                                                .success,
+                                            size: 30.0,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  if (valueOrDefault<bool>(
+                                          currentUserDocument?.helpNav,
+                                          false) ==
+                                      true)
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 0.0, 5.0, 0.0),
+                                      child: AuthUserStreamWidget(
+                                        builder: (context) => InkWell(
+                                          splashColor: Colors.transparent,
+                                          focusColor: Colors.transparent,
+                                          hoverColor: Colors.transparent,
+                                          highlightColor: Colors.transparent,
+                                          onTap: () async {
+                                            await currentUserReference!
+                                                .update(createUsersRecordData(
+                                              helpNav: false,
+                                            ));
+                                          },
+                                          child: Icon(
+                                            Icons.highlight_off_sharp,
+                                            color: FlutterFlowTheme.of(context)
+                                                .error,
+                                            size: 30.0,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                    if (currentUserDisplayName == null ||
+                        currentUserDisplayName == '')
                       Align(
-                        alignment: const AlignmentDirectional(0.0, 0.0),
+                        alignment: AlignmentDirectional(0.0, 0.0),
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               10.0, 10.0, 10.0, 0.0),
                           child: AuthUserStreamWidget(
                             builder: (context) => Text(
@@ -177,9 +344,9 @@ class _MyEditProfilWidgetState extends State<MyEditProfilWidget>
                         ),
                       ),
                     Align(
-                      alignment: const AlignmentDirectional(-1.0, 0.0),
+                      alignment: AlignmentDirectional(-1.0, 0.0),
                       child: Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             25.0, 20.0, 0.0, 5.0),
                         child: AuthUserStreamWidget(
                           builder: (context) => Text(
@@ -195,9 +362,10 @@ class _MyEditProfilWidgetState extends State<MyEditProfilWidget>
                         ),
                       ),
                     ),
-                    if (currentUserDisplayName == '')
+                    if (currentUserDisplayName == null ||
+                        currentUserDisplayName == '')
                       Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             10.0, 5.0, 10.0, 5.0),
                         child: AuthUserStreamWidget(
                           builder: (context) => Row(
@@ -205,7 +373,7 @@ class _MyEditProfilWidgetState extends State<MyEditProfilWidget>
                             children: [
                               Expanded(
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       20.0, 0.0, 10.0, 0.0),
                                   child: TextFormField(
                                     controller:
@@ -272,7 +440,7 @@ class _MyEditProfilWidgetState extends State<MyEditProfilWidget>
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     10.0, 0.0, 10.0, 0.0),
                                 child: InkWell(
                                   splashColor: Colors.transparent,
@@ -302,11 +470,12 @@ class _MyEditProfilWidgetState extends State<MyEditProfilWidget>
                       thickness: 2.0,
                       color: FlutterFlowTheme.of(context).secondaryBackground,
                     ),
-                    if (currentUserDisplayName == '')
+                    if (currentUserDisplayName == null ||
+                        currentUserDisplayName == '')
                       Align(
-                        alignment: const AlignmentDirectional(0.0, 0.0),
+                        alignment: AlignmentDirectional(0.0, 0.0),
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               10.0, 10.0, 10.0, 0.0),
                           child: AuthUserStreamWidget(
                             builder: (context) => Text(
@@ -326,9 +495,9 @@ class _MyEditProfilWidgetState extends State<MyEditProfilWidget>
                         ),
                       ),
                     Align(
-                      alignment: const AlignmentDirectional(-1.0, 0.0),
+                      alignment: AlignmentDirectional(-1.0, 0.0),
                       child: Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             25.0, 20.0, 0.0, 5.0),
                         child: AuthUserStreamWidget(
                           builder: (context) => Text(
@@ -344,9 +513,11 @@ class _MyEditProfilWidgetState extends State<MyEditProfilWidget>
                       ),
                     ),
                     if (valueOrDefault(currentUserDocument?.familyName, '') ==
+                            null ||
+                        valueOrDefault(currentUserDocument?.familyName, '') ==
                             '')
                       Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             10.0, 5.0, 10.0, 5.0),
                         child: AuthUserStreamWidget(
                           builder: (context) => Row(
@@ -354,7 +525,7 @@ class _MyEditProfilWidgetState extends State<MyEditProfilWidget>
                             children: [
                               Expanded(
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       20.0, 0.0, 10.0, 0.0),
                                   child: TextFormField(
                                     controller: _model.nameFieldTextController1,
@@ -419,7 +590,7 @@ class _MyEditProfilWidgetState extends State<MyEditProfilWidget>
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     10.0, 0.0, 10.0, 0.0),
                                 child: InkWell(
                                   splashColor: Colors.transparent,
@@ -446,9 +617,9 @@ class _MyEditProfilWidgetState extends State<MyEditProfilWidget>
                         ),
                       ),
                     Align(
-                      alignment: const AlignmentDirectional(-1.0, 0.0),
+                      alignment: AlignmentDirectional(-1.0, 0.0),
                       child: Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             25.0, 20.0, 0.0, 5.0),
                         child: AuthUserStreamWidget(
                           builder: (context) => Text(
@@ -464,9 +635,11 @@ class _MyEditProfilWidgetState extends State<MyEditProfilWidget>
                       ),
                     ),
                     if (valueOrDefault(currentUserDocument?.firstName, '') ==
+                            null ||
+                        valueOrDefault(currentUserDocument?.firstName, '') ==
                             '')
                       Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             10.0, 5.0, 10.0, 5.0),
                         child: AuthUserStreamWidget(
                           builder: (context) => Row(
@@ -474,7 +647,7 @@ class _MyEditProfilWidgetState extends State<MyEditProfilWidget>
                             children: [
                               Expanded(
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       20.0, 0.0, 10.0, 0.0),
                                   child: TextFormField(
                                     controller: _model.nameFieldTextController2,
@@ -539,7 +712,7 @@ class _MyEditProfilWidgetState extends State<MyEditProfilWidget>
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     10.0, 0.0, 10.0, 0.0),
                                 child: InkWell(
                                   splashColor: Colors.transparent,
@@ -570,9 +743,9 @@ class _MyEditProfilWidgetState extends State<MyEditProfilWidget>
                       color: FlutterFlowTheme.of(context).secondaryBackground,
                     ),
                     Align(
-                      alignment: const AlignmentDirectional(-1.0, 0.0),
+                      alignment: AlignmentDirectional(-1.0, 0.0),
                       child: Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             25.0, 20.0, 0.0, 5.0),
                         child: AuthUserStreamWidget(
                           builder: (context) => Text(
@@ -592,13 +765,13 @@ class _MyEditProfilWidgetState extends State<MyEditProfilWidget>
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(10.0, 5.0, 10.0, 5.0),
+                          EdgeInsetsDirectional.fromSTEB(10.0, 5.0, 10.0, 5.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Expanded(
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   20.0, 0.0, 10.0, 0.0),
                               child: TextFormField(
                                 controller: _model.phoneFieldTextController,
@@ -657,7 +830,7 @@ class _MyEditProfilWidgetState extends State<MyEditProfilWidget>
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 10.0, 0.0, 10.0, 0.0),
                             child: InkWell(
                               splashColor: Colors.transparent,
@@ -687,21 +860,24 @@ class _MyEditProfilWidgetState extends State<MyEditProfilWidget>
                       color: FlutterFlowTheme.of(context).secondaryBackground,
                     ),
                     Align(
-                      alignment: const AlignmentDirectional(0.0, 0.0),
+                      alignment: AlignmentDirectional(0.0, 0.0),
                       child: Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 60.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 50.0, 0.0, 0.0),
                         child: FFButtonWidget(
-                          onPressed: () {
-                            print('Button pressed ...');
+                          onPressed: () async {
+                            await authManager.deleteUser(context);
+
+                            context.goNamedAuth(
+                                'MyProfilPage', context.mounted);
                           },
                           text: 'Supprimer mon profil',
                           options: FFButtonOptions(
-                            width: 250.0,
+                            width: 225.0,
                             height: 44.0,
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
-                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                            iconPadding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
                             color: FlutterFlowTheme.of(context).error,
                             textStyle: FlutterFlowTheme.of(context)
@@ -712,7 +888,7 @@ class _MyEditProfilWidgetState extends State<MyEditProfilWidget>
                                   letterSpacing: 0.0,
                                 ),
                             elevation: 0.0,
-                            borderSide: const BorderSide(
+                            borderSide: BorderSide(
                               width: 2.0,
                             ),
                             borderRadius: BorderRadius.circular(38.0),

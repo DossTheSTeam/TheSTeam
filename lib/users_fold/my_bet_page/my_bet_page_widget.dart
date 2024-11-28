@@ -6,7 +6,10 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'my_bet_page_model.dart';
 export 'my_bet_page_model.dart';
 
@@ -43,7 +46,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<MyBetsRecord>(
-      stream: MyBetsRecord.getDocument(widget.myBetRef!),
+      stream: MyBetsRecord.getDocument(widget!.myBetRef!),
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
@@ -73,9 +76,9 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
             body: SafeArea(
               top: true,
               child: Align(
-                alignment: const AlignmentDirectional(0.0, -1.0),
+                alignment: AlignmentDirectional(0.0, -1.0),
                 child: Padding(
-                  padding: const EdgeInsets.all(10.0),
+                  padding: EdgeInsets.all(10.0),
                   child: SingleChildScrollView(
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
@@ -84,7 +87,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 5.0, 0.0, 5.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -107,7 +110,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                 'MenuPage',
                                                 extra: <String, dynamic>{
                                                   kTransitionInfoKey:
-                                                      const TransitionInfo(
+                                                      TransitionInfo(
                                                     hasTransition: true,
                                                     transitionType:
                                                         PageTransitionType
@@ -128,7 +131,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     10.0, 0.0, 0.0, 0.0),
                                             child: InkWell(
                                               splashColor: Colors.transparent,
@@ -152,7 +155,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                         ],
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             10.0, 0.0, 0.0, 0.0),
                                         child: AuthUserStreamWidget(
                                           builder: (context) => Text(
@@ -198,7 +201,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       5.0, 0.0, 0.0, 0.0),
                                   child: Container(
                                     width: 30.0,
@@ -213,7 +216,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                       ),
                                     ),
                                     child: Padding(
-                                      padding: const EdgeInsets.all(2.0),
+                                      padding: EdgeInsets.all(2.0),
                                       child: ClipRRect(
                                         borderRadius:
                                             BorderRadius.circular(24.0),
@@ -271,7 +274,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                         children: [
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     10.0, 0.0, 10.0, 0.0),
                                             child: InkWell(
                                               splashColor: Colors.transparent,
@@ -284,7 +287,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                   'MyNotifsList',
                                                   extra: <String, dynamic>{
                                                     kTransitionInfoKey:
-                                                        const TransitionInfo(
+                                                        TransitionInfo(
                                                       hasTransition: true,
                                                       transitionType:
                                                           PageTransitionType
@@ -319,7 +322,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                               FlutterFlowTheme.of(context).secondaryBackground,
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 20.0, 0.0, 0.0),
                           child: StreamBuilder<BetsRecord>(
                             stream: BetsRecord.getDocument(
@@ -411,7 +414,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                               ),
                                                               Padding(
                                                                 padding:
-                                                                    const EdgeInsetsDirectional
+                                                                    EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             3.0,
                                                                             0.0,
@@ -450,7 +453,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                               ),
                                                               Padding(
                                                                 padding:
-                                                                    const EdgeInsetsDirectional
+                                                                    EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             2.0,
                                                                             0.0,
@@ -546,11 +549,11 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                             ),
                                                             child: Align(
                                                               alignment:
-                                                                  const AlignmentDirectional(
+                                                                  AlignmentDirectional(
                                                                       1.0, 0.0),
                                                               child: Padding(
                                                                 padding:
-                                                                    const EdgeInsetsDirectional
+                                                                    EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -577,7 +580,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                           ),
                                                           Align(
                                                             alignment:
-                                                                const AlignmentDirectional(
+                                                                AlignmentDirectional(
                                                                     0.0, 0.0),
                                                             child: InkWell(
                                                               splashColor: Colors
@@ -606,7 +609,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                                   extra: <String,
                                                                       dynamic>{
                                                                     kTransitionInfoKey:
-                                                                        const TransitionInfo(
+                                                                        TransitionInfo(
                                                                       hasTransition:
                                                                           true,
                                                                       transitionType:
@@ -640,12 +643,12 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                             ),
                                                             child: Align(
                                                               alignment:
-                                                                  const AlignmentDirectional(
+                                                                  AlignmentDirectional(
                                                                       -1.0,
                                                                       0.0),
                                                               child: Padding(
                                                                 padding:
-                                                                    const EdgeInsetsDirectional
+                                                                    EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             5.0,
                                                                             0.0,
@@ -684,7 +687,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                 children: [
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(20.0, 0.0,
                                                                 0.0, 0.0),
                                                     child: Text(
@@ -706,7 +709,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                     children: [
                                                       Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     0.0,
@@ -743,7 +746,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                           false)
                                                         Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -758,7 +761,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                                       .statut ==
                                                                   true)
                                                                 Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -783,7 +786,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                                       .statut ==
                                                                   false)
                                                                 Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -830,7 +833,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                         ),
                         if (myBetPageMyBetsRecord.bet2 != null)
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 20.0, 0.0, 0.0),
                             child: StreamBuilder<BetsRecord>(
                               stream: BetsRecord.getDocument(
@@ -924,7 +927,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                                       ),
                                                                 ),
                                                                 Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           3.0,
                                                                           0.0,
@@ -962,7 +965,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                                       ),
                                                                 ),
                                                                 Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           2.0,
                                                                           0.0,
@@ -1060,11 +1063,11 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                               ),
                                                               child: Align(
                                                                 alignment:
-                                                                    const AlignmentDirectional(
+                                                                    AlignmentDirectional(
                                                                         1.0,
                                                                         0.0),
                                                                 child: Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -1091,7 +1094,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                             ),
                                                             Align(
                                                               alignment:
-                                                                  const AlignmentDirectional(
+                                                                  AlignmentDirectional(
                                                                       0.0, 0.0),
                                                               child: InkWell(
                                                                 splashColor: Colors
@@ -1121,7 +1124,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                                     extra: <String,
                                                                         dynamic>{
                                                                       kTransitionInfoKey:
-                                                                          const TransitionInfo(
+                                                                          TransitionInfo(
                                                                         hasTransition:
                                                                             true,
                                                                         transitionType:
@@ -1153,11 +1156,11 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                               ),
                                                               child: Align(
                                                                 alignment:
-                                                                    const AlignmentDirectional(
+                                                                    AlignmentDirectional(
                                                                         -1.0,
                                                                         0.0),
                                                                 child: Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           5.0,
                                                                           0.0,
@@ -1197,7 +1200,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                   children: [
                                                     Padding(
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   20.0,
                                                                   0.0,
@@ -1224,7 +1227,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                       children: [
                                                         Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -1261,7 +1264,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                             false)
                                                           Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
@@ -1276,7 +1279,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                                         .statut ==
                                                                     true)
                                                                   Padding(
-                                                                    padding: const EdgeInsetsDirectional
+                                                                    padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -1301,7 +1304,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                                         .statut ==
                                                                     false)
                                                                   Padding(
-                                                                    padding: const EdgeInsetsDirectional
+                                                                    padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -1348,7 +1351,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                           ),
                         if (myBetPageMyBetsRecord.bet3 != null)
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 20.0, 0.0, 0.0),
                             child: StreamBuilder<BetsRecord>(
                               stream: BetsRecord.getDocument(
@@ -1442,7 +1445,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                                       ),
                                                                 ),
                                                                 Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           3.0,
                                                                           0.0,
@@ -1480,7 +1483,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                                       ),
                                                                 ),
                                                                 Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           2.0,
                                                                           0.0,
@@ -1578,11 +1581,11 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                               ),
                                                               child: Align(
                                                                 alignment:
-                                                                    const AlignmentDirectional(
+                                                                    AlignmentDirectional(
                                                                         1.0,
                                                                         0.0),
                                                                 child: Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -1609,7 +1612,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                             ),
                                                             Align(
                                                               alignment:
-                                                                  const AlignmentDirectional(
+                                                                  AlignmentDirectional(
                                                                       0.0, 0.0),
                                                               child: InkWell(
                                                                 splashColor: Colors
@@ -1639,7 +1642,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                                     extra: <String,
                                                                         dynamic>{
                                                                       kTransitionInfoKey:
-                                                                          const TransitionInfo(
+                                                                          TransitionInfo(
                                                                         hasTransition:
                                                                             true,
                                                                         transitionType:
@@ -1671,11 +1674,11 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                               ),
                                                               child: Align(
                                                                 alignment:
-                                                                    const AlignmentDirectional(
+                                                                    AlignmentDirectional(
                                                                         -1.0,
                                                                         0.0),
                                                                 child: Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           5.0,
                                                                           0.0,
@@ -1715,7 +1718,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                   children: [
                                                     Padding(
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   20.0,
                                                                   0.0,
@@ -1742,7 +1745,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                       children: [
                                                         Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -1779,7 +1782,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                             false)
                                                           Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
@@ -1794,7 +1797,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                                         .statut ==
                                                                     true)
                                                                   Padding(
-                                                                    padding: const EdgeInsetsDirectional
+                                                                    padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -1819,7 +1822,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                                         .statut ==
                                                                     false)
                                                                   Padding(
-                                                                    padding: const EdgeInsetsDirectional
+                                                                    padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -1865,7 +1868,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                             ),
                           ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               10.0, 10.0, 0.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -1902,7 +1905,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                         ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         5.0, 0.0, 0.0, 0.0),
                                     child: Container(
                                       width: 30.0,
@@ -1917,7 +1920,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                         ),
                                       ),
                                       child: Padding(
-                                        padding: const EdgeInsets.all(2.0),
+                                        padding: EdgeInsets.all(2.0),
                                         child: ClipRRect(
                                           borderRadius:
                                               BorderRadius.circular(24.0),
@@ -1937,7 +1940,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               20.0, 10.0, 20.0, 10.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -1982,14 +1985,14 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               10.0, 5.0, 10.0, 5.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     10.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   'Statut',
@@ -2012,7 +2015,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                         if (myBetPageMyBetsRecord.bet2 == null)
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 5.0, 0.0),
                                             child: FlutterFlowIconButton(
                                               borderRadius: 8.0,
@@ -2029,7 +2032,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                               ),
                                               onPressed: () async {
                                                 await actions.getStatutMyBet1(
-                                                  widget.myBetRef!,
+                                                  widget!.myBetRef!,
                                                 );
                                               },
                                             ),
@@ -2037,7 +2040,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                         if (myBetPageMyBetsRecord.bet2 != null)
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 5.0, 0.0),
                                             child: FlutterFlowIconButton(
                                               borderColor: Colors.transparent,
@@ -2055,7 +2058,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                               ),
                                               onPressed: () async {
                                                 await actions.getStatutMyBet2(
-                                                  widget.myBetRef!,
+                                                  widget!.myBetRef!,
                                                 );
                                               },
                                             ),
@@ -2064,7 +2067,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                     ),
                                   if (myBetPageMyBetsRecord.bet3 != null)
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 5.0, 0.0),
                                       child: FlutterFlowIconButton(
                                         borderColor: Colors.transparent,
@@ -2080,14 +2083,14 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                         ),
                                         onPressed: () async {
                                           await actions.getStatutMyBet3(
-                                            widget.myBetRef!,
+                                            widget!.myBetRef!,
                                           );
                                         },
                                       ),
                                     ),
                                   if (myBetPageMyBetsRecord.statut == true)
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 10.0, 0.0),
                                       child: Container(
                                         width: 25.0,
@@ -2101,7 +2104,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                     ),
                                   if (myBetPageMyBetsRecord.statut == false)
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 10.0, 0.0),
                                       child: Container(
                                         width: 25.0,
@@ -2118,13 +2121,46 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                             ],
                           ),
                         ),
+                        if (valueOrDefault<bool>(
+                                currentUserDocument?.helpNav, false) ==
+                            true)
+                          Align(
+                            alignment: AlignmentDirectional(0.0, 0.0),
+                            child: AuthUserStreamWidget(
+                              builder: (context) => Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 80.0, 0.0),
+                                    child: Text(
+                                      'Vérifier le statut de mon paris',
+                                      textAlign: TextAlign.center,
+                                      maxLines: 2,
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                            fontSize: 10.0,
+                                            letterSpacing: 0.0,
+                                            lineHeight: 1.0,
+                                          ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
                         Divider(
                           thickness: 1.0,
                           color:
                               FlutterFlowTheme.of(context).secondaryBackground,
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               10.0, 10.0, 0.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -2171,7 +2207,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                             ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             5.0, 0.0, 0.0, 0.0),
                                         child: Container(
                                           width: 30.0,
@@ -2187,7 +2223,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                             ),
                                           ),
                                           child: Padding(
-                                            padding: const EdgeInsets.all(2.0),
+                                            padding: EdgeInsets.all(2.0),
                                             child: ClipRRect(
                                               borderRadius:
                                                   BorderRadius.circular(24.0),
@@ -2209,7 +2245,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               10.0, 10.0, 0.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -2265,7 +2301,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                   ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(5.0, 0.0, 0.0, 0.0),
                                               child: Container(
                                                 width: 30.0,
@@ -2282,7 +2318,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                   ),
                                                 ),
                                                 child: Padding(
-                                                  padding: const EdgeInsets.all(2.0),
+                                                  padding: EdgeInsets.all(2.0),
                                                   child: ClipRRect(
                                                     borderRadius:
                                                         BorderRadius.circular(
@@ -2302,7 +2338,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                         if (myBetPageMyBetsRecord.seen == false)
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 20.0, 0.0, 0.0),
                                             child: FFButtonWidget(
                                               onPressed: () async {
@@ -2339,11 +2375,11 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                               text: 'Ajouter à mon stock',
                                               options: FFButtonOptions(
                                                 height: 30.0,
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         12.0, 0.0, 12.0, 0.0),
                                                 iconPadding:
-                                                    const EdgeInsetsDirectional
+                                                    EdgeInsetsDirectional
                                                         .fromSTEB(
                                                             0.0, 0.0, 0.0, 0.0),
                                                 color:
@@ -2360,7 +2396,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                           letterSpacing: 0.0,
                                                         ),
                                                 elevation: 3.0,
-                                                borderSide: const BorderSide(
+                                                borderSide: BorderSide(
                                                   color: Colors.transparent,
                                                   width: 1.0,
                                                 ),
@@ -2393,7 +2429,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   5.0, 0.0, 0.0, 0.0),
                                           child: Container(
                                             width: 30.0,
@@ -2410,7 +2446,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                               ),
                                             ),
                                             child: Padding(
-                                              padding: const EdgeInsets.all(2.0),
+                                              padding: EdgeInsets.all(2.0),
                                               child: ClipRRect(
                                                 borderRadius:
                                                     BorderRadius.circular(24.0),
@@ -2435,7 +2471,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                             (myBetPageMyBetsRecord.seen == false) &&
                             (myBetPageMyBetsRecord.bet2 == null))
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 20.0, 0.0, 0.0),
                             child: FFButtonWidget(
                               onPressed: () async {
@@ -2443,7 +2479,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                   'ListEventsAdd2Bet',
                                   queryParameters: {
                                     'myBetRef': serializeParam(
-                                      widget.myBetRef,
+                                      widget!.myBetRef,
                                       ParamType.DocumentReference,
                                     ),
                                   }.withoutNulls,
@@ -2452,9 +2488,9 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                               text: 'Ajouter un paris',
                               options: FFButtonOptions(
                                 height: 30.0,
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     12.0, 0.0, 12.0, 0.0),
-                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: FlutterFlowTheme.of(context).success,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -2466,7 +2502,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                       letterSpacing: 0.0,
                                     ),
                                 elevation: 3.0,
-                                borderSide: const BorderSide(
+                                borderSide: BorderSide(
                                   color: Colors.transparent,
                                   width: 1.0,
                                 ),
@@ -2480,7 +2516,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                             (myBetPageMyBetsRecord.seen == false) &&
                             (myBetPageMyBetsRecord.bet2 != null))
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 20.0, 0.0, 0.0),
                             child: FFButtonWidget(
                               onPressed: () async {
@@ -2488,7 +2524,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                   'ListEventsAdd3Bet',
                                   queryParameters: {
                                     'myBetRef': serializeParam(
-                                      widget.myBetRef,
+                                      widget!.myBetRef,
                                       ParamType.DocumentReference,
                                     ),
                                   }.withoutNulls,
@@ -2497,9 +2533,9 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                               text: 'Ajouter un paris',
                               options: FFButtonOptions(
                                 height: 30.0,
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     12.0, 0.0, 12.0, 0.0),
-                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: FlutterFlowTheme.of(context).success,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -2511,7 +2547,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                       letterSpacing: 0.0,
                                     ),
                                 elevation: 3.0,
-                                borderSide: const BorderSide(
+                                borderSide: BorderSide(
                                   color: Colors.transparent,
                                   width: 1.0,
                                 ),
@@ -2523,18 +2559,18 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                           ),
                         if (myBetPageMyBetsRecord.bet1 == null)
                           Align(
-                            alignment: const AlignmentDirectional(-1.0, 0.0),
+                            alignment: AlignmentDirectional(-1.0, 0.0),
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 20.0, 0.0, 0.0),
                               child: FFButtonWidget(
                                 onPressed: () async {
-                                  await widget.myBetRef!.delete();
+                                  await widget!.myBetRef!.delete();
 
                                   context.pushNamed(
                                     'MyBetsList',
                                     extra: <String, dynamic>{
-                                      kTransitionInfoKey: const TransitionInfo(
+                                      kTransitionInfoKey: TransitionInfo(
                                         hasTransition: true,
                                         transitionType:
                                             PageTransitionType.leftToRight,
@@ -2546,9 +2582,9 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                 text: 'Supprimer',
                                 options: FFButtonOptions(
                                   height: 30.0,
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       12.0, 0.0, 12.0, 0.0),
-                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
                                   color: FlutterFlowTheme.of(context)
                                       .secondaryText,
@@ -2561,7 +2597,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                         letterSpacing: 0.0,
                                       ),
                                   elevation: 3.0,
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                     color: Colors.transparent,
                                     width: 1.0,
                                   ),
