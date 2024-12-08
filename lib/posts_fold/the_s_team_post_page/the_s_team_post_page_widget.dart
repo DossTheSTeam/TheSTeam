@@ -3,13 +3,9 @@ import '/backend/backend.dart';
 import '/backend/firebase_storage/storage.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'the_s_team_post_page_model.dart';
 export 'the_s_team_post_page_model.dart';
 
@@ -49,7 +45,7 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<PostsRecord>(
-      stream: PostsRecord.getDocument(widget!.postRef!),
+      stream: PostsRecord.getDocument(widget.postRef!),
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
@@ -79,9 +75,9 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
             body: SafeArea(
               top: true,
               child: Align(
-                alignment: AlignmentDirectional(0.0, -1.0),
+                alignment: const AlignmentDirectional(0.0, -1.0),
                 child: Padding(
-                  padding: EdgeInsets.all(10.0),
+                  padding: const EdgeInsets.all(10.0),
                   child: StreamBuilder<UsersRecord>(
                     stream: UsersRecord.getDocument(
                         theSTeamPostPagePostsRecord.member!),
@@ -129,7 +125,7 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                               'MenuPage',
                                               extra: <String, dynamic>{
                                                 kTransitionInfoKey:
-                                                    TransitionInfo(
+                                                    const TransitionInfo(
                                                   hasTransition: true,
                                                   transitionType:
                                                       PageTransitionType
@@ -149,7 +145,7 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   10.0, 0.0, 0.0, 0.0),
                                           child: InkWell(
                                             splashColor: Colors.transparent,
@@ -187,7 +183,7 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                         queryBuilder: (myPostsRecord) =>
                                             myPostsRecord.where(
                                           'posts',
-                                          isEqualTo: widget!.postRef,
+                                          isEqualTo: widget.postRef,
                                         ),
                                         singleRecord: true,
                                       ),
@@ -234,7 +230,7 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                                     (teamPostsRecord) =>
                                                         teamPostsRecord.where(
                                                   'posts',
-                                                  isEqualTo: widget!.postRef,
+                                                  isEqualTo: widget.postRef,
                                                 ),
                                                 singleRecord: true,
                                               ),
@@ -296,7 +292,7 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                                           highlightColor: Colors
                                                               .transparent,
                                                           onTap: () async {
-                                                            await widget!
+                                                            await widget
                                                                 .postRef!
                                                                 .delete();
                                                             await rowTeamPostsRecord!
@@ -329,12 +325,27 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                     ),
                                   ],
                                 ),
-                                if (theSTeamPostPagePostsRecord.title != null &&
-                                    theSTeamPostPagePostsRecord.title != '')
+                                if (valueOrDefault(
+                                        currentUserDocument?.stsocialapp, '') ==
+                                    'moderateur')
+                                  AuthUserStreamWidget(
+                                    builder: (context) => Text(
+                                      columnUsersRecord.reference.id,
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            color: FlutterFlowTheme.of(context)
+                                                .warning,
+                                            letterSpacing: 0.0,
+                                          ),
+                                    ),
+                                  ),
+                                if (theSTeamPostPagePostsRecord.title != '')
                                   Align(
-                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    alignment: const AlignmentDirectional(0.0, 0.0),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 20.0, 0.0, 0.0),
                                       child: Text(
                                         theSTeamPostPagePostsRecord.title,
@@ -348,10 +359,9 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                       ),
                                     ),
                                   ),
-                                if (theSTeamPostPagePostsRecord.image != null &&
-                                    theSTeamPostPagePostsRecord.image != '')
+                                if (theSTeamPostPagePostsRecord.image != '')
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 20.0, 0.0, 20.0),
                                     child: Container(
                                       width: 350.0,
@@ -363,7 +373,7 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                             BorderRadius.circular(18.0),
                                       ),
                                       child: Padding(
-                                        padding: EdgeInsets.all(3.0),
+                                        padding: const EdgeInsets.all(3.0),
                                         child: ClipRRect(
                                           borderRadius:
                                               BorderRadius.circular(15.0),
@@ -379,20 +389,18 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                   ),
                               ],
                             ),
-                            if (theSTeamPostPagePostsRecord.description !=
-                                    null &&
-                                theSTeamPostPagePostsRecord.description != '')
+                            if (theSTeamPostPagePostsRecord.description != '')
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 20.0, 0.0, 20.0),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Align(
                                       alignment:
-                                          AlignmentDirectional(-1.0, 0.0),
+                                          const AlignmentDirectional(-1.0, 0.0),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             10.0, 0.0, 10.0, 0.0),
                                         child: Text(
                                           theSTeamPostPagePostsRecord
@@ -410,8 +418,7 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                   ],
                                 ),
                               ),
-                            if (theSTeamPostPagePostsRecord.choice1 != null &&
-                                theSTeamPostPagePostsRecord.choice1 != '')
+                            if (theSTeamPostPagePostsRecord.choice1 != '')
                               Column(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
@@ -442,7 +449,7 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                                   highlightColor:
                                                       Colors.transparent,
                                                   onTap: () async {
-                                                    await widget!.postRef!
+                                                    await widget.postRef!
                                                         .update({
                                                       ...mapToFirestore(
                                                         {
@@ -468,7 +475,7 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                                     ),
                                                     child: Align(
                                                       alignment:
-                                                          AlignmentDirectional(
+                                                          const AlignmentDirectional(
                                                               0.0, 0.0),
                                                       child: Text(
                                                         theSTeamPostPagePostsRecord
@@ -497,7 +504,7 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                       ],
                                     ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 5.0, 0.0, 0.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
@@ -508,10 +515,10 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                               MainAxisAlignment.spaceBetween,
                                           children: [
                                             Align(
-                                              alignment: AlignmentDirectional(
+                                              alignment: const AlignmentDirectional(
                                                   0.0, 0.0),
                                               child: Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         25.0, 0.0, 0.0, 0.0),
                                                 child: Text(
@@ -536,7 +543,7 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                                 .list4choice1
                                                 .contains(currentUserReference))
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 0.0, 15.0, 0.0),
                                                 child: FaIcon(
@@ -551,10 +558,10 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                         ),
                                         Align(
                                           alignment:
-                                              AlignmentDirectional(0.0, 0.0),
+                                              const AlignmentDirectional(0.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 5.0, 0.0, 10.0),
                                             child: Text(
                                               valueOrDefault<String>(
@@ -608,7 +615,7 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                                       highlightColor:
                                                           Colors.transparent,
                                                       onTap: () async {
-                                                        await widget!.postRef!
+                                                        await widget.postRef!
                                                             .update({
                                                           ...mapToFirestore(
                                                             {
@@ -636,7 +643,7 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                                         ),
                                                         child: Align(
                                                           alignment:
-                                                              AlignmentDirectional(
+                                                              const AlignmentDirectional(
                                                                   0.0, 0.0),
                                                           child: Text(
                                                             theSTeamPostPagePostsRecord
@@ -670,9 +677,9 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                         children: [
                                           Align(
                                             alignment:
-                                                AlignmentDirectional(0.0, 0.0),
+                                                const AlignmentDirectional(0.0, 0.0),
                                             child: Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       25.0, 0.0, 0.0, 0.0),
                                               child: Text(
@@ -696,7 +703,7 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                               .list4choice2
                                               .contains(currentUserReference))
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 0.0, 15.0, 0.0),
                                               child: FaIcon(
@@ -711,10 +718,10 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                       ),
                                       Align(
                                         alignment:
-                                            AlignmentDirectional(0.0, 0.0),
+                                            const AlignmentDirectional(0.0, 0.0),
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 5.0, 0.0, 10.0),
                                           child: Text(
                                             valueOrDefault<String>(
@@ -735,9 +742,7 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                       ),
                                     ],
                                   ),
-                                  if (theSTeamPostPagePostsRecord.choice3 !=
-                                          null &&
-                                      theSTeamPostPagePostsRecord.choice3 != '')
+                                  if (theSTeamPostPagePostsRecord.choice3 != '')
                                     Column(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
@@ -771,7 +776,7 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                                         highlightColor:
                                                             Colors.transparent,
                                                         onTap: () async {
-                                                          await widget!.postRef!
+                                                          await widget.postRef!
                                                               .update({
                                                             ...mapToFirestore(
                                                               {
@@ -799,7 +804,7 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                                           ),
                                                           child: Align(
                                                             alignment:
-                                                                AlignmentDirectional(
+                                                                const AlignmentDirectional(
                                                                     0.0, 0.0),
                                                             child: Text(
                                                               theSTeamPostPagePostsRecord
@@ -833,10 +838,10 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                               MainAxisAlignment.spaceBetween,
                                           children: [
                                             Align(
-                                              alignment: AlignmentDirectional(
+                                              alignment: const AlignmentDirectional(
                                                   0.0, 0.0),
                                               child: Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         25.0, 0.0, 0.0, 0.0),
                                                 child: Text(
@@ -861,7 +866,7 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                                 .list4choice3
                                                 .contains(currentUserReference))
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 0.0, 15.0, 0.0),
                                                 child: FaIcon(
@@ -876,10 +881,10 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                         ),
                                         Align(
                                           alignment:
-                                              AlignmentDirectional(0.0, 0.0),
+                                              const AlignmentDirectional(0.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 5.0, 0.0, 10.0),
                                             child: Text(
                                               valueOrDefault<String>(
@@ -906,11 +911,9 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                             Column(
                               mainAxisSize: MainAxisSize.max,
                               children: [
-                                if (theSTeamPostPagePostsRecord.choice1 ==
-                                        null ||
-                                    theSTeamPostPagePostsRecord.choice1 == '')
+                                if (theSTeamPostPagePostsRecord.choice1 == '')
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 10.0, 0.0, 5.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -919,7 +922,7 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                       children: [
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   20.0, 3.0, 0.0, 0.0),
                                           child: Text(
                                             'Ecrit par',
@@ -933,13 +936,13 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   5.0, 0.0, 0.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         5.0, 0.0, 6.0, 0.0),
                                                 child: Container(
@@ -987,9 +990,9 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                     ),
                                   ),
                                 Align(
-                                  alignment: AlignmentDirectional(-1.0, 0.0),
+                                  alignment: const AlignmentDirectional(-1.0, 0.0),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         20.0, 0.0, 10.0, 0.0),
                                     child: Text(
                                       dateTimeFormat(
@@ -1012,7 +1015,7 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                       .secondaryBackground,
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       10.0, 0.0, 10.0, 0.0),
                                   child: SingleChildScrollView(
                                     scrollDirection: Axis.horizontal,
@@ -1023,13 +1026,13 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                       children: [
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 10.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 0.0, 5.0, 0.0),
                                                 child: InkWell(
@@ -1055,7 +1058,7 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                                       }.withoutNulls,
                                                       extra: <String, dynamic>{
                                                         kTransitionInfoKey:
-                                                            TransitionInfo(
+                                                            const TransitionInfo(
                                                           hasTransition: true,
                                                           transitionType:
                                                               PageTransitionType
@@ -1098,7 +1101,7 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   5.0, 0.0, 10.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -1108,7 +1111,7 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                                   .contains(
                                                       currentUserReference))
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 5.0, 0.0),
                                                   child: InkWell(
@@ -1121,7 +1124,7 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                                     highlightColor:
                                                         Colors.transparent,
                                                     onTap: () async {
-                                                      await widget!.postRef!
+                                                      await widget.postRef!
                                                           .update({
                                                         ...mapToFirestore(
                                                           {
@@ -1164,7 +1167,7 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                                   .contains(
                                                       currentUserReference))
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 5.0, 0.0),
                                                   child: InkWell(
@@ -1177,7 +1180,7 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                                     highlightColor:
                                                         Colors.transparent,
                                                     onTap: () async {
-                                                      await widget!.postRef!
+                                                      await widget.postRef!
                                                           .update({
                                                         ...mapToFirestore(
                                                           {
@@ -1236,7 +1239,7 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   5.0, 0.0, 10.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -1246,7 +1249,7 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                                   .contains(
                                                       currentUserReference))
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 5.0, 0.0),
                                                   child: InkWell(
@@ -1259,7 +1262,7 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                                     highlightColor:
                                                         Colors.transparent,
                                                     onTap: () async {
-                                                      await widget!.postRef!
+                                                      await widget.postRef!
                                                           .update({
                                                         ...mapToFirestore(
                                                           {
@@ -1303,7 +1306,7 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                                   .contains(
                                                       currentUserReference))
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 5.0, 0.0),
                                                   child: InkWell(
@@ -1316,7 +1319,7 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                                     highlightColor:
                                                         Colors.transparent,
                                                     onTap: () async {
-                                                      await widget!.postRef!
+                                                      await widget.postRef!
                                                           .update({
                                                         ...mapToFirestore(
                                                           {
@@ -1384,7 +1387,7 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                       .secondaryBackground,
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       5.0, 0.0, 5.0, 20.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -1394,7 +1397,7 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                         children: [
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 5.0, 0.0),
                                             child: Icon(
                                               Icons.mic_rounded,
@@ -1406,7 +1409,7 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 10.0, 0.0),
                                             child: InkWell(
                                               splashColor: Colors.transparent,
@@ -1501,8 +1504,7 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                               ),
                                             ),
                                           ),
-                                          if (_model.uploadedFileUrl != null &&
-                                              _model.uploadedFileUrl != '')
+                                          if (_model.uploadedFileUrl != '')
                                             Container(
                                               width: 50.0,
                                               height: 40.0,
@@ -1514,7 +1516,7 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                                     BorderRadius.circular(6.0),
                                               ),
                                               child: Padding(
-                                                padding: EdgeInsets.all(2.0),
+                                                padding: const EdgeInsets.all(2.0),
                                                 child: ClipRRect(
                                                   borderRadius:
                                                       BorderRadius.circular(
@@ -1533,7 +1535,7 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                       Expanded(
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   8.0, 0.0, 8.0, 0.0),
                                           child: TextFormField(
                                             controller:
@@ -1616,7 +1618,7 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             10.0, 0.0, 5.0, 0.0),
                                         child: InkWell(
                                           splashColor: Colors.transparent,
@@ -1626,7 +1628,7 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                           onTap: () async {
                                             var postMessagesRecordReference =
                                                 PostMessagesRecord.createDoc(
-                                                    widget!.postRef!);
+                                                    widget.postRef!);
                                             await postMessagesRecordReference
                                                 .set({
                                               ...createPostMessagesRecordData(
@@ -1667,7 +1669,7 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                               ),
                                             }, postMessagesRecordReference);
 
-                                            await widget!.postRef!.update({
+                                            await widget.postRef!.update({
                                               ...mapToFirestore(
                                                 {
                                                   'num_comments':
@@ -1680,13 +1682,13 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                               'ListPostMessages',
                                               queryParameters: {
                                                 'postRef': serializeParam(
-                                                  widget!.postRef,
+                                                  widget.postRef,
                                                   ParamType.DocumentReference,
                                                 ),
                                               }.withoutNulls,
                                               extra: <String, dynamic>{
                                                 kTransitionInfoKey:
-                                                    TransitionInfo(
+                                                    const TransitionInfo(
                                                   hasTransition: true,
                                                   transitionType:
                                                       PageTransitionType.scale,

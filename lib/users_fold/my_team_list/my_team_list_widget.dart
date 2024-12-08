@@ -1,17 +1,9 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
-import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:math';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'my_team_list_model.dart';
 export 'my_team_list_model.dart';
 
@@ -49,16 +41,16 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         body: Align(
-          alignment: AlignmentDirectional(0.0, -1.0),
+          alignment: const AlignmentDirectional(0.0, -1.0),
           child: Padding(
-            padding: EdgeInsets.all(10.0),
+            padding: const EdgeInsets.all(10.0),
             child: SingleChildScrollView(
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -69,36 +61,38 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                             Column(
                               mainAxisSize: MainAxisSize.max,
                               children: [
-                                InkWell(
-                                  splashColor: Colors.transparent,
-                                  focusColor: Colors.transparent,
-                                  hoverColor: Colors.transparent,
-                                  highlightColor: Colors.transparent,
-                                  onTap: () async {
-                                    context.pushNamed(
-                                      'MenuPage',
-                                      extra: <String, dynamic>{
-                                        kTransitionInfoKey: TransitionInfo(
-                                          hasTransition: true,
-                                          transitionType:
-                                              PageTransitionType.leftToRight,
-                                          duration: Duration(milliseconds: 400),
-                                        ),
-                                      },
-                                    );
-                                  },
-                                  child: Icon(
-                                    Icons.menu_rounded,
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryText,
-                                    size: 30.0,
+                                AuthUserStreamWidget(
+                                  builder: (context) => InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      context.pushNamed(
+                                        'MenuPage',
+                                        extra: <String, dynamic>{
+                                          kTransitionInfoKey: const TransitionInfo(
+                                            hasTransition: true,
+                                            transitionType:
+                                                PageTransitionType.leftToRight,
+                                            duration:
+                                                Duration(milliseconds: 400),
+                                          ),
+                                        },
+                                      );
+                                    },
+                                    child: Icon(
+                                      Icons.menu_rounded,
+                                      color: currentUserDocument?.color1,
+                                      size: 30.0,
+                                    ),
                                   ),
                                 ),
                                 if (valueOrDefault<bool>(
                                         currentUserDocument?.helpNav, false) ==
                                     true)
                                   Align(
-                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    alignment: const AlignmentDirectional(0.0, 0.0),
                                     child: AuthUserStreamWidget(
                                       builder: (context) => Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -107,7 +101,7 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                         children: [
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 3.0, 0.0, 0.0),
                                             child: Text(
                                               'Menu',
@@ -135,28 +129,29 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                               ],
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 0.0, 0.0),
-                              child: InkWell(
-                                splashColor: Colors.transparent,
-                                focusColor: Colors.transparent,
-                                hoverColor: Colors.transparent,
-                                highlightColor: Colors.transparent,
-                                onTap: () async {
-                                  context.safePop();
-                                },
-                                child: Icon(
-                                  Icons.arrow_back_ios_new_rounded,
-                                  color:
-                                      FlutterFlowTheme.of(context).primaryText,
-                                  size: 30.0,
+                              child: AuthUserStreamWidget(
+                                builder: (context) => InkWell(
+                                  splashColor: Colors.transparent,
+                                  focusColor: Colors.transparent,
+                                  hoverColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
+                                  onTap: () async {
+                                    context.safePop();
+                                  },
+                                  child: Icon(
+                                    Icons.arrow_back_ios_new_rounded,
+                                    color: currentUserDocument?.color1,
+                                    size: 30.0,
+                                  ),
                                 ),
                               ),
                             ),
                             Align(
-                              alignment: AlignmentDirectional(0.0, 0.0),
+                              alignment: const AlignmentDirectional(0.0, 0.0),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     45.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   'Mes équipes',
@@ -209,7 +204,7 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 children: [
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 10.0, 0.0),
                                     child: InkWell(
                                       splashColor: Colors.transparent,
@@ -220,7 +215,7 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                         context.pushNamed(
                                           'MyNotifsList',
                                           extra: <String, dynamic>{
-                                            kTransitionInfoKey: TransitionInfo(
+                                            kTransitionInfoKey: const TransitionInfo(
                                               hasTransition: true,
                                               transitionType: PageTransitionType
                                                   .rightToLeft,
@@ -233,7 +228,7 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                       child: Icon(
                                         Icons.notifications_active_outlined,
                                         color: FlutterFlowTheme.of(context)
-                                            .accent3,
+                                            .accent1,
                                         size: 40.0,
                                       ),
                                     ),
@@ -257,15 +252,15 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding: EdgeInsets.all(16.0),
+                                padding: const EdgeInsets.all(16.0),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Align(
-                                      alignment: AlignmentDirectional(0.0, 0.0),
+                                      alignment: const AlignmentDirectional(0.0, 0.0),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 10.0, 0.0, 0.0),
                                         child: Wrap(
                                           spacing: 16.0,
@@ -323,7 +318,7 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                       MediaQuery.sizeOf(context)
                                                               .width *
                                                           0.4,
-                                                  height: 60.0,
+                                                  height: 65.0,
                                                   decoration: BoxDecoration(
                                                     color: FlutterFlowTheme.of(
                                                             context)
@@ -332,8 +327,10 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                       BoxShadow(
                                                         blurRadius: 4.0,
                                                         color:
-                                                            Color(0x33000000),
-                                                        offset: Offset(
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .accent3,
+                                                        offset: const Offset(
                                                           0.0,
                                                           2.0,
                                                         ),
@@ -357,7 +354,7 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                           true)
                                                         Align(
                                                           alignment:
-                                                              AlignmentDirectional(
+                                                              const AlignmentDirectional(
                                                                   0.0, 0.0),
                                                           child: Row(
                                                             mainAxisSize:
@@ -369,7 +366,7 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                             children: [
                                                               Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -453,7 +450,7 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                                   .admin_panel_settings_rounded,
                                                               color: FlutterFlowTheme
                                                                       .of(context)
-                                                                  .accent3,
+                                                                  .accent1,
                                                               size: 44.0,
                                                             ),
                                                           ),
@@ -534,7 +531,7 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                       MediaQuery.sizeOf(context)
                                                               .width *
                                                           0.4,
-                                                  height: 60.0,
+                                                  height: 65.0,
                                                   decoration: BoxDecoration(
                                                     color: FlutterFlowTheme.of(
                                                             context)
@@ -543,8 +540,10 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                       BoxShadow(
                                                         blurRadius: 4.0,
                                                         color:
-                                                            Color(0x33000000),
-                                                        offset: Offset(
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .accent3,
+                                                        offset: const Offset(
                                                           0.0,
                                                           2.0,
                                                         ),
@@ -568,7 +567,7 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                           true)
                                                         Align(
                                                           alignment:
-                                                              AlignmentDirectional(
+                                                              const AlignmentDirectional(
                                                                   0.0, 0.0),
                                                           child: Row(
                                                             mainAxisSize:
@@ -580,7 +579,7 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                             children: [
                                                               Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -709,7 +708,7 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                               ),
                               if (_model.showMyTeams != null)
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 10.0),
                                   child: StreamBuilder<List<MyTeamsRecord>>(
                                     stream: queryMyTeamsRecord(
@@ -751,7 +750,7 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                   columnMyTeamsIndex];
                                           return Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     10.0, 0.0, 10.0, 10.0),
                                             child: StreamBuilder<TeamsRecord>(
                                               stream: TeamsRecord.getDocument(
@@ -794,7 +793,7 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                       children: [
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       5.0,
                                                                       0.0,
@@ -822,7 +821,7 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                       children: [
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -835,7 +834,7 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                             children: [
                                                               Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -870,7 +869,7 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                                       extra: <String,
                                                                           dynamic>{
                                                                         kTransitionInfoKey:
-                                                                            TransitionInfo(
+                                                                            const TransitionInfo(
                                                                           hasTransition:
                                                                               true,
                                                                           transitionType:
@@ -914,7 +913,7 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                               ),
                                                               Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -949,7 +948,7 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                                       extra: <String,
                                                                           dynamic>{
                                                                         kTransitionInfoKey:
-                                                                            TransitionInfo(
+                                                                            const TransitionInfo(
                                                                           hasTransition:
                                                                               true,
                                                                           transitionType:
@@ -963,9 +962,14 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                                   child: FaIcon(
                                                                     FontAwesomeIcons
                                                                         .edit,
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .secondaryText,
+                                                                    color: valueOrDefault<
+                                                                        Color>(
+                                                                      rowMyTeamTeamsRecord
+                                                                          .color1,
+                                                                      FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .secondaryText,
+                                                                    ),
                                                                     size: 30.0,
                                                                   ),
                                                                 ),
@@ -981,7 +985,7 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                             true)
                                                           Align(
                                                             alignment:
-                                                                AlignmentDirectional(
+                                                                const AlignmentDirectional(
                                                                     0.0, 0.0),
                                                             child: Row(
                                                               mainAxisSize:
@@ -992,7 +996,7 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                                       .end,
                                                               children: [
                                                                 Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           6.0,
                                                                           0.0,
@@ -1099,7 +1103,7 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                 columnTeamsLikesIndex];
                                         return Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   10.0, 0.0, 10.0, 10.0),
                                           child: StreamBuilder<TeamsRecord>(
                                             stream: TeamsRecord.getDocument(
@@ -1184,7 +1188,7 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                           ),
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         5.0,
                                                                         0.0,
@@ -1213,7 +1217,7 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                           true)
                                                         Align(
                                                           alignment:
-                                                              AlignmentDirectional(
+                                                              const AlignmentDirectional(
                                                                   0.0, 0.0),
                                                           child: Row(
                                                             mainAxisSize:
@@ -1225,7 +1229,7 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                             children: [
                                                               Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -1287,7 +1291,7 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                             extra: <String,
                                                                 dynamic>{
                                                               kTransitionInfoKey:
-                                                                  TransitionInfo(
+                                                                  const TransitionInfo(
                                                                 hasTransition:
                                                                     true,
                                                                 transitionType:
@@ -1333,7 +1337,7 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                           true)
                                                         Align(
                                                           alignment:
-                                                              AlignmentDirectional(
+                                                              const AlignmentDirectional(
                                                                   0.0, 0.0),
                                                           child: Row(
                                                             mainAxisSize:
@@ -1345,7 +1349,7 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                             children: [
                                                               Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             6.0,
                                                                             3.0,
@@ -1399,15 +1403,15 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding: EdgeInsets.all(16.0),
+                                padding: const EdgeInsets.all(16.0),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Align(
-                                      alignment: AlignmentDirectional(0.0, 0.0),
+                                      alignment: const AlignmentDirectional(0.0, 0.0),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 10.0, 0.0, 0.0),
                                         child: Wrap(
                                           spacing: 16.0,
@@ -1465,7 +1469,7 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                       MediaQuery.sizeOf(context)
                                                               .width *
                                                           0.4,
-                                                  height: 60.0,
+                                                  height: 65.0,
                                                   decoration: BoxDecoration(
                                                     color: FlutterFlowTheme.of(
                                                             context)
@@ -1474,8 +1478,10 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                       BoxShadow(
                                                         blurRadius: 4.0,
                                                         color:
-                                                            Color(0x33000000),
-                                                        offset: Offset(
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .accent3,
+                                                        offset: const Offset(
                                                           0.0,
                                                           2.0,
                                                         ),
@@ -1499,7 +1505,7 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                           true)
                                                         Align(
                                                           alignment:
-                                                              AlignmentDirectional(
+                                                              const AlignmentDirectional(
                                                                   0.0, 0.0),
                                                           child: Row(
                                                             mainAxisSize:
@@ -1511,7 +1517,7 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                             children: [
                                                               Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -1595,7 +1601,7 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                                   .admin_panel_settings_rounded,
                                                               color: FlutterFlowTheme
                                                                       .of(context)
-                                                                  .accent3,
+                                                                  .accent1,
                                                               size: 44.0,
                                                             ),
                                                           ),
@@ -1676,7 +1682,7 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                       MediaQuery.sizeOf(context)
                                                               .width *
                                                           0.4,
-                                                  height: 60.0,
+                                                  height: 65.0,
                                                   decoration: BoxDecoration(
                                                     color: FlutterFlowTheme.of(
                                                             context)
@@ -1685,8 +1691,10 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                       BoxShadow(
                                                         blurRadius: 4.0,
                                                         color:
-                                                            Color(0x33000000),
-                                                        offset: Offset(
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .accent3,
+                                                        offset: const Offset(
                                                           0.0,
                                                           2.0,
                                                         ),
@@ -1710,7 +1718,7 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                           true)
                                                         Align(
                                                           alignment:
-                                                              AlignmentDirectional(
+                                                              const AlignmentDirectional(
                                                                   0.0, 0.0),
                                                           child: Row(
                                                             mainAxisSize:
@@ -1722,7 +1730,7 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                             children: [
                                                               Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -1851,7 +1859,7 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                               ),
                               if (currentUserDocument?.eteamRef == null)
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       10.0, 0.0, 10.0, 10.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -1863,7 +1871,7 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 0.0, 10.0, 0.0),
                                               child: Container(
@@ -1897,7 +1905,7 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                   children: [
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   0.0,
@@ -1918,7 +1926,7 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                             extra: <String,
                                                                 dynamic>{
                                                               kTransitionInfoKey:
-                                                                  TransitionInfo(
+                                                                  const TransitionInfo(
                                                                 hasTransition:
                                                                     true,
                                                                 transitionType:
@@ -1955,7 +1963,7 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                           extra: <String,
                                                               dynamic>{
                                                             kTransitionInfoKey:
-                                                                TransitionInfo(
+                                                                const TransitionInfo(
                                                               hasTransition:
                                                                   true,
                                                               transitionType:
@@ -1986,11 +1994,11 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                     true)
                                                   Align(
                                                     alignment:
-                                                        AlignmentDirectional(
+                                                        const AlignmentDirectional(
                                                             0.0, 0.0),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   3.0,
@@ -2005,7 +2013,7 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                         children: [
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
@@ -2071,7 +2079,7 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                 ),
                               if (_model.showMyTeams != null)
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 10.0),
                                   child: StreamBuilder<List<MyTeamsRecord>>(
                                     stream: queryMyTeamsRecord(
@@ -2155,7 +2163,7 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                         columnTeamsRecord.boss)
                                                       Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     10.0,
                                                                     0.0,
@@ -2177,7 +2185,7 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                                       .start,
                                                               children: [
                                                                 Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -2213,7 +2221,7 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                                         extra: <String,
                                                                             dynamic>{
                                                                           kTransitionInfoKey:
-                                                                              TransitionInfo(
+                                                                              const TransitionInfo(
                                                                             hasTransition:
                                                                                 true,
                                                                             transitionType:
@@ -2227,9 +2235,8 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                                     child: Icon(
                                                                       Icons
                                                                           .menu_rounded,
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .secondaryText,
+                                                                      color: columnTeamsRecord
+                                                                          .color1,
                                                                       size:
                                                                           30.0,
                                                                     ),
@@ -2243,7 +2250,7 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                                     true)
                                                                   Align(
                                                                     alignment:
-                                                                        AlignmentDirectional(
+                                                                        const AlignmentDirectional(
                                                                             0.0,
                                                                             0.0),
                                                                     child: Row(
@@ -2255,14 +2262,14 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                                               .end,
                                                                       children: [
                                                                         Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
                                                                               0.0,
                                                                               3.0,
                                                                               0.0,
                                                                               0.0),
                                                                           child:
                                                                               Text(
-                                                                            'Menu',
+                                                                            'Menu\nE Team',
                                                                             textAlign:
                                                                                 TextAlign.center,
                                                                             maxLines:
@@ -2287,7 +2294,7 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                                       .max,
                                                               children: [
                                                                 Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           5.0,
                                                                           0.0,
@@ -2302,6 +2309,8 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                                         .override(
                                                                           fontFamily:
                                                                               'Poppins',
+                                                                          color:
+                                                                              columnTeamsRecord.color1,
                                                                           letterSpacing:
                                                                               0.0,
                                                                         ),
@@ -2348,7 +2357,7 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                                           extra: <String,
                                                                               dynamic>{
                                                                             kTransitionInfoKey:
-                                                                                TransitionInfo(
+                                                                                const TransitionInfo(
                                                                               hasTransition: true,
                                                                               transitionType: PageTransitionType.bottomToTop,
                                                                               duration: Duration(milliseconds: 400),
@@ -2394,7 +2403,7 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                                     true)
                                                                   Align(
                                                                     alignment:
-                                                                        AlignmentDirectional(
+                                                                        const AlignmentDirectional(
                                                                             0.0,
                                                                             0.0),
                                                                     child: Row(
@@ -2406,7 +2415,7 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                                               .end,
                                                                       children: [
                                                                         Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
                                                                               6.0,
                                                                               3.0,
                                                                               12.0,
@@ -2440,7 +2449,7 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                         currentUserReference)
                                                       Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     10.0,
                                                                     0.0,
@@ -2516,7 +2525,7 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                                       ),
                                                                     ),
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           5.0,
                                                                           0.0,
                                                                           0.0,
@@ -2543,7 +2552,7 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                                     true)
                                                                   Align(
                                                                     alignment:
-                                                                        AlignmentDirectional(
+                                                                        const AlignmentDirectional(
                                                                             0.0,
                                                                             0.0),
                                                                     child: Row(
@@ -2555,7 +2564,7 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                                               .end,
                                                                       children: [
                                                                         Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
                                                                               0.0,
                                                                               0.0,
                                                                               1.0,
@@ -2620,7 +2629,7 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                                           extra: <String,
                                                                               dynamic>{
                                                                             kTransitionInfoKey:
-                                                                                TransitionInfo(
+                                                                                const TransitionInfo(
                                                                               hasTransition: true,
                                                                               transitionType: PageTransitionType.bottomToTop,
                                                                               duration: Duration(milliseconds: 400),
@@ -2666,7 +2675,7 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                                     true)
                                                                   Align(
                                                                     alignment:
-                                                                        AlignmentDirectional(
+                                                                        const AlignmentDirectional(
                                                                             0.0,
                                                                             0.0),
                                                                     child: Row(
@@ -2678,7 +2687,7 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                                               .end,
                                                                       children: [
                                                                         Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
                                                                               6.0,
                                                                               3.0,
                                                                               12.0,
@@ -2757,7 +2766,7 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                 columnTeamsLikesIndex];
                                         return Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   10.0, 0.0, 10.0, 10.0),
                                           child: StreamBuilder<TeamsRecord>(
                                             stream: TeamsRecord.getDocument(
@@ -2855,11 +2864,11 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                           ),
                                                           Align(
                                                             alignment:
-                                                                AlignmentDirectional(
+                                                                const AlignmentDirectional(
                                                                     -1.0, 0.0),
                                                             child: Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           5.0,
                                                                           0.0,
@@ -2889,7 +2898,7 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                           true)
                                                         Align(
                                                           alignment:
-                                                              AlignmentDirectional(
+                                                              const AlignmentDirectional(
                                                                   0.0, 0.0),
                                                           child: Row(
                                                             mainAxisSize:
@@ -2901,7 +2910,7 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                             children: [
                                                               Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -2963,7 +2972,7 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                             extra: <String,
                                                                 dynamic>{
                                                               kTransitionInfoKey:
-                                                                  TransitionInfo(
+                                                                  const TransitionInfo(
                                                                 hasTransition:
                                                                     true,
                                                                 transitionType:
@@ -3009,7 +3018,7 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                           true)
                                                         Align(
                                                           alignment:
-                                                              AlignmentDirectional(
+                                                              const AlignmentDirectional(
                                                                   0.0, 0.0),
                                                           child: Row(
                                                             mainAxisSize:
@@ -3021,7 +3030,7 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                             children: [
                                                               Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             6.0,
                                                                             3.0,

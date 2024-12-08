@@ -6,10 +6,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'my_bet_page_model.dart';
 export 'my_bet_page_model.dart';
 
@@ -46,7 +43,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<MyBetsRecord>(
-      stream: MyBetsRecord.getDocument(widget!.myBetRef!),
+      stream: MyBetsRecord.getDocument(widget.myBetRef!),
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
@@ -76,9 +73,9 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
             body: SafeArea(
               top: true,
               child: Align(
-                alignment: AlignmentDirectional(0.0, -1.0),
+                alignment: const AlignmentDirectional(0.0, -1.0),
                 child: Padding(
-                  padding: EdgeInsets.all(10.0),
+                  padding: const EdgeInsets.all(10.0),
                   child: SingleChildScrollView(
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
@@ -87,7 +84,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 5.0, 0.0, 5.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -100,62 +97,65 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                       Row(
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
-                                          InkWell(
-                                            splashColor: Colors.transparent,
-                                            focusColor: Colors.transparent,
-                                            hoverColor: Colors.transparent,
-                                            highlightColor: Colors.transparent,
-                                            onTap: () async {
-                                              context.pushNamed(
-                                                'MenuPage',
-                                                extra: <String, dynamic>{
-                                                  kTransitionInfoKey:
-                                                      TransitionInfo(
-                                                    hasTransition: true,
-                                                    transitionType:
-                                                        PageTransitionType
-                                                            .leftToRight,
-                                                    duration: Duration(
-                                                        milliseconds: 400),
-                                                  ),
-                                                },
-                                              );
-                                            },
-                                            child: Icon(
-                                              Icons.menu_rounded,
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primaryText,
-                                              size: 30.0,
-                                            ),
-                                          ),
-                                          Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    10.0, 0.0, 0.0, 0.0),
-                                            child: InkWell(
+                                          AuthUserStreamWidget(
+                                            builder: (context) => InkWell(
                                               splashColor: Colors.transparent,
                                               focusColor: Colors.transparent,
                                               hoverColor: Colors.transparent,
                                               highlightColor:
                                                   Colors.transparent,
                                               onTap: () async {
-                                                context.safePop();
+                                                context.pushNamed(
+                                                  'MenuPage',
+                                                  extra: <String, dynamic>{
+                                                    kTransitionInfoKey:
+                                                        const TransitionInfo(
+                                                      hasTransition: true,
+                                                      transitionType:
+                                                          PageTransitionType
+                                                              .leftToRight,
+                                                      duration: Duration(
+                                                          milliseconds: 400),
+                                                    ),
+                                                  },
+                                                );
                                               },
                                               child: Icon(
-                                                Icons
-                                                    .arrow_back_ios_new_rounded,
+                                                Icons.menu_rounded,
                                                 color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryText,
+                                                    currentUserDocument?.color1,
                                                 size: 30.0,
+                                              ),
+                                            ),
+                                          ),
+                                          Padding(
+                                            padding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    10.0, 0.0, 0.0, 0.0),
+                                            child: AuthUserStreamWidget(
+                                              builder: (context) => InkWell(
+                                                splashColor: Colors.transparent,
+                                                focusColor: Colors.transparent,
+                                                hoverColor: Colors.transparent,
+                                                highlightColor:
+                                                    Colors.transparent,
+                                                onTap: () async {
+                                                  context.safePop();
+                                                },
+                                                child: Icon(
+                                                  Icons
+                                                      .arrow_back_ios_new_rounded,
+                                                  color: currentUserDocument
+                                                      ?.color1,
+                                                  size: 30.0,
+                                                ),
                                               ),
                                             ),
                                           ),
                                         ],
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             10.0, 0.0, 0.0, 0.0),
                                         child: AuthUserStreamWidget(
                                           builder: (context) => Text(
@@ -201,7 +201,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       5.0, 0.0, 0.0, 0.0),
                                   child: Container(
                                     width: 30.0,
@@ -209,6 +209,17 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                     decoration: BoxDecoration(
                                       color:
                                           FlutterFlowTheme.of(context).primary,
+                                      boxShadow: [
+                                        BoxShadow(
+                                          blurRadius: 4.0,
+                                          color: FlutterFlowTheme.of(context)
+                                              .accent3,
+                                          offset: const Offset(
+                                            0.0,
+                                            2.0,
+                                          ),
+                                        )
+                                      ],
                                       shape: BoxShape.circle,
                                       border: Border.all(
                                         color: FlutterFlowTheme.of(context)
@@ -216,7 +227,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                       ),
                                     ),
                                     child: Padding(
-                                      padding: EdgeInsets.all(2.0),
+                                      padding: const EdgeInsets.all(2.0),
                                       child: ClipRRect(
                                         borderRadius:
                                             BorderRadius.circular(24.0),
@@ -274,7 +285,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                         children: [
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     10.0, 0.0, 10.0, 0.0),
                                             child: InkWell(
                                               splashColor: Colors.transparent,
@@ -287,7 +298,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                   'MyNotifsList',
                                                   extra: <String, dynamic>{
                                                     kTransitionInfoKey:
-                                                        TransitionInfo(
+                                                        const TransitionInfo(
                                                       hasTransition: true,
                                                       transitionType:
                                                           PageTransitionType
@@ -303,7 +314,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                     .notifications_active_outlined,
                                                 color:
                                                     FlutterFlowTheme.of(context)
-                                                        .accent3,
+                                                        .accent1,
                                                 size: 40.0,
                                               ),
                                             ),
@@ -316,13 +327,14 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                             ),
                           ],
                         ),
-                        Divider(
-                          thickness: 1.0,
-                          color:
-                              FlutterFlowTheme.of(context).secondaryBackground,
+                        AuthUserStreamWidget(
+                          builder: (context) => Divider(
+                            thickness: 1.0,
+                            color: currentUserDocument?.color2,
+                          ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 20.0, 0.0, 0.0),
                           child: StreamBuilder<BetsRecord>(
                             stream: BetsRecord.getDocument(
@@ -414,7 +426,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                               ),
                                                               Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             3.0,
                                                                             0.0,
@@ -453,7 +465,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                               ),
                                                               Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             2.0,
                                                                             0.0,
@@ -549,11 +561,11 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                             ),
                                                             child: Align(
                                                               alignment:
-                                                                  AlignmentDirectional(
+                                                                  const AlignmentDirectional(
                                                                       1.0, 0.0),
                                                               child: Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -580,7 +592,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                           ),
                                                           Align(
                                                             alignment:
-                                                                AlignmentDirectional(
+                                                                const AlignmentDirectional(
                                                                     0.0, 0.0),
                                                             child: InkWell(
                                                               splashColor: Colors
@@ -609,7 +621,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                                   extra: <String,
                                                                       dynamic>{
                                                                     kTransitionInfoKey:
-                                                                        TransitionInfo(
+                                                                        const TransitionInfo(
                                                                       hasTransition:
                                                                           true,
                                                                       transitionType:
@@ -643,12 +655,12 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                             ),
                                                             child: Align(
                                                               alignment:
-                                                                  AlignmentDirectional(
+                                                                  const AlignmentDirectional(
                                                                       -1.0,
                                                                       0.0),
                                                               child: Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             5.0,
                                                                             0.0,
@@ -687,7 +699,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                 children: [
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(20.0, 0.0,
                                                                 0.0, 0.0),
                                                     child: Text(
@@ -709,7 +721,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                     children: [
                                                       Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     0.0,
@@ -746,7 +758,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                           false)
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -761,7 +773,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                                       .statut ==
                                                                   true)
                                                                 Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -786,7 +798,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                                       .statut ==
                                                                   false)
                                                                 Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -814,12 +826,6 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                   ),
                                                 ],
                                               ),
-                                              Divider(
-                                                thickness: 1.0,
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryBackground,
-                                              ),
                                             ],
                                           ),
                                         ],
@@ -831,9 +837,15 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                             },
                           ),
                         ),
+                        AuthUserStreamWidget(
+                          builder: (context) => Divider(
+                            thickness: 1.0,
+                            color: currentUserDocument?.color2,
+                          ),
+                        ),
                         if (myBetPageMyBetsRecord.bet2 != null)
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 20.0, 0.0, 0.0),
                             child: StreamBuilder<BetsRecord>(
                               stream: BetsRecord.getDocument(
@@ -927,7 +939,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                                       ),
                                                                 ),
                                                                 Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           3.0,
                                                                           0.0,
@@ -965,7 +977,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                                       ),
                                                                 ),
                                                                 Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           2.0,
                                                                           0.0,
@@ -1063,11 +1075,11 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                               ),
                                                               child: Align(
                                                                 alignment:
-                                                                    AlignmentDirectional(
+                                                                    const AlignmentDirectional(
                                                                         1.0,
                                                                         0.0),
                                                                 child: Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -1094,7 +1106,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                             ),
                                                             Align(
                                                               alignment:
-                                                                  AlignmentDirectional(
+                                                                  const AlignmentDirectional(
                                                                       0.0, 0.0),
                                                               child: InkWell(
                                                                 splashColor: Colors
@@ -1124,7 +1136,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                                     extra: <String,
                                                                         dynamic>{
                                                                       kTransitionInfoKey:
-                                                                          TransitionInfo(
+                                                                          const TransitionInfo(
                                                                         hasTransition:
                                                                             true,
                                                                         transitionType:
@@ -1156,11 +1168,11 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                               ),
                                                               child: Align(
                                                                 alignment:
-                                                                    AlignmentDirectional(
+                                                                    const AlignmentDirectional(
                                                                         -1.0,
                                                                         0.0),
                                                                 child: Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           5.0,
                                                                           0.0,
@@ -1200,7 +1212,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                   children: [
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   20.0,
                                                                   0.0,
@@ -1227,7 +1239,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                       children: [
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -1264,7 +1276,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                             false)
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
@@ -1279,7 +1291,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                                         .statut ==
                                                                     true)
                                                                   Padding(
-                                                                    padding: EdgeInsetsDirectional
+                                                                    padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -1304,7 +1316,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                                         .statut ==
                                                                     false)
                                                                   Padding(
-                                                                    padding: EdgeInsetsDirectional
+                                                                    padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -1332,12 +1344,6 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                     ),
                                                   ],
                                                 ),
-                                                Divider(
-                                                  thickness: 1.0,
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .secondaryBackground,
-                                                ),
                                               ],
                                             ),
                                           ],
@@ -1349,9 +1355,15 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                               },
                             ),
                           ),
+                        AuthUserStreamWidget(
+                          builder: (context) => Divider(
+                            thickness: 1.0,
+                            color: currentUserDocument?.color2,
+                          ),
+                        ),
                         if (myBetPageMyBetsRecord.bet3 != null)
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 20.0, 0.0, 0.0),
                             child: StreamBuilder<BetsRecord>(
                               stream: BetsRecord.getDocument(
@@ -1445,7 +1457,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                                       ),
                                                                 ),
                                                                 Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           3.0,
                                                                           0.0,
@@ -1483,7 +1495,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                                       ),
                                                                 ),
                                                                 Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           2.0,
                                                                           0.0,
@@ -1581,11 +1593,11 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                               ),
                                                               child: Align(
                                                                 alignment:
-                                                                    AlignmentDirectional(
+                                                                    const AlignmentDirectional(
                                                                         1.0,
                                                                         0.0),
                                                                 child: Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -1612,7 +1624,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                             ),
                                                             Align(
                                                               alignment:
-                                                                  AlignmentDirectional(
+                                                                  const AlignmentDirectional(
                                                                       0.0, 0.0),
                                                               child: InkWell(
                                                                 splashColor: Colors
@@ -1642,7 +1654,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                                     extra: <String,
                                                                         dynamic>{
                                                                       kTransitionInfoKey:
-                                                                          TransitionInfo(
+                                                                          const TransitionInfo(
                                                                         hasTransition:
                                                                             true,
                                                                         transitionType:
@@ -1674,11 +1686,11 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                               ),
                                                               child: Align(
                                                                 alignment:
-                                                                    AlignmentDirectional(
+                                                                    const AlignmentDirectional(
                                                                         -1.0,
                                                                         0.0),
                                                                 child: Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           5.0,
                                                                           0.0,
@@ -1718,7 +1730,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                   children: [
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   20.0,
                                                                   0.0,
@@ -1745,7 +1757,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                       children: [
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -1782,7 +1794,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                             false)
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
@@ -1797,7 +1809,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                                         .statut ==
                                                                     true)
                                                                   Padding(
-                                                                    padding: EdgeInsetsDirectional
+                                                                    padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -1822,7 +1834,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                                         .statut ==
                                                                     false)
                                                                   Padding(
-                                                                    padding: EdgeInsetsDirectional
+                                                                    padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -1850,12 +1862,6 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                     ),
                                                   ],
                                                 ),
-                                                Divider(
-                                                  thickness: 1.0,
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .secondaryBackground,
-                                                ),
                                               ],
                                             ),
                                           ],
@@ -1867,8 +1873,14 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                               },
                             ),
                           ),
+                        AuthUserStreamWidget(
+                          builder: (context) => Divider(
+                            thickness: 1.0,
+                            color: currentUserDocument?.color2,
+                          ),
+                        ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               10.0, 10.0, 0.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -1905,7 +1917,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                         ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         5.0, 0.0, 0.0, 0.0),
                                     child: Container(
                                       width: 30.0,
@@ -1920,7 +1932,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                         ),
                                       ),
                                       child: Padding(
-                                        padding: EdgeInsets.all(2.0),
+                                        padding: const EdgeInsets.all(2.0),
                                         child: ClipRRect(
                                           borderRadius:
                                               BorderRadius.circular(24.0),
@@ -1940,7 +1952,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               20.0, 10.0, 20.0, 10.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -1984,15 +1996,47 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                             ],
                           ),
                         ),
+                        AuthUserStreamWidget(
+                          builder: (context) => Divider(
+                            thickness: 1.0,
+                            color: currentUserDocument?.color2,
+                          ),
+                        ),
+                        if (valueOrDefault<bool>(
+                                currentUserDocument?.helpNav, false) ==
+                            true)
+                          Align(
+                            alignment: const AlignmentDirectional(0.0, 0.0),
+                            child: AuthUserStreamWidget(
+                              builder: (context) => Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    'Vérifier le statut de mon paris\nEn cliquant sur l\'icone ci-dessous.',
+                                    textAlign: TextAlign.center,
+                                    maxLines: 2,
+                                    style: FlutterFlowTheme.of(context)
+                                        .labelSmall
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          letterSpacing: 0.0,
+                                          lineHeight: 1.0,
+                                        ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              10.0, 5.0, 10.0, 5.0),
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              10.0, 0.0, 10.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     10.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   'Statut',
@@ -2015,24 +2059,24 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                         if (myBetPageMyBetsRecord.bet2 == null)
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 5.0, 0.0),
                                             child: FlutterFlowIconButton(
                                               borderRadius: 8.0,
-                                              buttonSize: 40.0,
+                                              buttonSize: 50.0,
                                               fillColor:
                                                   FlutterFlowTheme.of(context)
-                                                      .secondaryBackground,
+                                                      .primaryBackground,
                                               icon: Icon(
                                                 Icons.refresh_rounded,
                                                 color:
                                                     FlutterFlowTheme.of(context)
-                                                        .secondaryText,
-                                                size: 24.0,
+                                                        .primaryText,
+                                                size: 30.0,
                                               ),
                                               onPressed: () async {
                                                 await actions.getStatutMyBet1(
-                                                  widget!.myBetRef!,
+                                                  widget.myBetRef!,
                                                 );
                                               },
                                             ),
@@ -2040,25 +2084,25 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                         if (myBetPageMyBetsRecord.bet2 != null)
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 5.0, 0.0),
                                             child: FlutterFlowIconButton(
                                               borderColor: Colors.transparent,
                                               borderRadius: 8.0,
-                                              buttonSize: 40.0,
+                                              buttonSize: 50.0,
                                               fillColor:
                                                   FlutterFlowTheme.of(context)
-                                                      .secondaryBackground,
+                                                      .primaryBackground,
                                               icon: Icon(
                                                 Icons.refresh_rounded,
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryText,
-                                                size: 24.0,
+                                                size: 30.0,
                                               ),
                                               onPressed: () async {
                                                 await actions.getStatutMyBet2(
-                                                  widget!.myBetRef!,
+                                                  widget.myBetRef!,
                                                 );
                                               },
                                             ),
@@ -2067,30 +2111,30 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                     ),
                                   if (myBetPageMyBetsRecord.bet3 != null)
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 5.0, 0.0),
                                       child: FlutterFlowIconButton(
                                         borderColor: Colors.transparent,
                                         borderRadius: 8.0,
-                                        buttonSize: 40.0,
+                                        buttonSize: 50.0,
                                         fillColor: FlutterFlowTheme.of(context)
-                                            .secondaryBackground,
+                                            .primaryBackground,
                                         icon: Icon(
                                           Icons.refresh_rounded,
                                           color: FlutterFlowTheme.of(context)
                                               .secondaryText,
-                                          size: 24.0,
+                                          size: 30.0,
                                         ),
                                         onPressed: () async {
                                           await actions.getStatutMyBet3(
-                                            widget!.myBetRef!,
+                                            widget.myBetRef!,
                                           );
                                         },
                                       ),
                                     ),
                                   if (myBetPageMyBetsRecord.statut == true)
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 10.0, 0.0),
                                       child: Container(
                                         width: 25.0,
@@ -2104,7 +2148,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                     ),
                                   if (myBetPageMyBetsRecord.statut == false)
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 10.0, 0.0),
                                       child: Container(
                                         width: 25.0,
@@ -2121,46 +2165,8 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                             ],
                           ),
                         ),
-                        if (valueOrDefault<bool>(
-                                currentUserDocument?.helpNav, false) ==
-                            true)
-                          Align(
-                            alignment: AlignmentDirectional(0.0, 0.0),
-                            child: AuthUserStreamWidget(
-                              builder: (context) => Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.end,
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 80.0, 0.0),
-                                    child: Text(
-                                      'Vérifier le statut de mon paris',
-                                      textAlign: TextAlign.center,
-                                      maxLines: 2,
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily: 'Poppins',
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryText,
-                                            fontSize: 10.0,
-                                            letterSpacing: 0.0,
-                                            lineHeight: 1.0,
-                                          ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        Divider(
-                          thickness: 1.0,
-                          color:
-                              FlutterFlowTheme.of(context).secondaryBackground,
-                        ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               10.0, 10.0, 0.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -2207,7 +2213,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                             ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             5.0, 0.0, 0.0, 0.0),
                                         child: Container(
                                           width: 30.0,
@@ -2223,7 +2229,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                             ),
                                           ),
                                           child: Padding(
-                                            padding: EdgeInsets.all(2.0),
+                                            padding: const EdgeInsets.all(2.0),
                                             child: ClipRRect(
                                               borderRadius:
                                                   BorderRadius.circular(24.0),
@@ -2245,7 +2251,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               10.0, 10.0, 0.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -2270,142 +2276,157 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                     Column(
                                       mainAxisSize: MainAxisSize.max,
                                       crossAxisAlignment:
-                                          CrossAxisAlignment.end,
+                                          CrossAxisAlignment.center,
                                       children: [
-                                        Row(
-                                          mainAxisSize: MainAxisSize.max,
-                                          children: [
-                                            Text(
-                                              valueOrDefault<String>(
-                                                formatNumber(
-                                                  functions.limitOf2Decimal(
-                                                      myBetPageMyBetsRecord
-                                                          .potentialy),
-                                                  formatType:
-                                                      FormatType.decimal,
-                                                  decimalType:
-                                                      DecimalType.periodDecimal,
-                                                ),
-                                                '00.00',
-                                              ),
-                                              textAlign: TextAlign.center,
-                                              style: FlutterFlowTheme.of(
-                                                      context)
-                                                  .titleLarge
-                                                  .override(
-                                                    fontFamily: 'Montserrat',
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
+                                        Text(
+                                          'Félicitations !!!\nVotre paris vous rapporte',
+                                          textAlign: TextAlign.center,
+                                          style: FlutterFlowTheme.of(context)
+                                              .labelMedium
+                                              .override(
+                                                fontFamily: 'Poppins',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
                                                         .success,
-                                                    letterSpacing: 0.0,
+                                                letterSpacing: 0.0,
+                                              ),
+                                        ),
+                                        Padding(
+                                          padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 10.0, 0.0, 10.0),
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              Text(
+                                                valueOrDefault<String>(
+                                                  formatNumber(
+                                                    functions.limitOf2Decimal(
+                                                        myBetPageMyBetsRecord
+                                                            .potentialy),
+                                                    formatType:
+                                                        FormatType.decimal,
+                                                    decimalType: DecimalType
+                                                        .periodDecimal,
                                                   ),
-                                            ),
-                                            Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(5.0, 0.0, 0.0, 0.0),
-                                              child: Container(
-                                                width: 30.0,
-                                                height: 30.0,
-                                                decoration: BoxDecoration(
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primary,
-                                                  shape: BoxShape.circle,
-                                                  border: Border.all(
+                                                  '00.00',
+                                                ),
+                                                textAlign: TextAlign.center,
+                                                style: FlutterFlowTheme.of(
+                                                        context)
+                                                    .titleLarge
+                                                    .override(
+                                                      fontFamily: 'Montserrat',
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .success,
+                                                      letterSpacing: 0.0,
+                                                    ),
+                                              ),
+                                              Padding(
+                                                padding: const EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        5.0, 0.0, 0.0, 0.0),
+                                                child: Container(
+                                                  width: 30.0,
+                                                  height: 30.0,
+                                                  decoration: BoxDecoration(
                                                     color: FlutterFlowTheme.of(
                                                             context)
-                                                        .primaryText,
+                                                        .primary,
+                                                    shape: BoxShape.circle,
+                                                    border: Border.all(
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryText,
+                                                    ),
                                                   ),
-                                                ),
-                                                child: Padding(
-                                                  padding: EdgeInsets.all(2.0),
-                                                  child: ClipRRect(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            24.0),
-                                                    child: Image.asset(
-                                                      'assets/images/logo_monnaiel.jpg',
-                                                      width: 50.0,
-                                                      height: 50.0,
-                                                      fit: BoxFit.cover,
+                                                  child: Padding(
+                                                    padding:
+                                                        const EdgeInsets.all(2.0),
+                                                    child: ClipRRect(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              24.0),
+                                                      child: Image.asset(
+                                                        'assets/images/logo_monnaiel.jpg',
+                                                        width: 50.0,
+                                                        height: 50.0,
+                                                        fit: BoxFit.cover,
+                                                      ),
                                                     ),
                                                   ),
                                                 ),
                                               ),
-                                            ),
-                                          ],
+                                            ],
+                                          ),
                                         ),
                                         if (myBetPageMyBetsRecord.seen == false)
-                                          Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 20.0, 0.0, 0.0),
-                                            child: FFButtonWidget(
-                                              onPressed: () async {
-                                                await currentUserReference!
-                                                    .update({
-                                                  ...mapToFirestore(
-                                                    {
-                                                      'stock':
-                                                          FieldValue.increment(
-                                                              myBetPageMyBetsRecord
-                                                                  .potentialy),
-                                                      'bet_win':
-                                                          FieldValue.increment(
-                                                              1),
-                                                      'total_gains':
-                                                          FieldValue.increment(
-                                                              myBetPageMyBetsRecord
-                                                                  .potentialy),
-                                                      'earnings_total':
-                                                          FieldValue.increment(
-                                                              myBetPageMyBetsRecord
-                                                                  .potentialy),
-                                                    },
-                                                  ),
-                                                });
-
-                                                await myBetPageMyBetsRecord
-                                                    .reference
-                                                    .update(
-                                                        createMyBetsRecordData(
-                                                  seen: true,
-                                                ));
-                                              },
-                                              text: 'Ajouter à mon stock',
-                                              options: FFButtonOptions(
-                                                height: 30.0,
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        12.0, 0.0, 12.0, 0.0),
-                                                iconPadding:
-                                                    EdgeInsetsDirectional
-                                                        .fromSTEB(
-                                                            0.0, 0.0, 0.0, 0.0),
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .success,
-                                                textStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryBackground,
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                elevation: 3.0,
-                                                borderSide: BorderSide(
-                                                  color: Colors.transparent,
-                                                  width: 1.0,
+                                          FFButtonWidget(
+                                            onPressed: () async {
+                                              await currentUserReference!
+                                                  .update({
+                                                ...mapToFirestore(
+                                                  {
+                                                    'stock':
+                                                        FieldValue.increment(
+                                                            myBetPageMyBetsRecord
+                                                                .potentialy),
+                                                    'bet_win':
+                                                        FieldValue.increment(1),
+                                                    'total_gains':
+                                                        FieldValue.increment(
+                                                            myBetPageMyBetsRecord
+                                                                .potentialy),
+                                                    'earnings_total':
+                                                        FieldValue.increment(
+                                                            myBetPageMyBetsRecord
+                                                                .potentialy),
+                                                  },
                                                 ),
-                                                borderRadius:
-                                                    BorderRadius.circular(40.0),
-                                                hoverColor:
-                                                    FlutterFlowTheme.of(context)
-                                                        .success,
+                                              });
+
+                                              await myBetPageMyBetsRecord
+                                                  .reference
+                                                  .update(
+                                                      createMyBetsRecordData(
+                                                seen: true,
+                                              ));
+                                            },
+                                            text:
+                                                'Ajouter le gain à mon stock ',
+                                            options: FFButtonOptions(
+                                              height: 30.0,
+                                              padding: const EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      12.0, 0.0, 12.0, 0.0),
+                                              iconPadding: const EdgeInsetsDirectional
+                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .success,
+                                              textStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .primaryBackground,
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                              elevation: 3.0,
+                                              borderSide: const BorderSide(
+                                                color: Colors.transparent,
+                                                width: 1.0,
                                               ),
+                                              borderRadius:
+                                                  BorderRadius.circular(40.0),
+                                              hoverColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .success,
                                             ),
                                           ),
                                       ],
@@ -2429,7 +2450,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   5.0, 0.0, 0.0, 0.0),
                                           child: Container(
                                             width: 30.0,
@@ -2446,7 +2467,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                               ),
                                             ),
                                             child: Padding(
-                                              padding: EdgeInsets.all(2.0),
+                                              padding: const EdgeInsets.all(2.0),
                                               child: ClipRRect(
                                                 borderRadius:
                                                     BorderRadius.circular(24.0),
@@ -2471,7 +2492,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                             (myBetPageMyBetsRecord.seen == false) &&
                             (myBetPageMyBetsRecord.bet2 == null))
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 20.0, 0.0, 0.0),
                             child: FFButtonWidget(
                               onPressed: () async {
@@ -2479,7 +2500,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                   'ListEventsAdd2Bet',
                                   queryParameters: {
                                     'myBetRef': serializeParam(
-                                      widget!.myBetRef,
+                                      widget.myBetRef,
                                       ParamType.DocumentReference,
                                     ),
                                   }.withoutNulls,
@@ -2488,9 +2509,9 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                               text: 'Ajouter un paris',
                               options: FFButtonOptions(
                                 height: 30.0,
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     12.0, 0.0, 12.0, 0.0),
-                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: FlutterFlowTheme.of(context).success,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -2502,7 +2523,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                       letterSpacing: 0.0,
                                     ),
                                 elevation: 3.0,
-                                borderSide: BorderSide(
+                                borderSide: const BorderSide(
                                   color: Colors.transparent,
                                   width: 1.0,
                                 ),
@@ -2516,7 +2537,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                             (myBetPageMyBetsRecord.seen == false) &&
                             (myBetPageMyBetsRecord.bet2 != null))
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 20.0, 0.0, 0.0),
                             child: FFButtonWidget(
                               onPressed: () async {
@@ -2524,7 +2545,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                   'ListEventsAdd3Bet',
                                   queryParameters: {
                                     'myBetRef': serializeParam(
-                                      widget!.myBetRef,
+                                      widget.myBetRef,
                                       ParamType.DocumentReference,
                                     ),
                                   }.withoutNulls,
@@ -2533,9 +2554,9 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                               text: 'Ajouter un paris',
                               options: FFButtonOptions(
                                 height: 30.0,
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     12.0, 0.0, 12.0, 0.0),
-                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: FlutterFlowTheme.of(context).success,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -2547,7 +2568,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                       letterSpacing: 0.0,
                                     ),
                                 elevation: 3.0,
-                                borderSide: BorderSide(
+                                borderSide: const BorderSide(
                                   color: Colors.transparent,
                                   width: 1.0,
                                 ),
@@ -2557,57 +2578,12 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                               ),
                             ),
                           ),
-                        if (myBetPageMyBetsRecord.bet1 == null)
-                          Align(
-                            alignment: AlignmentDirectional(-1.0, 0.0),
-                            child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 20.0, 0.0, 0.0),
-                              child: FFButtonWidget(
-                                onPressed: () async {
-                                  await widget!.myBetRef!.delete();
-
-                                  context.pushNamed(
-                                    'MyBetsList',
-                                    extra: <String, dynamic>{
-                                      kTransitionInfoKey: TransitionInfo(
-                                        hasTransition: true,
-                                        transitionType:
-                                            PageTransitionType.leftToRight,
-                                        duration: Duration(milliseconds: 400),
-                                      ),
-                                    },
-                                  );
-                                },
-                                text: 'Supprimer',
-                                options: FFButtonOptions(
-                                  height: 30.0,
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      12.0, 0.0, 12.0, 0.0),
-                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 0.0),
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryText,
-                                  textStyle: FlutterFlowTheme.of(context)
-                                      .labelMedium
-                                      .override(
-                                        fontFamily: 'Poppins',
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryBackground,
-                                        letterSpacing: 0.0,
-                                      ),
-                                  elevation: 3.0,
-                                  borderSide: BorderSide(
-                                    color: Colors.transparent,
-                                    width: 1.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(40.0),
-                                  hoverColor:
-                                      FlutterFlowTheme.of(context).error,
-                                ),
-                              ),
-                            ),
+                        AuthUserStreamWidget(
+                          builder: (context) => Divider(
+                            thickness: 1.0,
+                            color: currentUserDocument?.color2,
                           ),
+                        ),
                       ],
                     ),
                   ),

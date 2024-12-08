@@ -6,11 +6,8 @@ import '/flutter_flow/flutter_flow_count_controller.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'add_date_for_e_event_model.dart';
 export 'add_date_for_e_event_model.dart';
 
@@ -49,7 +46,7 @@ class _AddDateForEEventWidgetState extends State<AddDateForEEventWidget> {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<EventsRecord>(
-      stream: EventsRecord.getDocument(widget!.eventRef!),
+      stream: EventsRecord.getDocument(widget.eventRef!),
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
@@ -79,7 +76,7 @@ class _AddDateForEEventWidgetState extends State<AddDateForEEventWidget> {
             body: SafeArea(
               top: true,
               child: Padding(
-                padding: EdgeInsets.all(10.0),
+                padding: const EdgeInsets.all(10.0),
                 child: SingleChildScrollView(
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
@@ -89,41 +86,55 @@ class _AddDateForEEventWidgetState extends State<AddDateForEEventWidget> {
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 10.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              mainAxisAlignment: MainAxisAlignment.start,
                               children: [
                                 Row(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           10.0, 0.0, 0.0, 0.0),
-                                      child: InkWell(
-                                        splashColor: Colors.transparent,
-                                        focusColor: Colors.transparent,
-                                        hoverColor: Colors.transparent,
-                                        highlightColor: Colors.transparent,
-                                        onTap: () async {
-                                          context.safePop();
-                                        },
-                                        child: Icon(
-                                          Icons.arrow_back_ios_new_rounded,
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryText,
-                                          size: 30.0,
+                                      child: AuthUserStreamWidget(
+                                        builder: (context) => InkWell(
+                                          splashColor: Colors.transparent,
+                                          focusColor: Colors.transparent,
+                                          hoverColor: Colors.transparent,
+                                          highlightColor: Colors.transparent,
+                                          onTap: () async {
+                                            context.safePop();
+                                          },
+                                          child: Icon(
+                                            Icons.arrow_back_ios_new_rounded,
+                                            color: currentUserDocument?.color1,
+                                            size: 30.0,
+                                          ),
                                         ),
                                       ),
                                     ),
                                   ],
                                 ),
+                                Text(
+                                  'Configurer le jour et l\'heure',
+                                  textAlign: TextAlign.center,
+                                  maxLines: 2,
+                                  style: FlutterFlowTheme.of(context)
+                                      .headlineSmall
+                                      .override(
+                                        fontFamily: 'Poppins',
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryText,
+                                        letterSpacing: 0.0,
+                                      ),
+                                ),
                               ],
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 5.0, 0.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -161,10 +172,10 @@ class _AddDateForEEventWidgetState extends State<AddDateForEEventWidget> {
                                       ),
                                       child: Align(
                                         alignment:
-                                            AlignmentDirectional(1.0, 0.0),
+                                            const AlignmentDirectional(1.0, 0.0),
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 5.0, 0.0),
                                           child: Text(
                                             valueOrDefault<String>(
@@ -225,10 +236,10 @@ class _AddDateForEEventWidgetState extends State<AddDateForEEventWidget> {
                                       ),
                                       child: Align(
                                         alignment:
-                                            AlignmentDirectional(-1.0, 0.0),
+                                            const AlignmentDirectional(-1.0, 0.0),
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   5.0, 0.0, 0.0, 0.0),
                                           child: Text(
                                             valueOrDefault<String>(
@@ -253,16 +264,16 @@ class _AddDateForEEventWidgetState extends State<AddDateForEEventWidget> {
                           ),
                           if (addDateForEEventEventsRecord.seenScore == true)
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 5.0, 0.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Align(
-                                    alignment: AlignmentDirectional(1.0, 0.0),
+                                    alignment: const AlignmentDirectional(1.0, 0.0),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 10.0, 0.0),
                                       child: Text(
                                         addDateForEEventEventsRecord.scoreDom
@@ -287,9 +298,9 @@ class _AddDateForEEventWidgetState extends State<AddDateForEEventWidget> {
                                         ),
                                   ),
                                   Align(
-                                    alignment: AlignmentDirectional(-1.0, 0.0),
+                                    alignment: const AlignmentDirectional(-1.0, 0.0),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           10.0, 0.0, 0.0, 0.0),
                                       child: Text(
                                         addDateForEEventEventsRecord.scoreExt
@@ -311,17 +322,16 @@ class _AddDateForEEventWidgetState extends State<AddDateForEEventWidget> {
                             color: FlutterFlowTheme.of(context)
                                 .secondaryBackground,
                             iconColor:
-                                FlutterFlowTheme.of(context).secondaryText,
+                                FlutterFlowTheme.of(context).primaryBackground,
                             weekFormat: true,
-                            weekStartsMonday: false,
-                            initialDate: getCurrentTimestamp,
-                            rowHeight: 50.0,
+                            weekStartsMonday: true,
+                            rowHeight: 40.0,
                             onChange: (DateTimeRange? newSelectedDate) {
                               safeSetState(() =>
                                   _model.calendarSelectedDay = newSelectedDate);
                             },
                             titleStyle: FlutterFlowTheme.of(context)
-                                .titleSmall
+                                .labelSmall
                                 .override(
                                   fontFamily: 'Poppins',
                                   letterSpacing: 0.0,
@@ -510,7 +520,7 @@ class _AddDateForEEventWidgetState extends State<AddDateForEEventWidget> {
                                     children: [
                                       Align(
                                         alignment:
-                                            AlignmentDirectional(-1.0, 0.0),
+                                            const AlignmentDirectional(-1.0, 0.0),
                                         child: Text(
                                           'Validez votre composition d\'équipe\navant de proposer la date de la confrontation.',
                                           textAlign: TextAlign.start,
@@ -531,7 +541,7 @@ class _AddDateForEEventWidgetState extends State<AddDateForEEventWidget> {
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 10.0, 0.0),
                                         child: InkWell(
                                           splashColor: Colors.transparent,
@@ -543,7 +553,7 @@ class _AddDateForEEventWidgetState extends State<AddDateForEEventWidget> {
                                               'AddPlayersEventPage',
                                               queryParameters: {
                                                 'eventRef': serializeParam(
-                                                  widget!.eventRef,
+                                                  widget.eventRef,
                                                   ParamType.DocumentReference,
                                                 ),
                                                 'myETeamRef': serializeParam(
@@ -554,7 +564,7 @@ class _AddDateForEEventWidgetState extends State<AddDateForEEventWidget> {
                                               }.withoutNulls,
                                               extra: <String, dynamic>{
                                                 kTransitionInfoKey:
-                                                    TransitionInfo(
+                                                    const TransitionInfo(
                                                   hasTransition: true,
                                                   transitionType:
                                                       PageTransitionType
@@ -593,7 +603,7 @@ class _AddDateForEEventWidgetState extends State<AddDateForEEventWidget> {
                                     children: [
                                       Align(
                                         alignment:
-                                            AlignmentDirectional(-1.0, 0.0),
+                                            const AlignmentDirectional(-1.0, 0.0),
                                         child: Text(
                                           'Validez votre composition d\'équipe\navant de proposer la date de la confrontation.',
                                           textAlign: TextAlign.start,
@@ -615,7 +625,7 @@ class _AddDateForEEventWidgetState extends State<AddDateForEEventWidget> {
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 10.0, 0.0),
                                         child: InkWell(
                                           splashColor: Colors.transparent,
@@ -627,7 +637,7 @@ class _AddDateForEEventWidgetState extends State<AddDateForEEventWidget> {
                                               'AddPlayersEventPage',
                                               queryParameters: {
                                                 'eventRef': serializeParam(
-                                                  widget!.eventRef,
+                                                  widget.eventRef,
                                                   ParamType.DocumentReference,
                                                 ),
                                                 'myETeamRef': serializeParam(
@@ -638,7 +648,7 @@ class _AddDateForEEventWidgetState extends State<AddDateForEEventWidget> {
                                               }.withoutNulls,
                                               extra: <String, dynamic>{
                                                 kTransitionInfoKey:
-                                                    TransitionInfo(
+                                                    const TransitionInfo(
                                                   hasTransition: true,
                                                   transitionType:
                                                       PageTransitionType
@@ -666,9 +676,9 @@ class _AddDateForEEventWidgetState extends State<AddDateForEEventWidget> {
                                   currentUserDocument?.eteamRef) &&
                               (addDateForEEventEventsRecord.domReady == true))
                             Align(
-                              alignment: AlignmentDirectional(0.0, 0.0),
+                              alignment: const AlignmentDirectional(0.0, 0.0),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 20.0, 0.0, 0.0),
                                 child: AuthUserStreamWidget(
                                   builder: (context) =>
@@ -678,7 +688,7 @@ class _AddDateForEEventWidgetState extends State<AddDateForEEventWidget> {
                                       queryBuilder: (teamEventsRecord) =>
                                           teamEventsRecord.where(
                                         'events',
-                                        isEqualTo: widget!.eventRef,
+                                        isEqualTo: widget.eventRef,
                                       ),
                                       singleRecord: true,
                                     ),
@@ -713,7 +723,7 @@ class _AddDateForEEventWidgetState extends State<AddDateForEEventWidget> {
 
                                       return FFButtonWidget(
                                         onPressed: () async {
-                                          await widget!.eventRef!
+                                          await widget.eventRef!
                                               .update(createEventsRecordData(
                                             date: _model
                                                 .calendarSelectedDay?.start,
@@ -736,7 +746,7 @@ class _AddDateForEEventWidgetState extends State<AddDateForEEventWidget> {
                                             initialPageName:
                                                 'ListMessagesBossEvent',
                                             parameterData: {
-                                              'eventRef': widget!.eventRef,
+                                              'eventRef': widget.eventRef,
                                               'eTeamRef':
                                                   addDateForEEventEventsRecord
                                                       .teamextRef,
@@ -746,7 +756,7 @@ class _AddDateForEEventWidgetState extends State<AddDateForEEventWidget> {
                                               .reference
                                               .delete();
 
-                                          context.pushNamed(
+                                          context.goNamed(
                                             'ModifETeamPage',
                                             queryParameters: {
                                               'teamRef': serializeParam(
@@ -760,10 +770,10 @@ class _AddDateForEEventWidgetState extends State<AddDateForEEventWidget> {
                                         options: FFButtonOptions(
                                           height: 30.0,
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 0.0, 16.0, 0.0),
                                           iconPadding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
                                           color: FlutterFlowTheme.of(context)
                                               .secondaryBackground,
@@ -791,9 +801,9 @@ class _AddDateForEEventWidgetState extends State<AddDateForEEventWidget> {
                                   currentUserDocument?.eteamRef) &&
                               (addDateForEEventEventsRecord.extReady == true))
                             Align(
-                              alignment: AlignmentDirectional(0.0, 0.0),
+                              alignment: const AlignmentDirectional(0.0, 0.0),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 20.0, 0.0, 0.0),
                                 child: AuthUserStreamWidget(
                                   builder: (context) =>
@@ -803,7 +813,7 @@ class _AddDateForEEventWidgetState extends State<AddDateForEEventWidget> {
                                       queryBuilder: (teamEventsRecord) =>
                                           teamEventsRecord.where(
                                         'events',
-                                        isEqualTo: widget!.eventRef,
+                                        isEqualTo: widget.eventRef,
                                       ),
                                       singleRecord: true,
                                     ),
@@ -838,7 +848,7 @@ class _AddDateForEEventWidgetState extends State<AddDateForEEventWidget> {
 
                                       return FFButtonWidget(
                                         onPressed: () async {
-                                          await widget!.eventRef!
+                                          await widget.eventRef!
                                               .update(createEventsRecordData(
                                             date: _model
                                                 .calendarSelectedDay?.start,
@@ -861,7 +871,7 @@ class _AddDateForEEventWidgetState extends State<AddDateForEEventWidget> {
                                             initialPageName:
                                                 'ListMessagesBossEvent',
                                             parameterData: {
-                                              'eventRef': widget!.eventRef,
+                                              'eventRef': widget.eventRef,
                                               'eTeamRef':
                                                   addDateForEEventEventsRecord
                                                       .teamdomRef,
@@ -871,7 +881,7 @@ class _AddDateForEEventWidgetState extends State<AddDateForEEventWidget> {
                                               .reference
                                               .delete();
 
-                                          context.pushNamed(
+                                          context.goNamed(
                                             'ModifETeamPage',
                                             queryParameters: {
                                               'teamRef': serializeParam(
@@ -885,10 +895,10 @@ class _AddDateForEEventWidgetState extends State<AddDateForEEventWidget> {
                                         options: FFButtonOptions(
                                           height: 30.0,
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 0.0, 16.0, 0.0),
                                           iconPadding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
                                           color: FlutterFlowTheme.of(context)
                                               .secondaryBackground,

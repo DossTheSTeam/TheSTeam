@@ -2,11 +2,7 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'my_notifs_list_model.dart';
 export 'my_notifs_list_model.dart';
 
@@ -45,9 +41,9 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
         body: SafeArea(
           top: true,
           child: Align(
-            alignment: AlignmentDirectional(0.0, -1.0),
+            alignment: const AlignmentDirectional(0.0, -1.0),
             child: Padding(
-              padding: EdgeInsets.all(10.0),
+              padding: const EdgeInsets.all(10.0),
               child: SingleChildScrollView(
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
@@ -59,55 +55,58 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                         Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
-                            InkWell(
-                              splashColor: Colors.transparent,
-                              focusColor: Colors.transparent,
-                              hoverColor: Colors.transparent,
-                              highlightColor: Colors.transparent,
-                              onTap: () async {
-                                context.pushNamed(
-                                  'MenuPage',
-                                  extra: <String, dynamic>{
-                                    kTransitionInfoKey: TransitionInfo(
-                                      hasTransition: true,
-                                      transitionType:
-                                          PageTransitionType.leftToRight,
-                                      duration: Duration(milliseconds: 400),
-                                    ),
-                                  },
-                                );
-                              },
-                              child: Icon(
-                                Icons.menu_rounded,
-                                color: FlutterFlowTheme.of(context).primaryText,
-                                size: 30.0,
-                              ),
-                            ),
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  10.0, 0.0, 0.0, 0.0),
-                              child: InkWell(
+                            AuthUserStreamWidget(
+                              builder: (context) => InkWell(
                                 splashColor: Colors.transparent,
                                 focusColor: Colors.transparent,
                                 hoverColor: Colors.transparent,
                                 highlightColor: Colors.transparent,
                                 onTap: () async {
-                                  context.safePop();
+                                  context.pushNamed(
+                                    'MenuPage',
+                                    extra: <String, dynamic>{
+                                      kTransitionInfoKey: const TransitionInfo(
+                                        hasTransition: true,
+                                        transitionType:
+                                            PageTransitionType.leftToRight,
+                                        duration: Duration(milliseconds: 400),
+                                      ),
+                                    },
+                                  );
                                 },
                                 child: Icon(
-                                  Icons.arrow_back_ios_new_rounded,
-                                  color:
-                                      FlutterFlowTheme.of(context).primaryText,
+                                  Icons.menu_rounded,
+                                  color: currentUserDocument?.color1,
                                   size: 30.0,
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  10.0, 0.0, 0.0, 0.0),
+                              child: AuthUserStreamWidget(
+                                builder: (context) => InkWell(
+                                  splashColor: Colors.transparent,
+                                  focusColor: Colors.transparent,
+                                  hoverColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
+                                  onTap: () async {
+                                    context.safePop();
+                                  },
+                                  child: Icon(
+                                    Icons.arrow_back_ios_new_rounded,
+                                    color: currentUserDocument?.color1,
+                                    size: 30.0,
+                                  ),
                                 ),
                               ),
                             ),
                           ],
                         ),
                         Align(
-                          alignment: AlignmentDirectional(0.0, 0.0),
+                          alignment: const AlignmentDirectional(0.0, 0.0),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 15.0, 0.0, 0.0, 0.0),
                             child: Text(
                               'Mes notifications',
@@ -122,9 +121,42 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                         ),
                       ],
                     ),
+                    if (valueOrDefault<bool>(
+                            currentUserDocument?.helpNav, false) ==
+                        true)
+                      Align(
+                        alignment: const AlignmentDirectional(0.0, 0.0),
+                        child: AuthUserStreamWidget(
+                          builder: (context) => Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 3.0, 0.0, 0.0),
+                                child: Text(
+                                  'Supprimer ou faire les actions associées pour enlever la notification',
+                                  textAlign: TextAlign.center,
+                                  maxLines: 2,
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Poppins',
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                        fontSize: 10.0,
+                                        letterSpacing: 0.0,
+                                        lineHeight: 1.0,
+                                      ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
                       child: StreamBuilder<List<MyNotificationsRecord>>(
                         stream: queryMyNotificationsRecord(
                           parent: currentUserReference,
@@ -174,13 +206,13 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                             .moderator ==
                                         null)
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 5.0, 0.0, 0.0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(5.0, 0.0, 0.0, 5.0),
                                               child: StreamBuilder<UsersRecord>(
                                                 stream: UsersRecord.getDocument(
@@ -223,7 +255,7 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                         children: [
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         5.0,
                                                                         0.0,
@@ -283,7 +315,7 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                                 extra: <String,
                                                                     dynamic>{
                                                                   kTransitionInfoKey:
-                                                                      TransitionInfo(
+                                                                      const TransitionInfo(
                                                                     hasTransition:
                                                                         true,
                                                                     transitionType:
@@ -366,10 +398,34 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                               ),
                                             ),
                                             Align(
-                                              alignment: AlignmentDirectional(
+                                              alignment: const AlignmentDirectional(
                                                   -1.0, 0.0),
                                               child: Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        10.0, 0.0, 0.0, 0.0),
+                                                child: Text(
+                                                  dateTimeFormat(
+                                                      "relative",
+                                                      columnNotifsMyNotificationsRecord
+                                                          .dateTime!),
+                                                  textAlign: TextAlign.start,
+                                                  maxLines: 2,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .labelSmall
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                            Align(
+                                              alignment: const AlignmentDirectional(
+                                                  -1.0, 0.0),
+                                              child: Padding(
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         10.0, 0.0, 0.0, 0.0),
                                                 child: Text(
@@ -389,15 +445,12 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                             ),
                                             if (columnNotifsMyNotificationsRecord
                                                         .textFouls !=
-                                                    null &&
-                                                columnNotifsMyNotificationsRecord
-                                                        .textFouls !=
                                                     '')
                                               Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     -1.0, 0.0),
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           10.0, 0.0, 0.0, 0.0),
                                                   child: Text(
@@ -416,15 +469,12 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                               ),
                                             if (columnNotifsMyNotificationsRecord
                                                         .textReasons !=
-                                                    null &&
-                                                columnNotifsMyNotificationsRecord
-                                                        .textReasons !=
                                                     '')
                                               Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     -1.0, 0.0),
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           10.0, 0.0, 0.0, 0.0),
                                                   child: Text(
@@ -494,12 +544,12 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                             ),
                                                             child: Align(
                                                               alignment:
-                                                                  AlignmentDirectional(
+                                                                  const AlignmentDirectional(
                                                                       -1.0,
                                                                       0.0),
                                                               child: Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             10.0,
                                                                             0.0,
@@ -620,11 +670,11 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                         ),
                                                         child: Align(
                                                           alignment:
-                                                              AlignmentDirectional(
+                                                              const AlignmentDirectional(
                                                                   -1.0, 0.0),
                                                           child: Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         10.0,
                                                                         0.0,
@@ -741,11 +791,11 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                         ),
                                                         child: Align(
                                                           alignment:
-                                                              AlignmentDirectional(
+                                                              const AlignmentDirectional(
                                                                   -1.0, 0.0),
                                                           child: Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         10.0,
                                                                         0.0,
@@ -822,7 +872,7 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                 children: [
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(10.0, 0.0,
                                                                 0.0, 0.0),
                                                     child: StreamBuilder<
@@ -914,12 +964,12 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                                     ),
                                                                     Align(
                                                                       alignment:
-                                                                          AlignmentDirectional(
+                                                                          const AlignmentDirectional(
                                                                               -1.0,
                                                                               0.0),
                                                                       child:
                                                                           Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                                                             5.0,
                                                                             0.0,
                                                                             0.0,
@@ -950,44 +1000,45 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                                             .boss ==
                                                                         currentUserReference)
                                                                       Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             10.0,
                                                                             0.0),
                                                                         child:
-                                                                            InkWell(
-                                                                          splashColor:
-                                                                              Colors.transparent,
-                                                                          focusColor:
-                                                                              Colors.transparent,
-                                                                          hoverColor:
-                                                                              Colors.transparent,
-                                                                          highlightColor:
-                                                                              Colors.transparent,
-                                                                          onTap:
-                                                                              () async {
-                                                                            context.pushNamed(
-                                                                              'BossEMemberEntryPage',
-                                                                              queryParameters: {
-                                                                                'notifRef': serializeParam(
-                                                                                  columnNotifsMyNotificationsRecord.reference,
-                                                                                  ParamType.DocumentReference,
-                                                                                ),
-                                                                                'eTeamRef': serializeParam(
-                                                                                  columnNotifsMyNotificationsRecord.teamRef,
-                                                                                  ParamType.DocumentReference,
-                                                                                ),
-                                                                              }.withoutNulls,
-                                                                            );
-                                                                          },
-                                                                          child:
-                                                                              Icon(
-                                                                            Icons.remove_red_eye_outlined,
-                                                                            color:
-                                                                                FlutterFlowTheme.of(context).secondaryText,
-                                                                            size:
-                                                                                30.0,
+                                                                            AuthUserStreamWidget(
+                                                                          builder: (context) =>
+                                                                              InkWell(
+                                                                            splashColor:
+                                                                                Colors.transparent,
+                                                                            focusColor:
+                                                                                Colors.transparent,
+                                                                            hoverColor:
+                                                                                Colors.transparent,
+                                                                            highlightColor:
+                                                                                Colors.transparent,
+                                                                            onTap:
+                                                                                () async {
+                                                                              context.pushNamed(
+                                                                                'BossEMemberEntryPage',
+                                                                                queryParameters: {
+                                                                                  'notifRef': serializeParam(
+                                                                                    columnNotifsMyNotificationsRecord.reference,
+                                                                                    ParamType.DocumentReference,
+                                                                                  ),
+                                                                                  'eTeamRef': serializeParam(
+                                                                                    columnNotifsMyNotificationsRecord.teamRef,
+                                                                                    ParamType.DocumentReference,
+                                                                                  ),
+                                                                                }.withoutNulls,
+                                                                              );
+                                                                            },
+                                                                            child:
+                                                                                Icon(
+                                                                              Icons.remove_red_eye_outlined,
+                                                                              color: currentUserDocument?.color1,
+                                                                              size: 30.0,
+                                                                            ),
                                                                           ),
                                                                         ),
                                                                       ),
@@ -999,7 +1050,7 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                                             MainAxisSize.max,
                                                                         children: [
                                                                           Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 0.0,
                                                                                 0.0,
                                                                                 10.0,
@@ -1180,7 +1231,7 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                         ),
                                                         child: Align(
                                                           alignment:
-                                                              AlignmentDirectional(
+                                                              const AlignmentDirectional(
                                                                   -1.0, 0.0),
                                                           child: Text(
                                                             containerTeamsRecord
@@ -1205,42 +1256,46 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                     mainAxisSize:
                                                         MainAxisSize.max,
                                                     children: [
-                                                      InkWell(
-                                                        splashColor:
-                                                            Colors.transparent,
-                                                        focusColor:
-                                                            Colors.transparent,
-                                                        hoverColor:
-                                                            Colors.transparent,
-                                                        highlightColor:
-                                                            Colors.transparent,
-                                                        onTap: () async {
-                                                          context.pushNamed(
-                                                            'BossNotifEEventPageIUDAdmin',
-                                                            queryParameters: {
-                                                              'notifRef':
-                                                                  serializeParam(
-                                                                columnNotifsMyNotificationsRecord
-                                                                    .reference,
-                                                                ParamType
-                                                                    .DocumentReference,
-                                                              ),
-                                                              'eTeamRef':
-                                                                  serializeParam(
+                                                      AuthUserStreamWidget(
+                                                        builder: (context) =>
+                                                            InkWell(
+                                                          splashColor: Colors
+                                                              .transparent,
+                                                          focusColor: Colors
+                                                              .transparent,
+                                                          hoverColor: Colors
+                                                              .transparent,
+                                                          highlightColor: Colors
+                                                              .transparent,
+                                                          onTap: () async {
+                                                            context.pushNamed(
+                                                              'BossNotifEEventPageIUDAdmin',
+                                                              queryParameters: {
+                                                                'notifRef':
+                                                                    serializeParam(
+                                                                  columnNotifsMyNotificationsRecord
+                                                                      .reference,
+                                                                  ParamType
+                                                                      .DocumentReference,
+                                                                ),
+                                                                'eTeamRef':
+                                                                    serializeParam(
+                                                                  currentUserDocument
+                                                                      ?.eteamRef,
+                                                                  ParamType
+                                                                      .DocumentReference,
+                                                                ),
+                                                              }.withoutNulls,
+                                                            );
+                                                          },
+                                                          child: Icon(
+                                                            Icons
+                                                                .stadium_rounded,
+                                                            color:
                                                                 currentUserDocument
-                                                                    ?.eteamRef,
-                                                                ParamType
-                                                                    .DocumentReference,
-                                                              ),
-                                                            }.withoutNulls,
-                                                          );
-                                                        },
-                                                        child: Icon(
-                                                          Icons.stadium_rounded,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryText,
-                                                          size: 30.0,
+                                                                    ?.color1,
+                                                            size: 30.0,
+                                                          ),
                                                         ),
                                                       ),
                                                     ],
@@ -1285,7 +1340,7 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                         ),
                                                         child: Align(
                                                           alignment:
-                                                              AlignmentDirectional(
+                                                              const AlignmentDirectional(
                                                                   1.0, 0.0),
                                                           child: Text(
                                                             containerTeamsRecord
@@ -1315,7 +1370,7 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                         .eEvent !=
                                                     null))
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 5.0, 0.0, 0.0),
                                                 child:
@@ -1353,7 +1408,7 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                       children: [
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       5.0,
@@ -1414,7 +1469,7 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                                     child:
                                                                         Align(
                                                                       alignment:
-                                                                          AlignmentDirectional(
+                                                                          const AlignmentDirectional(
                                                                               -1.0,
                                                                               0.0),
                                                                       child:
@@ -1442,100 +1497,94 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                                   if (columnEEventEventsRecord
                                                                           .date ==
                                                                       null)
-                                                                    InkWell(
-                                                                      splashColor:
-                                                                          Colors
-                                                                              .transparent,
-                                                                      focusColor:
-                                                                          Colors
-                                                                              .transparent,
-                                                                      hoverColor:
-                                                                          Colors
-                                                                              .transparent,
-                                                                      highlightColor:
-                                                                          Colors
-                                                                              .transparent,
-                                                                      onTap:
-                                                                          () async {
-                                                                        context
-                                                                            .pushNamed(
-                                                                          'PlayerNotifEEventStartPage',
-                                                                          queryParameters:
-                                                                              {
-                                                                            'notifRef':
-                                                                                serializeParam(
-                                                                              columnNotifsMyNotificationsRecord.reference,
-                                                                              ParamType.DocumentReference,
-                                                                            ),
-                                                                            'eEventRef':
-                                                                                serializeParam(
-                                                                              columnEEventEventsRecord.reference,
-                                                                              ParamType.DocumentReference,
-                                                                            ),
-                                                                          }.withoutNulls,
-                                                                        );
-                                                                      },
-                                                                      child:
-                                                                          Icon(
-                                                                        Icons
-                                                                            .location_history_outlined,
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .secondaryText,
-                                                                        size:
-                                                                            30.0,
+                                                                    AuthUserStreamWidget(
+                                                                      builder:
+                                                                          (context) =>
+                                                                              InkWell(
+                                                                        splashColor:
+                                                                            Colors.transparent,
+                                                                        focusColor:
+                                                                            Colors.transparent,
+                                                                        hoverColor:
+                                                                            Colors.transparent,
+                                                                        highlightColor:
+                                                                            Colors.transparent,
+                                                                        onTap:
+                                                                            () async {
+                                                                          context
+                                                                              .pushNamed(
+                                                                            'PlayerNotifEEventStartPage',
+                                                                            queryParameters:
+                                                                                {
+                                                                              'notifRef': serializeParam(
+                                                                                columnNotifsMyNotificationsRecord.reference,
+                                                                                ParamType.DocumentReference,
+                                                                              ),
+                                                                              'eEventRef': serializeParam(
+                                                                                columnEEventEventsRecord.reference,
+                                                                                ParamType.DocumentReference,
+                                                                              ),
+                                                                            }.withoutNulls,
+                                                                          );
+                                                                        },
+                                                                        child:
+                                                                            Icon(
+                                                                          Icons
+                                                                              .location_history_outlined,
+                                                                          color:
+                                                                              currentUserDocument?.color1,
+                                                                          size:
+                                                                              30.0,
+                                                                        ),
                                                                       ),
                                                                     ),
                                                                   if ((columnNotifsMyNotificationsRecord
                                                                               .eteamWin !=
                                                                           null) ||
                                                                       (columnNotifsMyNotificationsRecord.eteamDraw !=
-                                                                              null &&
-                                                                          columnNotifsMyNotificationsRecord.eteamDraw !=
                                                                               '') ||
                                                                       (columnNotifsMyNotificationsRecord
                                                                               .teamRef !=
                                                                           null))
-                                                                    InkWell(
-                                                                      splashColor:
-                                                                          Colors
-                                                                              .transparent,
-                                                                      focusColor:
-                                                                          Colors
-                                                                              .transparent,
-                                                                      hoverColor:
-                                                                          Colors
-                                                                              .transparent,
-                                                                      highlightColor:
-                                                                          Colors
-                                                                              .transparent,
-                                                                      onTap:
-                                                                          () async {
-                                                                        context
-                                                                            .pushNamed(
-                                                                          'BossNotifEEventEndPage',
-                                                                          queryParameters:
-                                                                              {
-                                                                            'notifRef':
-                                                                                serializeParam(
-                                                                              columnNotifsMyNotificationsRecord.reference,
-                                                                              ParamType.DocumentReference,
-                                                                            ),
-                                                                            'eEventRef':
-                                                                                serializeParam(
-                                                                              columnEEventEventsRecord.reference,
-                                                                              ParamType.DocumentReference,
-                                                                            ),
-                                                                          }.withoutNulls,
-                                                                        );
-                                                                      },
-                                                                      child:
-                                                                          Icon(
-                                                                        Icons
-                                                                            .settings_suggest,
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .secondaryText,
-                                                                        size:
-                                                                            30.0,
+                                                                    AuthUserStreamWidget(
+                                                                      builder:
+                                                                          (context) =>
+                                                                              InkWell(
+                                                                        splashColor:
+                                                                            Colors.transparent,
+                                                                        focusColor:
+                                                                            Colors.transparent,
+                                                                        hoverColor:
+                                                                            Colors.transparent,
+                                                                        highlightColor:
+                                                                            Colors.transparent,
+                                                                        onTap:
+                                                                            () async {
+                                                                          context
+                                                                              .pushNamed(
+                                                                            'BossNotifEEventEndPage',
+                                                                            queryParameters:
+                                                                                {
+                                                                              'notifRef': serializeParam(
+                                                                                columnNotifsMyNotificationsRecord.reference,
+                                                                                ParamType.DocumentReference,
+                                                                              ),
+                                                                              'eEventRef': serializeParam(
+                                                                                columnEEventEventsRecord.reference,
+                                                                                ParamType.DocumentReference,
+                                                                              ),
+                                                                            }.withoutNulls,
+                                                                          );
+                                                                        },
+                                                                        child:
+                                                                            Icon(
+                                                                          Icons
+                                                                              .settings_suggest,
+                                                                          color:
+                                                                              currentUserDocument?.color1,
+                                                                          size:
+                                                                              30.0,
+                                                                        ),
                                                                       ),
                                                                     ),
                                                                   if ((columnEEventEventsRecord.statut == false) &&
@@ -1545,47 +1594,45 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                                       (columnNotifsMyNotificationsRecord
                                                                               .teamRef ==
                                                                           null))
-                                                                    InkWell(
-                                                                      splashColor:
-                                                                          Colors
-                                                                              .transparent,
-                                                                      focusColor:
-                                                                          Colors
-                                                                              .transparent,
-                                                                      hoverColor:
-                                                                          Colors
-                                                                              .transparent,
-                                                                      highlightColor:
-                                                                          Colors
-                                                                              .transparent,
-                                                                      onTap:
-                                                                          () async {
-                                                                        context
-                                                                            .pushNamed(
-                                                                          'RatingPlayersPage',
-                                                                          queryParameters:
-                                                                              {
-                                                                            'eventRef':
-                                                                                serializeParam(
-                                                                              columnEEventEventsRecord.reference,
-                                                                              ParamType.DocumentReference,
-                                                                            ),
-                                                                            'notifRef':
-                                                                                serializeParam(
-                                                                              columnNotifsMyNotificationsRecord.reference,
-                                                                              ParamType.DocumentReference,
-                                                                            ),
-                                                                          }.withoutNulls,
-                                                                        );
-                                                                      },
-                                                                      child:
-                                                                          Icon(
-                                                                        Icons
-                                                                            .bar_chart,
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .secondaryText,
-                                                                        size:
-                                                                            30.0,
+                                                                    AuthUserStreamWidget(
+                                                                      builder:
+                                                                          (context) =>
+                                                                              InkWell(
+                                                                        splashColor:
+                                                                            Colors.transparent,
+                                                                        focusColor:
+                                                                            Colors.transparent,
+                                                                        hoverColor:
+                                                                            Colors.transparent,
+                                                                        highlightColor:
+                                                                            Colors.transparent,
+                                                                        onTap:
+                                                                            () async {
+                                                                          context
+                                                                              .pushNamed(
+                                                                            'RatingPlayersPage',
+                                                                            queryParameters:
+                                                                                {
+                                                                              'eventRef': serializeParam(
+                                                                                columnEEventEventsRecord.reference,
+                                                                                ParamType.DocumentReference,
+                                                                              ),
+                                                                              'notifRef': serializeParam(
+                                                                                columnNotifsMyNotificationsRecord.reference,
+                                                                                ParamType.DocumentReference,
+                                                                              ),
+                                                                            }.withoutNulls,
+                                                                          );
+                                                                        },
+                                                                        child:
+                                                                            Icon(
+                                                                          Icons
+                                                                              .bar_chart,
+                                                                          color:
+                                                                              currentUserDocument?.color1,
+                                                                          size:
+                                                                              30.0,
+                                                                        ),
                                                                       ),
                                                                     ),
                                                                 ],
@@ -1637,7 +1684,7 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                                     child:
                                                                         Align(
                                                                       alignment:
-                                                                          AlignmentDirectional(
+                                                                          const AlignmentDirectional(
                                                                               1.0,
                                                                               0.0),
                                                                       child:
@@ -1665,11 +1712,12 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                   },
                                                 ),
                                               ),
-                                            Divider(
-                                              thickness: 1.0,
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondaryBackground,
+                                            AuthUserStreamWidget(
+                                              builder: (context) => Divider(
+                                                thickness: 1.0,
+                                                color:
+                                                    currentUserDocument?.color2,
+                                              ),
                                             ),
                                           ],
                                         ),
@@ -1684,7 +1732,7 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                         children: [
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     5.0, 0.0, 0.0, 5.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -1693,7 +1741,7 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                       .spaceBetween,
                                               children: [
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           5.0, 0.0, 6.0, 0.0),
                                                   child: Container(
@@ -1718,7 +1766,7 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           5.0, 0.0, 6.0, 0.0),
                                                   child: Container(
@@ -1741,7 +1789,7 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                     ),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   2.0,
@@ -1805,9 +1853,32 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                           ),
                                           Align(
                                             alignment:
-                                                AlignmentDirectional(-1.0, 0.0),
+                                                const AlignmentDirectional(-1.0, 0.0),
                                             child: Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      10.0, 0.0, 0.0, 0.0),
+                                              child: Text(
+                                                dateTimeFormat(
+                                                    "relative",
+                                                    columnNotifsMyNotificationsRecord
+                                                        .dateTime!),
+                                                textAlign: TextAlign.start,
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelSmall
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                              ),
+                                            ),
+                                          ),
+                                          Align(
+                                            alignment:
+                                                const AlignmentDirectional(-1.0, 0.0),
+                                            child: Padding(
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       10.0, 0.0, 0.0, 0.0),
                                               child: Text(
@@ -1826,15 +1897,12 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                           ),
                                           if (columnNotifsMyNotificationsRecord
                                                       .textFouls !=
-                                                  null &&
-                                              columnNotifsMyNotificationsRecord
-                                                      .textFouls !=
                                                   '')
                                             Align(
-                                              alignment: AlignmentDirectional(
+                                              alignment: const AlignmentDirectional(
                                                   -1.0, 0.0),
                                               child: Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         10.0, 0.0, 0.0, 0.0),
                                                 child: Text(
@@ -1930,11 +1998,11 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                           ),
                                                           Align(
                                                             alignment:
-                                                                AlignmentDirectional(
+                                                                const AlignmentDirectional(
                                                                     -1.0, 0.0),
                                                             child: Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           10.0,
                                                                           0.0,
@@ -2040,9 +2108,6 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                   children: [
                                                     if (columnPostPostsRecord
                                                                 .title !=
-                                                            null &&
-                                                        columnPostPostsRecord
-                                                                .title !=
                                                             '')
                                                       Row(
                                                         mainAxisSize:
@@ -2064,7 +2129,7 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                                   currentUserReference)
                                                                 Align(
                                                                   alignment:
-                                                                      AlignmentDirectional(
+                                                                      const AlignmentDirectional(
                                                                           1.0,
                                                                           0.0),
                                                                   child: Text(
@@ -2105,12 +2170,12 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                                     child:
                                                                         Align(
                                                                       alignment:
-                                                                          AlignmentDirectional(
+                                                                          const AlignmentDirectional(
                                                                               -1.0,
                                                                               0.0),
                                                                       child:
                                                                           Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                                                             10.0,
                                                                             0.0,
                                                                             0.0,
@@ -2258,7 +2323,7 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                             currentUserReference)
                                                           Align(
                                                             alignment:
-                                                                AlignmentDirectional(
+                                                                const AlignmentDirectional(
                                                                     1.0, 0.0),
                                                             child: Text(
                                                               'Supprimer ?',
@@ -2291,11 +2356,11 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                               ),
                                                               child: Align(
                                                                 alignment:
-                                                                    AlignmentDirectional(
+                                                                    const AlignmentDirectional(
                                                                         -1.0,
                                                                         0.0),
                                                                 child: Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           10.0,
                                                                           0.0,
@@ -2457,7 +2522,7 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                             currentUserReference)
                                                           Align(
                                                             alignment:
-                                                                AlignmentDirectional(
+                                                                const AlignmentDirectional(
                                                                     1.0, 0.0),
                                                             child: Text(
                                                               'Supprimer ?',
@@ -2490,11 +2555,11 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                               ),
                                                               child: Align(
                                                                 alignment:
-                                                                    AlignmentDirectional(
+                                                                    const AlignmentDirectional(
                                                                         -1.0,
                                                                         0.0),
                                                                 child: Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           10.0,
                                                                           0.0,
@@ -2606,10 +2671,12 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                 );
                                               },
                                             ),
-                                          Divider(
-                                            thickness: 1.0,
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryBackground,
+                                          AuthUserStreamWidget(
+                                            builder: (context) => Divider(
+                                              thickness: 1.0,
+                                              color:
+                                                  currentUserDocument?.color2,
+                                            ),
                                           ),
                                         ],
                                       ),

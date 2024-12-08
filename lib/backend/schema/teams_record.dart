@@ -10,9 +10,9 @@ import '/flutter_flow/flutter_flow_util.dart';
 
 class TeamsRecord extends FirestoreRecord {
   TeamsRecord._(
-    DocumentReference reference,
-    Map<String, dynamic> data,
-  ) : super(reference, data) {
+    super.reference,
+    super.data,
+  ) {
     _initializeFields();
   }
 
@@ -141,6 +141,16 @@ class TeamsRecord extends FirestoreRecord {
   String get bio => _bio ?? '';
   bool hasBio() => _bio != null;
 
+  // "color1" field.
+  Color? _color1;
+  Color? get color1 => _color1;
+  bool hasColor1() => _color1 != null;
+
+  // "color2" field.
+  Color? _color2;
+  Color? get color2 => _color2;
+  bool hasColor2() => _color2 != null;
+
   void _initializeFields() {
     _name = snapshotData['name'] as String?;
     _value = snapshotData['value'] as String?;
@@ -167,6 +177,8 @@ class TeamsRecord extends FirestoreRecord {
     _guest = snapshotData['guest'] as bool?;
     _additionalLeague = snapshotData['additional_league'] as String?;
     _bio = snapshotData['bio'] as String?;
+    _color1 = getSchemaColor(snapshotData['color1']);
+    _color2 = getSchemaColor(snapshotData['color2']);
   }
 
   static CollectionReference get collection =>
@@ -225,6 +237,8 @@ Map<String, dynamic> createTeamsRecordData({
   bool? guest,
   String? additionalLeague,
   String? bio,
+  Color? color1,
+  Color? color2,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -250,6 +264,8 @@ Map<String, dynamic> createTeamsRecordData({
       'guest': guest,
       'additional_league': additionalLeague,
       'bio': bio,
+      'color1': color1,
+      'color2': color2,
     }.withoutNulls,
   );
 
@@ -286,7 +302,9 @@ class TeamsRecordDocumentEquality implements Equality<TeamsRecord> {
         e1?.redCards == e2?.redCards &&
         e1?.guest == e2?.guest &&
         e1?.additionalLeague == e2?.additionalLeague &&
-        e1?.bio == e2?.bio;
+        e1?.bio == e2?.bio &&
+        e1?.color1 == e2?.color1 &&
+        e1?.color2 == e2?.color2;
   }
 
   @override
@@ -315,7 +333,9 @@ class TeamsRecordDocumentEquality implements Equality<TeamsRecord> {
         e?.redCards,
         e?.guest,
         e?.additionalLeague,
-        e?.bio
+        e?.bio,
+        e?.color1,
+        e?.color2
       ]);
 
   @override

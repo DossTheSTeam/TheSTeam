@@ -3,12 +3,9 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'e_team_rank_page_model.dart';
 export 'e_team_rank_page_model.dart';
 
@@ -50,9 +47,9 @@ class _ETeamRankPageWidgetState extends State<ETeamRankPageWidget> {
             visible: valueOrDefault<bool>(currentUserDocument?.esport, false) ==
                 true,
             child: Align(
-              alignment: AlignmentDirectional(0.0, -1.0),
+              alignment: const AlignmentDirectional(0.0, -1.0),
               child: Padding(
-                padding: EdgeInsets.all(10.0),
+                padding: const EdgeInsets.all(10.0),
                 child: AuthUserStreamWidget(
                   builder: (context) => SingleChildScrollView(
                     child: Column(
@@ -74,7 +71,7 @@ class _ETeamRankPageWidgetState extends State<ETeamRankPageWidget> {
                                     context.pushNamed(
                                       'MenuPage',
                                       extra: <String, dynamic>{
-                                        kTransitionInfoKey: TransitionInfo(
+                                        kTransitionInfoKey: const TransitionInfo(
                                           hasTransition: true,
                                           transitionType:
                                               PageTransitionType.leftToRight,
@@ -85,13 +82,12 @@ class _ETeamRankPageWidgetState extends State<ETeamRankPageWidget> {
                                   },
                                   child: Icon(
                                     Icons.menu_rounded,
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryText,
+                                    color: currentUserDocument?.color1,
                                     size: 30.0,
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       10.0, 0.0, 0.0, 0.0),
                                   child: InkWell(
                                     splashColor: Colors.transparent,
@@ -103,8 +99,7 @@ class _ETeamRankPageWidgetState extends State<ETeamRankPageWidget> {
                                     },
                                     child: Icon(
                                       Icons.arrow_back_ios_new_rounded,
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
+                                      color: currentUserDocument?.color1,
                                       size: 30.0,
                                     ),
                                   ),
@@ -112,7 +107,7 @@ class _ETeamRankPageWidgetState extends State<ETeamRankPageWidget> {
                               ],
                             ),
                             Align(
-                              alignment: AlignmentDirectional(0.0, 0.0),
+                              alignment: const AlignmentDirectional(0.0, 0.0),
                               child: Text(
                                 'Classement\nE Teams',
                                 textAlign: TextAlign.center,
@@ -128,7 +123,7 @@ class _ETeamRankPageWidgetState extends State<ETeamRankPageWidget> {
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 10.0, 0.0),
                                   child: InkWell(
                                     splashColor: Colors.transparent,
@@ -139,7 +134,7 @@ class _ETeamRankPageWidgetState extends State<ETeamRankPageWidget> {
                                       context.pushNamed(
                                         'MyBestsETeamRankPage',
                                         extra: <String, dynamic>{
-                                          kTransitionInfoKey: TransitionInfo(
+                                          kTransitionInfoKey: const TransitionInfo(
                                             hasTransition: true,
                                             transitionType:
                                                 PageTransitionType.rightToLeft,
@@ -151,8 +146,7 @@ class _ETeamRankPageWidgetState extends State<ETeamRankPageWidget> {
                                     },
                                     child: Icon(
                                       Icons.favorite_rounded,
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryText,
+                                      color: currentUserDocument?.color1,
                                       size: 30.0,
                                     ),
                                   ),
@@ -165,9 +159,36 @@ class _ETeamRankPageWidgetState extends State<ETeamRankPageWidget> {
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
+                            if (valueOrDefault<bool>(
+                                    currentUserDocument?.helpNav, false) ==
+                                true)
+                              Align(
+                                alignment: const AlignmentDirectional(0.0, 0.0),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      'Filtrer les E Teams selon...',
+                                      textAlign: TextAlign.center,
+                                      maxLines: 2,
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                            fontSize: 10.0,
+                                            letterSpacing: 0.0,
+                                            lineHeight: 1.0,
+                                          ),
+                                    ),
+                                  ],
+                                ),
+                              ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  5.0, 10.0, 0.0, 0.0),
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  5.0, 0.0, 0.0, 0.0),
                               child: FlutterFlowDropDown<String>(
                                 controller: _model.dropESportValueController ??=
                                     FormFieldController<String>(
@@ -178,7 +199,7 @@ class _ETeamRankPageWidgetState extends State<ETeamRankPageWidget> {
                                   'esport.basketball',
                                   'esport.war'
                                 ]),
-                                optionLabels: [
+                                optionLabels: const [
                                   'E Sport Football',
                                   'E Sport Basketball',
                                   'E Sport War'
@@ -206,7 +227,7 @@ class _ETeamRankPageWidgetState extends State<ETeamRankPageWidget> {
                                 borderColor: Colors.transparent,
                                 borderWidth: 0.0,
                                 borderRadius: 8.0,
-                                margin: EdgeInsetsDirectional.fromSTEB(
+                                margin: const EdgeInsetsDirectional.fromSTEB(
                                     12.0, 0.0, 12.0, 0.0),
                                 hidesUnderline: true,
                                 isOverButton: false,
@@ -256,7 +277,7 @@ class _ETeamRankPageWidgetState extends State<ETeamRankPageWidget> {
                                     mainAxisAlignment: MainAxisAlignment.end,
                                     children: [
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             10.0, 0.0, 10.0, 0.0),
                                         child: InkWell(
                                           splashColor: Colors.transparent,
@@ -268,7 +289,7 @@ class _ETeamRankPageWidgetState extends State<ETeamRankPageWidget> {
                                               'MyNotifsList',
                                               extra: <String, dynamic>{
                                                 kTransitionInfoKey:
-                                                    TransitionInfo(
+                                                    const TransitionInfo(
                                                   hasTransition: true,
                                                   transitionType:
                                                       PageTransitionType
@@ -282,7 +303,7 @@ class _ETeamRankPageWidgetState extends State<ETeamRankPageWidget> {
                                           child: Icon(
                                             Icons.notifications_active_outlined,
                                             color: FlutterFlowTheme.of(context)
-                                                .accent3,
+                                                .accent1,
                                             size: 40.0,
                                           ),
                                         ),
@@ -304,7 +325,7 @@ class _ETeamRankPageWidgetState extends State<ETeamRankPageWidget> {
                               ),
                               options: List<String>.from(
                                   ['legende', 'champion', 'pro', 'amateur']),
-                              optionLabels: [
+                              optionLabels: const [
                                 'Légende',
                                 'Champion',
                                 'Pro',
@@ -334,7 +355,7 @@ class _ETeamRankPageWidgetState extends State<ETeamRankPageWidget> {
                                   FlutterFlowTheme.of(context).alternate,
                               borderWidth: 2.0,
                               borderRadius: 8.0,
-                              margin: EdgeInsetsDirectional.fromSTEB(
+                              margin: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 4.0, 16.0, 4.0),
                               hidesUnderline: true,
                               isOverButton: true,
@@ -347,7 +368,7 @@ class _ETeamRankPageWidgetState extends State<ETeamRankPageWidget> {
                                 _model.dropDivisionValue ??= '',
                               ),
                               options: List<String>.from(['1', '2', '3']),
-                              optionLabels: [
+                              optionLabels: const [
                                 'Division 1',
                                 'Division 2',
                                 'Division 3'
@@ -376,7 +397,7 @@ class _ETeamRankPageWidgetState extends State<ETeamRankPageWidget> {
                                   FlutterFlowTheme.of(context).alternate,
                               borderWidth: 2.0,
                               borderRadius: 8.0,
-                              margin: EdgeInsetsDirectional.fromSTEB(
+                              margin: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 4.0, 16.0, 4.0),
                               hidesUnderline: true,
                               isOverButton: true,
@@ -429,7 +450,7 @@ class _ETeamRankPageWidgetState extends State<ETeamRankPageWidget> {
                                       children: [
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   30.0, 0.0, 0.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -439,12 +460,11 @@ class _ETeamRankPageWidgetState extends State<ETeamRankPageWidget> {
                                               Icon(
                                                 Icons.security_rounded,
                                                 color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryText,
+                                                    currentUserDocument?.color2,
                                                 size: 30.0,
                                               ),
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         10.0, 0.0, 0.0, 0.0),
                                                 child: Text(
@@ -511,7 +531,7 @@ class _ETeamRankPageWidgetState extends State<ETeamRankPageWidget> {
                                       children: [
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 10.0, 10.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -519,7 +539,7 @@ class _ETeamRankPageWidgetState extends State<ETeamRankPageWidget> {
                                                 MainAxisAlignment.end,
                                             children: [
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 0.0, 10.0, 0.0),
                                                 child: Text(
@@ -540,8 +560,7 @@ class _ETeamRankPageWidgetState extends State<ETeamRankPageWidget> {
                                               Icon(
                                                 Icons.security_rounded,
                                                 color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryText,
+                                                    currentUserDocument?.color2,
                                                 size: 30.0,
                                               ),
                                             ],
@@ -569,7 +588,7 @@ class _ETeamRankPageWidgetState extends State<ETeamRankPageWidget> {
                                         CrossAxisAlignment.start,
                                     children: [
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 9.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -606,7 +625,7 @@ class _ETeamRankPageWidgetState extends State<ETeamRankPageWidget> {
                                                 ),
                                               ),
                                               child: Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     1.0, 0.0),
                                                 child: Text(
                                                   'E Teams',
@@ -654,7 +673,7 @@ class _ETeamRankPageWidgetState extends State<ETeamRankPageWidget> {
                                                 ),
                                               ),
                                               child: Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Text(
                                                   'Pts/MJ',
@@ -685,7 +704,7 @@ class _ETeamRankPageWidgetState extends State<ETeamRankPageWidget> {
                                                 ),
                                               ),
                                               child: Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Text(
                                                   'Pts',
@@ -716,7 +735,7 @@ class _ETeamRankPageWidgetState extends State<ETeamRankPageWidget> {
                                                 ),
                                               ),
                                               child: Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Text(
                                                   'G',
@@ -747,7 +766,7 @@ class _ETeamRankPageWidgetState extends State<ETeamRankPageWidget> {
                                                 ),
                                               ),
                                               child: Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Text(
                                                   'N',
@@ -777,7 +796,7 @@ class _ETeamRankPageWidgetState extends State<ETeamRankPageWidget> {
                                                 ),
                                               ),
                                               child: Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Text(
                                                   'P',
@@ -807,7 +826,7 @@ class _ETeamRankPageWidgetState extends State<ETeamRankPageWidget> {
                                                 ),
                                               ),
                                               child: Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Text(
                                                   'Diff',
@@ -837,7 +856,7 @@ class _ETeamRankPageWidgetState extends State<ETeamRankPageWidget> {
                                                 ),
                                               ),
                                               child: Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Text(
                                                   'Pour',
@@ -867,7 +886,7 @@ class _ETeamRankPageWidgetState extends State<ETeamRankPageWidget> {
                                                 ),
                                               ),
                                               child: Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Text(
                                                   'Contre',
@@ -897,7 +916,7 @@ class _ETeamRankPageWidgetState extends State<ETeamRankPageWidget> {
                                                 ),
                                               ),
                                               child: Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Text(
                                                   'MJ',
@@ -993,7 +1012,7 @@ class _ETeamRankPageWidgetState extends State<ETeamRankPageWidget> {
                                                       ),
                                                       child: Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 0.0, 0.0),
                                                         child: Text(
                                                           valueOrDefault<
@@ -1034,7 +1053,7 @@ class _ETeamRankPageWidgetState extends State<ETeamRankPageWidget> {
                                                       ),
                                                       child: Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 1.0, 0.0),
                                                         child: InkWell(
                                                           splashColor: Colors
@@ -1068,6 +1087,9 @@ class _ETeamRankPageWidgetState extends State<ETeamRankPageWidget> {
                                                                 .override(
                                                                   fontFamily:
                                                                       'Poppins',
+                                                                  color:
+                                                                      columnETeamsPointsScrollTeamsRecord
+                                                                          .color1,
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),
@@ -1090,7 +1112,7 @@ class _ETeamRankPageWidgetState extends State<ETeamRankPageWidget> {
                                                       ),
                                                       child: Padding(
                                                         padding:
-                                                            EdgeInsets.all(3.0),
+                                                            const EdgeInsets.all(3.0),
                                                         child: ClipRRect(
                                                           borderRadius:
                                                               BorderRadius
@@ -1122,7 +1144,7 @@ class _ETeamRankPageWidgetState extends State<ETeamRankPageWidget> {
                                                       ),
                                                       child: Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 0.0, 0.0),
                                                         child: Text(
                                                           valueOrDefault<
@@ -1165,7 +1187,7 @@ class _ETeamRankPageWidgetState extends State<ETeamRankPageWidget> {
                                                       ),
                                                       child: Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 0.0, 0.0),
                                                         child: Text(
                                                           valueOrDefault<
@@ -1202,7 +1224,7 @@ class _ETeamRankPageWidgetState extends State<ETeamRankPageWidget> {
                                                       ),
                                                       child: Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 0.0, 0.0),
                                                         child: Text(
                                                           valueOrDefault<
@@ -1239,7 +1261,7 @@ class _ETeamRankPageWidgetState extends State<ETeamRankPageWidget> {
                                                       ),
                                                       child: Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 0.0, 0.0),
                                                         child: Text(
                                                           valueOrDefault<
@@ -1271,7 +1293,7 @@ class _ETeamRankPageWidgetState extends State<ETeamRankPageWidget> {
                                                                 .of(context)
                                                             .primaryBackground,
                                                         borderRadius:
-                                                            BorderRadius.only(
+                                                            const BorderRadius.only(
                                                           bottomLeft:
                                                               Radius.circular(
                                                                   0.0),
@@ -1293,7 +1315,7 @@ class _ETeamRankPageWidgetState extends State<ETeamRankPageWidget> {
                                                       ),
                                                       child: Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 0.0, 0.0),
                                                         child: Text(
                                                           valueOrDefault<
@@ -1319,7 +1341,7 @@ class _ETeamRankPageWidgetState extends State<ETeamRankPageWidget> {
                                                     ),
                                                     Align(
                                                       alignment:
-                                                          AlignmentDirectional(
+                                                          const AlignmentDirectional(
                                                               0.0, 0.0),
                                                       child: Container(
                                                         width: 45.0,
@@ -1337,7 +1359,7 @@ class _ETeamRankPageWidgetState extends State<ETeamRankPageWidget> {
                                                         ),
                                                         child: Align(
                                                           alignment:
-                                                              AlignmentDirectional(
+                                                              const AlignmentDirectional(
                                                                   0.0, 0.0),
                                                           child: Text(
                                                             valueOrDefault<
@@ -1381,7 +1403,7 @@ class _ETeamRankPageWidgetState extends State<ETeamRankPageWidget> {
                                                       ),
                                                       child: Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 0.0, 0.0),
                                                         child: Text(
                                                           valueOrDefault<
@@ -1421,7 +1443,7 @@ class _ETeamRankPageWidgetState extends State<ETeamRankPageWidget> {
                                                       ),
                                                       child: Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 0.0, 0.0),
                                                         child: Text(
                                                           valueOrDefault<
@@ -1460,7 +1482,7 @@ class _ETeamRankPageWidgetState extends State<ETeamRankPageWidget> {
                                                       ),
                                                       child: Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 0.0, 0.0),
                                                         child: Text(
                                                           valueOrDefault<

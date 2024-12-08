@@ -2,11 +2,7 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'e_team_events_no_date_list_model.dart';
 export 'e_team_events_no_date_list_model.dart';
 
@@ -45,7 +41,7 @@ class _ETeamEventsNoDateListWidgetState
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<TeamsRecord>(
-      stream: TeamsRecord.getDocument(widget!.teamRef!),
+      stream: TeamsRecord.getDocument(widget.teamRef!),
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
@@ -73,9 +69,9 @@ class _ETeamEventsNoDateListWidgetState
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             body: Align(
-              alignment: AlignmentDirectional(0.0, -1.0),
+              alignment: const AlignmentDirectional(0.0, -1.0),
               child: Padding(
-                padding: EdgeInsets.all(10.0),
+                padding: const EdgeInsets.all(10.0),
                 child: SingleChildScrollView(
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
@@ -83,7 +79,7 @@ class _ETeamEventsNoDateListWidgetState
                     children: [
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
                         child: SingleChildScrollView(
                           scrollDirection: Axis.horizontal,
                           child: Row(
@@ -103,12 +99,12 @@ class _ETeamEventsNoDateListWidgetState
                                         'ModifETeamPage',
                                         queryParameters: {
                                           'teamRef': serializeParam(
-                                            widget!.teamRef,
+                                            widget.teamRef,
                                             ParamType.DocumentReference,
                                           ),
                                         }.withoutNulls,
                                         extra: <String, dynamic>{
-                                          kTransitionInfoKey: TransitionInfo(
+                                          kTransitionInfoKey: const TransitionInfo(
                                             hasTransition: true,
                                             transitionType:
                                                 PageTransitionType.leftToRight,
@@ -120,13 +116,13 @@ class _ETeamEventsNoDateListWidgetState
                                     },
                                     child: Icon(
                                       Icons.menu_rounded,
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
+                                      color: eTeamEventsNoDateListTeamsRecord
+                                          .color1,
                                       size: 30.0,
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 0.0, 0.0),
                                     child: InkWell(
                                       splashColor: Colors.transparent,
@@ -138,8 +134,8 @@ class _ETeamEventsNoDateListWidgetState
                                       },
                                       child: Icon(
                                         Icons.arrow_back_ios_new_rounded,
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryText,
+                                        color: eTeamEventsNoDateListTeamsRecord
+                                            .color1,
                                         size: 30.0,
                                       ),
                                     ),
@@ -150,7 +146,7 @@ class _ETeamEventsNoDateListWidgetState
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 6.0, 0.0),
                                     child: Container(
                                       width: 65.0,
@@ -172,7 +168,7 @@ class _ETeamEventsNoDateListWidgetState
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         5.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       eTeamEventsNoDateListTeamsRecord.name,
@@ -195,9 +191,9 @@ class _ETeamEventsNoDateListWidgetState
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Align(
-                            alignment: AlignmentDirectional(0.0, -1.0),
+                            alignment: const AlignmentDirectional(0.0, -1.0),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 5.0, 0.0, 10.0),
                               child: Text(
                                 'Rencontres\nDates à définir',
@@ -211,6 +207,44 @@ class _ETeamEventsNoDateListWidgetState
                               ),
                             ),
                           ),
+                          if (valueOrDefault<bool>(
+                                  currentUserDocument?.helpNav, false) ==
+                              true)
+                            Align(
+                              alignment: const AlignmentDirectional(0.0, 0.0),
+                              child: Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 3.0),
+                                child: AuthUserStreamWidget(
+                                  builder: (context) => Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Align(
+                                        alignment:
+                                            const AlignmentDirectional(0.0, 0.0),
+                                        child: Text(
+                                          'Cliquer sur les boutons pour afficher la liste des rencontres.',
+                                          textAlign: TextAlign.center,
+                                          maxLines: 2,
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Poppins',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryText,
+                                                fontSize: 10.0,
+                                                letterSpacing: 0.0,
+                                                lineHeight: 1.0,
+                                              ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
                           Row(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -220,12 +254,23 @@ class _ETeamEventsNoDateListWidgetState
                                 height: 25.0,
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context).warning,
+                                  boxShadow: [
+                                    BoxShadow(
+                                      blurRadius: 4.0,
+                                      color:
+                                          FlutterFlowTheme.of(context).accent3,
+                                      offset: const Offset(
+                                        0.0,
+                                        2.0,
+                                      ),
+                                    )
+                                  ],
                                   borderRadius: BorderRadius.circular(25.0),
                                   shape: BoxShape.rectangle,
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     50.0, 0.0, 50.0, 0.0),
                                 child: InkWell(
                                   splashColor: Colors.transparent,
@@ -237,7 +282,7 @@ class _ETeamEventsNoDateListWidgetState
                                       'ETeamEventsList',
                                       queryParameters: {
                                         'teamRef': serializeParam(
-                                          widget!.teamRef,
+                                          widget.teamRef,
                                           ParamType.DocumentReference,
                                         ),
                                       }.withoutNulls,
@@ -249,6 +294,17 @@ class _ETeamEventsNoDateListWidgetState
                                     decoration: BoxDecoration(
                                       color:
                                           FlutterFlowTheme.of(context).success,
+                                      boxShadow: [
+                                        BoxShadow(
+                                          blurRadius: 4.0,
+                                          color: FlutterFlowTheme.of(context)
+                                              .accent3,
+                                          offset: const Offset(
+                                            0.0,
+                                            2.0,
+                                          ),
+                                        )
+                                      ],
                                       borderRadius: BorderRadius.circular(25.0),
                                       shape: BoxShape.rectangle,
                                     ),
@@ -265,7 +321,7 @@ class _ETeamEventsNoDateListWidgetState
                                     'ETeamEventsList',
                                     queryParameters: {
                                       'teamRef': serializeParam(
-                                        widget!.teamRef,
+                                        widget.teamRef,
                                         ParamType.DocumentReference,
                                       ),
                                     }.withoutNulls,
@@ -276,6 +332,17 @@ class _ETeamEventsNoDateListWidgetState
                                   height: 25.0,
                                   decoration: BoxDecoration(
                                     color: FlutterFlowTheme.of(context).error,
+                                    boxShadow: [
+                                      BoxShadow(
+                                        blurRadius: 4.0,
+                                        color: FlutterFlowTheme.of(context)
+                                            .accent3,
+                                        offset: const Offset(
+                                          0.0,
+                                          2.0,
+                                        ),
+                                      )
+                                    ],
                                     borderRadius: BorderRadius.circular(25.0),
                                     shape: BoxShape.rectangle,
                                   ),
@@ -287,9 +354,9 @@ class _ETeamEventsNoDateListWidgetState
                                   currentUserDocument?.helpNav, false) ==
                               true)
                             Align(
-                              alignment: AlignmentDirectional(0.0, 0.0),
+                              alignment: const AlignmentDirectional(0.0, 0.0),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 5.0, 0.0, 0.0),
                                 child: AuthUserStreamWidget(
                                   builder: (context) => Row(
@@ -302,7 +369,7 @@ class _ETeamEventsNoDateListWidgetState
                                           currentUserReference)
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   28.0, 0.0, 0.0, 0.0),
                                           child: Text(
                                             'A configurer',
@@ -319,7 +386,7 @@ class _ETeamEventsNoDateListWidgetState
                                           ),
                                         ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 8.0, 0.0),
                                         child: Text(
                                           'A venir',
@@ -336,7 +403,7 @@ class _ETeamEventsNoDateListWidgetState
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 33.0, 0.0),
                                         child: Text(
                                           'Terminés',
@@ -358,11 +425,11 @@ class _ETeamEventsNoDateListWidgetState
                               ),
                             ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 10.0, 0.0, 0.0),
                             child: StreamBuilder<List<TeamEventsRecord>>(
                               stream: queryTeamEventsRecord(
-                                parent: widget!.teamRef,
+                                parent: widget.teamRef,
                               ),
                               builder: (context, snapshot) {
                                 // Customize what your widget looks like when it's loading.
@@ -395,38 +462,9 @@ class _ETeamEventsNoDateListWidgetState
                                     return Column(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
-                                        if ((columnTeamEventsTeamEventsRecord
-                                                    .events ==
-                                                null) &&
-                                            (eTeamEventsNoDateListTeamsRecord
-                                                    .boss ==
-                                                currentUserReference))
-                                          Align(
-                                            alignment:
-                                                AlignmentDirectional(1.0, 0.0),
-                                            child: InkWell(
-                                              splashColor: Colors.transparent,
-                                              focusColor: Colors.transparent,
-                                              hoverColor: Colors.transparent,
-                                              highlightColor:
-                                                  Colors.transparent,
-                                              onTap: () async {
-                                                await columnTeamEventsTeamEventsRecord
-                                                    .reference
-                                                    .delete();
-                                              },
-                                              child: Icon(
-                                                Icons.delete_forever,
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .error,
-                                                size: 30.0,
-                                              ),
-                                            ),
-                                          ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   5.0, 0.0, 5.0, 0.0),
                                           child: StreamBuilder<EventsRecord>(
                                             stream: EventsRecord.getDocument(
@@ -512,7 +550,7 @@ class _ETeamEventsNoDateListWidgetState
                                                             ),
                                                             child: Align(
                                                               alignment:
-                                                                  AlignmentDirectional(
+                                                                  const AlignmentDirectional(
                                                                       0.0, 0.0),
                                                               child: Column(
                                                                 mainAxisSize:
@@ -552,7 +590,7 @@ class _ETeamEventsNoDateListWidgetState
                                                                   ),
                                                                   Align(
                                                                     alignment:
-                                                                        AlignmentDirectional(
+                                                                        const AlignmentDirectional(
                                                                             0.0,
                                                                             0.0),
                                                                     child: Text(
@@ -633,7 +671,7 @@ class _ETeamEventsNoDateListWidgetState
                                                                         extra: <String,
                                                                             dynamic>{
                                                                           kTransitionInfoKey:
-                                                                              TransitionInfo(
+                                                                              const TransitionInfo(
                                                                             hasTransition:
                                                                                 true,
                                                                             transitionType:
@@ -647,9 +685,8 @@ class _ETeamEventsNoDateListWidgetState
                                                                     child: Icon(
                                                                       Icons
                                                                           .comment_rounded,
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .secondaryText,
+                                                                      color: eTeamEventsNoDateListTeamsRecord
+                                                                          .color1,
                                                                       size:
                                                                           30.0,
                                                                     ),
@@ -657,11 +694,11 @@ class _ETeamEventsNoDateListWidgetState
                                                                   if ((columnEventEventsRecord
                                                                               .domReady ==
                                                                           false) &&
-                                                                      (widget!.teamRef ==
+                                                                      (widget.teamRef ==
                                                                           columnEventEventsRecord
                                                                               .teamdomRef))
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           10.0,
                                                                           0.0,
@@ -688,13 +725,13 @@ class _ETeamEventsNoDateListWidgetState
                                                                                 ParamType.DocumentReference,
                                                                               ),
                                                                               'myETeamRef': serializeParam(
-                                                                                widget!.teamRef,
+                                                                                widget.teamRef,
                                                                                 ParamType.DocumentReference,
                                                                               ),
                                                                             }.withoutNulls,
                                                                             extra: <String,
                                                                                 dynamic>{
-                                                                              kTransitionInfoKey: TransitionInfo(
+                                                                              kTransitionInfoKey: const TransitionInfo(
                                                                                 hasTransition: true,
                                                                                 transitionType: PageTransitionType.bottomToTop,
                                                                                 duration: Duration(milliseconds: 400),
@@ -707,7 +744,7 @@ class _ETeamEventsNoDateListWidgetState
                                                                           Icons
                                                                               .location_history_outlined,
                                                                           color:
-                                                                              FlutterFlowTheme.of(context).secondaryText,
+                                                                              eTeamEventsNoDateListTeamsRecord.color1,
                                                                           size:
                                                                               30.0,
                                                                         ),
@@ -716,11 +753,11 @@ class _ETeamEventsNoDateListWidgetState
                                                                   if ((columnEventEventsRecord
                                                                               .extReady ==
                                                                           false) &&
-                                                                      (widget!.teamRef ==
+                                                                      (widget.teamRef ==
                                                                           columnEventEventsRecord
                                                                               .teamextRef))
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           10.0,
                                                                           0.0,
@@ -747,13 +784,13 @@ class _ETeamEventsNoDateListWidgetState
                                                                                 ParamType.DocumentReference,
                                                                               ),
                                                                               'myETeamRef': serializeParam(
-                                                                                widget!.teamRef,
+                                                                                widget.teamRef,
                                                                                 ParamType.DocumentReference,
                                                                               ),
                                                                             }.withoutNulls,
                                                                             extra: <String,
                                                                                 dynamic>{
-                                                                              kTransitionInfoKey: TransitionInfo(
+                                                                              kTransitionInfoKey: const TransitionInfo(
                                                                                 hasTransition: true,
                                                                                 transitionType: PageTransitionType.bottomToTop,
                                                                                 duration: Duration(milliseconds: 400),
@@ -766,7 +803,7 @@ class _ETeamEventsNoDateListWidgetState
                                                                           Icons
                                                                               .location_history_outlined,
                                                                           color:
-                                                                              FlutterFlowTheme.of(context).secondaryText,
+                                                                              eTeamEventsNoDateListTeamsRecord.color1,
                                                                           size:
                                                                               30.0,
                                                                         ),
@@ -819,7 +856,7 @@ class _ETeamEventsNoDateListWidgetState
                                                             ),
                                                             child: Align(
                                                               alignment:
-                                                                  AlignmentDirectional(
+                                                                  const AlignmentDirectional(
                                                                       0.0, 0.0),
                                                               child: Column(
                                                                 mainAxisSize:
@@ -859,7 +896,7 @@ class _ETeamEventsNoDateListWidgetState
                                                                   ),
                                                                   Align(
                                                                     alignment:
-                                                                        AlignmentDirectional(
+                                                                        const AlignmentDirectional(
                                                                             0.0,
                                                                             0.0),
                                                                     child: Text(
@@ -935,9 +972,9 @@ class _ETeamEventsNoDateListWidgetState
                                                     ),
                                                   Divider(
                                                     thickness: 1.0,
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .secondaryBackground,
+                                                    color:
+                                                        eTeamEventsNoDateListTeamsRecord
+                                                            .color2,
                                                   ),
                                                 ],
                                               );

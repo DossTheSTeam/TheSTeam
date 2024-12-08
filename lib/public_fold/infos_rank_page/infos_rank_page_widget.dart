@@ -2,10 +2,7 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'infos_rank_page_model.dart';
 export 'infos_rank_page_model.dart';
 
@@ -44,14 +41,14 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
         body: SafeArea(
           top: true,
           child: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
             child: SingleChildScrollView(
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -68,7 +65,7 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                                 context.pushNamed(
                                   'MenuPage',
                                   extra: <String, dynamic>{
-                                    kTransitionInfoKey: TransitionInfo(
+                                    kTransitionInfoKey: const TransitionInfo(
                                       hasTransition: true,
                                       transitionType:
                                           PageTransitionType.leftToRight,
@@ -100,7 +97,7 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   40.0, 0.0, 0.0, 0.0),
                               child: Text(
                                 'Informations\nClassement',
@@ -153,7 +150,7 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 children: [
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 10.0, 0.0),
                                     child: InkWell(
                                       splashColor: Colors.transparent,
@@ -164,7 +161,7 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                                         context.pushNamed(
                                           'MyNotifsList',
                                           extra: <String, dynamic>{
-                                            kTransitionInfoKey: TransitionInfo(
+                                            kTransitionInfoKey: const TransitionInfo(
                                               hasTransition: true,
                                               transitionType: PageTransitionType
                                                   .rightToLeft,
@@ -177,7 +174,7 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                                       child: Icon(
                                         Icons.notifications_active_outlined,
                                         color: FlutterFlowTheme.of(context)
-                                            .accent3,
+                                            .accent1,
                                         size: 40.0,
                                       ),
                                     ),
@@ -190,10 +187,10 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                     ),
                   ),
                   Align(
-                    alignment: AlignmentDirectional(-1.0, 0.0),
+                    alignment: const AlignmentDirectional(-1.0, 0.0),
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(40.0, 0.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(40.0, 0.0, 0.0, 0.0),
                       child: Text(
                         'Informations classement\nParis sportifs',
                         textAlign: TextAlign.center,
@@ -206,7 +203,7 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.all(12.0),
+                    padding: const EdgeInsets.all(12.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -231,7 +228,7 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
                     child: Text(
                       'Une ligue comprends 3 divisions',
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -241,7 +238,7 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                     ),
                   ),
                   Align(
-                    alignment: AlignmentDirectional(-1.0, 0.0),
+                    alignment: const AlignmentDirectional(-1.0, 0.0),
                     child: Text(
                       'Les montées et descentes de divisions s\'effectuent le 1er et le 15 de chaque mois',
                       textAlign: TextAlign.start,
@@ -253,7 +250,7 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
                     child: Text(
                       'Tous les utilisateurs débutent en\nLigue Pro - Division 2.',
                       textAlign: TextAlign.center,
@@ -264,7 +261,7 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                     ),
                   ),
                   Align(
-                    alignment: AlignmentDirectional(-1.0, 0.0),
+                    alignment: const AlignmentDirectional(-1.0, 0.0),
                     child: Text(
                       'A l\'issue de chaque période',
                       textAlign: TextAlign.start,
@@ -275,10 +272,10 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                     ),
                   ),
                   Align(
-                    alignment: AlignmentDirectional(-1.0, 0.0),
+                    alignment: const AlignmentDirectional(-1.0, 0.0),
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
                       child: Text(
                         'Les 25% en haut du classement montent en division suppérieure.',
                         textAlign: TextAlign.start,
@@ -292,10 +289,10 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                     ),
                   ),
                   Align(
-                    alignment: AlignmentDirectional(-1.0, 0.0),
+                    alignment: const AlignmentDirectional(-1.0, 0.0),
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
                       child: Text(
                         'Les 25%  en bas du classement retrogradent en division inférieure.',
                         textAlign: TextAlign.start,
@@ -309,10 +306,10 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                     ),
                   ),
                   Align(
-                    alignment: AlignmentDirectional(-1.0, 0.0),
+                    alignment: const AlignmentDirectional(-1.0, 0.0),
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(20.0, 5.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(20.0, 5.0, 0.0, 0.0),
                       child: Text(
                         'Les 10%  en haut du classement de division 1 montent en Ligue suppérieure.',
                         textAlign: TextAlign.start,
@@ -326,10 +323,10 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                     ),
                   ),
                   Align(
-                    alignment: AlignmentDirectional(-1.0, 0.0),
+                    alignment: const AlignmentDirectional(-1.0, 0.0),
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
                       child: Text(
                         'Les 10%  en bas du classement de division 3 retrogradent en Ligue inférieure.',
                         textAlign: TextAlign.start,
@@ -344,7 +341,7 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
                     child: Text(
                       'Pourquoi ?',
                       textAlign: TextAlign.center,
@@ -355,7 +352,7 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.all(12.0),
+                    padding: const EdgeInsets.all(12.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -369,7 +366,7 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                                   ),
                         ),
                         Align(
-                          alignment: AlignmentDirectional(-1.0, 0.0),
+                          alignment: const AlignmentDirectional(-1.0, 0.0),
                           child: Text(
                             'Les plus faibles à réussir',
                             textAlign: TextAlign.start,
@@ -385,7 +382,7 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.all(12.0),
+                    padding: const EdgeInsets.all(12.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -400,7 +397,7 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                                   ),
                         ),
                         Align(
-                          alignment: AlignmentDirectional(-1.0, 0.0),
+                          alignment: const AlignmentDirectional(-1.0, 0.0),
                           child: Text(
                             'Vos pronostiques de\nmanière responsable',
                             textAlign: TextAlign.end,
@@ -416,7 +413,7 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.all(12.0),
+                    padding: const EdgeInsets.all(12.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -431,7 +428,7 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                                   ),
                         ),
                         Align(
-                          alignment: AlignmentDirectional(-1.0, 0.0),
+                          alignment: const AlignmentDirectional(-1.0, 0.0),
                           child: Text(
                             'Entre personne du même niveau',
                             textAlign: TextAlign.start,
@@ -447,7 +444,7 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.all(12.0),
+                    padding: const EdgeInsets.all(12.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -462,7 +459,7 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                                   ),
                         ),
                         Align(
-                          alignment: AlignmentDirectional(-1.0, 0.0),
+                          alignment: const AlignmentDirectional(-1.0, 0.0),
                           child: Text(
                             'Les discussions pertinentes',
                             textAlign: TextAlign.start,
@@ -478,7 +475,7 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                     ),
                   ),
                   Align(
-                    alignment: AlignmentDirectional(-1.0, 0.0),
+                    alignment: const AlignmentDirectional(-1.0, 0.0),
                     child: Text(
                       'Le classement à plusieurs utilités :',
                       textAlign: TextAlign.start,
@@ -489,7 +486,7 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                     ),
                   ),
                   Align(
-                    alignment: AlignmentDirectional(-1.0, 0.0),
+                    alignment: const AlignmentDirectional(-1.0, 0.0),
                     child: Text(
                       'il met en lumière les meilleurs pronostiqueurs de la communauté.',
                       textAlign: TextAlign.start,
@@ -500,7 +497,7 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                     ),
                   ),
                   Align(
-                    alignment: AlignmentDirectional(-1.0, 0.0),
+                    alignment: const AlignmentDirectional(-1.0, 0.0),
                     child: Text(
                       'Cela permet aux utilisateurs ayant peu de réussite de suivre les meilleurs.',
                       textAlign: TextAlign.start,
@@ -511,7 +508,7 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                     ),
                   ),
                   Align(
-                    alignment: AlignmentDirectional(-1.0, 0.0),
+                    alignment: const AlignmentDirectional(-1.0, 0.0),
                     child: Text(
                       'Cela permet aussi aux membres les plus performants de discuter avec des personnes du même niveau.',
                       textAlign: TextAlign.start,
@@ -522,10 +519,10 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                     ),
                   ),
                   Align(
-                    alignment: AlignmentDirectional(0.0, 0.0),
+                    alignment: const AlignmentDirectional(0.0, 0.0),
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
                       child: Text(
                         'Comment ?',
                         textAlign: TextAlign.start,
@@ -537,7 +534,7 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                     ),
                   ),
                   Align(
-                    alignment: AlignmentDirectional(-1.0, 0.0),
+                    alignment: const AlignmentDirectional(-1.0, 0.0),
                     child: Text(
                       'Le classement prend en compte vos choix de paris sportifs ainsi que vos actions dans l\'application, votre stock de pièces  peut s\'élever grâce à des paris gagnants, des clickSTeam et des réactions que vous provoquez.\nEn revanche des paris perdants ainsi que des cartons rouges  reçus feront baisser votre stock et perdre des places au classement.',
                       textAlign: TextAlign.start,
@@ -548,10 +545,10 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                     ),
                   ),
                   Align(
-                    alignment: AlignmentDirectional(0.0, 0.0),
+                    alignment: const AlignmentDirectional(0.0, 0.0),
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
                       child: Text(
                         'Barème',
                         textAlign: TextAlign.start,
@@ -563,12 +560,12 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 5.0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 5.0),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               12.0, 0.0, 12.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -576,7 +573,7 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Align(
-                                alignment: AlignmentDirectional(-1.0, 0.0),
+                                alignment: const AlignmentDirectional(-1.0, 0.0),
                                 child: Text(
                                   'réponse de commentaires',
                                   textAlign: TextAlign.start,
@@ -603,7 +600,7 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               12.0, 0.0, 12.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -611,7 +608,7 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Align(
-                                alignment: AlignmentDirectional(-1.0, 0.0),
+                                alignment: const AlignmentDirectional(-1.0, 0.0),
                                 child: Text(
                                   'Like / Dislike',
                                   textAlign: TextAlign.start,
@@ -638,7 +635,7 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               12.0, 0.0, 12.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -646,7 +643,7 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Align(
-                                alignment: AlignmentDirectional(-1.0, 0.0),
+                                alignment: const AlignmentDirectional(-1.0, 0.0),
                                 child: Text(
                                   'ClickSteam',
                                   textAlign: TextAlign.start,
@@ -673,7 +670,7 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               12.0, 0.0, 12.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -681,7 +678,7 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Align(
-                                alignment: AlignmentDirectional(-1.0, 0.0),
+                                alignment: const AlignmentDirectional(-1.0, 0.0),
                                 child: Text(
                                   'Carton rouge',
                                   textAlign: TextAlign.start,
@@ -707,7 +704,7 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               12.0, 0.0, 12.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -715,7 +712,7 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Align(
-                                alignment: AlignmentDirectional(-1.0, 0.0),
+                                alignment: const AlignmentDirectional(-1.0, 0.0),
                                 child: Text(
                                   'Suppression de contenu',
                                   textAlign: TextAlign.start,
@@ -744,7 +741,7 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                     ),
                   ),
                   Align(
-                    alignment: AlignmentDirectional(-1.0, 0.0),
+                    alignment: const AlignmentDirectional(-1.0, 0.0),
                     child: Text(
                       'Nous vous conseillons de consulter les conditions générales d\'utilisation afin de vous informer sur les risques liés à un comportement inapproprié.',
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -754,10 +751,10 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                     ),
                   ),
                   Align(
-                    alignment: AlignmentDirectional(1.0, 0.0),
+                    alignment: const AlignmentDirectional(1.0, 0.0),
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
                       child: InkWell(
                         splashColor: Colors.transparent,
                         focusColor: Colors.transparent,
@@ -767,7 +764,7 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                           context.pushNamed(
                             'GeneralsCondidtionsPage',
                             extra: <String, dynamic>{
-                              kTransitionInfoKey: TransitionInfo(
+                              kTransitionInfoKey: const TransitionInfo(
                                 hasTransition: true,
                                 transitionType: PageTransitionType.bottomToTop,
                                 duration: Duration(milliseconds: 400),
@@ -788,10 +785,10 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                     ),
                   ),
                   Align(
-                    alignment: AlignmentDirectional(-1.0, 0.0),
+                    alignment: const AlignmentDirectional(-1.0, 0.0),
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
                       child: Text(
                         'Dans cette application ...\nTout est publique',
                         textAlign: TextAlign.start,
@@ -803,7 +800,7 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                     ),
                   ),
                   Align(
-                    alignment: AlignmentDirectional(-1.0, 0.0),
+                    alignment: const AlignmentDirectional(-1.0, 0.0),
                     child: Text(
                       'La visibilité des pronostiques, des classements , des commentaires...',
                       textAlign: TextAlign.start,
@@ -814,7 +811,7 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                     ),
                   ),
                   Align(
-                    alignment: AlignmentDirectional(-1.0, 0.0),
+                    alignment: const AlignmentDirectional(-1.0, 0.0),
                     child: Text(
                       'Mais vous ne pourrez pas commenter dans une ligue plus haute que la votre.',
                       textAlign: TextAlign.center,
@@ -826,10 +823,10 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                     ),
                   ),
                   Align(
-                    alignment: AlignmentDirectional(-1.0, 0.0),
+                    alignment: const AlignmentDirectional(-1.0, 0.0),
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(40.0, 20.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(40.0, 20.0, 0.0, 0.0),
                       child: Text(
                         'Informations classement\nE Players',
                         textAlign: TextAlign.center,
@@ -842,7 +839,7 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.all(12.0),
+                    padding: const EdgeInsets.all(12.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -867,7 +864,7 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
                     child: Text(
                       'Une ligue comprends 3 divisions',
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -877,7 +874,7 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                     ),
                   ),
                   Align(
-                    alignment: AlignmentDirectional(-1.0, 0.0),
+                    alignment: const AlignmentDirectional(-1.0, 0.0),
                     child: Text(
                       'Les montées et descentes de divisions s\'effectuent le 1er et le 15 de chaque mois',
                       textAlign: TextAlign.start,
@@ -888,10 +885,10 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                     ),
                   ),
                   Align(
-                    alignment: AlignmentDirectional(-1.0, 0.0),
+                    alignment: const AlignmentDirectional(-1.0, 0.0),
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
                       child: Text(
                         'Les 25% en haut du classement montent en division suppérieure.',
                         textAlign: TextAlign.start,
@@ -905,10 +902,10 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                     ),
                   ),
                   Align(
-                    alignment: AlignmentDirectional(-1.0, 0.0),
+                    alignment: const AlignmentDirectional(-1.0, 0.0),
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
                       child: Text(
                         'Les 25%  en bas du classement retrogradent en division inférieure.',
                         textAlign: TextAlign.start,
@@ -922,10 +919,10 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                     ),
                   ),
                   Align(
-                    alignment: AlignmentDirectional(-1.0, 0.0),
+                    alignment: const AlignmentDirectional(-1.0, 0.0),
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(20.0, 5.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(20.0, 5.0, 0.0, 0.0),
                       child: Text(
                         'Les 10%  en haut du classement de division 1 montent en Ligue suppérieure.',
                         textAlign: TextAlign.start,
@@ -939,10 +936,10 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                     ),
                   ),
                   Align(
-                    alignment: AlignmentDirectional(-1.0, 0.0),
+                    alignment: const AlignmentDirectional(-1.0, 0.0),
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 10.0),
+                          const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 10.0),
                       child: Text(
                         'Les 10%  en bas du classement de division 3 retrogradent en Ligue inférieure.',
                         textAlign: TextAlign.start,
@@ -956,10 +953,10 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                     ),
                   ),
                   Align(
-                    alignment: AlignmentDirectional(0.0, 0.0),
+                    alignment: const AlignmentDirectional(0.0, 0.0),
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
                       child: Text(
                         'Comment ?',
                         textAlign: TextAlign.start,
@@ -971,7 +968,7 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                     ),
                   ),
                   Align(
-                    alignment: AlignmentDirectional(-1.0, 0.0),
+                    alignment: const AlignmentDirectional(-1.0, 0.0),
                     child: Text(
                       'Le classement prend en compte vos performances, Tops / Flops.',
                       textAlign: TextAlign.center,
@@ -982,10 +979,10 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                     ),
                   ),
                   Align(
-                    alignment: AlignmentDirectional(0.0, 0.0),
+                    alignment: const AlignmentDirectional(0.0, 0.0),
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
                       child: Text(
                         'Barème',
                         textAlign: TextAlign.start,
@@ -998,14 +995,14 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Align(
-                          alignment: AlignmentDirectional(-1.0, 0.0),
+                          alignment: const AlignmentDirectional(-1.0, 0.0),
                           child: Text(
                             'Homme du match',
                             textAlign: TextAlign.start,
@@ -1031,14 +1028,14 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Align(
-                          alignment: AlignmentDirectional(-1.0, 0.0),
+                          alignment: const AlignmentDirectional(-1.0, 0.0),
                           child: Text(
                             'Top',
                             textAlign: TextAlign.start,
@@ -1064,14 +1061,14 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Align(
-                          alignment: AlignmentDirectional(-1.0, 0.0),
+                          alignment: const AlignmentDirectional(-1.0, 0.0),
                           child: Text(
                             'Flop',
                             textAlign: TextAlign.start,
@@ -1096,7 +1093,7 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                     ),
                   ),
                   Align(
-                    alignment: AlignmentDirectional(-1.0, 0.0),
+                    alignment: const AlignmentDirectional(-1.0, 0.0),
                     child: Text(
                       'A l\'issue de chaque match, les participants seront invités à noter leurs coéquipiers selon leurs performances.',
                       textAlign: TextAlign.start,
@@ -1107,10 +1104,10 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                     ),
                   ),
                   Align(
-                    alignment: AlignmentDirectional(-1.0, 0.0),
+                    alignment: const AlignmentDirectional(-1.0, 0.0),
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(40.0, 20.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(40.0, 20.0, 0.0, 0.0),
                       child: Text(
                         'Informations classement\nE Teams',
                         textAlign: TextAlign.center,
@@ -1123,7 +1120,7 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.all(12.0),
+                    padding: const EdgeInsets.all(12.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -1148,7 +1145,7 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
                     child: Text(
                       'Une ligue comprends 3 divisions',
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -1158,7 +1155,7 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                     ),
                   ),
                   Align(
-                    alignment: AlignmentDirectional(-1.0, 0.0),
+                    alignment: const AlignmentDirectional(-1.0, 0.0),
                     child: Text(
                       'Les montées et descentes de divisions s\'effectuent le 1er et le 15 de chaque mois',
                       textAlign: TextAlign.start,
@@ -1169,10 +1166,10 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                     ),
                   ),
                   Align(
-                    alignment: AlignmentDirectional(-1.0, 0.0),
+                    alignment: const AlignmentDirectional(-1.0, 0.0),
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
                       child: Text(
                         'Les 25% en haut du classement montent en division suppérieure.',
                         textAlign: TextAlign.start,
@@ -1186,10 +1183,10 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                     ),
                   ),
                   Align(
-                    alignment: AlignmentDirectional(-1.0, 0.0),
+                    alignment: const AlignmentDirectional(-1.0, 0.0),
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
                       child: Text(
                         'Les 25%  en bas du classement retrogradent en division inférieure.',
                         textAlign: TextAlign.start,
@@ -1203,10 +1200,10 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                     ),
                   ),
                   Align(
-                    alignment: AlignmentDirectional(-1.0, 0.0),
+                    alignment: const AlignmentDirectional(-1.0, 0.0),
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(20.0, 5.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(20.0, 5.0, 0.0, 0.0),
                       child: Text(
                         'Les 10%  en haut du classement de division 1 montent en Ligue suppérieure.',
                         textAlign: TextAlign.start,
@@ -1220,10 +1217,10 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                     ),
                   ),
                   Align(
-                    alignment: AlignmentDirectional(-1.0, 0.0),
+                    alignment: const AlignmentDirectional(-1.0, 0.0),
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 10.0),
+                          const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 10.0),
                       child: Text(
                         'Les 10%  en bas du classement de division 3 retrogradent en Ligue inférieure.',
                         textAlign: TextAlign.start,
@@ -1237,10 +1234,10 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                     ),
                   ),
                   Align(
-                    alignment: AlignmentDirectional(0.0, 0.0),
+                    alignment: const AlignmentDirectional(0.0, 0.0),
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
                       child: Text(
                         'Comment ?',
                         textAlign: TextAlign.start,
@@ -1252,7 +1249,7 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                     ),
                   ),
                   Align(
-                    alignment: AlignmentDirectional(-1.0, 0.0),
+                    alignment: const AlignmentDirectional(-1.0, 0.0),
                     child: Text(
                       'Le classement prend en compte vos performances.',
                       textAlign: TextAlign.center,
@@ -1263,10 +1260,10 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                     ),
                   ),
                   Align(
-                    alignment: AlignmentDirectional(0.0, 0.0),
+                    alignment: const AlignmentDirectional(0.0, 0.0),
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
                       child: Text(
                         'Barème',
                         textAlign: TextAlign.start,
@@ -1279,14 +1276,14 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Align(
-                          alignment: AlignmentDirectional(-1.0, 0.0),
+                          alignment: const AlignmentDirectional(-1.0, 0.0),
                           child: Text(
                             'Victoire',
                             textAlign: TextAlign.start,
@@ -1312,14 +1309,14 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Align(
-                          alignment: AlignmentDirectional(-1.0, 0.0),
+                          alignment: const AlignmentDirectional(-1.0, 0.0),
                           child: Text(
                             'Match nul',
                             textAlign: TextAlign.start,
@@ -1345,14 +1342,14 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Align(
-                          alignment: AlignmentDirectional(-1.0, 0.0),
+                          alignment: const AlignmentDirectional(-1.0, 0.0),
                           child: Text(
                             'Défaite',
                             textAlign: TextAlign.start,

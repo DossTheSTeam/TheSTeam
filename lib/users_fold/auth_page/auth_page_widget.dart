@@ -4,15 +4,11 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:math';
 import '/flutter_flow/permissions_util.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'auth_page_model.dart';
 export 'auth_page_model.dart';
 
@@ -77,15 +73,15 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 400.0.ms,
-            begin: Offset(0.0, 80.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 80.0),
+            end: const Offset(0.0, 0.0),
           ),
           ScaleEffect(
             curve: Curves.easeInOut,
             delay: 150.0.ms,
             duration: 400.0.ms,
-            begin: Offset(0.8, 0.8),
-            end: Offset(1.0, 1.0),
+            begin: const Offset(0.8, 0.8),
+            end: const Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -104,8 +100,8 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
             curve: Curves.easeInOut,
             delay: 300.0.ms,
             duration: 400.0.ms,
-            begin: Offset(0.0, 20.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 20.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -124,8 +120,8 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
             curve: Curves.easeInOut,
             delay: 300.0.ms,
             duration: 400.0.ms,
-            begin: Offset(0.0, 20.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 20.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -151,7 +147,7 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
           child: Stack(
             children: [
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(32.0, 12.0, 32.0, 32.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(32.0, 12.0, 32.0, 32.0),
                 child: Container(
                   width: double.infinity,
                   height: 230.0,
@@ -159,9 +155,9 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                     color: FlutterFlowTheme.of(context).primaryBackground,
                     borderRadius: BorderRadius.circular(16.0),
                   ),
-                  alignment: AlignmentDirectional(0.0, 0.0),
+                  alignment: const AlignmentDirectional(0.0, 0.0),
                   child: Align(
-                    alignment: AlignmentDirectional(0.0, -1.0),
+                    alignment: const AlignmentDirectional(0.0, -1.0),
                     child: Container(
                       width: 100.0,
                       height: 140.0,
@@ -169,12 +165,11 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                         color: FlutterFlowTheme.of(context).primary,
                         boxShadow: [
                           BoxShadow(
-                            blurRadius: 6.0,
-                            color: FlutterFlowTheme.of(context)
-                                .secondaryBackground,
-                            offset: Offset(
+                            blurRadius: 7.0,
+                            color: FlutterFlowTheme.of(context).accent3,
+                            offset: const Offset(
                               0.0,
-                              -1.0,
+                              0.0,
                             ),
                           )
                         ],
@@ -185,7 +180,7 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                         ),
                       ),
                       child: Padding(
-                        padding: EdgeInsets.all(6.0),
+                        padding: const EdgeInsets.all(6.0),
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(0.0),
                           child: Image.asset(
@@ -201,22 +196,22 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                 ),
               ),
               Align(
-                alignment: AlignmentDirectional(0.0, -1.0),
+                alignment: const AlignmentDirectional(0.0, -1.0),
                 child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 170.0, 0.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 170.0, 0.0, 0.0),
                   child: SingleChildScrollView(
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Padding(
-                          padding: EdgeInsets.all(12.0),
+                          padding: const EdgeInsets.all(12.0),
                           child: Container(
                             width: double.infinity,
                             height: MediaQuery.sizeOf(context).width >= 768.0
                                 ? 530.0
                                 : 630.0,
-                            constraints: BoxConstraints(
+                            constraints: const BoxConstraints(
                               maxWidth: 570.0,
                             ),
                             decoration: BoxDecoration(
@@ -230,12 +225,12 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                               ),
                             ),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 12.0, 0.0, 0.0),
                               child: Column(
                                 children: [
                                   Align(
-                                    alignment: Alignment(0.0, 0),
+                                    alignment: const Alignment(0.0, 0),
                                     child: TabBar(
                                       isScrollable: true,
                                       labelColor: FlutterFlowTheme.of(context)
@@ -244,7 +239,7 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                           FlutterFlowTheme.of(context)
                                               .secondaryText,
                                       labelPadding:
-                                          EdgeInsetsDirectional.fromSTEB(
+                                          const EdgeInsetsDirectional.fromSTEB(
                                               32.0, 0.0, 32.0, 0.0),
                                       labelStyle: FlutterFlowTheme.of(context)
                                           .titleMedium
@@ -263,7 +258,7 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                           FlutterFlowTheme.of(context)
                                               .secondaryBackground,
                                       indicatorWeight: 3.0,
-                                      tabs: [
+                                      tabs: const [
                                         Tab(
                                           text: 'Créer',
                                         ),
@@ -283,10 +278,10 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                       children: [
                                         Align(
                                           alignment:
-                                              AlignmentDirectional(0.0, -1.0),
+                                              const AlignmentDirectional(0.0, -1.0),
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     24.0, 16.0, 24.0, 0.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
@@ -320,7 +315,7 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                                       ),
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 4.0, 0.0, 24.0),
                                                   child: Text(
@@ -336,10 +331,10 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 0.0, 16.0),
-                                                  child: Container(
+                                                  child: SizedBox(
                                                     width: double.infinity,
                                                     child: TextFormField(
                                                       controller: _model
@@ -347,7 +342,7 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                                       focusNode: _model
                                                           .emailAddressCreateFocusNode,
                                                       autofocus: false,
-                                                      autofillHints: [
+                                                      autofillHints: const [
                                                         AutofillHints.email
                                                       ],
                                                       obscureText: false,
@@ -425,7 +420,7 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                                                 .of(context)
                                                             .secondaryBackground,
                                                         contentPadding:
-                                                            EdgeInsets.all(
+                                                            const EdgeInsets.all(
                                                                 24.0),
                                                       ),
                                                       style: FlutterFlowTheme
@@ -446,10 +441,10 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 0.0, 16.0),
-                                                  child: Container(
+                                                  child: SizedBox(
                                                     width: double.infinity,
                                                     child: TextFormField(
                                                       controller: _model
@@ -457,7 +452,7 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                                       focusNode: _model
                                                           .passwordCreateFocusNode,
                                                       autofocus: false,
-                                                      autofillHints: [
+                                                      autofillHints: const [
                                                         AutofillHints.password
                                                       ],
                                                       obscureText: !_model
@@ -537,7 +532,7 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                                                 .of(context)
                                                             .secondaryBackground,
                                                         contentPadding:
-                                                            EdgeInsets.all(
+                                                            const EdgeInsets.all(
                                                                 24.0),
                                                         suffixIcon: InkWell(
                                                           onTap: () =>
@@ -578,10 +573,10 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 0.0, 16.0),
-                                                  child: Container(
+                                                  child: SizedBox(
                                                     width: double.infinity,
                                                     child: TextFormField(
                                                       controller: _model
@@ -589,7 +584,7 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                                       focusNode: _model
                                                           .confirmPasswordCreateFocusNode,
                                                       autofocus: false,
-                                                      autofillHints: [
+                                                      autofillHints: const [
                                                         AutofillHints.password
                                                       ],
                                                       obscureText: !_model
@@ -669,7 +664,7 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                                                 .of(context)
                                                             .secondaryBackground,
                                                         contentPadding:
-                                                            EdgeInsets.all(
+                                                            const EdgeInsets.all(
                                                                 24.0),
                                                         suffixIcon: InkWell(
                                                           onTap: () =>
@@ -715,11 +710,11 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                                   children: [
                                                     Align(
                                                       alignment:
-                                                          AlignmentDirectional(
+                                                          const AlignmentDirectional(
                                                               0.0, 0.0),
                                                       child: Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     0.0,
@@ -747,11 +742,11 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                                           children: [
                                                             Align(
                                                               alignment:
-                                                                  AlignmentDirectional(
+                                                                  const AlignmentDirectional(
                                                                       0.0, 0.0),
                                                               child: Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -773,7 +768,7 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                                                       ScaffoldMessenger.of(
                                                                               context)
                                                                           .showSnackBar(
-                                                                        SnackBar(
+                                                                        const SnackBar(
                                                                           content:
                                                                               Text(
                                                                             'Passwords don\'t match!',
@@ -807,7 +802,7 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                                                         rankValue:
                                                                             'amateur',
                                                                         divisionValue:
-                                                                            '${'1'}',
+                                                                            '1',
                                                                         updateTime:
                                                                             currentUserDocument?.createdTime,
                                                                         esport:
@@ -840,14 +835,14 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                                                         230.0,
                                                                     height:
                                                                         52.0,
-                                                                    padding: EdgeInsetsDirectional
+                                                                    padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             0.0,
                                                                             0.0),
                                                                     iconPadding:
-                                                                        EdgeInsetsDirectional.fromSTEB(
+                                                                        const EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             0.0,
@@ -869,7 +864,7 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                                                     elevation:
                                                                         3.0,
                                                                     borderSide:
-                                                                        BorderSide(
+                                                                        const BorderSide(
                                                                       color: Colors
                                                                           .transparent,
                                                                       width:
@@ -890,7 +885,7 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                                             ),
                                                             Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           10.0,
@@ -920,7 +915,7 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                                                       rankValue:
                                                                           'amateur',
                                                                       divisionValue:
-                                                                          '${'1'}',
+                                                                          '1',
                                                                       updateTime:
                                                                           currentUserDocument
                                                                               ?.createdTime,
@@ -948,7 +943,7 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                                                 },
                                                                 text:
                                                                     'Continue with Google',
-                                                                icon: FaIcon(
+                                                                icon: const FaIcon(
                                                                   FontAwesomeIcons
                                                                       .google,
                                                                   size: 20.0,
@@ -957,13 +952,13 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                                                     FFButtonOptions(
                                                                   width: 230.0,
                                                                   height: 44.0,
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           0.0,
                                                                           0.0),
-                                                                  iconPadding: EdgeInsetsDirectional
+                                                                  iconPadding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -1015,10 +1010,10 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                         ),
                                         Align(
                                           alignment:
-                                              AlignmentDirectional(0.0, -1.0),
+                                              const AlignmentDirectional(0.0, -1.0),
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     24.0, 16.0, 24.0, 0.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
@@ -1052,7 +1047,7 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                                       ),
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 4.0, 0.0, 24.0),
                                                   child: Text(
@@ -1068,10 +1063,10 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 0.0, 16.0),
-                                                  child: Container(
+                                                  child: SizedBox(
                                                     width: double.infinity,
                                                     child: TextFormField(
                                                       controller: _model
@@ -1079,14 +1074,13 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                                       focusNode: _model
                                                           .emailAddressFocusNode,
                                                       autofocus: false,
-                                                      autofillHints: [
+                                                      autofillHints: const [
                                                         AutofillHints.email
                                                       ],
                                                       obscureText: false,
                                                       decoration:
                                                           InputDecoration(
-                                                        hintText:
-                                                            currentUserEmail,
+                                                        hintText: 'email',
                                                         hintStyle:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -1158,7 +1152,7 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                                                 .of(context)
                                                             .secondaryBackground,
                                                         contentPadding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     24.0,
                                                                     24.0,
@@ -1183,10 +1177,10 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 0.0, 16.0),
-                                                  child: Container(
+                                                  child: SizedBox(
                                                     width: double.infinity,
                                                     child: TextFormField(
                                                       controller: _model
@@ -1194,7 +1188,7 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                                       focusNode: _model
                                                           .passwordFocusNode,
                                                       autofocus: false,
-                                                      autofillHints: [
+                                                      autofillHints: const [
                                                         AutofillHints.password
                                                       ],
                                                       obscureText: !_model
@@ -1274,7 +1268,7 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                                                 .of(context)
                                                             .secondaryBackground,
                                                         contentPadding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     24.0,
                                                                     24.0,
@@ -1320,11 +1314,11 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                                 ),
                                                 Align(
                                                   alignment:
-                                                      AlignmentDirectional(
+                                                      const AlignmentDirectional(
                                                           0.0, 0.0),
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 16.0),
                                                     child: FFButtonWidget(
@@ -1356,14 +1350,14 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                                         width: 230.0,
                                                         height: 52.0,
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     0.0,
                                                                     0.0,
                                                                     0.0),
                                                         iconPadding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     0.0,
@@ -1387,7 +1381,7 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                                                       0.0,
                                                                 ),
                                                         elevation: 3.0,
-                                                        borderSide: BorderSide(
+                                                        borderSide: const BorderSide(
                                                           color: Colors
                                                               .transparent,
                                                           width: 1.0,
@@ -1409,7 +1403,7 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                                 ),
                                                 Align(
                                                   alignment:
-                                                      AlignmentDirectional(
+                                                      const AlignmentDirectional(
                                                           0.0, 0.0),
                                                   child: Wrap(
                                                     spacing: 16.0,
@@ -1428,7 +1422,7 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                                     children: [
                                                       Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     10.0,
@@ -1453,7 +1447,7 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                                           },
                                                           text:
                                                               'Continue with Google',
-                                                          icon: FaIcon(
+                                                          icon: const FaIcon(
                                                             FontAwesomeIcons
                                                                 .google,
                                                             size: 20.0,
@@ -1463,14 +1457,14 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                                             width: 230.0,
                                                             height: 44.0,
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
                                                                         0.0,
                                                                         0.0),
                                                             iconPadding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
@@ -1516,11 +1510,11 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                                 ),
                                                 Align(
                                                   alignment:
-                                                      AlignmentDirectional(
+                                                      const AlignmentDirectional(
                                                           0.0, 0.0),
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 16.0),
                                                     child: FFButtonWidget(
@@ -1544,14 +1538,14 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                                       options: FFButtonOptions(
                                                         height: 44.0,
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     32.0,
                                                                     0.0,
                                                                     32.0,
                                                                     0.0),
                                                         iconPadding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     0.0,

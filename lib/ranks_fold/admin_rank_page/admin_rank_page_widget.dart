@@ -4,13 +4,10 @@ import '/flutter_flow/flutter_flow_calendar.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'admin_rank_page_model.dart';
 export 'admin_rank_page_model.dart';
 
@@ -52,9 +49,9 @@ class _AdminRankPageWidgetState extends State<AdminRankPageWidget> {
             visible: valueOrDefault<bool>(currentUserDocument?.esport, false) ==
                 false,
             child: Align(
-              alignment: AlignmentDirectional(0.0, -1.0),
+              alignment: const AlignmentDirectional(0.0, -1.0),
               child: Padding(
-                padding: EdgeInsets.all(10.0),
+                padding: const EdgeInsets.all(10.0),
                 child: AuthUserStreamWidget(
                   builder: (context) => SingleChildScrollView(
                     child: Column(
@@ -76,7 +73,7 @@ class _AdminRankPageWidgetState extends State<AdminRankPageWidget> {
                                     context.pushNamed(
                                       'MenuPage',
                                       extra: <String, dynamic>{
-                                        kTransitionInfoKey: TransitionInfo(
+                                        kTransitionInfoKey: const TransitionInfo(
                                           hasTransition: true,
                                           transitionType:
                                               PageTransitionType.leftToRight,
@@ -93,7 +90,7 @@ class _AdminRankPageWidgetState extends State<AdminRankPageWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       10.0, 0.0, 0.0, 0.0),
                                   child: InkWell(
                                     splashColor: Colors.transparent,
@@ -114,9 +111,9 @@ class _AdminRankPageWidgetState extends State<AdminRankPageWidget> {
                               ],
                             ),
                             Align(
-                              alignment: AlignmentDirectional(-1.0, 0.0),
+                              alignment: const AlignmentDirectional(-1.0, 0.0),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     10.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   'Admin Classement',
@@ -134,22 +131,24 @@ class _AdminRankPageWidgetState extends State<AdminRankPageWidget> {
                         FlutterFlowCalendar(
                           color:
                               FlutterFlowTheme.of(context).secondaryBackground,
-                          iconColor: FlutterFlowTheme.of(context).secondaryText,
+                          iconColor:
+                              FlutterFlowTheme.of(context).primaryBackground,
                           weekFormat: true,
-                          weekStartsMonday: false,
-                          rowHeight: 50.0,
+                          weekStartsMonday: true,
+                          rowHeight: 40.0,
                           onChange: (DateTimeRange? newSelectedDate) {
                             safeSetState(() =>
                                 _model.calendarSelectedDay = newSelectedDate);
                           },
                           titleStyle:
-                              FlutterFlowTheme.of(context).titleSmall.override(
+                              FlutterFlowTheme.of(context).labelSmall.override(
                                     fontFamily: 'Poppins',
                                     letterSpacing: 0.0,
                                   ),
                           dayOfWeekStyle:
                               FlutterFlowTheme.of(context).labelSmall.override(
                                     fontFamily: 'Poppins',
+                                    fontSize: 14.0,
                                     letterSpacing: 0.0,
                                   ),
                           dateStyle:
@@ -180,7 +179,7 @@ class _AdminRankPageWidgetState extends State<AdminRankPageWidget> {
                               ),
                               options: List<String>.from(
                                   ['legende', 'champion', 'pro', 'amateur']),
-                              optionLabels: [
+                              optionLabels: const [
                                 'Légende',
                                 'Champion',
                                 'Pro',
@@ -210,7 +209,7 @@ class _AdminRankPageWidgetState extends State<AdminRankPageWidget> {
                                   FlutterFlowTheme.of(context).alternate,
                               borderWidth: 2.0,
                               borderRadius: 8.0,
-                              margin: EdgeInsetsDirectional.fromSTEB(
+                              margin: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 4.0, 16.0, 4.0),
                               hidesUnderline: true,
                               isOverButton: true,
@@ -223,7 +222,7 @@ class _AdminRankPageWidgetState extends State<AdminRankPageWidget> {
                                 _model.dropDivisionValue ??= '',
                               ),
                               options: List<String>.from(['1', '2', '3']),
-                              optionLabels: [
+                              optionLabels: const [
                                 'Division 1',
                                 'Division 2',
                                 'Division 3'
@@ -252,7 +251,7 @@ class _AdminRankPageWidgetState extends State<AdminRankPageWidget> {
                                   FlutterFlowTheme.of(context).alternate,
                               borderWidth: 2.0,
                               borderRadius: 8.0,
-                              margin: EdgeInsetsDirectional.fromSTEB(
+                              margin: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 4.0, 16.0, 4.0),
                               hidesUnderline: true,
                               isOverButton: true,
@@ -265,7 +264,7 @@ class _AdminRankPageWidgetState extends State<AdminRankPageWidget> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 5.0, 0.0, 0.0),
                               child: FutureBuilder<int>(
                                 future: queryUsersRecordCount(
@@ -300,7 +299,7 @@ class _AdminRankPageWidgetState extends State<AdminRankPageWidget> {
                                         CrossAxisAlignment.start,
                                     children: [
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             30.0, 0.0, 0.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -310,12 +309,11 @@ class _AdminRankPageWidgetState extends State<AdminRankPageWidget> {
                                             Icon(
                                               Icons.groups_rounded,
                                               color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primaryText,
+                                                  currentUserDocument?.color2,
                                               size: 30.0,
                                             ),
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       10.0, 0.0, 0.0, 0.0),
                                               child: Text(
@@ -375,7 +373,7 @@ class _AdminRankPageWidgetState extends State<AdminRankPageWidget> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 5.0, 10.0, 10.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -384,7 +382,7 @@ class _AdminRankPageWidgetState extends State<AdminRankPageWidget> {
                                         children: [
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 10.0, 0.0),
                                             child: Text(
                                               valueOrDefault<String>(
@@ -402,8 +400,7 @@ class _AdminRankPageWidgetState extends State<AdminRankPageWidget> {
                                           ),
                                           Icon(
                                             Icons.groups_rounded,
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryText,
+                                            color: currentUserDocument?.color2,
                                             size: 30.0,
                                           ),
                                         ],
@@ -430,7 +427,7 @@ class _AdminRankPageWidgetState extends State<AdminRankPageWidget> {
                                         CrossAxisAlignment.start,
                                     children: [
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 9.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -467,7 +464,7 @@ class _AdminRankPageWidgetState extends State<AdminRankPageWidget> {
                                                 ),
                                               ),
                                               child: Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     1.0, 0.0),
                                                 child: Text(
                                                   'Pseudo',
@@ -498,7 +495,7 @@ class _AdminRankPageWidgetState extends State<AdminRankPageWidget> {
                                                 ),
                                               ),
                                               child: Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Text(
                                                   'Total\nbénéfices',
@@ -530,7 +527,7 @@ class _AdminRankPageWidgetState extends State<AdminRankPageWidget> {
                                                 ),
                                               ),
                                               child: Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Text(
                                                   'Stock',
@@ -561,7 +558,7 @@ class _AdminRankPageWidgetState extends State<AdminRankPageWidget> {
                                                 ),
                                               ),
                                               child: Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Text(
                                                   'Gagnés',
@@ -592,7 +589,7 @@ class _AdminRankPageWidgetState extends State<AdminRankPageWidget> {
                                                 ),
                                               ),
                                               child: Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Text(
                                                   'Cote moyenne',
@@ -628,7 +625,7 @@ class _AdminRankPageWidgetState extends State<AdminRankPageWidget> {
                                                 ),
                                               ),
                                               child: Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Text(
                                                   'Perdus',
@@ -659,7 +656,7 @@ class _AdminRankPageWidgetState extends State<AdminRankPageWidget> {
                                                 ),
                                               ),
                                               child: Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Text(
                                                   'ClickSTeam',
@@ -690,7 +687,7 @@ class _AdminRankPageWidgetState extends State<AdminRankPageWidget> {
                                                 ),
                                               ),
                                               child: Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Text(
                                                   'Signals',
@@ -724,7 +721,7 @@ class _AdminRankPageWidgetState extends State<AdminRankPageWidget> {
                                                 ),
                                               ),
                                               child: Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Text(
                                                   'UP',
@@ -754,7 +751,38 @@ class _AdminRankPageWidgetState extends State<AdminRankPageWidget> {
                                                 ),
                                               ),
                                               child: Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
+                                                    0.0, 0.0),
+                                                child: Text(
+                                                  'Egal',
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        fontSize: 10.0,
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                            Container(
+                                              width: 35.0,
+                                              height: 30.0,
+                                              decoration: BoxDecoration(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryBackground,
+                                                borderRadius:
+                                                    BorderRadius.circular(25.0),
+                                                border: Border.all(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryBackground,
+                                                ),
+                                              ),
+                                              child: Align(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Text(
                                                   'Down',
@@ -785,7 +813,7 @@ class _AdminRankPageWidgetState extends State<AdminRankPageWidget> {
                                                 ),
                                               ),
                                               child: Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Text(
                                                   'UP',
@@ -815,7 +843,7 @@ class _AdminRankPageWidgetState extends State<AdminRankPageWidget> {
                                                 ),
                                               ),
                                               child: Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Text(
                                                   'Down',
@@ -846,7 +874,7 @@ class _AdminRankPageWidgetState extends State<AdminRankPageWidget> {
                                                 ),
                                               ),
                                               child: Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Text(
                                                   'Dernière MAJ',
@@ -939,7 +967,7 @@ class _AdminRankPageWidgetState extends State<AdminRankPageWidget> {
                                                       ),
                                                       child: Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 0.0, 0.0),
                                                         child: Text(
                                                           valueOrDefault<
@@ -980,7 +1008,7 @@ class _AdminRankPageWidgetState extends State<AdminRankPageWidget> {
                                                       ),
                                                       child: Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 1.0, 0.0),
                                                         child: InkWell(
                                                           splashColor: Colors
@@ -1018,6 +1046,9 @@ class _AdminRankPageWidgetState extends State<AdminRankPageWidget> {
                                                                 .override(
                                                                   fontFamily:
                                                                       'Poppins',
+                                                                  color:
+                                                                      columnUsersEarningsScrollUsersRecord
+                                                                          .color1,
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),
@@ -1040,7 +1071,7 @@ class _AdminRankPageWidgetState extends State<AdminRankPageWidget> {
                                                       ),
                                                       child: Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 0.0, 0.0),
                                                         child: Text(
                                                           valueOrDefault<
@@ -1081,7 +1112,7 @@ class _AdminRankPageWidgetState extends State<AdminRankPageWidget> {
                                                       ),
                                                       child: Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 0.0, 0.0),
                                                         child: Text(
                                                           valueOrDefault<
@@ -1120,7 +1151,7 @@ class _AdminRankPageWidgetState extends State<AdminRankPageWidget> {
                                                       ),
                                                       child: Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 0.0, 0.0),
                                                         child: Text(
                                                           valueOrDefault<
@@ -1157,7 +1188,7 @@ class _AdminRankPageWidgetState extends State<AdminRankPageWidget> {
                                                       ),
                                                       child: Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 0.0, 0.0),
                                                         child: Text(
                                                           valueOrDefault<
@@ -1189,7 +1220,7 @@ class _AdminRankPageWidgetState extends State<AdminRankPageWidget> {
                                                     ),
                                                     Align(
                                                       alignment:
-                                                          AlignmentDirectional(
+                                                          const AlignmentDirectional(
                                                               0.0, 0.0),
                                                       child: Container(
                                                         width: 65.0,
@@ -1207,7 +1238,7 @@ class _AdminRankPageWidgetState extends State<AdminRankPageWidget> {
                                                         ),
                                                         child: Align(
                                                           alignment:
-                                                              AlignmentDirectional(
+                                                              const AlignmentDirectional(
                                                                   0.0, 0.0),
                                                           child: Text(
                                                             valueOrDefault<
@@ -1251,7 +1282,7 @@ class _AdminRankPageWidgetState extends State<AdminRankPageWidget> {
                                                       ),
                                                       child: Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 0.0, 0.0),
                                                         child: Text(
                                                           valueOrDefault<
@@ -1281,7 +1312,7 @@ class _AdminRankPageWidgetState extends State<AdminRankPageWidget> {
                                                                 .of(context)
                                                             .primaryBackground,
                                                         borderRadius:
-                                                            BorderRadius.only(
+                                                            const BorderRadius.only(
                                                           bottomLeft:
                                                               Radius.circular(
                                                                   0.0),
@@ -1303,7 +1334,7 @@ class _AdminRankPageWidgetState extends State<AdminRankPageWidget> {
                                                       ),
                                                       child: Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 0.0, 0.0),
                                                         child: Text(
                                                           valueOrDefault<
@@ -1333,7 +1364,7 @@ class _AdminRankPageWidgetState extends State<AdminRankPageWidget> {
                                                                 .of(context)
                                                             .primaryBackground,
                                                         borderRadius:
-                                                            BorderRadius.only(
+                                                            const BorderRadius.only(
                                                           bottomLeft:
                                                               Radius.circular(
                                                                   0.0),
@@ -1486,7 +1517,94 @@ class _AdminRankPageWidgetState extends State<AdminRankPageWidget> {
                                                                 .of(context)
                                                             .primaryBackground,
                                                         borderRadius:
-                                                            BorderRadius.only(
+                                                            const BorderRadius.only(
+                                                          bottomLeft:
+                                                              Radius.circular(
+                                                                  0.0),
+                                                          bottomRight:
+                                                              Radius.circular(
+                                                                  0.0),
+                                                          topLeft:
+                                                              Radius.circular(
+                                                                  0.0),
+                                                          topRight:
+                                                              Radius.circular(
+                                                                  1.0),
+                                                        ),
+                                                        border: Border.all(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryBackground,
+                                                        ),
+                                                      ),
+                                                      child: Visibility(
+                                                        visible: _model
+                                                                .dropDivisionValue ==
+                                                            '2',
+                                                        child: Align(
+                                                          alignment:
+                                                              const AlignmentDirectional(
+                                                                  0.0, 0.0),
+                                                          child: InkWell(
+                                                            splashColor: Colors
+                                                                .transparent,
+                                                            focusColor: Colors
+                                                                .transparent,
+                                                            hoverColor: Colors
+                                                                .transparent,
+                                                            highlightColor:
+                                                                Colors
+                                                                    .transparent,
+                                                            onTap: () async {
+                                                              await columnUsersEarningsScrollUsersRecord
+                                                                  .reference
+                                                                  .update(
+                                                                      createUsersRecordData(
+                                                                divisionValue:
+                                                                    _model
+                                                                        .dropDivisionValue,
+                                                                updateTime: _model
+                                                                    .calendarSelectedDay
+                                                                    ?.start,
+                                                              ));
+
+                                                              await columnUsersEarningsScrollUsersRecord
+                                                                  .reference
+                                                                  .update(
+                                                                      createUsersRecordData(
+                                                                clickSTeam: 0,
+                                                                betWin: 0,
+                                                                totalGains: 0.0,
+                                                                betLoose: 0,
+                                                                earningsTotal:
+                                                                    0.0,
+                                                                totalMises: 0.0,
+                                                                totalBets: 0,
+                                                                numPenalities:
+                                                                    0,
+                                                              ));
+                                                            },
+                                                            child: FaIcon(
+                                                              FontAwesomeIcons
+                                                                  .equals,
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .info,
+                                                              size: 24.0,
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                    Container(
+                                                      width: 35.0,
+                                                      height: 30.0,
+                                                      decoration: BoxDecoration(
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .primaryBackground,
+                                                        borderRadius:
+                                                            const BorderRadius.only(
                                                           bottomLeft:
                                                               Radius.circular(
                                                                   0.0),
@@ -1639,7 +1757,7 @@ class _AdminRankPageWidgetState extends State<AdminRankPageWidget> {
                                                                 .of(context)
                                                             .primaryBackground,
                                                         borderRadius:
-                                                            BorderRadius.only(
+                                                            const BorderRadius.only(
                                                           bottomLeft:
                                                               Radius.circular(
                                                                   0.0),
@@ -1871,7 +1989,7 @@ class _AdminRankPageWidgetState extends State<AdminRankPageWidget> {
                                                                 .of(context)
                                                             .primaryBackground,
                                                         borderRadius:
-                                                            BorderRadius.only(
+                                                            const BorderRadius.only(
                                                           bottomLeft:
                                                               Radius.circular(
                                                                   0.0),
@@ -2103,7 +2221,7 @@ class _AdminRankPageWidgetState extends State<AdminRankPageWidget> {
                                                                 .of(context)
                                                             .primaryBackground,
                                                         borderRadius:
-                                                            BorderRadius.only(
+                                                            const BorderRadius.only(
                                                           bottomLeft:
                                                               Radius.circular(
                                                                   0.0),

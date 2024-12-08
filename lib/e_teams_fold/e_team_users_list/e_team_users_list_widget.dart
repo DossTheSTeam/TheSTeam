@@ -2,11 +2,7 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'e_team_users_list_model.dart';
 export 'e_team_users_list_model.dart';
 
@@ -43,7 +39,7 @@ class _ETeamUsersListWidgetState extends State<ETeamUsersListWidget> {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<TeamsRecord>(
-      stream: TeamsRecord.getDocument(widget!.teamRef!),
+      stream: TeamsRecord.getDocument(widget.teamRef!),
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
@@ -71,16 +67,16 @@ class _ETeamUsersListWidgetState extends State<ETeamUsersListWidget> {
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             body: Align(
-              alignment: AlignmentDirectional(0.0, -1.0),
+              alignment: const AlignmentDirectional(0.0, -1.0),
               child: Padding(
-                padding: EdgeInsets.all(10.0),
+                padding: const EdgeInsets.all(10.0),
                 child: SingleChildScrollView(
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.start,
@@ -98,12 +94,12 @@ class _ETeamUsersListWidgetState extends State<ETeamUsersListWidget> {
                                       'ModifETeamPage',
                                       queryParameters: {
                                         'teamRef': serializeParam(
-                                          widget!.teamRef,
+                                          widget.teamRef,
                                           ParamType.DocumentReference,
                                         ),
                                       }.withoutNulls,
                                       extra: <String, dynamic>{
-                                        kTransitionInfoKey: TransitionInfo(
+                                        kTransitionInfoKey: const TransitionInfo(
                                           hasTransition: true,
                                           transitionType:
                                               PageTransitionType.leftToRight,
@@ -114,13 +110,12 @@ class _ETeamUsersListWidgetState extends State<ETeamUsersListWidget> {
                                   },
                                   child: Icon(
                                     Icons.menu_rounded,
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryText,
+                                    color: eTeamUsersListTeamsRecord.color1,
                                     size: 30.0,
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       10.0, 0.0, 0.0, 0.0),
                                   child: InkWell(
                                     splashColor: Colors.transparent,
@@ -132,8 +127,7 @@ class _ETeamUsersListWidgetState extends State<ETeamUsersListWidget> {
                                     },
                                     child: Icon(
                                       Icons.arrow_back_ios_new_rounded,
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
+                                      color: eTeamUsersListTeamsRecord.color1,
                                       size: 30.0,
                                     ),
                                   ),
@@ -141,7 +135,7 @@ class _ETeamUsersListWidgetState extends State<ETeamUsersListWidget> {
                               ],
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 10.0, 10.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -165,7 +159,7 @@ class _ETeamUsersListWidgetState extends State<ETeamUsersListWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       eTeamUsersListTeamsRecord.name,
@@ -221,7 +215,7 @@ class _ETeamUsersListWidgetState extends State<ETeamUsersListWidget> {
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: [
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       10.0, 0.0, 10.0, 0.0),
                                   child: InkWell(
                                     splashColor: Colors.transparent,
@@ -232,7 +226,7 @@ class _ETeamUsersListWidgetState extends State<ETeamUsersListWidget> {
                                       context.pushNamed(
                                         'MyNotifsList',
                                         extra: <String, dynamic>{
-                                          kTransitionInfoKey: TransitionInfo(
+                                          kTransitionInfoKey: const TransitionInfo(
                                             hasTransition: true,
                                             transitionType:
                                                 PageTransitionType.rightToLeft,
@@ -245,7 +239,7 @@ class _ETeamUsersListWidgetState extends State<ETeamUsersListWidget> {
                                     child: Icon(
                                       Icons.notifications_active_outlined,
                                       color:
-                                          FlutterFlowTheme.of(context).accent3,
+                                          FlutterFlowTheme.of(context).accent1,
                                       size: 40.0,
                                     ),
                                   ),
@@ -259,7 +253,7 @@ class _ETeamUsersListWidgetState extends State<ETeamUsersListWidget> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 10.0, 0.0, 0.0),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
@@ -283,26 +277,26 @@ class _ETeamUsersListWidgetState extends State<ETeamUsersListWidget> {
                                           ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           7.0, 0.0, 0.0, 0.0),
                                       child: Icon(
                                         Icons.star_rounded,
                                         color: FlutterFlowTheme.of(context)
-                                            .accent3,
+                                            .accent1,
                                         size: 33.0,
                                       ),
                                     ),
                                   ],
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 10.0, 0.0, 0.0),
                                   child: StreamBuilder<List<UsersRecord>>(
                                     stream: queryUsersRecord(
                                       queryBuilder: (usersRecord) =>
                                           usersRecord.where(
                                         'eteam_ref',
-                                        isEqualTo: widget!.teamRef,
+                                        isEqualTo: widget.teamRef,
                                       ),
                                     ),
                                     builder: (context, snapshot) {
@@ -339,7 +333,7 @@ class _ETeamUsersListWidgetState extends State<ETeamUsersListWidget> {
                                                 .contains(columnUsersRecord
                                                     .reference),
                                             child: Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 5.0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
@@ -360,7 +354,7 @@ class _ETeamUsersListWidgetState extends State<ETeamUsersListWidget> {
                                                       children: [
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       10.0,
                                                                       0.0,
@@ -373,7 +367,7 @@ class _ETeamUsersListWidgetState extends State<ETeamUsersListWidget> {
                                                             children: [
                                                               Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -429,12 +423,12 @@ class _ETeamUsersListWidgetState extends State<ETeamUsersListWidget> {
                                                                   children: [
                                                                     Align(
                                                                       alignment:
-                                                                          AlignmentDirectional(
+                                                                          const AlignmentDirectional(
                                                                               -1.0,
                                                                               0.0),
                                                                       child:
                                                                           Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                                                             5.0,
                                                                             0.0,
                                                                             0.0,
@@ -471,6 +465,7 @@ class _ETeamUsersListWidgetState extends State<ETeamUsersListWidget> {
                                                                                 1,
                                                                             style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                   fontFamily: 'Poppins',
+                                                                                  color: columnUsersRecord.color1,
                                                                                   letterSpacing: 0.0,
                                                                                 ),
                                                                           ),
@@ -497,7 +492,7 @@ class _ETeamUsersListWidgetState extends State<ETeamUsersListWidget> {
                                                                         .where(
                                                               'teams',
                                                               arrayContains:
-                                                                  widget!
+                                                                  widget
                                                                       .teamRef,
                                                             ),
                                                             singleRecord: true,
@@ -546,7 +541,7 @@ class _ETeamUsersListWidgetState extends State<ETeamUsersListWidget> {
                                                               children: [
                                                                 Align(
                                                                   alignment:
-                                                                      AlignmentDirectional(
+                                                                      const AlignmentDirectional(
                                                                           1.0,
                                                                           0.0),
                                                                   child:
@@ -623,11 +618,10 @@ class _ETeamUsersListWidgetState extends State<ETeamUsersListWidget> {
                           ),
                           Divider(
                             thickness: 1.0,
-                            color: FlutterFlowTheme.of(context)
-                                .secondaryBackground,
+                            color: eTeamUsersListTeamsRecord.color2,
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 10.0, 0.0, 0.0),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
@@ -637,8 +631,11 @@ class _ETeamUsersListWidgetState extends State<ETeamUsersListWidget> {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Text(
-                                      eTeamUsersListTeamsRecord.fans.length
-                                          .toString(),
+                                      valueOrDefault<String>(
+                                        eTeamUsersListTeamsRecord.fans.length
+                                            .toString(),
+                                        '0',
+                                      ),
                                       textAlign: TextAlign.center,
                                       style: FlutterFlowTheme.of(context)
                                           .titleMedium
@@ -648,7 +645,7 @@ class _ETeamUsersListWidgetState extends State<ETeamUsersListWidget> {
                                           ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           10.0, 0.0, 0.0, 0.0),
                                       child: Icon(
                                         Icons.group_rounded,
@@ -660,7 +657,7 @@ class _ETeamUsersListWidgetState extends State<ETeamUsersListWidget> {
                                   ],
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 10.0, 0.0, 0.0),
                                   child: StreamBuilder<List<UsersRecord>>(
                                     stream: queryUsersRecord(),
@@ -698,7 +695,7 @@ class _ETeamUsersListWidgetState extends State<ETeamUsersListWidget> {
                                                 .contains(columnUsersRecord
                                                     .reference),
                                             child: Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 5.0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
@@ -719,7 +716,7 @@ class _ETeamUsersListWidgetState extends State<ETeamUsersListWidget> {
                                                       children: [
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       10.0,
                                                                       0.0,
@@ -732,7 +729,7 @@ class _ETeamUsersListWidgetState extends State<ETeamUsersListWidget> {
                                                             children: [
                                                               Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -788,12 +785,12 @@ class _ETeamUsersListWidgetState extends State<ETeamUsersListWidget> {
                                                                   children: [
                                                                     Align(
                                                                       alignment:
-                                                                          AlignmentDirectional(
+                                                                          const AlignmentDirectional(
                                                                               -1.0,
                                                                               0.0),
                                                                       child:
                                                                           Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                                                             5.0,
                                                                             0.0,
                                                                             0.0,
@@ -830,6 +827,7 @@ class _ETeamUsersListWidgetState extends State<ETeamUsersListWidget> {
                                                                                 1,
                                                                             style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                   fontFamily: 'Poppins',
+                                                                                  color: columnUsersRecord.color1,
                                                                                   letterSpacing: 0.0,
                                                                                 ),
                                                                           ),
@@ -856,7 +854,7 @@ class _ETeamUsersListWidgetState extends State<ETeamUsersListWidget> {
                                                                         .where(
                                                               'teams',
                                                               arrayContains:
-                                                                  widget!
+                                                                  widget
                                                                       .teamRef,
                                                             ),
                                                             singleRecord: true,
@@ -905,7 +903,7 @@ class _ETeamUsersListWidgetState extends State<ETeamUsersListWidget> {
                                                               children: [
                                                                 Align(
                                                                   alignment:
-                                                                      AlignmentDirectional(
+                                                                      const AlignmentDirectional(
                                                                           1.0,
                                                                           0.0),
                                                                   child:
@@ -975,11 +973,10 @@ class _ETeamUsersListWidgetState extends State<ETeamUsersListWidget> {
                           ),
                           Divider(
                             thickness: 1.0,
-                            color: FlutterFlowTheme.of(context)
-                                .secondaryBackground,
+                            color: eTeamUsersListTeamsRecord.color2,
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 10.0, 0.0, 0.0),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
@@ -1003,7 +1000,7 @@ class _ETeamUsersListWidgetState extends State<ETeamUsersListWidget> {
                                           ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           10.0, 0.0, 0.0, 0.0),
                                       child: Icon(
                                         Icons.group_off_outlined,
@@ -1015,7 +1012,7 @@ class _ETeamUsersListWidgetState extends State<ETeamUsersListWidget> {
                                   ],
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 10.0, 0.0, 0.0),
                                   child: StreamBuilder<List<UsersRecord>>(
                                     stream: queryUsersRecord(),
@@ -1053,7 +1050,7 @@ class _ETeamUsersListWidgetState extends State<ETeamUsersListWidget> {
                                                 .contains(columnUsersRecord
                                                     .reference),
                                             child: Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 5.0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
@@ -1070,7 +1067,7 @@ class _ETeamUsersListWidgetState extends State<ETeamUsersListWidget> {
                                                     children: [
                                                       Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     10.0,
                                                                     0.0,
@@ -1082,7 +1079,7 @@ class _ETeamUsersListWidgetState extends State<ETeamUsersListWidget> {
                                                           children: [
                                                             Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -1130,11 +1127,11 @@ class _ETeamUsersListWidgetState extends State<ETeamUsersListWidget> {
                                                               ),
                                                               child: Align(
                                                                 alignment:
-                                                                    AlignmentDirectional(
+                                                                    const AlignmentDirectional(
                                                                         -1.0,
                                                                         0.0),
                                                                 child: Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           10.0,
                                                                           0.0,
@@ -1197,11 +1194,11 @@ class _ETeamUsersListWidgetState extends State<ETeamUsersListWidget> {
                                                       ),
                                                       Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 1.0, 0.0),
                                                         child: Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,

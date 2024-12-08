@@ -7,10 +7,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/upload_data.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'add_team_page_model.dart';
 export 'add_team_page_model.dart';
 
@@ -55,16 +52,16 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
         body: SafeArea(
           top: true,
           child: Align(
-            alignment: AlignmentDirectional(0.0, -1.0),
+            alignment: const AlignmentDirectional(0.0, -1.0),
             child: Padding(
-              padding: EdgeInsets.all(10.0),
+              padding: const EdgeInsets.all(10.0),
               child: SingleChildScrollView(
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.start,
@@ -81,7 +78,7 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                   context.pushNamed(
                                     'MenuPage',
                                     extra: <String, dynamic>{
-                                      kTransitionInfoKey: TransitionInfo(
+                                      kTransitionInfoKey: const TransitionInfo(
                                         hasTransition: true,
                                         transitionType:
                                             PageTransitionType.leftToRight,
@@ -98,7 +95,7 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     10.0, 0.0, 0.0, 0.0),
                                 child: InkWell(
                                   splashColor: Colors.transparent,
@@ -119,7 +116,7 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                             ],
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 20.0, 0.0, 0.0, 0.0),
                             child: Text(
                               'Add Team',
@@ -141,206 +138,445 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 10.0, 0.0, 0.0),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 29.0),
-                                child: Text(
-                                  'Football',
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        fontFamily: 'Poppins',
-                                        letterSpacing: 0.0,
-                                      ),
+                              if ((valueOrDefault(
+                                          currentUserDocument?.stsocialapp,
+                                          '') ==
+                                      'administrateur') ||
+                                  (valueOrDefault(
+                                          currentUserDocument?.adminSportvalue,
+                                          '') ==
+                                      'football'))
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 0.0, 29.0),
+                                  child: AuthUserStreamWidget(
+                                    builder: (context) => Text(
+                                      'Football',
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            letterSpacing: 0.0,
+                                          ),
+                                    ),
+                                  ),
                                 ),
-                              ),
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 26.0),
-                                child: Text(
-                                  'Basketball',
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        fontFamily: 'Poppins',
-                                        letterSpacing: 0.0,
-                                      ),
+                              if ((valueOrDefault(
+                                          currentUserDocument?.stsocialapp,
+                                          '') ==
+                                      'administrateur') ||
+                                  (valueOrDefault(
+                                          currentUserDocument?.adminSportvalue,
+                                          '') ==
+                                      'basketball'))
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 0.0, 26.0),
+                                  child: AuthUserStreamWidget(
+                                    builder: (context) => Text(
+                                      'Basketball',
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            letterSpacing: 0.0,
+                                          ),
+                                    ),
+                                  ),
                                 ),
-                              ),
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 26.0),
-                                child: Text(
-                                  'Tennis',
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        fontFamily: 'Poppins',
-                                        letterSpacing: 0.0,
-                                      ),
+                              if ((valueOrDefault(
+                                          currentUserDocument?.stsocialapp,
+                                          '') ==
+                                      'administrateur') ||
+                                  (valueOrDefault(
+                                          currentUserDocument?.adminSportvalue,
+                                          '') ==
+                                      'tennis'))
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 0.0, 26.0),
+                                  child: AuthUserStreamWidget(
+                                    builder: (context) => Text(
+                                      'Tennis',
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            letterSpacing: 0.0,
+                                          ),
+                                    ),
+                                  ),
                                 ),
-                              ),
+                              if ((valueOrDefault(
+                                          currentUserDocument?.stsocialapp,
+                                          '') ==
+                                      'administrateur') ||
+                                  (valueOrDefault(
+                                          currentUserDocument?.adminSportvalue,
+                                          '') ==
+                                      'sports.combat'))
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 0.0, 26.0),
+                                  child: AuthUserStreamWidget(
+                                    builder: (context) => Text(
+                                      'Sports de combat',
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            letterSpacing: 0.0,
+                                          ),
+                                    ),
+                                  ),
+                                ),
+                              if ((valueOrDefault(
+                                          currentUserDocument?.stsocialapp,
+                                          '') ==
+                                      'administrateur') ||
+                                  (valueOrDefault(
+                                          currentUserDocument?.adminSportvalue,
+                                          '') ==
+                                      'hockey'))
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 0.0, 26.0),
+                                  child: AuthUserStreamWidget(
+                                    builder: (context) => Text(
+                                      'Hockey',
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            letterSpacing: 0.0,
+                                          ),
+                                    ),
+                                  ),
+                                ),
                             ],
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               10.0, 0.0, 0.0, 0.0),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             children: [
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 5.0),
-                                child: FlutterFlowDropDown<String>(
-                                  controller:
-                                      _model.dropLigueFootValueController ??=
+                              if ((valueOrDefault(
+                                          currentUserDocument?.stsocialapp,
+                                          '') ==
+                                      'administrateur') ||
+                                  (valueOrDefault(
+                                          currentUserDocument?.adminSportvalue,
+                                          '') ==
+                                      'football'))
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 0.0, 5.0),
+                                  child: AuthUserStreamWidget(
+                                    builder: (context) =>
+                                        FlutterFlowDropDown<String>(
+                                      controller: _model
+                                              .dropLigueFootValueController ??=
                                           FormFieldController<String>(
-                                    _model.dropLigueFootValue ??= '',
-                                  ),
-                                  options: List<String>.from([
-                                    'premier.league',
-                                    'laliga',
-                                    'bundesliga',
-                                    'serie.a',
-                                    'ligue.1',
-                                    'autres',
-                                    'pays.football',
-                                    'football'
-                                  ]),
-                                  optionLabels: [
-                                    'Premier League',
-                                    'LaLiga',
-                                    'Bundesliga',
-                                    'Serie A',
-                                    'Ligue 1',
-                                    'Autres',
-                                    'Pays Football',
-                                    'Football'
-                                  ],
-                                  onChanged: (val) => safeSetState(
-                                      () => _model.dropLigueFootValue = val),
-                                  width: 180.0,
-                                  height: 40.0,
-                                  textStyle: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        fontFamily: 'Poppins',
-                                        letterSpacing: 0.0,
+                                        _model.dropLigueFootValue ??= '',
                                       ),
-                                  hintText: 'Ligues',
-                                  icon: Icon(
-                                    Icons.keyboard_arrow_down_rounded,
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryText,
-                                    size: 24.0,
+                                      options: List<String>.from([
+                                        'premier.league',
+                                        'laliga',
+                                        'bundesliga',
+                                        'serie.a',
+                                        'ligue.1',
+                                        'autres',
+                                        'pays.football',
+                                        'empty'
+                                      ]),
+                                      optionLabels: const [
+                                        'Premier League',
+                                        'LaLiga',
+                                        'Bundesliga',
+                                        'Serie A',
+                                        'Ligue 1',
+                                        'Autres',
+                                        'Pays Football',
+                                        'Retirer filtre'
+                                      ],
+                                      onChanged: (val) => safeSetState(() =>
+                                          _model.dropLigueFootValue = val),
+                                      width: 180.0,
+                                      height: 40.0,
+                                      textStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            letterSpacing: 0.0,
+                                          ),
+                                      hintText: 'Ligues',
+                                      icon: Icon(
+                                        Icons.keyboard_arrow_down_rounded,
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryText,
+                                        size: 24.0,
+                                      ),
+                                      fillColor: FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
+                                      elevation: 2.0,
+                                      borderColor: Colors.transparent,
+                                      borderWidth: 0.0,
+                                      borderRadius: 8.0,
+                                      margin: const EdgeInsetsDirectional.fromSTEB(
+                                          12.0, 0.0, 12.0, 0.0),
+                                      hidesUnderline: true,
+                                      isOverButton: false,
+                                      isSearchable: false,
+                                      isMultiSelect: false,
+                                    ),
                                   ),
-                                  fillColor: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
-                                  elevation: 2.0,
-                                  borderColor: Colors.transparent,
-                                  borderWidth: 0.0,
-                                  borderRadius: 8.0,
-                                  margin: EdgeInsetsDirectional.fromSTEB(
-                                      12.0, 0.0, 12.0, 0.0),
-                                  hidesUnderline: true,
-                                  isOverButton: false,
-                                  isSearchable: false,
-                                  isMultiSelect: false,
                                 ),
-                              ),
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 5.0),
-                                child: FlutterFlowDropDown<String>(
-                                  controller:
-                                      _model.dropLigueBasketValueController ??=
+                              if ((valueOrDefault(
+                                          currentUserDocument?.stsocialapp,
+                                          '') ==
+                                      'administrateur') ||
+                                  (valueOrDefault(
+                                          currentUserDocument?.adminSportvalue,
+                                          '') ==
+                                      'basketball'))
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 0.0, 5.0),
+                                  child: AuthUserStreamWidget(
+                                    builder: (context) =>
+                                        FlutterFlowDropDown<String>(
+                                      controller: _model
+                                              .dropLigueBasketValueController ??=
                                           FormFieldController<String>(
-                                    _model.dropLigueBasketValue ??= '',
-                                  ),
-                                  options: List<String>.from(
-                                      ['nba', 'pays.basketball']),
-                                  optionLabels: ['NBA', 'Pays Basketball'],
-                                  onChanged: (val) => safeSetState(
-                                      () => _model.dropLigueBasketValue = val),
-                                  width: 180.0,
-                                  height: 40.0,
-                                  textStyle: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        fontFamily: 'Poppins',
-                                        letterSpacing: 0.0,
+                                        _model.dropLigueBasketValue ??= '',
                                       ),
-                                  hintText: 'Ligues',
-                                  icon: Icon(
-                                    Icons.keyboard_arrow_down_rounded,
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryText,
-                                    size: 24.0,
+                                      options:
+                                          List<String>.from(['nba', 'empty']),
+                                      optionLabels: const ['NBA', 'Retirer filtre'],
+                                      onChanged: (val) => safeSetState(() =>
+                                          _model.dropLigueBasketValue = val),
+                                      width: 180.0,
+                                      height: 40.0,
+                                      textStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            letterSpacing: 0.0,
+                                          ),
+                                      hintText: 'Ligues',
+                                      icon: Icon(
+                                        Icons.keyboard_arrow_down_rounded,
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryText,
+                                        size: 24.0,
+                                      ),
+                                      fillColor: FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
+                                      elevation: 2.0,
+                                      borderColor: Colors.transparent,
+                                      borderWidth: 0.0,
+                                      borderRadius: 8.0,
+                                      margin: const EdgeInsetsDirectional.fromSTEB(
+                                          12.0, 0.0, 12.0, 0.0),
+                                      hidesUnderline: true,
+                                      isOverButton: false,
+                                      isSearchable: false,
+                                      isMultiSelect: false,
+                                    ),
                                   ),
-                                  fillColor: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
-                                  elevation: 2.0,
-                                  borderColor: Colors.transparent,
-                                  borderWidth: 0.0,
-                                  borderRadius: 8.0,
-                                  margin: EdgeInsetsDirectional.fromSTEB(
-                                      12.0, 0.0, 12.0, 0.0),
-                                  hidesUnderline: true,
-                                  isOverButton: false,
-                                  isSearchable: false,
-                                  isMultiSelect: false,
                                 ),
-                              ),
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 5.0),
-                                child: FlutterFlowDropDown<String>(
-                                  controller:
-                                      _model.dropLigueTennisValueController ??=
+                              if ((valueOrDefault(
+                                          currentUserDocument?.stsocialapp,
+                                          '') ==
+                                      'administrateur') ||
+                                  (valueOrDefault(
+                                          currentUserDocument?.adminSportvalue,
+                                          '') ==
+                                      'tennis'))
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 0.0, 5.0),
+                                  child: AuthUserStreamWidget(
+                                    builder: (context) =>
+                                        FlutterFlowDropDown<String>(
+                                      controller: _model
+                                              .dropLigueTennisValueController ??=
                                           FormFieldController<String>(
-                                    _model.dropLigueTennisValue ??= '',
-                                  ),
-                                  options: List<String>.from(['atp', 'wta']),
-                                  optionLabels: ['ATP', 'WTA'],
-                                  onChanged: (val) => safeSetState(
-                                      () => _model.dropLigueTennisValue = val),
-                                  width: 180.0,
-                                  height: 40.0,
-                                  textStyle: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        fontFamily: 'Poppins',
-                                        letterSpacing: 0.0,
+                                        _model.dropLigueTennisValue ??= '',
                                       ),
-                                  hintText: 'Ligues',
-                                  icon: Icon(
-                                    Icons.keyboard_arrow_down_rounded,
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryText,
-                                    size: 24.0,
+                                      options: List<String>.from(
+                                          ['atp', 'wta', 'empty']),
+                                      optionLabels: const [
+                                        'ATP',
+                                        'WTA',
+                                        'Retirer filtre'
+                                      ],
+                                      onChanged: (val) => safeSetState(() =>
+                                          _model.dropLigueTennisValue = val),
+                                      width: 180.0,
+                                      height: 40.0,
+                                      textStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            letterSpacing: 0.0,
+                                          ),
+                                      hintText: 'Ligues',
+                                      icon: Icon(
+                                        Icons.keyboard_arrow_down_rounded,
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryText,
+                                        size: 24.0,
+                                      ),
+                                      fillColor: FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
+                                      elevation: 2.0,
+                                      borderColor: Colors.transparent,
+                                      borderWidth: 0.0,
+                                      borderRadius: 8.0,
+                                      margin: const EdgeInsetsDirectional.fromSTEB(
+                                          12.0, 0.0, 12.0, 0.0),
+                                      hidesUnderline: true,
+                                      isOverButton: false,
+                                      isSearchable: false,
+                                      isMultiSelect: false,
+                                    ),
                                   ),
-                                  fillColor: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
-                                  elevation: 2.0,
-                                  borderColor: Colors.transparent,
-                                  borderWidth: 0.0,
-                                  borderRadius: 8.0,
-                                  margin: EdgeInsetsDirectional.fromSTEB(
-                                      12.0, 0.0, 12.0, 0.0),
-                                  hidesUnderline: true,
-                                  isOverButton: false,
-                                  isSearchable: false,
-                                  isMultiSelect: false,
                                 ),
-                              ),
+                              if ((valueOrDefault(
+                                          currentUserDocument?.stsocialapp,
+                                          '') ==
+                                      'administrateur') ||
+                                  (valueOrDefault(
+                                          currentUserDocument?.adminSportvalue,
+                                          '') ==
+                                      'sports.combat'))
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 0.0, 5.0),
+                                  child: AuthUserStreamWidget(
+                                    builder: (context) =>
+                                        FlutterFlowDropDown<String>(
+                                      controller: _model
+                                              .dropLigueFightValueController ??=
+                                          FormFieldController<String>(
+                                        _model.dropLigueFightValue ??= '',
+                                      ),
+                                      options: List<String>.from(
+                                          ['boxe', 'mma', 'empty']),
+                                      optionLabels: const [
+                                        'Boxe',
+                                        'MMA',
+                                        'Retirer filtre'
+                                      ],
+                                      onChanged: (val) => safeSetState(() =>
+                                          _model.dropLigueFightValue = val),
+                                      width: 180.0,
+                                      height: 40.0,
+                                      textStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            letterSpacing: 0.0,
+                                          ),
+                                      hintText: 'Ligues',
+                                      icon: Icon(
+                                        Icons.keyboard_arrow_down_rounded,
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryText,
+                                        size: 24.0,
+                                      ),
+                                      fillColor: FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
+                                      elevation: 2.0,
+                                      borderColor: Colors.transparent,
+                                      borderWidth: 0.0,
+                                      borderRadius: 8.0,
+                                      margin: const EdgeInsetsDirectional.fromSTEB(
+                                          12.0, 0.0, 12.0, 0.0),
+                                      hidesUnderline: true,
+                                      isOverButton: false,
+                                      isSearchable: false,
+                                      isMultiSelect: false,
+                                    ),
+                                  ),
+                                ),
+                              if ((valueOrDefault(
+                                          currentUserDocument?.stsocialapp,
+                                          '') ==
+                                      'administrateur') ||
+                                  (valueOrDefault(
+                                          currentUserDocument?.adminSportvalue,
+                                          '') ==
+                                      'hockey'))
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 0.0, 5.0),
+                                  child: AuthUserStreamWidget(
+                                    builder: (context) =>
+                                        FlutterFlowDropDown<String>(
+                                      controller: _model
+                                              .dropLigueHockeyValueController ??=
+                                          FormFieldController<String>(
+                                        _model.dropLigueHockeyValue ??= '',
+                                      ),
+                                      options: List<String>.from([
+                                        'glace.nhl',
+                                        'gazon.elite.h',
+                                        'gazon.elite.f',
+                                        'salle.elite.h',
+                                        'salle.elite.f',
+                                        'empty'
+                                      ]),
+                                      optionLabels: const [
+                                        'Glace NHL',
+                                        'Gazon Elite H',
+                                        'Gazon Elite F',
+                                        'Salle Elite H',
+                                        'Salle Elite F',
+                                        'Retirer filtre'
+                                      ],
+                                      onChanged: (val) => safeSetState(() =>
+                                          _model.dropLigueHockeyValue = val),
+                                      width: 180.0,
+                                      height: 40.0,
+                                      textStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            letterSpacing: 0.0,
+                                          ),
+                                      hintText: 'Ligues',
+                                      icon: Icon(
+                                        Icons.keyboard_arrow_down_rounded,
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryText,
+                                        size: 24.0,
+                                      ),
+                                      fillColor: FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
+                                      elevation: 2.0,
+                                      borderColor: Colors.transparent,
+                                      borderWidth: 0.0,
+                                      borderRadius: 8.0,
+                                      margin: const EdgeInsetsDirectional.fromSTEB(
+                                          12.0, 0.0, 12.0, 0.0),
+                                      hidesUnderline: true,
+                                      isOverButton: false,
+                                      isSearchable: false,
+                                      isMultiSelect: false,
+                                    ),
+                                  ),
+                                ),
                             ],
                           ),
                         ),
@@ -348,7 +584,7 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
                       child: TextFormField(
                         controller: _model.teamNameFieldTextController,
                         focusNode: _model.teamNameFieldFocusNode,
@@ -401,7 +637,7 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(8.0, 5.0, 8.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(8.0, 5.0, 8.0, 0.0),
                       child: TextFormField(
                         controller: _model.teamvalueFieldTextController,
                         focusNode: _model.teamvalueFieldFocusNode,
@@ -454,13 +690,13 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 20.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 20.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 6.0, 0.0),
                             child: Container(
                               width: 65.0,
@@ -470,7 +706,7 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                     .primaryBackground,
                               ),
                               child: Padding(
-                                padding: EdgeInsets.all(3.0),
+                                padding: const EdgeInsets.all(3.0),
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(0.0),
                                   child: Image.network(
@@ -550,254 +786,441 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                         ],
                       ),
                     ),
-                    Row(
+                    Column(
                       mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.end,
                       children: [
-                        Row(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 0.0, 5.0),
-                              child: FlutterFlowDropDown<String>(
-                                controller:
-                                    _model.dropFootCupValueController ??=
-                                        FormFieldController<String>(
-                                  _model.dropFootCupValue ??= '',
-                                ),
-                                options: List<String>.from([
-                                  'champions.league',
-                                  'europa.league',
-                                  'conference.league'
-                                ]),
-                                optionLabels: [
-                                  'Champions League',
-                                  'Europa League',
-                                  'Conference League'
-                                ],
-                                onChanged: (val) => safeSetState(
-                                    () => _model.dropFootCupValue = val),
-                                width: 180.0,
-                                height: 40.0,
-                                textStyle: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Poppins',
-                                      letterSpacing: 0.0,
-                                    ),
-                                hintText: 'Coupes',
-                                icon: Icon(
-                                  Icons.keyboard_arrow_down_rounded,
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryText,
-                                  size: 24.0,
-                                ),
-                                fillColor: FlutterFlowTheme.of(context)
-                                    .primaryBackground,
-                                elevation: 2.0,
-                                borderColor: Colors.transparent,
-                                borderWidth: 0.0,
-                                borderRadius: 8.0,
-                                margin: EdgeInsetsDirectional.fromSTEB(
-                                    12.0, 0.0, 12.0, 0.0),
-                                hidesUnderline: true,
-                                isOverButton: false,
-                                isSearchable: false,
-                                isMultiSelect: false,
-                              ),
-                            ),
-                            Align(
-                              alignment: AlignmentDirectional(0.0, 0.0),
-                              child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 20.0, 0.0, 16.0),
-                                child: FFButtonWidget(
-                                  onPressed: () async {
-                                    await TeamsRecord.collection
-                                        .doc()
-                                        .set(createTeamsRecordData(
-                                          name: _model
-                                              .teamNameFieldTextController.text,
-                                          value: _model
-                                              .teamvalueFieldTextController
-                                              .text,
-                                          adminUser: currentUserReference,
-                                          logo: _model.uploadedFileUrl,
-                                          leagueValue:
-                                              _model.dropLigueFootValue,
-                                          sportValue: 'football',
-                                          esport: false,
-                                          additionalLeague:
-                                              _model.dropFootCupValue,
-                                        ));
-                                  },
-                                  text: 'Valider Foot',
-                                  options: FFButtonOptions(
-                                    width: 180.0,
-                                    height: 40.0,
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 0.0),
-                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 0.0),
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryBackground,
-                                    textStyle: FlutterFlowTheme.of(context)
-                                        .titleSmall
-                                        .override(
-                                          fontFamily: 'Poppins',
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryBackground,
-                                          letterSpacing: 0.0,
+                        Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              0.0, 5.0, 0.0, 5.0),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              if (_model.dropLigueFootValue != null &&
+                                  _model.dropLigueFootValue != '')
+                                Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 0.0, 0.0, 5.0),
+                                      child: FlutterFlowDropDown<String>(
+                                        controller: _model
+                                                .dropFootCupValueController ??=
+                                            FormFieldController<String>(
+                                          _model.dropFootCupValue ??= '',
                                         ),
-                                    elevation: 3.0,
-                                    borderSide: BorderSide(
-                                      color: Colors.transparent,
-                                      width: 1.0,
-                                    ),
-                                    borderRadius: BorderRadius.circular(40.0),
-                                    hoverColor:
-                                        FlutterFlowTheme.of(context).success,
-                                    hoverTextColor: FlutterFlowTheme.of(context)
-                                        .primaryBackground,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                    Row(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        Row(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Align(
-                              alignment: AlignmentDirectional(0.0, 0.0),
-                              child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 20.0, 0.0, 16.0),
-                                child: FFButtonWidget(
-                                  onPressed: () async {
-                                    await TeamsRecord.collection
-                                        .doc()
-                                        .set(createTeamsRecordData(
-                                          name: _model
-                                              .teamNameFieldTextController.text,
-                                          value: _model
-                                              .teamvalueFieldTextController
-                                              .text,
-                                          adminUser: currentUserReference,
-                                          logo: _model.uploadedFileUrl,
-                                          sportValue: 'basketball',
-                                          leagueValue:
-                                              _model.dropLigueBasketValue,
-                                          esport: false,
-                                        ));
-                                  },
-                                  text: 'Valider Basket',
-                                  options: FFButtonOptions(
-                                    width: 180.0,
-                                    height: 40.0,
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 0.0),
-                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 0.0),
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryBackground,
-                                    textStyle: FlutterFlowTheme.of(context)
-                                        .titleSmall
-                                        .override(
-                                          fontFamily: 'Poppins',
+                                        options: List<String>.from([
+                                          'champions.league',
+                                          'europa.league',
+                                          'conference.league'
+                                        ]),
+                                        optionLabels: const [
+                                          'Champions League',
+                                          'Europa League',
+                                          'Conference League'
+                                        ],
+                                        onChanged: (val) => safeSetState(() =>
+                                            _model.dropFootCupValue = val),
+                                        width: 180.0,
+                                        height: 40.0,
+                                        textStyle: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Poppins',
+                                              letterSpacing: 0.0,
+                                            ),
+                                        hintText: 'Coupes',
+                                        icon: Icon(
+                                          Icons.keyboard_arrow_down_rounded,
                                           color: FlutterFlowTheme.of(context)
-                                              .primaryBackground,
-                                          letterSpacing: 0.0,
+                                              .secondaryText,
+                                          size: 24.0,
                                         ),
-                                    elevation: 3.0,
-                                    borderSide: BorderSide(
-                                      color: Colors.transparent,
-                                      width: 1.0,
+                                        fillColor: FlutterFlowTheme.of(context)
+                                            .primaryBackground,
+                                        elevation: 2.0,
+                                        borderColor: Colors.transparent,
+                                        borderWidth: 0.0,
+                                        borderRadius: 8.0,
+                                        margin: const EdgeInsetsDirectional.fromSTEB(
+                                            12.0, 0.0, 12.0, 0.0),
+                                        hidesUnderline: true,
+                                        isOverButton: false,
+                                        isSearchable: false,
+                                        isMultiSelect: false,
+                                      ),
                                     ),
-                                    borderRadius: BorderRadius.circular(40.0),
-                                    hoverColor:
-                                        FlutterFlowTheme.of(context).success,
-                                    hoverTextColor: FlutterFlowTheme.of(context)
-                                        .primaryBackground,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                    Row(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        Row(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Align(
-                              alignment: AlignmentDirectional(0.0, 0.0),
-                              child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 20.0, 0.0, 16.0),
-                                child: FFButtonWidget(
-                                  onPressed: () async {
-                                    await TeamsRecord.collection
-                                        .doc()
-                                        .set(createTeamsRecordData(
-                                          name: _model
-                                              .teamNameFieldTextController.text,
-                                          value: _model
-                                              .teamvalueFieldTextController
-                                              .text,
-                                          adminUser: currentUserReference,
-                                          logo: _model.uploadedFileUrl,
-                                          sportValue: 'tennis',
-                                          leagueValue:
-                                              _model.dropLigueTennisValue,
-                                          esport: false,
-                                        ));
-                                  },
-                                  text: 'Valider Tennis',
-                                  options: FFButtonOptions(
-                                    width: 180.0,
-                                    height: 40.0,
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 0.0),
-                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 0.0),
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryBackground,
-                                    textStyle: FlutterFlowTheme.of(context)
-                                        .titleSmall
-                                        .override(
-                                          fontFamily: 'Poppins',
+                                    Align(
+                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                      child: FFButtonWidget(
+                                        onPressed: () async {
+                                          await TeamsRecord.collection
+                                              .doc()
+                                              .set(createTeamsRecordData(
+                                                name: _model
+                                                    .teamNameFieldTextController
+                                                    .text,
+                                                value: _model
+                                                    .teamvalueFieldTextController
+                                                    .text,
+                                                adminUser: currentUserReference,
+                                                logo: _model.uploadedFileUrl,
+                                                leagueValue:
+                                                    _model.dropLigueFootValue,
+                                                sportValue: 'football',
+                                                esport: false,
+                                                additionalLeague:
+                                                    _model.dropFootCupValue,
+                                              ));
+                                        },
+                                        text: 'Valider Foot',
+                                        options: FFButtonOptions(
+                                          width: 180.0,
+                                          height: 40.0,
+                                          padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 0.0, 0.0),
+                                          iconPadding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 0.0, 0.0),
                                           color: FlutterFlowTheme.of(context)
-                                              .primaryBackground,
-                                          letterSpacing: 0.0,
+                                              .secondaryBackground,
+                                          textStyle: FlutterFlowTheme.of(
+                                                  context)
+                                              .titleSmall
+                                              .override(
+                                                fontFamily: 'Poppins',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryText,
+                                                letterSpacing: 0.0,
+                                              ),
+                                          elevation: 3.0,
+                                          borderSide: const BorderSide(
+                                            color: Colors.transparent,
+                                            width: 1.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(40.0),
+                                          hoverColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .success,
+                                          hoverTextColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .primaryBackground,
                                         ),
-                                    elevation: 3.0,
-                                    borderSide: BorderSide(
-                                      color: Colors.transparent,
-                                      width: 1.0,
+                                      ),
                                     ),
-                                    borderRadius: BorderRadius.circular(40.0),
-                                    hoverColor:
-                                        FlutterFlowTheme.of(context).success,
-                                    hoverTextColor: FlutterFlowTheme.of(context)
-                                        .primaryBackground,
-                                  ),
+                                  ],
                                 ),
-                              ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
+                        if (_model.dropLigueBasketValue != null &&
+                            _model.dropLigueBasketValue != '')
+                          Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                0.0, 5.0, 0.0, 5.0),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Align(
+                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                      child: FFButtonWidget(
+                                        onPressed: () async {
+                                          await TeamsRecord.collection
+                                              .doc()
+                                              .set(createTeamsRecordData(
+                                                name: _model
+                                                    .teamNameFieldTextController
+                                                    .text,
+                                                value: _model
+                                                    .teamvalueFieldTextController
+                                                    .text,
+                                                adminUser: currentUserReference,
+                                                logo: _model.uploadedFileUrl,
+                                                sportValue: 'basketball',
+                                                leagueValue:
+                                                    _model.dropLigueBasketValue,
+                                                esport: false,
+                                              ));
+                                        },
+                                        text: 'Valider Basket',
+                                        options: FFButtonOptions(
+                                          width: 180.0,
+                                          height: 40.0,
+                                          padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 0.0, 0.0),
+                                          iconPadding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 0.0, 0.0),
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryBackground,
+                                          textStyle: FlutterFlowTheme.of(
+                                                  context)
+                                              .titleSmall
+                                              .override(
+                                                fontFamily: 'Poppins',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryText,
+                                                letterSpacing: 0.0,
+                                              ),
+                                          elevation: 3.0,
+                                          borderSide: const BorderSide(
+                                            color: Colors.transparent,
+                                            width: 1.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(40.0),
+                                          hoverColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .success,
+                                          hoverTextColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .primaryBackground,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+                        if (_model.dropLigueTennisValue != null &&
+                            _model.dropLigueTennisValue != '')
+                          Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                0.0, 5.0, 0.0, 5.0),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Align(
+                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                      child: FFButtonWidget(
+                                        onPressed: () async {
+                                          await TeamsRecord.collection
+                                              .doc()
+                                              .set(createTeamsRecordData(
+                                                name: _model
+                                                    .teamNameFieldTextController
+                                                    .text,
+                                                value: _model
+                                                    .teamvalueFieldTextController
+                                                    .text,
+                                                adminUser: currentUserReference,
+                                                logo: _model.uploadedFileUrl,
+                                                sportValue: 'tennis',
+                                                leagueValue:
+                                                    _model.dropLigueTennisValue,
+                                                esport: false,
+                                              ));
+                                        },
+                                        text: 'Valider Tennis',
+                                        options: FFButtonOptions(
+                                          width: 180.0,
+                                          height: 40.0,
+                                          padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 0.0, 0.0),
+                                          iconPadding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 0.0, 0.0),
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryBackground,
+                                          textStyle: FlutterFlowTheme.of(
+                                                  context)
+                                              .titleSmall
+                                              .override(
+                                                fontFamily: 'Poppins',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryText,
+                                                letterSpacing: 0.0,
+                                              ),
+                                          elevation: 3.0,
+                                          borderSide: const BorderSide(
+                                            color: Colors.transparent,
+                                            width: 1.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(40.0),
+                                          hoverColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .success,
+                                          hoverTextColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .primaryBackground,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+                        if (_model.dropLigueFightValue != null &&
+                            _model.dropLigueFightValue != '')
+                          Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                0.0, 5.0, 0.0, 5.0),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Align(
+                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                      child: FFButtonWidget(
+                                        onPressed: () async {
+                                          await TeamsRecord.collection
+                                              .doc()
+                                              .set(createTeamsRecordData(
+                                                name: _model
+                                                    .teamNameFieldTextController
+                                                    .text,
+                                                value: _model
+                                                    .teamvalueFieldTextController
+                                                    .text,
+                                                adminUser: currentUserReference,
+                                                logo: _model.uploadedFileUrl,
+                                                sportValue: 'sports.combat',
+                                                leagueValue:
+                                                    _model.dropLigueFightValue,
+                                                esport: false,
+                                              ));
+                                        },
+                                        text: 'Valider sports combat',
+                                        options: FFButtonOptions(
+                                          width: 180.0,
+                                          height: 40.0,
+                                          padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 0.0, 0.0),
+                                          iconPadding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 0.0, 0.0),
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryBackground,
+                                          textStyle: FlutterFlowTheme.of(
+                                                  context)
+                                              .titleSmall
+                                              .override(
+                                                fontFamily: 'Poppins',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryText,
+                                                letterSpacing: 0.0,
+                                              ),
+                                          elevation: 3.0,
+                                          borderSide: const BorderSide(
+                                            color: Colors.transparent,
+                                            width: 1.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(40.0),
+                                          hoverColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .success,
+                                          hoverTextColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .primaryBackground,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+                        if (_model.dropLigueHockeyValue != null &&
+                            _model.dropLigueHockeyValue != '')
+                          Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                0.0, 5.0, 0.0, 5.0),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Align(
+                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                      child: FFButtonWidget(
+                                        onPressed: () async {
+                                          await TeamsRecord.collection
+                                              .doc()
+                                              .set(createTeamsRecordData(
+                                                name: _model
+                                                    .teamNameFieldTextController
+                                                    .text,
+                                                value: _model
+                                                    .teamvalueFieldTextController
+                                                    .text,
+                                                adminUser: currentUserReference,
+                                                logo: _model.uploadedFileUrl,
+                                                sportValue: 'hockey',
+                                                leagueValue:
+                                                    _model.dropLigueHockeyValue,
+                                                esport: false,
+                                              ));
+                                        },
+                                        text: 'Valider Hockey',
+                                        options: FFButtonOptions(
+                                          width: 180.0,
+                                          height: 40.0,
+                                          padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 0.0, 0.0),
+                                          iconPadding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 0.0, 0.0),
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryBackground,
+                                          textStyle: FlutterFlowTheme.of(
+                                                  context)
+                                              .titleSmall
+                                              .override(
+                                                fontFamily: 'Poppins',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryText,
+                                                letterSpacing: 0.0,
+                                              ),
+                                          elevation: 3.0,
+                                          borderSide: const BorderSide(
+                                            color: Colors.transparent,
+                                            width: 1.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(40.0),
+                                          hoverColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .success,
+                                          hoverTextColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .primaryBackground,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
                       ],
                     ),
                   ],

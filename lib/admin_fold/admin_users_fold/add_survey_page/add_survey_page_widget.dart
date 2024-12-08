@@ -5,10 +5,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'add_survey_page_model.dart';
 export 'add_survey_page_model.dart';
 
@@ -60,7 +57,7 @@ class _AddSurveyPageWidgetState extends State<AddSurveyPageWidget> {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<TeamsRecord>(
-      stream: TeamsRecord.getDocument(widget!.teamRef!),
+      stream: TeamsRecord.getDocument(widget.teamRef!),
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
@@ -90,9 +87,9 @@ class _AddSurveyPageWidgetState extends State<AddSurveyPageWidget> {
             body: SafeArea(
               top: true,
               child: Align(
-                alignment: AlignmentDirectional(0.0, -1.0),
+                alignment: const AlignmentDirectional(0.0, -1.0),
                 child: Padding(
-                  padding: EdgeInsets.all(10.0),
+                  padding: const EdgeInsets.all(10.0),
                   child: SingleChildScrollView(
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
@@ -113,7 +110,7 @@ class _AddSurveyPageWidgetState extends State<AddSurveyPageWidget> {
                                     context.pushNamed(
                                       'MenuPage',
                                       extra: <String, dynamic>{
-                                        kTransitionInfoKey: TransitionInfo(
+                                        kTransitionInfoKey: const TransitionInfo(
                                           hasTransition: true,
                                           transitionType:
                                               PageTransitionType.leftToRight,
@@ -130,7 +127,7 @@ class _AddSurveyPageWidgetState extends State<AddSurveyPageWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       10.0, 0.0, 0.0, 0.0),
                                   child: InkWell(
                                     splashColor: Colors.transparent,
@@ -151,13 +148,13 @@ class _AddSurveyPageWidgetState extends State<AddSurveyPageWidget> {
                               ],
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 0.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 6.0, 0.0),
                                     child: Container(
                                       width: 65.0,
@@ -179,7 +176,7 @@ class _AddSurveyPageWidgetState extends State<AddSurveyPageWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       addSurveyPageTeamsRecord.name,
@@ -198,14 +195,14 @@ class _AddSurveyPageWidgetState extends State<AddSurveyPageWidget> {
                           ],
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               10.0, 5.0, 10.0, 5.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Expanded(
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       10.0, 0.0, 10.0, 0.0),
                                   child: TextFormField(
                                     controller: _model.titleFieldTextController,
@@ -276,7 +273,7 @@ class _AddSurveyPageWidgetState extends State<AddSurveyPageWidget> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 10.0, 0.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -362,7 +359,7 @@ class _AddSurveyPageWidgetState extends State<AddSurveyPageWidget> {
                                   borderRadius: BorderRadius.circular(18.0),
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsets.all(3.0),
+                                  padding: const EdgeInsets.all(3.0),
                                   child: ClipRRect(
                                     borderRadius: BorderRadius.circular(15.0),
                                     child: Image.network(
@@ -379,7 +376,7 @@ class _AddSurveyPageWidgetState extends State<AddSurveyPageWidget> {
                         ),
                         Expanded(
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 10.0, 0.0, 10.0, 0.0),
                             child: TextFormField(
                               controller: _model.descriptionFieldTextController,
@@ -439,14 +436,14 @@ class _AddSurveyPageWidgetState extends State<AddSurveyPageWidget> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 5.0, 0.0, 5.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Expanded(
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       8.0, 0.0, 8.0, 0.0),
                                   child: TextFormField(
                                     controller:
@@ -515,14 +512,14 @@ class _AddSurveyPageWidgetState extends State<AddSurveyPageWidget> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 5.0, 0.0, 5.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Expanded(
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       8.0, 0.0, 8.0, 0.0),
                                   child: TextFormField(
                                     controller:
@@ -591,14 +588,14 @@ class _AddSurveyPageWidgetState extends State<AddSurveyPageWidget> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 5.0, 0.0, 30.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Expanded(
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       8.0, 0.0, 8.0, 0.0),
                                   child: TextFormField(
                                     controller:
@@ -676,7 +673,7 @@ class _AddSurveyPageWidgetState extends State<AddSurveyPageWidget> {
                                 description:
                                     _model.descriptionFieldTextController.text,
                                 image: _model.uploadedFileUrl,
-                                teamRef: widget!.teamRef,
+                                teamRef: widget.teamRef,
                                 esport: addSurveyPageTeamsRecord.esport,
                                 member: currentUserReference,
                                 choice1: _model.choice1FieldTextController.text,
@@ -695,7 +692,7 @@ class _AddSurveyPageWidgetState extends State<AddSurveyPageWidget> {
                                 description:
                                     _model.descriptionFieldTextController.text,
                                 image: _model.uploadedFileUrl,
-                                teamRef: widget!.teamRef,
+                                teamRef: widget.teamRef,
                                 esport: addSurveyPageTeamsRecord.esport,
                                 member: currentUserReference,
                                 choice1: _model.choice1FieldTextController.text,
@@ -709,7 +706,7 @@ class _AddSurveyPageWidgetState extends State<AddSurveyPageWidget> {
                               ),
                             }, postsRecordReference);
 
-                            await TeamPostsRecord.createDoc(widget!.teamRef!)
+                            await TeamPostsRecord.createDoc(widget.teamRef!)
                                 .set({
                               ...createTeamPostsRecordData(
                                 posts: _model.postRef?.reference,
@@ -739,12 +736,12 @@ class _AddSurveyPageWidgetState extends State<AddSurveyPageWidget> {
                               'ListSurveys',
                               queryParameters: {
                                 'teamRef': serializeParam(
-                                  widget!.teamRef,
+                                  widget.teamRef,
                                   ParamType.DocumentReference,
                                 ),
                               }.withoutNulls,
                               extra: <String, dynamic>{
-                                kTransitionInfoKey: TransitionInfo(
+                                kTransitionInfoKey: const TransitionInfo(
                                   hasTransition: true,
                                   transitionType: PageTransitionType.scale,
                                   alignment: Alignment.bottomCenter,
@@ -758,9 +755,9 @@ class _AddSurveyPageWidgetState extends State<AddSurveyPageWidget> {
                           text: 'Valider',
                           options: FFButtonOptions(
                             height: 30.0,
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 25.0, 0.0, 25.0, 0.0),
-                            iconPadding: EdgeInsetsDirectional.fromSTEB(
+                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
                             color: FlutterFlowTheme.of(context).success,
                             textStyle: FlutterFlowTheme.of(context)
@@ -772,7 +769,7 @@ class _AddSurveyPageWidgetState extends State<AddSurveyPageWidget> {
                                   letterSpacing: 0.0,
                                 ),
                             elevation: 3.0,
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Colors.transparent,
                               width: 1.0,
                             ),

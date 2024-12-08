@@ -1,17 +1,9 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
-import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:math';
 import '/flutter_flow/custom_functions.dart' as functions;
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
-import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'public_stats_model.dart';
 export 'public_stats_model.dart';
 
@@ -49,7 +41,7 @@ class _PublicStatsWidgetState extends State<PublicStatsWidget>
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<UsersRecord>(
-      stream: UsersRecord.getDocument(widget!.userRef!),
+      stream: UsersRecord.getDocument(widget.userRef!),
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
@@ -77,16 +69,16 @@ class _PublicStatsWidgetState extends State<PublicStatsWidget>
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             body: Align(
-              alignment: AlignmentDirectional(0.0, -1.0),
+              alignment: const AlignmentDirectional(0.0, -1.0),
               child: Padding(
-                padding: EdgeInsets.all(10.0),
+                padding: const EdgeInsets.all(10.0),
                 child: SingleChildScrollView(
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -106,7 +98,7 @@ class _PublicStatsWidgetState extends State<PublicStatsWidget>
                                         context.pushNamed(
                                           'MenuPage',
                                           extra: <String, dynamic>{
-                                            kTransitionInfoKey: TransitionInfo(
+                                            kTransitionInfoKey: const TransitionInfo(
                                               hasTransition: true,
                                               transitionType: PageTransitionType
                                                   .leftToRight,
@@ -118,13 +110,12 @@ class _PublicStatsWidgetState extends State<PublicStatsWidget>
                                       },
                                       child: Icon(
                                         Icons.menu_rounded,
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryText,
+                                        color: publicStatsUsersRecord.color1,
                                         size: 30.0,
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           10.0, 0.0, 0.0, 0.0),
                                       child: InkWell(
                                         splashColor: Colors.transparent,
@@ -136,8 +127,7 @@ class _PublicStatsWidgetState extends State<PublicStatsWidget>
                                         },
                                         child: Icon(
                                           Icons.arrow_back_ios_new_rounded,
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryText,
+                                          color: publicStatsUsersRecord.color1,
                                           size: 30.0,
                                         ),
                                       ),
@@ -145,7 +135,7 @@ class _PublicStatsWidgetState extends State<PublicStatsWidget>
                                   ],
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       20.0, 0.0, 0.0, 0.0),
                                   child: Text(
                                     valueOrDefault<String>(
@@ -205,7 +195,7 @@ class _PublicStatsWidgetState extends State<PublicStatsWidget>
                                     mainAxisAlignment: MainAxisAlignment.end,
                                     children: [
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             10.0, 0.0, 10.0, 0.0),
                                         child: InkWell(
                                           splashColor: Colors.transparent,
@@ -217,7 +207,7 @@ class _PublicStatsWidgetState extends State<PublicStatsWidget>
                                               'MyNotifsList',
                                               extra: <String, dynamic>{
                                                 kTransitionInfoKey:
-                                                    TransitionInfo(
+                                                    const TransitionInfo(
                                                   hasTransition: true,
                                                   transitionType:
                                                       PageTransitionType
@@ -231,7 +221,7 @@ class _PublicStatsWidgetState extends State<PublicStatsWidget>
                                           child: Icon(
                                             Icons.notifications_active_outlined,
                                             color: FlutterFlowTheme.of(context)
-                                                .accent3,
+                                                .accent1,
                                             size: 40.0,
                                           ),
                                         ),
@@ -244,7 +234,7 @@ class _PublicStatsWidgetState extends State<PublicStatsWidget>
                         ),
                       ),
                       Align(
-                        alignment: AlignmentDirectional(0.0, -1.0),
+                        alignment: const AlignmentDirectional(0.0, -1.0),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -253,12 +243,12 @@ class _PublicStatsWidgetState extends State<PublicStatsWidget>
                                     currentUserDocument?.esport, false) ==
                                 false)
                               Padding(
-                                padding: EdgeInsets.all(16.0),
+                                padding: const EdgeInsets.all(16.0),
                                 child: AuthUserStreamWidget(
                                   builder: (context) =>
                                       StreamBuilder<List<MyBetsRecord>>(
                                     stream: queryMyBetsRecord(
-                                      parent: widget!.userRef,
+                                      parent: widget.userRef,
                                       singleRecord: true,
                                     ),
                                     builder: (context, snapshot) {
@@ -299,7 +289,7 @@ class _PublicStatsWidgetState extends State<PublicStatsWidget>
                                         children: [
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     3.0, 0.0, 0.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -318,7 +308,7 @@ class _PublicStatsWidgetState extends State<PublicStatsWidget>
                                                 Expanded(
                                                   child: Align(
                                                     alignment:
-                                                        AlignmentDirectional(
+                                                        const AlignmentDirectional(
                                                             1.0, 0.0),
                                                     child: InkWell(
                                                       splashColor:
@@ -340,11 +330,17 @@ class _PublicStatsWidgetState extends State<PublicStatsWidget>
                                                               ParamType
                                                                   .DocumentReference,
                                                             ),
+                                                            'userRef':
+                                                                serializeParam(
+                                                              widget.userRef,
+                                                              ParamType
+                                                                  .DocumentReference,
+                                                            ),
                                                           }.withoutNulls,
                                                           extra: <String,
                                                               dynamic>{
                                                             kTransitionInfoKey:
-                                                                TransitionInfo(
+                                                                const TransitionInfo(
                                                               hasTransition:
                                                                   true,
                                                               transitionType:
@@ -361,9 +357,8 @@ class _PublicStatsWidgetState extends State<PublicStatsWidget>
                                                         Icons
                                                             .attach_money_rounded,
                                                         color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .secondaryText,
+                                                            publicStatsUsersRecord
+                                                                .color1,
                                                         size: 30.0,
                                                       ),
                                                     ),
@@ -374,9 +369,9 @@ class _PublicStatsWidgetState extends State<PublicStatsWidget>
                                           ),
                                           Align(
                                             alignment:
-                                                AlignmentDirectional(0.0, 0.0),
+                                                const AlignmentDirectional(0.0, 0.0),
                                             child: Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 20.0, 0.0, 0.0),
                                               child: Wrap(
@@ -405,9 +400,10 @@ class _PublicStatsWidgetState extends State<PublicStatsWidget>
                                                       boxShadow: [
                                                         BoxShadow(
                                                           blurRadius: 4.0,
-                                                          color:
-                                                              Color(0x33000000),
-                                                          offset: Offset(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .accent3,
+                                                          offset: const Offset(
                                                             0.0,
                                                             2.0,
                                                           ),
@@ -419,7 +415,7 @@ class _PublicStatsWidgetState extends State<PublicStatsWidget>
                                                     ),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsets.all(6.0),
+                                                          const EdgeInsets.all(6.0),
                                                       child: Column(
                                                         mainAxisSize:
                                                             MainAxisSize.max,
@@ -432,7 +428,7 @@ class _PublicStatsWidgetState extends State<PublicStatsWidget>
                                                                 .flash_on_rounded,
                                                             color: FlutterFlowTheme
                                                                     .of(context)
-                                                                .accent3,
+                                                                .accent1,
                                                             size: 44.0,
                                                           ),
                                                           Text(
@@ -486,9 +482,10 @@ class _PublicStatsWidgetState extends State<PublicStatsWidget>
                                                       boxShadow: [
                                                         BoxShadow(
                                                           blurRadius: 4.0,
-                                                          color:
-                                                              Color(0x33000000),
-                                                          offset: Offset(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .accent3,
+                                                          offset: const Offset(
                                                             0.0,
                                                             2.0,
                                                           ),
@@ -500,7 +497,7 @@ class _PublicStatsWidgetState extends State<PublicStatsWidget>
                                                     ),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsets.all(6.0),
+                                                          const EdgeInsets.all(6.0),
                                                       child: Column(
                                                         mainAxisSize:
                                                             MainAxisSize.max,
@@ -510,7 +507,7 @@ class _PublicStatsWidgetState extends State<PublicStatsWidget>
                                                         children: [
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         5.0,
                                                                         0.0,
@@ -528,10 +525,11 @@ class _PublicStatsWidgetState extends State<PublicStatsWidget>
                                                                   BoxShadow(
                                                                     blurRadius:
                                                                         4.0,
-                                                                    color: Color(
-                                                                        0x53000000),
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .accent3,
                                                                     offset:
-                                                                        Offset(
+                                                                        const Offset(
                                                                       0.0,
                                                                       2.0,
                                                                     ),
@@ -548,7 +546,7 @@ class _PublicStatsWidgetState extends State<PublicStatsWidget>
                                                               ),
                                                               child: Padding(
                                                                 padding:
-                                                                    EdgeInsets
+                                                                    const EdgeInsets
                                                                         .all(
                                                                             2.0),
                                                                 child:
@@ -623,9 +621,10 @@ class _PublicStatsWidgetState extends State<PublicStatsWidget>
                                                       boxShadow: [
                                                         BoxShadow(
                                                           blurRadius: 4.0,
-                                                          color:
-                                                              Color(0x33000000),
-                                                          offset: Offset(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .accent3,
+                                                          offset: const Offset(
                                                             0.0,
                                                             2.0,
                                                           ),
@@ -637,7 +636,7 @@ class _PublicStatsWidgetState extends State<PublicStatsWidget>
                                                     ),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsets.all(12.0),
+                                                          const EdgeInsets.all(12.0),
                                                       child: Column(
                                                         mainAxisSize:
                                                             MainAxisSize.max,
@@ -654,7 +653,7 @@ class _PublicStatsWidgetState extends State<PublicStatsWidget>
                                                           ),
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         12.0,
@@ -713,9 +712,10 @@ class _PublicStatsWidgetState extends State<PublicStatsWidget>
                                                       boxShadow: [
                                                         BoxShadow(
                                                           blurRadius: 4.0,
-                                                          color:
-                                                              Color(0x33000000),
-                                                          offset: Offset(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .accent3,
+                                                          offset: const Offset(
                                                             0.0,
                                                             2.0,
                                                           ),
@@ -727,7 +727,7 @@ class _PublicStatsWidgetState extends State<PublicStatsWidget>
                                                     ),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsets.all(12.0),
+                                                          const EdgeInsets.all(12.0),
                                                       child: Column(
                                                         mainAxisSize:
                                                             MainAxisSize.max,
@@ -737,7 +737,7 @@ class _PublicStatsWidgetState extends State<PublicStatsWidget>
                                                         children: [
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
@@ -841,9 +841,10 @@ class _PublicStatsWidgetState extends State<PublicStatsWidget>
                                                       boxShadow: [
                                                         BoxShadow(
                                                           blurRadius: 4.0,
-                                                          color:
-                                                              Color(0x33000000),
-                                                          offset: Offset(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .accent3,
+                                                          offset: const Offset(
                                                             0.0,
                                                             2.0,
                                                           ),
@@ -855,7 +856,7 @@ class _PublicStatsWidgetState extends State<PublicStatsWidget>
                                                     ),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsets.all(12.0),
+                                                          const EdgeInsets.all(12.0),
                                                       child: Column(
                                                         mainAxisSize:
                                                             MainAxisSize.max,
@@ -872,7 +873,7 @@ class _PublicStatsWidgetState extends State<PublicStatsWidget>
                                                           ),
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         12.0,
@@ -882,19 +883,11 @@ class _PublicStatsWidgetState extends State<PublicStatsWidget>
                                                               valueOrDefault<
                                                                   String>(
                                                                 functions
-                                                                    .averageGoals(
-                                                                        valueOrDefault<
-                                                                            int>(
-                                                                          publicStatsUsersRecord
-                                                                              .totalBets,
-                                                                          0,
-                                                                        ),
-                                                                        valueOrDefault<
-                                                                            int>(
-                                                                          publicStatsUsersRecord
-                                                                              .betWin,
-                                                                          0,
-                                                                        ))
+                                                                    .totalBetsLooses(
+                                                                        publicStatsUsersRecord
+                                                                            .totalBets,
+                                                                        publicStatsUsersRecord
+                                                                            .betWin)
                                                                     .toString(),
                                                                 '0',
                                                               ),
@@ -943,9 +936,10 @@ class _PublicStatsWidgetState extends State<PublicStatsWidget>
                                                       boxShadow: [
                                                         BoxShadow(
                                                           blurRadius: 4.0,
-                                                          color:
-                                                              Color(0x33000000),
-                                                          offset: Offset(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .accent3,
+                                                          offset: const Offset(
                                                             0.0,
                                                             2.0,
                                                           ),
@@ -957,7 +951,7 @@ class _PublicStatsWidgetState extends State<PublicStatsWidget>
                                                     ),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsets.all(12.0),
+                                                          const EdgeInsets.all(12.0),
                                                       child: Column(
                                                         mainAxisSize:
                                                             MainAxisSize.max,
@@ -967,7 +961,7 @@ class _PublicStatsWidgetState extends State<PublicStatsWidget>
                                                         children: [
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
@@ -1087,9 +1081,10 @@ class _PublicStatsWidgetState extends State<PublicStatsWidget>
                                                       boxShadow: [
                                                         BoxShadow(
                                                           blurRadius: 4.0,
-                                                          color:
-                                                              Color(0x33000000),
-                                                          offset: Offset(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .accent3,
+                                                          offset: const Offset(
                                                             0.0,
                                                             2.0,
                                                           ),
@@ -1101,7 +1096,7 @@ class _PublicStatsWidgetState extends State<PublicStatsWidget>
                                                     ),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsets.all(12.0),
+                                                          const EdgeInsets.all(12.0),
                                                       child: Column(
                                                         mainAxisSize:
                                                             MainAxisSize.max,
@@ -1111,7 +1106,7 @@ class _PublicStatsWidgetState extends State<PublicStatsWidget>
                                                         children: [
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         12.0,
@@ -1170,9 +1165,10 @@ class _PublicStatsWidgetState extends State<PublicStatsWidget>
                                                       boxShadow: [
                                                         BoxShadow(
                                                           blurRadius: 4.0,
-                                                          color:
-                                                              Color(0x33000000),
-                                                          offset: Offset(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .accent3,
+                                                          offset: const Offset(
                                                             0.0,
                                                             2.0,
                                                           ),
@@ -1184,7 +1180,7 @@ class _PublicStatsWidgetState extends State<PublicStatsWidget>
                                                     ),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsets.all(12.0),
+                                                          const EdgeInsets.all(12.0),
                                                       child: Column(
                                                         mainAxisSize:
                                                             MainAxisSize.max,
@@ -1194,7 +1190,7 @@ class _PublicStatsWidgetState extends State<PublicStatsWidget>
                                                         children: [
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         12.0,
@@ -1210,12 +1206,7 @@ class _PublicStatsWidgetState extends State<PublicStatsWidget>
                                                                             .totalGains,
                                                                         0.0,
                                                                       ),
-                                                                      valueOrDefault<double>(
-                                                                        valueOrDefault(
-                                                                            currentUserDocument?.totalMises,
-                                                                            0.0),
-                                                                        0.0,
-                                                                      ),
+                                                                      publicStatsUsersRecord.totalMises,
                                                                       valueOrDefault<int>(
                                                                         publicStatsUsersRecord
                                                                             .totalBets,
@@ -1276,7 +1267,7 @@ class _PublicStatsWidgetState extends State<PublicStatsWidget>
                                     currentUserDocument?.esport, false) ==
                                 true)
                               Padding(
-                                padding: EdgeInsets.all(16.0),
+                                padding: const EdgeInsets.all(16.0),
                                 child: AuthUserStreamWidget(
                                   builder: (context) => Column(
                                     mainAxisSize: MainAxisSize.max,
@@ -1284,7 +1275,7 @@ class _PublicStatsWidgetState extends State<PublicStatsWidget>
                                         CrossAxisAlignment.start,
                                     children: [
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             3.0, 0.0, 0.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -1307,10 +1298,10 @@ class _PublicStatsWidgetState extends State<PublicStatsWidget>
                                       ),
                                       Align(
                                         alignment:
-                                            AlignmentDirectional(0.0, 0.0),
+                                            const AlignmentDirectional(0.0, 0.0),
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 20.0, 0.0, 0.0),
                                           child: Wrap(
                                             spacing: 16.0,
@@ -1337,8 +1328,11 @@ class _PublicStatsWidgetState extends State<PublicStatsWidget>
                                                   boxShadow: [
                                                     BoxShadow(
                                                       blurRadius: 4.0,
-                                                      color: Color(0x33000000),
-                                                      offset: Offset(
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .accent3,
+                                                      offset: const Offset(
                                                         0.0,
                                                         2.0,
                                                       ),
@@ -1349,7 +1343,7 @@ class _PublicStatsWidgetState extends State<PublicStatsWidget>
                                                           21.0),
                                                 ),
                                                 child: Padding(
-                                                  padding: EdgeInsets.all(12.0),
+                                                  padding: const EdgeInsets.all(12.0),
                                                   child: Column(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -1367,7 +1361,7 @@ class _PublicStatsWidgetState extends State<PublicStatsWidget>
                                                       ),
                                                       Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     12.0,
@@ -1429,8 +1423,11 @@ class _PublicStatsWidgetState extends State<PublicStatsWidget>
                                                   boxShadow: [
                                                     BoxShadow(
                                                       blurRadius: 4.0,
-                                                      color: Color(0x33000000),
-                                                      offset: Offset(
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .accent3,
+                                                      offset: const Offset(
                                                         0.0,
                                                         2.0,
                                                       ),
@@ -1441,7 +1438,7 @@ class _PublicStatsWidgetState extends State<PublicStatsWidget>
                                                           21.0),
                                                 ),
                                                 child: Padding(
-                                                  padding: EdgeInsets.all(12.0),
+                                                  padding: const EdgeInsets.all(12.0),
                                                   child: Column(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -1459,7 +1456,7 @@ class _PublicStatsWidgetState extends State<PublicStatsWidget>
                                                       ),
                                                       Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     12.0,
@@ -1521,8 +1518,11 @@ class _PublicStatsWidgetState extends State<PublicStatsWidget>
                                                   boxShadow: [
                                                     BoxShadow(
                                                       blurRadius: 4.0,
-                                                      color: Color(0x33000000),
-                                                      offset: Offset(
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .accent3,
+                                                      offset: const Offset(
                                                         0.0,
                                                         2.0,
                                                       ),
@@ -1533,7 +1533,7 @@ class _PublicStatsWidgetState extends State<PublicStatsWidget>
                                                           18.0),
                                                 ),
                                                 child: Padding(
-                                                  padding: EdgeInsets.all(12.0),
+                                                  padding: const EdgeInsets.all(12.0),
                                                   child: Column(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -1543,7 +1543,7 @@ class _PublicStatsWidgetState extends State<PublicStatsWidget>
                                                     children: [
                                                       Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     12.0,
@@ -1605,8 +1605,11 @@ class _PublicStatsWidgetState extends State<PublicStatsWidget>
                                                   boxShadow: [
                                                     BoxShadow(
                                                       blurRadius: 4.0,
-                                                      color: Color(0x33000000),
-                                                      offset: Offset(
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .accent3,
+                                                      offset: const Offset(
                                                         0.0,
                                                         2.0,
                                                       ),
@@ -1617,7 +1620,7 @@ class _PublicStatsWidgetState extends State<PublicStatsWidget>
                                                           18.0),
                                                 ),
                                                 child: Padding(
-                                                  padding: EdgeInsets.all(12.0),
+                                                  padding: const EdgeInsets.all(12.0),
                                                   child: Column(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -1627,7 +1630,7 @@ class _PublicStatsWidgetState extends State<PublicStatsWidget>
                                                     children: [
                                                       Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     12.0,
@@ -1702,7 +1705,7 @@ class _PublicStatsWidgetState extends State<PublicStatsWidget>
                                       ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       10.0, 0.0, 0.0, 0.0),
                                   child: Container(
                                     width: 18.0,

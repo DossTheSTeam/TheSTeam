@@ -2,11 +2,7 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'list_surveys_model.dart';
 export 'list_surveys_model.dart';
 
@@ -50,9 +46,9 @@ class _ListSurveysWidgetState extends State<ListSurveysWidget> {
         body: SafeArea(
           top: true,
           child: Align(
-            alignment: AlignmentDirectional(0.0, -1.0),
+            alignment: const AlignmentDirectional(0.0, -1.0),
             child: Padding(
-              padding: EdgeInsets.all(10.0),
+              padding: const EdgeInsets.all(10.0),
               child: SingleChildScrollView(
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
@@ -73,7 +69,7 @@ class _ListSurveysWidgetState extends State<ListSurveysWidget> {
                                 context.pushNamed(
                                   'MenuPage',
                                   extra: <String, dynamic>{
-                                    kTransitionInfoKey: TransitionInfo(
+                                    kTransitionInfoKey: const TransitionInfo(
                                       hasTransition: true,
                                       transitionType:
                                           PageTransitionType.leftToRight,
@@ -89,7 +85,7 @@ class _ListSurveysWidgetState extends State<ListSurveysWidget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 0.0, 0.0),
                               child: InkWell(
                                 splashColor: Colors.transparent,
@@ -110,7 +106,7 @@ class _ListSurveysWidgetState extends State<ListSurveysWidget> {
                           ],
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               35.0, 0.0, 0.0, 0.0),
                           child: Text(
                             'Liste sondages',
@@ -127,8 +123,41 @@ class _ListSurveysWidgetState extends State<ListSurveysWidget> {
                     Column(
                       mainAxisSize: MainAxisSize.max,
                       children: [
+                        if (valueOrDefault<bool>(
+                                currentUserDocument?.helpNav, false) ==
+                            true)
+                          Align(
+                            alignment: const AlignmentDirectional(0.0, 0.0),
+                            child: AuthUserStreamWidget(
+                              builder: (context) => Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 3.0, 0.0, 0.0),
+                                    child: Text(
+                                      'Classés par plus commentés/likés, \nfonctionnalités pas encore disponibles.',
+                                      textAlign: TextAlign.center,
+                                      maxLines: 3,
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            color: FlutterFlowTheme.of(context)
+                                                .error,
+                                            fontSize: 10.0,
+                                            letterSpacing: 0.0,
+                                            lineHeight: 1.0,
+                                          ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 6.0, 0.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -136,7 +165,7 @@ class _ListSurveysWidgetState extends State<ListSurveysWidget> {
                             children: [
                               Icon(
                                 Icons.update_rounded,
-                                color: FlutterFlowTheme.of(context).error,
+                                color: FlutterFlowTheme.of(context).success,
                                 size: 30.0,
                               ),
                               Icon(
@@ -192,7 +221,7 @@ class _ListSurveysWidgetState extends State<ListSurveysWidget> {
                                       children: [
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   10.0, 0.0, 10.0, 0.0),
                                           child: InkWell(
                                             splashColor: Colors.transparent,
@@ -204,7 +233,7 @@ class _ListSurveysWidgetState extends State<ListSurveysWidget> {
                                                 'MyNotifsList',
                                                 extra: <String, dynamic>{
                                                   kTransitionInfoKey:
-                                                      TransitionInfo(
+                                                      const TransitionInfo(
                                                     hasTransition: true,
                                                     transitionType:
                                                         PageTransitionType
@@ -220,7 +249,7 @@ class _ListSurveysWidgetState extends State<ListSurveysWidget> {
                                                   .notifications_active_outlined,
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .accent3,
+                                                      .accent1,
                                               size: 40.0,
                                             ),
                                           ),
@@ -232,17 +261,50 @@ class _ListSurveysWidgetState extends State<ListSurveysWidget> {
                             ],
                           ),
                         ),
+                        if (valueOrDefault<bool>(
+                                currentUserDocument?.helpNav, false) ==
+                            true)
+                          Align(
+                            alignment: const AlignmentDirectional(0.0, 0.0),
+                            child: AuthUserStreamWidget(
+                              builder: (context) => Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 3.0, 0.0, 0.0),
+                                    child: Text(
+                                      'Classés par plus récents',
+                                      textAlign: TextAlign.center,
+                                      maxLines: 3,
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            color: FlutterFlowTheme.of(context)
+                                                .success,
+                                            fontSize: 10.0,
+                                            letterSpacing: 0.0,
+                                            lineHeight: 1.0,
+                                          ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
                         Divider(
                           thickness: 1.0,
                           color:
                               FlutterFlowTheme.of(context).secondaryBackground,
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               5.0, 5.0, 5.0, 0.0),
                           child: StreamBuilder<List<TeamPostsRecord>>(
                             stream: queryTeamPostsRecord(
-                              parent: widget!.teamRef,
+                              parent: widget.teamRef,
                               queryBuilder: (teamPostsRecord) => teamPostsRecord
                                   .where(
                                     'survey',
@@ -306,11 +368,9 @@ class _ListSurveysWidgetState extends State<ListSurveysWidget> {
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
                                           if (columnPostsPostsRecord.title !=
-                                                  null &&
-                                              columnPostsPostsRecord.title !=
                                                   '')
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 5.0, 0.0, 5.0),
                                               child: Column(
                                                 mainAxisSize: MainAxisSize.max,
@@ -333,7 +393,7 @@ class _ListSurveysWidgetState extends State<ListSurveysWidget> {
                                                         ),
                                                         child: Align(
                                                           alignment:
-                                                              AlignmentDirectional(
+                                                              const AlignmentDirectional(
                                                                   0.0, 0.0),
                                                           child: Text(
                                                             columnPostsPostsRecord
@@ -373,7 +433,7 @@ class _ListSurveysWidgetState extends State<ListSurveysWidget> {
                                                         ),
                                                         child: Padding(
                                                           padding:
-                                                              EdgeInsets.all(
+                                                              const EdgeInsets.all(
                                                                   5.0),
                                                           child: Text(
                                                             columnPostsPostsRecord
@@ -415,7 +475,7 @@ class _ListSurveysWidgetState extends State<ListSurveysWidget> {
                                                             extra: <String,
                                                                 dynamic>{
                                                               kTransitionInfoKey:
-                                                                  TransitionInfo(
+                                                                  const TransitionInfo(
                                                                 hasTransition:
                                                                     true,
                                                                 transitionType:
@@ -443,7 +503,7 @@ class _ListSurveysWidgetState extends State<ListSurveysWidget> {
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(10.0, 0.0,
                                                                 10.0, 0.0),
                                                     child:
@@ -459,7 +519,7 @@ class _ListSurveysWidgetState extends State<ListSurveysWidget> {
                                                         children: [
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
@@ -471,7 +531,7 @@ class _ListSurveysWidgetState extends State<ListSurveysWidget> {
                                                                       .max,
                                                               children: [
                                                                 Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -510,7 +570,7 @@ class _ListSurveysWidgetState extends State<ListSurveysWidget> {
                                                           ),
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
@@ -522,7 +582,7 @@ class _ListSurveysWidgetState extends State<ListSurveysWidget> {
                                                                       .max,
                                                               children: [
                                                                 Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -561,7 +621,7 @@ class _ListSurveysWidgetState extends State<ListSurveysWidget> {
                                                           ),
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
@@ -573,7 +633,7 @@ class _ListSurveysWidgetState extends State<ListSurveysWidget> {
                                                                       .max,
                                                               children: [
                                                                 Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -617,7 +677,7 @@ class _ListSurveysWidgetState extends State<ListSurveysWidget> {
                                                             children: [
                                                               Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,

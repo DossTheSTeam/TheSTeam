@@ -2,12 +2,10 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'admin_users_list_model.dart';
 export 'admin_users_list_model.dart';
 
@@ -49,9 +47,9 @@ class _AdminUsersListWidgetState extends State<AdminUsersListWidget> {
         body: SafeArea(
           top: true,
           child: Align(
-            alignment: AlignmentDirectional(0.0, -1.0),
+            alignment: const AlignmentDirectional(0.0, -1.0),
             child: Padding(
-              padding: EdgeInsets.all(10.0),
+              padding: const EdgeInsets.all(10.0),
               child: SingleChildScrollView(
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
@@ -72,7 +70,7 @@ class _AdminUsersListWidgetState extends State<AdminUsersListWidget> {
                                 context.pushNamed(
                                   'MenuPage',
                                   extra: <String, dynamic>{
-                                    kTransitionInfoKey: TransitionInfo(
+                                    kTransitionInfoKey: const TransitionInfo(
                                       hasTransition: true,
                                       transitionType:
                                           PageTransitionType.leftToRight,
@@ -88,7 +86,7 @@ class _AdminUsersListWidgetState extends State<AdminUsersListWidget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 0.0, 0.0),
                               child: InkWell(
                                 splashColor: Colors.transparent,
@@ -109,7 +107,7 @@ class _AdminUsersListWidgetState extends State<AdminUsersListWidget> {
                           ],
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               30.0, 0.0, 0.0, 0.0),
                           child: Text(
                             'Liste utilisateurs',
@@ -125,13 +123,13 @@ class _AdminUsersListWidgetState extends State<AdminUsersListWidget> {
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 10.0, 0.0),
                             child: Container(
                               width: 290.0,
@@ -141,7 +139,7 @@ class _AdminUsersListWidgetState extends State<AdminUsersListWidget> {
                                     .primaryBackground,
                               ),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     8.0, 0.0, 8.0, 0.0),
                                 child: TextFormField(
                                   controller: _model.textController,
@@ -155,7 +153,7 @@ class _AdminUsersListWidgetState extends State<AdminUsersListWidget> {
                                         .override(
                                           fontFamily: 'Poppins',
                                           color: FlutterFlowTheme.of(context)
-                                              .primaryText,
+                                              .warning,
                                           letterSpacing: 0.0,
                                         ),
                                     enabledBorder: UnderlineInputBorder(
@@ -195,6 +193,8 @@ class _AdminUsersListWidgetState extends State<AdminUsersListWidget> {
                                       .bodyMedium
                                       .override(
                                         fontFamily: 'Poppins',
+                                        color: FlutterFlowTheme.of(context)
+                                            .warning,
                                         letterSpacing: 0.0,
                                       ),
                                   validator: _model.textControllerValidator
@@ -241,7 +241,7 @@ class _AdminUsersListWidgetState extends State<AdminUsersListWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 10.0, 0.0),
                                     child: InkWell(
                                       splashColor: Colors.transparent,
@@ -262,7 +262,7 @@ class _AdminUsersListWidgetState extends State<AdminUsersListWidget> {
                                       child: Icon(
                                         Icons.search_rounded,
                                         color: FlutterFlowTheme.of(context)
-                                            .secondaryText,
+                                            .warning,
                                         size: 35.0,
                                       ),
                                     ),
@@ -276,7 +276,7 @@ class _AdminUsersListWidgetState extends State<AdminUsersListWidget> {
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -288,7 +288,7 @@ class _AdminUsersListWidgetState extends State<AdminUsersListWidget> {
                             ),
                             options: List<String>.from(
                                 ['amateur', 'pro', 'champion', 'legende']),
-                            optionLabels: [
+                            optionLabels: const [
                               'Amateur',
                               'Pro',
                               'Champion',
@@ -304,7 +304,7 @@ class _AdminUsersListWidgetState extends State<AdminUsersListWidget> {
                                   fontFamily: 'Poppins',
                                   letterSpacing: 0.0,
                                 ),
-                            hintText: 'Ligue',
+                            hintText: 'Ligues',
                             icon: Icon(
                               Icons.keyboard_arrow_down_rounded,
                               color: FlutterFlowTheme.of(context).secondaryText,
@@ -316,7 +316,7 @@ class _AdminUsersListWidgetState extends State<AdminUsersListWidget> {
                             borderColor: FlutterFlowTheme.of(context).alternate,
                             borderWidth: 2.0,
                             borderRadius: 8.0,
-                            margin: EdgeInsetsDirectional.fromSTEB(
+                            margin: const EdgeInsetsDirectional.fromSTEB(
                                 16.0, 4.0, 16.0, 4.0),
                             hidesUnderline: true,
                             isOverButton: true,
@@ -329,7 +329,7 @@ class _AdminUsersListWidgetState extends State<AdminUsersListWidget> {
                               _model.dropDivisionValue ??= '',
                             ),
                             options: List<String>.from(['1', '2', '3']),
-                            optionLabels: [
+                            optionLabels: const [
                               'Division 1',
                               'Division 2',
                               'Division 3'
@@ -356,7 +356,7 @@ class _AdminUsersListWidgetState extends State<AdminUsersListWidget> {
                             borderColor: FlutterFlowTheme.of(context).alternate,
                             borderWidth: 2.0,
                             borderRadius: 8.0,
-                            margin: EdgeInsetsDirectional.fromSTEB(
+                            margin: const EdgeInsetsDirectional.fromSTEB(
                                 16.0, 4.0, 16.0, 4.0),
                             hidesUnderline: true,
                             isOverButton: true,
@@ -375,7 +375,7 @@ class _AdminUsersListWidgetState extends State<AdminUsersListWidget> {
                             )
                             .where(
                               'division_value',
-                              isEqualTo: _model.dropLigueValue,
+                              isEqualTo: _model.dropDivisionValue,
                             ),
                       ),
                       builder: (context, snapshot) {
@@ -400,7 +400,7 @@ class _AdminUsersListWidgetState extends State<AdminUsersListWidget> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 10.0, 0.0),
                               child: Text(
                                 valueOrDefault<String>(
@@ -435,7 +435,166 @@ class _AdminUsersListWidgetState extends State<AdminUsersListWidget> {
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          FlutterFlowDropDown<String>(
+                            controller: _model.dropELigueValueController ??=
+                                FormFieldController<String>(
+                              _model.dropELigueValue ??= '',
+                            ),
+                            options: List<String>.from(
+                                ['amateur', 'pro', 'champion', 'legende']),
+                            optionLabels: const [
+                              'Amateur',
+                              'Pro',
+                              'Champion',
+                              'Légende'
+                            ],
+                            onChanged: (val) => safeSetState(
+                                () => _model.dropELigueValue = val),
+                            width: 150.0,
+                            height: 56.0,
+                            textStyle: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Poppins',
+                                  letterSpacing: 0.0,
+                                ),
+                            hintText: 'E Ligues',
+                            icon: Icon(
+                              Icons.keyboard_arrow_down_rounded,
+                              color: FlutterFlowTheme.of(context).secondaryText,
+                              size: 24.0,
+                            ),
+                            fillColor:
+                                FlutterFlowTheme.of(context).primaryBackground,
+                            elevation: 2.0,
+                            borderColor: FlutterFlowTheme.of(context).alternate,
+                            borderWidth: 2.0,
+                            borderRadius: 8.0,
+                            margin: const EdgeInsetsDirectional.fromSTEB(
+                                16.0, 4.0, 16.0, 4.0),
+                            hidesUnderline: true,
+                            isOverButton: true,
+                            isSearchable: false,
+                            isMultiSelect: false,
+                          ),
+                          FlutterFlowDropDown<String>(
+                            controller: _model.dropEDivisionValueController ??=
+                                FormFieldController<String>(
+                              _model.dropEDivisionValue ??= '',
+                            ),
+                            options: List<String>.from(['1', '2', '3']),
+                            optionLabels: const [
+                              'E Division 1',
+                              'E Division 2',
+                              'E Division 3'
+                            ],
+                            onChanged: (val) => safeSetState(
+                                () => _model.dropEDivisionValue = val),
+                            width: 150.0,
+                            height: 56.0,
+                            textStyle: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Poppins',
+                                  letterSpacing: 0.0,
+                                ),
+                            hintText: 'E Divisions',
+                            icon: Icon(
+                              Icons.keyboard_arrow_down_rounded,
+                              color: FlutterFlowTheme.of(context).secondaryText,
+                              size: 24.0,
+                            ),
+                            fillColor:
+                                FlutterFlowTheme.of(context).primaryBackground,
+                            elevation: 2.0,
+                            borderColor: FlutterFlowTheme.of(context).alternate,
+                            borderWidth: 2.0,
+                            borderRadius: 8.0,
+                            margin: const EdgeInsetsDirectional.fromSTEB(
+                                16.0, 4.0, 16.0, 4.0),
+                            hidesUnderline: true,
+                            isOverButton: true,
+                            isSearchable: false,
+                            isMultiSelect: false,
+                          ),
+                        ],
+                      ),
+                    ),
+                    FutureBuilder<int>(
+                      future: queryUsersRecordCount(
+                        queryBuilder: (usersRecord) => usersRecord
+                            .where(
+                              'erank_value',
+                              isEqualTo: _model.dropELigueValue,
+                            )
+                            .where(
+                              'edivision_value',
+                              isEqualTo: _model.dropEDivisionValue,
+                            ),
+                      ),
+                      builder: (context, snapshot) {
+                        // Customize what your widget looks like when it's loading.
+                        if (!snapshot.hasData) {
+                          return Center(
+                            child: SizedBox(
+                              width: 50.0,
+                              height: 50.0,
+                              child: CircularProgressIndicator(
+                                valueColor: AlwaysStoppedAnimation<Color>(
+                                  FlutterFlowTheme.of(context).accent4,
+                                ),
+                              ),
+                            ),
+                          );
+                        }
+                        int rowCount = snapshot.data!;
+
+                        return Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 10.0, 0.0),
+                              child: Text(
+                                valueOrDefault<String>(
+                                  rowCount.toString(),
+                                  '0',
+                                ),
+                                style: FlutterFlowTheme.of(context)
+                                    .titleMedium
+                                    .override(
+                                      fontFamily: 'Poppins',
+                                      letterSpacing: 0.0,
+                                    ),
+                              ),
+                            ),
+                            InkWell(
+                              splashColor: Colors.transparent,
+                              focusColor: Colors.transparent,
+                              hoverColor: Colors.transparent,
+                              highlightColor: Colors.transparent,
+                              onTap: () async {
+                                context.safePop();
+                              },
+                              child: Icon(
+                                Icons.groups_rounded,
+                                color: FlutterFlowTheme.of(context).primaryText,
+                                size: 30.0,
+                              ),
+                            ),
+                          ],
+                        );
+                      },
+                    ),
+                    Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -456,7 +615,7 @@ class _AdminUsersListWidgetState extends State<AdminUsersListWidget> {
                             size: 30.0,
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 5.0, 0.0, 0.0, 0.0),
                             child: Container(
                               width: 30.0,
@@ -470,7 +629,7 @@ class _AdminUsersListWidgetState extends State<AdminUsersListWidget> {
                                 ),
                               ),
                               child: Padding(
-                                padding: EdgeInsets.all(2.0),
+                                padding: const EdgeInsets.all(2.0),
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(24.0),
                                   child: Image.asset(
@@ -506,7 +665,7 @@ class _AdminUsersListWidgetState extends State<AdminUsersListWidget> {
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                       child: StreamBuilder<List<UsersRecord>>(
                         stream: queryUsersRecord(
                           queryBuilder: (usersRecord) => usersRecord
@@ -544,7 +703,7 @@ class _AdminUsersListWidgetState extends State<AdminUsersListWidget> {
                               final columnUsersRecord =
                                   columnUsersRecordList[columnIndex];
                               return Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 5.0, 0.0, 0.0),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
@@ -594,11 +753,11 @@ class _AdminUsersListWidgetState extends State<AdminUsersListWidget> {
                                                   ),
                                                   child: Align(
                                                     alignment:
-                                                        AlignmentDirectional(
+                                                        const AlignmentDirectional(
                                                             -1.0, 0.0),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   3.0,
                                                                   0.0,
@@ -685,8 +844,20 @@ class _AdminUsersListWidgetState extends State<AdminUsersListWidget> {
                                           ),
                                       ],
                                     ),
+                                    Text(
+                                      columnUsersRecord.uid,
+                                      maxLines: 1,
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            color: FlutterFlowTheme.of(context)
+                                                .warning,
+                                            letterSpacing: 0.0,
+                                          ),
+                                    ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           20.0, 0.0, 20.0, 0.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -698,9 +869,12 @@ class _AdminUsersListWidgetState extends State<AdminUsersListWidget> {
                                             children: [
                                               Text(
                                                 valueOrDefault<String>(
-                                                  columnUsersRecord.stock
+                                                  functions
+                                                      .limitOf2Decimal(
+                                                          columnUsersRecord
+                                                              .stock)
                                                       .toString(),
-                                                  '900',
+                                                  '900.00',
                                                 ),
                                                 maxLines: 1,
                                                 style:
@@ -712,7 +886,7 @@ class _AdminUsersListWidgetState extends State<AdminUsersListWidget> {
                                                         ),
                                               ),
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         10.0, 0.0, 10.0, 0.0),
                                                 child: Container(
@@ -732,7 +906,7 @@ class _AdminUsersListWidgetState extends State<AdminUsersListWidget> {
                                                   ),
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsets.all(2.0),
+                                                        const EdgeInsets.all(2.0),
                                                     child: ClipRRect(
                                                       borderRadius:
                                                           BorderRadius.circular(
@@ -753,7 +927,7 @@ class _AdminUsersListWidgetState extends State<AdminUsersListWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           20.0, 0.0, 20.0, 0.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -779,7 +953,7 @@ class _AdminUsersListWidgetState extends State<AdminUsersListWidget> {
                                                         ),
                                               ),
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         10.0, 0.0, 10.0, 0.0),
                                                 child: Icon(
@@ -797,7 +971,7 @@ class _AdminUsersListWidgetState extends State<AdminUsersListWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           20.0, 3.0, 20.0, 0.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -824,7 +998,376 @@ class _AdminUsersListWidgetState extends State<AdminUsersListWidget> {
                                                         ),
                                               ),
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        15.0, 0.0, 15.0, 0.0),
+                                                child: Container(
+                                                  width: 15.0,
+                                                  height: 20.0,
+                                                  decoration: BoxDecoration(
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .error,
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            2.0),
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    Divider(
+                                      thickness: 1.0,
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
+                                    ),
+                                  ],
+                                ),
+                              );
+                            }),
+                          );
+                        },
+                      ),
+                    ),
+                    Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                      child: StreamBuilder<List<UsersRecord>>(
+                        stream: queryUsersRecord(
+                          queryBuilder: (usersRecord) => usersRecord
+                              .where(
+                                'erank_value',
+                                isEqualTo: _model.dropELigueValue,
+                              )
+                              .where(
+                                'edivision_value',
+                                isEqualTo: _model.dropEDivisionValue,
+                              ),
+                        ),
+                        builder: (context, snapshot) {
+                          // Customize what your widget looks like when it's loading.
+                          if (!snapshot.hasData) {
+                            return Center(
+                              child: SizedBox(
+                                width: 50.0,
+                                height: 50.0,
+                                child: CircularProgressIndicator(
+                                  valueColor: AlwaysStoppedAnimation<Color>(
+                                    FlutterFlowTheme.of(context).accent4,
+                                  ),
+                                ),
+                              ),
+                            );
+                          }
+                          List<UsersRecord> columnUsersRecordList =
+                              snapshot.data!;
+
+                          return Column(
+                            mainAxisSize: MainAxisSize.max,
+                            children: List.generate(
+                                columnUsersRecordList.length, (columnIndex) {
+                              final columnUsersRecord =
+                                  columnUsersRecordList[columnIndex];
+                              return Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 5.0, 0.0, 0.0),
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              children: [
+                                                Container(
+                                                  width: 35.0,
+                                                  height: 35.0,
+                                                  decoration: BoxDecoration(
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryBackground,
+                                                    shape: BoxShape.circle,
+                                                  ),
+                                                  child: ClipRRect(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            25.0),
+                                                    child: Image.network(
+                                                      columnUsersRecord
+                                                          .photoUrl,
+                                                      width: 300.0,
+                                                      height: 200.0,
+                                                      fit: BoxFit.cover,
+                                                    ),
+                                                  ),
+                                                ),
+                                                Container(
+                                                  width: 205.0,
+                                                  height: 50.0,
+                                                  decoration: BoxDecoration(
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .alternate,
+                                                  ),
+                                                  child: Align(
+                                                    alignment:
+                                                        const AlignmentDirectional(
+                                                            -1.0, 0.0),
+                                                    child: Padding(
+                                                      padding:
+                                                          const EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  3.0,
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0),
+                                                      child: InkWell(
+                                                        splashColor:
+                                                            Colors.transparent,
+                                                        focusColor:
+                                                            Colors.transparent,
+                                                        hoverColor:
+                                                            Colors.transparent,
+                                                        highlightColor:
+                                                            Colors.transparent,
+                                                        onTap: () async {
+                                                          context.pushNamed(
+                                                            'ProfilPublicAdmin',
+                                                            queryParameters: {
+                                                              'userRef':
+                                                                  serializeParam(
+                                                                columnUsersRecord
+                                                                    .reference,
+                                                                ParamType
+                                                                    .DocumentReference,
+                                                              ),
+                                                            }.withoutNulls,
+                                                          );
+                                                        },
+                                                        child: Text(
+                                                          valueOrDefault<
+                                                              String>(
+                                                            columnUsersRecord
+                                                                .displayName,
+                                                            'NewUser',
+                                                          ),
+                                                          maxLines: 2,
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .labelSmall
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Poppins',
+                                                                letterSpacing:
+                                                                    0.0,
+                                                              ),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ],
+                                        ),
+                                        Icon(
+                                          Icons.notifications_none_rounded,
+                                          color: FlutterFlowTheme.of(context)
+                                              .error,
+                                          size: 25.0,
+                                        ),
+                                        if (columnUsersRecord.stsocialapp ==
+                                            'moderateur')
+                                          Icon(
+                                            Icons.local_police_outlined,
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondaryText,
+                                            size: 25.0,
+                                          ),
+                                        if (columnUsersRecord.stsocialapp ==
+                                            'suspendu')
+                                          Icon(
+                                            Icons.person_off,
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondaryText,
+                                            size: 25.0,
+                                          ),
+                                        if (columnUsersRecord.stsocialapp ==
+                                            'typster')
+                                          FaIcon(
+                                            FontAwesomeIcons.crown,
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondaryText,
+                                            size: 20.0,
+                                          ),
+                                      ],
+                                    ),
+                                    Text(
+                                      columnUsersRecord.uid,
+                                      maxLines: 1,
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            color: FlutterFlowTheme.of(context)
+                                                .warning,
+                                            letterSpacing: 0.0,
+                                          ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          20.0, 0.0, 20.0, 0.0),
+                                      child: Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.end,
+                                        children: [
+                                          Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              Text(
+                                                valueOrDefault<String>(
+                                                  functions
+                                                      .limitOf2Decimal(
+                                                          columnUsersRecord
+                                                              .stock)
+                                                      .toString(),
+                                                  '900.00',
+                                                ),
+                                                maxLines: 1,
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                              ),
+                                              Padding(
+                                                padding: const EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        10.0, 0.0, 10.0, 0.0),
+                                                child: Container(
+                                                  width: 25.0,
+                                                  height: 25.0,
+                                                  decoration: BoxDecoration(
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primary,
+                                                    shape: BoxShape.circle,
+                                                    border: Border.all(
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryText,
+                                                    ),
+                                                  ),
+                                                  child: Padding(
+                                                    padding:
+                                                        const EdgeInsets.all(2.0),
+                                                    child: ClipRRect(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              24.0),
+                                                      child: Image.asset(
+                                                        'assets/images/logo_monnaiel.jpg',
+                                                        width: 50.0,
+                                                        height: 50.0,
+                                                        fit: BoxFit.cover,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          20.0, 0.0, 20.0, 0.0),
+                                      child: Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.end,
+                                        children: [
+                                          Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              Text(
+                                                valueOrDefault<String>(
+                                                  columnUsersRecord.fans.length
+                                                      .toString(),
+                                                  '0',
+                                                ),
+                                                maxLines: 1,
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                              ),
+                                              Padding(
+                                                padding: const EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        10.0, 0.0, 10.0, 0.0),
+                                                child: Icon(
+                                                  Icons
+                                                      .supervisor_account_rounded,
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryText,
+                                                  size: 25.0,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          20.0, 3.0, 20.0, 0.0),
+                                      child: Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.end,
+                                        children: [
+                                          Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              Text(
+                                                valueOrDefault<String>(
+                                                  columnUsersRecord
+                                                      .numPenalities
+                                                      .toString(),
+                                                  '0',
+                                                ),
+                                                maxLines: 1,
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                              ),
+                                              Padding(
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         15.0, 0.0, 15.0, 0.0),
                                                 child: Container(

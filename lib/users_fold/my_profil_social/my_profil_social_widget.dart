@@ -2,11 +2,7 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'my_profil_social_model.dart';
 export 'my_profil_social_model.dart';
 
@@ -43,16 +39,16 @@ class _MyProfilSocialWidgetState extends State<MyProfilSocialWidget> {
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         body: Align(
-          alignment: AlignmentDirectional(0.0, -1.0),
+          alignment: const AlignmentDirectional(0.0, -1.0),
           child: Padding(
-            padding: EdgeInsets.all(10.0),
+            padding: const EdgeInsets.all(10.0),
             child: SingleChildScrollView(
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -63,36 +59,38 @@ class _MyProfilSocialWidgetState extends State<MyProfilSocialWidget> {
                             Column(
                               mainAxisSize: MainAxisSize.max,
                               children: [
-                                InkWell(
-                                  splashColor: Colors.transparent,
-                                  focusColor: Colors.transparent,
-                                  hoverColor: Colors.transparent,
-                                  highlightColor: Colors.transparent,
-                                  onTap: () async {
-                                    context.pushNamed(
-                                      'MenuPage',
-                                      extra: <String, dynamic>{
-                                        kTransitionInfoKey: TransitionInfo(
-                                          hasTransition: true,
-                                          transitionType:
-                                              PageTransitionType.leftToRight,
-                                          duration: Duration(milliseconds: 400),
-                                        ),
-                                      },
-                                    );
-                                  },
-                                  child: Icon(
-                                    Icons.menu_rounded,
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryText,
-                                    size: 30.0,
+                                AuthUserStreamWidget(
+                                  builder: (context) => InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      context.pushNamed(
+                                        'MenuPage',
+                                        extra: <String, dynamic>{
+                                          kTransitionInfoKey: const TransitionInfo(
+                                            hasTransition: true,
+                                            transitionType:
+                                                PageTransitionType.leftToRight,
+                                            duration:
+                                                Duration(milliseconds: 400),
+                                          ),
+                                        },
+                                      );
+                                    },
+                                    child: Icon(
+                                      Icons.menu_rounded,
+                                      color: currentUserDocument?.color1,
+                                      size: 30.0,
+                                    ),
                                   ),
                                 ),
                                 if (valueOrDefault<bool>(
                                         currentUserDocument?.helpNav, false) ==
                                     true)
                                   Align(
-                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    alignment: const AlignmentDirectional(0.0, 0.0),
                                     child: AuthUserStreamWidget(
                                       builder: (context) => Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -101,7 +99,7 @@ class _MyProfilSocialWidgetState extends State<MyProfilSocialWidget> {
                                         children: [
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 3.0, 0.0, 0.0),
                                             child: Text(
                                               'Menu',
@@ -129,26 +127,27 @@ class _MyProfilSocialWidgetState extends State<MyProfilSocialWidget> {
                               ],
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 0.0, 0.0),
-                              child: InkWell(
-                                splashColor: Colors.transparent,
-                                focusColor: Colors.transparent,
-                                hoverColor: Colors.transparent,
-                                highlightColor: Colors.transparent,
-                                onTap: () async {
-                                  context.safePop();
-                                },
-                                child: Icon(
-                                  Icons.arrow_back_ios_new_rounded,
-                                  color:
-                                      FlutterFlowTheme.of(context).primaryText,
-                                  size: 30.0,
+                              child: AuthUserStreamWidget(
+                                builder: (context) => InkWell(
+                                  splashColor: Colors.transparent,
+                                  focusColor: Colors.transparent,
+                                  hoverColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
+                                  onTap: () async {
+                                    context.safePop();
+                                  },
+                                  child: Icon(
+                                    Icons.arrow_back_ios_new_rounded,
+                                    color: currentUserDocument?.color1,
+                                    size: 30.0,
+                                  ),
                                 ),
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   40.0, 0.0, 0.0, 0.0),
                               child: Text(
                                 'Mes reseaux',
@@ -200,7 +199,7 @@ class _MyProfilSocialWidgetState extends State<MyProfilSocialWidget> {
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 children: [
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 10.0, 0.0),
                                     child: InkWell(
                                       splashColor: Colors.transparent,
@@ -211,7 +210,7 @@ class _MyProfilSocialWidgetState extends State<MyProfilSocialWidget> {
                                         context.pushNamed(
                                           'MyNotifsList',
                                           extra: <String, dynamic>{
-                                            kTransitionInfoKey: TransitionInfo(
+                                            kTransitionInfoKey: const TransitionInfo(
                                               hasTransition: true,
                                               transitionType: PageTransitionType
                                                   .rightToLeft,
@@ -224,7 +223,7 @@ class _MyProfilSocialWidgetState extends State<MyProfilSocialWidget> {
                                       child: Icon(
                                         Icons.notifications_active_outlined,
                                         color: FlutterFlowTheme.of(context)
-                                            .accent3,
+                                            .accent1,
                                         size: 40.0,
                                       ),
                                     ),
@@ -242,7 +241,7 @@ class _MyProfilSocialWidgetState extends State<MyProfilSocialWidget> {
                     children: [
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           children: [
@@ -253,7 +252,7 @@ class _MyProfilSocialWidgetState extends State<MyProfilSocialWidget> {
                                 AuthUserStreamWidget(
                                   builder: (context) => Text(
                                     valueOrDefault<String>(
-                                      (currentUserDocument?.bests?.toList() ??
+                                      (currentUserDocument?.bests.toList() ??
                                               [])
                                           .length
                                           .toString(),
@@ -269,18 +268,18 @@ class _MyProfilSocialWidgetState extends State<MyProfilSocialWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       7.0, 0.0, 0.0, 0.0),
                                   child: Icon(
                                     Icons.star_rounded,
-                                    color: FlutterFlowTheme.of(context).accent3,
+                                    color: FlutterFlowTheme.of(context).accent1,
                                     size: 33.0,
                                   ),
                                 ),
                               ],
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 10.0, 0.0, 0.0),
                               child: StreamBuilder<List<UsersRecord>>(
                                 stream: queryUsersRecord(),
@@ -314,13 +313,13 @@ class _MyProfilSocialWidgetState extends State<MyProfilSocialWidget> {
                                               columnBestsIndex];
                                       return Visibility(
                                         visible: (currentUserDocument?.bests
-                                                    ?.toList() ??
+                                                    .toList() ??
                                                 [])
                                             .contains(columnBestsUsersRecord
                                                 .reference),
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 5.0),
                                           child: AuthUserStreamWidget(
                                             builder: (context) => Row(
@@ -338,7 +337,7 @@ class _MyProfilSocialWidgetState extends State<MyProfilSocialWidget> {
                                                   children: [
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   10.0,
                                                                   0.0,
@@ -350,7 +349,7 @@ class _MyProfilSocialWidgetState extends State<MyProfilSocialWidget> {
                                                         children: [
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
@@ -395,12 +394,12 @@ class _MyProfilSocialWidgetState extends State<MyProfilSocialWidget> {
                                                             ),
                                                             child: Align(
                                                               alignment:
-                                                                  AlignmentDirectional(
+                                                                  const AlignmentDirectional(
                                                                       -1.0,
                                                                       0.0),
                                                               child: Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             10.0,
                                                                             0.0,
@@ -448,6 +447,8 @@ class _MyProfilSocialWidgetState extends State<MyProfilSocialWidget> {
                                                                         .override(
                                                                           fontFamily:
                                                                               'Montserrat',
+                                                                          color:
+                                                                              columnBestsUsersRecord.color1,
                                                                           letterSpacing:
                                                                               0.0,
                                                                         ),
@@ -461,11 +462,11 @@ class _MyProfilSocialWidgetState extends State<MyProfilSocialWidget> {
                                                     ),
                                                     Align(
                                                       alignment:
-                                                          AlignmentDirectional(
+                                                          const AlignmentDirectional(
                                                               1.0, 0.0),
                                                       child: Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     0.0,
@@ -534,13 +535,15 @@ class _MyProfilSocialWidgetState extends State<MyProfilSocialWidget> {
                           ],
                         ),
                       ),
-                      Divider(
-                        thickness: 1.0,
-                        color: FlutterFlowTheme.of(context).secondaryBackground,
+                      AuthUserStreamWidget(
+                        builder: (context) => Divider(
+                          thickness: 1.0,
+                          color: currentUserDocument?.color2,
+                        ),
                       ),
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           children: [
@@ -551,7 +554,7 @@ class _MyProfilSocialWidgetState extends State<MyProfilSocialWidget> {
                                 AuthUserStreamWidget(
                                   builder: (context) => Text(
                                     valueOrDefault<String>(
-                                      (currentUserDocument?.fans?.toList() ??
+                                      (currentUserDocument?.fans.toList() ??
                                               [])
                                           .length
                                           .toString(),
@@ -567,7 +570,7 @@ class _MyProfilSocialWidgetState extends State<MyProfilSocialWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       10.0, 0.0, 0.0, 0.0),
                                   child: Icon(
                                     Icons.group_rounded,
@@ -578,7 +581,7 @@ class _MyProfilSocialWidgetState extends State<MyProfilSocialWidget> {
                               ],
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 10.0, 0.0, 0.0),
                               child: StreamBuilder<List<UsersRecord>>(
                                 stream: queryUsersRecord(),
@@ -611,13 +614,13 @@ class _MyProfilSocialWidgetState extends State<MyProfilSocialWidget> {
                                           columnUsersRecordList[columnIndex];
                                       return Visibility(
                                         visible: (currentUserDocument?.fans
-                                                    ?.toList() ??
+                                                    .toList() ??
                                                 [])
                                             .contains(
                                                 columnUsersRecord.reference),
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 5.0),
                                           child: AuthUserStreamWidget(
                                             builder: (context) => Row(
@@ -635,7 +638,7 @@ class _MyProfilSocialWidgetState extends State<MyProfilSocialWidget> {
                                                   children: [
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   10.0,
                                                                   0.0,
@@ -647,7 +650,7 @@ class _MyProfilSocialWidgetState extends State<MyProfilSocialWidget> {
                                                         children: [
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
@@ -692,12 +695,12 @@ class _MyProfilSocialWidgetState extends State<MyProfilSocialWidget> {
                                                             ),
                                                             child: Align(
                                                               alignment:
-                                                                  AlignmentDirectional(
+                                                                  const AlignmentDirectional(
                                                                       -1.0,
                                                                       0.0),
                                                               child: Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             10.0,
                                                                             0.0,
@@ -745,6 +748,8 @@ class _MyProfilSocialWidgetState extends State<MyProfilSocialWidget> {
                                                                         .override(
                                                                           fontFamily:
                                                                               'Montserrat',
+                                                                          color:
+                                                                              columnUsersRecord.color1,
                                                                           letterSpacing:
                                                                               0.0,
                                                                         ),
@@ -758,11 +763,11 @@ class _MyProfilSocialWidgetState extends State<MyProfilSocialWidget> {
                                                     ),
                                                     Align(
                                                       alignment:
-                                                          AlignmentDirectional(
+                                                          const AlignmentDirectional(
                                                               1.0, 0.0),
                                                       child: Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     0.0,
@@ -836,13 +841,15 @@ class _MyProfilSocialWidgetState extends State<MyProfilSocialWidget> {
                           ],
                         ),
                       ),
-                      Divider(
-                        thickness: 1.0,
-                        color: FlutterFlowTheme.of(context).secondaryBackground,
+                      AuthUserStreamWidget(
+                        builder: (context) => Divider(
+                          thickness: 1.0,
+                          color: currentUserDocument?.color2,
+                        ),
                       ),
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           children: [
@@ -853,7 +860,7 @@ class _MyProfilSocialWidgetState extends State<MyProfilSocialWidget> {
                                 AuthUserStreamWidget(
                                   builder: (context) => Text(
                                     valueOrDefault<String>(
-                                      (currentUserDocument?.blocks?.toList() ??
+                                      (currentUserDocument?.blocks.toList() ??
                                               [])
                                           .length
                                           .toString(),
@@ -869,7 +876,7 @@ class _MyProfilSocialWidgetState extends State<MyProfilSocialWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       10.0, 0.0, 0.0, 0.0),
                                   child: Icon(
                                     Icons.group_off_outlined,
@@ -880,7 +887,7 @@ class _MyProfilSocialWidgetState extends State<MyProfilSocialWidget> {
                               ],
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 10.0, 0.0, 0.0),
                               child: StreamBuilder<List<UsersRecord>>(
                                 stream: queryUsersRecord(),
@@ -913,13 +920,13 @@ class _MyProfilSocialWidgetState extends State<MyProfilSocialWidget> {
                                           columnUsersRecordList[columnIndex];
                                       return Visibility(
                                         visible: (currentUserDocument?.blocks
-                                                    ?.toList() ??
+                                                    .toList() ??
                                                 [])
                                             .contains(
                                                 columnUsersRecord.reference),
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 5.0),
                                           child: AuthUserStreamWidget(
                                             builder: (context) => Row(
@@ -937,7 +944,7 @@ class _MyProfilSocialWidgetState extends State<MyProfilSocialWidget> {
                                                   children: [
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   10.0,
                                                                   0.0,
@@ -949,7 +956,7 @@ class _MyProfilSocialWidgetState extends State<MyProfilSocialWidget> {
                                                         children: [
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
@@ -994,12 +1001,12 @@ class _MyProfilSocialWidgetState extends State<MyProfilSocialWidget> {
                                                             ),
                                                             child: Align(
                                                               alignment:
-                                                                  AlignmentDirectional(
+                                                                  const AlignmentDirectional(
                                                                       -1.0,
                                                                       0.0),
                                                               child: Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             10.0,
                                                                             0.0,
@@ -1047,6 +1054,8 @@ class _MyProfilSocialWidgetState extends State<MyProfilSocialWidget> {
                                                                         .override(
                                                                           fontFamily:
                                                                               'Montserrat',
+                                                                          color:
+                                                                              columnUsersRecord.color1,
                                                                           letterSpacing:
                                                                               0.0,
                                                                         ),
@@ -1060,11 +1069,11 @@ class _MyProfilSocialWidgetState extends State<MyProfilSocialWidget> {
                                                     ),
                                                     Align(
                                                       alignment:
-                                                          AlignmentDirectional(
+                                                          const AlignmentDirectional(
                                                               1.0, 0.0),
                                                       child: Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     0.0,

@@ -1,12 +1,8 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'signal_e_event_page_model.dart';
 export 'signal_e_event_page_model.dart';
 
@@ -49,7 +45,7 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<MyNotificationsRecord>(
-      stream: MyNotificationsRecord.getDocument(widget!.notifRef!),
+      stream: MyNotificationsRecord.getDocument(widget.notifRef!),
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
@@ -79,9 +75,9 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
             body: SafeArea(
               top: true,
               child: Align(
-                alignment: AlignmentDirectional(0.0, -1.0),
+                alignment: const AlignmentDirectional(0.0, -1.0),
                 child: Padding(
-                  padding: EdgeInsets.all(10.0),
+                  padding: const EdgeInsets.all(10.0),
                   child: SingleChildScrollView(
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
@@ -102,7 +98,7 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                     context.pushNamed(
                                       'MenuPage',
                                       extra: <String, dynamic>{
-                                        kTransitionInfoKey: TransitionInfo(
+                                        kTransitionInfoKey: const TransitionInfo(
                                           hasTransition: true,
                                           transitionType:
                                               PageTransitionType.leftToRight,
@@ -119,7 +115,7 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       10.0, 0.0, 0.0, 0.0),
                                   child: InkWell(
                                     splashColor: Colors.transparent,
@@ -140,7 +136,7 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                               ],
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   20.0, 0.0, 0.0, 0.0),
                               child: Text(
                                 'Détails litige',
@@ -161,9 +157,9 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                               FlutterFlowTheme.of(context).secondaryBackground,
                         ),
                         Align(
-                          alignment: AlignmentDirectional(-1.0, 0.0),
+                          alignment: const AlignmentDirectional(-1.0, 0.0),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 10.0),
                             child: Text(
                               dateTimeFormat(
@@ -204,14 +200,14 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 5.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     children: [
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             5.0, 0.0, 6.0, 0.0),
                                         child: Container(
                                           width: 65.0,
@@ -268,9 +264,9 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                           },
                         ),
                         Align(
-                          alignment: AlignmentDirectional(0.0, 0.0),
+                          alignment: const AlignmentDirectional(0.0, 0.0),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 10.0),
                             child: Text(
                               'Dénonce un résultat mal paramétré par l\'autre manager.',
@@ -285,9 +281,9 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                           ),
                         ),
                         Align(
-                          alignment: AlignmentDirectional(0.0, 0.0),
+                          alignment: const AlignmentDirectional(0.0, 0.0),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 10.0),
                             child: Text(
                               signalEEventPageMyNotificationsRecord.textReasons,
@@ -302,9 +298,9 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                           ),
                         ),
                         Align(
-                          alignment: AlignmentDirectional(0.0, 0.0),
+                          alignment: const AlignmentDirectional(0.0, 0.0),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 5.0, 0.0, 0.0),
                             child: Text(
                               'Mettre une pénalité à la E Team voulant tricher,\nNe pas prendre en compte si\njuste petit défault nombre buts',
@@ -345,7 +341,7 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 5.0, 0.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -387,7 +383,7 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                                       .primaryBackground,
                                             ),
                                             child: Align(
-                                              alignment: AlignmentDirectional(
+                                              alignment: const AlignmentDirectional(
                                                   0.0, 0.0),
                                               child: Column(
                                                 mainAxisSize: MainAxisSize.max,
@@ -417,7 +413,7 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                                   ),
                                                   Align(
                                                     alignment:
-                                                        AlignmentDirectional(
+                                                        const AlignmentDirectional(
                                                             0.0, 0.0),
                                                     child: InkWell(
                                                       splashColor:
@@ -472,7 +468,7 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                                           false)
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -578,7 +574,7 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                                       .primaryBackground,
                                             ),
                                             child: Align(
-                                              alignment: AlignmentDirectional(
+                                              alignment: const AlignmentDirectional(
                                                   0.0, 0.0),
                                               child: Column(
                                                 mainAxisSize: MainAxisSize.max,
@@ -608,7 +604,7 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                                   ),
                                                   Align(
                                                     alignment:
-                                                        AlignmentDirectional(
+                                                        const AlignmentDirectional(
                                                             0.0, 0.0),
                                                     child: InkWell(
                                                       splashColor:
@@ -663,7 +659,7 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                                           false)
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -737,10 +733,10 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Align(
-                                              alignment: AlignmentDirectional(
+                                              alignment: const AlignmentDirectional(
                                                   0.0, 0.0),
                                               child: Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 5.0, 0.0, 0.0),
                                                 child: Text(
@@ -763,10 +759,10 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                               ),
                                             ),
                                             Align(
-                                              alignment: AlignmentDirectional(
+                                              alignment: const AlignmentDirectional(
                                                   0.0, 0.0),
                                               child: Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 5.0, 0.0, 0.0),
                                                 child: Text(
@@ -794,9 +790,19 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                         color: FlutterFlowTheme.of(context)
                                             .secondaryBackground,
                                       ),
+                                      Text(
+                                        columnEventEventsRecord.reference.id,
+                                        maxLines: 1,
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Poppins',
+                                              letterSpacing: 0.0,
+                                            ),
+                                      ),
                                       Align(
                                         alignment:
-                                            AlignmentDirectional(0.0, 0.0),
+                                            const AlignmentDirectional(0.0, 0.0),
                                         child: Text(
                                           'Resultat',
                                           maxLines: 2,
@@ -810,7 +816,7 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                       ),
                                       Align(
                                         alignment:
-                                            AlignmentDirectional(0.0, 0.0),
+                                            const AlignmentDirectional(0.0, 0.0),
                                         child: Text(
                                           'Selon E Team ayant paramétré en 1er',
                                           maxLines: 2,
@@ -824,10 +830,10 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                       ),
                                       Align(
                                         alignment:
-                                            AlignmentDirectional(0.0, 0.0),
+                                            const AlignmentDirectional(0.0, 0.0),
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 10.0, 0.0, 0.0),
                                           child: Text(
                                             'Gagnant',
@@ -879,7 +885,7 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                               children: [
                                                 Align(
                                                   alignment:
-                                                      AlignmentDirectional(
+                                                      const AlignmentDirectional(
                                                           0.0, 0.0),
                                                   child: Text(
                                                     rowTeamWinTeamsRecord.name,
@@ -901,13 +907,10 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                         ),
                                       if (signalEEventPageMyNotificationsRecord
                                                   .eteamDraw !=
-                                              null &&
-                                          signalEEventPageMyNotificationsRecord
-                                                  .eteamDraw !=
                                               '')
                                         Align(
                                           alignment:
-                                              AlignmentDirectional(0.0, 0.0),
+                                              const AlignmentDirectional(0.0, 0.0),
                                           child: Text(
                                             signalEEventPageMyNotificationsRecord
                                                 .eteamDraw,
@@ -925,7 +928,7 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                           true)
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 5.0, 0.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -942,7 +945,7 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                                 ),
                                                 child: Align(
                                                   alignment:
-                                                      AlignmentDirectional(
+                                                      const AlignmentDirectional(
                                                           0.0, 0.0),
                                                   child: Text(
                                                     valueOrDefault<String>(
@@ -975,7 +978,7 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                                 ),
                                                 child: Align(
                                                   alignment:
-                                                      AlignmentDirectional(
+                                                      const AlignmentDirectional(
                                                           0.0, 0.0),
                                                   child: Text(
                                                     valueOrDefault<String>(
@@ -1009,7 +1012,7 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                       .secondaryBackground,
                                 ),
                                 Align(
-                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  alignment: const AlignmentDirectional(0.0, 0.0),
                                   child: Text(
                                     'Resultat',
                                     maxLines: 2,
@@ -1022,7 +1025,7 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                   ),
                                 ),
                                 Align(
-                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  alignment: const AlignmentDirectional(0.0, 0.0),
                                   child: Text(
                                     'Selon E Team envoyant la notification actuelle',
                                     maxLines: 2,
@@ -1035,9 +1038,9 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                   ),
                                 ),
                                 Align(
-                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  alignment: const AlignmentDirectional(0.0, 0.0),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 5.0, 0.0, 0.0),
                                     child: Text(
                                       'Ci-dessous la photo prouvant sa version.',
@@ -1054,9 +1057,9 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                   ),
                                 ),
                                 Align(
-                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  alignment: const AlignmentDirectional(0.0, 0.0),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 5.0, 0.0, 10.0),
                                     child: Text(
                                       'Bien vérifier que les équipes\ncorrespondent avec celles au dessus',
@@ -1071,9 +1074,6 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                   ),
                                 ),
                                 if (signalEEventPageMyNotificationsRecord
-                                            .image !=
-                                        null &&
-                                    signalEEventPageMyNotificationsRecord
                                             .image !=
                                         '')
                                   Container(
@@ -1096,7 +1096,7 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                     ),
                                   ),
                                 Padding(
-                                  padding: EdgeInsets.all(10.0),
+                                  padding: const EdgeInsets.all(10.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
@@ -1122,10 +1122,10 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                       ),
                                       Align(
                                         alignment:
-                                            AlignmentDirectional(-1.0, 0.0),
+                                            const AlignmentDirectional(-1.0, 0.0),
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   20.0, 0.0, 0.0, 0.0),
                                           child: Text(
                                             'Gagnant de la rencontre ?',
@@ -1144,7 +1144,7 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                         children: [
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 5.0, 0.0, 0.0),
                                             child: StreamBuilder<TeamsRecord>(
                                               stream: TeamsRecord.getDocument(
@@ -1191,7 +1191,7 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                                       ),
                                                       child: Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 0.0, 0.0),
                                                         child: Column(
                                                           mainAxisSize:
@@ -1202,7 +1202,7 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                                           children: [
                                                             Align(
                                                               alignment:
-                                                                  AlignmentDirectional(
+                                                                  const AlignmentDirectional(
                                                                       0.0, 0.0),
                                                               child: Text(
                                                                 rowDomTeamsRecord
@@ -1228,7 +1228,7 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                                     ),
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   0.0,
@@ -1246,7 +1246,7 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                                                   null))
                                                             Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -1285,7 +1285,7 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                                                   .reference)
                                                             Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -1327,7 +1327,7 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 5.0, 0.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -1345,7 +1345,7 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                                   ),
                                                   child: Align(
                                                     alignment:
-                                                        AlignmentDirectional(
+                                                        const AlignmentDirectional(
                                                             0.0, 0.0),
                                                     child: Column(
                                                       mainAxisSize:
@@ -1356,7 +1356,7 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                                       children: [
                                                         Align(
                                                           alignment:
-                                                              AlignmentDirectional(
+                                                              const AlignmentDirectional(
                                                                   0.0, 0.0),
                                                           child: Text(
                                                             'Match Nul',
@@ -1379,7 +1379,7 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 20.0, 0.0),
                                                   child: Row(
@@ -1394,7 +1394,7 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                                               null))
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -1429,7 +1429,7 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                                           _model.draw != '')
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -1468,7 +1468,7 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 5.0, 0.0, 0.0),
                                             child: StreamBuilder<TeamsRecord>(
                                               stream: TeamsRecord.getDocument(
@@ -1515,7 +1515,7 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                                       ),
                                                       child: Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 0.0, 0.0),
                                                         child: Column(
                                                           mainAxisSize:
@@ -1526,7 +1526,7 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                                           children: [
                                                             Align(
                                                               alignment:
-                                                                  AlignmentDirectional(
+                                                                  const AlignmentDirectional(
                                                                       0.0, 0.0),
                                                               child: Text(
                                                                 rowExtTeamsRecord
@@ -1552,7 +1552,7 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                                     ),
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   0.0,
@@ -1570,7 +1570,7 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                                                   null))
                                                             Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -1609,7 +1609,7 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                                                   .reference)
                                                             Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -1653,10 +1653,10 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                       ),
                                       Align(
                                         alignment:
-                                            AlignmentDirectional(-1.0, 0.0),
+                                            const AlignmentDirectional(-1.0, 0.0),
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   20.0, 0.0, 0.0, 0.0),
                                           child: Text(
                                             'Score',
@@ -1671,13 +1671,13 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 10.0, 0.0, 10.0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 0.0, 0.0, 10.0),
                                               child: StreamBuilder<TeamsRecord>(
@@ -1717,7 +1717,7 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                                     children: [
                                                       Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 0.0, 0.0),
                                                         child: Column(
                                                           mainAxisSize:
@@ -1728,7 +1728,7 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                                           children: [
                                                             Align(
                                                               alignment:
-                                                                  AlignmentDirectional(
+                                                                  const AlignmentDirectional(
                                                                       0.0, 0.0),
                                                               child: Text(
                                                                 rowScoreDomTeamsRecord
@@ -1760,7 +1760,7 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                                         children: [
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
@@ -1781,7 +1781,7 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                                               ),
                                                               child: Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             8.0,
                                                                             0.0,
@@ -1892,7 +1892,7 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                               ),
                                             ),
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 10.0, 0.0, 10.0),
                                               child: StreamBuilder<TeamsRecord>(
@@ -1932,7 +1932,7 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                                     children: [
                                                       Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 0.0, 0.0),
                                                         child: Column(
                                                           mainAxisSize:
@@ -1943,7 +1943,7 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                                           children: [
                                                             Align(
                                                               alignment:
-                                                                  AlignmentDirectional(
+                                                                  const AlignmentDirectional(
                                                                       0.0, 0.0),
                                                               child: Text(
                                                                 rowScoreExtTeamsRecord
@@ -1975,7 +1975,7 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                                         children: [
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
@@ -1996,7 +1996,7 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                                               ),
                                                               child: Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             8.0,
                                                                             0.0,
@@ -2111,17 +2111,17 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                       ),
                                       Align(
                                         alignment:
-                                            AlignmentDirectional(0.0, 0.0),
+                                            const AlignmentDirectional(0.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
                                           mainAxisAlignment:
                                               MainAxisAlignment.center,
                                           children: [
                                             Align(
-                                              alignment: AlignmentDirectional(
+                                              alignment: const AlignmentDirectional(
                                                   0.0, 0.0),
                                               child: Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 20.0, 0.0, 16.0),
                                                 child: FFButtonWidget(
@@ -2148,11 +2148,11 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                                     width: 210.0,
                                                     height: 40.0,
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 0.0),
                                                     iconPadding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 0.0),
                                                     color: FlutterFlowTheme.of(
@@ -2169,7 +2169,7 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                                           letterSpacing: 0.0,
                                                         ),
                                                     elevation: 3.0,
-                                                    borderSide: BorderSide(
+                                                    borderSide: const BorderSide(
                                                       color: Colors.transparent,
                                                       width: 1.0,
                                                     ),
@@ -2197,7 +2197,7 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Align(
-                                              alignment: AlignmentDirectional(
+                                              alignment: const AlignmentDirectional(
                                                   0.0, 0.0),
                                               child: Text(
                                                 'Gagnant',
@@ -2248,7 +2248,7 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                                     children: [
                                                       Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 0.0, 0.0),
                                                         child: Text(
                                                           rowTeamWinTeamsRecord
@@ -2274,7 +2274,7 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                             if (_model.draw != null &&
                                                 _model.draw != '')
                                               Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Text(
                                                   valueOrDefault<String>(
@@ -2294,7 +2294,7 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                                 ),
                                               ),
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 5.0, 0.0, 10.0),
                                               child: Row(
@@ -2315,7 +2315,7 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                                       ),
                                                       child: Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 0.0, 0.0),
                                                         child: Text(
                                                           valueOrDefault<
@@ -2353,7 +2353,7 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                                       ),
                                                       child: Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 0.0, 0.0),
                                                         child: Text(
                                                           valueOrDefault<
@@ -2388,10 +2388,10 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                           columnEventEventsRecord.teamdomRef)
                                         Align(
                                           alignment:
-                                              AlignmentDirectional(0.0, -1.0),
+                                              const AlignmentDirectional(0.0, -1.0),
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 20.0, 0.0, 20.0),
                                             child: FFButtonWidget(
                                               onPressed: () async {
@@ -2452,11 +2452,11 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                                   ),
                                                 });
 
-                                                await widget!.notifRef!.update(
+                                                await widget.notifRef!.update(
                                                     createMyNotificationsRecordData(
                                                   modSeen: true,
                                                 ));
-                                                await widget!.notifRef!
+                                                await widget.notifRef!
                                                     .delete();
                                                 context.safePop();
                                               },
@@ -2464,9 +2464,9 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                               options: FFButtonOptions(
                                                 width: 350.0,
                                                 height: 50.0,
-                                                padding: EdgeInsets.all(0.0),
+                                                padding: const EdgeInsets.all(0.0),
                                                 iconPadding:
-                                                    EdgeInsetsDirectional
+                                                    const EdgeInsetsDirectional
                                                         .fromSTEB(
                                                             0.0, 0.0, 0.0, 0.0),
                                                 color:
@@ -2483,7 +2483,7 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                                           letterSpacing: 0.0,
                                                         ),
                                                 elevation: 3.0,
-                                                borderSide: BorderSide(
+                                                borderSide: const BorderSide(
                                                   color: Colors.transparent,
                                                   width: 1.0,
                                                 ),
@@ -2501,16 +2501,13 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                         ),
                                       if (signalEEventPageMyNotificationsRecord
                                                   .eteamDraw !=
-                                              null &&
-                                          signalEEventPageMyNotificationsRecord
-                                                  .eteamDraw !=
                                               '')
                                         Align(
                                           alignment:
-                                              AlignmentDirectional(0.0, -1.0),
+                                              const AlignmentDirectional(0.0, -1.0),
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 20.0, 0.0, 20.0),
                                             child: FFButtonWidget(
                                               onPressed: () async {
@@ -2571,11 +2568,11 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                                   ),
                                                 });
 
-                                                await widget!.notifRef!.update(
+                                                await widget.notifRef!.update(
                                                     createMyNotificationsRecordData(
                                                   modSeen: true,
                                                 ));
-                                                await widget!.notifRef!
+                                                await widget.notifRef!
                                                     .delete();
                                                 context.safePop();
                                               },
@@ -2583,9 +2580,9 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                               options: FFButtonOptions(
                                                 width: 350.0,
                                                 height: 50.0,
-                                                padding: EdgeInsets.all(0.0),
+                                                padding: const EdgeInsets.all(0.0),
                                                 iconPadding:
-                                                    EdgeInsetsDirectional
+                                                    const EdgeInsetsDirectional
                                                         .fromSTEB(
                                                             0.0, 0.0, 0.0, 0.0),
                                                 color:
@@ -2602,7 +2599,7 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                                           letterSpacing: 0.0,
                                                         ),
                                                 elevation: 3.0,
-                                                borderSide: BorderSide(
+                                                borderSide: const BorderSide(
                                                   color: Colors.transparent,
                                                   width: 1.0,
                                                 ),
@@ -2622,10 +2619,10 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                           columnEventEventsRecord.teamextRef)
                                         Align(
                                           alignment:
-                                              AlignmentDirectional(0.0, -1.0),
+                                              const AlignmentDirectional(0.0, -1.0),
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 20.0, 0.0, 20.0),
                                             child: FFButtonWidget(
                                               onPressed: () async {
@@ -2686,11 +2683,11 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                                   ),
                                                 });
 
-                                                await widget!.notifRef!.update(
+                                                await widget.notifRef!.update(
                                                     createMyNotificationsRecordData(
                                                   modSeen: true,
                                                 ));
-                                                await widget!.notifRef!
+                                                await widget.notifRef!
                                                     .delete();
                                                 context.safePop();
                                               },
@@ -2698,9 +2695,9 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                               options: FFButtonOptions(
                                                 width: 350.0,
                                                 height: 50.0,
-                                                padding: EdgeInsets.all(0.0),
+                                                padding: const EdgeInsets.all(0.0),
                                                 iconPadding:
-                                                    EdgeInsetsDirectional
+                                                    const EdgeInsetsDirectional
                                                         .fromSTEB(
                                                             0.0, 0.0, 0.0, 0.0),
                                                 color:
@@ -2717,7 +2714,7 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                                           letterSpacing: 0.0,
                                                         ),
                                                 elevation: 3.0,
-                                                borderSide: BorderSide(
+                                                borderSide: const BorderSide(
                                                   color: Colors.transparent,
                                                   width: 1.0,
                                                 ),

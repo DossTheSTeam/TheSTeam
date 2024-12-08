@@ -1,12 +1,10 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'admin_teams_list_model.dart';
 export 'admin_teams_list_model.dart';
 
@@ -45,16 +43,16 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
         body: SafeArea(
           top: true,
           child: Align(
-            alignment: AlignmentDirectional(0.0, -1.0),
+            alignment: const AlignmentDirectional(0.0, -1.0),
             child: Padding(
-              padding: EdgeInsets.all(10.0),
+              padding: const EdgeInsets.all(10.0),
               child: SingleChildScrollView(
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.start,
@@ -71,7 +69,7 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                   context.pushNamed(
                                     'MenuPage',
                                     extra: <String, dynamic>{
-                                      kTransitionInfoKey: TransitionInfo(
+                                      kTransitionInfoKey: const TransitionInfo(
                                         hasTransition: true,
                                         transitionType:
                                             PageTransitionType.leftToRight,
@@ -88,7 +86,7 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     10.0, 0.0, 0.0, 0.0),
                                 child: InkWell(
                                   splashColor: Colors.transparent,
@@ -109,7 +107,7 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                             ],
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 20.0, 0.0, 0.0, 0.0),
                             child: Text(
                               'Liste des équipes',
@@ -125,407 +123,813 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                         ],
                       ),
                     ),
-                    Row(
+                    Column(
                       mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 10.0, 0.0, 0.0),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 29.0),
-                                child: Text(
-                                  'E Sport',
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        fontFamily: 'Poppins',
-                                        letterSpacing: 0.0,
+                        if (valueOrDefault(
+                                currentUserDocument?.adminSportvalue, '') ==
+                            'football')
+                          Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 10.0, 5.0),
+                            child: AuthUserStreamWidget(
+                              builder: (context) => Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    'Football',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          letterSpacing: 0.0,
+                                        ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 5.0),
+                                    child: FlutterFlowDropDown<String>(
+                                      controller: _model
+                                              .dropLigueFootValueController1 ??=
+                                          FormFieldController<String>(
+                                        _model.dropLigueFootValue1 ??= '',
                                       ),
-                                ),
-                              ),
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 29.0),
-                                child: Text(
-                                  'E Ligue',
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        fontFamily: 'Poppins',
-                                        letterSpacing: 0.0,
+                                      options: List<String>.from([
+                                        'premier.league',
+                                        'laliga',
+                                        'bundesliga',
+                                        'serie.a',
+                                        'ligue.1',
+                                        'autres',
+                                        'pays.football'
+                                      ]),
+                                      optionLabels: const [
+                                        'Premier League',
+                                        'LaLiga',
+                                        'Bundesliga',
+                                        'Serie A',
+                                        'Ligue 1',
+                                        'Autres',
+                                        'Pays Football'
+                                      ],
+                                      onChanged: (val) async {
+                                        safeSetState(() =>
+                                            _model.dropLigueFootValue1 = val);
+                                        _model.showLigueFilter =
+                                            _model.dropLigueFootValue1;
+                                        safeSetState(() {});
+                                      },
+                                      width: 180.0,
+                                      height: 40.0,
+                                      textStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            letterSpacing: 0.0,
+                                          ),
+                                      hintText: 'Ligues',
+                                      icon: Icon(
+                                        Icons.keyboard_arrow_down_rounded,
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryText,
+                                        size: 24.0,
                                       ),
-                                ),
+                                      fillColor: FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
+                                      elevation: 2.0,
+                                      borderColor: Colors.transparent,
+                                      borderWidth: 0.0,
+                                      borderRadius: 8.0,
+                                      margin: const EdgeInsetsDirectional.fromSTEB(
+                                          12.0, 0.0, 12.0, 0.0),
+                                      hidesUnderline: true,
+                                      isOverButton: false,
+                                      isSearchable: false,
+                                      isMultiSelect: false,
+                                    ),
+                                  ),
+                                ],
                               ),
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 29.0),
-                                child: Text(
-                                  'Football',
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        fontFamily: 'Poppins',
-                                        letterSpacing: 0.0,
-                                      ),
-                                ),
-                              ),
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 26.0),
-                                child: Text(
-                                  'Basketball',
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        fontFamily: 'Poppins',
-                                        letterSpacing: 0.0,
-                                      ),
-                                ),
-                              ),
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 26.0),
-                                child: Text(
-                                  'Tennis',
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        fontFamily: 'Poppins',
-                                        letterSpacing: 0.0,
-                                      ),
-                                ),
-                              ),
-                            ],
+                            ),
                           ),
-                        ),
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              10.0, 0.0, 0.0, 0.0),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 5.0),
-                                child: FlutterFlowDropDown<String>(
-                                  controller:
-                                      _model.dropESportsValueController ??=
+                        if (valueOrDefault(
+                                currentUserDocument?.adminSportvalue, '') ==
+                            'basketball')
+                          Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 10.0, 5.0),
+                            child: AuthUserStreamWidget(
+                              builder: (context) => Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    'Basketball',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          letterSpacing: 0.0,
+                                        ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 5.0),
+                                    child: FlutterFlowDropDown<String>(
+                                      controller: _model
+                                              .dropLigueBasketValueController1 ??=
                                           FormFieldController<String>(
-                                    _model.dropESportsValue ??= '',
-                                  ),
-                                  options: List<String>.from(
-                                      ['esport.football', 'esport.basketball']),
-                                  optionLabels: [
-                                    'E Sport Football',
-                                    'E Sport Basketball'
-                                  ],
-                                  onChanged: (val) => safeSetState(
-                                      () => _model.dropESportsValue = val),
-                                  width: 180.0,
-                                  height: 40.0,
-                                  textStyle: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        fontFamily: 'Poppins',
-                                        letterSpacing: 0.0,
+                                        _model.dropLigueBasketValue1 ??= '',
                                       ),
-                                  hintText: 'E Sports',
-                                  icon: Icon(
-                                    Icons.keyboard_arrow_down_rounded,
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryText,
-                                    size: 24.0,
-                                  ),
-                                  fillColor: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
-                                  elevation: 2.0,
-                                  borderColor: Colors.transparent,
-                                  borderWidth: 0.0,
-                                  borderRadius: 8.0,
-                                  margin: EdgeInsetsDirectional.fromSTEB(
-                                      12.0, 0.0, 12.0, 0.0),
-                                  hidesUnderline: true,
-                                  isOverButton: false,
-                                  isSearchable: false,
-                                  isMultiSelect: false,
-                                ),
-                              ),
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 5.0),
-                                child: FlutterFlowDropDown<String>(
-                                  controller:
-                                      _model.dropELigueValueController ??=
-                                          FormFieldController<String>(
-                                    _model.dropELigueValue ??= '',
-                                  ),
-                                  options: List<String>.from([
-                                    'amateur',
-                                    'pro',
-                                    'champion',
-                                    'legende'
-                                  ]),
-                                  optionLabels: [
-                                    'Amateur',
-                                    'Pro',
-                                    'Champion',
-                                    'Légende'
-                                  ],
-                                  onChanged: (val) => safeSetState(
-                                      () => _model.dropELigueValue = val),
-                                  width: 150.0,
-                                  height: 40.0,
-                                  textStyle: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        fontFamily: 'Poppins',
-                                        letterSpacing: 0.0,
+                                      options: List<String>.from(['nba']),
+                                      optionLabels: const ['NBA'],
+                                      onChanged: (val) async {
+                                        safeSetState(() =>
+                                            _model.dropLigueBasketValue1 = val);
+                                        _model.showLigueFilter =
+                                            _model.dropLigueBasketValue1;
+                                        safeSetState(() {});
+                                      },
+                                      width: 180.0,
+                                      height: 40.0,
+                                      textStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            letterSpacing: 0.0,
+                                          ),
+                                      hintText: 'Ligues',
+                                      icon: Icon(
+                                        Icons.keyboard_arrow_down_rounded,
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryText,
+                                        size: 24.0,
                                       ),
-                                  hintText: 'E Ligues',
-                                  icon: Icon(
-                                    Icons.keyboard_arrow_down_rounded,
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryText,
-                                    size: 24.0,
+                                      fillColor: FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
+                                      elevation: 2.0,
+                                      borderColor: Colors.transparent,
+                                      borderWidth: 0.0,
+                                      borderRadius: 8.0,
+                                      margin: const EdgeInsetsDirectional.fromSTEB(
+                                          12.0, 0.0, 12.0, 0.0),
+                                      hidesUnderline: true,
+                                      isOverButton: false,
+                                      isSearchable: false,
+                                      isMultiSelect: false,
+                                    ),
                                   ),
-                                  fillColor: FlutterFlowTheme.of(context)
-                                      .primaryBackground,
-                                  elevation: 2.0,
-                                  borderColor:
-                                      FlutterFlowTheme.of(context).alternate,
-                                  borderWidth: 2.0,
-                                  borderRadius: 8.0,
-                                  margin: EdgeInsetsDirectional.fromSTEB(
-                                      12.0, 0.0, 12.0, 0.0),
-                                  hidesUnderline: true,
-                                  isOverButton: false,
-                                  isSearchable: false,
-                                  isMultiSelect: false,
-                                ),
+                                ],
                               ),
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 5.0),
-                                child: FlutterFlowDropDown<String>(
-                                  controller:
-                                      _model.dropLigueFootValueController ??=
-                                          FormFieldController<String>(
-                                    _model.dropLigueFootValue ??= '',
-                                  ),
-                                  options: List<String>.from([
-                                    'premier.league',
-                                    'laliga',
-                                    'bundesliga',
-                                    'serie.a',
-                                    'ligue.1',
-                                    'autres',
-                                    'pays.football',
-                                    'football'
-                                  ]),
-                                  optionLabels: [
-                                    'Premier League',
-                                    'LaLiga',
-                                    'Bundesliga',
-                                    'Serie A',
-                                    'Ligue 1',
-                                    'Autres',
-                                    'Pays Football',
-                                    'Football'
-                                  ],
-                                  onChanged: (val) => safeSetState(
-                                      () => _model.dropLigueFootValue = val),
-                                  width: 180.0,
-                                  height: 40.0,
-                                  textStyle: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        fontFamily: 'Poppins',
-                                        letterSpacing: 0.0,
-                                      ),
-                                  hintText: 'Ligues',
-                                  icon: Icon(
-                                    Icons.keyboard_arrow_down_rounded,
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryText,
-                                    size: 24.0,
-                                  ),
-                                  fillColor: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
-                                  elevation: 2.0,
-                                  borderColor: Colors.transparent,
-                                  borderWidth: 0.0,
-                                  borderRadius: 8.0,
-                                  margin: EdgeInsetsDirectional.fromSTEB(
-                                      12.0, 0.0, 12.0, 0.0),
-                                  hidesUnderline: true,
-                                  isOverButton: false,
-                                  isSearchable: false,
-                                  isMultiSelect: false,
-                                ),
-                              ),
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 5.0),
-                                child: FlutterFlowDropDown<String>(
-                                  controller:
-                                      _model.dropLigueBasketValueController ??=
-                                          FormFieldController<String>(
-                                    _model.dropLigueBasketValue ??= '',
-                                  ),
-                                  options: List<String>.from(
-                                      ['nba', 'pays.basektball']),
-                                  optionLabels: ['NBA', 'Pays Baketball'],
-                                  onChanged: (val) => safeSetState(
-                                      () => _model.dropLigueBasketValue = val),
-                                  width: 180.0,
-                                  height: 40.0,
-                                  textStyle: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        fontFamily: 'Poppins',
-                                        letterSpacing: 0.0,
-                                      ),
-                                  hintText: 'Ligues',
-                                  icon: Icon(
-                                    Icons.keyboard_arrow_down_rounded,
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryText,
-                                    size: 24.0,
-                                  ),
-                                  fillColor: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
-                                  elevation: 2.0,
-                                  borderColor: Colors.transparent,
-                                  borderWidth: 0.0,
-                                  borderRadius: 8.0,
-                                  margin: EdgeInsetsDirectional.fromSTEB(
-                                      12.0, 0.0, 12.0, 0.0),
-                                  hidesUnderline: true,
-                                  isOverButton: false,
-                                  isSearchable: false,
-                                  isMultiSelect: false,
-                                ),
-                              ),
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 5.0),
-                                child: FlutterFlowDropDown<String>(
-                                  controller:
-                                      _model.dropLigueTennisValueController ??=
-                                          FormFieldController<String>(
-                                    _model.dropLigueTennisValue ??= '',
-                                  ),
-                                  options: List<String>.from(['atp', 'wta']),
-                                  optionLabels: ['ATP', 'WTA'],
-                                  onChanged: (val) => safeSetState(
-                                      () => _model.dropLigueTennisValue = val),
-                                  width: 180.0,
-                                  height: 40.0,
-                                  textStyle: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        fontFamily: 'Poppins',
-                                        letterSpacing: 0.0,
-                                      ),
-                                  hintText: 'Ligues',
-                                  icon: Icon(
-                                    Icons.keyboard_arrow_down_rounded,
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryText,
-                                    size: 24.0,
-                                  ),
-                                  fillColor: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
-                                  elevation: 2.0,
-                                  borderColor: Colors.transparent,
-                                  borderWidth: 0.0,
-                                  borderRadius: 8.0,
-                                  margin: EdgeInsetsDirectional.fromSTEB(
-                                      12.0, 0.0, 12.0, 0.0),
-                                  hidesUnderline: true,
-                                  isOverButton: false,
-                                  isSearchable: false,
-                                  isMultiSelect: false,
-                                ),
-                              ),
-                            ],
+                            ),
                           ),
-                        ),
+                        if (valueOrDefault(
+                                currentUserDocument?.adminSportvalue, '') ==
+                            'tennis')
+                          Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 10.0, 5.0),
+                            child: AuthUserStreamWidget(
+                              builder: (context) => Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    'Tennis',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          letterSpacing: 0.0,
+                                        ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 5.0),
+                                    child: FlutterFlowDropDown<String>(
+                                      controller: _model
+                                              .dropLigueTennisValueController1 ??=
+                                          FormFieldController<String>(
+                                        _model.dropLigueTennisValue1 ??= '',
+                                      ),
+                                      options:
+                                          List<String>.from(['atp', 'wta']),
+                                      optionLabels: const ['ATP', 'WTA'],
+                                      onChanged: (val) async {
+                                        safeSetState(() =>
+                                            _model.dropLigueTennisValue1 = val);
+                                        _model.showLigueFilter =
+                                            _model.dropLigueTennisValue1;
+                                        safeSetState(() {});
+                                      },
+                                      width: 180.0,
+                                      height: 40.0,
+                                      textStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            letterSpacing: 0.0,
+                                          ),
+                                      hintText: 'Ligues',
+                                      icon: Icon(
+                                        Icons.keyboard_arrow_down_rounded,
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryText,
+                                        size: 24.0,
+                                      ),
+                                      fillColor: FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
+                                      elevation: 2.0,
+                                      borderColor: Colors.transparent,
+                                      borderWidth: 0.0,
+                                      borderRadius: 8.0,
+                                      margin: const EdgeInsetsDirectional.fromSTEB(
+                                          12.0, 0.0, 12.0, 0.0),
+                                      hidesUnderline: true,
+                                      isOverButton: false,
+                                      isSearchable: false,
+                                      isMultiSelect: false,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        if (valueOrDefault(
+                                currentUserDocument?.adminSportvalue, '') ==
+                            'sports.combat')
+                          Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 10.0, 5.0),
+                            child: AuthUserStreamWidget(
+                              builder: (context) => Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    'Sports de combat',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          letterSpacing: 0.0,
+                                        ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 5.0),
+                                    child: FlutterFlowDropDown<String>(
+                                      controller: _model
+                                              .dropLigueFightValueController1 ??=
+                                          FormFieldController<String>(
+                                        _model.dropLigueFightValue1 ??= '',
+                                      ),
+                                      options:
+                                          List<String>.from(['boxe', 'mma']),
+                                      optionLabels: const ['Boxe', 'MMA'],
+                                      onChanged: (val) async {
+                                        safeSetState(() =>
+                                            _model.dropLigueFightValue1 = val);
+                                        _model.showLigueFilter =
+                                            _model.dropLigueFightValue1;
+                                        safeSetState(() {});
+                                      },
+                                      width: 180.0,
+                                      height: 40.0,
+                                      textStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            letterSpacing: 0.0,
+                                          ),
+                                      hintText: 'Ligues',
+                                      icon: Icon(
+                                        Icons.keyboard_arrow_down_rounded,
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryText,
+                                        size: 24.0,
+                                      ),
+                                      fillColor: FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
+                                      elevation: 2.0,
+                                      borderColor: Colors.transparent,
+                                      borderWidth: 0.0,
+                                      borderRadius: 8.0,
+                                      margin: const EdgeInsetsDirectional.fromSTEB(
+                                          12.0, 0.0, 12.0, 0.0),
+                                      hidesUnderline: true,
+                                      isOverButton: false,
+                                      isSearchable: false,
+                                      isMultiSelect: false,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        if (valueOrDefault(
+                                currentUserDocument?.adminSportvalue, '') ==
+                            'hockey')
+                          Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 10.0, 0.0),
+                            child: AuthUserStreamWidget(
+                              builder: (context) => Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    'Hockey',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          letterSpacing: 0.0,
+                                        ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 5.0),
+                                    child: FlutterFlowDropDown<String>(
+                                      controller: _model
+                                              .dropLigueHockeyValueController1 ??=
+                                          FormFieldController<String>(
+                                        _model.dropLigueHockeyValue1 ??= '',
+                                      ),
+                                      options: List<String>.from([
+                                        'glace.nhl',
+                                        'gazon.elite.h',
+                                        'gazon.elite.f',
+                                        'salle.elite.h',
+                                        'salle.elite.f'
+                                      ]),
+                                      optionLabels: const [
+                                        'Glace NHL',
+                                        'Gazon Elite H',
+                                        'Gazon Elite F',
+                                        'Salle Elite H',
+                                        'Salle Elite F'
+                                      ],
+                                      onChanged: (val) async {
+                                        safeSetState(() =>
+                                            _model.dropLigueHockeyValue1 = val);
+                                        _model.showLigueFilter =
+                                            _model.dropLigueHockeyValue1;
+                                        safeSetState(() {});
+                                      },
+                                      width: 180.0,
+                                      height: 40.0,
+                                      textStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            letterSpacing: 0.0,
+                                          ),
+                                      hintText: 'Ligues',
+                                      icon: Icon(
+                                        Icons.keyboard_arrow_down_rounded,
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryText,
+                                        size: 24.0,
+                                      ),
+                                      fillColor: FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
+                                      elevation: 2.0,
+                                      borderColor: Colors.transparent,
+                                      borderWidth: 0.0,
+                                      borderRadius: 8.0,
+                                      margin: const EdgeInsetsDirectional.fromSTEB(
+                                          12.0, 0.0, 12.0, 0.0),
+                                      hidesUnderline: true,
+                                      isOverButton: false,
+                                      isSearchable: false,
+                                      isMultiSelect: false,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
                       ],
                     ),
-                    Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
-                      child: StreamBuilder<List<TeamsRecord>>(
-                        stream: queryTeamsRecord(
-                          queryBuilder: (teamsRecord) =>
-                              teamsRecord.where(Filter.or(
-                            Filter(
-                              'league_value',
-                              isEqualTo: _model.dropLigueFootValue,
-                            ),
-                            Filter(
-                              'league_value',
-                              isEqualTo: _model.dropLigueBasketValue,
-                            ),
-                            Filter(
-                              'league_value',
-                              isEqualTo: _model.dropLigueTennisValue,
-                            ),
-                          )),
-                        ),
-                        builder: (context, snapshot) {
-                          // Customize what your widget looks like when it's loading.
-                          if (!snapshot.hasData) {
-                            return Center(
-                              child: SizedBox(
-                                width: 50.0,
-                                height: 50.0,
-                                child: CircularProgressIndicator(
-                                  valueColor: AlwaysStoppedAnimation<Color>(
-                                    FlutterFlowTheme.of(context).accent4,
+                    if (valueOrDefault(currentUserDocument?.stsocialapp, '') ==
+                        'administrateur')
+                      AuthUserStreamWidget(
+                        builder: (context) => Column(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Column(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 10.0, 5.0),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Text(
+                                        'Football',
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Poppins',
+                                              letterSpacing: 0.0,
+                                            ),
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 0.0, 0.0, 5.0),
+                                        child: FlutterFlowDropDown<String>(
+                                          controller: _model
+                                                  .dropLigueFootValueController2 ??=
+                                              FormFieldController<String>(
+                                            _model.dropLigueFootValue2 ??= '',
+                                          ),
+                                          options: List<String>.from([
+                                            'premier.league',
+                                            'laliga',
+                                            'bundesliga',
+                                            'serie.a',
+                                            'ligue.1',
+                                            'autres',
+                                            'pays.football',
+                                            'empty'
+                                          ]),
+                                          optionLabels: const [
+                                            'Premier League',
+                                            'LaLiga',
+                                            'Bundesliga',
+                                            'Serie A',
+                                            'Ligue 1',
+                                            'Autres',
+                                            'Pays Football',
+                                            'Retirer filtre'
+                                          ],
+                                          onChanged: (val) => safeSetState(() =>
+                                              _model.dropLigueFootValue2 = val),
+                                          width: 180.0,
+                                          height: 40.0,
+                                          textStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    fontFamily: 'Poppins',
+                                                    letterSpacing: 0.0,
+                                                  ),
+                                          hintText: 'Ligues',
+                                          icon: Icon(
+                                            Icons.keyboard_arrow_down_rounded,
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondaryText,
+                                            size: 24.0,
+                                          ),
+                                          fillColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .secondaryBackground,
+                                          elevation: 2.0,
+                                          borderColor: Colors.transparent,
+                                          borderWidth: 0.0,
+                                          borderRadius: 8.0,
+                                          margin:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  12.0, 0.0, 12.0, 0.0),
+                                          hidesUnderline: true,
+                                          isOverButton: false,
+                                          isSearchable: false,
+                                          isMultiSelect: false,
+                                        ),
+                                      ),
+                                    ],
                                   ),
                                 ),
-                              ),
-                            );
-                          }
-                          List<TeamsRecord> columnTeamsTeamsRecordList =
-                              snapshot.data!;
-
-                          return Column(
-                            mainAxisSize: MainAxisSize.max,
-                            children:
-                                List.generate(columnTeamsTeamsRecordList.length,
-                                    (columnTeamsIndex) {
-                              final columnTeamsTeamsRecord =
-                                  columnTeamsTeamsRecordList[columnTeamsIndex];
-                              return Column(
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 10.0, 5.0),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Text(
+                                        'Basketball',
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Poppins',
+                                              letterSpacing: 0.0,
+                                            ),
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 0.0, 0.0, 5.0),
+                                        child: FlutterFlowDropDown<String>(
+                                          controller: _model
+                                                  .dropLigueBasketValueController2 ??=
+                                              FormFieldController<String>(
+                                            _model.dropLigueBasketValue2 ??= '',
+                                          ),
+                                          options: List<String>.from(
+                                              ['nba', 'empty']),
+                                          optionLabels: const [
+                                            'NBA',
+                                            'Retirer filtre'
+                                          ],
+                                          onChanged: (val) => safeSetState(() =>
+                                              _model.dropLigueBasketValue2 =
+                                                  val),
+                                          width: 180.0,
+                                          height: 40.0,
+                                          textStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    fontFamily: 'Poppins',
+                                                    letterSpacing: 0.0,
+                                                  ),
+                                          hintText: 'Ligues',
+                                          icon: Icon(
+                                            Icons.keyboard_arrow_down_rounded,
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondaryText,
+                                            size: 24.0,
+                                          ),
+                                          fillColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .secondaryBackground,
+                                          elevation: 2.0,
+                                          borderColor: Colors.transparent,
+                                          borderWidth: 0.0,
+                                          borderRadius: 8.0,
+                                          margin:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  12.0, 0.0, 12.0, 0.0),
+                                          hidesUnderline: true,
+                                          isOverButton: false,
+                                          isSearchable: false,
+                                          isMultiSelect: false,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 10.0, 5.0),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Text(
+                                        'Tennis',
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Poppins',
+                                              letterSpacing: 0.0,
+                                            ),
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 0.0, 0.0, 5.0),
+                                        child: FlutterFlowDropDown<String>(
+                                          controller: _model
+                                                  .dropLigueTennisValueController2 ??=
+                                              FormFieldController<String>(
+                                            _model.dropLigueTennisValue2 ??= '',
+                                          ),
+                                          options: List<String>.from(
+                                              ['atp', 'wta', 'empty']),
+                                          optionLabels: const [
+                                            'ATP',
+                                            'WTA',
+                                            'Retirer filtre'
+                                          ],
+                                          onChanged: (val) => safeSetState(() =>
+                                              _model.dropLigueTennisValue2 =
+                                                  val),
+                                          width: 180.0,
+                                          height: 40.0,
+                                          textStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    fontFamily: 'Poppins',
+                                                    letterSpacing: 0.0,
+                                                  ),
+                                          hintText: 'Ligues',
+                                          icon: Icon(
+                                            Icons.keyboard_arrow_down_rounded,
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondaryText,
+                                            size: 24.0,
+                                          ),
+                                          fillColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .secondaryBackground,
+                                          elevation: 2.0,
+                                          borderColor: Colors.transparent,
+                                          borderWidth: 0.0,
+                                          borderRadius: 8.0,
+                                          margin:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  12.0, 0.0, 12.0, 0.0),
+                                          hidesUnderline: true,
+                                          isOverButton: false,
+                                          isSearchable: false,
+                                          isMultiSelect: false,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 10.0, 5.0),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Text(
+                                        'Sports de combat',
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Poppins',
+                                              letterSpacing: 0.0,
+                                            ),
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 0.0, 0.0, 5.0),
+                                        child: FlutterFlowDropDown<String>(
+                                          controller: _model
+                                                  .dropLigueFightValueController2 ??=
+                                              FormFieldController<String>(
+                                            _model.dropLigueFightValue2 ??= '',
+                                          ),
+                                          options: List<String>.from(
+                                              ['boxe', 'mma', 'empty']),
+                                          optionLabels: const [
+                                            'Boxe',
+                                            'MMA',
+                                            'Retirer filtre'
+                                          ],
+                                          onChanged: (val) => safeSetState(() =>
+                                              _model.dropLigueFightValue2 =
+                                                  val),
+                                          width: 180.0,
+                                          height: 40.0,
+                                          textStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    fontFamily: 'Poppins',
+                                                    letterSpacing: 0.0,
+                                                  ),
+                                          hintText: 'Ligues',
+                                          icon: Icon(
+                                            Icons.keyboard_arrow_down_rounded,
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondaryText,
+                                            size: 24.0,
+                                          ),
+                                          fillColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .secondaryBackground,
+                                          elevation: 2.0,
+                                          borderColor: Colors.transparent,
+                                          borderWidth: 0.0,
+                                          borderRadius: 8.0,
+                                          margin:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  12.0, 0.0, 12.0, 0.0),
+                                          hidesUnderline: true,
+                                          isOverButton: false,
+                                          isSearchable: false,
+                                          isMultiSelect: false,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 10.0, 0.0),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Text(
+                                        'Hockey',
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Poppins',
+                                              letterSpacing: 0.0,
+                                            ),
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 0.0, 0.0, 5.0),
+                                        child: FlutterFlowDropDown<String>(
+                                          controller: _model
+                                                  .dropLigueHockeyValueController2 ??=
+                                              FormFieldController<String>(
+                                            _model.dropLigueHockeyValue2 ??= '',
+                                          ),
+                                          options: List<String>.from([
+                                            'glace.nhl',
+                                            'gazon.elite.h',
+                                            'gazon.elite.f',
+                                            'salle.elite.h',
+                                            'salle.elite.f',
+                                            'empty'
+                                          ]),
+                                          optionLabels: const [
+                                            'Glace NHL',
+                                            'Gazon Elite H',
+                                            'Gazon Elite F',
+                                            'Salle Elite H',
+                                            'Salle Elite F',
+                                            'Retirer filtre'
+                                          ],
+                                          onChanged: (val) => safeSetState(() =>
+                                              _model.dropLigueHockeyValue2 =
+                                                  val),
+                                          width: 180.0,
+                                          height: 40.0,
+                                          textStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    fontFamily: 'Poppins',
+                                                    letterSpacing: 0.0,
+                                                  ),
+                                          hintText: 'Ligues',
+                                          icon: Icon(
+                                            Icons.keyboard_arrow_down_rounded,
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondaryText,
+                                            size: 24.0,
+                                          ),
+                                          fillColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .secondaryBackground,
+                                          elevation: 2.0,
+                                          borderColor: Colors.transparent,
+                                          borderWidth: 0.0,
+                                          borderRadius: 8.0,
+                                          margin:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  12.0, 0.0, 12.0, 0.0),
+                                          hidesUnderline: true,
+                                          isOverButton: false,
+                                          isSearchable: false,
+                                          isMultiSelect: false,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 10.0, 0.0, 0.0),
+                              child: Row(
                                 mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        10.0, 0.0, 10.0, 10.0),
-                                    child: Row(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 10.0, 0.0, 0.0),
+                                    child: Column(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceBetween,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
                                       children: [
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  20.0, 0.0, 0.0, 0.0),
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 0.0, 29.0),
                                           child: Text(
-                                            columnTeamsTeamsRecord.name,
+                                            'E Sport',
                                             style: FlutterFlowTheme.of(context)
-                                                .labelMedium
+                                                .bodyMedium
                                                 .override(
                                                   fontFamily: 'Poppins',
                                                   letterSpacing: 0.0,
@@ -534,269 +938,12 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 35.0, 0.0),
-                                          child: Container(
-                                            width: 55.0,
-                                            height: 40.0,
-                                            decoration: BoxDecoration(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primaryBackground,
-                                            ),
-                                            child: ClipRRect(
-                                              borderRadius:
-                                                  BorderRadius.circular(0.0),
-                                              child: Image.network(
-                                                columnTeamsTeamsRecord.logo,
-                                                width: 300.0,
-                                                height: 200.0,
-                                                fit: BoxFit.scaleDown,
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        20.0, 0.0, 20.0, 20.0),
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        StreamBuilder<
-                                            List<MyNotificationsRecord>>(
-                                          stream: queryMyNotificationsRecord(
-                                            queryBuilder:
-                                                (myNotificationsRecord) =>
-                                                    myNotificationsRecord
-                                                        .where(
-                                                          'team_ref',
-                                                          isEqualTo:
-                                                              columnTeamsTeamsRecord
-                                                                  .reference,
-                                                        )
-                                                        .where(
-                                                          'mod_seen',
-                                                          isEqualTo: false,
-                                                        ),
-                                            singleRecord: true,
-                                          ),
-                                          builder: (context, snapshot) {
-                                            // Customize what your widget looks like when it's loading.
-                                            if (!snapshot.hasData) {
-                                              return Center(
-                                                child: SizedBox(
-                                                  width: 50.0,
-                                                  height: 50.0,
-                                                  child:
-                                                      CircularProgressIndicator(
-                                                    valueColor:
-                                                        AlwaysStoppedAnimation<
-                                                            Color>(
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .accent4,
-                                                    ),
-                                                  ),
-                                                ),
-                                              );
-                                            }
-                                            List<MyNotificationsRecord>
-                                                rowMyNotificationsRecordList =
-                                                snapshot.data!;
-                                            // Return an empty Container when the item does not exist.
-                                            if (snapshot.data!.isEmpty) {
-                                              return Container();
-                                            }
-                                            final rowMyNotificationsRecord =
-                                                rowMyNotificationsRecordList
-                                                        .isNotEmpty
-                                                    ? rowMyNotificationsRecordList
-                                                        .first
-                                                    : null;
-
-                                            return Row(
-                                              mainAxisSize: MainAxisSize.max,
-                                              children: [
-                                                if (rowMyNotificationsRecord
-                                                        ?.reference !=
-                                                    null)
-                                                  Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(10.0, 0.0,
-                                                                10.0, 0.0),
-                                                    child: InkWell(
-                                                      splashColor:
-                                                          Colors.transparent,
-                                                      focusColor:
-                                                          Colors.transparent,
-                                                      hoverColor:
-                                                          Colors.transparent,
-                                                      highlightColor:
-                                                          Colors.transparent,
-                                                      onTap: () async {
-                                                        context.pushNamed(
-                                                          'ModTeamNotifsList',
-                                                          queryParameters: {
-                                                            'teamRef':
-                                                                serializeParam(
-                                                              columnTeamsTeamsRecord
-                                                                  .reference,
-                                                              ParamType
-                                                                  .DocumentReference,
-                                                            ),
-                                                          }.withoutNulls,
-                                                        );
-                                                      },
-                                                      child: Icon(
-                                                        Icons
-                                                            .notifications_none,
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .error,
-                                                        size: 30.0,
-                                                      ),
-                                                    ),
-                                                  ),
-                                              ],
-                                            );
-                                          },
-                                        ),
-                                        Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  10.0, 0.0, 10.0, 0.0),
-                                          child: InkWell(
-                                            splashColor: Colors.transparent,
-                                            focusColor: Colors.transparent,
-                                            hoverColor: Colors.transparent,
-                                            highlightColor: Colors.transparent,
-                                            onTap: () async {
-                                              context.pushNamed(
-                                                'TeamUsersList',
-                                                queryParameters: {
-                                                  'teamRef': serializeParam(
-                                                    columnTeamsTeamsRecord
-                                                        .reference,
-                                                    ParamType.DocumentReference,
-                                                  ),
-                                                }.withoutNulls,
-                                              );
-                                            },
-                                            child: Icon(
-                                              Icons.supervisor_account_rounded,
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .error,
-                                              size: 30.0,
-                                            ),
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  10.0, 0.0, 10.0, 0.0),
-                                          child: InkWell(
-                                            splashColor: Colors.transparent,
-                                            focusColor: Colors.transparent,
-                                            hoverColor: Colors.transparent,
-                                            highlightColor: Colors.transparent,
-                                            onTap: () async {
-                                              context.pushNamed(
-                                                'ModifTeamPage',
-                                                queryParameters: {
-                                                  'teamRef': serializeParam(
-                                                    columnTeamsTeamsRecord
-                                                        .reference,
-                                                    ParamType.DocumentReference,
-                                                  ),
-                                                }.withoutNulls,
-                                              );
-                                            },
-                                            child: Icon(
-                                              Icons.settings_sharp,
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .error,
-                                              size: 30.0,
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ],
-                              );
-                            }),
-                          );
-                        },
-                      ),
-                    ),
-                    Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
-                      child: StreamBuilder<List<TeamsRecord>>(
-                        stream: queryTeamsRecord(
-                          queryBuilder: (teamsRecord) => teamsRecord
-                              .where(
-                                'league_value',
-                                isEqualTo: _model.dropELigueValue,
-                              )
-                              .where(
-                                'sport_value',
-                                isEqualTo: _model.dropESportsValue,
-                              ),
-                        ),
-                        builder: (context, snapshot) {
-                          // Customize what your widget looks like when it's loading.
-                          if (!snapshot.hasData) {
-                            return Center(
-                              child: SizedBox(
-                                width: 50.0,
-                                height: 50.0,
-                                child: CircularProgressIndicator(
-                                  valueColor: AlwaysStoppedAnimation<Color>(
-                                    FlutterFlowTheme.of(context).accent4,
-                                  ),
-                                ),
-                              ),
-                            );
-                          }
-                          List<TeamsRecord> columnTeamsTeamsRecordList =
-                              snapshot.data!;
-
-                          return Column(
-                            mainAxisSize: MainAxisSize.max,
-                            children:
-                                List.generate(columnTeamsTeamsRecordList.length,
-                                    (columnTeamsIndex) {
-                              final columnTeamsTeamsRecord =
-                                  columnTeamsTeamsRecordList[columnTeamsIndex];
-                              return Column(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        10.0, 0.0, 10.0, 10.0),
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  20.0, 0.0, 0.0, 0.0),
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 0.0, 29.0),
                                           child: Text(
-                                            columnTeamsTeamsRecord.name,
+                                            'E Ligue',
                                             style: FlutterFlowTheme.of(context)
-                                                .labelMedium
+                                                .bodyMedium
                                                 .override(
                                                   fontFamily: 'Poppins',
                                                   letterSpacing: 0.0,
@@ -805,210 +952,1190 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 35.0, 0.0),
-                                          child: Container(
-                                            width: 55.0,
-                                            height: 40.0,
-                                            decoration: BoxDecoration(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primaryBackground,
-                                            ),
-                                            child: ClipRRect(
-                                              borderRadius:
-                                                  BorderRadius.circular(0.0),
-                                              child: Image.network(
-                                                columnTeamsTeamsRecord.logo,
-                                                width: 300.0,
-                                                height: 200.0,
-                                                fit: BoxFit.scaleDown,
-                                              ),
-                                            ),
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 0.0, 29.0),
+                                          child: Text(
+                                            'E Divisions',
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Poppins',
+                                                  letterSpacing: 0.0,
+                                                ),
                                           ),
                                         ),
                                       ],
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        20.0, 0.0, 20.0, 20.0),
-                                    child: Row(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        10.0, 0.0, 0.0, 0.0),
+                                    child: Column(
                                       mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
                                       children: [
-                                        StreamBuilder<
-                                            List<MyNotificationsRecord>>(
-                                          stream: queryMyNotificationsRecord(
-                                            queryBuilder:
-                                                (myNotificationsRecord) =>
-                                                    myNotificationsRecord
-                                                        .where(
-                                                          'team_ref',
-                                                          isEqualTo:
-                                                              columnTeamsTeamsRecord
-                                                                  .reference,
-                                                        )
-                                                        .where(
-                                                          'mod_seen',
-                                                          isEqualTo: false,
-                                                        ),
-                                            singleRecord: true,
-                                          ),
-                                          builder: (context, snapshot) {
-                                            // Customize what your widget looks like when it's loading.
-                                            if (!snapshot.hasData) {
-                                              return Center(
-                                                child: SizedBox(
-                                                  width: 50.0,
-                                                  height: 50.0,
-                                                  child:
-                                                      CircularProgressIndicator(
-                                                    valueColor:
-                                                        AlwaysStoppedAnimation<
-                                                            Color>(
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .accent4,
-                                                    ),
-                                                  ),
-                                                ),
-                                              );
-                                            }
-                                            List<MyNotificationsRecord>
-                                                rowMyNotificationsRecordList =
-                                                snapshot.data!;
-                                            // Return an empty Container when the item does not exist.
-                                            if (snapshot.data!.isEmpty) {
-                                              return Container();
-                                            }
-                                            final rowMyNotificationsRecord =
-                                                rowMyNotificationsRecordList
-                                                        .isNotEmpty
-                                                    ? rowMyNotificationsRecordList
-                                                        .first
-                                                    : null;
-
-                                            return Row(
-                                              mainAxisSize: MainAxisSize.max,
-                                              children: [
-                                                if (rowMyNotificationsRecord
-                                                        ?.reference !=
-                                                    null)
-                                                  Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(10.0, 0.0,
-                                                                10.0, 0.0),
-                                                    child: InkWell(
-                                                      splashColor:
-                                                          Colors.transparent,
-                                                      focusColor:
-                                                          Colors.transparent,
-                                                      hoverColor:
-                                                          Colors.transparent,
-                                                      highlightColor:
-                                                          Colors.transparent,
-                                                      onTap: () async {
-                                                        context.pushNamed(
-                                                          'ModTeamNotifsList',
-                                                          queryParameters: {
-                                                            'teamRef':
-                                                                serializeParam(
-                                                              columnTeamsTeamsRecord
-                                                                  .reference,
-                                                              ParamType
-                                                                  .DocumentReference,
-                                                            ),
-                                                          }.withoutNulls,
-                                                        );
-                                                      },
-                                                      child: Icon(
-                                                        Icons
-                                                            .notifications_none,
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .error,
-                                                        size: 30.0,
-                                                      ),
-                                                    ),
-                                                  ),
-                                              ],
-                                            );
-                                          },
-                                        ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  10.0, 0.0, 10.0, 0.0),
-                                          child: InkWell(
-                                            splashColor: Colors.transparent,
-                                            focusColor: Colors.transparent,
-                                            hoverColor: Colors.transparent,
-                                            highlightColor: Colors.transparent,
-                                            onTap: () async {
-                                              context.pushNamed(
-                                                'TeamUsersList',
-                                                queryParameters: {
-                                                  'teamRef': serializeParam(
-                                                    columnTeamsTeamsRecord
-                                                        .reference,
-                                                    ParamType.DocumentReference,
-                                                  ),
-                                                }.withoutNulls,
-                                              );
-                                            },
-                                            child: Icon(
-                                              Icons.supervisor_account_rounded,
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 0.0, 5.0),
+                                          child: FlutterFlowDropDown<String>(
+                                            controller: _model
+                                                    .dropESportsValueController ??=
+                                                FormFieldController<String>(
+                                              _model.dropESportsValue ??= '',
+                                            ),
+                                            options: List<String>.from([
+                                              'esport.football',
+                                              'esport.basketball',
+                                              'esport.war',
+                                              'empty'
+                                            ]),
+                                            optionLabels: const [
+                                              'E Sport Football',
+                                              'E Sport Basketball',
+                                              'E Sport War',
+                                              'E Sports'
+                                            ],
+                                            onChanged: (val) => safeSetState(
+                                                () => _model.dropESportsValue =
+                                                    val),
+                                            width: 180.0,
+                                            height: 40.0,
+                                            textStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .override(
+                                                      fontFamily: 'Poppins',
+                                                      letterSpacing: 0.0,
+                                                    ),
+                                            hintText: 'E Sports',
+                                            icon: Icon(
+                                              Icons.keyboard_arrow_down_rounded,
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .error,
-                                              size: 30.0,
+                                                      .secondaryText,
+                                              size: 24.0,
                                             ),
+                                            fillColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .secondaryBackground,
+                                            elevation: 2.0,
+                                            borderColor: Colors.transparent,
+                                            borderWidth: 0.0,
+                                            borderRadius: 8.0,
+                                            margin:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    12.0, 0.0, 12.0, 0.0),
+                                            hidesUnderline: true,
+                                            isOverButton: false,
+                                            isSearchable: false,
+                                            isMultiSelect: false,
                                           ),
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  10.0, 0.0, 10.0, 0.0),
-                                          child: InkWell(
-                                            splashColor: Colors.transparent,
-                                            focusColor: Colors.transparent,
-                                            hoverColor: Colors.transparent,
-                                            highlightColor: Colors.transparent,
-                                            onTap: () async {
-                                              context.pushNamed(
-                                                'ModifTeamPage',
-                                                queryParameters: {
-                                                  'teamRef': serializeParam(
-                                                    columnTeamsTeamsRecord
-                                                        .reference,
-                                                    ParamType.DocumentReference,
-                                                  ),
-                                                }.withoutNulls,
-                                              );
-                                            },
-                                            child: Icon(
-                                              Icons.settings_sharp,
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 0.0, 5.0),
+                                          child: FlutterFlowDropDown<String>(
+                                            controller: _model
+                                                    .dropELigueValueController ??=
+                                                FormFieldController<String>(
+                                              _model.dropELigueValue ??= '',
+                                            ),
+                                            options: List<String>.from([
+                                              'amateur',
+                                              'pro',
+                                              'champion',
+                                              'legende'
+                                            ]),
+                                            optionLabels: const [
+                                              'Amateur',
+                                              'Pro',
+                                              'Champion',
+                                              'Légende'
+                                            ],
+                                            onChanged: (val) => safeSetState(
+                                                () => _model.dropELigueValue =
+                                                    val),
+                                            width: 150.0,
+                                            height: 40.0,
+                                            textStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .override(
+                                                      fontFamily: 'Poppins',
+                                                      letterSpacing: 0.0,
+                                                    ),
+                                            hintText: 'E Ligues',
+                                            icon: Icon(
+                                              Icons.keyboard_arrow_down_rounded,
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .error,
-                                              size: 30.0,
+                                                      .secondaryText,
+                                              size: 24.0,
                                             ),
+                                            fillColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .primaryBackground,
+                                            elevation: 2.0,
+                                            borderColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .alternate,
+                                            borderWidth: 2.0,
+                                            borderRadius: 8.0,
+                                            margin:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    12.0, 0.0, 12.0, 0.0),
+                                            hidesUnderline: true,
+                                            isOverButton: false,
+                                            isSearchable: false,
+                                            isMultiSelect: false,
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 0.0, 5.0),
+                                          child: FlutterFlowDropDown<String>(
+                                            controller: _model
+                                                    .dropEDivisionsValueController ??=
+                                                FormFieldController<String>(
+                                              _model.dropEDivisionsValue ??= '',
+                                            ),
+                                            options: List<String>.from(
+                                                ['1', '2', '3']),
+                                            optionLabels: const ['1', '2', '3'],
+                                            onChanged: (val) => safeSetState(
+                                                () => _model
+                                                    .dropEDivisionsValue = val),
+                                            width: 150.0,
+                                            height: 40.0,
+                                            textStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .override(
+                                                      fontFamily: 'Poppins',
+                                                      letterSpacing: 0.0,
+                                                    ),
+                                            hintText: 'E Division',
+                                            icon: Icon(
+                                              Icons.keyboard_arrow_down_rounded,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryText,
+                                              size: 24.0,
+                                            ),
+                                            fillColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .primaryBackground,
+                                            elevation: 2.0,
+                                            borderColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .alternate,
+                                            borderWidth: 2.0,
+                                            borderRadius: 8.0,
+                                            margin:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    12.0, 0.0, 12.0, 0.0),
+                                            hidesUnderline: true,
+                                            isOverButton: false,
+                                            isSearchable: false,
+                                            isMultiSelect: false,
                                           ),
                                         ),
                                       ],
                                     ),
                                   ),
                                 ],
-                              );
-                            }),
-                          );
-                        },
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
-                    ),
+                    if (_model.showLigueFilter != null &&
+                        _model.showLigueFilter != '')
+                      Padding(
+                        padding:
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                        child: AuthUserStreamWidget(
+                          builder: (context) =>
+                              StreamBuilder<List<TeamsRecord>>(
+                            stream: queryTeamsRecord(
+                              queryBuilder: (teamsRecord) => teamsRecord
+                                  .where(
+                                    'league_value',
+                                    isEqualTo: _model.showLigueFilter,
+                                  )
+                                  .where(
+                                    'sport_value',
+                                    isEqualTo: valueOrDefault(
+                                        currentUserDocument?.adminSportvalue,
+                                        ''),
+                                  ),
+                            ),
+                            builder: (context, snapshot) {
+                              // Customize what your widget looks like when it's loading.
+                              if (!snapshot.hasData) {
+                                return Center(
+                                  child: SizedBox(
+                                    width: 50.0,
+                                    height: 50.0,
+                                    child: CircularProgressIndicator(
+                                      valueColor: AlwaysStoppedAnimation<Color>(
+                                        FlutterFlowTheme.of(context).accent4,
+                                      ),
+                                    ),
+                                  ),
+                                );
+                              }
+                              List<TeamsRecord> columnTeamsModTeamsRecordList =
+                                  snapshot.data!;
+
+                              return Column(
+                                mainAxisSize: MainAxisSize.max,
+                                children: List.generate(
+                                    columnTeamsModTeamsRecordList.length,
+                                    (columnTeamsModIndex) {
+                                  final columnTeamsModTeamsRecord =
+                                      columnTeamsModTeamsRecordList[
+                                          columnTeamsModIndex];
+                                  return Visibility(
+                                    visible:
+                                        columnTeamsModTeamsRecord.sportValue ==
+                                            valueOrDefault(
+                                                currentUserDocument
+                                                    ?.adminSportvalue,
+                                                ''),
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Padding(
+                                          padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  10.0, 0.0, 10.0, 0.0),
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceBetween,
+                                            children: [
+                                              Padding(
+                                                padding: const EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        20.0, 0.0, 0.0, 0.0),
+                                                child: Text(
+                                                  columnTeamsModTeamsRecord
+                                                      .name,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .labelMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                              Padding(
+                                                padding: const EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 0.0, 35.0, 0.0),
+                                                child: Container(
+                                                  width: 55.0,
+                                                  height: 40.0,
+                                                  decoration: BoxDecoration(
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryBackground,
+                                                  ),
+                                                  child: ClipRRect(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            0.0),
+                                                    child: Image.network(
+                                                      columnTeamsModTeamsRecord
+                                                          .logo,
+                                                      width: 300.0,
+                                                      height: 200.0,
+                                                      fit: BoxFit.scaleDown,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  20.0, 0.0, 0.0, 3.0),
+                                          child: Text(
+                                            columnTeamsModTeamsRecord
+                                                .reference.id,
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Poppins',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .warning,
+                                                  letterSpacing: 0.0,
+                                                ),
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  20.0, 0.0, 20.0, 20.0),
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceBetween,
+                                            children: [
+                                              StreamBuilder<
+                                                  List<MyNotificationsRecord>>(
+                                                stream:
+                                                    queryMyNotificationsRecord(
+                                                  queryBuilder:
+                                                      (myNotificationsRecord) =>
+                                                          myNotificationsRecord
+                                                              .where(
+                                                                'team_ref',
+                                                                isEqualTo:
+                                                                    columnTeamsModTeamsRecord
+                                                                        .reference,
+                                                              )
+                                                              .where(
+                                                                'mod_seen',
+                                                                isEqualTo:
+                                                                    false,
+                                                              ),
+                                                  singleRecord: true,
+                                                ),
+                                                builder: (context, snapshot) {
+                                                  // Customize what your widget looks like when it's loading.
+                                                  if (!snapshot.hasData) {
+                                                    return Center(
+                                                      child: SizedBox(
+                                                        width: 50.0,
+                                                        height: 50.0,
+                                                        child:
+                                                            CircularProgressIndicator(
+                                                          valueColor:
+                                                              AlwaysStoppedAnimation<
+                                                                  Color>(
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .accent4,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    );
+                                                  }
+                                                  List<MyNotificationsRecord>
+                                                      rowMyNotificationsRecordList =
+                                                      snapshot.data!;
+                                                  // Return an empty Container when the item does not exist.
+                                                  if (snapshot.data!.isEmpty) {
+                                                    return Container();
+                                                  }
+                                                  final rowMyNotificationsRecord =
+                                                      rowMyNotificationsRecordList
+                                                              .isNotEmpty
+                                                          ? rowMyNotificationsRecordList
+                                                              .first
+                                                          : null;
+
+                                                  return Row(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    children: [
+                                                      if (rowMyNotificationsRecord
+                                                              ?.reference !=
+                                                          null)
+                                                        Padding(
+                                                          padding:
+                                                              const EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      10.0,
+                                                                      0.0,
+                                                                      10.0,
+                                                                      0.0),
+                                                          child: InkWell(
+                                                            splashColor: Colors
+                                                                .transparent,
+                                                            focusColor: Colors
+                                                                .transparent,
+                                                            hoverColor: Colors
+                                                                .transparent,
+                                                            highlightColor:
+                                                                Colors
+                                                                    .transparent,
+                                                            onTap: () async {
+                                                              context.pushNamed(
+                                                                'ModTeamNotifsList',
+                                                                queryParameters:
+                                                                    {
+                                                                  'teamRef':
+                                                                      serializeParam(
+                                                                    columnTeamsModTeamsRecord
+                                                                        .reference,
+                                                                    ParamType
+                                                                        .DocumentReference,
+                                                                  ),
+                                                                }.withoutNulls,
+                                                              );
+                                                            },
+                                                            child: Icon(
+                                                              Icons
+                                                                  .notifications_none,
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .error,
+                                                              size: 30.0,
+                                                            ),
+                                                          ),
+                                                        ),
+                                                    ],
+                                                  );
+                                                },
+                                              ),
+                                              Padding(
+                                                padding: const EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        10.0, 0.0, 10.0, 0.0),
+                                                child: InkWell(
+                                                  splashColor:
+                                                      Colors.transparent,
+                                                  focusColor:
+                                                      Colors.transparent,
+                                                  hoverColor:
+                                                      Colors.transparent,
+                                                  highlightColor:
+                                                      Colors.transparent,
+                                                  onTap: () async {
+                                                    context.pushNamed(
+                                                      'TeamUsersList',
+                                                      queryParameters: {
+                                                        'teamRef':
+                                                            serializeParam(
+                                                          columnTeamsModTeamsRecord
+                                                              .reference,
+                                                          ParamType
+                                                              .DocumentReference,
+                                                        ),
+                                                      }.withoutNulls,
+                                                    );
+                                                  },
+                                                  child: Icon(
+                                                    Icons
+                                                        .supervisor_account_rounded,
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .error,
+                                                    size: 30.0,
+                                                  ),
+                                                ),
+                                              ),
+                                              Padding(
+                                                padding: const EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        10.0, 0.0, 10.0, 0.0),
+                                                child: InkWell(
+                                                  splashColor:
+                                                      Colors.transparent,
+                                                  focusColor:
+                                                      Colors.transparent,
+                                                  hoverColor:
+                                                      Colors.transparent,
+                                                  highlightColor:
+                                                      Colors.transparent,
+                                                  onTap: () async {
+                                                    context.pushNamed(
+                                                      'ModifTeamPage',
+                                                      queryParameters: {
+                                                        'teamRef':
+                                                            serializeParam(
+                                                          columnTeamsModTeamsRecord
+                                                              .reference,
+                                                          ParamType
+                                                              .DocumentReference,
+                                                        ),
+                                                      }.withoutNulls,
+                                                    );
+                                                  },
+                                                  child: Icon(
+                                                    Icons.settings_sharp,
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .error,
+                                                    size: 30.0,
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  );
+                                }),
+                              );
+                            },
+                          ),
+                        ),
+                      ),
+                    if (valueOrDefault(currentUserDocument?.stsocialapp, '') ==
+                        'administrateur')
+                      Padding(
+                        padding:
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                        child: AuthUserStreamWidget(
+                          builder: (context) =>
+                              StreamBuilder<List<TeamsRecord>>(
+                            stream: queryTeamsRecord(
+                              queryBuilder: (teamsRecord) =>
+                                  teamsRecord.where(Filter.or(
+                                Filter(
+                                  'league_value',
+                                  isEqualTo: _model.dropLigueFootValue2,
+                                ),
+                                Filter(
+                                  'league_value',
+                                  isEqualTo: _model.dropLigueBasketValue2,
+                                ),
+                                Filter(
+                                  'league_value',
+                                  isEqualTo: _model.dropLigueTennisValue2,
+                                ),
+                                Filter(
+                                  'league_value',
+                                  isEqualTo: _model.dropLigueFightValue2,
+                                ),
+                                Filter(
+                                  'league_value',
+                                  isEqualTo: _model.dropLigueHockeyValue2,
+                                ),
+                              )),
+                            ),
+                            builder: (context, snapshot) {
+                              // Customize what your widget looks like when it's loading.
+                              if (!snapshot.hasData) {
+                                return Center(
+                                  child: SizedBox(
+                                    width: 50.0,
+                                    height: 50.0,
+                                    child: CircularProgressIndicator(
+                                      valueColor: AlwaysStoppedAnimation<Color>(
+                                        FlutterFlowTheme.of(context).accent4,
+                                      ),
+                                    ),
+                                  ),
+                                );
+                              }
+                              List<TeamsRecord>
+                                  columnTeamsAdminTeamsRecordList =
+                                  snapshot.data!;
+
+                              return Column(
+                                mainAxisSize: MainAxisSize.max,
+                                children: List.generate(
+                                    columnTeamsAdminTeamsRecordList.length,
+                                    (columnTeamsAdminIndex) {
+                                  final columnTeamsAdminTeamsRecord =
+                                      columnTeamsAdminTeamsRecordList[
+                                          columnTeamsAdminIndex];
+                                  return Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            10.0, 0.0, 10.0, 0.0),
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Padding(
+                                              padding: const EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      20.0, 0.0, 0.0, 0.0),
+                                              child: Text(
+                                                columnTeamsAdminTeamsRecord
+                                                    .name,
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                              ),
+                                            ),
+                                            Padding(
+                                              padding: const EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      0.0, 0.0, 35.0, 0.0),
+                                              child: Container(
+                                                width: 55.0,
+                                                height: 40.0,
+                                                decoration: BoxDecoration(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryBackground,
+                                                ),
+                                                child: ClipRRect(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          0.0),
+                                                  child: Image.network(
+                                                    columnTeamsAdminTeamsRecord
+                                                        .logo,
+                                                    width: 300.0,
+                                                    height: 200.0,
+                                                    fit: BoxFit.scaleDown,
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            20.0, 0.0, 0.0, 3.0),
+                                        child: Text(
+                                          columnTeamsAdminTeamsRecord
+                                              .reference.id,
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Poppins',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .warning,
+                                                letterSpacing: 0.0,
+                                              ),
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            20.0, 0.0, 20.0, 20.0),
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            StreamBuilder<
+                                                List<MyNotificationsRecord>>(
+                                              stream:
+                                                  queryMyNotificationsRecord(
+                                                queryBuilder:
+                                                    (myNotificationsRecord) =>
+                                                        myNotificationsRecord
+                                                            .where(
+                                                              'team_ref',
+                                                              isEqualTo:
+                                                                  columnTeamsAdminTeamsRecord
+                                                                      .reference,
+                                                            )
+                                                            .where(
+                                                              'mod_seen',
+                                                              isEqualTo: false,
+                                                            ),
+                                                singleRecord: true,
+                                              ),
+                                              builder: (context, snapshot) {
+                                                // Customize what your widget looks like when it's loading.
+                                                if (!snapshot.hasData) {
+                                                  return Center(
+                                                    child: SizedBox(
+                                                      width: 50.0,
+                                                      height: 50.0,
+                                                      child:
+                                                          CircularProgressIndicator(
+                                                        valueColor:
+                                                            AlwaysStoppedAnimation<
+                                                                Color>(
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .accent4,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  );
+                                                }
+                                                List<MyNotificationsRecord>
+                                                    rowMyNotificationsRecordList =
+                                                    snapshot.data!;
+                                                // Return an empty Container when the item does not exist.
+                                                if (snapshot.data!.isEmpty) {
+                                                  return Container();
+                                                }
+                                                final rowMyNotificationsRecord =
+                                                    rowMyNotificationsRecordList
+                                                            .isNotEmpty
+                                                        ? rowMyNotificationsRecordList
+                                                            .first
+                                                        : null;
+
+                                                return Row(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  children: [
+                                                    if (rowMyNotificationsRecord
+                                                            ?.reference !=
+                                                        null)
+                                                      Padding(
+                                                        padding:
+                                                            const EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    10.0,
+                                                                    0.0,
+                                                                    10.0,
+                                                                    0.0),
+                                                        child: InkWell(
+                                                          splashColor: Colors
+                                                              .transparent,
+                                                          focusColor: Colors
+                                                              .transparent,
+                                                          hoverColor: Colors
+                                                              .transparent,
+                                                          highlightColor: Colors
+                                                              .transparent,
+                                                          onTap: () async {
+                                                            context.pushNamed(
+                                                              'ModTeamNotifsList',
+                                                              queryParameters: {
+                                                                'teamRef':
+                                                                    serializeParam(
+                                                                  columnTeamsAdminTeamsRecord
+                                                                      .reference,
+                                                                  ParamType
+                                                                      .DocumentReference,
+                                                                ),
+                                                              }.withoutNulls,
+                                                            );
+                                                          },
+                                                          child: Icon(
+                                                            Icons
+                                                                .notifications_none,
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .error,
+                                                            size: 30.0,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                  ],
+                                                );
+                                              },
+                                            ),
+                                            Padding(
+                                              padding: const EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      10.0, 0.0, 10.0, 0.0),
+                                              child: InkWell(
+                                                splashColor: Colors.transparent,
+                                                focusColor: Colors.transparent,
+                                                hoverColor: Colors.transparent,
+                                                highlightColor:
+                                                    Colors.transparent,
+                                                onTap: () async {
+                                                  context.pushNamed(
+                                                    'TeamUsersList',
+                                                    queryParameters: {
+                                                      'teamRef': serializeParam(
+                                                        columnTeamsAdminTeamsRecord
+                                                            .reference,
+                                                        ParamType
+                                                            .DocumentReference,
+                                                      ),
+                                                    }.withoutNulls,
+                                                  );
+                                                },
+                                                child: Icon(
+                                                  Icons
+                                                      .supervisor_account_rounded,
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .error,
+                                                  size: 30.0,
+                                                ),
+                                              ),
+                                            ),
+                                            Padding(
+                                              padding: const EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      10.0, 0.0, 10.0, 0.0),
+                                              child: InkWell(
+                                                splashColor: Colors.transparent,
+                                                focusColor: Colors.transparent,
+                                                hoverColor: Colors.transparent,
+                                                highlightColor:
+                                                    Colors.transparent,
+                                                onTap: () async {
+                                                  context.pushNamed(
+                                                    'ModifTeamPage',
+                                                    queryParameters: {
+                                                      'teamRef': serializeParam(
+                                                        columnTeamsAdminTeamsRecord
+                                                            .reference,
+                                                        ParamType
+                                                            .DocumentReference,
+                                                      ),
+                                                    }.withoutNulls,
+                                                  );
+                                                },
+                                                child: Icon(
+                                                  Icons.settings_sharp,
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .error,
+                                                  size: 30.0,
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ],
+                                  );
+                                }),
+                              );
+                            },
+                          ),
+                        ),
+                      ),
+                    if (valueOrDefault(currentUserDocument?.stsocialapp, '') ==
+                        'administrateur')
+                      Padding(
+                        padding:
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                        child: AuthUserStreamWidget(
+                          builder: (context) =>
+                              StreamBuilder<List<TeamsRecord>>(
+                            stream: queryTeamsRecord(
+                              queryBuilder: (teamsRecord) => teamsRecord
+                                  .where(
+                                    'league_value',
+                                    isEqualTo: _model.dropELigueValue,
+                                  )
+                                  .where(
+                                    'sport_value',
+                                    isEqualTo: _model.dropESportsValue,
+                                  )
+                                  .where(
+                                    'division_value',
+                                    isEqualTo: _model.dropEDivisionsValue,
+                                  ),
+                            ),
+                            builder: (context, snapshot) {
+                              // Customize what your widget looks like when it's loading.
+                              if (!snapshot.hasData) {
+                                return Center(
+                                  child: SizedBox(
+                                    width: 50.0,
+                                    height: 50.0,
+                                    child: CircularProgressIndicator(
+                                      valueColor: AlwaysStoppedAnimation<Color>(
+                                        FlutterFlowTheme.of(context).accent4,
+                                      ),
+                                    ),
+                                  ),
+                                );
+                              }
+                              List<TeamsRecord> columnETeamsTeamsRecordList =
+                                  snapshot.data!;
+
+                              return Column(
+                                mainAxisSize: MainAxisSize.max,
+                                children: List.generate(
+                                    columnETeamsTeamsRecordList.length,
+                                    (columnETeamsIndex) {
+                                  final columnETeamsTeamsRecord =
+                                      columnETeamsTeamsRecordList[
+                                          columnETeamsIndex];
+                                  return Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            10.0, 0.0, 10.0, 0.0),
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Padding(
+                                              padding: const EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      20.0, 0.0, 0.0, 0.0),
+                                              child: Text(
+                                                columnETeamsTeamsRecord.name,
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                              ),
+                                            ),
+                                            Padding(
+                                              padding: const EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      0.0, 0.0, 35.0, 0.0),
+                                              child: Container(
+                                                width: 55.0,
+                                                height: 40.0,
+                                                decoration: BoxDecoration(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryBackground,
+                                                ),
+                                                child: ClipRRect(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          0.0),
+                                                  child: Image.network(
+                                                    columnETeamsTeamsRecord
+                                                        .logo,
+                                                    width: 300.0,
+                                                    height: 200.0,
+                                                    fit: BoxFit.scaleDown,
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 0.0, 10.0, 0.0),
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.start,
+                                          children: [
+                                            Align(
+                                              alignment: const AlignmentDirectional(
+                                                  -1.0, 0.0),
+                                              child: Padding(
+                                                padding: const EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        20.0, 0.0, 0.0, 0.0),
+                                                child: Text(
+                                                  columnETeamsTeamsRecord
+                                                      .reference.id,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .warning,
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            20.0, 0.0, 20.0, 20.0),
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            StreamBuilder<
+                                                List<MyNotificationsRecord>>(
+                                              stream:
+                                                  queryMyNotificationsRecord(
+                                                queryBuilder:
+                                                    (myNotificationsRecord) =>
+                                                        myNotificationsRecord
+                                                            .where(
+                                                              'team_ref',
+                                                              isEqualTo:
+                                                                  columnETeamsTeamsRecord
+                                                                      .reference,
+                                                            )
+                                                            .where(
+                                                              'mod_seen',
+                                                              isEqualTo: false,
+                                                            ),
+                                                singleRecord: true,
+                                              ),
+                                              builder: (context, snapshot) {
+                                                // Customize what your widget looks like when it's loading.
+                                                if (!snapshot.hasData) {
+                                                  return Center(
+                                                    child: SizedBox(
+                                                      width: 50.0,
+                                                      height: 50.0,
+                                                      child:
+                                                          CircularProgressIndicator(
+                                                        valueColor:
+                                                            AlwaysStoppedAnimation<
+                                                                Color>(
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .accent4,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  );
+                                                }
+                                                List<MyNotificationsRecord>
+                                                    rowMyNotificationsRecordList =
+                                                    snapshot.data!;
+                                                // Return an empty Container when the item does not exist.
+                                                if (snapshot.data!.isEmpty) {
+                                                  return Container();
+                                                }
+                                                final rowMyNotificationsRecord =
+                                                    rowMyNotificationsRecordList
+                                                            .isNotEmpty
+                                                        ? rowMyNotificationsRecordList
+                                                            .first
+                                                        : null;
+
+                                                return Row(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  children: [
+                                                    if (rowMyNotificationsRecord
+                                                            ?.reference !=
+                                                        null)
+                                                      Padding(
+                                                        padding:
+                                                            const EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    10.0,
+                                                                    0.0,
+                                                                    10.0,
+                                                                    0.0),
+                                                        child: InkWell(
+                                                          splashColor: Colors
+                                                              .transparent,
+                                                          focusColor: Colors
+                                                              .transparent,
+                                                          hoverColor: Colors
+                                                              .transparent,
+                                                          highlightColor: Colors
+                                                              .transparent,
+                                                          onTap: () async {
+                                                            context.pushNamed(
+                                                              'ModTeamNotifsList',
+                                                              queryParameters: {
+                                                                'teamRef':
+                                                                    serializeParam(
+                                                                  columnETeamsTeamsRecord
+                                                                      .reference,
+                                                                  ParamType
+                                                                      .DocumentReference,
+                                                                ),
+                                                              }.withoutNulls,
+                                                            );
+                                                          },
+                                                          child: Icon(
+                                                            Icons
+                                                                .notifications_none,
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .error,
+                                                            size: 30.0,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                  ],
+                                                );
+                                              },
+                                            ),
+                                            Padding(
+                                              padding: const EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      10.0, 0.0, 10.0, 0.0),
+                                              child: InkWell(
+                                                splashColor: Colors.transparent,
+                                                focusColor: Colors.transparent,
+                                                hoverColor: Colors.transparent,
+                                                highlightColor:
+                                                    Colors.transparent,
+                                                onTap: () async {
+                                                  context.pushNamed(
+                                                    'TeamUsersList',
+                                                    queryParameters: {
+                                                      'teamRef': serializeParam(
+                                                        columnETeamsTeamsRecord
+                                                            .reference,
+                                                        ParamType
+                                                            .DocumentReference,
+                                                      ),
+                                                    }.withoutNulls,
+                                                  );
+                                                },
+                                                child: Icon(
+                                                  Icons
+                                                      .supervisor_account_rounded,
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .error,
+                                                  size: 30.0,
+                                                ),
+                                              ),
+                                            ),
+                                            Padding(
+                                              padding: const EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      10.0, 0.0, 10.0, 0.0),
+                                              child: InkWell(
+                                                splashColor: Colors.transparent,
+                                                focusColor: Colors.transparent,
+                                                hoverColor: Colors.transparent,
+                                                highlightColor:
+                                                    Colors.transparent,
+                                                onTap: () async {
+                                                  context.pushNamed(
+                                                    'ModifTeamPage',
+                                                    queryParameters: {
+                                                      'teamRef': serializeParam(
+                                                        columnETeamsTeamsRecord
+                                                            .reference,
+                                                        ParamType
+                                                            .DocumentReference,
+                                                      ),
+                                                    }.withoutNulls,
+                                                  );
+                                                },
+                                                child: Icon(
+                                                  Icons.settings_sharp,
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .error,
+                                                  size: 30.0,
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ],
+                                  );
+                                }),
+                              );
+                            },
+                          ),
+                        ),
+                      ),
                   ],
                 ),
               ),

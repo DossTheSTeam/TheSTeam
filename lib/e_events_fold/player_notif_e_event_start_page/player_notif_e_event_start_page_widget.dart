@@ -3,10 +3,7 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'player_notif_e_event_start_page_model.dart';
 export 'player_notif_e_event_start_page_model.dart';
 
@@ -47,7 +44,7 @@ class _PlayerNotifEEventStartPageWidgetState
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<MyNotificationsRecord>(
-      stream: MyNotificationsRecord.getDocument(widget!.notifRef!),
+      stream: MyNotificationsRecord.getDocument(widget.notifRef!),
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
@@ -77,7 +74,7 @@ class _PlayerNotifEEventStartPageWidgetState
             body: SafeArea(
               top: true,
               child: Padding(
-                padding: EdgeInsets.all(10.0),
+                padding: const EdgeInsets.all(10.0),
                 child: SingleChildScrollView(
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
@@ -89,54 +86,56 @@ class _PlayerNotifEEventStartPageWidgetState
                           Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
-                              InkWell(
-                                splashColor: Colors.transparent,
-                                focusColor: Colors.transparent,
-                                hoverColor: Colors.transparent,
-                                highlightColor: Colors.transparent,
-                                onTap: () async {
-                                  context.pushNamed(
-                                    'MenuPage',
-                                    extra: <String, dynamic>{
-                                      kTransitionInfoKey: TransitionInfo(
-                                        hasTransition: true,
-                                        transitionType:
-                                            PageTransitionType.leftToRight,
-                                        duration: Duration(milliseconds: 400),
-                                      ),
-                                    },
-                                  );
-                                },
-                                child: Icon(
-                                  Icons.menu_rounded,
-                                  color:
-                                      FlutterFlowTheme.of(context).primaryText,
-                                  size: 30.0,
-                                ),
-                              ),
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    10.0, 0.0, 0.0, 0.0),
-                                child: InkWell(
+                              AuthUserStreamWidget(
+                                builder: (context) => InkWell(
                                   splashColor: Colors.transparent,
                                   focusColor: Colors.transparent,
                                   hoverColor: Colors.transparent,
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
-                                    context.safePop();
+                                    context.pushNamed(
+                                      'MenuPage',
+                                      extra: <String, dynamic>{
+                                        kTransitionInfoKey: const TransitionInfo(
+                                          hasTransition: true,
+                                          transitionType:
+                                              PageTransitionType.leftToRight,
+                                          duration: Duration(milliseconds: 400),
+                                        ),
+                                      },
+                                    );
                                   },
                                   child: Icon(
-                                    Icons.arrow_back_ios_new_rounded,
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryText,
+                                    Icons.menu_rounded,
+                                    color: currentUserDocument?.color1,
                                     size: 30.0,
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    10.0, 0.0, 0.0, 0.0),
+                                child: AuthUserStreamWidget(
+                                  builder: (context) => InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      context.safePop();
+                                    },
+                                    child: Icon(
+                                      Icons.arrow_back_ios_new_rounded,
+                                      color: currentUserDocument?.color1,
+                                      size: 30.0,
+                                    ),
                                   ),
                                 ),
                               ),
                             ],
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 20.0, 0.0, 0.0, 0.0),
                             child: Text(
                               'Détails invitation',
@@ -151,14 +150,19 @@ class _PlayerNotifEEventStartPageWidgetState
                           ),
                         ],
                       ),
-                      Divider(
-                        thickness: 1.0,
-                        color: FlutterFlowTheme.of(context).secondaryBackground,
+                      AuthUserStreamWidget(
+                        builder: (context) => Divider(
+                          thickness: 1.0,
+                          color: valueOrDefault<Color>(
+                            currentUserDocument?.color2,
+                            FlutterFlowTheme.of(context).secondaryBackground,
+                          ),
+                        ),
                       ),
                       Align(
-                        alignment: AlignmentDirectional(-1.0, 0.0),
+                        alignment: const AlignmentDirectional(-1.0, 0.0),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 10.0),
                           child: Text(
                             dateTimeFormat(
@@ -199,14 +203,14 @@ class _PlayerNotifEEventStartPageWidgetState
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 5.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     children: [
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             5.0, 0.0, 6.0, 0.0),
                                         child: Container(
                                           width: 65.0,
@@ -264,9 +268,9 @@ class _PlayerNotifEEventStartPageWidgetState
                         ),
                       ),
                       Align(
-                        alignment: AlignmentDirectional(0.0, 0.0),
+                        alignment: const AlignmentDirectional(0.0, 0.0),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 20.0, 0.0, 10.0),
                           child: Text(
                             'Vous invite à jouer pour la rencontre à venir.',
@@ -306,7 +310,7 @@ class _PlayerNotifEEventStartPageWidgetState
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 5.0, 0.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -346,7 +350,7 @@ class _PlayerNotifEEventStartPageWidgetState
                                           ),
                                           child: Align(
                                             alignment:
-                                                AlignmentDirectional(0.0, 0.0),
+                                                const AlignmentDirectional(0.0, 0.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
                                               mainAxisAlignment:
@@ -375,7 +379,7 @@ class _PlayerNotifEEventStartPageWidgetState
                                                 ),
                                                 Align(
                                                   alignment:
-                                                      AlignmentDirectional(
+                                                      const AlignmentDirectional(
                                                           0.0, 0.0),
                                                   child: InkWell(
                                                     splashColor:
@@ -465,7 +469,7 @@ class _PlayerNotifEEventStartPageWidgetState
                                           ),
                                           child: Align(
                                             alignment:
-                                                AlignmentDirectional(0.0, 0.0),
+                                                const AlignmentDirectional(0.0, 0.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
                                               mainAxisAlignment:
@@ -494,7 +498,7 @@ class _PlayerNotifEEventStartPageWidgetState
                                                 ),
                                                 Align(
                                                   alignment:
-                                                      AlignmentDirectional(
+                                                      const AlignmentDirectional(
                                                           0.0, 0.0),
                                                   child: InkWell(
                                                     splashColor:
@@ -548,9 +552,9 @@ class _PlayerNotifEEventStartPageWidgetState
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Align(
-                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    alignment: const AlignmentDirectional(0.0, 0.0),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 20.0, 0.0, 10.0),
                                       child: Text(
                                         'La date et l\'heure restent à définir',
@@ -565,9 +569,9 @@ class _PlayerNotifEEventStartPageWidgetState
                                     ),
                                   ),
                                   Align(
-                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    alignment: const AlignmentDirectional(0.0, 0.0),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 20.0, 0.0, 10.0),
                                       child: Text(
                                         'En acceptant l\'invitation vous serez placés sur la feuille de match, discuter avec vos co-équipés pour connaitre la date de la rencontre à venir.',
@@ -585,9 +589,9 @@ class _PlayerNotifEEventStartPageWidgetState
                                     ),
                                   ),
                                   Align(
-                                    alignment: AlignmentDirectional(0.0, -1.0),
+                                    alignment: const AlignmentDirectional(0.0, -1.0),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 20.0, 0.0, 20.0),
                                       child: FFButtonWidget(
                                         onPressed: () async {
@@ -611,20 +615,20 @@ class _PlayerNotifEEventStartPageWidgetState
                                             ),
                                           });
 
-                                          await widget!.notifRef!.update(
+                                          await widget.notifRef!.update(
                                               createMyNotificationsRecordData(
                                             seen: true,
                                           ));
-                                          await widget!.notifRef!.delete();
+                                          await widget.notifRef!.delete();
                                           context.safePop();
                                         },
                                         text: 'Accepter',
                                         options: FFButtonOptions(
                                           width: 350.0,
                                           height: 50.0,
-                                          padding: EdgeInsets.all(0.0),
+                                          padding: const EdgeInsets.all(0.0),
                                           iconPadding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
                                           color: FlutterFlowTheme.of(context)
                                               .secondaryText,
@@ -639,7 +643,7 @@ class _PlayerNotifEEventStartPageWidgetState
                                                 letterSpacing: 0.0,
                                               ),
                                           elevation: 3.0,
-                                          borderSide: BorderSide(
+                                          borderSide: const BorderSide(
                                             color: Colors.transparent,
                                             width: 1.0,
                                           ),
@@ -656,13 +660,13 @@ class _PlayerNotifEEventStartPageWidgetState
                                     ),
                                   ),
                                   Align(
-                                    alignment: AlignmentDirectional(0.0, -1.0),
+                                    alignment: const AlignmentDirectional(0.0, -1.0),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 40.0, 0.0, 20.0),
                                       child: FFButtonWidget(
                                         onPressed: () async {
-                                          await widget!.notifRef!.update(
+                                          await widget.notifRef!.update(
                                               createMyNotificationsRecordData(
                                             seen: true,
                                           ));
@@ -674,16 +678,16 @@ class _PlayerNotifEEventStartPageWidgetState
                                               },
                                             ),
                                           });
-                                          await widget!.notifRef!.delete();
+                                          await widget.notifRef!.delete();
                                           context.safePop();
                                         },
                                         text: 'Refuser',
                                         options: FFButtonOptions(
                                           width: 350.0,
                                           height: 50.0,
-                                          padding: EdgeInsets.all(0.0),
+                                          padding: const EdgeInsets.all(0.0),
                                           iconPadding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
                                           color: FlutterFlowTheme.of(context)
                                               .error,
@@ -698,7 +702,7 @@ class _PlayerNotifEEventStartPageWidgetState
                                                 letterSpacing: 0.0,
                                               ),
                                           elevation: 3.0,
-                                          borderSide: BorderSide(
+                                          borderSide: const BorderSide(
                                             color: Colors.transparent,
                                             width: 1.0,
                                           ),

@@ -1,4 +1,3 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/firebase_storage/storage.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
@@ -7,10 +6,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/upload_data.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'modif_team_page_model.dart';
 export 'modif_team_page_model.dart';
 
@@ -74,7 +70,7 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<TeamsRecord>(
-      stream: TeamsRecord.getDocument(widget!.teamRef!),
+      stream: TeamsRecord.getDocument(widget.teamRef!),
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
@@ -104,89 +100,91 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
             body: SafeArea(
               top: true,
               child: Align(
-                alignment: AlignmentDirectional(0.0, -1.0),
+                alignment: const AlignmentDirectional(0.0, -1.0),
                 child: Padding(
-                  padding: EdgeInsets.all(10.0),
+                  padding: const EdgeInsets.all(10.0),
                   child: SingleChildScrollView(
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       children: [
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 0.0, 20.0),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              Row(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  InkWell(
+                        Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                InkWell(
+                                  splashColor: Colors.transparent,
+                                  focusColor: Colors.transparent,
+                                  hoverColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
+                                  onTap: () async {
+                                    context.pushNamed(
+                                      'MenuPage',
+                                      extra: <String, dynamic>{
+                                        kTransitionInfoKey: const TransitionInfo(
+                                          hasTransition: true,
+                                          transitionType:
+                                              PageTransitionType.leftToRight,
+                                          duration: Duration(milliseconds: 400),
+                                        ),
+                                      },
+                                    );
+                                  },
+                                  child: Icon(
+                                    Icons.menu_rounded,
+                                    color: modifTeamPageTeamsRecord.color1,
+                                    size: 30.0,
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      10.0, 0.0, 0.0, 0.0),
+                                  child: InkWell(
                                     splashColor: Colors.transparent,
                                     focusColor: Colors.transparent,
                                     hoverColor: Colors.transparent,
                                     highlightColor: Colors.transparent,
                                     onTap: () async {
-                                      context.pushNamed(
-                                        'MenuPage',
-                                        extra: <String, dynamic>{
-                                          kTransitionInfoKey: TransitionInfo(
-                                            hasTransition: true,
-                                            transitionType:
-                                                PageTransitionType.leftToRight,
-                                            duration:
-                                                Duration(milliseconds: 400),
-                                          ),
-                                        },
-                                      );
+                                      context.safePop();
                                     },
                                     child: Icon(
-                                      Icons.menu_rounded,
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
+                                      Icons.arrow_back_ios_new_rounded,
+                                      color: modifTeamPageTeamsRecord.color1,
                                       size: 30.0,
                                     ),
                                   ),
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        10.0, 0.0, 0.0, 0.0),
-                                    child: InkWell(
-                                      splashColor: Colors.transparent,
-                                      focusColor: Colors.transparent,
-                                      hoverColor: Colors.transparent,
-                                      highlightColor: Colors.transparent,
-                                      onTap: () async {
-                                        context.safePop();
-                                      },
-                                      child: Icon(
-                                        Icons.arrow_back_ios_new_rounded,
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryText,
-                                        size: 30.0,
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    50.0, 0.0, 0.0, 0.0),
-                                child: Text(
-                                  'Modifs Team',
-                                  maxLines: 1,
-                                  style: FlutterFlowTheme.of(context)
-                                      .headlineSmall
-                                      .override(
-                                        fontFamily: 'Poppins',
-                                        letterSpacing: 0.0,
-                                      ),
                                 ),
+                              ],
+                            ),
+                            Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  50.0, 0.0, 0.0, 0.0),
+                              child: Text(
+                                'Modifs Team',
+                                maxLines: 1,
+                                style: FlutterFlowTheme.of(context)
+                                    .headlineSmall
+                                    .override(
+                                      fontFamily: 'Poppins',
+                                      letterSpacing: 0.0,
+                                    ),
                               ),
-                            ],
-                          ),
+                            ),
+                          ],
+                        ),
+                        Text(
+                          modifTeamPageTeamsRecord.reference.id,
+                          style:
+                              FlutterFlowTheme.of(context).bodyMedium.override(
+                                    fontFamily: 'Poppins',
+                                    color: FlutterFlowTheme.of(context).warning,
+                                    letterSpacing: 0.0,
+                                  ),
                         ),
                         Align(
-                          alignment: AlignmentDirectional(-1.0, 0.0),
+                          alignment: const AlignmentDirectional(-1.0, 0.0),
                           child: Text(
                             'Modifier le nom',
                             maxLines: 1,
@@ -199,13 +197,13 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 20.0, 0.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 6.0, 0.0),
                                 child: Container(
                                   width: 65.0,
@@ -215,7 +213,7 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                         .primaryBackground,
                                   ),
                                   child: Padding(
-                                    padding: EdgeInsets.all(3.0),
+                                    padding: const EdgeInsets.all(3.0),
                                     child: ClipRRect(
                                       borderRadius: BorderRadius.circular(0.0),
                                       child: Image.network(
@@ -235,6 +233,7 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                     .titleSmall
                                     .override(
                                       fontFamily: 'Poppins',
+                                      color: modifTeamPageTeamsRecord.color1,
                                       letterSpacing: 0.0,
                                     ),
                               ),
@@ -246,7 +245,7 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                           children: [
                             Expanded(
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     8.0, 0.0, 8.0, 0.0),
                                 child: TextFormField(
                                   controller:
@@ -310,9 +309,9 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                           ],
                         ),
                         Align(
-                          alignment: AlignmentDirectional(-1.0, 0.0),
+                          alignment: const AlignmentDirectional(-1.0, 0.0),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 70.0, 20.0, 0.0, 0.0),
                             child: Text(
                               modifTeamPageTeamsRecord.value,
@@ -331,7 +330,7 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                           children: [
                             Expanded(
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     8.0, 5.0, 8.0, 0.0),
                                 child: TextFormField(
                                   controller:
@@ -395,20 +394,20 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                           ],
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 20.0, 0.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Align(
-                                alignment: AlignmentDirectional(0.0, 0.0),
+                                alignment: const AlignmentDirectional(0.0, 0.0),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 20.0, 0.0, 16.0),
                                   child: FFButtonWidget(
                                     onPressed: () async {
-                                      await widget!.teamRef!
+                                      await widget.teamRef!
                                           .update(createTeamsRecordData(
                                         name: _model
                                             .teamNameFieldTextController.text,
@@ -426,10 +425,10 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                     options: FFButtonOptions(
                                       width: 130.0,
                                       height: 40.0,
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 0.0),
                                       iconPadding:
-                                          EdgeInsetsDirectional.fromSTEB(
+                                          const EdgeInsetsDirectional.fromSTEB(
                                               0.0, 0.0, 0.0, 0.0),
                                       color: FlutterFlowTheme.of(context)
                                           .secondaryBackground,
@@ -442,7 +441,7 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                             letterSpacing: 0.0,
                                           ),
                                       elevation: 3.0,
-                                      borderSide: BorderSide(
+                                      borderSide: const BorderSide(
                                         color: Colors.transparent,
                                         width: 1.0,
                                       ),
@@ -461,11 +460,356 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                         ),
                         Divider(
                           thickness: 2.0,
-                          color:
-                              FlutterFlowTheme.of(context).secondaryBackground,
+                          color: modifTeamPageTeamsRecord.color2,
+                        ),
+                        Text(
+                          'Changer les couleurs',
+                          maxLines: 1,
+                          style: FlutterFlowTheme.of(context)
+                              .headlineSmall
+                              .override(
+                                fontFamily: 'Poppins',
+                                letterSpacing: 0.0,
+                              ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              0.0, 10.0, 0.0, 0.0),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Align(
+                                alignment: const AlignmentDirectional(0.0, 0.0),
+                                child: Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      10.0, 0.0, 0.0, 0.0),
+                                  child: Text(
+                                    'Couleur 1...',
+                                    textAlign: TextAlign.center,
+                                    maxLines: 6,
+                                    style: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                          letterSpacing: 0.0,
+                                        ),
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    10.0, 0.0, 20.0, 0.0),
+                                child: FlutterFlowDropDown<String>(
+                                  controller:
+                                      _model.dropColor1ValueController1 ??=
+                                          FormFieldController<String>(
+                                    _model.dropColor1Value1 ??= '',
+                                  ),
+                                  options: List<String>.from([
+                                    '#FFFF00',
+                                    '#00FF00',
+                                    '#FFB6C1',
+                                    '#00FFFF',
+                                    '#6CABDD',
+                                    '#FF00FF',
+                                    '#FF8C00',
+                                    '#FF0000',
+                                    '#9370DB',
+                                    '#0000FF',
+                                    '#3CB371',
+                                    '#008B8B',
+                                    '#008000',
+                                    '#0000CD',
+                                    '#8B008B',
+                                    '#DC143C',
+                                    '#A0522D',
+                                    '#808080',
+                                    '#C0C0C0',
+                                    '#FFD700',
+                                    '#B22222'
+                                  ]),
+                                  optionLabels: const [
+                                    'Jaune',
+                                    'Vert 1',
+                                    'Rose',
+                                    'Cyan 1',
+                                    'Ciel',
+                                    'Magenta',
+                                    'Orange',
+                                    'Rouge 1',
+                                    'Violet',
+                                    'Bleu 1',
+                                    'Vert 2',
+                                    'Cyan 2',
+                                    'Vert 3',
+                                    'Bleu 2',
+                                    'Magenta 2',
+                                    'Rouge 2',
+                                    'Marron',
+                                    'Gris 2',
+                                    'Gris 1',
+                                    'Gold',
+                                    'Rouge 3'
+                                  ],
+                                  onChanged: (val) => safeSetState(
+                                      () => _model.dropColor1Value1 = val),
+                                  width: 150.0,
+                                  height: 40.0,
+                                  textStyle: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Poppins',
+                                        letterSpacing: 0.0,
+                                      ),
+                                  hintText: 'Couleurs',
+                                  icon: Icon(
+                                    Icons.keyboard_arrow_down_rounded,
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryText,
+                                    size: 24.0,
+                                  ),
+                                  fillColor: FlutterFlowTheme.of(context)
+                                      .primaryBackground,
+                                  elevation: 2.0,
+                                  borderColor: Colors.transparent,
+                                  borderWidth: 0.0,
+                                  borderRadius: 8.0,
+                                  margin: const EdgeInsetsDirectional.fromSTEB(
+                                      12.0, 0.0, 12.0, 0.0),
+                                  hidesUnderline: true,
+                                  isOverButton: false,
+                                  isSearchable: false,
+                                  isMultiSelect: false,
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 10.0, 0.0),
+                                child: InkWell(
+                                  splashColor: Colors.transparent,
+                                  focusColor: Colors.transparent,
+                                  hoverColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
+                                  onTap: () async {
+                                    await modifTeamPageTeamsRecord.reference
+                                        .update(createTeamsRecordData(
+                                      color1: colorFromCssString(
+                                        _model.dropColor1Value1!,
+                                        defaultColor: Colors.black,
+                                      ),
+                                    ));
+                                  },
+                                  child: Icon(
+                                    Icons.send_rounded,
+                                    color: colorFromCssString(
+                                      _model.dropColor1Value1!,
+                                      defaultColor: FlutterFlowTheme.of(context)
+                                          .secondaryText,
+                                    ),
+                                    size: 24.0,
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    10.0, 0.0, 0.0, 0.0),
+                                child: InkWell(
+                                  splashColor: Colors.transparent,
+                                  focusColor: Colors.transparent,
+                                  hoverColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
+                                  onTap: () async {
+                                    await modifTeamPageTeamsRecord.reference
+                                        .update({
+                                      ...mapToFirestore(
+                                        {
+                                          'color1': FieldValue.delete(),
+                                        },
+                                      ),
+                                    });
+                                  },
+                                  child: Icon(
+                                    Icons.delete_forever_rounded,
+                                    color: FlutterFlowTheme.of(context).error,
+                                    size: 30.0,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              0.0, 10.0, 0.0, 0.0),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Align(
+                                alignment: const AlignmentDirectional(0.0, 0.0),
+                                child: Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      10.0, 0.0, 0.0, 0.0),
+                                  child: Text(
+                                    'Couleur 2..',
+                                    textAlign: TextAlign.center,
+                                    maxLines: 6,
+                                    style: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                          letterSpacing: 0.0,
+                                        ),
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    10.0, 0.0, 20.0, 0.0),
+                                child: FlutterFlowDropDown<String>(
+                                  controller:
+                                      _model.dropColor1ValueController2 ??=
+                                          FormFieldController<String>(
+                                    _model.dropColor1Value2 ??= '',
+                                  ),
+                                  options: List<String>.from([
+                                    '#FFFF00',
+                                    '#00FF00',
+                                    '#FFB6C1',
+                                    '#00FFFF',
+                                    '#6CABDD',
+                                    '#FF00FF',
+                                    '#FF8C00',
+                                    '#FF0000',
+                                    '#9370DB',
+                                    '#0000FF',
+                                    '#3CB371',
+                                    '#008B8B',
+                                    '#008000',
+                                    '#0000CD',
+                                    '#8B008B',
+                                    '#DC143C',
+                                    '#A0522D',
+                                    '#808080',
+                                    '#C0C0C0',
+                                    '#FFD700',
+                                    '#B22222'
+                                  ]),
+                                  optionLabels: const [
+                                    'Jaune',
+                                    'Vert 1',
+                                    'Rose',
+                                    'Cyan 1',
+                                    'Ciel',
+                                    'Magenta',
+                                    'Orange',
+                                    'Rouge 1',
+                                    'Violet',
+                                    'Bleu 1',
+                                    'Vert 2',
+                                    'Cyan 2',
+                                    'Vert 3',
+                                    'Bleu 2',
+                                    'Magenta 2',
+                                    'Rouge 2',
+                                    'Marron',
+                                    'Gris 2',
+                                    'Gris 1',
+                                    'Gold',
+                                    'Rouge 3'
+                                  ],
+                                  onChanged: (val) => safeSetState(
+                                      () => _model.dropColor1Value2 = val),
+                                  width: 150.0,
+                                  height: 40.0,
+                                  textStyle: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Poppins',
+                                        letterSpacing: 0.0,
+                                      ),
+                                  hintText: 'Couleurs',
+                                  icon: Icon(
+                                    Icons.keyboard_arrow_down_rounded,
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryText,
+                                    size: 24.0,
+                                  ),
+                                  fillColor: FlutterFlowTheme.of(context)
+                                      .primaryBackground,
+                                  elevation: 2.0,
+                                  borderColor: Colors.transparent,
+                                  borderWidth: 0.0,
+                                  borderRadius: 8.0,
+                                  margin: const EdgeInsetsDirectional.fromSTEB(
+                                      12.0, 0.0, 12.0, 0.0),
+                                  hidesUnderline: true,
+                                  isOverButton: false,
+                                  isSearchable: false,
+                                  isMultiSelect: false,
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 10.0, 0.0),
+                                child: InkWell(
+                                  splashColor: Colors.transparent,
+                                  focusColor: Colors.transparent,
+                                  hoverColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
+                                  onTap: () async {
+                                    await modifTeamPageTeamsRecord.reference
+                                        .update(createTeamsRecordData(
+                                      color2: colorFromCssString(
+                                        _model.dropColor1Value2!,
+                                        defaultColor: Colors.black,
+                                      ),
+                                    ));
+                                  },
+                                  child: Icon(
+                                    Icons.send_rounded,
+                                    color: colorFromCssString(
+                                      _model.dropColor1Value2!,
+                                      defaultColor: FlutterFlowTheme.of(context)
+                                          .secondaryText,
+                                    ),
+                                    size: 24.0,
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    10.0, 0.0, 0.0, 0.0),
+                                child: InkWell(
+                                  splashColor: Colors.transparent,
+                                  focusColor: Colors.transparent,
+                                  hoverColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
+                                  onTap: () async {
+                                    await modifTeamPageTeamsRecord.reference
+                                        .update({
+                                      ...mapToFirestore(
+                                        {
+                                          'color2': FieldValue.delete(),
+                                        },
+                                      ),
+                                    });
+                                  },
+                                  child: Icon(
+                                    Icons.delete_forever_rounded,
+                                    color: FlutterFlowTheme.of(context).error,
+                                    size: 30.0,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 20.0, 0.0, 0.0),
                           child: Text(
                             'Changer le logo',
@@ -479,14 +823,14 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 10.0, 0.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 6.0, 0.0),
                                 child: Container(
                                   width: 65.0,
@@ -496,7 +840,7 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                         .primaryBackground,
                                   ),
                                   child: Padding(
-                                    padding: EdgeInsets.all(3.0),
+                                    padding: const EdgeInsets.all(3.0),
                                     child: ClipRRect(
                                       borderRadius: BorderRadius.circular(0.0),
                                       child: Image.network(
@@ -575,8 +919,7 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                 },
                                 child: Icon(
                                   Icons.image_search_outlined,
-                                  color:
-                                      FlutterFlowTheme.of(context).primaryText,
+                                  color: modifTeamPageTeamsRecord.color1,
                                   size: 30.0,
                                 ),
                               ),
@@ -584,20 +927,20 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 20.0, 0.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Align(
-                                alignment: AlignmentDirectional(0.0, 0.0),
+                                alignment: const AlignmentDirectional(0.0, 0.0),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 20.0, 0.0, 16.0),
                                   child: FFButtonWidget(
                                     onPressed: () async {
-                                      await widget!.teamRef!
+                                      await widget.teamRef!
                                           .update(createTeamsRecordData(
                                         logo: _model.uploadedFileUrl,
                                       ));
@@ -607,10 +950,10 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                     options: FFButtonOptions(
                                       width: 130.0,
                                       height: 40.0,
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 0.0),
                                       iconPadding:
-                                          EdgeInsetsDirectional.fromSTEB(
+                                          const EdgeInsetsDirectional.fromSTEB(
                                               0.0, 0.0, 0.0, 0.0),
                                       color: FlutterFlowTheme.of(context)
                                           .secondaryBackground,
@@ -623,7 +966,7 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                             letterSpacing: 0.0,
                                           ),
                                       elevation: 3.0,
-                                      borderSide: BorderSide(
+                                      borderSide: const BorderSide(
                                         color: Colors.transparent,
                                         width: 1.0,
                                       ),
@@ -642,13 +985,12 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                         ),
                         Divider(
                           thickness: 2.0,
-                          color:
-                              FlutterFlowTheme.of(context).secondaryBackground,
+                          color: modifTeamPageTeamsRecord.color2,
                         ),
                         Align(
-                          alignment: AlignmentDirectional(-1.0, 0.0),
+                          alignment: const AlignmentDirectional(-1.0, 0.0),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 20.0, 0.0, 0.0),
                             child: Text(
                               'Modifs Ligue',
@@ -663,7 +1005,7 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 10.0, 0.0, 10.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -680,7 +1022,7 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                     ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     40.0, 0.0, 0.0, 0.0),
                                 child: InkWell(
                                   splashColor: Colors.transparent,
@@ -688,7 +1030,7 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                   hoverColor: Colors.transparent,
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
-                                    await widget!.teamRef!.update({
+                                    await widget.teamRef!.update({
                                       ...mapToFirestore(
                                         {
                                           'league_value': FieldValue.delete(),
@@ -710,7 +1052,7 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 5.0),
                               child: FlutterFlowDropDown<String>(
                                 controller: _model.dropLigueValueController ??=
@@ -727,9 +1069,15 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                   'pays.football',
                                   'nba',
                                   'atp',
-                                  'wta'
+                                  'wta',
+                                  'boxe',
+                                  'mma',
+                                  'gazon.elite.h',
+                                  'gazon.elite.f',
+                                  'salle.elite.h',
+                                  'salle.elite.f'
                                 ]),
-                                optionLabels: [
+                                optionLabels: const [
                                   'Premier League',
                                   'LaLiga',
                                   'Bundesliga',
@@ -739,7 +1087,13 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                   'Pays Football',
                                   'NBA',
                                   'ATP',
-                                  'WTA'
+                                  'WTA',
+                                  'Boxe',
+                                  'MMA',
+                                  'Gazon Elite H',
+                                  'Gazon Elite H',
+                                  'Salle Elite H',
+                                  'salle Elite F'
                                 ],
                                 onChanged: (val) => safeSetState(
                                     () => _model.dropLigueValue = val),
@@ -764,7 +1118,7 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                 borderColor: Colors.transparent,
                                 borderWidth: 0.0,
                                 borderRadius: 8.0,
-                                margin: EdgeInsetsDirectional.fromSTEB(
+                                margin: const EdgeInsetsDirectional.fromSTEB(
                                     12.0, 0.0, 12.0, 0.0),
                                 hidesUnderline: true,
                                 isOverButton: false,
@@ -773,7 +1127,7 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   40.0, 0.0, 0.0, 0.0),
                               child: InkWell(
                                 splashColor: Colors.transparent,
@@ -781,15 +1135,14 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                 hoverColor: Colors.transparent,
                                 highlightColor: Colors.transparent,
                                 onTap: () async {
-                                  await widget!.teamRef!
+                                  await widget.teamRef!
                                       .update(createTeamsRecordData(
                                     leagueValue: _model.dropLigueValue,
                                   ));
                                 },
                                 child: Icon(
                                   Icons.send_rounded,
-                                  color:
-                                      FlutterFlowTheme.of(context).primaryText,
+                                  color: modifTeamPageTeamsRecord.color1,
                                   size: 30.0,
                                 ),
                               ),
@@ -798,13 +1151,12 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                         ),
                         Divider(
                           thickness: 2.0,
-                          color:
-                              FlutterFlowTheme.of(context).secondaryBackground,
+                          color: modifTeamPageTeamsRecord.color2,
                         ),
                         Align(
-                          alignment: AlignmentDirectional(-1.0, 0.0),
+                          alignment: const AlignmentDirectional(-1.0, 0.0),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 20.0, 0.0, 0.0),
                             child: Text(
                               'Modifs Coupe',
@@ -819,7 +1171,7 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 10.0, 0.0, 10.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -836,7 +1188,7 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                     ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     40.0, 0.0, 0.0, 0.0),
                                 child: InkWell(
                                   splashColor: Colors.transparent,
@@ -844,7 +1196,7 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                   hoverColor: Colors.transparent,
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
-                                    await widget!.teamRef!.update({
+                                    await widget.teamRef!.update({
                                       ...mapToFirestore(
                                         {
                                           'additional_league':
@@ -867,7 +1219,7 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 5.0),
                               child: FlutterFlowDropDown<String>(
                                 controller:
@@ -880,7 +1232,7 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                   'europa.league',
                                   'conference.league'
                                 ]),
-                                optionLabels: [
+                                optionLabels: const [
                                   'Champions League',
                                   'Europa League',
                                   'Conference League'
@@ -908,7 +1260,7 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                 borderColor: Colors.transparent,
                                 borderWidth: 0.0,
                                 borderRadius: 8.0,
-                                margin: EdgeInsetsDirectional.fromSTEB(
+                                margin: const EdgeInsetsDirectional.fromSTEB(
                                     12.0, 0.0, 12.0, 0.0),
                                 hidesUnderline: true,
                                 isOverButton: false,
@@ -917,7 +1269,7 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   40.0, 0.0, 0.0, 0.0),
                               child: InkWell(
                                 splashColor: Colors.transparent,
@@ -925,15 +1277,14 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                 hoverColor: Colors.transparent,
                                 highlightColor: Colors.transparent,
                                 onTap: () async {
-                                  await widget!.teamRef!
+                                  await widget.teamRef!
                                       .update(createTeamsRecordData(
                                     additionalLeague: _model.dropFootCupValue,
                                   ));
                                 },
                                 child: Icon(
                                   Icons.send_rounded,
-                                  color:
-                                      FlutterFlowTheme.of(context).primaryText,
+                                  color: modifTeamPageTeamsRecord.color1,
                                   size: 30.0,
                                 ),
                               ),
@@ -942,13 +1293,12 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                         ),
                         Divider(
                           thickness: 2.0,
-                          color:
-                              FlutterFlowTheme.of(context).secondaryBackground,
+                          color: modifTeamPageTeamsRecord.color2,
                         ),
                         Align(
-                          alignment: AlignmentDirectional(-1.0, 0.0),
+                          alignment: const AlignmentDirectional(-1.0, 0.0),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 20.0, 0.0, 10.0),
                             child: Text(
                               'Modifs Stats',
@@ -967,7 +1317,7 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Align(
-                              alignment: AlignmentDirectional(-1.0, 0.0),
+                              alignment: const AlignmentDirectional(-1.0, 0.0),
                               child: Text(
                                 'Total Matchs',
                                 maxLines: 1,
@@ -980,7 +1330,7 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                               ),
                             ),
                             Align(
-                              alignment: AlignmentDirectional(-1.0, 0.0),
+                              alignment: const AlignmentDirectional(-1.0, 0.0),
                               child: Text(
                                 'Total Points',
                                 maxLines: 1,
@@ -995,7 +1345,7 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                           ],
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 10.0, 0.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -1005,9 +1355,9 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Align(
-                                    alignment: AlignmentDirectional(-1.0, 0.0),
+                                    alignment: const AlignmentDirectional(-1.0, 0.0),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           5.0, 0.0, 0.0, 0.0),
                                       child: Text(
                                         valueOrDefault<String>(
@@ -1029,7 +1379,7 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         5.0, 0.0, 5.0, 0.0),
                                     child: Container(
                                       width: 70.0,
@@ -1041,7 +1391,7 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                             BorderRadius.circular(0.0),
                                       ),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             8.0, 0.0, 8.0, 0.0),
                                         child: TextFormField(
                                           controller: _model
@@ -1118,7 +1468,7 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         5.0, 0.0, 0.0, 0.0),
                                     child: InkWell(
                                       splashColor: Colors.transparent,
@@ -1126,7 +1476,7 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                       hoverColor: Colors.transparent,
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
-                                        await widget!.teamRef!
+                                        await widget.teamRef!
                                             .update(createTeamsRecordData(
                                           totalGames: int.tryParse(_model
                                               .numEventsFieldTextController
@@ -1147,9 +1497,9 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Align(
-                                    alignment: AlignmentDirectional(-1.0, 0.0),
+                                    alignment: const AlignmentDirectional(-1.0, 0.0),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           5.0, 0.0, 0.0, 0.0),
                                       child: Text(
                                         valueOrDefault<String>(
@@ -1171,7 +1521,7 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         5.0, 0.0, 5.0, 0.0),
                                     child: Container(
                                       width: 70.0,
@@ -1183,7 +1533,7 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                             BorderRadius.circular(0.0),
                                       ),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             8.0, 0.0, 8.0, 0.0),
                                         child: TextFormField(
                                           controller:
@@ -1260,7 +1610,7 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         5.0, 0.0, 0.0, 0.0),
                                     child: InkWell(
                                       splashColor: Colors.transparent,
@@ -1268,7 +1618,7 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                       hoverColor: Colors.transparent,
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
-                                        await widget!.teamRef!
+                                        await widget.teamRef!
                                             .update(createTeamsRecordData(
                                           points: int.tryParse(_model
                                               .pointsFieldTextController.text),
@@ -1293,14 +1643,14 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                               FlutterFlowTheme.of(context).secondaryBackground,
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 5.0, 0.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Align(
-                                alignment: AlignmentDirectional(-1.0, 0.0),
+                                alignment: const AlignmentDirectional(-1.0, 0.0),
                                 child: Text(
                                   'Total Wins',
                                   maxLines: 1,
@@ -1313,7 +1663,7 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                 ),
                               ),
                               Align(
-                                alignment: AlignmentDirectional(-1.0, 0.0),
+                                alignment: const AlignmentDirectional(-1.0, 0.0),
                                 child: Text(
                                   'Total Looses',
                                   maxLines: 1,
@@ -1329,7 +1679,7 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 10.0, 0.0, 10.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -1339,9 +1689,9 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Align(
-                                    alignment: AlignmentDirectional(-1.0, 0.0),
+                                    alignment: const AlignmentDirectional(-1.0, 0.0),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           5.0, 0.0, 0.0, 0.0),
                                       child: Text(
                                         valueOrDefault<String>(
@@ -1363,7 +1713,7 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         5.0, 0.0, 5.0, 0.0),
                                     child: Container(
                                       width: 70.0,
@@ -1375,7 +1725,7 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                             BorderRadius.circular(0.0),
                                       ),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             8.0, 0.0, 8.0, 0.0),
                                         child: TextFormField(
                                           controller:
@@ -1451,7 +1801,7 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         5.0, 0.0, 0.0, 0.0),
                                     child: InkWell(
                                       splashColor: Colors.transparent,
@@ -1459,7 +1809,7 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                       hoverColor: Colors.transparent,
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
-                                        await widget!.teamRef!
+                                        await widget.teamRef!
                                             .update(createTeamsRecordData(
                                           wins: int.tryParse(_model
                                               .winsFieldTextController.text),
@@ -1479,9 +1829,9 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Align(
-                                    alignment: AlignmentDirectional(-1.0, 0.0),
+                                    alignment: const AlignmentDirectional(-1.0, 0.0),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           5.0, 0.0, 0.0, 0.0),
                                       child: Text(
                                         valueOrDefault<String>(
@@ -1503,7 +1853,7 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         5.0, 0.0, 5.0, 0.0),
                                     child: Container(
                                       width: 70.0,
@@ -1515,7 +1865,7 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                             BorderRadius.circular(0.0),
                                       ),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             8.0, 0.0, 8.0, 0.0),
                                         child: TextFormField(
                                           controller:
@@ -1592,7 +1942,7 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         5.0, 0.0, 0.0, 0.0),
                                     child: InkWell(
                                       splashColor: Colors.transparent,
@@ -1600,7 +1950,7 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                       hoverColor: Colors.transparent,
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
-                                        await widget!.teamRef!
+                                        await widget.teamRef!
                                             .update(createTeamsRecordData(
                                           looses: int.tryParse(_model
                                               .loosesFieldTextController.text),
@@ -1625,14 +1975,14 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                               FlutterFlowTheme.of(context).secondaryBackground,
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 10.0, 0.0, 10.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Align(
-                                alignment: AlignmentDirectional(-1.0, 0.0),
+                                alignment: const AlignmentDirectional(-1.0, 0.0),
                                 child: Text(
                                   'Total  Matchs Nul',
                                   maxLines: 1,
@@ -1654,10 +2004,10 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                     children: [
                                       Align(
                                         alignment:
-                                            AlignmentDirectional(-1.0, 0.0),
+                                            const AlignmentDirectional(-1.0, 0.0),
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   5.0, 0.0, 0.0, 0.0),
                                           child: Text(
                                             valueOrDefault<String>(
@@ -1679,7 +2029,7 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             5.0, 0.0, 5.0, 0.0),
                                         child: Container(
                                           width: 70.0,
@@ -1692,7 +2042,7 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                           ),
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     8.0, 0.0, 8.0, 0.0),
                                             child: TextFormField(
                                               controller: _model
@@ -1778,7 +2128,7 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             5.0, 0.0, 0.0, 0.0),
                                         child: InkWell(
                                           splashColor: Colors.transparent,
@@ -1786,7 +2136,7 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                           hoverColor: Colors.transparent,
                                           highlightColor: Colors.transparent,
                                           onTap: () async {
-                                            await widget!.teamRef!
+                                            await widget.teamRef!
                                                 .update(createTeamsRecordData(
                                               draws: int.tryParse(_model
                                                   .drawsFieldTextController
@@ -1818,7 +2168,7 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Align(
-                              alignment: AlignmentDirectional(-1.0, 0.0),
+                              alignment: const AlignmentDirectional(-1.0, 0.0),
                               child: Text(
                                 'Total buts mis',
                                 maxLines: 1,
@@ -1831,7 +2181,7 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                               ),
                             ),
                             Align(
-                              alignment: AlignmentDirectional(-1.0, 0.0),
+                              alignment: const AlignmentDirectional(-1.0, 0.0),
                               child: Text(
                                 'Total buts pris',
                                 maxLines: 1,
@@ -1846,7 +2196,7 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                           ],
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 10.0, 0.0, 10.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -1856,9 +2206,9 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Align(
-                                    alignment: AlignmentDirectional(-1.0, 0.0),
+                                    alignment: const AlignmentDirectional(-1.0, 0.0),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           5.0, 0.0, 0.0, 0.0),
                                       child: Text(
                                         valueOrDefault<String>(
@@ -1880,7 +2230,7 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         5.0, 0.0, 5.0, 0.0),
                                     child: Container(
                                       width: 70.0,
@@ -1892,7 +2242,7 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                             BorderRadius.circular(0.0),
                                       ),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             8.0, 0.0, 8.0, 0.0),
                                         child: TextFormField(
                                           controller:
@@ -1969,7 +2319,7 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         5.0, 0.0, 0.0, 0.0),
                                     child: InkWell(
                                       splashColor: Colors.transparent,
@@ -1977,7 +2327,7 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                       hoverColor: Colors.transparent,
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
-                                        await widget!.teamRef!
+                                        await widget.teamRef!
                                             .update(createTeamsRecordData(
                                           goalsPointsIn: int.tryParse(_model
                                               .goalsInFieldTextController.text),
@@ -1997,9 +2347,9 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Align(
-                                    alignment: AlignmentDirectional(-1.0, 0.0),
+                                    alignment: const AlignmentDirectional(-1.0, 0.0),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           5.0, 0.0, 0.0, 0.0),
                                       child: Text(
                                         valueOrDefault<String>(
@@ -2022,7 +2372,7 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         5.0, 0.0, 5.0, 0.0),
                                     child: Container(
                                       width: 70.0,
@@ -2034,7 +2384,7 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                             BorderRadius.circular(0.0),
                                       ),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             8.0, 0.0, 8.0, 0.0),
                                         child: TextFormField(
                                           controller: _model
@@ -2111,7 +2461,7 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         5.0, 0.0, 0.0, 0.0),
                                     child: InkWell(
                                       splashColor: Colors.transparent,
@@ -2119,7 +2469,7 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                       hoverColor: Colors.transparent,
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
-                                        await widget!.teamRef!
+                                        await widget.teamRef!
                                             .update(createTeamsRecordData(
                                           goalsPointsOut: int.tryParse(_model
                                               .goalsOutFieldTextController
@@ -2145,13 +2495,13 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                               FlutterFlowTheme.of(context).secondaryBackground,
                         ),
                         Align(
-                          alignment: AlignmentDirectional(1.0, 0.0),
+                          alignment: const AlignmentDirectional(1.0, 0.0),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 100.0, 0.0, 16.0),
                             child: FFButtonWidget(
                               onPressed: () async {
-                                await widget!.teamRef!
+                                await widget.teamRef!
                                     .update(createTeamsRecordData(
                                   totalGames: 0,
                                   wins: 0,
@@ -2167,9 +2517,9 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                               options: FFButtonOptions(
                                 width: 130.0,
                                 height: 40.0,
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
-                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: FlutterFlowTheme.of(context).error,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -2181,7 +2531,7 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                       letterSpacing: 0.0,
                                     ),
                                 elevation: 3.0,
-                                borderSide: BorderSide(
+                                borderSide: const BorderSide(
                                   color: Colors.transparent,
                                   width: 1.0,
                                 ),
@@ -2194,22 +2544,22 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                           ),
                         ),
                         Align(
-                          alignment: AlignmentDirectional(1.0, 0.0),
+                          alignment: const AlignmentDirectional(1.0, 0.0),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 100.0, 0.0, 16.0),
                             child: FFButtonWidget(
                               onPressed: () async {
-                                await widget!.teamRef!.delete();
+                                await widget.teamRef!.delete();
                                 context.safePop();
                               },
                               text: 'Supprimer',
                               options: FFButtonOptions(
                                 width: 130.0,
                                 height: 40.0,
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
-                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: FlutterFlowTheme.of(context).error,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -2221,7 +2571,7 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                       letterSpacing: 0.0,
                                     ),
                                 elevation: 3.0,
-                                borderSide: BorderSide(
+                                borderSide: const BorderSide(
                                   color: Colors.transparent,
                                   width: 1.0,
                                 ),

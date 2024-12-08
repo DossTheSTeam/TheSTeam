@@ -6,10 +6,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'red_card_post_comm_page_model.dart';
 export 'red_card_post_comm_page_model.dart';
 
@@ -50,7 +47,7 @@ class _RedCardPostCommPageWidgetState extends State<RedCardPostCommPageWidget> {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<PostMessagesRecord>(
-      stream: PostMessagesRecord.getDocument(widget!.commRef!),
+      stream: PostMessagesRecord.getDocument(widget.commRef!),
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
@@ -80,9 +77,9 @@ class _RedCardPostCommPageWidgetState extends State<RedCardPostCommPageWidget> {
             body: SafeArea(
               top: true,
               child: Align(
-                alignment: AlignmentDirectional(0.0, -1.0),
+                alignment: const AlignmentDirectional(0.0, -1.0),
                 child: Padding(
-                  padding: EdgeInsets.all(10.0),
+                  padding: const EdgeInsets.all(10.0),
                   child: SingleChildScrollView(
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
@@ -103,7 +100,7 @@ class _RedCardPostCommPageWidgetState extends State<RedCardPostCommPageWidget> {
                                     context.pushNamed(
                                       'MenuPage',
                                       extra: <String, dynamic>{
-                                        kTransitionInfoKey: TransitionInfo(
+                                        kTransitionInfoKey: const TransitionInfo(
                                           hasTransition: true,
                                           transitionType:
                                               PageTransitionType.leftToRight,
@@ -120,7 +117,7 @@ class _RedCardPostCommPageWidgetState extends State<RedCardPostCommPageWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       10.0, 0.0, 0.0, 0.0),
                                   child: InkWell(
                                     splashColor: Colors.transparent,
@@ -141,7 +138,7 @@ class _RedCardPostCommPageWidgetState extends State<RedCardPostCommPageWidget> {
                               ],
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   30.0, 0.0, 0.0, 0.0),
                               child: Text(
                                 'Appel à la VAR',
@@ -157,9 +154,9 @@ class _RedCardPostCommPageWidgetState extends State<RedCardPostCommPageWidget> {
                           ],
                         ),
                         Align(
-                          alignment: AlignmentDirectional(-1.0, 0.0),
+                          alignment: const AlignmentDirectional(-1.0, 0.0),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 10.0, 20.0, 10.0, 10.0),
                             child: Text(
                               'Coupable sous vos yeux d\'une faute grossière.',
@@ -174,9 +171,9 @@ class _RedCardPostCommPageWidgetState extends State<RedCardPostCommPageWidget> {
                           ),
                         ),
                         Align(
-                          alignment: AlignmentDirectional(-1.0, 0.0),
+                          alignment: const AlignmentDirectional(-1.0, 0.0),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 10.0, 0.0, 0.0, 0.0),
                             child: Text(
                               'Vous allez mettre un carton rouge à',
@@ -216,7 +213,7 @@ class _RedCardPostCommPageWidgetState extends State<RedCardPostCommPageWidget> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       5.0, 0.0, 6.0, 0.0),
                                   child: Container(
                                     width: 35.0,
@@ -260,9 +257,9 @@ class _RedCardPostCommPageWidgetState extends State<RedCardPostCommPageWidget> {
                               FlutterFlowTheme.of(context).secondaryBackground,
                         ),
                         Align(
-                          alignment: AlignmentDirectional(0.0, 0.0),
+                          alignment: const AlignmentDirectional(0.0, 0.0),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 20.0, 0.0, 10.0),
                             child: Text(
                               'Pour la raison suivante ',
@@ -287,7 +284,7 @@ class _RedCardPostCommPageWidgetState extends State<RedCardPostCommPageWidget> {
                             'homophopie',
                             'droit.dauteur'
                           ]),
-                          optionLabels: [
+                          optionLabels: const [
                             'Violent',
                             'Racisme',
                             'Homophobie',
@@ -314,7 +311,7 @@ class _RedCardPostCommPageWidgetState extends State<RedCardPostCommPageWidget> {
                           borderColor: Colors.transparent,
                           borderWidth: 0.0,
                           borderRadius: 8.0,
-                          margin: EdgeInsetsDirectional.fromSTEB(
+                          margin: const EdgeInsetsDirectional.fromSTEB(
                               12.0, 0.0, 12.0, 0.0),
                           hidesUnderline: true,
                           isOverButton: false,
@@ -322,7 +319,7 @@ class _RedCardPostCommPageWidgetState extends State<RedCardPostCommPageWidget> {
                           isMultiSelect: false,
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               8.0, 10.0, 8.0, 10.0),
                           child: TextFormField(
                             controller: _model.textFoulTextController,
@@ -379,9 +376,9 @@ class _RedCardPostCommPageWidgetState extends State<RedCardPostCommPageWidget> {
                           ),
                         ),
                         Align(
-                          alignment: AlignmentDirectional(-1.0, 0.0),
+                          alignment: const AlignmentDirectional(-1.0, 0.0),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 10.0, 10.0, 0.0, 10.0),
                             child: Text(
                               'Preuves dans le commentaire suivant',
@@ -399,7 +396,7 @@ class _RedCardPostCommPageWidgetState extends State<RedCardPostCommPageWidget> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Align(
-                              alignment: AlignmentDirectional(-1.0, 0.0),
+                              alignment: const AlignmentDirectional(-1.0, 0.0),
                               child: Text(
                                 redCardPostCommPagePostMessagesRecord.text,
                                 style: FlutterFlowTheme.of(context)
@@ -411,7 +408,7 @@ class _RedCardPostCommPageWidgetState extends State<RedCardPostCommPageWidget> {
                               ),
                             ),
                             Align(
-                              alignment: AlignmentDirectional(-1.0, 0.0),
+                              alignment: const AlignmentDirectional(-1.0, 0.0),
                               child: Text(
                                 dateTimeFormat(
                                     "d/M H:mm",
@@ -433,7 +430,7 @@ class _RedCardPostCommPageWidgetState extends State<RedCardPostCommPageWidget> {
                               FlutterFlowTheme.of(context).secondaryBackground,
                         ),
                         Align(
-                          alignment: AlignmentDirectional(-1.0, 0.0),
+                          alignment: const AlignmentDirectional(-1.0, 0.0),
                           child: Text(
                             'Après verifications de vos informations, la plateforme procedera à des sanctions avec l\'appui de votre signalement.',
                             style: FlutterFlowTheme.of(context)
@@ -444,12 +441,11 @@ class _RedCardPostCommPageWidgetState extends State<RedCardPostCommPageWidget> {
                                 ),
                           ),
                         ),
-                        if (_model.textFoulTextController.text != null &&
-                            _model.textFoulTextController.text != '')
+                        if (_model.textFoulTextController.text != '')
                           Align(
-                            alignment: AlignmentDirectional(0.0, -1.0),
+                            alignment: const AlignmentDirectional(0.0, -1.0),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 20.0, 0.0, 0.0),
                               child: FFButtonWidget(
                                 onPressed: () async {
@@ -463,7 +459,7 @@ class _RedCardPostCommPageWidgetState extends State<RedCardPostCommPageWidget> {
                                           _model.textFoulTextController.text,
                                       modSeen: false,
                                       text: _model.dropFoulsValue,
-                                      postMessage: widget!.commRef,
+                                      postMessage: widget.commRef,
                                     ),
                                     ...mapToFirestore(
                                       {
@@ -492,8 +488,8 @@ class _RedCardPostCommPageWidgetState extends State<RedCardPostCommPageWidget> {
                                 options: FFButtonOptions(
                                   width: 350.0,
                                   height: 50.0,
-                                  padding: EdgeInsets.all(0.0),
-                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsets.all(0.0),
+                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
                                   color: FlutterFlowTheme.of(context)
                                       .secondaryText,
@@ -506,7 +502,7 @@ class _RedCardPostCommPageWidgetState extends State<RedCardPostCommPageWidget> {
                                         letterSpacing: 0.0,
                                       ),
                                   elevation: 3.0,
-                                  borderSide: BorderSide(
+                                  borderSide: const BorderSide(
                                     color: Colors.transparent,
                                     width: 1.0,
                                   ),
@@ -520,9 +516,9 @@ class _RedCardPostCommPageWidgetState extends State<RedCardPostCommPageWidget> {
                             ),
                           ),
                         Align(
-                          alignment: AlignmentDirectional(0.0, 0.0),
+                          alignment: const AlignmentDirectional(0.0, 0.0),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 10.0, 0.0, 0.0),
                             child: Text(
                               'Merci pour votre aide, par votre action vous maintenez une bonne entente entre les utilisateurs.',

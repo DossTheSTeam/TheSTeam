@@ -2,10 +2,7 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'confidentiality_page_model.dart';
 export 'confidentiality_page_model.dart';
 
@@ -45,14 +42,14 @@ class _ConfidentialityPageWidgetState extends State<ConfidentialityPageWidget> {
         body: SafeArea(
           top: true,
           child: Padding(
-            padding: EdgeInsets.all(10.0),
+            padding: const EdgeInsets.all(10.0),
             child: SingleChildScrollView(
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -69,7 +66,7 @@ class _ConfidentialityPageWidgetState extends State<ConfidentialityPageWidget> {
                                 context.pushNamed(
                                   'MenuPage',
                                   extra: <String, dynamic>{
-                                    kTransitionInfoKey: TransitionInfo(
+                                    kTransitionInfoKey: const TransitionInfo(
                                       hasTransition: true,
                                       transitionType:
                                           PageTransitionType.leftToRight,
@@ -101,7 +98,7 @@ class _ConfidentialityPageWidgetState extends State<ConfidentialityPageWidget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   25.0, 0.0, 0.0, 0.0),
                               child: Text(
                                 'Politique de\nConfidentialité',
@@ -154,7 +151,7 @@ class _ConfidentialityPageWidgetState extends State<ConfidentialityPageWidget> {
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 children: [
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 10.0, 0.0),
                                     child: InkWell(
                                       splashColor: Colors.transparent,
@@ -165,7 +162,7 @@ class _ConfidentialityPageWidgetState extends State<ConfidentialityPageWidget> {
                                         context.pushNamed(
                                           'MyNotifsList',
                                           extra: <String, dynamic>{
-                                            kTransitionInfoKey: TransitionInfo(
+                                            kTransitionInfoKey: const TransitionInfo(
                                               hasTransition: true,
                                               transitionType: PageTransitionType
                                                   .rightToLeft,
@@ -178,7 +175,7 @@ class _ConfidentialityPageWidgetState extends State<ConfidentialityPageWidget> {
                                       child: Icon(
                                         Icons.notifications_active_outlined,
                                         color: FlutterFlowTheme.of(context)
-                                            .accent3,
+                                            .accent1,
                                         size: 40.0,
                                       ),
                                     ),
@@ -192,7 +189,7 @@ class _ConfidentialityPageWidgetState extends State<ConfidentialityPageWidget> {
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                     child: Text(
                       'The S Team s\'engage à protéger la vie privée de ses utilisateurs et à traiter leurs données personnelles avec la plus grande attention. La présente politique de confidentialité a pour objet d\'informer les utilisateurs de l\'Application sur la nature des données collectées, les finalités de leur traitement et les droits dont ils disposent.',
                       style: FlutterFlowTheme.of(context).bodyLarge.override(
@@ -202,10 +199,10 @@ class _ConfidentialityPageWidgetState extends State<ConfidentialityPageWidget> {
                     ),
                   ),
                   Align(
-                    alignment: AlignmentDirectional(-1.0, 0.0),
+                    alignment: const AlignmentDirectional(-1.0, 0.0),
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(12.0, 5.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(12.0, 5.0, 0.0, 0.0),
                       child: Text(
                         'Article 1 – Données personnelles collectées',
                         style: FlutterFlowTheme.of(context).labelLarge.override(
@@ -217,7 +214,7 @@ class _ConfidentialityPageWidgetState extends State<ConfidentialityPageWidget> {
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                     child: Text(
                       'Lors de l\'utilisation de l\'Application, nous pouvons être amenés à collecter les catégories de données suivantes :',
                       style: FlutterFlowTheme.of(context).bodyLarge.override(
@@ -228,7 +225,7 @@ class _ConfidentialityPageWidgetState extends State<ConfidentialityPageWidget> {
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                     child: Text(
                       'Données d\'identification: Nom d\'utilisateur, adresse électronique, mot de passe.\nDonnées techniques: Adresse IP, type de navigateur, appareil utilisé, informations de localisation (si autorisées par l\'utilisateur).\nDonnées relatives à l\'utilisation de l\'Application: Historique de navigation, interactions avec d\'autres utilisateurs, données relatives aux paris sportifs (mises, gains, etc.).',
                       style: FlutterFlowTheme.of(context).bodyLarge.override(
@@ -238,10 +235,10 @@ class _ConfidentialityPageWidgetState extends State<ConfidentialityPageWidget> {
                     ),
                   ),
                   Align(
-                    alignment: AlignmentDirectional(-1.0, 0.0),
+                    alignment: const AlignmentDirectional(-1.0, 0.0),
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(12.0, 5.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(12.0, 5.0, 0.0, 0.0),
                       child: Text(
                         'Article 2 – Finalités du traitement des données',
                         style: FlutterFlowTheme.of(context).labelLarge.override(
@@ -253,7 +250,7 @@ class _ConfidentialityPageWidgetState extends State<ConfidentialityPageWidget> {
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                     child: Text(
                       'Les données collectées sont utilisées aux fins suivantes :',
                       style: FlutterFlowTheme.of(context).bodyLarge.override(
@@ -264,7 +261,7 @@ class _ConfidentialityPageWidgetState extends State<ConfidentialityPageWidget> {
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                     child: Text(
                       'Création et gestion du compte utilisateur: Permettre à l\'utilisateur de créer et d\'utiliser son compte.\nFourniture des services de l\'Application: Assurer le fonctionnement de l\'Application, notamment la partie réseau social et les jeux de paris sportifs.\nPersonnalisation de l\'expérience utilisateur: Adapter le contenu et les fonctionnalités de l\'Application en fonction des préférences de l\'utilisateur.\nAmélioration de l\'Application: Analyser l\'utilisation de l\'Application afin d\'y apporter des améliorations.\nRespect des obligations légales: Répondre aux demandes des autorités compétentes en cas de besoin.',
                       style: FlutterFlowTheme.of(context).bodyLarge.override(
@@ -274,10 +271,10 @@ class _ConfidentialityPageWidgetState extends State<ConfidentialityPageWidget> {
                     ),
                   ),
                   Align(
-                    alignment: AlignmentDirectional(-1.0, 0.0),
+                    alignment: const AlignmentDirectional(-1.0, 0.0),
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(12.0, 5.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(12.0, 5.0, 0.0, 0.0),
                       child: Text(
                         'Article 3 – Destinataires des données',
                         style: FlutterFlowTheme.of(context).labelLarge.override(
@@ -289,7 +286,7 @@ class _ConfidentialityPageWidgetState extends State<ConfidentialityPageWidget> {
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                     child: Text(
                       'Les données collectées sont destinées à The S Team et à ses prestataires techniques (hébergeur, etc.). Elles peuvent également être transmises aux autorités compétentes en cas de demande légale.',
                       style: FlutterFlowTheme.of(context).bodyLarge.override(
@@ -299,10 +296,10 @@ class _ConfidentialityPageWidgetState extends State<ConfidentialityPageWidget> {
                     ),
                   ),
                   Align(
-                    alignment: AlignmentDirectional(-1.0, 0.0),
+                    alignment: const AlignmentDirectional(-1.0, 0.0),
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(12.0, 5.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(12.0, 5.0, 0.0, 0.0),
                       child: Text(
                         'Article 4 – Sécurité des données',
                         style: FlutterFlowTheme.of(context).labelLarge.override(
@@ -314,7 +311,7 @@ class _ConfidentialityPageWidgetState extends State<ConfidentialityPageWidget> {
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                     child: Text(
                       'The S Team met en œuvre toutes les mesures techniques et organisationnelles appropriées pour garantir la sécurité et la confidentialité des données personnelles.',
                       style: FlutterFlowTheme.of(context).bodyLarge.override(
@@ -324,10 +321,10 @@ class _ConfidentialityPageWidgetState extends State<ConfidentialityPageWidget> {
                     ),
                   ),
                   Align(
-                    alignment: AlignmentDirectional(-1.0, 0.0),
+                    alignment: const AlignmentDirectional(-1.0, 0.0),
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(12.0, 5.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(12.0, 5.0, 0.0, 0.0),
                       child: Text(
                         'Article 5 – Droits des utilisateurs',
                         style: FlutterFlowTheme.of(context).labelLarge.override(
@@ -339,7 +336,7 @@ class _ConfidentialityPageWidgetState extends State<ConfidentialityPageWidget> {
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                     child: Text(
                       'Conformément à la réglementation en vigueur, les utilisateurs disposent des droits suivants :',
                       style: FlutterFlowTheme.of(context).bodyLarge.override(
@@ -350,7 +347,7 @@ class _ConfidentialityPageWidgetState extends State<ConfidentialityPageWidget> {
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                     child: Text(
                       'Droit d\'accès: Consulter les données les concernant.\nDroit de rectification: Modifier les données inexactes ou incomplètes.\nDroit d\'effacement: Demander la suppression de leurs données.\nDroit d\'opposition: S\'opposer au traitement de leurs données pour des motifs légitimes.\nDroit à la limitation du traitement: Demander la limitation du traitement de leurs données.\nDroit à la portabilité des données: Recevoir les données les concernant dans un format structuré, couramment utilisé et lisible par machine.\nPour exercer ces droits, l\'utilisateur peut contacter The S Team à l\'adresse suivante : ',
                       style: FlutterFlowTheme.of(context).bodyLarge.override(
@@ -360,10 +357,10 @@ class _ConfidentialityPageWidgetState extends State<ConfidentialityPageWidget> {
                     ),
                   ),
                   Align(
-                    alignment: AlignmentDirectional(-1.0, 0.0),
+                    alignment: const AlignmentDirectional(-1.0, 0.0),
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                       child: Text(
                         'thesteam.mod@gmail.com',
                         style: FlutterFlowTheme.of(context).bodyLarge.override(
@@ -374,10 +371,10 @@ class _ConfidentialityPageWidgetState extends State<ConfidentialityPageWidget> {
                     ),
                   ),
                   Align(
-                    alignment: AlignmentDirectional(-1.0, 0.0),
+                    alignment: const AlignmentDirectional(-1.0, 0.0),
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(12.0, 5.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(12.0, 5.0, 0.0, 0.0),
                       child: Text(
                         'Article 6 – Conservation des données',
                         style: FlutterFlowTheme.of(context).labelLarge.override(
@@ -389,7 +386,7 @@ class _ConfidentialityPageWidgetState extends State<ConfidentialityPageWidget> {
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                     child: Text(
                       'Les données personnelles sont conservées pendant une durée n\'excédant pas celle nécessaire aux finalités pour lesquelles elles ont été collectées.',
                       style: FlutterFlowTheme.of(context).bodyLarge.override(
@@ -399,10 +396,10 @@ class _ConfidentialityPageWidgetState extends State<ConfidentialityPageWidget> {
                     ),
                   ),
                   Align(
-                    alignment: AlignmentDirectional(-1.0, 0.0),
+                    alignment: const AlignmentDirectional(-1.0, 0.0),
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(12.0, 5.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(12.0, 5.0, 0.0, 0.0),
                       child: Text(
                         'Article 7 – Cookies',
                         style: FlutterFlowTheme.of(context).labelLarge.override(
@@ -414,7 +411,7 @@ class _ConfidentialityPageWidgetState extends State<ConfidentialityPageWidget> {
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                     child: Text(
                       'L\'Application utilise des cookies. Les cookies sont de petits fichiers texte enregistrés sur le terminal de l\'utilisateur. Ils permettent de collecter des informations sur la navigation de l\'utilisateur. L\'utilisateur peut à tout moment désactiver les cookies depuis les paramètres de son navigateur.',
                       style: FlutterFlowTheme.of(context).bodyLarge.override(
@@ -424,10 +421,10 @@ class _ConfidentialityPageWidgetState extends State<ConfidentialityPageWidget> {
                     ),
                   ),
                   Align(
-                    alignment: AlignmentDirectional(-1.0, 0.0),
+                    alignment: const AlignmentDirectional(-1.0, 0.0),
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(12.0, 5.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(12.0, 5.0, 0.0, 0.0),
                       child: Text(
                         'Article 8 – Modification de la politique de confidentialité',
                         style: FlutterFlowTheme.of(context).labelLarge.override(
@@ -439,7 +436,7 @@ class _ConfidentialityPageWidgetState extends State<ConfidentialityPageWidget> {
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                     child: Text(
                       'The S Team se réserve le droit de modifier à tout moment la présente politique de confidentialité. Toute modification sera notifiée aux utilisateurs par les moyens appropriés',
                       style: FlutterFlowTheme.of(context).bodyLarge.override(

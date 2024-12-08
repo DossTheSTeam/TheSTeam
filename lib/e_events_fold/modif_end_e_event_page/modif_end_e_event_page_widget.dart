@@ -5,10 +5,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'modif_end_e_event_page_model.dart';
 export 'modif_end_e_event_page_model.dart';
 
@@ -54,7 +51,7 @@ class _ModifEndEEventPageWidgetState extends State<ModifEndEEventPageWidget> {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<EventsRecord>(
-      stream: EventsRecord.getDocument(widget!.eventRef!),
+      stream: EventsRecord.getDocument(widget.eventRef!),
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
@@ -84,14 +81,14 @@ class _ModifEndEEventPageWidgetState extends State<ModifEndEEventPageWidget> {
             body: SafeArea(
               top: true,
               child: Padding(
-                padding: EdgeInsets.all(10.0),
+                padding: const EdgeInsets.all(10.0),
                 child: SingleChildScrollView(
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -99,53 +96,56 @@ class _ModifEndEEventPageWidgetState extends State<ModifEndEEventPageWidget> {
                             Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
-                                InkWell(
-                                  splashColor: Colors.transparent,
-                                  focusColor: Colors.transparent,
-                                  hoverColor: Colors.transparent,
-                                  highlightColor: Colors.transparent,
-                                  onTap: () async {
-                                    context.pushNamed(
-                                      'ModifETeamPage',
-                                      queryParameters: {
-                                        'teamRef': serializeParam(
-                                          widget!.myETeamRef,
-                                          ParamType.DocumentReference,
-                                        ),
-                                      }.withoutNulls,
-                                      extra: <String, dynamic>{
-                                        kTransitionInfoKey: TransitionInfo(
-                                          hasTransition: true,
-                                          transitionType:
-                                              PageTransitionType.leftToRight,
-                                          duration: Duration(milliseconds: 400),
-                                        ),
-                                      },
-                                    );
-                                  },
-                                  child: Icon(
-                                    Icons.menu_rounded,
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryText,
-                                    size: 30.0,
-                                  ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      10.0, 0.0, 0.0, 0.0),
-                                  child: InkWell(
+                                AuthUserStreamWidget(
+                                  builder: (context) => InkWell(
                                     splashColor: Colors.transparent,
                                     focusColor: Colors.transparent,
                                     hoverColor: Colors.transparent,
                                     highlightColor: Colors.transparent,
                                     onTap: () async {
-                                      context.safePop();
+                                      context.pushNamed(
+                                        'ModifETeamPage',
+                                        queryParameters: {
+                                          'teamRef': serializeParam(
+                                            widget.myETeamRef,
+                                            ParamType.DocumentReference,
+                                          ),
+                                        }.withoutNulls,
+                                        extra: <String, dynamic>{
+                                          kTransitionInfoKey: const TransitionInfo(
+                                            hasTransition: true,
+                                            transitionType:
+                                                PageTransitionType.leftToRight,
+                                            duration:
+                                                Duration(milliseconds: 400),
+                                          ),
+                                        },
+                                      );
                                     },
                                     child: Icon(
-                                      Icons.arrow_back_ios_new_rounded,
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
+                                      Icons.menu_rounded,
+                                      color: currentUserDocument?.color1,
                                       size: 30.0,
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      10.0, 0.0, 0.0, 0.0),
+                                  child: AuthUserStreamWidget(
+                                    builder: (context) => InkWell(
+                                      splashColor: Colors.transparent,
+                                      focusColor: Colors.transparent,
+                                      hoverColor: Colors.transparent,
+                                      highlightColor: Colors.transparent,
+                                      onTap: () async {
+                                        context.safePop();
+                                      },
+                                      child: Icon(
+                                        Icons.arrow_back_ios_new_rounded,
+                                        color: currentUserDocument?.color1,
+                                        size: 30.0,
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -164,12 +164,17 @@ class _ModifEndEEventPageWidgetState extends State<ModifEndEEventPageWidget> {
                           ],
                         ),
                       ),
-                      Divider(
-                        thickness: 1.0,
-                        color: FlutterFlowTheme.of(context).secondaryBackground,
+                      AuthUserStreamWidget(
+                        builder: (context) => Divider(
+                          thickness: 1.0,
+                          color: valueOrDefault<Color>(
+                            currentUserDocument?.color2,
+                            FlutterFlowTheme.of(context).secondaryBackground,
+                          ),
+                        ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             10.0, 5.0, 10.0, 5.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
@@ -189,7 +194,7 @@ class _ModifEndEEventPageWidgetState extends State<ModifEndEEventPageWidget> {
                                       ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       2.0, 0.0, 2.0, 0.0),
                                   child: Text(
                                     '-',
@@ -215,7 +220,7 @@ class _ModifEndEEventPageWidgetState extends State<ModifEndEEventPageWidget> {
                                       ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       2.0, 0.0, 2.0, 0.0),
                                   child: Text(
                                     ':',
@@ -259,7 +264,7 @@ class _ModifEndEEventPageWidgetState extends State<ModifEndEEventPageWidget> {
                                 if (modifEndEEventPageEventsRecord.statut ==
                                     false)
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         5.0, 0.0, 0.0, 0.0),
                                     child: Container(
                                       width: 25.0,
@@ -278,7 +283,7 @@ class _ModifEndEEventPageWidgetState extends State<ModifEndEEventPageWidget> {
                       ),
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -313,7 +318,7 @@ class _ModifEndEEventPageWidgetState extends State<ModifEndEEventPageWidget> {
                                         .primaryBackground,
                                   ),
                                   child: Align(
-                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    alignment: const AlignmentDirectional(0.0, 0.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
@@ -339,7 +344,7 @@ class _ModifEndEEventPageWidgetState extends State<ModifEndEEventPageWidget> {
                                         ),
                                         Align(
                                           alignment:
-                                              AlignmentDirectional(0.0, 0.0),
+                                              const AlignmentDirectional(0.0, 0.0),
                                           child: InkWell(
                                             splashColor: Colors.transparent,
                                             focusColor: Colors.transparent,
@@ -416,7 +421,7 @@ class _ModifEndEEventPageWidgetState extends State<ModifEndEEventPageWidget> {
                                         .primaryBackground,
                                   ),
                                   child: Align(
-                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    alignment: const AlignmentDirectional(0.0, 0.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
@@ -442,7 +447,7 @@ class _ModifEndEEventPageWidgetState extends State<ModifEndEEventPageWidget> {
                                         ),
                                         Align(
                                           alignment:
-                                              AlignmentDirectional(0.0, 0.0),
+                                              const AlignmentDirectional(0.0, 0.0),
                                           child: InkWell(
                                             splashColor: Colors.transparent,
                                             focusColor: Colors.transparent,
@@ -483,14 +488,19 @@ class _ModifEndEEventPageWidgetState extends State<ModifEndEEventPageWidget> {
                           ],
                         ),
                       ),
-                      Divider(
-                        thickness: 1.0,
-                        color: FlutterFlowTheme.of(context).secondaryBackground,
+                      AuthUserStreamWidget(
+                        builder: (context) => Divider(
+                          thickness: 1.0,
+                          color: valueOrDefault<Color>(
+                            currentUserDocument?.color2,
+                            FlutterFlowTheme.of(context).secondaryBackground,
+                          ),
+                        ),
                       ),
                       Align(
-                        alignment: AlignmentDirectional(-1.0, 0.0),
+                        alignment: const AlignmentDirectional(-1.0, 0.0),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               20.0, 0.0, 0.0, 0.0),
                           child: Text(
                             'Gagnant de la rencontre ?',
@@ -504,11 +514,44 @@ class _ModifEndEEventPageWidgetState extends State<ModifEndEEventPageWidget> {
                           ),
                         ),
                       ),
+                      if (valueOrDefault<bool>(
+                              currentUserDocument?.helpNav, false) ==
+                          true)
+                        Align(
+                          alignment: const AlignmentDirectional(0.0, 0.0),
+                          child: AuthUserStreamWidget(
+                            builder: (context) => Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 10.0, 0.0),
+                                  child: Text(
+                                    'Cliquer sur les icones pour configurer le résultat.',
+                                    textAlign: TextAlign.center,
+                                    maxLines: 2,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                          fontSize: 10.0,
+                                          letterSpacing: 0.0,
+                                          lineHeight: 1.0,
+                                        ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
                       Column(
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 5.0, 0.0, 0.0),
                             child: StreamBuilder<TeamsRecord>(
                               stream: TeamsRecord.getDocument(
@@ -546,14 +589,14 @@ class _ModifEndEEventPageWidgetState extends State<ModifEndEEventPageWidget> {
                                       ),
                                       child: Align(
                                         alignment:
-                                            AlignmentDirectional(0.0, 0.0),
+                                            const AlignmentDirectional(0.0, 0.0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
                                           mainAxisAlignment:
                                               MainAxisAlignment.center,
                                           children: [
                                             Align(
-                                              alignment: AlignmentDirectional(
+                                              alignment: const AlignmentDirectional(
                                                   0.0, 0.0),
                                               child: Text(
                                                 rowDomTeamsRecord.name,
@@ -573,7 +616,7 @@ class _ModifEndEEventPageWidgetState extends State<ModifEndEEventPageWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 20.0, 0.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -581,7 +624,7 @@ class _ModifEndEEventPageWidgetState extends State<ModifEndEEventPageWidget> {
                                           if (_model.draw == null ||
                                               _model.draw == '')
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 5.0, 0.0),
                                               child: InkWell(
                                                 splashColor: Colors.transparent,
@@ -607,7 +650,7 @@ class _ModifEndEEventPageWidgetState extends State<ModifEndEEventPageWidget> {
                                           if (_model.draw !=
                                               rowDomTeamsRecord.name)
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 5.0, 0.0),
                                               child: Icon(
                                                 Icons.highlight_off_sharp,
@@ -626,7 +669,7 @@ class _ModifEndEEventPageWidgetState extends State<ModifEndEEventPageWidget> {
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 5.0, 0.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -640,7 +683,7 @@ class _ModifEndEEventPageWidgetState extends State<ModifEndEEventPageWidget> {
                                         .primaryBackground,
                                   ),
                                   child: Align(
-                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    alignment: const AlignmentDirectional(0.0, 0.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
@@ -648,7 +691,7 @@ class _ModifEndEEventPageWidgetState extends State<ModifEndEEventPageWidget> {
                                       children: [
                                         Align(
                                           alignment:
-                                              AlignmentDirectional(0.0, 0.0),
+                                              const AlignmentDirectional(0.0, 0.0),
                                           child: Text(
                                             'Match Nul',
                                             textAlign: TextAlign.start,
@@ -666,7 +709,7 @@ class _ModifEndEEventPageWidgetState extends State<ModifEndEEventPageWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 20.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -675,7 +718,7 @@ class _ModifEndEEventPageWidgetState extends State<ModifEndEEventPageWidget> {
                                           _model.draw == '')
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 5.0, 0.0),
                                           child: InkWell(
                                             splashColor: Colors.transparent,
@@ -698,7 +741,7 @@ class _ModifEndEEventPageWidgetState extends State<ModifEndEEventPageWidget> {
                                       if (_model.draw != 'Match nul')
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 5.0, 0.0),
                                           child: Icon(
                                             Icons.highlight_off_sharp,
@@ -714,7 +757,7 @@ class _ModifEndEEventPageWidgetState extends State<ModifEndEEventPageWidget> {
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 5.0, 0.0, 0.0),
                             child: StreamBuilder<TeamsRecord>(
                               stream: TeamsRecord.getDocument(
@@ -752,14 +795,14 @@ class _ModifEndEEventPageWidgetState extends State<ModifEndEEventPageWidget> {
                                       ),
                                       child: Align(
                                         alignment:
-                                            AlignmentDirectional(0.0, 0.0),
+                                            const AlignmentDirectional(0.0, 0.0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
                                           mainAxisAlignment:
                                               MainAxisAlignment.center,
                                           children: [
                                             Align(
-                                              alignment: AlignmentDirectional(
+                                              alignment: const AlignmentDirectional(
                                                   0.0, 0.0),
                                               child: Text(
                                                 rowExtTeamsRecord.name,
@@ -779,7 +822,7 @@ class _ModifEndEEventPageWidgetState extends State<ModifEndEEventPageWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 20.0, 0.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -787,7 +830,7 @@ class _ModifEndEEventPageWidgetState extends State<ModifEndEEventPageWidget> {
                                           if (_model.draw == null ||
                                               _model.draw == '')
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 5.0, 0.0),
                                               child: InkWell(
                                                 splashColor: Colors.transparent,
@@ -813,7 +856,7 @@ class _ModifEndEEventPageWidgetState extends State<ModifEndEEventPageWidget> {
                                           if (_model.draw !=
                                               rowExtTeamsRecord.name)
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 5.0, 0.0),
                                               child: Icon(
                                                 Icons.highlight_off_sharp,
@@ -834,9 +877,9 @@ class _ModifEndEEventPageWidgetState extends State<ModifEndEEventPageWidget> {
                         ],
                       ),
                       Align(
-                        alignment: AlignmentDirectional(-1.0, 0.0),
+                        alignment: const AlignmentDirectional(-1.0, 0.0),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               20.0, 0.0, 0.0, 0.0),
                           child: Text(
                             'Score',
@@ -850,14 +893,47 @@ class _ModifEndEEventPageWidgetState extends State<ModifEndEEventPageWidget> {
                           ),
                         ),
                       ),
+                      if (valueOrDefault<bool>(
+                              currentUserDocument?.helpNav, false) ==
+                          true)
+                        Align(
+                          alignment: const AlignmentDirectional(0.0, 0.0),
+                          child: AuthUserStreamWidget(
+                            builder: (context) => Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 10.0, 0.0),
+                                  child: Text(
+                                    'Rentrez le score final\nci-dessous',
+                                    textAlign: TextAlign.center,
+                                    maxLines: 2,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                          fontSize: 10.0,
+                                          letterSpacing: 0.0,
+                                          lineHeight: 1.0,
+                                        ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             0.0, 10.0, 0.0, 10.0),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 10.0),
                               child: StreamBuilder<TeamsRecord>(
                                 stream: TeamsRecord.getDocument(
@@ -889,14 +965,14 @@ class _ModifEndEEventPageWidgetState extends State<ModifEndEEventPageWidget> {
                                     children: [
                                       Align(
                                         alignment:
-                                            AlignmentDirectional(0.0, 0.0),
+                                            const AlignmentDirectional(0.0, 0.0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
                                           mainAxisAlignment:
                                               MainAxisAlignment.spaceBetween,
                                           children: [
                                             Align(
-                                              alignment: AlignmentDirectional(
+                                              alignment: const AlignmentDirectional(
                                                   0.0, 0.0),
                                               child: Text(
                                                 rowScoreDomTeamsRecord.name,
@@ -922,7 +998,7 @@ class _ModifEndEEventPageWidgetState extends State<ModifEndEEventPageWidget> {
                                         children: [
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 20.0, 0.0),
                                             child: Container(
                                               width: 70.0,
@@ -935,7 +1011,7 @@ class _ModifEndEEventPageWidgetState extends State<ModifEndEEventPageWidget> {
                                                     BorderRadius.circular(0.0),
                                               ),
                                               child: Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         8.0, 0.0, 8.0, 0.0),
                                                 child: TextFormField(
@@ -1031,7 +1107,7 @@ class _ModifEndEEventPageWidgetState extends State<ModifEndEEventPageWidget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 10.0, 0.0, 10.0),
                               child: StreamBuilder<TeamsRecord>(
                                 stream: TeamsRecord.getDocument(
@@ -1063,14 +1139,14 @@ class _ModifEndEEventPageWidgetState extends State<ModifEndEEventPageWidget> {
                                     children: [
                                       Align(
                                         alignment:
-                                            AlignmentDirectional(0.0, 0.0),
+                                            const AlignmentDirectional(0.0, 0.0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
                                           mainAxisAlignment:
                                               MainAxisAlignment.spaceBetween,
                                           children: [
                                             Align(
-                                              alignment: AlignmentDirectional(
+                                              alignment: const AlignmentDirectional(
                                                   0.0, 0.0),
                                               child: Text(
                                                 rowScoreExtTeamsRecord.name,
@@ -1096,7 +1172,7 @@ class _ModifEndEEventPageWidgetState extends State<ModifEndEEventPageWidget> {
                                         children: [
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 20.0, 0.0),
                                             child: Container(
                                               width: 70.0,
@@ -1109,7 +1185,7 @@ class _ModifEndEEventPageWidgetState extends State<ModifEndEEventPageWidget> {
                                                     BorderRadius.circular(0.0),
                                               ),
                                               child: Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         8.0, 0.0, 8.0, 0.0),
                                                 child: TextFormField(
@@ -1208,19 +1284,19 @@ class _ModifEndEEventPageWidgetState extends State<ModifEndEEventPageWidget> {
                         ),
                       ),
                       Align(
-                        alignment: AlignmentDirectional(0.0, 0.0),
+                        alignment: const AlignmentDirectional(0.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Align(
-                              alignment: AlignmentDirectional(0.0, 0.0),
+                              alignment: const AlignmentDirectional(0.0, 0.0),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 20.0, 0.0, 16.0),
                                 child: FFButtonWidget(
                                   onPressed: () async {
-                                    await widget!.eventRef!
+                                    await widget.eventRef!
                                         .update(createEventsRecordData(
                                       statut: false,
                                     ));
@@ -1235,9 +1311,9 @@ class _ModifEndEEventPageWidgetState extends State<ModifEndEEventPageWidget> {
                                   options: FFButtonOptions(
                                     width: 220.0,
                                     height: 40.0,
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
-                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryText,
@@ -1250,7 +1326,7 @@ class _ModifEndEEventPageWidgetState extends State<ModifEndEEventPageWidget> {
                                           letterSpacing: 0.0,
                                         ),
                                     elevation: 3.0,
-                                    borderSide: BorderSide(
+                                    borderSide: const BorderSide(
                                       color: Colors.transparent,
                                       width: 1.0,
                                     ),
@@ -1266,12 +1342,55 @@ class _ModifEndEEventPageWidgetState extends State<ModifEndEEventPageWidget> {
                           ],
                         ),
                       ),
+                      AuthUserStreamWidget(
+                        builder: (context) => Divider(
+                          thickness: 1.0,
+                          color: valueOrDefault<Color>(
+                            currentUserDocument?.color2,
+                            FlutterFlowTheme.of(context).secondaryBackground,
+                          ),
+                        ),
+                      ),
                       if (modifEndEEventPageEventsRecord.statut == false)
                         Column(
                           mainAxisSize: MainAxisSize.max,
                           children: [
+                            if (valueOrDefault<bool>(
+                                    currentUserDocument?.helpNav, false) ==
+                                true)
+                              Align(
+                                alignment: const AlignmentDirectional(0.0, 0.0),
+                                child: AuthUserStreamWidget(
+                                  builder: (context) => Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Align(
+                                        alignment:
+                                            const AlignmentDirectional(0.0, 0.0),
+                                        child: Text(
+                                          'Résumé de la rencontre selon vos informations soumises.',
+                                          textAlign: TextAlign.center,
+                                          maxLines: 2,
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Poppins',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryText,
+                                                fontSize: 10.0,
+                                                letterSpacing: 0.0,
+                                                lineHeight: 1.0,
+                                              ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
                             Align(
-                              alignment: AlignmentDirectional(0.0, 0.0),
+                              alignment: const AlignmentDirectional(0.0, 0.0),
                               child: Text(
                                 'Gagnant',
                                 maxLines: 1,
@@ -1313,7 +1432,7 @@ class _ModifEndEEventPageWidgetState extends State<ModifEndEEventPageWidget> {
                                     children: [
                                       Align(
                                         alignment:
-                                            AlignmentDirectional(0.0, 0.0),
+                                            const AlignmentDirectional(0.0, 0.0),
                                         child: Text(
                                           rowTeamWinTeamsRecord.name,
                                           textAlign: TextAlign.center,
@@ -1332,7 +1451,7 @@ class _ModifEndEEventPageWidgetState extends State<ModifEndEEventPageWidget> {
                               ),
                             if (_model.draw != null && _model.draw != '')
                               Align(
-                                alignment: AlignmentDirectional(0.0, 0.0),
+                                alignment: const AlignmentDirectional(0.0, 0.0),
                                 child: Text(
                                   valueOrDefault<String>(
                                     _model.draw,
@@ -1349,7 +1468,7 @@ class _ModifEndEEventPageWidgetState extends State<ModifEndEEventPageWidget> {
                                 ),
                               ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 5.0, 0.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -1366,7 +1485,7 @@ class _ModifEndEEventPageWidgetState extends State<ModifEndEEventPageWidget> {
                                       ),
                                       child: Align(
                                         alignment:
-                                            AlignmentDirectional(0.0, 0.0),
+                                            const AlignmentDirectional(0.0, 0.0),
                                         child: Text(
                                           valueOrDefault<String>(
                                             _model.scoreDom?.toString(),
@@ -1395,7 +1514,7 @@ class _ModifEndEEventPageWidgetState extends State<ModifEndEEventPageWidget> {
                                       ),
                                       child: Align(
                                         alignment:
-                                            AlignmentDirectional(0.0, 0.0),
+                                            const AlignmentDirectional(0.0, 0.0),
                                         child: Text(
                                           valueOrDefault<String>(
                                             _model.scoreExt?.toString(),
@@ -1417,10 +1536,44 @@ class _ModifEndEEventPageWidgetState extends State<ModifEndEEventPageWidget> {
                                 ],
                               ),
                             ),
+                            if (valueOrDefault<bool>(
+                                    currentUserDocument?.helpNav, false) ==
+                                true)
+                              Align(
+                                alignment: const AlignmentDirectional(0.0, 0.0),
+                                child: AuthUserStreamWidget(
+                                  builder: (context) => Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Align(
+                                        alignment:
+                                            const AlignmentDirectional(0.0, 0.0),
+                                        child: Text(
+                                          'Valider ce résultat ?',
+                                          textAlign: TextAlign.center,
+                                          maxLines: 2,
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Poppins',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryText,
+                                                fontSize: 10.0,
+                                                letterSpacing: 0.0,
+                                                lineHeight: 1.0,
+                                              ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
                             Align(
-                              alignment: AlignmentDirectional(0.0, 0.0),
+                              alignment: const AlignmentDirectional(0.0, 0.0),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 10.0, 0.0, 5.0),
                                 child: Text(
                                   'Le résultat sera notifié au manager du club adverse\nPrenez une photo du resultat en fin de match en cas de litige',
@@ -1436,9 +1589,9 @@ class _ModifEndEEventPageWidgetState extends State<ModifEndEEventPageWidget> {
                               ),
                             ),
                             Align(
-                              alignment: AlignmentDirectional(0.0, 0.0),
+                              alignment: const AlignmentDirectional(0.0, 0.0),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 5.0),
                                 child: Text(
                                   'Assurez vous d\'avoir bien configuré le résultat, en cas de litige, la E Team voulant tricher recevra une pénalité.',
@@ -1492,7 +1645,7 @@ class _ModifEndEEventPageWidgetState extends State<ModifEndEEventPageWidget> {
                                           children: [
                                             if (_model.eTeamRef != null)
                                               Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: FFButtonWidget(
                                                   onPressed: () async {
@@ -1506,9 +1659,9 @@ class _ModifEndEEventPageWidgetState extends State<ModifEndEEventPageWidget> {
                                                             'Resultat en attente de votre validation.',
                                                         seen: false,
                                                         teamRef:
-                                                            widget!.myETeamRef,
+                                                            widget.myETeamRef,
                                                         eEvent:
-                                                            widget!.eventRef,
+                                                            widget.eventRef,
                                                         eteamWin:
                                                             _model.eTeamRef,
                                                         scoreDom:
@@ -1554,7 +1707,7 @@ class _ModifEndEEventPageWidgetState extends State<ModifEndEEventPageWidget> {
                                                       queryParameters: {
                                                         'eventRef':
                                                             serializeParam(
-                                                          widget!.eventRef,
+                                                          widget.eventRef,
                                                           ParamType
                                                               .DocumentReference,
                                                         ),
@@ -1566,11 +1719,11 @@ class _ModifEndEEventPageWidgetState extends State<ModifEndEEventPageWidget> {
                                                     width: 180.0,
                                                     height: 40.0,
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 0.0),
                                                     iconPadding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 0.0),
                                                     color: FlutterFlowTheme.of(
@@ -1587,7 +1740,7 @@ class _ModifEndEEventPageWidgetState extends State<ModifEndEEventPageWidget> {
                                                           letterSpacing: 0.0,
                                                         ),
                                                     elevation: 3.0,
-                                                    borderSide: BorderSide(
+                                                    borderSide: const BorderSide(
                                                       color: Colors.transparent,
                                                       width: 1.0,
                                                     ),
@@ -1608,7 +1761,7 @@ class _ModifEndEEventPageWidgetState extends State<ModifEndEEventPageWidget> {
                                             if (_model.draw != null &&
                                                 _model.draw != '')
                                               Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: FFButtonWidget(
                                                   onPressed: () async {
@@ -1622,9 +1775,9 @@ class _ModifEndEEventPageWidgetState extends State<ModifEndEEventPageWidget> {
                                                             'Resultat en attente de votre validation.',
                                                         seen: false,
                                                         teamRef:
-                                                            widget!.myETeamRef,
+                                                            widget.myETeamRef,
                                                         eEvent:
-                                                            widget!.eventRef,
+                                                            widget.eventRef,
                                                         scoreDom:
                                                             _model.scoreDom,
                                                         scoreExt:
@@ -1669,7 +1822,7 @@ class _ModifEndEEventPageWidgetState extends State<ModifEndEEventPageWidget> {
                                                       queryParameters: {
                                                         'eventRef':
                                                             serializeParam(
-                                                          widget!.eventRef,
+                                                          widget.eventRef,
                                                           ParamType
                                                               .DocumentReference,
                                                         ),
@@ -1681,11 +1834,11 @@ class _ModifEndEEventPageWidgetState extends State<ModifEndEEventPageWidget> {
                                                     width: 180.0,
                                                     height: 40.0,
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 0.0),
                                                     iconPadding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 0.0),
                                                     color: FlutterFlowTheme.of(
@@ -1702,7 +1855,7 @@ class _ModifEndEEventPageWidgetState extends State<ModifEndEEventPageWidget> {
                                                           letterSpacing: 0.0,
                                                         ),
                                                     elevation: 3.0,
-                                                    borderSide: BorderSide(
+                                                    borderSide: const BorderSide(
                                                       color: Colors.transparent,
                                                       width: 1.0,
                                                     ),
@@ -1762,7 +1915,7 @@ class _ModifEndEEventPageWidgetState extends State<ModifEndEEventPageWidget> {
                                             if (_model.draw != null &&
                                                 _model.draw != '')
                                               Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: FFButtonWidget(
                                                   onPressed: () async {
@@ -1776,9 +1929,9 @@ class _ModifEndEEventPageWidgetState extends State<ModifEndEEventPageWidget> {
                                                             'Resultat en attente de votre validation.',
                                                         seen: false,
                                                         teamRef:
-                                                            widget!.myETeamRef,
+                                                            widget.myETeamRef,
                                                         eEvent:
-                                                            widget!.eventRef,
+                                                            widget.eventRef,
                                                         scoreDom:
                                                             _model.scoreDom,
                                                         scoreExt:
@@ -1823,7 +1976,7 @@ class _ModifEndEEventPageWidgetState extends State<ModifEndEEventPageWidget> {
                                                       queryParameters: {
                                                         'eventRef':
                                                             serializeParam(
-                                                          widget!.eventRef,
+                                                          widget.eventRef,
                                                           ParamType
                                                               .DocumentReference,
                                                         ),
@@ -1835,11 +1988,11 @@ class _ModifEndEEventPageWidgetState extends State<ModifEndEEventPageWidget> {
                                                     width: 180.0,
                                                     height: 40.0,
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 0.0),
                                                     iconPadding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 0.0),
                                                     color: FlutterFlowTheme.of(
@@ -1856,7 +2009,7 @@ class _ModifEndEEventPageWidgetState extends State<ModifEndEEventPageWidget> {
                                                           letterSpacing: 0.0,
                                                         ),
                                                     elevation: 3.0,
-                                                    borderSide: BorderSide(
+                                                    borderSide: const BorderSide(
                                                       color: Colors.transparent,
                                                       width: 1.0,
                                                     ),
@@ -1875,7 +2028,7 @@ class _ModifEndEEventPageWidgetState extends State<ModifEndEEventPageWidget> {
                                                 ),
                                               ),
                                             Align(
-                                              alignment: AlignmentDirectional(
+                                              alignment: const AlignmentDirectional(
                                                   0.0, 0.0),
                                               child: FFButtonWidget(
                                                 onPressed: () async {
@@ -1889,8 +2042,8 @@ class _ModifEndEEventPageWidgetState extends State<ModifEndEEventPageWidget> {
                                                           'Resultat en attente de votre validation.',
                                                       seen: false,
                                                       teamRef:
-                                                          widget!.myETeamRef,
-                                                      eEvent: widget!.eventRef,
+                                                          widget.myETeamRef,
+                                                      eEvent: widget.eventRef,
                                                       eteamWin: _model.eTeamRef,
                                                       scoreDom: _model.scoreDom,
                                                       scoreExt: _model.scoreExt,
@@ -1933,7 +2086,7 @@ class _ModifEndEEventPageWidgetState extends State<ModifEndEEventPageWidget> {
                                                     queryParameters: {
                                                       'eventRef':
                                                           serializeParam(
-                                                        widget!.eventRef,
+                                                        widget.eventRef,
                                                         ParamType
                                                             .DocumentReference,
                                                       ),
@@ -1944,11 +2097,11 @@ class _ModifEndEEventPageWidgetState extends State<ModifEndEEventPageWidget> {
                                                 options: FFButtonOptions(
                                                   width: 180.0,
                                                   height: 40.0,
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 0.0, 0.0),
                                                   iconPadding:
-                                                      EdgeInsetsDirectional
+                                                      const EdgeInsetsDirectional
                                                           .fromSTEB(0.0, 0.0,
                                                               0.0, 0.0),
                                                   color: FlutterFlowTheme.of(
@@ -1965,7 +2118,7 @@ class _ModifEndEEventPageWidgetState extends State<ModifEndEEventPageWidget> {
                                                         letterSpacing: 0.0,
                                                       ),
                                                   elevation: 3.0,
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Colors.transparent,
                                                     width: 1.0,
                                                   ),
@@ -1991,9 +2144,9 @@ class _ModifEndEEventPageWidgetState extends State<ModifEndEEventPageWidget> {
                               ],
                             ),
                             Align(
-                              alignment: AlignmentDirectional(0.0, 0.0),
+                              alignment: const AlignmentDirectional(0.0, 0.0),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 5.0, 0.0, 0.0),
                                 child: Text(
                                   'Il devra valider vos informations soumises pour valider le résultat final de la rencontre.',

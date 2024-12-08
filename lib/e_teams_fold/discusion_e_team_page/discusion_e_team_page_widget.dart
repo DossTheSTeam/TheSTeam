@@ -4,12 +4,9 @@ import '/backend/firebase_storage/storage.dart';
 import '/flutter_flow/flutter_flow_audio_player.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'discusion_e_team_page_model.dart';
 export 'discusion_e_team_page_model.dart';
 
@@ -50,7 +47,7 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<TeamsRecord>(
-      stream: TeamsRecord.getDocument(widget!.eTeamRef!),
+      stream: TeamsRecord.getDocument(widget.eTeamRef!),
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
@@ -80,9 +77,9 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
             body: SafeArea(
               top: true,
               child: Align(
-                alignment: AlignmentDirectional(0.0, -1.0),
+                alignment: const AlignmentDirectional(0.0, -1.0),
                 child: Padding(
-                  padding: EdgeInsets.all(10.0),
+                  padding: const EdgeInsets.all(10.0),
                   child: SingleChildScrollView(
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
@@ -104,7 +101,7 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                                     context.pushNamed(
                                       'MenuPage',
                                       extra: <String, dynamic>{
-                                        kTransitionInfoKey: TransitionInfo(
+                                        kTransitionInfoKey: const TransitionInfo(
                                           hasTransition: true,
                                           transitionType:
                                               PageTransitionType.leftToRight,
@@ -115,13 +112,12 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                                   },
                                   child: Icon(
                                     Icons.menu_rounded,
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryText,
+                                    color: discusionETeamPageTeamsRecord.color1,
                                     size: 30.0,
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       10.0, 0.0, 0.0, 0.0),
                                   child: InkWell(
                                     splashColor: Colors.transparent,
@@ -133,8 +129,8 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                                     },
                                     child: Icon(
                                       Icons.arrow_back_ios_new_rounded,
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
+                                      color:
+                                          discusionETeamPageTeamsRecord.color1,
                                       size: 30.0,
                                     ),
                                   ),
@@ -149,7 +145,7 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                                     .primaryBackground,
                               ),
                               child: Align(
-                                alignment: AlignmentDirectional(0.0, 0.0),
+                                alignment: const AlignmentDirectional(0.0, 0.0),
                                 child: Text(
                                   valueOrDefault<String>(
                                     discusionETeamPageTeamsRecord.name,
@@ -166,6 +162,17 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                                 ),
                               ),
                             ),
+                            if (discusionETeamPageTeamsRecord.members
+                                .contains(currentUserReference))
+                              Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 10.0, 0.0),
+                                child: FaIcon(
+                                  FontAwesomeIcons.headset,
+                                  color: discusionETeamPageTeamsRecord.color1,
+                                  size: 30.0,
+                                ),
+                              ),
                           ],
                         ),
                         if (true /* Warning: Trying to access variable not yet defined. */)
@@ -206,7 +213,7 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 children: [
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 10.0, 0.0),
                                     child: InkWell(
                                       splashColor: Colors.transparent,
@@ -217,7 +224,7 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                                         context.pushNamed(
                                           'MyNotifsList',
                                           extra: <String, dynamic>{
-                                            kTransitionInfoKey: TransitionInfo(
+                                            kTransitionInfoKey: const TransitionInfo(
                                               hasTransition: true,
                                               transitionType: PageTransitionType
                                                   .rightToLeft,
@@ -230,7 +237,7 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                                       child: Icon(
                                         Icons.notifications_active_outlined,
                                         color: FlutterFlowTheme.of(context)
-                                            .accent3,
+                                            .accent1,
                                         size: 40.0,
                                       ),
                                     ),
@@ -244,11 +251,10 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                           children: [
                             Divider(
                               thickness: 1.0,
-                              color: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
+                              color: discusionETeamPageTeamsRecord.color2,
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   5.0, 10.0, 5.0, 10.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -257,7 +263,7 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 5.0, 0.0),
                                         child: Icon(
                                           Icons.mic_rounded,
@@ -267,7 +273,7 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 10.0, 0.0),
                                         child: InkWell(
                                           splashColor: Colors.transparent,
@@ -355,8 +361,7 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                                           ),
                                         ),
                                       ),
-                                      if (_model.uploadedFileUrl != null &&
-                                          _model.uploadedFileUrl != '')
+                                      if (_model.uploadedFileUrl != '')
                                         Container(
                                           width: 50.0,
                                           height: 40.0,
@@ -367,7 +372,7 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                                                 BorderRadius.circular(6.0),
                                           ),
                                           child: Padding(
-                                            padding: EdgeInsets.all(2.0),
+                                            padding: const EdgeInsets.all(2.0),
                                             child: ClipRRect(
                                               borderRadius:
                                                   BorderRadius.circular(4.0),
@@ -384,86 +389,90 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                                   ),
                                   Expanded(
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           8.0, 0.0, 8.0, 0.0),
-                                      child: TextFormField(
-                                        controller:
-                                            _model.commFieldTextController,
-                                        focusNode: _model.commFieldFocusNode,
-                                        autofocus: false,
-                                        obscureText: false,
-                                        decoration: InputDecoration(
-                                          labelStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .labelMedium
-                                                  .override(
-                                                    fontFamily: 'Poppins',
-                                                    letterSpacing: 0.0,
-                                                  ),
-                                          hintText: '.......................',
-                                          hintStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyLarge
-                                                  .override(
-                                                    fontFamily: 'Poppins',
-                                                    letterSpacing: 0.0,
-                                                  ),
-                                          enabledBorder: UnderlineInputBorder(
-                                            borderSide: BorderSide(
-                                              color:
+                                      child: AuthUserStreamWidget(
+                                        builder: (context) => TextFormField(
+                                          controller:
+                                              _model.commFieldTextController,
+                                          focusNode: _model.commFieldFocusNode,
+                                          autofocus: false,
+                                          obscureText: false,
+                                          decoration: InputDecoration(
+                                            labelStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .labelMedium
+                                                    .override(
+                                                      fontFamily: 'Poppins',
+                                                      letterSpacing: 0.0,
+                                                    ),
+                                            hintText: '.......................',
+                                            hintStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .override(
+                                                      fontFamily: 'Poppins',
+                                                      letterSpacing: 0.0,
+                                                    ),
+                                            enabledBorder: UnderlineInputBorder(
+                                              borderSide: BorderSide(
+                                                color: valueOrDefault<Color>(
+                                                  currentUserDocument?.color2,
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryBackground,
-                                              width: 2.0,
+                                                ),
+                                                width: 2.0,
+                                              ),
+                                              borderRadius:
+                                                  BorderRadius.circular(8.0),
                                             ),
-                                            borderRadius:
-                                                BorderRadius.circular(8.0),
-                                          ),
-                                          focusedBorder: UnderlineInputBorder(
-                                            borderSide: BorderSide(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primary,
-                                              width: 2.0,
+                                            focusedBorder: UnderlineInputBorder(
+                                              borderSide: BorderSide(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primary,
+                                                width: 2.0,
+                                              ),
+                                              borderRadius:
+                                                  BorderRadius.circular(8.0),
                                             ),
-                                            borderRadius:
-                                                BorderRadius.circular(8.0),
-                                          ),
-                                          errorBorder: UnderlineInputBorder(
-                                            borderSide: BorderSide(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .error,
-                                              width: 2.0,
+                                            errorBorder: UnderlineInputBorder(
+                                              borderSide: BorderSide(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .error,
+                                                width: 2.0,
+                                              ),
+                                              borderRadius:
+                                                  BorderRadius.circular(8.0),
                                             ),
-                                            borderRadius:
-                                                BorderRadius.circular(8.0),
-                                          ),
-                                          focusedErrorBorder:
-                                              UnderlineInputBorder(
-                                            borderSide: BorderSide(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .error,
-                                              width: 2.0,
+                                            focusedErrorBorder:
+                                                UnderlineInputBorder(
+                                              borderSide: BorderSide(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .error,
+                                                width: 2.0,
+                                              ),
+                                              borderRadius:
+                                                  BorderRadius.circular(8.0),
                                             ),
-                                            borderRadius:
-                                                BorderRadius.circular(8.0),
                                           ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Poppins',
+                                                letterSpacing: 0.0,
+                                              ),
+                                          validator: _model
+                                              .commFieldTextControllerValidator
+                                              .asValidator(context),
                                         ),
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily: 'Poppins',
-                                              letterSpacing: 0.0,
-                                            ),
-                                        validator: _model
-                                            .commFieldTextControllerValidator
-                                            .asValidator(context),
                                       ),
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 5.0, 0.0),
                                     child: InkWell(
                                       splashColor: Colors.transparent,
@@ -473,7 +482,7 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                                       onTap: () async {
                                         var teamMessagesRecordReference =
                                             TeamMessagesRecord.createDoc(
-                                                widget!.eTeamRef!);
+                                                widget.eTeamRef!);
                                         await teamMessagesRecordReference.set({
                                           ...createTeamMessagesRecordData(
                                             text: _model
@@ -511,8 +520,8 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                                       },
                                       child: Icon(
                                         Icons.send_rounded,
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondaryText,
+                                        color: discusionETeamPageTeamsRecord
+                                            .color1,
                                         size: 30.0,
                                       ),
                                     ),
@@ -522,14 +531,13 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                             ),
                             Divider(
                               thickness: 1.0,
-                              color: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
+                              color: discusionETeamPageTeamsRecord.color2,
                             ),
                           ],
                         ),
                         StreamBuilder<List<TeamMessagesRecord>>(
                           stream: queryTeamMessagesRecord(
-                            parent: widget!.eTeamRef,
+                            parent: widget.eTeamRef,
                             queryBuilder: (teamMessagesRecord) =>
                                 teamMessagesRecord.orderBy('date_time',
                                     descending: true),
@@ -577,7 +585,7 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                                         children: [
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     5.0, 0.0, 0.0, 5.0),
                                             child: StreamBuilder<UsersRecord>(
                                               stream: UsersRecord.getDocument(
@@ -620,7 +628,7 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                                                       children: [
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       5.0,
                                                                       0.0,
@@ -676,11 +684,11 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                                                     ),
                                                     Align(
                                                       alignment:
-                                                          AlignmentDirectional(
+                                                          const AlignmentDirectional(
                                                               -1.0, 0.0),
                                                       child: Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     10.0,
                                                                     0.0,
@@ -716,12 +724,9 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                                           ),
                                           if (columnETeamMessagesTeamMessagesRecord
                                                       .image !=
-                                                  null &&
-                                              columnETeamMessagesTeamMessagesRecord
-                                                      .image !=
                                                   '')
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       10.0, 0.0, 0.0, 0.0),
                                               child: Container(
@@ -736,7 +741,7 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                                                           18.0),
                                                 ),
                                                 child: Padding(
-                                                  padding: EdgeInsets.all(3.0),
+                                                  padding: const EdgeInsets.all(3.0),
                                                   child: ClipRRect(
                                                     borderRadius:
                                                         BorderRadius.circular(
@@ -754,15 +759,12 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                                             ),
                                           if (columnETeamMessagesTeamMessagesRecord
                                                       .audio !=
-                                                  null &&
-                                              columnETeamMessagesTeamMessagesRecord
-                                                      .audio !=
                                                   '')
                                             Align(
-                                              alignment: AlignmentDirectional(
+                                              alignment: const AlignmentDirectional(
                                                   -1.0, 0.0),
                                               child: Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         10.0, 0.0, 0.0, 0.0),
                                                 child: Container(
@@ -775,7 +777,7 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                                                   ),
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsets.all(3.0),
+                                                        const EdgeInsets.all(3.0),
                                                     child:
                                                         FlutterFlowAudioPlayer(
                                                       audio: Audio.network(
@@ -834,10 +836,10 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
                                               Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     -1.0, 0.0),
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           10.0, 0.0, 10.0, 0.0),
                                                   child: Text(
@@ -854,12 +856,13 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                                                   ),
                                                 ),
                                               ),
+                                              Divider(
+                                                thickness: 1.0,
+                                                color:
+                                                    discusionETeamPageTeamsRecord
+                                                        .color2,
+                                              ),
                                             ],
-                                          ),
-                                          Divider(
-                                            thickness: 1.0,
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryBackground,
                                           ),
                                         ],
                                       ),
@@ -876,7 +879,7 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                                         children: [
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     5.0, 0.0, 0.0, 5.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -886,11 +889,11 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                                               children: [
                                                 Align(
                                                   alignment:
-                                                      AlignmentDirectional(
+                                                      const AlignmentDirectional(
                                                           1.0, 0.0),
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(10.0, 0.0,
                                                                 10.0, 0.0),
                                                     child: Text(
@@ -943,7 +946,7 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                                                     ),
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   5.0,
                                                                   0.0,
@@ -986,12 +989,9 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                                           ),
                                           if (columnETeamMessagesTeamMessagesRecord
                                                       .image !=
-                                                  null &&
-                                              columnETeamMessagesTeamMessagesRecord
-                                                      .image !=
                                                   '')
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       10.0, 0.0, 0.0, 0.0),
                                               child: Container(
@@ -1006,7 +1006,7 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                                                           18.0),
                                                 ),
                                                 child: Padding(
-                                                  padding: EdgeInsets.all(3.0),
+                                                  padding: const EdgeInsets.all(3.0),
                                                   child: ClipRRect(
                                                     borderRadius:
                                                         BorderRadius.circular(
@@ -1024,15 +1024,12 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                                             ),
                                           if (columnETeamMessagesTeamMessagesRecord
                                                       .audio !=
-                                                  null &&
-                                              columnETeamMessagesTeamMessagesRecord
-                                                      .audio !=
                                                   '')
                                             Align(
-                                              alignment: AlignmentDirectional(
+                                              alignment: const AlignmentDirectional(
                                                   1.0, 0.0),
                                               child: Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         10.0, 0.0, 0.0, 0.0),
                                                 child: Container(
@@ -1045,7 +1042,7 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                                                   ),
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsets.all(3.0),
+                                                        const EdgeInsets.all(3.0),
                                                     child:
                                                         FlutterFlowAudioPlayer(
                                                       audio: Audio.network(
@@ -1104,10 +1101,10 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
                                               Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     1.0, 0.0),
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           10.0, 0.0, 10.0, 0.0),
                                                   child: Text(
@@ -1128,8 +1125,8 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                                           ),
                                           Divider(
                                             thickness: 1.0,
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryBackground,
+                                            color: discusionETeamPageTeamsRecord
+                                                .color2,
                                           ),
                                         ],
                                       ),

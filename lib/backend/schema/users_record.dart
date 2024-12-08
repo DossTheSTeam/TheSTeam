@@ -10,9 +10,9 @@ import '/flutter_flow/flutter_flow_util.dart';
 
 class UsersRecord extends FirestoreRecord {
   UsersRecord._(
-    DocumentReference reference,
-    Map<String, dynamic> data,
-  ) : super(reference, data) {
+    super.reference,
+    super.data,
+  ) {
     _initializeFields();
   }
 
@@ -231,6 +231,26 @@ class UsersRecord extends FirestoreRecord {
   bool get helpNav => _helpNav ?? false;
   bool hasHelpNav() => _helpNav != null;
 
+  // "admin_sport" field.
+  bool? _adminSport;
+  bool get adminSport => _adminSport ?? false;
+  bool hasAdminSport() => _adminSport != null;
+
+  // "admin_sportvalue" field.
+  String? _adminSportvalue;
+  String get adminSportvalue => _adminSportvalue ?? '';
+  bool hasAdminSportvalue() => _adminSportvalue != null;
+
+  // "color1" field.
+  Color? _color1;
+  Color? get color1 => _color1;
+  bool hasColor1() => _color1 != null;
+
+  // "color2" field.
+  Color? _color2;
+  Color? get color2 => _color2;
+  bool hasColor2() => _color2 != null;
+
   void _initializeFields() {
     _email = snapshotData['email'] as String?;
     _displayName = snapshotData['display_name'] as String?;
@@ -275,6 +295,10 @@ class UsersRecord extends FirestoreRecord {
     _eUpdateTime = snapshotData['e_update_time'] as DateTime?;
     _topsflops = castToType<int>(snapshotData['topsflops']);
     _helpNav = snapshotData['help_nav'] as bool?;
+    _adminSport = snapshotData['admin_sport'] as bool?;
+    _adminSportvalue = snapshotData['admin_sportvalue'] as String?;
+    _color1 = getSchemaColor(snapshotData['color1']);
+    _color2 = getSchemaColor(snapshotData['color2']);
   }
 
   static CollectionReference get collection =>
@@ -351,6 +375,10 @@ Map<String, dynamic> createUsersRecordData({
   DateTime? eUpdateTime,
   int? topsflops,
   bool? helpNav,
+  bool? adminSport,
+  String? adminSportvalue,
+  Color? color1,
+  Color? color2,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -394,6 +422,10 @@ Map<String, dynamic> createUsersRecordData({
       'e_update_time': eUpdateTime,
       'topsflops': topsflops,
       'help_nav': helpNav,
+      'admin_sport': adminSport,
+      'admin_sportvalue': adminSportvalue,
+      'color1': color1,
+      'color2': color2,
     }.withoutNulls,
   );
 
@@ -448,7 +480,11 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e1?.boolFlop == e2?.boolFlop &&
         e1?.eUpdateTime == e2?.eUpdateTime &&
         e1?.topsflops == e2?.topsflops &&
-        e1?.helpNav == e2?.helpNav;
+        e1?.helpNav == e2?.helpNav &&
+        e1?.adminSport == e2?.adminSport &&
+        e1?.adminSportvalue == e2?.adminSportvalue &&
+        e1?.color1 == e2?.color1 &&
+        e1?.color2 == e2?.color2;
   }
 
   @override
@@ -495,7 +531,11 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e?.boolFlop,
         e?.eUpdateTime,
         e?.topsflops,
-        e?.helpNav
+        e?.helpNav,
+        e?.adminSport,
+        e?.adminSportvalue,
+        e?.color1,
+        e?.color2
       ]);
 
   @override

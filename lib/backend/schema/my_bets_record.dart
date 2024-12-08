@@ -10,9 +10,9 @@ import '/flutter_flow/flutter_flow_util.dart';
 
 class MyBetsRecord extends FirestoreRecord {
   MyBetsRecord._(
-    DocumentReference reference,
-    Map<String, dynamic> data,
-  ) : super(reference, data) {
+    super.reference,
+    super.data,
+  ) {
     _initializeFields();
   }
 
@@ -71,6 +71,11 @@ class MyBetsRecord extends FirestoreRecord {
   bool get seen => _seen ?? false;
   bool hasSeen() => _seen != null;
 
+  // "event1" field.
+  DocumentReference? _event1;
+  DocumentReference? get event1 => _event1;
+  bool hasEvent1() => _event1 != null;
+
   DocumentReference get parentReference => reference.parent.parent!;
 
   void _initializeFields() {
@@ -85,6 +90,7 @@ class MyBetsRecord extends FirestoreRecord {
     _bet3 = snapshotData['bet3'] as DocumentReference?;
     _userSeen = getDataList(snapshotData['user_seen']);
     _seen = snapshotData['seen'] as bool?;
+    _event1 = snapshotData['event1'] as DocumentReference?;
   }
 
   static Query<Map<String, dynamic>> collection([DocumentReference? parent]) =>
@@ -136,6 +142,7 @@ Map<String, dynamic> createMyBetsRecordData({
   DocumentReference? bet2,
   DocumentReference? bet3,
   bool? seen,
+  DocumentReference? event1,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -149,6 +156,7 @@ Map<String, dynamic> createMyBetsRecordData({
       'bet2': bet2,
       'bet3': bet3,
       'seen': seen,
+      'event1': event1,
     }.withoutNulls,
   );
 
@@ -171,7 +179,8 @@ class MyBetsRecordDocumentEquality implements Equality<MyBetsRecord> {
         e1?.bet2 == e2?.bet2 &&
         e1?.bet3 == e2?.bet3 &&
         listEquality.equals(e1?.userSeen, e2?.userSeen) &&
-        e1?.seen == e2?.seen;
+        e1?.seen == e2?.seen &&
+        e1?.event1 == e2?.event1;
   }
 
   @override
@@ -186,7 +195,8 @@ class MyBetsRecordDocumentEquality implements Equality<MyBetsRecord> {
         e?.bet2,
         e?.bet3,
         e?.userSeen,
-        e?.seen
+        e?.seen,
+        e?.event1
       ]);
 
   @override

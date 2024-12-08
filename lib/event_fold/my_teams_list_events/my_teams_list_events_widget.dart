@@ -2,12 +2,9 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'my_teams_list_events_model.dart';
 export 'my_teams_list_events_model.dart';
 
@@ -47,16 +44,16 @@ class _MyTeamsListEventsWidgetState extends State<MyTeamsListEventsWidget> {
         body: SafeArea(
           top: true,
           child: Align(
-            alignment: AlignmentDirectional(0.0, -1.0),
+            alignment: const AlignmentDirectional(0.0, -1.0),
             child: Padding(
-              padding: EdgeInsets.all(10.0),
+              padding: const EdgeInsets.all(10.0),
               child: SingleChildScrollView(
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -64,54 +61,56 @@ class _MyTeamsListEventsWidgetState extends State<MyTeamsListEventsWidget> {
                           Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
-                              InkWell(
-                                splashColor: Colors.transparent,
-                                focusColor: Colors.transparent,
-                                hoverColor: Colors.transparent,
-                                highlightColor: Colors.transparent,
-                                onTap: () async {
-                                  context.pushNamed(
-                                    'MenuPage',
-                                    extra: <String, dynamic>{
-                                      kTransitionInfoKey: TransitionInfo(
-                                        hasTransition: true,
-                                        transitionType:
-                                            PageTransitionType.leftToRight,
-                                        duration: Duration(milliseconds: 400),
-                                      ),
-                                    },
-                                  );
-                                },
-                                child: Icon(
-                                  Icons.menu_rounded,
-                                  color:
-                                      FlutterFlowTheme.of(context).primaryText,
-                                  size: 30.0,
-                                ),
-                              ),
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    10.0, 0.0, 0.0, 0.0),
-                                child: InkWell(
+                              AuthUserStreamWidget(
+                                builder: (context) => InkWell(
                                   splashColor: Colors.transparent,
                                   focusColor: Colors.transparent,
                                   hoverColor: Colors.transparent,
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
-                                    context.safePop();
+                                    context.pushNamed(
+                                      'MenuPage',
+                                      extra: <String, dynamic>{
+                                        kTransitionInfoKey: const TransitionInfo(
+                                          hasTransition: true,
+                                          transitionType:
+                                              PageTransitionType.leftToRight,
+                                          duration: Duration(milliseconds: 400),
+                                        ),
+                                      },
+                                    );
                                   },
                                   child: Icon(
-                                    Icons.arrow_back_ios_new_rounded,
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryText,
+                                    Icons.menu_rounded,
+                                    color: currentUserDocument?.color1,
                                     size: 30.0,
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    10.0, 0.0, 0.0, 0.0),
+                                child: AuthUserStreamWidget(
+                                  builder: (context) => InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      context.safePop();
+                                    },
+                                    child: Icon(
+                                      Icons.arrow_back_ios_new_rounded,
+                                      color: currentUserDocument?.color1,
+                                      size: 30.0,
+                                    ),
                                   ),
                                 ),
                               ),
                             ],
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 30.0, 0.0),
                             child: Text(
                               'Rencontres',
@@ -131,59 +130,36 @@ class _MyTeamsListEventsWidgetState extends State<MyTeamsListEventsWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 5.0, 0.0),
-                                    child: InkWell(
-                                      splashColor: Colors.transparent,
-                                      focusColor: Colors.transparent,
-                                      hoverColor: Colors.transparent,
-                                      highlightColor: Colors.transparent,
-                                      onTap: () async {
-                                        context.pushNamed(
-                                          'ListEvents',
-                                          extra: <String, dynamic>{
-                                            kTransitionInfoKey: TransitionInfo(
-                                              hasTransition: true,
-                                              transitionType: PageTransitionType
-                                                  .rightToLeft,
-                                              duration:
-                                                  Duration(milliseconds: 400),
-                                            ),
-                                          },
-                                        );
-                                      },
-                                      child: FaIcon(
-                                        FontAwesomeIcons.clock,
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondaryText,
-                                        size: 30.0,
-                                      ),
-                                    ),
-                                  ),
-                                  InkWell(
-                                    splashColor: Colors.transparent,
-                                    focusColor: Colors.transparent,
-                                    hoverColor: Colors.transparent,
-                                    highlightColor: Colors.transparent,
-                                    onTap: () async {
-                                      context.pushNamed(
-                                        'ListLiguesEvents',
-                                        extra: <String, dynamic>{
-                                          kTransitionInfoKey: TransitionInfo(
-                                            hasTransition: true,
-                                            transitionType:
-                                                PageTransitionType.rightToLeft,
-                                            duration:
-                                                Duration(milliseconds: 400),
-                                          ),
+                                    child: AuthUserStreamWidget(
+                                      builder: (context) => InkWell(
+                                        splashColor: Colors.transparent,
+                                        focusColor: Colors.transparent,
+                                        hoverColor: Colors.transparent,
+                                        highlightColor: Colors.transparent,
+                                        onTap: () async {
+                                          context.pushNamed(
+                                            'ListEvents',
+                                            extra: <String, dynamic>{
+                                              kTransitionInfoKey:
+                                                  const TransitionInfo(
+                                                hasTransition: true,
+                                                transitionType:
+                                                    PageTransitionType
+                                                        .rightToLeft,
+                                                duration:
+                                                    Duration(milliseconds: 400),
+                                              ),
+                                            },
+                                          );
                                         },
-                                      );
-                                    },
-                                    child: FaIcon(
-                                      FontAwesomeIcons.solidFlag,
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryText,
-                                      size: 30.0,
+                                        child: FaIcon(
+                                          FontAwesomeIcons.clock,
+                                          color: currentUserDocument?.color1,
+                                          size: 30.0,
+                                        ),
+                                      ),
                                     ),
                                   ),
                                 ],
@@ -192,9 +168,9 @@ class _MyTeamsListEventsWidgetState extends State<MyTeamsListEventsWidget> {
                                       currentUserDocument?.helpNav, false) ==
                                   true)
                                 Align(
-                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  alignment: const AlignmentDirectional(0.0, 0.0),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 3.0, 0.0, 0.0),
                                     child: AuthUserStreamWidget(
                                       builder: (context) => Row(
@@ -204,10 +180,10 @@ class _MyTeamsListEventsWidgetState extends State<MyTeamsListEventsWidget> {
                                         children: [
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 6.0, 0.0),
                                             child: Text(
-                                              'Par\ndates',
+                                              'Par dates',
                                               textAlign: TextAlign.center,
                                               maxLines: 2,
                                               style:
@@ -224,22 +200,6 @@ class _MyTeamsListEventsWidgetState extends State<MyTeamsListEventsWidget> {
                                                         lineHeight: 1.0,
                                                       ),
                                             ),
-                                          ),
-                                          Text(
-                                            'Par\nligues',
-                                            textAlign: TextAlign.center,
-                                            maxLines: 2,
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyMedium
-                                                .override(
-                                                  fontFamily: 'Poppins',
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primaryText,
-                                                  fontSize: 10.0,
-                                                  letterSpacing: 0.0,
-                                                  lineHeight: 1.0,
-                                                ),
                                           ),
                                         ],
                                       ),
@@ -355,9 +315,9 @@ class _MyTeamsListEventsWidgetState extends State<MyTeamsListEventsWidget> {
                                                   columnEventsTeamEventsRecordList[
                                                       columnEventsIndex];
                                               return Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
-                                                        5.0, 5.0, 5.0, 0.0),
+                                                        0.0, 5.0, 0.0, 0.0),
                                                 child:
                                                     StreamBuilder<EventsRecord>(
                                                   stream: EventsRecord.getDocument(
@@ -401,11 +361,11 @@ class _MyTeamsListEventsWidgetState extends State<MyTeamsListEventsWidget> {
                                                             children: [
                                                               Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
+                                                                            5.0,
                                                                             0.0,
-                                                                            0.0,
-                                                                            0.0,
+                                                                            5.0,
                                                                             5.0),
                                                                 child: Row(
                                                                   mainAxisSize:
@@ -432,7 +392,7 @@ class _MyTeamsListEventsWidgetState extends State<MyTeamsListEventsWidget> {
                                                                               ),
                                                                         ),
                                                                         Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
                                                                               3.0,
                                                                               0.0,
                                                                               3.0,
@@ -460,7 +420,7 @@ class _MyTeamsListEventsWidgetState extends State<MyTeamsListEventsWidget> {
                                                                               ),
                                                                         ),
                                                                         Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
                                                                               2.0,
                                                                               0.0,
                                                                               2.0,
@@ -510,7 +470,7 @@ class _MyTeamsListEventsWidgetState extends State<MyTeamsListEventsWidget> {
                                                                         if (columnEventEventsRecord.statut ==
                                                                             false)
                                                                           Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 5.0,
                                                                                 0.0,
                                                                                 0.0,
@@ -532,7 +492,7 @@ class _MyTeamsListEventsWidgetState extends State<MyTeamsListEventsWidget> {
                                                               ),
                                                               Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             5.0,
@@ -587,7 +547,7 @@ class _MyTeamsListEventsWidgetState extends State<MyTeamsListEventsWidget> {
                                                                           child:
                                                                               Align(
                                                                             alignment:
-                                                                                AlignmentDirectional(0.0, 0.0),
+                                                                                const AlignmentDirectional(0.0, 0.0),
                                                                             child:
                                                                                 Column(
                                                                               mainAxisSize: MainAxisSize.max,
@@ -610,7 +570,7 @@ class _MyTeamsListEventsWidgetState extends State<MyTeamsListEventsWidget> {
                                                                                   ),
                                                                                 ),
                                                                                 Align(
-                                                                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                                                                  alignment: const AlignmentDirectional(0.0, 0.0),
                                                                                   child: InkWell(
                                                                                     splashColor: Colors.transparent,
                                                                                     focusColor: Colors.transparent,
@@ -652,7 +612,7 @@ class _MyTeamsListEventsWidgetState extends State<MyTeamsListEventsWidget> {
                                                                         if (columnEventEventsRecord.esport ==
                                                                             false)
                                                                           Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 0.0,
                                                                                 5.0,
                                                                                 0.0,
@@ -673,7 +633,7 @@ class _MyTeamsListEventsWidgetState extends State<MyTeamsListEventsWidget> {
                                                                                     ),
                                                                                   }.withoutNulls,
                                                                                   extra: <String, dynamic>{
-                                                                                    kTransitionInfoKey: TransitionInfo(
+                                                                                    kTransitionInfoKey: const TransitionInfo(
                                                                                       hasTransition: true,
                                                                                       transitionType: PageTransitionType.bottomToTop,
                                                                                       duration: Duration(milliseconds: 400),
@@ -683,7 +643,7 @@ class _MyTeamsListEventsWidgetState extends State<MyTeamsListEventsWidget> {
                                                                               },
                                                                               child: Icon(
                                                                                 Icons.stadium_rounded,
-                                                                                color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                color: currentUserDocument?.color1,
                                                                                 size: 30.0,
                                                                               ),
                                                                             ),
@@ -710,7 +670,7 @@ class _MyTeamsListEventsWidgetState extends State<MyTeamsListEventsWidget> {
                                                                                   ),
                                                                                 }.withoutNulls,
                                                                                 extra: <String, dynamic>{
-                                                                                  kTransitionInfoKey: TransitionInfo(
+                                                                                  kTransitionInfoKey: const TransitionInfo(
                                                                                     hasTransition: true,
                                                                                     transitionType: PageTransitionType.bottomToTop,
                                                                                     duration: Duration(milliseconds: 400),
@@ -721,7 +681,7 @@ class _MyTeamsListEventsWidgetState extends State<MyTeamsListEventsWidget> {
                                                                             child:
                                                                                 Icon(
                                                                               Icons.stadium_rounded,
-                                                                              color: FlutterFlowTheme.of(context).secondaryText,
+                                                                              color: currentUserDocument?.color1,
                                                                               size: 30.0,
                                                                             ),
                                                                           ),
@@ -768,7 +728,7 @@ class _MyTeamsListEventsWidgetState extends State<MyTeamsListEventsWidget> {
                                                                           child:
                                                                               Align(
                                                                             alignment:
-                                                                                AlignmentDirectional(0.0, 0.0),
+                                                                                const AlignmentDirectional(0.0, 0.0),
                                                                             child:
                                                                                 Column(
                                                                               mainAxisSize: MainAxisSize.max,
@@ -791,7 +751,7 @@ class _MyTeamsListEventsWidgetState extends State<MyTeamsListEventsWidget> {
                                                                                   ),
                                                                                 ),
                                                                                 Align(
-                                                                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                                                                  alignment: const AlignmentDirectional(0.0, 0.0),
                                                                                   child: InkWell(
                                                                                     splashColor: Colors.transparent,
                                                                                     focusColor: Colors.transparent,
@@ -851,7 +811,7 @@ class _MyTeamsListEventsWidgetState extends State<MyTeamsListEventsWidget> {
                                                                       ),
                                                                       child:
                                                                           Align(
-                                                                        alignment: AlignmentDirectional(
+                                                                        alignment: const AlignmentDirectional(
                                                                             0.0,
                                                                             0.0),
                                                                         child:
@@ -884,7 +844,7 @@ class _MyTeamsListEventsWidgetState extends State<MyTeamsListEventsWidget> {
                                                                       ),
                                                                       child:
                                                                           Align(
-                                                                        alignment: AlignmentDirectional(
+                                                                        alignment: const AlignmentDirectional(
                                                                             0.0,
                                                                             0.0),
                                                                         child:
@@ -909,9 +869,9 @@ class _MyTeamsListEventsWidgetState extends State<MyTeamsListEventsWidget> {
                                                                 ),
                                                               Divider(
                                                                 thickness: 1.0,
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .secondaryBackground,
+                                                                color:
+                                                                    currentUserDocument
+                                                                        ?.color2,
                                                               ),
                                                             ],
                                                           ),

@@ -1,22 +1,17 @@
 import 'dart:async';
-import 'dart:convert';
 
 import 'serialization_util.dart';
-import '../backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '../../flutter_flow/flutter_flow_util.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 
-import '../../index.dart';
-import '../../main.dart';
 
 final _handledMessageIds = <String?>{};
 
 class PushNotificationsHandler extends StatefulWidget {
-  const PushNotificationsHandler({Key? key, required this.child})
-      : super(key: key);
+  const PushNotificationsHandler({super.key, required this.child});
 
   final Widget child;
 
@@ -105,7 +100,7 @@ class ParameterData {
       );
 
   static Future<ParameterData> Function(Map<String, dynamic>) none() =>
-      (data) async => ParameterData();
+      (data) async => const ParameterData();
 }
 
 final parametersBuilderMap =
@@ -129,6 +124,7 @@ final parametersBuilderMap =
   'PublicBetsList': (data) async => ParameterData(
         allParams: {
           'userBetRef': getParameter<DocumentReference>(data, 'userBetRef'),
+          'userRef': getParameter<DocumentReference>(data, 'userRef'),
         },
       ),
   'PublicStats': (data) async => ParameterData(
@@ -188,6 +184,7 @@ final parametersBuilderMap =
   'CartPage': (data) async => ParameterData(
         allParams: {
           'cartRef': getParameter<DocumentReference>(data, 'cartRef'),
+          'eventRef': getParameter<DocumentReference>(data, 'eventRef'),
         },
       ),
   'EventPage': (data) async => ParameterData(
@@ -298,6 +295,7 @@ final parametersBuilderMap =
   'PublicBetPage': (data) async => ParameterData(
         allParams: {
           'myBetRef': getParameter<DocumentReference>(data, 'myBetRef'),
+          'userRef': getParameter<DocumentReference>(data, 'userRef'),
         },
       ),
   'ListCommsEventCommPage': (data) async => ParameterData(
@@ -359,7 +357,6 @@ final parametersBuilderMap =
         },
       ),
   'AdminStAppUsersList': ParameterData.none(),
-  'ListLiguesEvents': ParameterData.none(),
   'AddETeamPageIUDAdmin': ParameterData.none(),
   'ModifTeamPage': (data) async => ParameterData(
         allParams: {
@@ -500,12 +497,6 @@ final parametersBuilderMap =
   'AddRatingPlayersPage': (data) async => ParameterData(
         allParams: {
           'eventRef': getParameter<DocumentReference>(data, 'eventRef'),
-        },
-      ),
-  'DeleteEventPage': (data) async => ParameterData(
-        allParams: {
-          'eventRef': getParameter<DocumentReference>(data, 'eventRef'),
-          'eTeamRef': getParameter<DocumentReference>(data, 'eTeamRef'),
         },
       ),
   'TeamListCup': ParameterData.none(),

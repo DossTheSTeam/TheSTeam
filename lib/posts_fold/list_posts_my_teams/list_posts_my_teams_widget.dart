@@ -2,11 +2,8 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'list_posts_my_teams_model.dart';
 export 'list_posts_my_teams_model.dart';
 
@@ -45,9 +42,9 @@ class _ListPostsMyTeamsWidgetState extends State<ListPostsMyTeamsWidget> {
         body: SafeArea(
           top: true,
           child: Align(
-            alignment: AlignmentDirectional(0.0, -1.0),
+            alignment: const AlignmentDirectional(0.0, -1.0),
             child: Padding(
-              padding: EdgeInsets.all(10.0),
+              padding: const EdgeInsets.all(10.0),
               child: SingleChildScrollView(
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
@@ -59,46 +56,49 @@ class _ListPostsMyTeamsWidgetState extends State<ListPostsMyTeamsWidget> {
                         Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
-                            InkWell(
-                              splashColor: Colors.transparent,
-                              focusColor: Colors.transparent,
-                              hoverColor: Colors.transparent,
-                              highlightColor: Colors.transparent,
-                              onTap: () async {
-                                context.pushNamed(
-                                  'MenuPage',
-                                  extra: <String, dynamic>{
-                                    kTransitionInfoKey: TransitionInfo(
-                                      hasTransition: true,
-                                      transitionType:
-                                          PageTransitionType.leftToRight,
-                                      duration: Duration(milliseconds: 400),
-                                    ),
-                                  },
-                                );
-                              },
-                              child: Icon(
-                                Icons.menu_rounded,
-                                color: FlutterFlowTheme.of(context).primaryText,
-                                size: 30.0,
-                              ),
-                            ),
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  10.0, 0.0, 0.0, 0.0),
-                              child: InkWell(
+                            AuthUserStreamWidget(
+                              builder: (context) => InkWell(
                                 splashColor: Colors.transparent,
                                 focusColor: Colors.transparent,
                                 hoverColor: Colors.transparent,
                                 highlightColor: Colors.transparent,
                                 onTap: () async {
-                                  context.safePop();
+                                  context.pushNamed(
+                                    'MenuPage',
+                                    extra: <String, dynamic>{
+                                      kTransitionInfoKey: const TransitionInfo(
+                                        hasTransition: true,
+                                        transitionType:
+                                            PageTransitionType.leftToRight,
+                                        duration: Duration(milliseconds: 400),
+                                      ),
+                                    },
+                                  );
                                 },
                                 child: Icon(
-                                  Icons.arrow_back_ios_new_rounded,
-                                  color:
-                                      FlutterFlowTheme.of(context).primaryText,
+                                  Icons.menu_rounded,
+                                  color: currentUserDocument?.color1,
                                   size: 30.0,
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  10.0, 0.0, 0.0, 0.0),
+                              child: AuthUserStreamWidget(
+                                builder: (context) => InkWell(
+                                  splashColor: Colors.transparent,
+                                  focusColor: Colors.transparent,
+                                  hoverColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
+                                  onTap: () async {
+                                    context.safePop();
+                                  },
+                                  child: Icon(
+                                    Icons.arrow_back_ios_new_rounded,
+                                    color: currentUserDocument?.color1,
+                                    size: 30.0,
+                                  ),
                                 ),
                               ),
                             ),
@@ -121,62 +121,64 @@ class _ListPostsMyTeamsWidgetState extends State<ListPostsMyTeamsWidget> {
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 15.0, 0.0),
-                                  child: InkWell(
-                                    splashColor: Colors.transparent,
-                                    focusColor: Colors.transparent,
-                                    hoverColor: Colors.transparent,
-                                    highlightColor: Colors.transparent,
-                                    onTap: () async {
-                                      context.pushNamed(
-                                        'MyPostsList',
-                                        extra: <String, dynamic>{
-                                          kTransitionInfoKey: TransitionInfo(
-                                            hasTransition: true,
-                                            transitionType:
-                                                PageTransitionType.rightToLeft,
-                                            duration:
-                                                Duration(milliseconds: 400),
-                                          ),
-                                        },
-                                      );
-                                    },
-                                    child: FaIcon(
-                                      FontAwesomeIcons.userCircle,
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryText,
-                                      size: 30.0,
+                                  child: AuthUserStreamWidget(
+                                    builder: (context) => InkWell(
+                                      splashColor: Colors.transparent,
+                                      focusColor: Colors.transparent,
+                                      hoverColor: Colors.transparent,
+                                      highlightColor: Colors.transparent,
+                                      onTap: () async {
+                                        context.pushNamed(
+                                          'MyPostsList',
+                                          extra: <String, dynamic>{
+                                            kTransitionInfoKey: const TransitionInfo(
+                                              hasTransition: true,
+                                              transitionType: PageTransitionType
+                                                  .rightToLeft,
+                                              duration:
+                                                  Duration(milliseconds: 400),
+                                            ),
+                                          },
+                                        );
+                                      },
+                                      child: FaIcon(
+                                        FontAwesomeIcons.userCircle,
+                                        color: currentUserDocument?.color1,
+                                        size: 30.0,
+                                      ),
                                     ),
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 10.0, 0.0),
-                                  child: InkWell(
-                                    splashColor: Colors.transparent,
-                                    focusColor: Colors.transparent,
-                                    hoverColor: Colors.transparent,
-                                    highlightColor: Colors.transparent,
-                                    onTap: () async {
-                                      context.pushNamed(
-                                        'ListBestsPosts',
-                                        extra: <String, dynamic>{
-                                          kTransitionInfoKey: TransitionInfo(
-                                            hasTransition: true,
-                                            transitionType:
-                                                PageTransitionType.rightToLeft,
-                                            duration:
-                                                Duration(milliseconds: 400),
-                                          ),
-                                        },
-                                      );
-                                    },
-                                    child: Icon(
-                                      Icons.star_rounded,
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryText,
-                                      size: 35.0,
+                                  child: AuthUserStreamWidget(
+                                    builder: (context) => InkWell(
+                                      splashColor: Colors.transparent,
+                                      focusColor: Colors.transparent,
+                                      hoverColor: Colors.transparent,
+                                      highlightColor: Colors.transparent,
+                                      onTap: () async {
+                                        context.pushNamed(
+                                          'ListBestsPosts',
+                                          extra: <String, dynamic>{
+                                            kTransitionInfoKey: const TransitionInfo(
+                                              hasTransition: true,
+                                              transitionType: PageTransitionType
+                                                  .rightToLeft,
+                                              duration:
+                                                  Duration(milliseconds: 400),
+                                            ),
+                                          },
+                                        );
+                                      },
+                                      child: Icon(
+                                        Icons.star_rounded,
+                                        color: currentUserDocument?.color1,
+                                        size: 35.0,
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -190,9 +192,9 @@ class _ListPostsMyTeamsWidgetState extends State<ListPostsMyTeamsWidget> {
                             currentUserDocument?.helpNav, false) ==
                         true)
                       Align(
-                        alignment: AlignmentDirectional(0.0, 0.0),
+                        alignment: const AlignmentDirectional(0.0, 0.0),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 3.0, 0.0, 0.0),
                           child: AuthUserStreamWidget(
                             builder: (context) => Row(
@@ -200,7 +202,7 @@ class _ListPostsMyTeamsWidgetState extends State<ListPostsMyTeamsWidget> {
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: [
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 3.0, 0.0),
                                   child: Text(
                                     'Mes actus',
@@ -238,17 +240,52 @@ class _ListPostsMyTeamsWidgetState extends State<ListPostsMyTeamsWidget> {
                           ),
                         ),
                       ),
-                    Divider(
-                      thickness: 1.0,
-                      color: FlutterFlowTheme.of(context).secondaryBackground,
+                    AuthUserStreamWidget(
+                      builder: (context) => Divider(
+                        thickness: 1.0,
+                        color: currentUserDocument?.color2,
+                      ),
                     ),
+                    if (valueOrDefault<bool>(
+                            currentUserDocument?.helpNav, false) ==
+                        true)
+                      Align(
+                        alignment: const AlignmentDirectional(0.0, 0.0),
+                        child: AuthUserStreamWidget(
+                          builder: (context) => Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 3.0, 0.0, 0.0),
+                                child: Text(
+                                  'Classées par plus commentés/likés, \nfonctionnalités pas encore disponibles.',
+                                  textAlign: TextAlign.center,
+                                  maxLines: 3,
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Poppins',
+                                        color:
+                                            FlutterFlowTheme.of(context).error,
+                                        fontSize: 10.0,
+                                        letterSpacing: 0.0,
+                                        lineHeight: 1.0,
+                                      ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
                     Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         Icon(
                           Icons.update_rounded,
-                          color: FlutterFlowTheme.of(context).error,
+                          color: FlutterFlowTheme.of(context).success,
                           size: 30.0,
                         ),
                         Icon(
@@ -299,7 +336,7 @@ class _ListPostsMyTeamsWidgetState extends State<ListPostsMyTeamsWidget> {
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 children: [
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 10.0, 0.0),
                                     child: InkWell(
                                       splashColor: Colors.transparent,
@@ -310,7 +347,7 @@ class _ListPostsMyTeamsWidgetState extends State<ListPostsMyTeamsWidget> {
                                         context.pushNamed(
                                           'MyNotifsList',
                                           extra: <String, dynamic>{
-                                            kTransitionInfoKey: TransitionInfo(
+                                            kTransitionInfoKey: const TransitionInfo(
                                               hasTransition: true,
                                               transitionType: PageTransitionType
                                                   .rightToLeft,
@@ -323,7 +360,7 @@ class _ListPostsMyTeamsWidgetState extends State<ListPostsMyTeamsWidget> {
                                       child: Icon(
                                         Icons.notifications_active_outlined,
                                         color: FlutterFlowTheme.of(context)
-                                            .accent3,
+                                            .accent1,
                                         size: 40.0,
                                       ),
                                     ),
@@ -334,9 +371,44 @@ class _ListPostsMyTeamsWidgetState extends State<ListPostsMyTeamsWidget> {
                           ),
                       ],
                     ),
-                    Divider(
-                      thickness: 1.0,
-                      color: FlutterFlowTheme.of(context).secondaryBackground,
+                    if (valueOrDefault<bool>(
+                            currentUserDocument?.helpNav, false) ==
+                        true)
+                      Align(
+                        alignment: const AlignmentDirectional(0.0, 0.0),
+                        child: AuthUserStreamWidget(
+                          builder: (context) => Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 3.0, 0.0, 0.0),
+                                child: Text(
+                                  'Classées par plus récents',
+                                  textAlign: TextAlign.center,
+                                  maxLines: 3,
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Poppins',
+                                        color: FlutterFlowTheme.of(context)
+                                            .success,
+                                        fontSize: 10.0,
+                                        letterSpacing: 0.0,
+                                        lineHeight: 1.0,
+                                      ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    AuthUserStreamWidget(
+                      builder: (context) => Divider(
+                        thickness: 1.0,
+                        color: currentUserDocument?.color2,
+                      ),
                     ),
                     StreamBuilder<List<MyTeamslikeRecord>>(
                       stream: queryMyTeamslikeRecord(
@@ -368,7 +440,7 @@ class _ListPostsMyTeamsWidgetState extends State<ListPostsMyTeamsWidget> {
                             final columnMyTeamslikeRecord =
                                 columnMyTeamslikeRecordList[columnIndex];
                             return Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   5.0, 10.0, 5.0, 0.0),
                               child: StreamBuilder<TeamsRecord>(
                                 stream: TeamsRecord.getDocument(
@@ -397,7 +469,7 @@ class _ListPostsMyTeamsWidgetState extends State<ListPostsMyTeamsWidget> {
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 10.0, 0.0, 0.0),
                                         child: StreamBuilder<
                                             List<TeamPostsRecord>>(
@@ -484,7 +556,7 @@ class _ListPostsMyTeamsWidgetState extends State<ListPostsMyTeamsWidget> {
                                                                 false))
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         5.0,
@@ -500,7 +572,7 @@ class _ListPostsMyTeamsWidgetState extends State<ListPostsMyTeamsWidget> {
                                                                         .max,
                                                                 children: [
                                                                   Padding(
-                                                                    padding: EdgeInsetsDirectional
+                                                                    padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             10.0,
                                                                             0.0,
@@ -538,7 +610,7 @@ class _ListPostsMyTeamsWidgetState extends State<ListPostsMyTeamsWidget> {
                                                                           ),
                                                                         ),
                                                                         Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
                                                                               10.0,
                                                                               0.0,
                                                                               0.0,
@@ -564,7 +636,7 @@ class _ListPostsMyTeamsWidgetState extends State<ListPostsMyTeamsWidget> {
                                                                                   ),
                                                                                 }.withoutNulls,
                                                                                 extra: <String, dynamic>{
-                                                                                  kTransitionInfoKey: TransitionInfo(
+                                                                                  kTransitionInfoKey: const TransitionInfo(
                                                                                     hasTransition: true,
                                                                                     transitionType: PageTransitionType.bottomToTop,
                                                                                     duration: Duration(milliseconds: 600),
@@ -577,6 +649,7 @@ class _ListPostsMyTeamsWidgetState extends State<ListPostsMyTeamsWidget> {
                                                                               columnPostsTeamsRecord.name,
                                                                               style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                     fontFamily: 'Poppins',
+                                                                                    color: columnPostsTeamsRecord.color1,
                                                                                     letterSpacing: 0.0,
                                                                                   ),
                                                                             ),
@@ -605,7 +678,7 @@ class _ListPostsMyTeamsWidgetState extends State<ListPostsMyTeamsWidget> {
                                                                         ),
                                                                         child:
                                                                             Align(
-                                                                          alignment: AlignmentDirectional(
+                                                                          alignment: const AlignmentDirectional(
                                                                               0.0,
                                                                               0.0),
                                                                           child:
@@ -645,7 +718,7 @@ class _ListPostsMyTeamsWidgetState extends State<ListPostsMyTeamsWidget> {
                                                                         child:
                                                                             Padding(
                                                                           padding:
-                                                                              EdgeInsets.all(5.0),
+                                                                              const EdgeInsets.all(5.0),
                                                                           child:
                                                                               Text(
                                                                             columnPostsRecord.description,
@@ -659,7 +732,7 @@ class _ListPostsMyTeamsWidgetState extends State<ListPostsMyTeamsWidget> {
                                                                         ),
                                                                       ),
                                                                       Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             4.0,
@@ -675,7 +748,7 @@ class _ListPostsMyTeamsWidgetState extends State<ListPostsMyTeamsWidget> {
                                                                         ),
                                                                       ),
                                                                       Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             5.0,
@@ -701,7 +774,7 @@ class _ListPostsMyTeamsWidgetState extends State<ListPostsMyTeamsWidget> {
                                                                                 ),
                                                                               }.withoutNulls,
                                                                               extra: <String, dynamic>{
-                                                                                kTransitionInfoKey: TransitionInfo(
+                                                                                kTransitionInfoKey: const TransitionInfo(
                                                                                   hasTransition: true,
                                                                                   transitionType: PageTransitionType.scale,
                                                                                   alignment: Alignment.bottomCenter,
@@ -714,7 +787,7 @@ class _ListPostsMyTeamsWidgetState extends State<ListPostsMyTeamsWidget> {
                                                                               Icon(
                                                                             Icons.remove_red_eye_outlined,
                                                                             color:
-                                                                                FlutterFlowTheme.of(context).secondaryText,
+                                                                                columnPostsTeamsRecord.color1,
                                                                             size:
                                                                                 30.0,
                                                                           ),
@@ -723,7 +796,7 @@ class _ListPostsMyTeamsWidgetState extends State<ListPostsMyTeamsWidget> {
                                                                     ],
                                                                   ),
                                                                   Padding(
-                                                                    padding: EdgeInsetsDirectional
+                                                                    padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             10.0,
                                                                             5.0,
@@ -741,7 +814,7 @@ class _ListPostsMyTeamsWidgetState extends State<ListPostsMyTeamsWidget> {
                                                                             MainAxisAlignment.spaceBetween,
                                                                         children: [
                                                                           Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 0.0,
                                                                                 0.0,
                                                                                 10.0,
@@ -751,7 +824,7 @@ class _ListPostsMyTeamsWidgetState extends State<ListPostsMyTeamsWidget> {
                                                                               mainAxisSize: MainAxisSize.max,
                                                                               children: [
                                                                                 Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
                                                                                   child: Icon(
                                                                                     Icons.insert_comment_rounded,
                                                                                     color: FlutterFlowTheme.of(context).secondaryText,
@@ -773,7 +846,7 @@ class _ListPostsMyTeamsWidgetState extends State<ListPostsMyTeamsWidget> {
                                                                             ),
                                                                           ),
                                                                           Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 0.0,
                                                                                 0.0,
                                                                                 10.0,
@@ -783,7 +856,7 @@ class _ListPostsMyTeamsWidgetState extends State<ListPostsMyTeamsWidget> {
                                                                               mainAxisSize: MainAxisSize.max,
                                                                               children: [
                                                                                 Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
                                                                                   child: Icon(
                                                                                     Icons.favorite_rounded,
                                                                                     color: FlutterFlowTheme.of(context).secondaryText,
@@ -805,7 +878,7 @@ class _ListPostsMyTeamsWidgetState extends State<ListPostsMyTeamsWidget> {
                                                                             ),
                                                                           ),
                                                                           Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 0.0,
                                                                                 0.0,
                                                                                 10.0,
@@ -815,7 +888,7 @@ class _ListPostsMyTeamsWidgetState extends State<ListPostsMyTeamsWidget> {
                                                                               mainAxisSize: MainAxisSize.max,
                                                                               children: [
                                                                                 Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
                                                                                   child: Icon(
                                                                                     Icons.heart_broken_rounded,
                                                                                     color: FlutterFlowTheme.of(context).secondaryText,
@@ -841,7 +914,7 @@ class _ListPostsMyTeamsWidgetState extends State<ListPostsMyTeamsWidget> {
                                                                                 MainAxisSize.max,
                                                                             children: [
                                                                               Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
                                                                                 child: Container(
                                                                                   width: 15.0,
                                                                                   height: 20.0,
@@ -871,9 +944,14 @@ class _ListPostsMyTeamsWidgetState extends State<ListPostsMyTeamsWidget> {
                                                                   Divider(
                                                                     thickness:
                                                                         1.0,
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .secondaryBackground,
+                                                                    color: valueOrDefault<
+                                                                        Color>(
+                                                                      columnPostsTeamsRecord
+                                                                          .color2,
+                                                                      FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .secondaryBackground,
+                                                                    ),
                                                                   ),
                                                                 ],
                                                               ),

@@ -3,11 +3,8 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'rating_players_page_model.dart';
 export 'rating_players_page_model.dart';
 
@@ -47,7 +44,7 @@ class _RatingPlayersPageWidgetState extends State<RatingPlayersPageWidget> {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<EventsRecord>(
-      stream: EventsRecord.getDocument(widget!.eventRef!),
+      stream: EventsRecord.getDocument(widget.eventRef!),
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
@@ -77,14 +74,14 @@ class _RatingPlayersPageWidgetState extends State<RatingPlayersPageWidget> {
             body: SafeArea(
               top: true,
               child: Padding(
-                padding: EdgeInsets.all(10.0),
+                padding: const EdgeInsets.all(10.0),
                 child: SingleChildScrollView(
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.start,
@@ -92,54 +89,57 @@ class _RatingPlayersPageWidgetState extends State<RatingPlayersPageWidget> {
                             Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
-                                InkWell(
-                                  splashColor: Colors.transparent,
-                                  focusColor: Colors.transparent,
-                                  hoverColor: Colors.transparent,
-                                  highlightColor: Colors.transparent,
-                                  onTap: () async {
-                                    context.pushNamed(
-                                      'MenuPage',
-                                      extra: <String, dynamic>{
-                                        kTransitionInfoKey: TransitionInfo(
-                                          hasTransition: true,
-                                          transitionType:
-                                              PageTransitionType.leftToRight,
-                                          duration: Duration(milliseconds: 400),
-                                        ),
-                                      },
-                                    );
-                                  },
-                                  child: Icon(
-                                    Icons.menu_rounded,
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryText,
-                                    size: 30.0,
-                                  ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      10.0, 0.0, 0.0, 0.0),
-                                  child: InkWell(
+                                AuthUserStreamWidget(
+                                  builder: (context) => InkWell(
                                     splashColor: Colors.transparent,
                                     focusColor: Colors.transparent,
                                     hoverColor: Colors.transparent,
                                     highlightColor: Colors.transparent,
                                     onTap: () async {
-                                      context.safePop();
+                                      context.pushNamed(
+                                        'MenuPage',
+                                        extra: <String, dynamic>{
+                                          kTransitionInfoKey: const TransitionInfo(
+                                            hasTransition: true,
+                                            transitionType:
+                                                PageTransitionType.leftToRight,
+                                            duration:
+                                                Duration(milliseconds: 400),
+                                          ),
+                                        },
+                                      );
                                     },
                                     child: Icon(
-                                      Icons.arrow_back_ios_new_rounded,
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
+                                      Icons.menu_rounded,
+                                      color: currentUserDocument?.color1,
                                       size: 30.0,
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      10.0, 0.0, 0.0, 0.0),
+                                  child: AuthUserStreamWidget(
+                                    builder: (context) => InkWell(
+                                      splashColor: Colors.transparent,
+                                      focusColor: Colors.transparent,
+                                      hoverColor: Colors.transparent,
+                                      highlightColor: Colors.transparent,
+                                      onTap: () async {
+                                        context.safePop();
+                                      },
+                                      child: Icon(
+                                        Icons.arrow_back_ios_new_rounded,
+                                        color: currentUserDocument?.color1,
+                                        size: 30.0,
+                                      ),
                                     ),
                                   ),
                                 ),
                               ],
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   15.0, 0.0, 0.0, 0.0),
                               child: Text(
                                 'Noter mes co-équipiés',
@@ -158,13 +158,18 @@ class _RatingPlayersPageWidgetState extends State<RatingPlayersPageWidget> {
                           ],
                         ),
                       ),
-                      Divider(
-                        thickness: 1.0,
-                        color: FlutterFlowTheme.of(context).secondaryBackground,
+                      AuthUserStreamWidget(
+                        builder: (context) => Divider(
+                          thickness: 1.0,
+                          color: valueOrDefault<Color>(
+                            currentUserDocument?.color2,
+                            FlutterFlowTheme.of(context).secondaryBackground,
+                          ),
+                        ),
                       ),
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -199,7 +204,7 @@ class _RatingPlayersPageWidgetState extends State<RatingPlayersPageWidget> {
                                         .primaryBackground,
                                   ),
                                   child: Align(
-                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    alignment: const AlignmentDirectional(0.0, 0.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
@@ -225,7 +230,7 @@ class _RatingPlayersPageWidgetState extends State<RatingPlayersPageWidget> {
                                         ),
                                         Align(
                                           alignment:
-                                              AlignmentDirectional(0.0, 0.0),
+                                              const AlignmentDirectional(0.0, 0.0),
                                           child: Text(
                                             contDomTeamsRecord.name,
                                             textAlign: TextAlign.start,
@@ -283,7 +288,7 @@ class _RatingPlayersPageWidgetState extends State<RatingPlayersPageWidget> {
                                         .primaryBackground,
                                   ),
                                   child: Align(
-                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    alignment: const AlignmentDirectional(0.0, 0.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
@@ -309,7 +314,7 @@ class _RatingPlayersPageWidgetState extends State<RatingPlayersPageWidget> {
                                         ),
                                         Align(
                                           alignment:
-                                              AlignmentDirectional(0.0, 0.0),
+                                              const AlignmentDirectional(0.0, 0.0),
                                           child: Text(
                                             contExtTeamsRecord.name,
                                             textAlign: TextAlign.start,
@@ -331,17 +336,22 @@ class _RatingPlayersPageWidgetState extends State<RatingPlayersPageWidget> {
                           ],
                         ),
                       ),
-                      Divider(
-                        thickness: 1.0,
-                        color: FlutterFlowTheme.of(context).secondaryBackground,
+                      AuthUserStreamWidget(
+                        builder: (context) => Divider(
+                          thickness: 1.0,
+                          color: valueOrDefault<Color>(
+                            currentUserDocument?.color2,
+                            FlutterFlowTheme.of(context).secondaryBackground,
+                          ),
+                        ),
                       ),
                       Column(
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Align(
-                            alignment: AlignmentDirectional(0.0, 0.0),
+                            alignment: const AlignmentDirectional(0.0, 0.0),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 10.0),
                               child: Text(
                                 'Liste participants',
@@ -355,8 +365,42 @@ class _RatingPlayersPageWidgetState extends State<RatingPlayersPageWidget> {
                               ),
                             ),
                           ),
+                          if (valueOrDefault<bool>(
+                                  currentUserDocument?.helpNav, false) ==
+                              true)
+                            Align(
+                              alignment: const AlignmentDirectional(0.0, 0.0),
+                              child: AuthUserStreamWidget(
+                                builder: (context) => Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.end,
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 0.0, 10.0, 0.0),
+                                      child: Text(
+                                        'Cliquer sur les icones pour attribuer la note.',
+                                        textAlign: TextAlign.center,
+                                        maxLines: 2,
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Poppins',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryText,
+                                              fontSize: 10.0,
+                                              letterSpacing: 0.0,
+                                              lineHeight: 1.0,
+                                            ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 10.0),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
@@ -364,13 +408,13 @@ class _RatingPlayersPageWidgetState extends State<RatingPlayersPageWidget> {
                                 if (ratingPlayersPageEventsRecord.teamdomRef ==
                                     currentUserDocument?.eteamRef)
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 10.0, 0.0, 10.0),
                                     child: AuthUserStreamWidget(
                                       builder: (context) =>
                                           StreamBuilder<List<RatesRecord>>(
                                         stream: queryRatesRecord(
-                                          parent: widget!.eventRef,
+                                          parent: widget.eventRef,
                                           queryBuilder: (ratesRecord) =>
                                               ratesRecord.where(
                                             'eteam',
@@ -412,7 +456,7 @@ class _RatingPlayersPageWidgetState extends State<RatingPlayersPageWidget> {
                                                   columnPlayersDomRatesRecordList[
                                                       columnPlayersDomIndex];
                                               return Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         10.0, 5.0, 0.0, 5.0),
                                                 child:
@@ -483,7 +527,7 @@ class _RatingPlayersPageWidgetState extends State<RatingPlayersPageWidget> {
                                                             currentUserReference)
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
@@ -501,7 +545,7 @@ class _RatingPlayersPageWidgetState extends State<RatingPlayersPageWidget> {
                                                                         false) ==
                                                                     false)
                                                                   Padding(
-                                                                    padding: EdgeInsetsDirectional
+                                                                    padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -559,7 +603,7 @@ class _RatingPlayersPageWidgetState extends State<RatingPlayersPageWidget> {
                                                                         FontAwesomeIcons
                                                                             .trophy,
                                                                         color: FlutterFlowTheme.of(context)
-                                                                            .secondaryText,
+                                                                            .accent1,
                                                                         size:
                                                                             25.0,
                                                                       ),
@@ -572,7 +616,7 @@ class _RatingPlayersPageWidgetState extends State<RatingPlayersPageWidget> {
                                                                         false) ==
                                                                     false)
                                                                   Padding(
-                                                                    padding: EdgeInsetsDirectional
+                                                                    padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             5.0,
                                                                             0.0,
@@ -719,13 +763,13 @@ class _RatingPlayersPageWidgetState extends State<RatingPlayersPageWidget> {
                                 if (ratingPlayersPageEventsRecord.teamextRef ==
                                     currentUserDocument?.eteamRef)
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 10.0, 0.0, 10.0),
                                     child: AuthUserStreamWidget(
                                       builder: (context) =>
                                           StreamBuilder<List<RatesRecord>>(
                                         stream: queryRatesRecord(
-                                          parent: widget!.eventRef,
+                                          parent: widget.eventRef,
                                           queryBuilder: (ratesRecord) =>
                                               ratesRecord.where(
                                             'eteam',
@@ -767,7 +811,7 @@ class _RatingPlayersPageWidgetState extends State<RatingPlayersPageWidget> {
                                                   columnPlayersExtRatesRecordList[
                                                       columnPlayersExtIndex];
                                               return Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         10.0, 5.0, 0.0, 5.0),
                                                 child:
@@ -838,7 +882,7 @@ class _RatingPlayersPageWidgetState extends State<RatingPlayersPageWidget> {
                                                             currentUserReference)
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
@@ -856,7 +900,7 @@ class _RatingPlayersPageWidgetState extends State<RatingPlayersPageWidget> {
                                                                         false) ==
                                                                     false)
                                                                   Padding(
-                                                                    padding: EdgeInsetsDirectional
+                                                                    padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -914,7 +958,7 @@ class _RatingPlayersPageWidgetState extends State<RatingPlayersPageWidget> {
                                                                         FontAwesomeIcons
                                                                             .trophy,
                                                                         color: FlutterFlowTheme.of(context)
-                                                                            .secondaryText,
+                                                                            .accent1,
                                                                         size:
                                                                             25.0,
                                                                       ),
@@ -927,7 +971,7 @@ class _RatingPlayersPageWidgetState extends State<RatingPlayersPageWidget> {
                                                                         false) ==
                                                                     false)
                                                                   Padding(
-                                                                    padding: EdgeInsetsDirectional
+                                                                    padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             5.0,
                                                                             0.0,
@@ -1077,22 +1121,25 @@ class _RatingPlayersPageWidgetState extends State<RatingPlayersPageWidget> {
                                   children: [
                                     Align(
                                       alignment:
-                                          AlignmentDirectional(-1.0, 0.0),
+                                          const AlignmentDirectional(-1.0, 0.0),
                                       child: Text(
                                         '+ 2',
                                         style: FlutterFlowTheme.of(context)
                                             .bodyLarge
                                             .override(
                                               fontFamily: 'Poppins',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .accent1,
                                               letterSpacing: 0.0,
                                             ),
                                       ),
                                     ),
                                     Align(
                                       alignment:
-                                          AlignmentDirectional(-1.0, 0.0),
+                                          const AlignmentDirectional(-1.0, 0.0),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             10.0, 0.0, 10.0, 0.0),
                                         child: Text(
                                           '/',
@@ -1108,7 +1155,7 @@ class _RatingPlayersPageWidgetState extends State<RatingPlayersPageWidget> {
                                     ),
                                     Align(
                                       alignment:
-                                          AlignmentDirectional(-1.0, 0.0),
+                                          const AlignmentDirectional(-1.0, 0.0),
                                       child: Text(
                                         '+ 1',
                                         style: FlutterFlowTheme.of(context)
@@ -1124,9 +1171,9 @@ class _RatingPlayersPageWidgetState extends State<RatingPlayersPageWidget> {
                                     ),
                                     Align(
                                       alignment:
-                                          AlignmentDirectional(-1.0, 0.0),
+                                          const AlignmentDirectional(-1.0, 0.0),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             10.0, 0.0, 10.0, 0.0),
                                         child: Text(
                                           '/',
@@ -1142,9 +1189,9 @@ class _RatingPlayersPageWidgetState extends State<RatingPlayersPageWidget> {
                                     ),
                                     Align(
                                       alignment:
-                                          AlignmentDirectional(-1.0, 0.0),
+                                          const AlignmentDirectional(-1.0, 0.0),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 15.0, 0.0),
                                         child: Text(
                                           '- 1',
@@ -1170,21 +1217,23 @@ class _RatingPlayersPageWidgetState extends State<RatingPlayersPageWidget> {
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [
                               Align(
-                                alignment: AlignmentDirectional(-1.0, 0.0),
+                                alignment: const AlignmentDirectional(-1.0, 0.0),
                                 child: Text(
                                   'MVP',
                                   style: FlutterFlowTheme.of(context)
                                       .bodyLarge
                                       .override(
                                         fontFamily: 'Poppins',
+                                        color: FlutterFlowTheme.of(context)
+                                            .accent1,
                                         letterSpacing: 0.0,
                                       ),
                                 ),
                               ),
                               Align(
-                                alignment: AlignmentDirectional(-1.0, 0.0),
+                                alignment: const AlignmentDirectional(-1.0, 0.0),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       4.0, 0.0, 4.0, 0.0),
                                   child: Text(
                                     '/',
@@ -1199,7 +1248,7 @@ class _RatingPlayersPageWidgetState extends State<RatingPlayersPageWidget> {
                                 ),
                               ),
                               Align(
-                                alignment: AlignmentDirectional(-1.0, 0.0),
+                                alignment: const AlignmentDirectional(-1.0, 0.0),
                                 child: Text(
                                   'Top',
                                   style: FlutterFlowTheme.of(context)
@@ -1213,9 +1262,9 @@ class _RatingPlayersPageWidgetState extends State<RatingPlayersPageWidget> {
                                 ),
                               ),
                               Align(
-                                alignment: AlignmentDirectional(-1.0, 0.0),
+                                alignment: const AlignmentDirectional(-1.0, 0.0),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       4.0, 0.0, 4.0, 0.0),
                                   child: Text(
                                     '/',
@@ -1230,9 +1279,9 @@ class _RatingPlayersPageWidgetState extends State<RatingPlayersPageWidget> {
                                 ),
                               ),
                               Align(
-                                alignment: AlignmentDirectional(-1.0, 0.0),
+                                alignment: const AlignmentDirectional(-1.0, 0.0),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 10.0, 0.0),
                                   child: Text(
                                     'Flop',
@@ -1249,11 +1298,6 @@ class _RatingPlayersPageWidgetState extends State<RatingPlayersPageWidget> {
                               ),
                             ],
                           ),
-                          Divider(
-                            thickness: 1.0,
-                            color: FlutterFlowTheme.of(context)
-                                .secondaryBackground,
-                          ),
                           if ((valueOrDefault<bool>(
                                       currentUserDocument?.boolMvp, false) ==
                                   true) &&
@@ -1264,9 +1308,9 @@ class _RatingPlayersPageWidgetState extends State<RatingPlayersPageWidget> {
                                       currentUserDocument?.boolFlop, false) ==
                                   true))
                             Align(
-                              alignment: AlignmentDirectional(0.0, 0.0),
+                              alignment: const AlignmentDirectional(0.0, 0.0),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 20.0, 0.0, 16.0),
                                 child: AuthUserStreamWidget(
                                   builder: (context) => FFButtonWidget(
@@ -1279,16 +1323,16 @@ class _RatingPlayersPageWidgetState extends State<RatingPlayersPageWidget> {
                                         guest: false,
                                       ));
 
-                                      await widget!.notifRef!.update(
+                                      await widget.notifRef!.update(
                                           createMyNotificationsRecordData(
                                         seen: true,
                                       ));
-                                      await widget!.notifRef!.delete();
+                                      await widget.notifRef!.delete();
 
                                       context.goNamed(
                                         'MyProfilPage',
                                         extra: <String, dynamic>{
-                                          kTransitionInfoKey: TransitionInfo(
+                                          kTransitionInfoKey: const TransitionInfo(
                                             hasTransition: true,
                                             transitionType:
                                                 PageTransitionType.scale,
@@ -1303,10 +1347,10 @@ class _RatingPlayersPageWidgetState extends State<RatingPlayersPageWidget> {
                                     options: FFButtonOptions(
                                       width: 160.0,
                                       height: 40.0,
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 0.0),
                                       iconPadding:
-                                          EdgeInsetsDirectional.fromSTEB(
+                                          const EdgeInsetsDirectional.fromSTEB(
                                               0.0, 0.0, 0.0, 0.0),
                                       color: FlutterFlowTheme.of(context)
                                           .secondaryBackground,
@@ -1319,7 +1363,7 @@ class _RatingPlayersPageWidgetState extends State<RatingPlayersPageWidget> {
                                             letterSpacing: 0.0,
                                           ),
                                       elevation: 3.0,
-                                      borderSide: BorderSide(
+                                      borderSide: const BorderSide(
                                         color: Colors.transparent,
                                         width: 1.0,
                                       ),

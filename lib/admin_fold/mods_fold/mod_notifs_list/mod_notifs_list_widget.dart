@@ -1,10 +1,7 @@
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'mod_notifs_list_model.dart';
 export 'mod_notifs_list_model.dart';
 
@@ -43,16 +40,16 @@ class _ModNotifsListWidgetState extends State<ModNotifsListWidget> {
         body: SafeArea(
           top: true,
           child: Align(
-            alignment: AlignmentDirectional(0.0, -1.0),
+            alignment: const AlignmentDirectional(0.0, -1.0),
             child: Padding(
-              padding: EdgeInsets.all(10.0),
+              padding: const EdgeInsets.all(10.0),
               child: SingleChildScrollView(
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.start,
@@ -69,7 +66,7 @@ class _ModNotifsListWidgetState extends State<ModNotifsListWidget> {
                                   context.pushNamed(
                                     'MenuPage',
                                     extra: <String, dynamic>{
-                                      kTransitionInfoKey: TransitionInfo(
+                                      kTransitionInfoKey: const TransitionInfo(
                                         hasTransition: true,
                                         transitionType:
                                             PageTransitionType.leftToRight,
@@ -86,7 +83,7 @@ class _ModNotifsListWidgetState extends State<ModNotifsListWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     10.0, 0.0, 0.0, 0.0),
                                 child: InkWell(
                                   splashColor: Colors.transparent,
@@ -107,7 +104,7 @@ class _ModNotifsListWidgetState extends State<ModNotifsListWidget> {
                             ],
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 10.0, 0.0, 0.0, 0.0),
                             child: Text(
                               'Notifications',
@@ -125,7 +122,7 @@ class _ModNotifsListWidgetState extends State<ModNotifsListWidget> {
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                       child: StreamBuilder<List<MyNotificationsRecord>>(
                         stream: queryMyNotificationsRecord(
                           queryBuilder: (myNotificationsRecord) =>
@@ -165,7 +162,7 @@ class _ModNotifsListWidgetState extends State<ModNotifsListWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         5.0, 0.0, 0.0, 5.0),
                                     child: StreamBuilder<UsersRecord>(
                                       stream: UsersRecord.getDocument(
@@ -195,7 +192,7 @@ class _ModNotifsListWidgetState extends State<ModNotifsListWidget> {
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(5.0, 0.0, 6.0, 0.0),
                                               child: Container(
                                                 width: 35.0,
@@ -237,7 +234,7 @@ class _ModNotifsListWidgetState extends State<ModNotifsListWidget> {
                                                   }.withoutNulls,
                                                   extra: <String, dynamic>{
                                                     kTransitionInfoKey:
-                                                        TransitionInfo(
+                                                        const TransitionInfo(
                                                       hasTransition: true,
                                                       transitionType:
                                                           PageTransitionType
@@ -268,18 +265,34 @@ class _ModNotifsListWidgetState extends State<ModNotifsListWidget> {
                                       },
                                     ),
                                   ),
-                                  if (columnMyNotificationsRecord.text !=
-                                          null &&
-                                      columnMyNotificationsRecord.text != '')
+                                  if (columnMyNotificationsRecord.text != '')
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           20.0, 0.0, 20.0, 0.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
                                           Align(
                                             alignment:
-                                                AlignmentDirectional(-1.0, 0.0),
+                                                const AlignmentDirectional(-1.0, 0.0),
+                                            child: Text(
+                                              dateTimeFormat(
+                                                  "relative",
+                                                  columnMyNotificationsRecord
+                                                      .dateTime!),
+                                              maxLines: 1,
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyLarge
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                            ),
+                                          ),
+                                          Align(
+                                            alignment:
+                                                const AlignmentDirectional(-1.0, 0.0),
                                             child: Text(
                                               columnMyNotificationsRecord.text,
                                               maxLines: 1,
@@ -296,18 +309,16 @@ class _ModNotifsListWidgetState extends State<ModNotifsListWidget> {
                                       ),
                                     ),
                                   if (columnMyNotificationsRecord.textFouls !=
-                                          null &&
-                                      columnMyNotificationsRecord.textFouls !=
                                           '')
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           20.0, 0.0, 20.0, 0.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
                                           Align(
                                             alignment:
-                                                AlignmentDirectional(-1.0, 0.0),
+                                                const AlignmentDirectional(-1.0, 0.0),
                                             child: Text(
                                               columnMyNotificationsRecord
                                                   .textFouls,
@@ -325,18 +336,16 @@ class _ModNotifsListWidgetState extends State<ModNotifsListWidget> {
                                       ),
                                     ),
                                   if (columnMyNotificationsRecord.textReasons !=
-                                          null &&
-                                      columnMyNotificationsRecord.textReasons !=
                                           '')
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           20.0, 0.0, 20.0, 0.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
                                           Align(
                                             alignment:
-                                                AlignmentDirectional(-1.0, 0.0),
+                                                const AlignmentDirectional(-1.0, 0.0),
                                             child: Text(
                                               columnMyNotificationsRecord
                                                   .textReasons,
@@ -354,7 +363,7 @@ class _ModNotifsListWidgetState extends State<ModNotifsListWidget> {
                                       ),
                                     ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 5.0, 0.0, 0.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
@@ -396,11 +405,11 @@ class _ModNotifsListWidgetState extends State<ModNotifsListWidget> {
                                                 children: [
                                                   Align(
                                                     alignment:
-                                                        AlignmentDirectional(
+                                                        const AlignmentDirectional(
                                                             -1.0, 0.0),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   10.0,
                                                                   0.0,
@@ -425,7 +434,7 @@ class _ModNotifsListWidgetState extends State<ModNotifsListWidget> {
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(5.0, 0.0,
                                                                 0.0, 5.0),
                                                     child: StreamBuilder<
@@ -465,7 +474,7 @@ class _ModNotifsListWidgetState extends State<ModNotifsListWidget> {
                                                           children: [
                                                             Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           5.0,
                                                                           0.0,
@@ -529,7 +538,7 @@ class _ModNotifsListWidgetState extends State<ModNotifsListWidget> {
                                                                   extra: <String,
                                                                       dynamic>{
                                                                     kTransitionInfoKey:
-                                                                        TransitionInfo(
+                                                                        const TransitionInfo(
                                                                       hasTransition:
                                                                           true,
                                                                       transitionType:
@@ -568,7 +577,7 @@ class _ModNotifsListWidgetState extends State<ModNotifsListWidget> {
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 5.0),
                                                     child: Row(
@@ -579,11 +588,11 @@ class _ModNotifsListWidgetState extends State<ModNotifsListWidget> {
                                                       children: [
                                                         Align(
                                                           alignment:
-                                                              AlignmentDirectional(
+                                                              const AlignmentDirectional(
                                                                   -1.0, 0.0),
                                                           child: Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
@@ -606,7 +615,7 @@ class _ModNotifsListWidgetState extends State<ModNotifsListWidget> {
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -664,7 +673,7 @@ class _ModNotifsListWidgetState extends State<ModNotifsListWidget> {
                                             null)
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 5.0, 0.0, 5.0),
                                             child: StreamBuilder<PostsRecord>(
                                               stream: PostsRecord.getDocument(
@@ -700,11 +709,11 @@ class _ModNotifsListWidgetState extends State<ModNotifsListWidget> {
                                                   children: [
                                                     Align(
                                                       alignment:
-                                                          AlignmentDirectional(
+                                                          const AlignmentDirectional(
                                                               -1.0, 0.0),
                                                       child: Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     10.0,
                                                                     0.0,
@@ -728,13 +737,10 @@ class _ModNotifsListWidgetState extends State<ModNotifsListWidget> {
                                                     ),
                                                     if (columnPostPostsRecord
                                                                 .title !=
-                                                            null &&
-                                                        columnPostPostsRecord
-                                                                .title !=
                                                             '')
                                                       Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     5.0,
                                                                     5.0,
@@ -778,7 +784,7 @@ class _ModNotifsListWidgetState extends State<ModNotifsListWidget> {
                                                                       .max,
                                                               children: [
                                                                 Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           5.0,
                                                                           0.0,
@@ -845,7 +851,7 @@ class _ModNotifsListWidgetState extends State<ModNotifsListWidget> {
                                                                       extra: <String,
                                                                           dynamic>{
                                                                         kTransitionInfoKey:
-                                                                            TransitionInfo(
+                                                                            const TransitionInfo(
                                                                           hasTransition:
                                                                               true,
                                                                           transitionType:
@@ -888,11 +894,11 @@ class _ModNotifsListWidgetState extends State<ModNotifsListWidget> {
                                                       children: [
                                                         Align(
                                                           alignment:
-                                                              AlignmentDirectional(
+                                                              const AlignmentDirectional(
                                                                   -1.0, 0.0),
                                                           child: Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
@@ -915,7 +921,7 @@ class _ModNotifsListWidgetState extends State<ModNotifsListWidget> {
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -974,7 +980,7 @@ class _ModNotifsListWidgetState extends State<ModNotifsListWidget> {
                                             null)
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 5.0, 0.0, 0.0),
                                             child: StreamBuilder<
                                                 PostMessagesRecord>(
@@ -1012,11 +1018,11 @@ class _ModNotifsListWidgetState extends State<ModNotifsListWidget> {
                                                   children: [
                                                     Align(
                                                       alignment:
-                                                          AlignmentDirectional(
+                                                          const AlignmentDirectional(
                                                               -1.0, 0.0),
                                                       child: Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     10.0,
                                                                     0.0,
@@ -1040,7 +1046,7 @@ class _ModNotifsListWidgetState extends State<ModNotifsListWidget> {
                                                     ),
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   5.0,
                                                                   0.0,
@@ -1085,7 +1091,7 @@ class _ModNotifsListWidgetState extends State<ModNotifsListWidget> {
                                                             children: [
                                                               Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             5.0,
                                                                             0.0,
@@ -1150,7 +1156,7 @@ class _ModNotifsListWidgetState extends State<ModNotifsListWidget> {
                                                                     extra: <String,
                                                                         dynamic>{
                                                                       kTransitionInfoKey:
-                                                                          TransitionInfo(
+                                                                          const TransitionInfo(
                                                                         hasTransition:
                                                                             true,
                                                                         transitionType:
@@ -1193,11 +1199,11 @@ class _ModNotifsListWidgetState extends State<ModNotifsListWidget> {
                                                       children: [
                                                         Align(
                                                           alignment:
-                                                              AlignmentDirectional(
+                                                              const AlignmentDirectional(
                                                                   -1.0, 0.0),
                                                           child: Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
@@ -1220,7 +1226,7 @@ class _ModNotifsListWidgetState extends State<ModNotifsListWidget> {
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -1279,18 +1285,18 @@ class _ModNotifsListWidgetState extends State<ModNotifsListWidget> {
                                             null)
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 5.0, 0.0, 0.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Align(
                                                   alignment:
-                                                      AlignmentDirectional(
+                                                      const AlignmentDirectional(
                                                           -1.0, 0.0),
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(10.0, 0.0,
                                                                 0.0, 10.0),
                                                     child: Text(
@@ -1309,7 +1315,7 @@ class _ModNotifsListWidgetState extends State<ModNotifsListWidget> {
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           5.0, 0.0, 0.0, 5.0),
                                                   child: StreamBuilder<
@@ -1348,7 +1354,7 @@ class _ModNotifsListWidgetState extends State<ModNotifsListWidget> {
                                                         children: [
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         5.0,
                                                                         0.0,
@@ -1408,7 +1414,7 @@ class _ModNotifsListWidgetState extends State<ModNotifsListWidget> {
                                                                 extra: <String,
                                                                     dynamic>{
                                                                   kTransitionInfoKey:
-                                                                      TransitionInfo(
+                                                                      const TransitionInfo(
                                                                     hasTransition:
                                                                         true,
                                                                     transitionType:
@@ -1449,11 +1455,11 @@ class _ModNotifsListWidgetState extends State<ModNotifsListWidget> {
                                                   children: [
                                                     Align(
                                                       alignment:
-                                                          AlignmentDirectional(
+                                                          const AlignmentDirectional(
                                                               -1.0, 0.0),
                                                       child: Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     0.0,
@@ -1476,7 +1482,7 @@ class _ModNotifsListWidgetState extends State<ModNotifsListWidget> {
                                                     ),
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   0.0,
@@ -1598,7 +1604,7 @@ class _ModNotifsListWidgetState extends State<ModNotifsListWidget> {
                                                   ),
                                                   child: Align(
                                                     alignment:
-                                                        AlignmentDirectional(
+                                                        const AlignmentDirectional(
                                                             -1.0, 0.0),
                                                     child: Text(
                                                       containerTeamsRecord.name,
@@ -1691,7 +1697,7 @@ class _ModNotifsListWidgetState extends State<ModNotifsListWidget> {
                                                   ),
                                                   child: Align(
                                                     alignment:
-                                                        AlignmentDirectional(
+                                                        const AlignmentDirectional(
                                                             1.0, 0.0),
                                                     child: Text(
                                                       containerTeamsRecord.name,

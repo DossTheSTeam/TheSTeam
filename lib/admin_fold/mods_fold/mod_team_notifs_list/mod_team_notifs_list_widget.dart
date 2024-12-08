@@ -1,11 +1,7 @@
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'mod_team_notifs_list_model.dart';
 export 'mod_team_notifs_list_model.dart';
 
@@ -43,7 +39,7 @@ class _ModTeamNotifsListWidgetState extends State<ModTeamNotifsListWidget> {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<TeamsRecord>(
-      stream: TeamsRecord.getDocument(widget!.teamRef!),
+      stream: TeamsRecord.getDocument(widget.teamRef!),
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
@@ -73,15 +69,15 @@ class _ModTeamNotifsListWidgetState extends State<ModTeamNotifsListWidget> {
             body: SafeArea(
               top: true,
               child: Align(
-                alignment: AlignmentDirectional(0.0, -1.0),
+                alignment: const AlignmentDirectional(0.0, -1.0),
                 child: Padding(
-                  padding: EdgeInsets.all(10.0),
+                  padding: const EdgeInsets.all(10.0),
                   child: SingleChildScrollView(
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 10.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -99,7 +95,7 @@ class _ModTeamNotifsListWidgetState extends State<ModTeamNotifsListWidget> {
                                       context.pushNamed(
                                         'MenuPage',
                                         extra: <String, dynamic>{
-                                          kTransitionInfoKey: TransitionInfo(
+                                          kTransitionInfoKey: const TransitionInfo(
                                             hasTransition: true,
                                             transitionType:
                                                 PageTransitionType.leftToRight,
@@ -117,7 +113,7 @@ class _ModTeamNotifsListWidgetState extends State<ModTeamNotifsListWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 0.0, 0.0),
                                     child: InkWell(
                                       splashColor: Colors.transparent,
@@ -138,7 +134,7 @@ class _ModTeamNotifsListWidgetState extends State<ModTeamNotifsListWidget> {
                                 ],
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     10.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   'Signalements',
@@ -155,14 +151,14 @@ class _ModTeamNotifsListWidgetState extends State<ModTeamNotifsListWidget> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               5.0, 0.0, 0.0, 5.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     5.0, 0.0, 6.0, 0.0),
                                 child: Container(
                                   width: 65.0,
@@ -193,12 +189,12 @@ class _ModTeamNotifsListWidgetState extends State<ModTeamNotifsListWidget> {
                                     'TeamPage',
                                     queryParameters: {
                                       'teamRef': serializeParam(
-                                        widget!.teamRef,
+                                        widget.teamRef,
                                         ParamType.DocumentReference,
                                       ),
                                     }.withoutNulls,
                                     extra: <String, dynamic>{
-                                      kTransitionInfoKey: TransitionInfo(
+                                      kTransitionInfoKey: const TransitionInfo(
                                         hasTransition: true,
                                         transitionType:
                                             PageTransitionType.rightToLeft,
@@ -222,7 +218,7 @@ class _ModTeamNotifsListWidgetState extends State<ModTeamNotifsListWidget> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 10.0, 0.0, 0.0),
                           child: StreamBuilder<List<MyNotificationsRecord>>(
                             stream: queryMyNotificationsRecord(
@@ -234,7 +230,7 @@ class _ModTeamNotifsListWidgetState extends State<ModTeamNotifsListWidget> {
                                       )
                                       .where(
                                         'team_ref',
-                                        isEqualTo: widget!.teamRef,
+                                        isEqualTo: widget.teamRef,
                                       )
                                       .orderBy('date_time'),
                             ),
@@ -269,7 +265,7 @@ class _ModTeamNotifsListWidgetState extends State<ModTeamNotifsListWidget> {
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             5.0, 0.0, 0.0, 5.0),
                                         child: StreamBuilder<UsersRecord>(
                                           stream: UsersRecord.getDocument(
@@ -303,7 +299,7 @@ class _ModTeamNotifsListWidgetState extends State<ModTeamNotifsListWidget> {
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           5.0, 0.0, 6.0, 0.0),
                                                   child: Container(
@@ -351,7 +347,7 @@ class _ModTeamNotifsListWidgetState extends State<ModTeamNotifsListWidget> {
                                                       }.withoutNulls,
                                                       extra: <String, dynamic>{
                                                         kTransitionInfoKey:
-                                                            TransitionInfo(
+                                                            const TransitionInfo(
                                                           hasTransition: true,
                                                           transitionType:
                                                               PageTransitionType
@@ -385,13 +381,13 @@ class _ModTeamNotifsListWidgetState extends State<ModTeamNotifsListWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 5.0, 0.0, 0.0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 5.0, 0.0, 5.0),
                                               child: StreamBuilder<PostsRecord>(
                                                 stream: PostsRecord.getDocument(
@@ -427,11 +423,11 @@ class _ModTeamNotifsListWidgetState extends State<ModTeamNotifsListWidget> {
                                                     children: [
                                                       Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 -1.0, 0.0),
                                                         child: Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       10.0,
                                                                       0.0,
@@ -455,7 +451,7 @@ class _ModTeamNotifsListWidgetState extends State<ModTeamNotifsListWidget> {
                                                       ),
                                                       Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     5.0,
                                                                     5.0,
@@ -499,7 +495,7 @@ class _ModTeamNotifsListWidgetState extends State<ModTeamNotifsListWidget> {
                                                                       .max,
                                                               children: [
                                                                 Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           5.0,
                                                                           0.0,
@@ -566,7 +562,7 @@ class _ModTeamNotifsListWidgetState extends State<ModTeamNotifsListWidget> {
                                                                       extra: <String,
                                                                           dynamic>{
                                                                         kTransitionInfoKey:
-                                                                            TransitionInfo(
+                                                                            const TransitionInfo(
                                                                           hasTransition:
                                                                               true,
                                                                           transitionType:
@@ -610,11 +606,11 @@ class _ModTeamNotifsListWidgetState extends State<ModTeamNotifsListWidget> {
                                                         children: [
                                                           Align(
                                                             alignment:
-                                                                AlignmentDirectional(
+                                                                const AlignmentDirectional(
                                                                     -1.0, 0.0),
                                                             child: Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -637,7 +633,7 @@ class _ModTeamNotifsListWidgetState extends State<ModTeamNotifsListWidget> {
                                                           ),
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
@@ -697,22 +693,19 @@ class _ModTeamNotifsListWidgetState extends State<ModTeamNotifsListWidget> {
                                       ),
                                       if (columnMyNotificationsRecord
                                                   .textReasons !=
-                                              null &&
-                                          columnMyNotificationsRecord
-                                                  .textReasons !=
                                               '')
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 5.0, 0.0, 0.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
                                               Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 0.0, 5.0),
                                                   child: Text(
@@ -731,7 +724,7 @@ class _ModTeamNotifsListWidgetState extends State<ModTeamNotifsListWidget> {
                                                 ),
                                               ),
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         5.0, 0.0, 0.0, 5.0),
                                                 child: Row(
@@ -763,11 +756,11 @@ class _ModTeamNotifsListWidgetState extends State<ModTeamNotifsListWidget> {
                                                 children: [
                                                   Align(
                                                     alignment:
-                                                        AlignmentDirectional(
+                                                        const AlignmentDirectional(
                                                             -1.0, 0.0),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   0.0,
@@ -791,7 +784,7 @@ class _ModTeamNotifsListWidgetState extends State<ModTeamNotifsListWidget> {
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 10.0, 0.0),
                                                     child: InkWell(

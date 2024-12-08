@@ -6,10 +6,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'event_page_model.dart';
 export 'event_page_model.dart';
 
@@ -49,7 +46,7 @@ class _EventPageWidgetState extends State<EventPageWidget> {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<EventsRecord>(
-      stream: EventsRecord.getDocument(widget!.eventRef!),
+      stream: EventsRecord.getDocument(widget.eventRef!),
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
@@ -79,16 +76,16 @@ class _EventPageWidgetState extends State<EventPageWidget> {
             body: SafeArea(
               top: true,
               child: Align(
-                alignment: AlignmentDirectional(0.0, -1.0),
+                alignment: const AlignmentDirectional(0.0, -1.0),
                 child: Padding(
-                  padding: EdgeInsets.all(10.0),
+                  padding: const EdgeInsets.all(10.0),
                   child: SingleChildScrollView(
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 10.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -100,32 +97,37 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                   Column(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
-                                      InkWell(
-                                        splashColor: Colors.transparent,
-                                        focusColor: Colors.transparent,
-                                        hoverColor: Colors.transparent,
-                                        highlightColor: Colors.transparent,
-                                        onTap: () async {
-                                          context.pushNamed(
-                                            'MenuPage',
-                                            extra: <String, dynamic>{
-                                              kTransitionInfoKey:
-                                                  TransitionInfo(
-                                                hasTransition: true,
-                                                transitionType:
-                                                    PageTransitionType
-                                                        .leftToRight,
-                                                duration:
-                                                    Duration(milliseconds: 400),
-                                              ),
-                                            },
-                                          );
-                                        },
-                                        child: Icon(
-                                          Icons.menu_rounded,
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryText,
-                                          size: 30.0,
+                                      AuthUserStreamWidget(
+                                        builder: (context) => InkWell(
+                                          splashColor: Colors.transparent,
+                                          focusColor: Colors.transparent,
+                                          hoverColor: Colors.transparent,
+                                          highlightColor: Colors.transparent,
+                                          onTap: () async {
+                                            context.pushNamed(
+                                              'MenuPage',
+                                              extra: <String, dynamic>{
+                                                kTransitionInfoKey:
+                                                    const TransitionInfo(
+                                                  hasTransition: true,
+                                                  transitionType:
+                                                      PageTransitionType
+                                                          .leftToRight,
+                                                  duration: Duration(
+                                                      milliseconds: 400),
+                                                ),
+                                              },
+                                            );
+                                          },
+                                          child: Icon(
+                                            Icons.menu_rounded,
+                                            color: valueOrDefault<Color>(
+                                              currentUserDocument?.color1,
+                                              FlutterFlowTheme.of(context)
+                                                  .secondaryText,
+                                            ),
+                                            size: 30.0,
+                                          ),
                                         ),
                                       ),
                                       if (valueOrDefault<bool>(
@@ -134,7 +136,7 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                           true)
                                         Align(
                                           alignment:
-                                              AlignmentDirectional(0.0, 0.0),
+                                              const AlignmentDirectional(0.0, 0.0),
                                           child: AuthUserStreamWidget(
                                             builder: (context) => Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -142,7 +144,7 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                                   MainAxisAlignment.end,
                                               children: [
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 3.0, 0.0, 0.0),
                                                   child: Text(
@@ -170,28 +172,33 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                     ],
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 0.0, 0.0),
-                                    child: InkWell(
-                                      splashColor: Colors.transparent,
-                                      focusColor: Colors.transparent,
-                                      hoverColor: Colors.transparent,
-                                      highlightColor: Colors.transparent,
-                                      onTap: () async {
-                                        context.safePop();
-                                      },
-                                      child: Icon(
-                                        Icons.arrow_back_ios_new_rounded,
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryText,
-                                        size: 30.0,
+                                    child: AuthUserStreamWidget(
+                                      builder: (context) => InkWell(
+                                        splashColor: Colors.transparent,
+                                        focusColor: Colors.transparent,
+                                        hoverColor: Colors.transparent,
+                                        highlightColor: Colors.transparent,
+                                        onTap: () async {
+                                          context.safePop();
+                                        },
+                                        child: Icon(
+                                          Icons.arrow_back_ios_new_rounded,
+                                          color: valueOrDefault<Color>(
+                                            currentUserDocument?.color1,
+                                            FlutterFlowTheme.of(context)
+                                                .secondaryText,
+                                          ),
+                                          size: 30.0,
+                                        ),
                                       ),
                                     ),
                                   ),
                                 ],
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     15.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   'Détails rencontre',
@@ -207,6 +214,21 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                             ],
                           ),
                         ),
+                        if (valueOrDefault(
+                                currentUserDocument?.stsocialapp, '') ==
+                            'moderateur')
+                          AuthUserStreamWidget(
+                            builder: (context) => Text(
+                              eventPageEventsRecord.reference.id,
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    color: FlutterFlowTheme.of(context).warning,
+                                    letterSpacing: 0.0,
+                                  ),
+                            ),
+                          ),
                         Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -225,7 +247,7 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                       ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       3.0, 0.0, 3.0, 0.0),
                                   child: Text(
                                     '-',
@@ -250,7 +272,7 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                       ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       2.0, 0.0, 2.0, 0.0),
                                   child: Text(
                                     ':',
@@ -292,7 +314,7 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                   ),
                                 if (eventPageEventsRecord.statut == false)
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         5.0, 0.0, 0.0, 0.0),
                                     child: Container(
                                       width: 25.0,
@@ -309,7 +331,7 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                           ],
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 5.0, 0.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -346,7 +368,7 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                           .primaryBackground,
                                     ),
                                     child: Align(
-                                      alignment: AlignmentDirectional(0.0, 0.0),
+                                      alignment: const AlignmentDirectional(0.0, 0.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
@@ -373,7 +395,7 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                           ),
                                           Align(
                                             alignment:
-                                                AlignmentDirectional(0.0, 0.0),
+                                                const AlignmentDirectional(0.0, 0.0),
                                             child: InkWell(
                                               splashColor: Colors.transparent,
                                               focusColor: Colors.transparent,
@@ -402,6 +424,9 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                                         .labelSmall
                                                         .override(
                                                           fontFamily: 'Poppins',
+                                                          color:
+                                                              contDomTeamsRecord
+                                                                  .color1,
                                                           letterSpacing: 0.0,
                                                         ),
                                               ),
@@ -453,7 +478,7 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                           .primaryBackground,
                                     ),
                                     child: Align(
-                                      alignment: AlignmentDirectional(0.0, 0.0),
+                                      alignment: const AlignmentDirectional(0.0, 0.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
@@ -480,7 +505,7 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                           ),
                                           Align(
                                             alignment:
-                                                AlignmentDirectional(0.0, 0.0),
+                                                const AlignmentDirectional(0.0, 0.0),
                                             child: InkWell(
                                               splashColor: Colors.transparent,
                                               focusColor: Colors.transparent,
@@ -509,6 +534,9 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                                         .labelSmall
                                                         .override(
                                                           fontFamily: 'Poppins',
+                                                          color:
+                                                              contExtTeamsRecord
+                                                                  .color1,
                                                           letterSpacing: 0.0,
                                                         ),
                                               ),
@@ -525,7 +553,7 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                         ),
                         if (eventPageEventsRecord.seenScore == true)
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 5.0, 0.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -539,7 +567,7 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                         FlutterFlowTheme.of(context).alternate,
                                   ),
                                   child: Align(
-                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    alignment: const AlignmentDirectional(0.0, 0.0),
                                     child: Text(
                                       eventPageEventsRecord.scoreDom.toString(),
                                       textAlign: TextAlign.end,
@@ -560,7 +588,7 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                         FlutterFlowTheme.of(context).alternate,
                                   ),
                                   child: Align(
-                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    alignment: const AlignmentDirectional(0.0, 0.0),
                                     child: Text(
                                       eventPageEventsRecord.scoreExt.toString(),
                                       textAlign: TextAlign.end,
@@ -576,14 +604,51 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                               ],
                             ),
                           ),
-                        Divider(
-                          thickness: 2.0,
-                          color:
+                        AuthUserStreamWidget(
+                          builder: (context) => Divider(
+                            thickness: 2.0,
+                            color: valueOrDefault<Color>(
+                              currentUserDocument?.color2,
                               FlutterFlowTheme.of(context).secondaryBackground,
+                            ),
+                          ),
                         ),
+                        if (valueOrDefault<bool>(
+                                currentUserDocument?.helpNav, false) ==
+                            true)
+                          Align(
+                            alignment: const AlignmentDirectional(0.0, 0.0),
+                            child: Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 3.0, 0.0, 0.0),
+                              child: AuthUserStreamWidget(
+                                builder: (context) => Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.end,
+                                  children: [
+                                    Text(
+                                      'Cliquez sur le bouton de votre choix pour configurer votre paris sportif.',
+                                      textAlign: TextAlign.center,
+                                      maxLines: 3,
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                            fontSize: 10.0,
+                                            letterSpacing: 0.0,
+                                            lineHeight: 1.0,
+                                          ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
                         if (eventPageEventsRecord.statut == true)
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 10.0, 0.0, 0.0),
                             child: StreamBuilder<List<BetsRecord>>(
                               stream: queryBetsRecord(
@@ -619,7 +684,7 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                         columnBetsAVBetsRecordList[
                                             columnBetsAVIndex];
                                     return Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 5.0, 0.0, 5.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -628,7 +693,7 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                         children: [
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     20.0, 0.0, 0.0, 0.0),
                                             child: Text(
                                               columnBetsAVBetsRecord.choice,
@@ -643,7 +708,7 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 20.0, 0.0),
                                             child: FFButtonWidget(
                                               onPressed: () async {
@@ -678,10 +743,15 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                                       ParamType
                                                           .DocumentReference,
                                                     ),
+                                                    'eventRef': serializeParam(
+                                                      widget.eventRef,
+                                                      ParamType
+                                                          .DocumentReference,
+                                                    ),
                                                   }.withoutNulls,
                                                   extra: <String, dynamic>{
                                                     kTransitionInfoKey:
-                                                        TransitionInfo(
+                                                        const TransitionInfo(
                                                       hasTransition: true,
                                                       transitionType:
                                                           PageTransitionType
@@ -704,11 +774,11 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                               ),
                                               options: FFButtonOptions(
                                                 height: 30.0,
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         12.0, 0.0, 12.0, 0.0),
                                                 iconPadding:
-                                                    EdgeInsetsDirectional
+                                                    const EdgeInsetsDirectional
                                                         .fromSTEB(
                                                             0.0, 0.0, 0.0, 0.0),
                                                 color:
@@ -725,7 +795,7 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                                           letterSpacing: 0.0,
                                                         ),
                                                 elevation: 3.0,
-                                                borderSide: BorderSide(
+                                                borderSide: const BorderSide(
                                                   color: Colors.transparent,
                                                   width: 1.0,
                                                 ),
@@ -750,7 +820,7 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                           ),
                         if (eventPageEventsRecord.statut == false)
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 10.0, 0.0, 0.0),
                             child: StreamBuilder<List<BetsRecord>>(
                               stream: queryBetsRecord(
@@ -786,7 +856,7 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                         columnBetsTBetsRecordList[
                                             columnBetsTIndex];
                                     return Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 5.0, 0.0, 5.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -795,7 +865,7 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                         children: [
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     20.0, 0.0, 0.0, 0.0),
                                             child: Text(
                                               columnBetsTBetsRecord.choice,
@@ -810,13 +880,13 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 10.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 20.0, 0.0),
                                                   child: Text(
@@ -837,7 +907,7 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 10.0, 0.0),
                                                   child: Row(
@@ -849,7 +919,7 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                                           true)
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -873,7 +943,7 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                                           false)
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -906,15 +976,19 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                               },
                             ),
                           ),
-                        Divider(
-                          thickness: 2.0,
-                          color:
+                        AuthUserStreamWidget(
+                          builder: (context) => Divider(
+                            thickness: 2.0,
+                            color: valueOrDefault<Color>(
+                              currentUserDocument?.color2,
                               FlutterFlowTheme.of(context).secondaryBackground,
+                            ),
+                          ),
                         ),
                         Align(
-                          alignment: AlignmentDirectional(-1.0, 0.0),
+                          alignment: const AlignmentDirectional(-1.0, 0.0),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 20.0, 10.0, 0.0, 0.0),
                             child: Text(
                               'Statistiques',
@@ -930,8 +1004,41 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                             ),
                           ),
                         ),
+                        if (valueOrDefault<bool>(
+                                currentUserDocument?.helpNav, false) ==
+                            true)
+                          Align(
+                            alignment: const AlignmentDirectional(0.0, 0.0),
+                            child: Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 3.0, 0.0, 0.0),
+                              child: AuthUserStreamWidget(
+                                builder: (context) => Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.end,
+                                  children: [
+                                    Text(
+                                      'Nombres de parieurs',
+                                      textAlign: TextAlign.center,
+                                      maxLines: 3,
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                            fontSize: 10.0,
+                                            letterSpacing: 0.0,
+                                            lineHeight: 1.0,
+                                          ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 10.0, 0.0, 0.0),
                           child: StreamBuilder<List<BetsRecord>>(
                             stream: queryBetsRecord(
@@ -966,7 +1073,7 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                       columnStatsBetsBetsRecordList[
                                           columnStatsBetsIndex];
                                   return Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 5.0, 0.0, 5.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -975,7 +1082,7 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                       children: [
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   20.0, 0.0, 0.0, 0.0),
                                           child: Text(
                                             columnStatsBetsBetsRecord.choice,
@@ -991,7 +1098,7 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 0.0, 10.0, 0.0),
                                               child: Text(
@@ -1011,15 +1118,16 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                               ),
                                             ),
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 0.0, 20.0, 0.0),
-                                              child: Icon(
-                                                Icons.groups_sharp,
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryText,
-                                                size: 24.0,
+                                              child: AuthUserStreamWidget(
+                                                builder: (context) => Icon(
+                                                  Icons.groups_sharp,
+                                                  color: currentUserDocument
+                                                      ?.color2,
+                                                  size: 24.0,
+                                                ),
                                               ),
                                             ),
                                           ],
@@ -1032,15 +1140,19 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                             },
                           ),
                         ),
-                        Divider(
-                          thickness: 2.0,
-                          color:
+                        AuthUserStreamWidget(
+                          builder: (context) => Divider(
+                            thickness: 2.0,
+                            color: valueOrDefault<Color>(
+                              currentUserDocument?.color2,
                               FlutterFlowTheme.of(context).secondaryBackground,
+                            ),
+                          ),
                         ),
                         Align(
-                          alignment: AlignmentDirectional(-1.0, 0.0),
+                          alignment: const AlignmentDirectional(-1.0, 0.0),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 20.0, 10.0, 0.0, 0.0),
                             child: Text(
                               'Commentaires',
@@ -1054,7 +1166,7 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               10.0, 10.0, 10.0, 10.0),
                           child: SingleChildScrollView(
                             scrollDirection: Axis.horizontal,
@@ -1063,46 +1175,48 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 10.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 5.0, 0.0),
-                                        child: InkWell(
-                                          splashColor: Colors.transparent,
-                                          focusColor: Colors.transparent,
-                                          hoverColor: Colors.transparent,
-                                          highlightColor: Colors.transparent,
-                                          onTap: () async {
-                                            context.pushNamed(
-                                              'ListEventMessages',
-                                              queryParameters: {
-                                                'eventRef': serializeParam(
-                                                  widget!.eventRef,
-                                                  ParamType.DocumentReference,
-                                                ),
-                                              }.withoutNulls,
-                                              extra: <String, dynamic>{
-                                                kTransitionInfoKey:
-                                                    TransitionInfo(
-                                                  hasTransition: true,
-                                                  transitionType:
-                                                      PageTransitionType
-                                                          .bottomToTop,
-                                                  duration: Duration(
-                                                      milliseconds: 400),
-                                                ),
-                                              },
-                                            );
-                                          },
-                                          child: Icon(
-                                            Icons.insert_comment_rounded,
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryText,
-                                            size: 30.0,
+                                        child: AuthUserStreamWidget(
+                                          builder: (context) => InkWell(
+                                            splashColor: Colors.transparent,
+                                            focusColor: Colors.transparent,
+                                            hoverColor: Colors.transparent,
+                                            highlightColor: Colors.transparent,
+                                            onTap: () async {
+                                              context.pushNamed(
+                                                'ListEventMessages',
+                                                queryParameters: {
+                                                  'eventRef': serializeParam(
+                                                    widget.eventRef,
+                                                    ParamType.DocumentReference,
+                                                  ),
+                                                }.withoutNulls,
+                                                extra: <String, dynamic>{
+                                                  kTransitionInfoKey:
+                                                      const TransitionInfo(
+                                                    hasTransition: true,
+                                                    transitionType:
+                                                        PageTransitionType
+                                                            .bottomToTop,
+                                                    duration: Duration(
+                                                        milliseconds: 400),
+                                                  ),
+                                                },
+                                              );
+                                            },
+                                            child: Icon(
+                                              Icons.insert_comment_rounded,
+                                              color:
+                                                  currentUserDocument?.color1,
+                                              size: 30.0,
+                                            ),
                                           ),
                                         ),
                                       ),
@@ -1124,7 +1238,7 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       5.0, 0.0, 10.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -1133,35 +1247,38 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                           .contains(currentUserReference))
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 5.0, 0.0),
-                                          child: InkWell(
-                                            splashColor: Colors.transparent,
-                                            focusColor: Colors.transparent,
-                                            hoverColor: Colors.transparent,
-                                            highlightColor: Colors.transparent,
-                                            onTap: () async {
-                                              await eventPageEventsRecord
-                                                  .reference
-                                                  .update({
-                                                ...mapToFirestore(
-                                                  {
-                                                    'num_likes':
-                                                        FieldValue.increment(1),
-                                                    'likes':
-                                                        FieldValue.arrayUnion([
-                                                      currentUserReference
-                                                    ]),
-                                                  },
-                                                ),
-                                              });
-                                            },
-                                            child: Icon(
-                                              Icons.favorite_border_rounded,
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .error,
-                                              size: 30.0,
+                                          child: AuthUserStreamWidget(
+                                            builder: (context) => InkWell(
+                                              splashColor: Colors.transparent,
+                                              focusColor: Colors.transparent,
+                                              hoverColor: Colors.transparent,
+                                              highlightColor:
+                                                  Colors.transparent,
+                                              onTap: () async {
+                                                await eventPageEventsRecord
+                                                    .reference
+                                                    .update({
+                                                  ...mapToFirestore(
+                                                    {
+                                                      'num_likes':
+                                                          FieldValue.increment(
+                                                              1),
+                                                      'likes': FieldValue
+                                                          .arrayUnion([
+                                                        currentUserReference
+                                                      ]),
+                                                    },
+                                                  ),
+                                                });
+                                              },
+                                              child: Icon(
+                                                Icons.favorite_border_rounded,
+                                                color:
+                                                    currentUserDocument?.color1,
+                                                size: 30.0,
+                                              ),
                                             ),
                                           ),
                                         ),
@@ -1169,36 +1286,38 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                           .contains(currentUserReference))
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 5.0, 0.0),
-                                          child: InkWell(
-                                            splashColor: Colors.transparent,
-                                            focusColor: Colors.transparent,
-                                            hoverColor: Colors.transparent,
-                                            highlightColor: Colors.transparent,
-                                            onTap: () async {
-                                              await eventPageEventsRecord
-                                                  .reference
-                                                  .update({
-                                                ...mapToFirestore(
-                                                  {
-                                                    'num_likes':
-                                                        FieldValue.increment(
-                                                            -(1)),
-                                                    'likes':
-                                                        FieldValue.arrayRemove([
-                                                      currentUserReference
-                                                    ]),
-                                                  },
-                                                ),
-                                              });
-                                            },
-                                            child: Icon(
-                                              Icons.favorite_rounded,
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .error,
-                                              size: 30.0,
+                                          child: AuthUserStreamWidget(
+                                            builder: (context) => InkWell(
+                                              splashColor: Colors.transparent,
+                                              focusColor: Colors.transparent,
+                                              hoverColor: Colors.transparent,
+                                              highlightColor:
+                                                  Colors.transparent,
+                                              onTap: () async {
+                                                await eventPageEventsRecord
+                                                    .reference
+                                                    .update({
+                                                  ...mapToFirestore(
+                                                    {
+                                                      'num_likes':
+                                                          FieldValue.increment(
+                                                              -(1)),
+                                                      'likes': FieldValue
+                                                          .arrayRemove([
+                                                        currentUserReference
+                                                      ]),
+                                                    },
+                                                  ),
+                                                });
+                                              },
+                                              child: Icon(
+                                                Icons.favorite_rounded,
+                                                color:
+                                                    currentUserDocument?.color1,
+                                                size: 30.0,
+                                              ),
                                             ),
                                           ),
                                         ),
@@ -1220,7 +1339,7 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       5.0, 0.0, 10.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -1229,35 +1348,38 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                           .contains(currentUserReference))
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 5.0, 0.0),
-                                          child: InkWell(
-                                            splashColor: Colors.transparent,
-                                            focusColor: Colors.transparent,
-                                            hoverColor: Colors.transparent,
-                                            highlightColor: Colors.transparent,
-                                            onTap: () async {
-                                              await eventPageEventsRecord
-                                                  .reference
-                                                  .update({
-                                                ...mapToFirestore(
-                                                  {
-                                                    'num_dislikes':
-                                                        FieldValue.increment(1),
-                                                    'dislikes':
-                                                        FieldValue.arrayUnion([
-                                                      currentUserReference
-                                                    ]),
-                                                  },
-                                                ),
-                                              });
-                                            },
-                                            child: Icon(
-                                              Icons.heart_broken_outlined,
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .error,
-                                              size: 30.0,
+                                          child: AuthUserStreamWidget(
+                                            builder: (context) => InkWell(
+                                              splashColor: Colors.transparent,
+                                              focusColor: Colors.transparent,
+                                              hoverColor: Colors.transparent,
+                                              highlightColor:
+                                                  Colors.transparent,
+                                              onTap: () async {
+                                                await eventPageEventsRecord
+                                                    .reference
+                                                    .update({
+                                                  ...mapToFirestore(
+                                                    {
+                                                      'num_dislikes':
+                                                          FieldValue.increment(
+                                                              1),
+                                                      'dislikes': FieldValue
+                                                          .arrayUnion([
+                                                        currentUserReference
+                                                      ]),
+                                                    },
+                                                  ),
+                                                });
+                                              },
+                                              child: Icon(
+                                                Icons.heart_broken_outlined,
+                                                color:
+                                                    currentUserDocument?.color1,
+                                                size: 30.0,
+                                              ),
                                             ),
                                           ),
                                         ),
@@ -1265,36 +1387,38 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                           .contains(currentUserReference))
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 5.0, 0.0),
-                                          child: InkWell(
-                                            splashColor: Colors.transparent,
-                                            focusColor: Colors.transparent,
-                                            hoverColor: Colors.transparent,
-                                            highlightColor: Colors.transparent,
-                                            onTap: () async {
-                                              await eventPageEventsRecord
-                                                  .reference
-                                                  .update({
-                                                ...mapToFirestore(
-                                                  {
-                                                    'num_dislikes':
-                                                        FieldValue.increment(
-                                                            -(1)),
-                                                    'dislikes':
-                                                        FieldValue.arrayRemove([
-                                                      currentUserReference
-                                                    ]),
-                                                  },
-                                                ),
-                                              });
-                                            },
-                                            child: Icon(
-                                              Icons.heart_broken_rounded,
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .error,
-                                              size: 30.0,
+                                          child: AuthUserStreamWidget(
+                                            builder: (context) => InkWell(
+                                              splashColor: Colors.transparent,
+                                              focusColor: Colors.transparent,
+                                              hoverColor: Colors.transparent,
+                                              highlightColor:
+                                                  Colors.transparent,
+                                              onTap: () async {
+                                                await eventPageEventsRecord
+                                                    .reference
+                                                    .update({
+                                                  ...mapToFirestore(
+                                                    {
+                                                      'num_dislikes':
+                                                          FieldValue.increment(
+                                                              -(1)),
+                                                      'dislikes': FieldValue
+                                                          .arrayRemove([
+                                                        currentUserReference
+                                                      ]),
+                                                    },
+                                                  ),
+                                                });
+                                              },
+                                              child: Icon(
+                                                Icons.heart_broken_rounded,
+                                                color:
+                                                    currentUserDocument?.color1,
+                                                size: 30.0,
+                                              ),
                                             ),
                                           ),
                                         ),
@@ -1319,17 +1443,21 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                             ),
                           ),
                         ),
-                        Divider(
-                          thickness: 2.0,
-                          color:
+                        AuthUserStreamWidget(
+                          builder: (context) => Divider(
+                            thickness: 2.0,
+                            color: valueOrDefault<Color>(
+                              currentUserDocument?.color2,
                               FlutterFlowTheme.of(context).secondaryBackground,
+                            ),
+                          ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               10.0, 0.0, 10.0, 0.0),
                           child: StreamBuilder<List<EventMessagesRecord>>(
                             stream: queryEventMessagesRecord(
-                              parent: widget!.eventRef,
+                              parent: widget.eventRef,
                               queryBuilder: (eventMessagesRecord) =>
                                   eventMessagesRecord.orderBy('created_time'),
                               limit: 3,
@@ -1409,7 +1537,7 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                                   children: [
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   10.0,
                                                                   0.0,
@@ -1421,7 +1549,7 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                                         children: [
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
@@ -1457,7 +1585,7 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                                           ),
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         10.0,
                                                                         0.0,
@@ -1490,7 +1618,7 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                                                   extra: <String,
                                                                       dynamic>{
                                                                     kTransitionInfoKey:
-                                                                        TransitionInfo(
+                                                                        const TransitionInfo(
                                                                       hasTransition:
                                                                           true,
                                                                       transitionType:
@@ -1517,6 +1645,8 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                                                     .override(
                                                                       fontFamily:
                                                                           'Montserrat',
+                                                                      color: columnUsersRecord
+                                                                          .color1,
                                                                       letterSpacing:
                                                                           0.0,
                                                                     ),
@@ -1544,7 +1674,7 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                                           ),
                                                           child: Padding(
                                                             padding:
-                                                                EdgeInsets.all(
+                                                                const EdgeInsets.all(
                                                                     3.0),
                                                             child: Text(
                                                               rowCommsEventMessagesRecord
@@ -1568,60 +1698,65 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                                           children: [
                                                             Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           4.0,
                                                                           0.0),
-                                                              child: InkWell(
-                                                                splashColor: Colors
-                                                                    .transparent,
-                                                                focusColor: Colors
-                                                                    .transparent,
-                                                                hoverColor: Colors
-                                                                    .transparent,
-                                                                highlightColor:
-                                                                    Colors
-                                                                        .transparent,
-                                                                onTap:
-                                                                    () async {
-                                                                  context
-                                                                      .pushNamed(
-                                                                    'EventMessagePage',
-                                                                    queryParameters:
-                                                                        {
-                                                                      'startedCommRef':
-                                                                          serializeParam(
-                                                                        rowCommsEventMessagesRecord
-                                                                            .reference,
-                                                                        ParamType
-                                                                            .DocumentReference,
-                                                                      ),
-                                                                    }.withoutNulls,
-                                                                    extra: <String,
-                                                                        dynamic>{
-                                                                      kTransitionInfoKey:
-                                                                          TransitionInfo(
-                                                                        hasTransition:
-                                                                            true,
-                                                                        transitionType:
-                                                                            PageTransitionType.scale,
-                                                                        alignment:
-                                                                            Alignment.bottomCenter,
-                                                                        duration:
-                                                                            Duration(milliseconds: 600),
-                                                                      ),
-                                                                    },
-                                                                  );
-                                                                },
-                                                                child: Icon(
-                                                                  Icons
-                                                                      .remove_red_eye_outlined,
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .secondaryText,
-                                                                  size: 30.0,
+                                                              child:
+                                                                  AuthUserStreamWidget(
+                                                                builder:
+                                                                    (context) =>
+                                                                        InkWell(
+                                                                  splashColor:
+                                                                      Colors
+                                                                          .transparent,
+                                                                  focusColor: Colors
+                                                                      .transparent,
+                                                                  hoverColor: Colors
+                                                                      .transparent,
+                                                                  highlightColor:
+                                                                      Colors
+                                                                          .transparent,
+                                                                  onTap:
+                                                                      () async {
+                                                                    context
+                                                                        .pushNamed(
+                                                                      'EventMessagePage',
+                                                                      queryParameters:
+                                                                          {
+                                                                        'startedCommRef':
+                                                                            serializeParam(
+                                                                          rowCommsEventMessagesRecord
+                                                                              .reference,
+                                                                          ParamType
+                                                                              .DocumentReference,
+                                                                        ),
+                                                                      }.withoutNulls,
+                                                                      extra: <String,
+                                                                          dynamic>{
+                                                                        kTransitionInfoKey:
+                                                                            const TransitionInfo(
+                                                                          hasTransition:
+                                                                              true,
+                                                                          transitionType:
+                                                                              PageTransitionType.scale,
+                                                                          alignment:
+                                                                              Alignment.bottomCenter,
+                                                                          duration:
+                                                                              Duration(milliseconds: 600),
+                                                                        ),
+                                                                      },
+                                                                    );
+                                                                  },
+                                                                  child: Icon(
+                                                                    Icons
+                                                                        .remove_red_eye_outlined,
+                                                                    color: currentUserDocument
+                                                                        ?.color1,
+                                                                    size: 30.0,
+                                                                  ),
                                                                 ),
                                                               ),
                                                             ),
@@ -1631,7 +1766,7 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                                     ),
                                                     Align(
                                                       alignment:
-                                                          AlignmentDirectional(
+                                                          const AlignmentDirectional(
                                                               -1.0, 0.0),
                                                       child: Text(
                                                         dateTimeFormat(
@@ -1653,7 +1788,7 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                                     ),
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   5.0,
                                                                   5.0,
@@ -1672,7 +1807,7 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                                           children: [
                                                             Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -1684,7 +1819,7 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                                                         .max,
                                                                 children: [
                                                                   Padding(
-                                                                    padding: EdgeInsetsDirectional
+                                                                    padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -1724,7 +1859,7 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                                             ),
                                                             Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -1736,7 +1871,7 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                                                         .max,
                                                                 children: [
                                                                   Padding(
-                                                                    padding: EdgeInsetsDirectional
+                                                                    padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -1776,7 +1911,7 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                                             ),
                                                             Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -1788,7 +1923,7 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                                                         .max,
                                                                 children: [
                                                                   Padding(
-                                                                    padding: EdgeInsetsDirectional
+                                                                    padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -1832,7 +1967,7 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                                                       .max,
                                                               children: [
                                                                 Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -1879,11 +2014,19 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                                         ),
                                                       ),
                                                     ),
-                                                    Divider(
-                                                      thickness: 2.0,
-                                                      color: FlutterFlowTheme
-                                                              .of(context)
-                                                          .secondaryBackground,
+                                                    AuthUserStreamWidget(
+                                                      builder: (context) =>
+                                                          Divider(
+                                                        thickness: 2.0,
+                                                        color: valueOrDefault<
+                                                            Color>(
+                                                          currentUserDocument
+                                                              ?.color2,
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .secondaryBackground,
+                                                        ),
+                                                      ),
                                                     ),
                                                   ],
                                                 ),
@@ -1899,7 +2042,7 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               5.0, 0.0, 5.0, 15.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -1908,7 +2051,7 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 5.0, 0.0),
                                     child: Icon(
                                       Icons.mic_rounded,
@@ -1917,85 +2060,91 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 10.0, 0.0),
-                                    child: InkWell(
-                                      splashColor: Colors.transparent,
-                                      focusColor: Colors.transparent,
-                                      hoverColor: Colors.transparent,
-                                      highlightColor: Colors.transparent,
-                                      onTap: () async {
-                                        final selectedMedia =
-                                            await selectMediaWithSourceBottomSheet(
-                                          context: context,
-                                          maxWidth: 1000.00,
-                                          maxHeight: 1000.00,
-                                          allowPhoto: true,
-                                        );
-                                        if (selectedMedia != null &&
-                                            selectedMedia.every((m) =>
-                                                validateFileFormat(
-                                                    m.storagePath, context))) {
-                                          safeSetState(() =>
-                                              _model.isDataUploading = true);
-                                          var selectedUploadedFiles =
-                                              <FFUploadedFile>[];
+                                    child: AuthUserStreamWidget(
+                                      builder: (context) => InkWell(
+                                        splashColor: Colors.transparent,
+                                        focusColor: Colors.transparent,
+                                        hoverColor: Colors.transparent,
+                                        highlightColor: Colors.transparent,
+                                        onTap: () async {
+                                          final selectedMedia =
+                                              await selectMediaWithSourceBottomSheet(
+                                            context: context,
+                                            maxWidth: 1000.00,
+                                            maxHeight: 1000.00,
+                                            allowPhoto: true,
+                                          );
+                                          if (selectedMedia != null &&
+                                              selectedMedia.every((m) =>
+                                                  validateFileFormat(
+                                                      m.storagePath,
+                                                      context))) {
+                                            safeSetState(() =>
+                                                _model.isDataUploading = true);
+                                            var selectedUploadedFiles =
+                                                <FFUploadedFile>[];
 
-                                          var downloadUrls = <String>[];
-                                          try {
-                                            selectedUploadedFiles =
-                                                selectedMedia
-                                                    .map((m) => FFUploadedFile(
-                                                          name: m.storagePath
-                                                              .split('/')
-                                                              .last,
-                                                          bytes: m.bytes,
-                                                          height: m.dimensions
-                                                              ?.height,
-                                                          width: m.dimensions
-                                                              ?.width,
-                                                          blurHash: m.blurHash,
-                                                        ))
-                                                    .toList();
+                                            var downloadUrls = <String>[];
+                                            try {
+                                              selectedUploadedFiles =
+                                                  selectedMedia
+                                                      .map(
+                                                          (m) => FFUploadedFile(
+                                                                name: m
+                                                                    .storagePath
+                                                                    .split('/')
+                                                                    .last,
+                                                                bytes: m.bytes,
+                                                                height: m
+                                                                    .dimensions
+                                                                    ?.height,
+                                                                width: m
+                                                                    .dimensions
+                                                                    ?.width,
+                                                                blurHash:
+                                                                    m.blurHash,
+                                                              ))
+                                                      .toList();
 
-                                            downloadUrls = (await Future.wait(
-                                              selectedMedia.map(
-                                                (m) async => await uploadData(
-                                                    m.storagePath, m.bytes),
-                                              ),
-                                            ))
-                                                .where((u) => u != null)
-                                                .map((u) => u!)
-                                                .toList();
-                                          } finally {
-                                            _model.isDataUploading = false;
+                                              downloadUrls = (await Future.wait(
+                                                selectedMedia.map(
+                                                  (m) async => await uploadData(
+                                                      m.storagePath, m.bytes),
+                                                ),
+                                              ))
+                                                  .where((u) => u != null)
+                                                  .map((u) => u!)
+                                                  .toList();
+                                            } finally {
+                                              _model.isDataUploading = false;
+                                            }
+                                            if (selectedUploadedFiles.length ==
+                                                    selectedMedia.length &&
+                                                downloadUrls.length ==
+                                                    selectedMedia.length) {
+                                              safeSetState(() {
+                                                _model.uploadedLocalFile =
+                                                    selectedUploadedFiles.first;
+                                                _model.uploadedFileUrl =
+                                                    downloadUrls.first;
+                                              });
+                                            } else {
+                                              safeSetState(() {});
+                                              return;
+                                            }
                                           }
-                                          if (selectedUploadedFiles.length ==
-                                                  selectedMedia.length &&
-                                              downloadUrls.length ==
-                                                  selectedMedia.length) {
-                                            safeSetState(() {
-                                              _model.uploadedLocalFile =
-                                                  selectedUploadedFiles.first;
-                                              _model.uploadedFileUrl =
-                                                  downloadUrls.first;
-                                            });
-                                          } else {
-                                            safeSetState(() {});
-                                            return;
-                                          }
-                                        }
-                                      },
-                                      child: Icon(
-                                        Icons.image_search_rounded,
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondaryText,
-                                        size: 30.0,
+                                        },
+                                        child: Icon(
+                                          Icons.image_search_rounded,
+                                          color: currentUserDocument?.color1,
+                                          size: 30.0,
+                                        ),
                                       ),
                                     ),
                                   ),
-                                  if (_model.uploadedFileUrl != null &&
-                                      _model.uploadedFileUrl != '')
+                                  if (_model.uploadedFileUrl != '')
                                     Container(
                                       width: 50.0,
                                       height: 40.0,
@@ -2006,7 +2155,7 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                             BorderRadius.circular(6.0),
                                       ),
                                       child: Padding(
-                                        padding: EdgeInsets.all(2.0),
+                                        padding: const EdgeInsets.all(2.0),
                                         child: ClipRRect(
                                           borderRadius:
                                               BorderRadius.circular(4.0),
@@ -2023,158 +2172,172 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                               ),
                               Expanded(
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       8.0, 0.0, 8.0, 0.0),
-                                  child: TextFormField(
-                                    controller: _model.commFieldTextController,
-                                    focusNode: _model.commFieldFocusNode,
-                                    autofocus: false,
-                                    obscureText: false,
-                                    decoration: InputDecoration(
-                                      labelStyle: FlutterFlowTheme.of(context)
-                                          .labelMedium
+                                  child: AuthUserStreamWidget(
+                                    builder: (context) => TextFormField(
+                                      controller:
+                                          _model.commFieldTextController,
+                                      focusNode: _model.commFieldFocusNode,
+                                      autofocus: false,
+                                      obscureText: false,
+                                      decoration: InputDecoration(
+                                        labelStyle: FlutterFlowTheme.of(context)
+                                            .labelMedium
+                                            .override(
+                                              fontFamily: 'Poppins',
+                                              letterSpacing: 0.0,
+                                            ),
+                                        hintText: '.......................',
+                                        hintStyle: FlutterFlowTheme.of(context)
+                                            .bodyLarge
+                                            .override(
+                                              fontFamily: 'Poppins',
+                                              letterSpacing: 0.0,
+                                            ),
+                                        enabledBorder: UnderlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: valueOrDefault<Color>(
+                                              currentUserDocument?.color2,
+                                              FlutterFlowTheme.of(context)
+                                                  .secondaryBackground,
+                                            ),
+                                            width: 2.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
+                                        ),
+                                        focusedBorder: UnderlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: FlutterFlowTheme.of(context)
+                                                .primary,
+                                            width: 2.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
+                                        ),
+                                        errorBorder: UnderlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: FlutterFlowTheme.of(context)
+                                                .error,
+                                            width: 2.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
+                                        ),
+                                        focusedErrorBorder:
+                                            UnderlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: FlutterFlowTheme.of(context)
+                                                .error,
+                                            width: 2.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
+                                        ),
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
                                           .override(
                                             fontFamily: 'Poppins',
                                             letterSpacing: 0.0,
                                           ),
-                                      hintText: '.......................',
-                                      hintStyle: FlutterFlowTheme.of(context)
-                                          .bodyLarge
-                                          .override(
-                                            fontFamily: 'Poppins',
-                                            letterSpacing: 0.0,
-                                          ),
-                                      enabledBorder: UnderlineInputBorder(
-                                        borderSide: BorderSide(
-                                          color: FlutterFlowTheme.of(context)
-                                              .secondaryBackground,
-                                          width: 2.0,
-                                        ),
-                                        borderRadius:
-                                            BorderRadius.circular(8.0),
-                                      ),
-                                      focusedBorder: UnderlineInputBorder(
-                                        borderSide: BorderSide(
-                                          color: FlutterFlowTheme.of(context)
-                                              .primary,
-                                          width: 2.0,
-                                        ),
-                                        borderRadius:
-                                            BorderRadius.circular(8.0),
-                                      ),
-                                      errorBorder: UnderlineInputBorder(
-                                        borderSide: BorderSide(
-                                          color: FlutterFlowTheme.of(context)
-                                              .error,
-                                          width: 2.0,
-                                        ),
-                                        borderRadius:
-                                            BorderRadius.circular(8.0),
-                                      ),
-                                      focusedErrorBorder: UnderlineInputBorder(
-                                        borderSide: BorderSide(
-                                          color: FlutterFlowTheme.of(context)
-                                              .error,
-                                          width: 2.0,
-                                        ),
-                                        borderRadius:
-                                            BorderRadius.circular(8.0),
-                                      ),
+                                      validator: _model
+                                          .commFieldTextControllerValidator
+                                          .asValidator(context),
                                     ),
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Poppins',
-                                          letterSpacing: 0.0,
-                                        ),
-                                    validator: _model
-                                        .commFieldTextControllerValidator
-                                        .asValidator(context),
                                   ),
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     10.0, 0.0, 5.0, 0.0),
-                                child: InkWell(
-                                  splashColor: Colors.transparent,
-                                  focusColor: Colors.transparent,
-                                  hoverColor: Colors.transparent,
-                                  highlightColor: Colors.transparent,
-                                  onTap: () async {
-                                    var eventMessagesRecordReference =
-                                        EventMessagesRecord.createDoc(
-                                            eventPageEventsRecord.reference);
-                                    await eventMessagesRecordReference.set({
-                                      ...createEventMessagesRecordData(
-                                        commUser: currentUserReference,
-                                        text:
-                                            _model.commFieldTextController.text,
-                                        image: _model.uploadedFileUrl,
-                                        moderator:
-                                            eventPageEventsRecord.adminUser,
-                                      ),
-                                      ...mapToFirestore(
-                                        {
-                                          'created_time':
-                                              FieldValue.serverTimestamp(),
-                                        },
-                                      ),
-                                    });
-                                    _model.commentRef = EventMessagesRecord
-                                        .getDocumentFromData({
-                                      ...createEventMessagesRecordData(
-                                        commUser: currentUserReference,
-                                        text:
-                                            _model.commFieldTextController.text,
-                                        image: _model.uploadedFileUrl,
-                                        moderator:
-                                            eventPageEventsRecord.adminUser,
-                                      ),
-                                      ...mapToFirestore(
-                                        {
-                                          'created_time': DateTime.now(),
-                                        },
-                                      ),
-                                    }, eventMessagesRecordReference);
-
-                                    await widget!.eventRef!.update({
-                                      ...mapToFirestore(
-                                        {
-                                          'num_comms': FieldValue.increment(1),
-                                        },
-                                      ),
-                                    });
-                                    safeSetState(() {
-                                      _model.commFieldTextController?.clear();
-                                    });
-
-                                    context.pushNamed(
-                                      'ListEventMessages',
-                                      queryParameters: {
-                                        'eventRef': serializeParam(
-                                          widget!.eventRef,
-                                          ParamType.DocumentReference,
+                                child: AuthUserStreamWidget(
+                                  builder: (context) => InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      var eventMessagesRecordReference =
+                                          EventMessagesRecord.createDoc(
+                                              eventPageEventsRecord.reference);
+                                      await eventMessagesRecordReference.set({
+                                        ...createEventMessagesRecordData(
+                                          commUser: currentUserReference,
+                                          text: _model
+                                              .commFieldTextController.text,
+                                          image: _model.uploadedFileUrl,
+                                          moderator:
+                                              eventPageEventsRecord.adminUser,
                                         ),
-                                      }.withoutNulls,
-                                      extra: <String, dynamic>{
-                                        kTransitionInfoKey: TransitionInfo(
-                                          hasTransition: true,
-                                          transitionType:
-                                              PageTransitionType.scale,
-                                          alignment: Alignment.bottomCenter,
-                                          duration: Duration(milliseconds: 600),
+                                        ...mapToFirestore(
+                                          {
+                                            'created_time':
+                                                FieldValue.serverTimestamp(),
+                                          },
                                         ),
-                                      },
-                                    );
+                                      });
+                                      _model.commentRef = EventMessagesRecord
+                                          .getDocumentFromData({
+                                        ...createEventMessagesRecordData(
+                                          commUser: currentUserReference,
+                                          text: _model
+                                              .commFieldTextController.text,
+                                          image: _model.uploadedFileUrl,
+                                          moderator:
+                                              eventPageEventsRecord.adminUser,
+                                        ),
+                                        ...mapToFirestore(
+                                          {
+                                            'created_time': DateTime.now(),
+                                          },
+                                        ),
+                                      }, eventMessagesRecordReference);
 
-                                    safeSetState(() {});
-                                  },
-                                  child: Icon(
-                                    Icons.send_rounded,
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryText,
-                                    size: 30.0,
+                                      await widget.eventRef!.update({
+                                        ...mapToFirestore(
+                                          {
+                                            'num_comms':
+                                                FieldValue.increment(1),
+                                          },
+                                        ),
+                                      });
+                                      safeSetState(() {
+                                        _model.commFieldTextController?.clear();
+                                      });
+
+                                      context.pushNamed(
+                                        'ListEventMessages',
+                                        queryParameters: {
+                                          'eventRef': serializeParam(
+                                            widget.eventRef,
+                                            ParamType.DocumentReference,
+                                          ),
+                                        }.withoutNulls,
+                                        extra: <String, dynamic>{
+                                          kTransitionInfoKey: const TransitionInfo(
+                                            hasTransition: true,
+                                            transitionType:
+                                                PageTransitionType.scale,
+                                            alignment: Alignment.bottomCenter,
+                                            duration:
+                                                Duration(milliseconds: 600),
+                                          ),
+                                        },
+                                      );
+
+                                      safeSetState(() {});
+                                    },
+                                    child: Icon(
+                                      Icons.send_rounded,
+                                      color: valueOrDefault<Color>(
+                                        currentUserDocument?.color1,
+                                        FlutterFlowTheme.of(context)
+                                            .secondaryText,
+                                      ),
+                                      size: 30.0,
+                                    ),
                                   ),
                                 ),
                               ),

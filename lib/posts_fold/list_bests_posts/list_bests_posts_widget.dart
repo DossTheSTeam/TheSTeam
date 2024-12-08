@@ -2,11 +2,8 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'list_bests_posts_model.dart';
 export 'list_bests_posts_model.dart';
 
@@ -45,9 +42,9 @@ class _ListBestsPostsWidgetState extends State<ListBestsPostsWidget> {
         body: SafeArea(
           top: true,
           child: Align(
-            alignment: AlignmentDirectional(0.0, -1.0),
+            alignment: const AlignmentDirectional(0.0, -1.0),
             child: Padding(
-              padding: EdgeInsets.all(10.0),
+              padding: const EdgeInsets.all(10.0),
               child: SingleChildScrollView(
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
@@ -59,46 +56,49 @@ class _ListBestsPostsWidgetState extends State<ListBestsPostsWidget> {
                         Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
-                            InkWell(
-                              splashColor: Colors.transparent,
-                              focusColor: Colors.transparent,
-                              hoverColor: Colors.transparent,
-                              highlightColor: Colors.transparent,
-                              onTap: () async {
-                                context.pushNamed(
-                                  'MenuPage',
-                                  extra: <String, dynamic>{
-                                    kTransitionInfoKey: TransitionInfo(
-                                      hasTransition: true,
-                                      transitionType:
-                                          PageTransitionType.leftToRight,
-                                      duration: Duration(milliseconds: 400),
-                                    ),
-                                  },
-                                );
-                              },
-                              child: Icon(
-                                Icons.menu_rounded,
-                                color: FlutterFlowTheme.of(context).primaryText,
-                                size: 30.0,
-                              ),
-                            ),
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  10.0, 0.0, 0.0, 0.0),
-                              child: InkWell(
+                            AuthUserStreamWidget(
+                              builder: (context) => InkWell(
                                 splashColor: Colors.transparent,
                                 focusColor: Colors.transparent,
                                 hoverColor: Colors.transparent,
                                 highlightColor: Colors.transparent,
                                 onTap: () async {
-                                  context.safePop();
+                                  context.pushNamed(
+                                    'MenuPage',
+                                    extra: <String, dynamic>{
+                                      kTransitionInfoKey: const TransitionInfo(
+                                        hasTransition: true,
+                                        transitionType:
+                                            PageTransitionType.leftToRight,
+                                        duration: Duration(milliseconds: 400),
+                                      ),
+                                    },
+                                  );
                                 },
                                 child: Icon(
-                                  Icons.arrow_back_ios_new_rounded,
-                                  color:
-                                      FlutterFlowTheme.of(context).primaryText,
+                                  Icons.menu_rounded,
+                                  color: currentUserDocument?.color1,
                                   size: 30.0,
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  10.0, 0.0, 0.0, 0.0),
+                              child: AuthUserStreamWidget(
+                                builder: (context) => InkWell(
+                                  splashColor: Colors.transparent,
+                                  focusColor: Colors.transparent,
+                                  hoverColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
+                                  onTap: () async {
+                                    context.safePop();
+                                  },
+                                  child: Icon(
+                                    Icons.arrow_back_ios_new_rounded,
+                                    color: currentUserDocument?.color1,
+                                    size: 30.0,
+                                  ),
                                 ),
                               ),
                             ),
@@ -118,50 +118,52 @@ class _ListBestsPostsWidgetState extends State<ListBestsPostsWidget> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 15.0, 0.0),
-                              child: InkWell(
-                                splashColor: Colors.transparent,
-                                focusColor: Colors.transparent,
-                                hoverColor: Colors.transparent,
-                                highlightColor: Colors.transparent,
-                                onTap: () async {
-                                  context.pushNamed('ListPostsMyTeams');
-                                },
-                                child: Icon(
-                                  Icons.favorite_rounded,
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryText,
-                                  size: 30.0,
+                              child: AuthUserStreamWidget(
+                                builder: (context) => InkWell(
+                                  splashColor: Colors.transparent,
+                                  focusColor: Colors.transparent,
+                                  hoverColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
+                                  onTap: () async {
+                                    context.pushNamed('ListPostsMyTeams');
+                                  },
+                                  child: Icon(
+                                    Icons.favorite_rounded,
+                                    color: currentUserDocument?.color1,
+                                    size: 30.0,
+                                  ),
                                 ),
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 10.0, 0.0),
-                              child: InkWell(
-                                splashColor: Colors.transparent,
-                                focusColor: Colors.transparent,
-                                hoverColor: Colors.transparent,
-                                highlightColor: Colors.transparent,
-                                onTap: () async {
-                                  context.pushNamed(
-                                    'MyPostsList',
-                                    extra: <String, dynamic>{
-                                      kTransitionInfoKey: TransitionInfo(
-                                        hasTransition: true,
-                                        transitionType:
-                                            PageTransitionType.rightToLeft,
-                                        duration: Duration(milliseconds: 400),
-                                      ),
-                                    },
-                                  );
-                                },
-                                child: FaIcon(
-                                  FontAwesomeIcons.userCircle,
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryText,
-                                  size: 30.0,
+                              child: AuthUserStreamWidget(
+                                builder: (context) => InkWell(
+                                  splashColor: Colors.transparent,
+                                  focusColor: Colors.transparent,
+                                  hoverColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
+                                  onTap: () async {
+                                    context.pushNamed(
+                                      'MyPostsList',
+                                      extra: <String, dynamic>{
+                                        kTransitionInfoKey: const TransitionInfo(
+                                          hasTransition: true,
+                                          transitionType:
+                                              PageTransitionType.rightToLeft,
+                                          duration: Duration(milliseconds: 400),
+                                        ),
+                                      },
+                                    );
+                                  },
+                                  child: FaIcon(
+                                    FontAwesomeIcons.userCircle,
+                                    color: currentUserDocument?.color1,
+                                    size: 30.0,
+                                  ),
                                 ),
                               ),
                             ),
@@ -173,9 +175,9 @@ class _ListBestsPostsWidgetState extends State<ListBestsPostsWidget> {
                             currentUserDocument?.helpNav, false) ==
                         true)
                       Align(
-                        alignment: AlignmentDirectional(0.0, 0.0),
+                        alignment: const AlignmentDirectional(0.0, 0.0),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 3.0, 0.0, 0.0),
                           child: AuthUserStreamWidget(
                             builder: (context) => Row(
@@ -183,7 +185,7 @@ class _ListBestsPostsWidgetState extends State<ListBestsPostsWidget> {
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: [
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 12.0, 0.0),
                                   child: Text(
                                     'Mes\néquipes',
@@ -202,7 +204,7 @@ class _ListBestsPostsWidgetState extends State<ListBestsPostsWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 12.0, 0.0),
                                   child: Text(
                                     'Mes\nactus',
@@ -225,17 +227,52 @@ class _ListBestsPostsWidgetState extends State<ListBestsPostsWidget> {
                           ),
                         ),
                       ),
-                    Divider(
-                      thickness: 1.0,
-                      color: FlutterFlowTheme.of(context).secondaryBackground,
+                    AuthUserStreamWidget(
+                      builder: (context) => Divider(
+                        thickness: 1.0,
+                        color: currentUserDocument?.color2,
+                      ),
                     ),
+                    if (valueOrDefault<bool>(
+                            currentUserDocument?.helpNav, false) ==
+                        true)
+                      Align(
+                        alignment: const AlignmentDirectional(0.0, 0.0),
+                        child: AuthUserStreamWidget(
+                          builder: (context) => Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 3.0, 0.0, 0.0),
+                                child: Text(
+                                  'Classées par plus commentés/likés, \nfonctionnalités pas encore disponibles.',
+                                  textAlign: TextAlign.center,
+                                  maxLines: 3,
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Poppins',
+                                        color:
+                                            FlutterFlowTheme.of(context).error,
+                                        fontSize: 10.0,
+                                        letterSpacing: 0.0,
+                                        lineHeight: 1.0,
+                                      ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
                     Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         Icon(
                           Icons.update_rounded,
-                          color: FlutterFlowTheme.of(context).error,
+                          color: FlutterFlowTheme.of(context).success,
                           size: 30.0,
                         ),
                         Icon(
@@ -286,7 +323,7 @@ class _ListBestsPostsWidgetState extends State<ListBestsPostsWidget> {
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 children: [
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 10.0, 0.0),
                                     child: InkWell(
                                       splashColor: Colors.transparent,
@@ -297,7 +334,7 @@ class _ListBestsPostsWidgetState extends State<ListBestsPostsWidget> {
                                         context.pushNamed(
                                           'MyNotifsList',
                                           extra: <String, dynamic>{
-                                            kTransitionInfoKey: TransitionInfo(
+                                            kTransitionInfoKey: const TransitionInfo(
                                               hasTransition: true,
                                               transitionType: PageTransitionType
                                                   .rightToLeft,
@@ -310,7 +347,7 @@ class _ListBestsPostsWidgetState extends State<ListBestsPostsWidget> {
                                       child: Icon(
                                         Icons.notifications_active_outlined,
                                         color: FlutterFlowTheme.of(context)
-                                            .accent3,
+                                            .accent1,
                                         size: 40.0,
                                       ),
                                     ),
@@ -321,12 +358,46 @@ class _ListBestsPostsWidgetState extends State<ListBestsPostsWidget> {
                           ),
                       ],
                     ),
-                    Divider(
-                      thickness: 1.0,
-                      color: FlutterFlowTheme.of(context).secondaryBackground,
+                    if (valueOrDefault<bool>(
+                            currentUserDocument?.helpNav, false) ==
+                        true)
+                      Align(
+                        alignment: const AlignmentDirectional(0.0, 0.0),
+                        child: AuthUserStreamWidget(
+                          builder: (context) => Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 3.0, 0.0, 0.0),
+                                child: Text(
+                                  'Classés par plus récents',
+                                  textAlign: TextAlign.center,
+                                  maxLines: 3,
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Poppins',
+                                        color: FlutterFlowTheme.of(context)
+                                            .success,
+                                        fontSize: 10.0,
+                                        letterSpacing: 0.0,
+                                        lineHeight: 1.0,
+                                      ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    AuthUserStreamWidget(
+                      builder: (context) => Divider(
+                        thickness: 1.0,
+                        color: currentUserDocument?.color2,
+                      ),
                     ),
-                    if ((currentUserDocument?.bests?.toList() ?? []).length ==
-                        0)
+                    if ((currentUserDocument?.bests.toList() ?? []).isEmpty)
                       AuthUserStreamWidget(
                         builder: (context) => Text(
                           'Suivre des membres de clubs pour acceder au contenu de cette page',
@@ -339,11 +410,10 @@ class _ListBestsPostsWidgetState extends State<ListBestsPostsWidget> {
                                   ),
                         ),
                       ),
-                    if ((currentUserDocument?.bests?.toList() ?? []).length !=
-                        0)
+                    if ((currentUserDocument?.bests.toList() ?? []).isNotEmpty)
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(5.0, 5.0, 5.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(5.0, 5.0, 5.0, 0.0),
                         child: AuthUserStreamWidget(
                           builder: (context) =>
                               StreamBuilder<List<PostsRecord>>(
@@ -351,7 +421,7 @@ class _ListBestsPostsWidgetState extends State<ListBestsPostsWidget> {
                               queryBuilder: (postsRecord) => postsRecord
                                   .whereIn(
                                       'member',
-                                      (currentUserDocument?.bests?.toList() ??
+                                      (currentUserDocument?.bests.toList() ??
                                           []))
                                   .orderBy('created_time', descending: true),
                             ),
@@ -383,14 +453,13 @@ class _ListBestsPostsWidgetState extends State<ListBestsPostsWidget> {
                                           columnPostsIndex];
                                   return Visibility(
                                     visible:
-                                        columnPostsPostsRecord.title != null &&
-                                            columnPostsPostsRecord.title != '',
+                                        columnPostsPostsRecord.title != '',
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 5.0, 0.0, 5.0),
                                           child: StreamBuilder<UsersRecord>(
                                             stream: UsersRecord.getDocument(
@@ -434,7 +503,7 @@ class _ListBestsPostsWidgetState extends State<ListBestsPostsWidget> {
                                                       children: [
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       10.0,
                                                                       0.0,
@@ -511,7 +580,7 @@ class _ListBestsPostsWidgetState extends State<ListBestsPostsWidget> {
                                                                     ),
                                                                   ),
                                                                   Padding(
-                                                                    padding: EdgeInsetsDirectional
+                                                                    padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             10.0,
                                                                             0.0,
@@ -547,7 +616,7 @@ class _ListBestsPostsWidgetState extends State<ListBestsPostsWidget> {
                                                                           extra: <String,
                                                                               dynamic>{
                                                                             kTransitionInfoKey:
-                                                                                TransitionInfo(
+                                                                                const TransitionInfo(
                                                                               hasTransition: true,
                                                                               transitionType: PageTransitionType.bottomToTop,
                                                                               duration: Duration(milliseconds: 600),
@@ -563,6 +632,7 @@ class _ListBestsPostsWidgetState extends State<ListBestsPostsWidget> {
                                                                             .labelMedium
                                                                             .override(
                                                                               fontFamily: 'Poppins',
+                                                                              color: rowTeamTeamsRecord.color1,
                                                                               letterSpacing: 0.0,
                                                                             ),
                                                                       ),
@@ -591,7 +661,7 @@ class _ListBestsPostsWidgetState extends State<ListBestsPostsWidget> {
                                                               ),
                                                               child: Align(
                                                                 alignment:
-                                                                    AlignmentDirectional(
+                                                                    const AlignmentDirectional(
                                                                         0.0,
                                                                         0.0),
                                                                 child: Text(
@@ -617,7 +687,7 @@ class _ListBestsPostsWidgetState extends State<ListBestsPostsWidget> {
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -642,7 +712,7 @@ class _ListBestsPostsWidgetState extends State<ListBestsPostsWidget> {
                                                                 ),
                                                                 child: Padding(
                                                                   padding:
-                                                                      EdgeInsets
+                                                                      const EdgeInsets
                                                                           .all(
                                                                               5.0),
                                                                   child: Text(
@@ -663,7 +733,7 @@ class _ListBestsPostsWidgetState extends State<ListBestsPostsWidget> {
                                                               ),
                                                               Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -680,7 +750,7 @@ class _ListBestsPostsWidgetState extends State<ListBestsPostsWidget> {
                                                               ),
                                                               Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -715,7 +785,7 @@ class _ListBestsPostsWidgetState extends State<ListBestsPostsWidget> {
                                                                       extra: <String,
                                                                           dynamic>{
                                                                         kTransitionInfoKey:
-                                                                            TransitionInfo(
+                                                                            const TransitionInfo(
                                                                           hasTransition:
                                                                               true,
                                                                           transitionType:
@@ -731,9 +801,8 @@ class _ListBestsPostsWidgetState extends State<ListBestsPostsWidget> {
                                                                   child: Icon(
                                                                     Icons
                                                                         .remove_red_eye_outlined,
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .secondaryText,
+                                                                    color: currentUserDocument
+                                                                        ?.color1,
                                                                     size: 30.0,
                                                                   ),
                                                                 ),
@@ -743,7 +812,7 @@ class _ListBestsPostsWidgetState extends State<ListBestsPostsWidget> {
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -759,7 +828,7 @@ class _ListBestsPostsWidgetState extends State<ListBestsPostsWidget> {
                                                             children: [
                                                               Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             2.0,
@@ -781,7 +850,7 @@ class _ListBestsPostsWidgetState extends State<ListBestsPostsWidget> {
                                                               ),
                                                               Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             3.0,
                                                                             0.0,
@@ -801,6 +870,8 @@ class _ListBestsPostsWidgetState extends State<ListBestsPostsWidget> {
                                                                       .override(
                                                                         fontFamily:
                                                                             'Poppins',
+                                                                        color: columnUserUsersRecord
+                                                                            .color1,
                                                                         letterSpacing:
                                                                             0.0,
                                                                       ),
@@ -811,7 +882,7 @@ class _ListBestsPostsWidgetState extends State<ListBestsPostsWidget> {
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       10.0,
                                                                       5.0,
@@ -830,7 +901,7 @@ class _ListBestsPostsWidgetState extends State<ListBestsPostsWidget> {
                                                                       .spaceBetween,
                                                               children: [
                                                                 Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -842,7 +913,7 @@ class _ListBestsPostsWidgetState extends State<ListBestsPostsWidget> {
                                                                             .max,
                                                                     children: [
                                                                       Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             5.0,
@@ -878,7 +949,7 @@ class _ListBestsPostsWidgetState extends State<ListBestsPostsWidget> {
                                                                   ),
                                                                 ),
                                                                 Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -890,7 +961,7 @@ class _ListBestsPostsWidgetState extends State<ListBestsPostsWidget> {
                                                                             .max,
                                                                     children: [
                                                                       Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             5.0,
@@ -926,7 +997,7 @@ class _ListBestsPostsWidgetState extends State<ListBestsPostsWidget> {
                                                                   ),
                                                                 ),
                                                                 Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -938,7 +1009,7 @@ class _ListBestsPostsWidgetState extends State<ListBestsPostsWidget> {
                                                                             .max,
                                                                     children: [
                                                                       Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             5.0,
@@ -979,7 +1050,7 @@ class _ListBestsPostsWidgetState extends State<ListBestsPostsWidget> {
                                                                           .max,
                                                                   children: [
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           5.0,
@@ -1027,9 +1098,9 @@ class _ListBestsPostsWidgetState extends State<ListBestsPostsWidget> {
                                                         ),
                                                         Divider(
                                                           thickness: 1.0,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryBackground,
+                                                          color:
+                                                              currentUserDocument
+                                                                  ?.color2,
                                                         ),
                                                       ],
                                                     ),

@@ -5,8 +5,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'shopping_page_model.dart';
 export 'shopping_page_model.dart';
 
@@ -45,16 +43,16 @@ class _ShoppingPageWidgetState extends State<ShoppingPageWidget> {
         body: SafeArea(
           top: true,
           child: Align(
-            alignment: AlignmentDirectional(0.0, -1.0),
+            alignment: const AlignmentDirectional(0.0, -1.0),
             child: Padding(
-              padding: EdgeInsets.all(10.0),
+              padding: const EdgeInsets.all(10.0),
               child: SingleChildScrollView(
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.start,
@@ -71,7 +69,7 @@ class _ShoppingPageWidgetState extends State<ShoppingPageWidget> {
                                   context.pushNamed(
                                     'MenuPage',
                                     extra: <String, dynamic>{
-                                      kTransitionInfoKey: TransitionInfo(
+                                      kTransitionInfoKey: const TransitionInfo(
                                         hasTransition: true,
                                         transitionType:
                                             PageTransitionType.leftToRight,
@@ -105,7 +103,7 @@ class _ShoppingPageWidgetState extends State<ShoppingPageWidget> {
                             ],
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 70.0, 0.0, 0.0, 0.0),
                             child: Text(
                               'Boutique',
@@ -128,7 +126,7 @@ class _ShoppingPageWidgetState extends State<ShoppingPageWidget> {
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   40.0, 0.0, 0.0, 0.0),
                               child: Container(
                                 width: 40.0,
@@ -142,7 +140,7 @@ class _ShoppingPageWidgetState extends State<ShoppingPageWidget> {
                                   ),
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsets.all(2.0),
+                                  padding: const EdgeInsets.all(2.0),
                                   child: AuthUserStreamWidget(
                                     builder: (context) => ClipRRect(
                                       borderRadius: BorderRadius.circular(24.0),
@@ -158,7 +156,7 @@ class _ShoppingPageWidgetState extends State<ShoppingPageWidget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 0.0, 0.0),
                               child: AuthUserStreamWidget(
                                 builder: (context) => Text(
@@ -178,7 +176,7 @@ class _ShoppingPageWidgetState extends State<ShoppingPageWidget> {
                           ],
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 30.0, 10.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -201,7 +199,7 @@ class _ShoppingPageWidgetState extends State<ShoppingPageWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     5.0, 0.0, 0.0, 0.0),
                                 child: Container(
                                   width: 30.0,
@@ -215,7 +213,7 @@ class _ShoppingPageWidgetState extends State<ShoppingPageWidget> {
                                     ),
                                   ),
                                   child: Padding(
-                                    padding: EdgeInsets.all(2.0),
+                                    padding: const EdgeInsets.all(2.0),
                                     child: ClipRRect(
                                       borderRadius: BorderRadius.circular(24.0),
                                       child: Image.asset(
@@ -238,7 +236,7 @@ class _ShoppingPageWidgetState extends State<ShoppingPageWidget> {
                       color: FlutterFlowTheme.of(context).secondaryBackground,
                     ),
                     Padding(
-                      padding: EdgeInsets.all(12.0),
+                      padding: const EdgeInsets.all(12.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -253,7 +251,7 @@ class _ShoppingPageWidgetState extends State<ShoppingPageWidget> {
                                 ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 5.0, 0.0, 0.0, 0.0),
                             child: Container(
                               width: 30.0,
@@ -267,7 +265,7 @@ class _ShoppingPageWidgetState extends State<ShoppingPageWidget> {
                                 ),
                               ),
                               child: Padding(
-                                padding: EdgeInsets.all(2.0),
+                                padding: const EdgeInsets.all(2.0),
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(24.0),
                                   child: Image.asset(
@@ -284,13 +282,13 @@ class _ShoppingPageWidgetState extends State<ShoppingPageWidget> {
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsets.all(12.0),
+                      padding: const EdgeInsets.all(12.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 10.0, 0.0),
                             child: FlutterFlowDropDown<double>(
                               controller: _model.dropPriceValueController ??=
@@ -299,7 +297,7 @@ class _ShoppingPageWidgetState extends State<ShoppingPageWidget> {
                               ),
                               options:
                                   List<double>.from([1.99, 4.99, 9.99, 19.99]),
-                              optionLabels: [
+                              optionLabels: const [
                                 '1.99 €',
                                 '4.99 €',
                                 '9.99 €',
@@ -327,8 +325,8 @@ class _ShoppingPageWidgetState extends State<ShoppingPageWidget> {
                               borderColor: Colors.transparent,
                               borderWidth: 0.0,
                               borderRadius: 8.0,
-                              margin: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 12.0, 0.0),
+                              margin: const EdgeInsetsDirectional.fromSTEB(
+                                  6.0, 0.0, 3.0, 0.0),
                               hidesUnderline: true,
                               isOverButton: false,
                               isSearchable: false,
@@ -343,7 +341,7 @@ class _ShoppingPageWidgetState extends State<ShoppingPageWidget> {
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           5.0, 0.0, 5.0, 0.0),
                                       child: Text(
                                         'X 200',
@@ -356,7 +354,7 @@ class _ShoppingPageWidgetState extends State<ShoppingPageWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           5.0, 0.0, 0.0, 0.0),
                                       child: Container(
                                         width: 30.0,
@@ -371,7 +369,7 @@ class _ShoppingPageWidgetState extends State<ShoppingPageWidget> {
                                           ),
                                         ),
                                         child: Padding(
-                                          padding: EdgeInsets.all(2.0),
+                                          padding: const EdgeInsets.all(2.0),
                                           child: ClipRRect(
                                             borderRadius:
                                                 BorderRadius.circular(24.0),
@@ -392,7 +390,7 @@ class _ShoppingPageWidgetState extends State<ShoppingPageWidget> {
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           5.0, 0.0, 5.0, 0.0),
                                       child: Text(
                                         'X 550',
@@ -405,7 +403,7 @@ class _ShoppingPageWidgetState extends State<ShoppingPageWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           5.0, 0.0, 0.0, 0.0),
                                       child: Container(
                                         width: 30.0,
@@ -420,7 +418,7 @@ class _ShoppingPageWidgetState extends State<ShoppingPageWidget> {
                                           ),
                                         ),
                                         child: Padding(
-                                          padding: EdgeInsets.all(2.0),
+                                          padding: const EdgeInsets.all(2.0),
                                           child: ClipRRect(
                                             borderRadius:
                                                 BorderRadius.circular(24.0),
@@ -441,7 +439,7 @@ class _ShoppingPageWidgetState extends State<ShoppingPageWidget> {
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           5.0, 0.0, 5.0, 0.0),
                                       child: Text(
                                         'X 1200',
@@ -454,7 +452,7 @@ class _ShoppingPageWidgetState extends State<ShoppingPageWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           5.0, 0.0, 0.0, 0.0),
                                       child: Container(
                                         width: 30.0,
@@ -469,7 +467,7 @@ class _ShoppingPageWidgetState extends State<ShoppingPageWidget> {
                                           ),
                                         ),
                                         child: Padding(
-                                          padding: EdgeInsets.all(2.0),
+                                          padding: const EdgeInsets.all(2.0),
                                           child: ClipRRect(
                                             borderRadius:
                                                 BorderRadius.circular(24.0),
@@ -490,7 +488,7 @@ class _ShoppingPageWidgetState extends State<ShoppingPageWidget> {
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           5.0, 0.0, 5.0, 0.0),
                                       child: Text(
                                         'X 2500',
@@ -503,7 +501,7 @@ class _ShoppingPageWidgetState extends State<ShoppingPageWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           5.0, 0.0, 0.0, 0.0),
                                       child: Container(
                                         width: 30.0,
@@ -518,7 +516,7 @@ class _ShoppingPageWidgetState extends State<ShoppingPageWidget> {
                                           ),
                                         ),
                                         child: Padding(
-                                          padding: EdgeInsets.all(2.0),
+                                          padding: const EdgeInsets.all(2.0),
                                           child: ClipRRect(
                                             borderRadius:
                                                 BorderRadius.circular(24.0),
@@ -542,7 +540,7 @@ class _ShoppingPageWidgetState extends State<ShoppingPageWidget> {
                     if (_model.dropPriceValue == 1.99)
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                         child: FFButtonWidget(
                           onPressed: () {
                             print('Button pressed ...');
@@ -550,9 +548,9 @@ class _ShoppingPageWidgetState extends State<ShoppingPageWidget> {
                           text: 'Valider',
                           options: FFButtonOptions(
                             height: 30.0,
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 12.0, 0.0, 12.0, 0.0),
-                            iconPadding: EdgeInsetsDirectional.fromSTEB(
+                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
                             color: FlutterFlowTheme.of(context).error,
                             textStyle: FlutterFlowTheme.of(context)
@@ -564,7 +562,7 @@ class _ShoppingPageWidgetState extends State<ShoppingPageWidget> {
                                   letterSpacing: 0.0,
                                 ),
                             elevation: 3.0,
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Colors.transparent,
                               width: 1.0,
                             ),
@@ -578,7 +576,7 @@ class _ShoppingPageWidgetState extends State<ShoppingPageWidget> {
                     if (_model.dropPriceValue == 4.99)
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                         child: FFButtonWidget(
                           onPressed: () {
                             print('Button pressed ...');
@@ -586,9 +584,9 @@ class _ShoppingPageWidgetState extends State<ShoppingPageWidget> {
                           text: 'Valider',
                           options: FFButtonOptions(
                             height: 30.0,
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 12.0, 0.0, 12.0, 0.0),
-                            iconPadding: EdgeInsetsDirectional.fromSTEB(
+                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
                             color: FlutterFlowTheme.of(context).error,
                             textStyle: FlutterFlowTheme.of(context)
@@ -600,7 +598,7 @@ class _ShoppingPageWidgetState extends State<ShoppingPageWidget> {
                                   letterSpacing: 0.0,
                                 ),
                             elevation: 3.0,
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Colors.transparent,
                               width: 1.0,
                             ),
@@ -614,7 +612,7 @@ class _ShoppingPageWidgetState extends State<ShoppingPageWidget> {
                     if (_model.dropPriceValue == 9.99)
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                         child: FFButtonWidget(
                           onPressed: () {
                             print('Button pressed ...');
@@ -622,9 +620,9 @@ class _ShoppingPageWidgetState extends State<ShoppingPageWidget> {
                           text: 'Valider',
                           options: FFButtonOptions(
                             height: 30.0,
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 12.0, 0.0, 12.0, 0.0),
-                            iconPadding: EdgeInsetsDirectional.fromSTEB(
+                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
                             color: FlutterFlowTheme.of(context).error,
                             textStyle: FlutterFlowTheme.of(context)
@@ -636,7 +634,7 @@ class _ShoppingPageWidgetState extends State<ShoppingPageWidget> {
                                   letterSpacing: 0.0,
                                 ),
                             elevation: 3.0,
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Colors.transparent,
                               width: 1.0,
                             ),
@@ -650,7 +648,7 @@ class _ShoppingPageWidgetState extends State<ShoppingPageWidget> {
                     if (_model.dropPriceValue == 19.99)
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                         child: FFButtonWidget(
                           onPressed: () {
                             print('Button pressed ...');
@@ -658,9 +656,9 @@ class _ShoppingPageWidgetState extends State<ShoppingPageWidget> {
                           text: 'Valider',
                           options: FFButtonOptions(
                             height: 30.0,
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 12.0, 0.0, 12.0, 0.0),
-                            iconPadding: EdgeInsetsDirectional.fromSTEB(
+                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
                             color: FlutterFlowTheme.of(context).error,
                             textStyle: FlutterFlowTheme.of(context)
@@ -672,7 +670,7 @@ class _ShoppingPageWidgetState extends State<ShoppingPageWidget> {
                                   letterSpacing: 0.0,
                                 ),
                             elevation: 3.0,
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Colors.transparent,
                               width: 1.0,
                             ),
@@ -685,7 +683,7 @@ class _ShoppingPageWidgetState extends State<ShoppingPageWidget> {
                       ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                       child: Text(
                         'Fonctionnalité non disponible, \nsera mis à jour prochainement',
                         style: FlutterFlowTheme.of(context).labelLarge.override(

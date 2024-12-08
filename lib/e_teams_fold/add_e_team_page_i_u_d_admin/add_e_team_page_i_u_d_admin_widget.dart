@@ -7,10 +7,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/upload_data.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'add_e_team_page_i_u_d_admin_model.dart';
 export 'add_e_team_page_i_u_d_admin_model.dart';
 
@@ -54,14 +51,14 @@ class _AddETeamPageIUDAdminWidgetState
         body: SafeArea(
           top: true,
           child: Padding(
-            padding: EdgeInsets.all(10.0),
+            padding: const EdgeInsets.all(10.0),
             child: SingleChildScrollView(
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.start,
@@ -69,53 +66,56 @@ class _AddETeamPageIUDAdminWidgetState
                         Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
-                            InkWell(
-                              splashColor: Colors.transparent,
-                              focusColor: Colors.transparent,
-                              hoverColor: Colors.transparent,
-                              highlightColor: Colors.transparent,
-                              onTap: () async {
-                                context.pushNamed(
-                                  'MenuPage',
-                                  extra: <String, dynamic>{
-                                    kTransitionInfoKey: TransitionInfo(
-                                      hasTransition: true,
-                                      transitionType:
-                                          PageTransitionType.leftToRight,
-                                      duration: Duration(milliseconds: 400),
-                                    ),
-                                  },
-                                );
-                              },
-                              child: Icon(
-                                Icons.menu_rounded,
-                                color: FlutterFlowTheme.of(context).primaryText,
-                                size: 30.0,
-                              ),
-                            ),
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  10.0, 0.0, 0.0, 0.0),
-                              child: InkWell(
+                            AuthUserStreamWidget(
+                              builder: (context) => InkWell(
                                 splashColor: Colors.transparent,
                                 focusColor: Colors.transparent,
                                 hoverColor: Colors.transparent,
                                 highlightColor: Colors.transparent,
                                 onTap: () async {
-                                  context.safePop();
+                                  context.pushNamed(
+                                    'MenuPage',
+                                    extra: <String, dynamic>{
+                                      kTransitionInfoKey: const TransitionInfo(
+                                        hasTransition: true,
+                                        transitionType:
+                                            PageTransitionType.leftToRight,
+                                        duration: Duration(milliseconds: 400),
+                                      ),
+                                    },
+                                  );
                                 },
                                 child: Icon(
-                                  Icons.arrow_back_ios_new_rounded,
-                                  color:
-                                      FlutterFlowTheme.of(context).primaryText,
+                                  Icons.menu_rounded,
+                                  color: currentUserDocument?.color1,
                                   size: 30.0,
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  10.0, 0.0, 0.0, 0.0),
+                              child: AuthUserStreamWidget(
+                                builder: (context) => InkWell(
+                                  splashColor: Colors.transparent,
+                                  focusColor: Colors.transparent,
+                                  hoverColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
+                                  onTap: () async {
+                                    context.safePop();
+                                  },
+                                  child: Icon(
+                                    Icons.arrow_back_ios_new_rounded,
+                                    color: currentUserDocument?.color1,
+                                    size: 30.0,
+                                  ),
                                 ),
                               ),
                             ),
                           ],
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               20.0, 0.0, 0.0, 0.0),
                           child: Text(
                             'Céer une E Team',
@@ -132,7 +132,7 @@ class _AddETeamPageIUDAdminWidgetState
                     ),
                   ),
                   Align(
-                    alignment: AlignmentDirectional(-1.0, 0.0),
+                    alignment: const AlignmentDirectional(-1.0, 0.0),
                     child: Text(
                       'Vous allez créer une E Team',
                       style: FlutterFlowTheme.of(context).labelMedium.override(
@@ -142,7 +142,7 @@ class _AddETeamPageIUDAdminWidgetState
                     ),
                   ),
                   Align(
-                    alignment: AlignmentDirectional(-1.0, 0.0),
+                    alignment: const AlignmentDirectional(-1.0, 0.0),
                     child: Text(
                       'Qu\'est ce que cela implique',
                       style: FlutterFlowTheme.of(context).labelMedium.override(
@@ -153,7 +153,7 @@ class _AddETeamPageIUDAdminWidgetState
                     ),
                   ),
                   Align(
-                    alignment: AlignmentDirectional(-1.0, 0.0),
+                    alignment: const AlignmentDirectional(-1.0, 0.0),
                     child: Text(
                       'Si ce n\'est pas déjà fait, nous vous conseillons de consulter les conditions générales d\'utilisation afin de vous informer sur les risques liés à un comportement inapproprié.',
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -163,10 +163,10 @@ class _AddETeamPageIUDAdminWidgetState
                     ),
                   ),
                   Align(
-                    alignment: AlignmentDirectional(1.0, 0.0),
+                    alignment: const AlignmentDirectional(1.0, 0.0),
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
                       child: InkWell(
                         splashColor: Colors.transparent,
                         focusColor: Colors.transparent,
@@ -176,7 +176,7 @@ class _AddETeamPageIUDAdminWidgetState
                           context.pushNamed(
                             'GeneralsCondidtionsPage',
                             extra: <String, dynamic>{
-                              kTransitionInfoKey: TransitionInfo(
+                              kTransitionInfoKey: const TransitionInfo(
                                 hasTransition: true,
                                 transitionType: PageTransitionType.bottomToTop,
                                 duration: Duration(milliseconds: 400),
@@ -197,7 +197,7 @@ class _AddETeamPageIUDAdminWidgetState
                     ),
                   ),
                   Align(
-                    alignment: AlignmentDirectional(-1.0, 0.0),
+                    alignment: const AlignmentDirectional(-1.0, 0.0),
                     child: Text(
                       'Après avoir pris connaissance des règles de jeux et de conduite, je débute la création de ma E Team.',
                       style: FlutterFlowTheme.of(context).labelMedium.override(
@@ -212,7 +212,7 @@ class _AddETeamPageIUDAdminWidgetState
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Align(
-                        alignment: AlignmentDirectional(0.0, 0.0),
+                        alignment: const AlignmentDirectional(0.0, 0.0),
                         child: Text(
                           'Choisir',
                           maxLines: 1,
@@ -225,7 +225,7 @@ class _AddETeamPageIUDAdminWidgetState
                       ),
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           children: [
@@ -239,7 +239,7 @@ class _AddETeamPageIUDAdminWidgetState
                                 'esport.basketball',
                                 'esport.war'
                               ]),
-                              optionLabels: [
+                              optionLabels: const [
                                 'E Sport Football',
                                 'E Sport Basketball',
                                 'E Sport War'
@@ -268,7 +268,7 @@ class _AddETeamPageIUDAdminWidgetState
                               borderColor: Colors.transparent,
                               borderWidth: 0.0,
                               borderRadius: 8.0,
-                              margin: EdgeInsetsDirectional.fromSTEB(
+                              margin: const EdgeInsetsDirectional.fromSTEB(
                                   12.0, 0.0, 12.0, 0.0),
                               hidesUnderline: true,
                               isOverButton: false,
@@ -281,10 +281,10 @@ class _AddETeamPageIUDAdminWidgetState
                     ],
                   ),
                   Align(
-                    alignment: AlignmentDirectional(0.0, 0.0),
+                    alignment: const AlignmentDirectional(0.0, 0.0),
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                       child: Text(
                         'Ajouter le nom de club',
                         maxLines: 1,
@@ -297,10 +297,10 @@ class _AddETeamPageIUDAdminWidgetState
                     ),
                   ),
                   Align(
-                    alignment: AlignmentDirectional(0.0, 0.0),
+                    alignment: const AlignmentDirectional(0.0, 0.0),
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
                       child: Text(
                         'Pour simplifier, il serait judicieux de choisir le même \"Nom de club\" que celui avec lequel vous jouez réellement',
                         textAlign: TextAlign.center,
@@ -317,7 +317,7 @@ class _AddETeamPageIUDAdminWidgetState
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(15.0, 5.0, 15.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(15.0, 5.0, 15.0, 0.0),
                     child: TextFormField(
                       controller: _model.eTeamNameFieldTextController,
                       focusNode: _model.eTeamNameFieldFocusNode,
@@ -379,13 +379,13 @@ class _AddETeamPageIUDAdminWidgetState
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 20.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 20.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 6.0, 0.0),
                           child: Container(
                             width: 65.0,
@@ -395,7 +395,7 @@ class _AddETeamPageIUDAdminWidgetState
                                   .primaryBackground,
                             ),
                             child: Padding(
-                              padding: EdgeInsets.all(3.0),
+                              padding: const EdgeInsets.all(3.0),
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(0.0),
                                 child: Image.network(
@@ -474,6 +474,222 @@ class _AddETeamPageIUDAdminWidgetState
                       ],
                     ),
                   ),
+                  Align(
+                    alignment: const AlignmentDirectional(0.0, 0.0),
+                    child: Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                      child: Text(
+                        'Ajouter les couleurs du club',
+                        maxLines: 1,
+                        style:
+                            FlutterFlowTheme.of(context).headlineSmall.override(
+                                  fontFamily: 'Poppins',
+                                  letterSpacing: 0.0,
+                                ),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Align(
+                          alignment: const AlignmentDirectional(0.0, 0.0),
+                          child: Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                10.0, 0.0, 0.0, 0.0),
+                            child: Text(
+                              'Couleur 1...',
+                              textAlign: TextAlign.center,
+                              maxLines: 6,
+                              style: FlutterFlowTheme.of(context)
+                                  .labelMedium
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryText,
+                                    letterSpacing: 0.0,
+                                  ),
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              13.0, 0.0, 20.0, 0.0),
+                          child: FlutterFlowDropDown<String>(
+                            controller: _model.dropColor1ValueController ??=
+                                FormFieldController<String>(
+                              _model.dropColor1Value ??= '',
+                            ),
+                            options: List<String>.from([
+                              '#2c37aa',
+                              '#d1851e',
+                              '#cd3640',
+                              '#249644',
+                              '#6CABDD',
+                              '#c9b80e',
+                              '#801e64',
+                              '#451509'
+                            ]),
+                            optionLabels: const [
+                              'Bleu',
+                              'Orange',
+                              'Rouge',
+                              'Vert',
+                              'Cyan',
+                              'Jaune',
+                              'Magenta',
+                              'Marron'
+                            ],
+                            onChanged: (val) => safeSetState(
+                                () => _model.dropColor1Value = val),
+                            width: 150.0,
+                            height: 40.0,
+                            textStyle: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Poppins',
+                                  letterSpacing: 0.0,
+                                ),
+                            hintText: 'Couleurs',
+                            icon: Icon(
+                              Icons.keyboard_arrow_down_rounded,
+                              color: FlutterFlowTheme.of(context).secondaryText,
+                              size: 24.0,
+                            ),
+                            fillColor:
+                                FlutterFlowTheme.of(context).primaryBackground,
+                            elevation: 2.0,
+                            borderColor: Colors.transparent,
+                            borderWidth: 0.0,
+                            borderRadius: 8.0,
+                            margin: const EdgeInsetsDirectional.fromSTEB(
+                                12.0, 0.0, 12.0, 0.0),
+                            hidesUnderline: true,
+                            isOverButton: false,
+                            isSearchable: false,
+                            isMultiSelect: false,
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              10.0, 0.0, 10.0, 0.0),
+                          child: Icon(
+                            Icons.circle_rounded,
+                            color: colorFromCssString(
+                              _model.dropColor1Value!,
+                              defaultColor:
+                                  FlutterFlowTheme.of(context).secondaryText,
+                            ),
+                            size: 24.0,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Align(
+                          alignment: const AlignmentDirectional(0.0, 0.0),
+                          child: Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                10.0, 0.0, 0.0, 0.0),
+                            child: Text(
+                              'Couleur 2...',
+                              textAlign: TextAlign.center,
+                              maxLines: 6,
+                              style: FlutterFlowTheme.of(context)
+                                  .labelMedium
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryText,
+                                    letterSpacing: 0.0,
+                                  ),
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              10.0, 0.0, 20.0, 0.0),
+                          child: FlutterFlowDropDown<String>(
+                            controller: _model.dropColor2ValueController ??=
+                                FormFieldController<String>(
+                              _model.dropColor2Value ??= '',
+                            ),
+                            options: List<String>.from([
+                              '#2c37aa',
+                              '#d1851e',
+                              '#cd3640',
+                              '#249644',
+                              '#6CABDD',
+                              '#c9b80e',
+                              '#801e64',
+                              '#451509'
+                            ]),
+                            optionLabels: const [
+                              'Bleu',
+                              'Orange',
+                              'Rouge',
+                              'Vert',
+                              'Cyan',
+                              'Jaune',
+                              'Magenta',
+                              'Marron'
+                            ],
+                            onChanged: (val) => safeSetState(
+                                () => _model.dropColor2Value = val),
+                            width: 150.0,
+                            height: 40.0,
+                            textStyle: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Poppins',
+                                  letterSpacing: 0.0,
+                                ),
+                            hintText: 'Couleurs',
+                            icon: Icon(
+                              Icons.keyboard_arrow_down_rounded,
+                              color: FlutterFlowTheme.of(context).secondaryText,
+                              size: 24.0,
+                            ),
+                            fillColor:
+                                FlutterFlowTheme.of(context).primaryBackground,
+                            elevation: 2.0,
+                            borderColor: Colors.transparent,
+                            borderWidth: 0.0,
+                            borderRadius: 8.0,
+                            margin: const EdgeInsetsDirectional.fromSTEB(
+                                12.0, 0.0, 12.0, 0.0),
+                            hidesUnderline: true,
+                            isOverButton: false,
+                            isSearchable: false,
+                            isMultiSelect: false,
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              10.0, 0.0, 10.0, 0.0),
+                          child: Icon(
+                            Icons.circle_outlined,
+                            color: colorFromCssString(
+                              _model.dropColor2Value!,
+                              defaultColor:
+                                  FlutterFlowTheme.of(context).secondaryText,
+                            ),
+                            size: 24.0,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
                   if (_model.dropESportsValue != null &&
                       _model.dropESportsValue != '')
                     StreamBuilder<List<UsersRecord>>(
@@ -515,7 +731,7 @@ class _AddETeamPageIUDAdminWidgetState
                           children: [
                             if (_model.dropESportsValue == 'esport.football')
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 30.0, 0.0, 5.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -523,18 +739,15 @@ class _AddETeamPageIUDAdminWidgetState
                                   children: [
                                     if (_model.eTeamNameFieldTextController
                                                 .text !=
-                                            null &&
-                                        _model.eTeamNameFieldTextController
-                                                .text !=
                                             '')
                                       Row(
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
                                           Align(
                                             alignment:
-                                                AlignmentDirectional(0.0, 0.0),
+                                                const AlignmentDirectional(0.0, 0.0),
                                             child: Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 20.0, 0.0, 16.0),
                                               child: FFButtonWidget(
@@ -560,6 +773,22 @@ class _AddETeamPageIUDAdminWidgetState
                                                       adminUser:
                                                           columnUsersRecord
                                                               ?.reference,
+                                                      color1:
+                                                          colorFromCssString(
+                                                        _model.dropColor1Value!,
+                                                        defaultColor:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primaryText,
+                                                      ),
+                                                      color2:
+                                                          colorFromCssString(
+                                                        _model.dropColor2Value!,
+                                                        defaultColor:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primaryText,
+                                                      ),
                                                     ),
                                                     ...mapToFirestore(
                                                       {
@@ -595,6 +824,22 @@ class _AddETeamPageIUDAdminWidgetState
                                                       adminUser:
                                                           columnUsersRecord
                                                               ?.reference,
+                                                      color1:
+                                                          colorFromCssString(
+                                                        _model.dropColor1Value!,
+                                                        defaultColor:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primaryText,
+                                                      ),
+                                                      color2:
+                                                          colorFromCssString(
+                                                        _model.dropColor2Value!,
+                                                        defaultColor:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primaryText,
+                                                      ),
                                                     ),
                                                     ...mapToFirestore(
                                                       {
@@ -663,11 +908,11 @@ class _AddETeamPageIUDAdminWidgetState
                                                 options: FFButtonOptions(
                                                   width: 180.0,
                                                   height: 40.0,
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 0.0, 0.0),
                                                   iconPadding:
-                                                      EdgeInsetsDirectional
+                                                      const EdgeInsetsDirectional
                                                           .fromSTEB(0.0, 0.0,
                                                               0.0, 0.0),
                                                   color: FlutterFlowTheme.of(
@@ -684,7 +929,7 @@ class _AddETeamPageIUDAdminWidgetState
                                                         letterSpacing: 0.0,
                                                       ),
                                                   elevation: 3.0,
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Colors.transparent,
                                                     width: 1.0,
                                                   ),
@@ -715,19 +960,16 @@ class _AddETeamPageIUDAdminWidgetState
                                 children: [
                                   if (_model.eTeamNameFieldTextController
                                               .text !=
-                                          null &&
-                                      _model.eTeamNameFieldTextController
-                                              .text !=
                                           '')
                                     Row(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
                                         Align(
                                           alignment:
-                                              AlignmentDirectional(0.0, 0.0),
+                                              const AlignmentDirectional(0.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 20.0, 0.0, 16.0),
                                             child: FFButtonWidget(
                                               onPressed: () async {
@@ -749,6 +991,20 @@ class _AddETeamPageIUDAdminWidgetState
                                                     divisionValue: '2',
                                                     adminUser: columnUsersRecord
                                                         ?.reference,
+                                                    color1: colorFromCssString(
+                                                      _model.dropColor1Value!,
+                                                      defaultColor:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryText,
+                                                    ),
+                                                    color2: colorFromCssString(
+                                                      _model.dropColor2Value!,
+                                                      defaultColor:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryText,
+                                                    ),
                                                   ),
                                                   ...mapToFirestore(
                                                     {
@@ -782,6 +1038,20 @@ class _AddETeamPageIUDAdminWidgetState
                                                     divisionValue: '2',
                                                     adminUser: columnUsersRecord
                                                         ?.reference,
+                                                    color1: colorFromCssString(
+                                                      _model.dropColor1Value!,
+                                                      defaultColor:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryText,
+                                                    ),
+                                                    color2: colorFromCssString(
+                                                      _model.dropColor2Value!,
+                                                      defaultColor:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryText,
+                                                    ),
                                                   ),
                                                   ...mapToFirestore(
                                                     {
@@ -850,11 +1120,11 @@ class _AddETeamPageIUDAdminWidgetState
                                               options: FFButtonOptions(
                                                 width: 180.0,
                                                 height: 40.0,
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 0.0, 0.0, 0.0),
                                                 iconPadding:
-                                                    EdgeInsetsDirectional
+                                                    const EdgeInsetsDirectional
                                                         .fromSTEB(
                                                             0.0, 0.0, 0.0, 0.0),
                                                 color:
@@ -871,7 +1141,7 @@ class _AddETeamPageIUDAdminWidgetState
                                                           letterSpacing: 0.0,
                                                         ),
                                                 elevation: 3.0,
-                                                borderSide: BorderSide(
+                                                borderSide: const BorderSide(
                                                   color: Colors.transparent,
                                                   width: 1.0,
                                                 ),
@@ -898,19 +1168,16 @@ class _AddETeamPageIUDAdminWidgetState
                                 children: [
                                   if (_model.eTeamNameFieldTextController
                                               .text !=
-                                          null &&
-                                      _model.eTeamNameFieldTextController
-                                              .text !=
                                           '')
                                     Row(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
                                         Align(
                                           alignment:
-                                              AlignmentDirectional(0.0, 0.0),
+                                              const AlignmentDirectional(0.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 20.0, 0.0, 16.0),
                                             child: FFButtonWidget(
                                               onPressed: () async {
@@ -931,6 +1198,20 @@ class _AddETeamPageIUDAdminWidgetState
                                                     divisionValue: '2',
                                                     adminUser: columnUsersRecord
                                                         ?.reference,
+                                                    color1: colorFromCssString(
+                                                      _model.dropColor1Value!,
+                                                      defaultColor:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryText,
+                                                    ),
+                                                    color2: colorFromCssString(
+                                                      _model.dropColor2Value!,
+                                                      defaultColor:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryText,
+                                                    ),
                                                   ),
                                                   ...mapToFirestore(
                                                     {
@@ -962,6 +1243,20 @@ class _AddETeamPageIUDAdminWidgetState
                                                     divisionValue: '2',
                                                     adminUser: columnUsersRecord
                                                         ?.reference,
+                                                    color1: colorFromCssString(
+                                                      _model.dropColor1Value!,
+                                                      defaultColor:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryText,
+                                                    ),
+                                                    color2: colorFromCssString(
+                                                      _model.dropColor2Value!,
+                                                      defaultColor:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryText,
+                                                    ),
                                                   ),
                                                   ...mapToFirestore(
                                                     {
@@ -1029,11 +1324,11 @@ class _AddETeamPageIUDAdminWidgetState
                                               options: FFButtonOptions(
                                                 width: 180.0,
                                                 height: 40.0,
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 0.0, 0.0, 0.0),
                                                 iconPadding:
-                                                    EdgeInsetsDirectional
+                                                    const EdgeInsetsDirectional
                                                         .fromSTEB(
                                                             0.0, 0.0, 0.0, 0.0),
                                                 color:
@@ -1050,7 +1345,7 @@ class _AddETeamPageIUDAdminWidgetState
                                                           letterSpacing: 0.0,
                                                         ),
                                                 elevation: 3.0,
-                                                borderSide: BorderSide(
+                                                borderSide: const BorderSide(
                                                   color: Colors.transparent,
                                                   width: 1.0,
                                                 ),

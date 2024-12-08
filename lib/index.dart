@@ -142,8 +142,6 @@ export '/public_fold/search_users_list/search_users_list_widget.dart'
     show SearchUsersListWidget;
 export '/admin_fold/admin_users_fold/admin_st_app_users_list/admin_st_app_users_list_widget.dart'
     show AdminStAppUsersListWidget;
-export '/event_fold/list_ligues_events/list_ligues_events_widget.dart'
-    show ListLiguesEventsWidget;
 export '/e_teams_fold/add_e_team_page_i_u_d_admin/add_e_team_page_i_u_d_admin_widget.dart'
     show AddETeamPageIUDAdminWidget;
 export '/admin_fold/admin_team_fold/modif_team_page/modif_team_page_widget.dart'
@@ -210,7 +208,5 @@ export '/e_events_fold/rating_players_page/rating_players_page_widget.dart'
     show RatingPlayersPageWidget;
 export '/e_events_fold/add_rating_players_page/add_rating_players_page_widget.dart'
     show AddRatingPlayersPageWidget;
-export '/e_events_fold/delete_event_page/delete_event_page_widget.dart'
-    show DeleteEventPageWidget;
 export '/team_fold/team_list_cup/team_list_cup_widget.dart'
     show TeamListCupWidget;

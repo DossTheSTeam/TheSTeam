@@ -4,10 +4,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'event_page_add3_bet_model.dart';
 export 'event_page_add3_bet_model.dart';
 
@@ -46,7 +43,7 @@ class _EventPageAdd3BetWidgetState extends State<EventPageAdd3BetWidget> {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<EventsRecord>(
-      stream: EventsRecord.getDocument(widget!.eventRef!),
+      stream: EventsRecord.getDocument(widget.eventRef!),
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
@@ -76,16 +73,16 @@ class _EventPageAdd3BetWidgetState extends State<EventPageAdd3BetWidget> {
             body: SafeArea(
               top: true,
               child: Align(
-                alignment: AlignmentDirectional(0.0, -1.0),
+                alignment: const AlignmentDirectional(0.0, -1.0),
                 child: Padding(
-                  padding: EdgeInsets.all(10.0),
+                  padding: const EdgeInsets.all(10.0),
                   child: SingleChildScrollView(
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 10.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -94,55 +91,34 @@ class _EventPageAdd3BetWidgetState extends State<EventPageAdd3BetWidget> {
                               Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
-                                  InkWell(
-                                    splashColor: Colors.transparent,
-                                    focusColor: Colors.transparent,
-                                    hoverColor: Colors.transparent,
-                                    highlightColor: Colors.transparent,
-                                    onTap: () async {
-                                      context.pushNamed(
-                                        'MenuPage',
-                                        extra: <String, dynamic>{
-                                          kTransitionInfoKey: TransitionInfo(
-                                            hasTransition: true,
-                                            transitionType:
-                                                PageTransitionType.leftToRight,
-                                            duration:
-                                                Duration(milliseconds: 400),
-                                          ),
-                                        },
-                                      );
-                                    },
-                                    child: Icon(
-                                      Icons.menu_rounded,
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
-                                      size: 30.0,
-                                    ),
-                                  ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 0.0, 0.0),
-                                    child: InkWell(
-                                      splashColor: Colors.transparent,
-                                      focusColor: Colors.transparent,
-                                      hoverColor: Colors.transparent,
-                                      highlightColor: Colors.transparent,
-                                      onTap: () async {
-                                        context.safePop();
-                                      },
-                                      child: Icon(
-                                        Icons.arrow_back_ios_new_rounded,
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryText,
-                                        size: 30.0,
+                                    child: AuthUserStreamWidget(
+                                      builder: (context) => InkWell(
+                                        splashColor: Colors.transparent,
+                                        focusColor: Colors.transparent,
+                                        hoverColor: Colors.transparent,
+                                        highlightColor: Colors.transparent,
+                                        onTap: () async {
+                                          context.safePop();
+                                        },
+                                        child: Icon(
+                                          Icons.arrow_back_ios_new_rounded,
+                                          color: valueOrDefault<Color>(
+                                            currentUserDocument?.color1,
+                                            FlutterFlowTheme.of(context)
+                                                .secondaryText,
+                                          ),
+                                          size: 30.0,
+                                        ),
                                       ),
                                     ),
                                   ),
                                 ],
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     15.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   'Détails rencontre',
@@ -158,6 +134,21 @@ class _EventPageAdd3BetWidgetState extends State<EventPageAdd3BetWidget> {
                             ],
                           ),
                         ),
+                        if (valueOrDefault(
+                                currentUserDocument?.stsocialapp, '') ==
+                            'moderateur')
+                          AuthUserStreamWidget(
+                            builder: (context) => Text(
+                              eventPageAdd3BetEventsRecord.reference.id,
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    color: FlutterFlowTheme.of(context).warning,
+                                    letterSpacing: 0.0,
+                                  ),
+                            ),
+                          ),
                         Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -176,7 +167,7 @@ class _EventPageAdd3BetWidgetState extends State<EventPageAdd3BetWidget> {
                                       ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       3.0, 0.0, 3.0, 0.0),
                                   child: Text(
                                     '-',
@@ -202,7 +193,7 @@ class _EventPageAdd3BetWidgetState extends State<EventPageAdd3BetWidget> {
                                       ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       2.0, 0.0, 2.0, 0.0),
                                   child: Text(
                                     ':',
@@ -245,7 +236,7 @@ class _EventPageAdd3BetWidgetState extends State<EventPageAdd3BetWidget> {
                                 if (eventPageAdd3BetEventsRecord.statut ==
                                     false)
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         5.0, 0.0, 0.0, 0.0),
                                     child: Container(
                                       width: 25.0,
@@ -262,7 +253,7 @@ class _EventPageAdd3BetWidgetState extends State<EventPageAdd3BetWidget> {
                           ],
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 5.0, 0.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -299,7 +290,7 @@ class _EventPageAdd3BetWidgetState extends State<EventPageAdd3BetWidget> {
                                           .primaryBackground,
                                     ),
                                     child: Align(
-                                      alignment: AlignmentDirectional(0.0, 0.0),
+                                      alignment: const AlignmentDirectional(0.0, 0.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
@@ -326,38 +317,18 @@ class _EventPageAdd3BetWidgetState extends State<EventPageAdd3BetWidget> {
                                           ),
                                           Align(
                                             alignment:
-                                                AlignmentDirectional(0.0, 0.0),
-                                            child: InkWell(
-                                              splashColor: Colors.transparent,
-                                              focusColor: Colors.transparent,
-                                              hoverColor: Colors.transparent,
-                                              highlightColor:
-                                                  Colors.transparent,
-                                              onTap: () async {
-                                                context.pushNamed(
-                                                  'TeamPage',
-                                                  queryParameters: {
-                                                    'teamRef': serializeParam(
-                                                      contDomTeamsRecord
-                                                          .reference,
-                                                      ParamType
-                                                          .DocumentReference,
-                                                    ),
-                                                  }.withoutNulls,
-                                                );
-                                              },
-                                              child: Text(
-                                                contDomTeamsRecord.name,
-                                                textAlign: TextAlign.start,
-                                                maxLines: 2,
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelSmall
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
+                                                const AlignmentDirectional(0.0, 0.0),
+                                            child: Text(
+                                              contDomTeamsRecord.name,
+                                              textAlign: TextAlign.start,
+                                              maxLines: 2,
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelSmall
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
                                             ),
                                           ),
                                         ],
@@ -406,7 +377,7 @@ class _EventPageAdd3BetWidgetState extends State<EventPageAdd3BetWidget> {
                                           .primaryBackground,
                                     ),
                                     child: Align(
-                                      alignment: AlignmentDirectional(0.0, 0.0),
+                                      alignment: const AlignmentDirectional(0.0, 0.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
@@ -433,38 +404,18 @@ class _EventPageAdd3BetWidgetState extends State<EventPageAdd3BetWidget> {
                                           ),
                                           Align(
                                             alignment:
-                                                AlignmentDirectional(0.0, 0.0),
-                                            child: InkWell(
-                                              splashColor: Colors.transparent,
-                                              focusColor: Colors.transparent,
-                                              hoverColor: Colors.transparent,
-                                              highlightColor:
-                                                  Colors.transparent,
-                                              onTap: () async {
-                                                context.pushNamed(
-                                                  'TeamPage',
-                                                  queryParameters: {
-                                                    'teamRef': serializeParam(
-                                                      contExtTeamsRecord
-                                                          .reference,
-                                                      ParamType
-                                                          .DocumentReference,
-                                                    ),
-                                                  }.withoutNulls,
-                                                );
-                                              },
-                                              child: Text(
-                                                contExtTeamsRecord.name,
-                                                textAlign: TextAlign.start,
-                                                maxLines: 2,
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelSmall
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
+                                                const AlignmentDirectional(0.0, 0.0),
+                                            child: Text(
+                                              contExtTeamsRecord.name,
+                                              textAlign: TextAlign.start,
+                                              maxLines: 2,
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelSmall
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
                                             ),
                                           ),
                                         ],
@@ -478,7 +429,7 @@ class _EventPageAdd3BetWidgetState extends State<EventPageAdd3BetWidget> {
                         ),
                         if (eventPageAdd3BetEventsRecord.seenScore == true)
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 5.0, 0.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -492,7 +443,7 @@ class _EventPageAdd3BetWidgetState extends State<EventPageAdd3BetWidget> {
                                         FlutterFlowTheme.of(context).alternate,
                                   ),
                                   child: Align(
-                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    alignment: const AlignmentDirectional(0.0, 0.0),
                                     child: Text(
                                       eventPageAdd3BetEventsRecord.scoreDom
                                           .toString(),
@@ -514,7 +465,7 @@ class _EventPageAdd3BetWidgetState extends State<EventPageAdd3BetWidget> {
                                         FlutterFlowTheme.of(context).alternate,
                                   ),
                                   child: Align(
-                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    alignment: const AlignmentDirectional(0.0, 0.0),
                                     child: Text(
                                       eventPageAdd3BetEventsRecord.scoreExt
                                           .toString(),
@@ -531,18 +482,22 @@ class _EventPageAdd3BetWidgetState extends State<EventPageAdd3BetWidget> {
                               ],
                             ),
                           ),
-                        Divider(
-                          thickness: 2.0,
-                          color:
+                        AuthUserStreamWidget(
+                          builder: (context) => Divider(
+                            thickness: 2.0,
+                            color: valueOrDefault<Color>(
+                              currentUserDocument?.color2,
                               FlutterFlowTheme.of(context).secondaryBackground,
+                            ),
+                          ),
                         ),
                         if (eventPageAdd3BetEventsRecord.statut == true)
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 10.0, 0.0, 0.0),
                             child: StreamBuilder<List<BetsRecord>>(
                               stream: queryBetsRecord(
-                                parent: widget!.eventRef,
+                                parent: widget.eventRef,
                                 queryBuilder: (betsRecord) =>
                                     betsRecord.orderBy('created_time'),
                               ),
@@ -574,7 +529,7 @@ class _EventPageAdd3BetWidgetState extends State<EventPageAdd3BetWidget> {
                                         columnBetsAVBetsRecordList[
                                             columnBetsAVIndex];
                                     return Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 5.0, 0.0, 5.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -583,7 +538,7 @@ class _EventPageAdd3BetWidgetState extends State<EventPageAdd3BetWidget> {
                                         children: [
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     20.0, 0.0, 0.0, 0.0),
                                             child: Text(
                                               columnBetsAVBetsRecord.choice,
@@ -598,7 +553,7 @@ class _EventPageAdd3BetWidgetState extends State<EventPageAdd3BetWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 20.0, 0.0),
                                             child: FFButtonWidget(
                                               onPressed: () async {
@@ -634,14 +589,14 @@ class _EventPageAdd3BetWidgetState extends State<EventPageAdd3BetWidget> {
                                                           .DocumentReference,
                                                     ),
                                                     'myBetRef': serializeParam(
-                                                      widget!.myBetRef,
+                                                      widget.myBetRef,
                                                       ParamType
                                                           .DocumentReference,
                                                     ),
                                                   }.withoutNulls,
                                                   extra: <String, dynamic>{
                                                     kTransitionInfoKey:
-                                                        TransitionInfo(
+                                                        const TransitionInfo(
                                                       hasTransition: true,
                                                       transitionType:
                                                           PageTransitionType
@@ -664,11 +619,11 @@ class _EventPageAdd3BetWidgetState extends State<EventPageAdd3BetWidget> {
                                               ),
                                               options: FFButtonOptions(
                                                 height: 30.0,
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         12.0, 0.0, 12.0, 0.0),
                                                 iconPadding:
-                                                    EdgeInsetsDirectional
+                                                    const EdgeInsetsDirectional
                                                         .fromSTEB(
                                                             0.0, 0.0, 0.0, 0.0),
                                                 color:
@@ -685,7 +640,7 @@ class _EventPageAdd3BetWidgetState extends State<EventPageAdd3BetWidget> {
                                                           letterSpacing: 0.0,
                                                         ),
                                                 elevation: 3.0,
-                                                borderSide: BorderSide(
+                                                borderSide: const BorderSide(
                                                   color: Colors.transparent,
                                                   width: 1.0,
                                                 ),
@@ -710,11 +665,11 @@ class _EventPageAdd3BetWidgetState extends State<EventPageAdd3BetWidget> {
                           ),
                         if (eventPageAdd3BetEventsRecord.statut == false)
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 10.0, 0.0, 0.0),
                             child: StreamBuilder<List<BetsRecord>>(
                               stream: queryBetsRecord(
-                                parent: widget!.eventRef,
+                                parent: widget.eventRef,
                                 queryBuilder: (betsRecord) =>
                                     betsRecord.orderBy('created_time'),
                               ),
@@ -746,7 +701,7 @@ class _EventPageAdd3BetWidgetState extends State<EventPageAdd3BetWidget> {
                                         columnBetsTBetsRecordList[
                                             columnBetsTIndex];
                                     return Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 5.0, 0.0, 5.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -755,7 +710,7 @@ class _EventPageAdd3BetWidgetState extends State<EventPageAdd3BetWidget> {
                                         children: [
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     20.0, 0.0, 0.0, 0.0),
                                             child: Text(
                                               columnBetsTBetsRecord.choice,
@@ -770,13 +725,13 @@ class _EventPageAdd3BetWidgetState extends State<EventPageAdd3BetWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 10.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 20.0, 0.0),
                                                   child: Text(
@@ -796,69 +751,66 @@ class _EventPageAdd3BetWidgetState extends State<EventPageAdd3BetWidget> {
                                                         ),
                                                   ),
                                                 ),
-                                                if (columnBetsTBetsRecord
-                                                        .statut !=
-                                                    null)
-                                                  Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                10.0, 0.0),
-                                                    child: Row(
-                                                      mainAxisSize:
-                                                          MainAxisSize.max,
-                                                      children: [
-                                                        if (columnBetsTBetsRecord
-                                                                .statut ==
-                                                            true)
-                                                          Padding(
-                                                            padding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        0.0,
-                                                                        0.0,
-                                                                        10.0,
-                                                                        0.0),
-                                                            child: Container(
-                                                              width: 25.0,
-                                                              height: 25.0,
-                                                              decoration:
-                                                                  BoxDecoration(
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .success,
-                                                                shape: BoxShape
-                                                                    .circle,
-                                                              ),
+                                                Padding(
+                                                  padding:
+                                                      const EdgeInsetsDirectional
+                                                          .fromSTEB(0.0, 0.0,
+                                                              10.0, 0.0),
+                                                  child: Row(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    children: [
+                                                      if (columnBetsTBetsRecord
+                                                              .statut ==
+                                                          true)
+                                                        Padding(
+                                                          padding:
+                                                              const EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      0.0,
+                                                                      10.0,
+                                                                      0.0),
+                                                          child: Container(
+                                                            width: 25.0,
+                                                            height: 25.0,
+                                                            decoration:
+                                                                BoxDecoration(
+                                                              color: FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .success,
+                                                              shape: BoxShape
+                                                                  .circle,
                                                             ),
                                                           ),
-                                                        if (columnBetsTBetsRecord
-                                                                .statut ==
-                                                            false)
-                                                          Padding(
-                                                            padding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        0.0,
-                                                                        0.0,
-                                                                        10.0,
-                                                                        0.0),
-                                                            child: Container(
-                                                              width: 25.0,
-                                                              height: 25.0,
-                                                              decoration:
-                                                                  BoxDecoration(
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .error,
-                                                                shape: BoxShape
-                                                                    .circle,
-                                                              ),
+                                                        ),
+                                                      if (columnBetsTBetsRecord
+                                                              .statut ==
+                                                          false)
+                                                        Padding(
+                                                          padding:
+                                                              const EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      0.0,
+                                                                      10.0,
+                                                                      0.0),
+                                                          child: Container(
+                                                            width: 25.0,
+                                                            height: 25.0,
+                                                            decoration:
+                                                                BoxDecoration(
+                                                              color: FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .error,
+                                                              shape: BoxShape
+                                                                  .circle,
                                                             ),
                                                           ),
-                                                      ],
-                                                    ),
+                                                        ),
+                                                    ],
                                                   ),
+                                                ),
                                               ],
                                             ),
                                           ),
@@ -870,15 +822,19 @@ class _EventPageAdd3BetWidgetState extends State<EventPageAdd3BetWidget> {
                               },
                             ),
                           ),
-                        Divider(
-                          thickness: 2.0,
-                          color:
+                        AuthUserStreamWidget(
+                          builder: (context) => Divider(
+                            thickness: 2.0,
+                            color: valueOrDefault<Color>(
+                              currentUserDocument?.color2,
                               FlutterFlowTheme.of(context).secondaryBackground,
+                            ),
+                          ),
                         ),
                         Align(
-                          alignment: AlignmentDirectional(-1.0, 0.0),
+                          alignment: const AlignmentDirectional(-1.0, 0.0),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 20.0, 10.0, 0.0, 0.0),
                             child: Text(
                               'Statistiques',
@@ -895,11 +851,11 @@ class _EventPageAdd3BetWidgetState extends State<EventPageAdd3BetWidget> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 10.0, 0.0, 0.0),
                           child: StreamBuilder<List<BetsRecord>>(
                             stream: queryBetsRecord(
-                              parent: widget!.eventRef,
+                              parent: widget.eventRef,
                               queryBuilder: (betsRecord) =>
                                   betsRecord.orderBy('created_time'),
                             ),
@@ -930,7 +886,7 @@ class _EventPageAdd3BetWidgetState extends State<EventPageAdd3BetWidget> {
                                       columnStatsBetsBetsRecordList[
                                           columnStatsBetsIndex];
                                   return Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 5.0, 0.0, 5.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -939,7 +895,7 @@ class _EventPageAdd3BetWidgetState extends State<EventPageAdd3BetWidget> {
                                       children: [
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   20.0, 0.0, 0.0, 0.0),
                                           child: Text(
                                             columnStatsBetsBetsRecord.choice,
@@ -955,7 +911,7 @@ class _EventPageAdd3BetWidgetState extends State<EventPageAdd3BetWidget> {
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 0.0, 10.0, 0.0),
                                               child: Text(
@@ -975,15 +931,16 @@ class _EventPageAdd3BetWidgetState extends State<EventPageAdd3BetWidget> {
                                               ),
                                             ),
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 0.0, 20.0, 0.0),
-                                              child: Icon(
-                                                Icons.groups_sharp,
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryText,
-                                                size: 24.0,
+                                              child: AuthUserStreamWidget(
+                                                builder: (context) => Icon(
+                                                  Icons.groups_sharp,
+                                                  color: currentUserDocument
+                                                      ?.color2,
+                                                  size: 24.0,
+                                                ),
                                               ),
                                             ),
                                           ],

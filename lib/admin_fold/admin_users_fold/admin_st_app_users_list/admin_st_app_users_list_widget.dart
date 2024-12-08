@@ -2,12 +2,10 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'admin_st_app_users_list_model.dart';
 export 'admin_st_app_users_list_model.dart';
 
@@ -47,9 +45,9 @@ class _AdminStAppUsersListWidgetState extends State<AdminStAppUsersListWidget> {
         body: SafeArea(
           top: true,
           child: Align(
-            alignment: AlignmentDirectional(0.0, -1.0),
+            alignment: const AlignmentDirectional(0.0, -1.0),
             child: Padding(
-              padding: EdgeInsets.all(10.0),
+              padding: const EdgeInsets.all(10.0),
               child: SingleChildScrollView(
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
@@ -70,7 +68,7 @@ class _AdminStAppUsersListWidgetState extends State<AdminStAppUsersListWidget> {
                                 context.pushNamed(
                                   'MenuPage',
                                   extra: <String, dynamic>{
-                                    kTransitionInfoKey: TransitionInfo(
+                                    kTransitionInfoKey: const TransitionInfo(
                                       hasTransition: true,
                                       transitionType:
                                           PageTransitionType.leftToRight,
@@ -86,7 +84,7 @@ class _AdminStAppUsersListWidgetState extends State<AdminStAppUsersListWidget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 0.0, 0.0),
                               child: InkWell(
                                 splashColor: Colors.transparent,
@@ -107,7 +105,7 @@ class _AdminStAppUsersListWidgetState extends State<AdminStAppUsersListWidget> {
                           ],
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               30.0, 0.0, 0.0, 0.0),
                           child: Text(
                             'Liste utilisateurs',
@@ -123,13 +121,13 @@ class _AdminStAppUsersListWidgetState extends State<AdminStAppUsersListWidget> {
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Align(
-                            alignment: AlignmentDirectional(0.0, 0.0),
+                            alignment: const AlignmentDirectional(0.0, 0.0),
                             child: FlutterFlowDropDown<String>(
                               controller: _model.dropStatutValueController ??=
                                   FormFieldController<String>(
@@ -141,7 +139,7 @@ class _AdminStAppUsersListWidgetState extends State<AdminStAppUsersListWidget> {
                                 'administrateur',
                                 'typster'
                               ]),
-                              optionLabels: [
+                              optionLabels: const [
                                 'Suspendu',
                                 'Modérateur',
                                 'Administrateur',
@@ -171,7 +169,7 @@ class _AdminStAppUsersListWidgetState extends State<AdminStAppUsersListWidget> {
                                   FlutterFlowTheme.of(context).alternate,
                               borderWidth: 2.0,
                               borderRadius: 8.0,
-                              margin: EdgeInsetsDirectional.fromSTEB(
+                              margin: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 4.0, 16.0, 4.0),
                               hidesUnderline: true,
                               isOverButton: true,
@@ -211,7 +209,7 @@ class _AdminStAppUsersListWidgetState extends State<AdminStAppUsersListWidget> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 10.0, 0.0),
                               child: Text(
                                 valueOrDefault<String>(
@@ -246,7 +244,7 @@ class _AdminStAppUsersListWidgetState extends State<AdminStAppUsersListWidget> {
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                       child: StreamBuilder<List<UsersRecord>>(
                         stream: queryUsersRecord(
                           queryBuilder: (usersRecord) => usersRecord
@@ -281,7 +279,7 @@ class _AdminStAppUsersListWidgetState extends State<AdminStAppUsersListWidget> {
                               final columnUsersRecord =
                                   columnUsersRecordList[columnIndex];
                               return Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 5.0, 0.0, 0.0),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
@@ -331,11 +329,11 @@ class _AdminStAppUsersListWidgetState extends State<AdminStAppUsersListWidget> {
                                                   ),
                                                   child: Align(
                                                     alignment:
-                                                        AlignmentDirectional(
+                                                        const AlignmentDirectional(
                                                             -1.0, 0.0),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   3.0,
                                                                   0.0,
@@ -392,7 +390,7 @@ class _AdminStAppUsersListWidgetState extends State<AdminStAppUsersListWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 5.0, 0.0),
                                           child: Icon(
                                             Icons.notifications_none_rounded,
@@ -405,7 +403,7 @@ class _AdminStAppUsersListWidgetState extends State<AdminStAppUsersListWidget> {
                                             'moderateur')
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 5.0, 0.0),
                                             child: Icon(
                                               Icons.local_police_outlined,
@@ -425,10 +423,22 @@ class _AdminStAppUsersListWidgetState extends State<AdminStAppUsersListWidget> {
                                           ),
                                       ],
                                     ),
+                                    Text(
+                                      columnUsersRecord.uid,
+                                      maxLines: 1,
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            color: FlutterFlowTheme.of(context)
+                                                .warning,
+                                            letterSpacing: 0.0,
+                                          ),
+                                    ),
                                     if (columnUsersRecord.stsocialapp ==
                                         'suspendu')
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             20.0, 0.0, 20.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -464,7 +474,7 @@ class _AdminStAppUsersListWidgetState extends State<AdminStAppUsersListWidget> {
                                                       ),
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           10.0, 0.0, 10.0, 0.0),
                                                   child: Icon(
@@ -481,7 +491,7 @@ class _AdminStAppUsersListWidgetState extends State<AdminStAppUsersListWidget> {
                                         ),
                                       ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           20.0, 0.0, 20.0, 0.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -493,9 +503,12 @@ class _AdminStAppUsersListWidgetState extends State<AdminStAppUsersListWidget> {
                                             children: [
                                               Text(
                                                 valueOrDefault<String>(
-                                                  columnUsersRecord.stock
+                                                  functions
+                                                      .limitOf2Decimal(
+                                                          columnUsersRecord
+                                                              .stock)
                                                       .toString(),
-                                                  '900',
+                                                  '900.00',
                                                 ),
                                                 maxLines: 1,
                                                 style:
@@ -507,7 +520,7 @@ class _AdminStAppUsersListWidgetState extends State<AdminStAppUsersListWidget> {
                                                         ),
                                               ),
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         10.0, 0.0, 10.0, 0.0),
                                                 child: Container(
@@ -527,7 +540,7 @@ class _AdminStAppUsersListWidgetState extends State<AdminStAppUsersListWidget> {
                                                   ),
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsets.all(2.0),
+                                                        const EdgeInsets.all(2.0),
                                                     child: ClipRRect(
                                                       borderRadius:
                                                           BorderRadius.circular(
@@ -548,7 +561,7 @@ class _AdminStAppUsersListWidgetState extends State<AdminStAppUsersListWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           20.0, 0.0, 20.0, 0.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -574,7 +587,7 @@ class _AdminStAppUsersListWidgetState extends State<AdminStAppUsersListWidget> {
                                                         ),
                                               ),
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         10.0, 0.0, 10.0, 0.0),
                                                 child: Icon(
@@ -592,7 +605,7 @@ class _AdminStAppUsersListWidgetState extends State<AdminStAppUsersListWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           20.0, 3.0, 20.0, 0.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -619,7 +632,7 @@ class _AdminStAppUsersListWidgetState extends State<AdminStAppUsersListWidget> {
                                                         ),
                                               ),
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         15.0, 0.0, 15.0, 0.0),
                                                 child: Container(

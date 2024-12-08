@@ -6,10 +6,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'boss_notif_e_event_page_i_u_d_admin_model.dart';
 export 'boss_notif_e_event_page_i_u_d_admin_model.dart';
 
@@ -50,7 +47,7 @@ class _BossNotifEEventPageIUDAdminWidgetState
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<MyNotificationsRecord>(
-      stream: MyNotificationsRecord.getDocument(widget!.notifRef!),
+      stream: MyNotificationsRecord.getDocument(widget.notifRef!),
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
@@ -87,7 +84,7 @@ class _BossNotifEEventPageIUDAdminWidgetState
                             .eEvent ==
                         null)
                       Padding(
-                        padding: EdgeInsets.all(10.0),
+                        padding: const EdgeInsets.all(10.0),
                         child: AuthUserStreamWidget(
                           builder: (context) => StreamBuilder<TeamsRecord>(
                             stream: TeamsRecord.getDocument(
@@ -130,7 +127,7 @@ class _BossNotifEEventPageIUDAdminWidgetState
                                                 'MenuPage',
                                                 extra: <String, dynamic>{
                                                   kTransitionInfoKey:
-                                                      TransitionInfo(
+                                                      const TransitionInfo(
                                                     hasTransition: true,
                                                     transitionType:
                                                         PageTransitionType
@@ -144,14 +141,13 @@ class _BossNotifEEventPageIUDAdminWidgetState
                                             child: Icon(
                                               Icons.menu_rounded,
                                               color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primaryText,
+                                                  currentUserDocument?.color1,
                                               size: 30.0,
                                             ),
                                           ),
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     10.0, 0.0, 0.0, 0.0),
                                             child: InkWell(
                                               splashColor: Colors.transparent,
@@ -166,8 +162,7 @@ class _BossNotifEEventPageIUDAdminWidgetState
                                                 Icons
                                                     .arrow_back_ios_new_rounded,
                                                 color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryText,
+                                                    currentUserDocument?.color1,
                                                 size: 30.0,
                                               ),
                                             ),
@@ -175,7 +170,7 @@ class _BossNotifEEventPageIUDAdminWidgetState
                                         ],
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             20.0, 0.0, 0.0, 0.0),
                                         child: Text(
                                           'Détails invitation',
@@ -192,8 +187,7 @@ class _BossNotifEEventPageIUDAdminWidgetState
                                   ),
                                   Divider(
                                     thickness: 1.0,
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryBackground,
+                                    color: currentUserDocument?.color2,
                                   ),
                                   StreamBuilder<TeamsRecord>(
                                     stream: TeamsRecord.getDocument(
@@ -224,7 +218,7 @@ class _BossNotifEEventPageIUDAdminWidgetState
                                         children: [
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 5.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -232,7 +226,7 @@ class _BossNotifEEventPageIUDAdminWidgetState
                                                   MainAxisAlignment.start,
                                               children: [
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           5.0, 0.0, 6.0, 0.0),
                                                   child: Container(
@@ -300,9 +294,9 @@ class _BossNotifEEventPageIUDAdminWidgetState
                                     },
                                   ),
                                   Align(
-                                    alignment: AlignmentDirectional(-1.0, 0.0),
+                                    alignment: const AlignmentDirectional(-1.0, 0.0),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           10.0, 20.0, 0.0, 10.0),
                                       child: Text(
                                         'Vous invite à jouer contre votre équipe.',
@@ -317,7 +311,7 @@ class _BossNotifEEventPageIUDAdminWidgetState
                                     ),
                                   ),
                                   Align(
-                                    alignment: AlignmentDirectional(-1.0, 0.0),
+                                    alignment: const AlignmentDirectional(-1.0, 0.0),
                                     child: Text(
                                       dateTimeFormat(
                                           "d/M H:mm",
@@ -374,9 +368,9 @@ class _BossNotifEEventPageIUDAdminWidgetState
                                         children: [
                                           Align(
                                             alignment:
-                                                AlignmentDirectional(-1.0, 0.0),
+                                                const AlignmentDirectional(-1.0, 0.0),
                                             child: Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       10.0, 20.0, 0.0, 10.0),
                                               child: Text(
@@ -394,9 +388,9 @@ class _BossNotifEEventPageIUDAdminWidgetState
                                           ),
                                           Align(
                                             alignment:
-                                                AlignmentDirectional(0.0, -1.0),
+                                                const AlignmentDirectional(0.0, -1.0),
                                             child: Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 20.0, 0.0, 20.0),
                                               child: FFButtonWidget(
@@ -515,7 +509,7 @@ class _BossNotifEEventPageIUDAdminWidgetState
                                                         _model.eEventRef?.date,
                                                   ));
 
-                                                  await widget!.notifRef!.update(
+                                                  await widget.notifRef!.update(
                                                       createMyNotificationsRecordData(
                                                     seen: true,
                                                   ));
@@ -530,7 +524,7 @@ class _BossNotifEEventPageIUDAdminWidgetState
                                                       },
                                                     ),
                                                   });
-                                                  await widget!.notifRef!
+                                                  await widget.notifRef!
                                                       .delete();
                                                   context.safePop();
 
@@ -540,9 +534,9 @@ class _BossNotifEEventPageIUDAdminWidgetState
                                                 options: FFButtonOptions(
                                                   width: 350.0,
                                                   height: 50.0,
-                                                  padding: EdgeInsets.all(0.0),
+                                                  padding: const EdgeInsets.all(0.0),
                                                   iconPadding:
-                                                      EdgeInsetsDirectional
+                                                      const EdgeInsetsDirectional
                                                           .fromSTEB(0.0, 0.0,
                                                               0.0, 0.0),
                                                   color: FlutterFlowTheme.of(
@@ -559,7 +553,7 @@ class _BossNotifEEventPageIUDAdminWidgetState
                                                         letterSpacing: 0.0,
                                                       ),
                                                   elevation: 3.0,
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Colors.transparent,
                                                     width: 1.0,
                                                   ),
@@ -583,12 +577,12 @@ class _BossNotifEEventPageIUDAdminWidgetState
                                     },
                                   ),
                                   Align(
-                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    alignment: const AlignmentDirectional(0.0, 0.0),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 20.0, 0.0, 10.0),
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 20.0, 0.0, 0.0),
                                       child: Text(
-                                        'Refuser',
+                                        'Ou refuser',
                                         textAlign: TextAlign.center,
                                         style: FlutterFlowTheme.of(context)
                                             .titleMedium
@@ -600,10 +594,10 @@ class _BossNotifEEventPageIUDAdminWidgetState
                                     ),
                                   ),
                                   Align(
-                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    alignment: const AlignmentDirectional(0.0, 0.0),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 20.0, 0.0, 10.0),
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 10.0, 0.0, 10.0),
                                       child: Text(
                                         'Pour la raison suivante',
                                         textAlign: TextAlign.center,
@@ -627,7 +621,7 @@ class _BossNotifEEventPageIUDAdminWidgetState
                                       'pas.disponible',
                                       'trop.decarts.points'
                                     ]),
-                                    optionLabels: [
+                                    optionLabels: const [
                                       'Vous n\'avez pas assez de membres',
                                       'Vous n\'êtes pas disponible',
                                       'Trop d\'ecarts de points'
@@ -655,7 +649,7 @@ class _BossNotifEEventPageIUDAdminWidgetState
                                     borderColor: Colors.transparent,
                                     borderWidth: 0.0,
                                     borderRadius: 8.0,
-                                    margin: EdgeInsetsDirectional.fromSTEB(
+                                    margin: const EdgeInsetsDirectional.fromSTEB(
                                         12.0, 0.0, 12.0, 0.0),
                                     hidesUnderline: true,
                                     isOverButton: false,
@@ -666,9 +660,9 @@ class _BossNotifEEventPageIUDAdminWidgetState
                                       _model.dropReasonsValue != '')
                                     Align(
                                       alignment:
-                                          AlignmentDirectional(0.0, -1.0),
+                                          const AlignmentDirectional(0.0, -1.0),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 40.0, 0.0, 20.0),
                                         child: FFButtonWidget(
                                           onPressed: () async {
@@ -718,20 +712,20 @@ class _BossNotifEEventPageIUDAdminWidgetState
                                               ),
                                             });
 
-                                            await widget!.notifRef!.update(
+                                            await widget.notifRef!.update(
                                                 createMyNotificationsRecordData(
                                               seen: true,
                                             ));
-                                            await widget!.notifRef!.delete();
+                                            await widget.notifRef!.delete();
                                             context.safePop();
                                           },
                                           text: 'Refuser',
                                           options: FFButtonOptions(
                                             width: 350.0,
                                             height: 50.0,
-                                            padding: EdgeInsets.all(0.0),
+                                            padding: const EdgeInsets.all(0.0),
                                             iconPadding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
                                             color: FlutterFlowTheme.of(context)
                                                 .error,
@@ -746,7 +740,7 @@ class _BossNotifEEventPageIUDAdminWidgetState
                                                       letterSpacing: 0.0,
                                                     ),
                                             elevation: 3.0,
-                                            borderSide: BorderSide(
+                                            borderSide: const BorderSide(
                                               color: Colors.transparent,
                                               width: 1.0,
                                             ),

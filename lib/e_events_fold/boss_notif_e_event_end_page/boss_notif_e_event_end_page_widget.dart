@@ -8,10 +8,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/upload_data.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'boss_notif_e_event_end_page_model.dart';
 export 'boss_notif_e_event_end_page_model.dart';
 
@@ -52,7 +49,7 @@ class _BossNotifEEventEndPageWidgetState
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<MyNotificationsRecord>(
-      stream: MyNotificationsRecord.getDocument(widget!.notifRef!),
+      stream: MyNotificationsRecord.getDocument(widget.notifRef!),
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
@@ -82,7 +79,7 @@ class _BossNotifEEventEndPageWidgetState
             body: SafeArea(
               top: true,
               child: Padding(
-                padding: EdgeInsets.all(10.0),
+                padding: const EdgeInsets.all(10.0),
                 child: SingleChildScrollView(
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
@@ -94,54 +91,56 @@ class _BossNotifEEventEndPageWidgetState
                           Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
-                              InkWell(
-                                splashColor: Colors.transparent,
-                                focusColor: Colors.transparent,
-                                hoverColor: Colors.transparent,
-                                highlightColor: Colors.transparent,
-                                onTap: () async {
-                                  context.pushNamed(
-                                    'MenuPage',
-                                    extra: <String, dynamic>{
-                                      kTransitionInfoKey: TransitionInfo(
-                                        hasTransition: true,
-                                        transitionType:
-                                            PageTransitionType.leftToRight,
-                                        duration: Duration(milliseconds: 400),
-                                      ),
-                                    },
-                                  );
-                                },
-                                child: Icon(
-                                  Icons.menu_rounded,
-                                  color:
-                                      FlutterFlowTheme.of(context).primaryText,
-                                  size: 30.0,
-                                ),
-                              ),
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    10.0, 0.0, 0.0, 0.0),
-                                child: InkWell(
+                              AuthUserStreamWidget(
+                                builder: (context) => InkWell(
                                   splashColor: Colors.transparent,
                                   focusColor: Colors.transparent,
                                   hoverColor: Colors.transparent,
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
-                                    context.safePop();
+                                    context.pushNamed(
+                                      'MenuPage',
+                                      extra: <String, dynamic>{
+                                        kTransitionInfoKey: const TransitionInfo(
+                                          hasTransition: true,
+                                          transitionType:
+                                              PageTransitionType.leftToRight,
+                                          duration: Duration(milliseconds: 400),
+                                        ),
+                                      },
+                                    );
                                   },
                                   child: Icon(
-                                    Icons.arrow_back_ios_new_rounded,
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryText,
+                                    Icons.menu_rounded,
+                                    color: currentUserDocument?.color1,
                                     size: 30.0,
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    10.0, 0.0, 0.0, 0.0),
+                                child: AuthUserStreamWidget(
+                                  builder: (context) => InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      context.safePop();
+                                    },
+                                    child: Icon(
+                                      Icons.arrow_back_ios_new_rounded,
+                                      color: currentUserDocument?.color1,
+                                      size: 30.0,
+                                    ),
                                   ),
                                 ),
                               ),
                             ],
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 20.0, 0.0, 0.0, 0.0),
                             child: Text(
                               'Détails Résultat',
@@ -156,14 +155,19 @@ class _BossNotifEEventEndPageWidgetState
                           ),
                         ],
                       ),
-                      Divider(
-                        thickness: 1.0,
-                        color: FlutterFlowTheme.of(context).secondaryBackground,
+                      AuthUserStreamWidget(
+                        builder: (context) => Divider(
+                          thickness: 1.0,
+                          color: valueOrDefault<Color>(
+                            currentUserDocument?.color2,
+                            FlutterFlowTheme.of(context).secondaryBackground,
+                          ),
+                        ),
                       ),
                       Align(
-                        alignment: AlignmentDirectional(-1.0, 0.0),
+                        alignment: const AlignmentDirectional(-1.0, 0.0),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 10.0),
                           child: Text(
                             dateTimeFormat(
@@ -204,14 +208,14 @@ class _BossNotifEEventEndPageWidgetState
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 5.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   children: [
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           5.0, 0.0, 6.0, 0.0),
                                       child: Container(
                                         width: 65.0,
@@ -268,7 +272,7 @@ class _BossNotifEEventEndPageWidgetState
                         },
                       ),
                       Align(
-                        alignment: AlignmentDirectional(0.0, 0.0),
+                        alignment: const AlignmentDirectional(0.0, 0.0),
                         child: Text(
                           'A configuré le resultat de votre rencontre',
                           textAlign: TextAlign.center,
@@ -280,7 +284,7 @@ class _BossNotifEEventEndPageWidgetState
                         ),
                       ),
                       StreamBuilder<EventsRecord>(
-                        stream: EventsRecord.getDocument(widget!.eEventRef!),
+                        stream: EventsRecord.getDocument(widget.eEventRef!),
                         builder: (context, snapshot) {
                           // Customize what your widget looks like when it's loading.
                           if (!snapshot.hasData) {
@@ -303,7 +307,7 @@ class _BossNotifEEventEndPageWidgetState
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 5.0, 0.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -343,7 +347,7 @@ class _BossNotifEEventEndPageWidgetState
                                           ),
                                           child: Align(
                                             alignment:
-                                                AlignmentDirectional(0.0, 0.0),
+                                                const AlignmentDirectional(0.0, 0.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
                                               mainAxisAlignment:
@@ -372,7 +376,7 @@ class _BossNotifEEventEndPageWidgetState
                                                 ),
                                                 Align(
                                                   alignment:
-                                                      AlignmentDirectional(
+                                                      const AlignmentDirectional(
                                                           0.0, 0.0),
                                                   child: InkWell(
                                                     splashColor:
@@ -462,7 +466,7 @@ class _BossNotifEEventEndPageWidgetState
                                           ),
                                           child: Align(
                                             alignment:
-                                                AlignmentDirectional(0.0, 0.0),
+                                                const AlignmentDirectional(0.0, 0.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
                                               mainAxisAlignment:
@@ -491,7 +495,7 @@ class _BossNotifEEventEndPageWidgetState
                                                 ),
                                                 Align(
                                                   alignment:
-                                                      AlignmentDirectional(
+                                                      const AlignmentDirectional(
                                                           0.0, 0.0),
                                                   child: InkWell(
                                                     splashColor:
@@ -546,7 +550,7 @@ class _BossNotifEEventEndPageWidgetState
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Align(
-                                      alignment: AlignmentDirectional(0.0, 0.0),
+                                      alignment: const AlignmentDirectional(0.0, 0.0),
                                       child: Text(
                                         'Gagnant',
                                         maxLines: 1,
@@ -594,7 +598,7 @@ class _BossNotifEEventEndPageWidgetState
                                                 MainAxisAlignment.center,
                                             children: [
                                               Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Text(
                                                   rowTeamWinTeamsRecord.name,
@@ -616,13 +620,10 @@ class _BossNotifEEventEndPageWidgetState
                                       ),
                                     if (bossNotifEEventEndPageMyNotificationsRecord
                                                 .eteamDraw !=
-                                            null &&
-                                        bossNotifEEventEndPageMyNotificationsRecord
-                                                .eteamDraw !=
                                             '')
                                       Align(
                                         alignment:
-                                            AlignmentDirectional(0.0, 0.0),
+                                            const AlignmentDirectional(0.0, 0.0),
                                         child: Text(
                                           bossNotifEEventEndPageMyNotificationsRecord
                                               .eteamDraw,
@@ -637,7 +638,7 @@ class _BossNotifEEventEndPageWidgetState
                                         ),
                                       ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 5.0, 0.0, 0.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -653,7 +654,7 @@ class _BossNotifEEventEndPageWidgetState
                                                       .alternate,
                                             ),
                                             child: Align(
-                                              alignment: AlignmentDirectional(
+                                              alignment: const AlignmentDirectional(
                                                   0.0, 0.0),
                                               child: Text(
                                                 valueOrDefault<String>(
@@ -685,7 +686,7 @@ class _BossNotifEEventEndPageWidgetState
                                                       .alternate,
                                             ),
                                             child: Align(
-                                              alignment: AlignmentDirectional(
+                                              alignment: const AlignmentDirectional(
                                                   0.0, 0.0),
                                               child: Text(
                                                 valueOrDefault<String>(
@@ -714,9 +715,9 @@ class _BossNotifEEventEndPageWidgetState
                                   ],
                                 ),
                               Align(
-                                alignment: AlignmentDirectional(0.0, 0.0),
+                                alignment: const AlignmentDirectional(0.0, 0.0),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 20.0, 0.0, 10.0),
                                   child: Text(
                                     'Si le résultat ci-dessus est égal avec ce qu\'il s\'est vraiment passé.',
@@ -736,9 +737,9 @@ class _BossNotifEEventEndPageWidgetState
                                       .eteamWin ==
                                   columnEventEventsRecord.teamdomRef)
                                 Align(
-                                  alignment: AlignmentDirectional(0.0, -1.0),
+                                  alignment: const AlignmentDirectional(0.0, -1.0),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 20.0, 0.0, 20.0),
                                     child: FFButtonWidget(
                                       onPressed: () async {
@@ -832,29 +833,29 @@ class _BossNotifEEventEndPageWidgetState
                                           guest: false,
                                         ));
 
-                                        context.pushNamed(
+                                        context.goNamed(
                                           'AddRatingPlayersPage',
                                           queryParameters: {
                                             'eventRef': serializeParam(
-                                              widget!.eEventRef,
+                                              widget.eEventRef,
                                               ParamType.DocumentReference,
                                             ),
                                           }.withoutNulls,
                                         );
 
-                                        await widget!.notifRef!.update(
+                                        await widget.notifRef!.update(
                                             createMyNotificationsRecordData(
                                           seen: true,
                                         ));
-                                        await widget!.notifRef!.delete();
+                                        await widget.notifRef!.delete();
                                       },
                                       text: 'Publier le résultat Dom',
                                       options: FFButtonOptions(
                                         width: 350.0,
                                         height: 50.0,
-                                        padding: EdgeInsets.all(0.0),
+                                        padding: const EdgeInsets.all(0.0),
                                         iconPadding:
-                                            EdgeInsetsDirectional.fromSTEB(
+                                            const EdgeInsetsDirectional.fromSTEB(
                                                 0.0, 0.0, 0.0, 0.0),
                                         color: FlutterFlowTheme.of(context)
                                             .secondaryText,
@@ -868,7 +869,7 @@ class _BossNotifEEventEndPageWidgetState
                                               letterSpacing: 0.0,
                                             ),
                                         elevation: 3.0,
-                                        borderSide: BorderSide(
+                                        borderSide: const BorderSide(
                                           color: Colors.transparent,
                                           width: 1.0,
                                         ),
@@ -885,14 +886,11 @@ class _BossNotifEEventEndPageWidgetState
                                 ),
                               if (bossNotifEEventEndPageMyNotificationsRecord
                                           .eteamDraw !=
-                                      null &&
-                                  bossNotifEEventEndPageMyNotificationsRecord
-                                          .eteamDraw !=
                                       '')
                                 Align(
-                                  alignment: AlignmentDirectional(0.0, -1.0),
+                                  alignment: const AlignmentDirectional(0.0, -1.0),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 20.0, 0.0, 20.0),
                                     child: FFButtonWidget(
                                       onPressed: () async {
@@ -986,29 +984,29 @@ class _BossNotifEEventEndPageWidgetState
                                           guest: false,
                                         ));
 
-                                        context.pushNamed(
+                                        context.goNamed(
                                           'AddRatingPlayersPage',
                                           queryParameters: {
                                             'eventRef': serializeParam(
-                                              widget!.eEventRef,
+                                              widget.eEventRef,
                                               ParamType.DocumentReference,
                                             ),
                                           }.withoutNulls,
                                         );
 
-                                        await widget!.notifRef!.update(
+                                        await widget.notifRef!.update(
                                             createMyNotificationsRecordData(
                                           seen: true,
                                         ));
-                                        await widget!.notifRef!.delete();
+                                        await widget.notifRef!.delete();
                                       },
                                       text: 'Publier le résultat Draw',
                                       options: FFButtonOptions(
                                         width: 350.0,
                                         height: 50.0,
-                                        padding: EdgeInsets.all(0.0),
+                                        padding: const EdgeInsets.all(0.0),
                                         iconPadding:
-                                            EdgeInsetsDirectional.fromSTEB(
+                                            const EdgeInsetsDirectional.fromSTEB(
                                                 0.0, 0.0, 0.0, 0.0),
                                         color: FlutterFlowTheme.of(context)
                                             .secondaryText,
@@ -1022,7 +1020,7 @@ class _BossNotifEEventEndPageWidgetState
                                               letterSpacing: 0.0,
                                             ),
                                         elevation: 3.0,
-                                        borderSide: BorderSide(
+                                        borderSide: const BorderSide(
                                           color: Colors.transparent,
                                           width: 1.0,
                                         ),
@@ -1041,9 +1039,9 @@ class _BossNotifEEventEndPageWidgetState
                                       .eteamWin ==
                                   columnEventEventsRecord.teamextRef)
                                 Align(
-                                  alignment: AlignmentDirectional(0.0, -1.0),
+                                  alignment: const AlignmentDirectional(0.0, -1.0),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 20.0, 0.0, 20.0),
                                     child: FFButtonWidget(
                                       onPressed: () async {
@@ -1137,29 +1135,29 @@ class _BossNotifEEventEndPageWidgetState
                                           guest: false,
                                         ));
 
-                                        context.pushNamed(
+                                        context.goNamed(
                                           'AddRatingPlayersPage',
                                           queryParameters: {
                                             'eventRef': serializeParam(
-                                              widget!.eEventRef,
+                                              widget.eEventRef,
                                               ParamType.DocumentReference,
                                             ),
                                           }.withoutNulls,
                                         );
 
-                                        await widget!.notifRef!.update(
+                                        await widget.notifRef!.update(
                                             createMyNotificationsRecordData(
                                           seen: true,
                                         ));
-                                        await widget!.notifRef!.delete();
+                                        await widget.notifRef!.delete();
                                       },
                                       text: 'Publier le résultat Ext',
                                       options: FFButtonOptions(
                                         width: 350.0,
                                         height: 50.0,
-                                        padding: EdgeInsets.all(0.0),
+                                        padding: const EdgeInsets.all(0.0),
                                         iconPadding:
-                                            EdgeInsetsDirectional.fromSTEB(
+                                            const EdgeInsetsDirectional.fromSTEB(
                                                 0.0, 0.0, 0.0, 0.0),
                                         color: FlutterFlowTheme.of(context)
                                             .secondaryText,
@@ -1173,7 +1171,7 @@ class _BossNotifEEventEndPageWidgetState
                                               letterSpacing: 0.0,
                                             ),
                                         elevation: 3.0,
-                                        borderSide: BorderSide(
+                                        borderSide: const BorderSide(
                                           color: Colors.transparent,
                                           width: 1.0,
                                         ),
@@ -1189,9 +1187,9 @@ class _BossNotifEEventEndPageWidgetState
                                   ),
                                 ),
                               Align(
-                                alignment: AlignmentDirectional(0.0, 0.0),
+                                alignment: const AlignmentDirectional(0.0, 0.0),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 20.0, 0.0, 0.0),
                                   child: Text(
                                     'Si le résultat ci-dessus ne correspond pas avec ce qu\'il s\'est vraiment passé.',
@@ -1208,7 +1206,7 @@ class _BossNotifEEventEndPageWidgetState
                                 ),
                               ),
                               Align(
-                                alignment: AlignmentDirectional(0.0, 0.0),
+                                alignment: const AlignmentDirectional(0.0, 0.0),
                                 child: Text(
                                   'Nous allons mettre une pénalité\nà la E Team voulant tricher',
                                   textAlign: TextAlign.center,
@@ -1224,9 +1222,9 @@ class _BossNotifEEventEndPageWidgetState
                                 ),
                               ),
                               Align(
-                                alignment: AlignmentDirectional(0.0, 0.0),
+                                alignment: const AlignmentDirectional(0.0, 0.0),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 10.0, 0.0, 10.0),
                                   child: Text(
                                     'Refuser Résultat',
@@ -1243,9 +1241,9 @@ class _BossNotifEEventEndPageWidgetState
                                 ),
                               ),
                               Align(
-                                alignment: AlignmentDirectional(0.0, 0.0),
+                                alignment: const AlignmentDirectional(0.0, 0.0),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 10.0),
                                   child: Text(
                                     'Pour la raison suivante...',
@@ -1270,7 +1268,7 @@ class _BossNotifEEventEndPageWidgetState
                                   'pas.le.bon.score.dom',
                                   'pas.le.bon.score.ext'
                                 ]),
-                                optionLabels: [
+                                optionLabels: const [
                                   'Pas le bon résultat',
                                   'Pas le bon score domicile',
                                   'Pas le bon score extérieur'
@@ -1298,7 +1296,7 @@ class _BossNotifEEventEndPageWidgetState
                                 borderColor: Colors.transparent,
                                 borderWidth: 0.0,
                                 borderRadius: 8.0,
-                                margin: EdgeInsetsDirectional.fromSTEB(
+                                margin: const EdgeInsetsDirectional.fromSTEB(
                                     12.0, 0.0, 12.0, 0.0),
                                 hidesUnderline: true,
                                 isOverButton: false,
@@ -1306,9 +1304,9 @@ class _BossNotifEEventEndPageWidgetState
                                 isMultiSelect: false,
                               ),
                               Align(
-                                alignment: AlignmentDirectional(0.0, 0.0),
+                                alignment: const AlignmentDirectional(0.0, 0.0),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 10.0),
                                   child: Text(
                                     'Munissez vous de la photo de fin de match pour prouver votre résultat.\nLes 2 équipes de cette photo doivent être les mêmes que celles ci-dessus.',
@@ -1325,9 +1323,9 @@ class _BossNotifEEventEndPageWidgetState
                                 ),
                               ),
                               Align(
-                                alignment: AlignmentDirectional(0.0, 0.0),
+                                alignment: const AlignmentDirectional(0.0, 0.0),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 20.0, 0.0, 10.0),
                                   child: Text(
                                     'Preuve dans cette photo...',
@@ -1342,7 +1340,7 @@ class _BossNotifEEventEndPageWidgetState
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 10.0, 0.0, 20.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -1350,7 +1348,7 @@ class _BossNotifEEventEndPageWidgetState
                                       MainAxisAlignment.spaceAround,
                                   children: [
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 6.0, 0.0),
                                       child: Container(
                                         width: 65.0,
@@ -1360,7 +1358,7 @@ class _BossNotifEEventEndPageWidgetState
                                               .primaryBackground,
                                         ),
                                         child: Padding(
-                                          padding: EdgeInsets.all(3.0),
+                                          padding: const EdgeInsets.all(3.0),
                                           child: ClipRRect(
                                             borderRadius:
                                                 BorderRadius.circular(0.0),
@@ -1453,12 +1451,11 @@ class _BossNotifEEventEndPageWidgetState
                               ),
                               if ((_model.dropReasonsValue != null &&
                                       _model.dropReasonsValue != '') &&
-                                  (_model.uploadedFileUrl != null &&
-                                      _model.uploadedFileUrl != ''))
+                                  (_model.uploadedFileUrl != ''))
                                 Align(
-                                  alignment: AlignmentDirectional(0.0, -1.0),
+                                  alignment: const AlignmentDirectional(0.0, -1.0),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 40.0, 0.0, 20.0),
                                     child: FFButtonWidget(
                                       onPressed: () async {
@@ -1519,17 +1516,17 @@ class _BossNotifEEventEndPageWidgetState
                                           guest: false,
                                         ));
 
-                                        await widget!.notifRef!.update(
+                                        await widget.notifRef!.update(
                                             createMyNotificationsRecordData(
                                           seen: true,
                                         ));
-                                        await widget!.notifRef!.delete();
+                                        await widget.notifRef!.delete();
 
-                                        context.pushNamed(
+                                        context.goNamed(
                                           'AddRatingPlayersPage',
                                           queryParameters: {
                                             'eventRef': serializeParam(
-                                              widget!.eEventRef,
+                                              widget.eEventRef,
                                               ParamType.DocumentReference,
                                             ),
                                           }.withoutNulls,
@@ -1539,9 +1536,9 @@ class _BossNotifEEventEndPageWidgetState
                                       options: FFButtonOptions(
                                         width: 350.0,
                                         height: 50.0,
-                                        padding: EdgeInsets.all(0.0),
+                                        padding: const EdgeInsets.all(0.0),
                                         iconPadding:
-                                            EdgeInsetsDirectional.fromSTEB(
+                                            const EdgeInsetsDirectional.fromSTEB(
                                                 0.0, 0.0, 0.0, 0.0),
                                         color:
                                             FlutterFlowTheme.of(context).error,
@@ -1555,7 +1552,7 @@ class _BossNotifEEventEndPageWidgetState
                                               letterSpacing: 0.0,
                                             ),
                                         elevation: 3.0,
-                                        borderSide: BorderSide(
+                                        borderSide: const BorderSide(
                                           color: Colors.transparent,
                                           width: 1.0,
                                         ),

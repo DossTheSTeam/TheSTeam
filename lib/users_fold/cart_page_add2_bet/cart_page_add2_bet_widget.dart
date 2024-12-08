@@ -4,10 +4,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'cart_page_add2_bet_model.dart';
 export 'cart_page_add2_bet_model.dart';
 
@@ -46,7 +43,7 @@ class _CartPageAdd2BetWidgetState extends State<CartPageAdd2BetWidget> {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<CartRecord>(
-      stream: CartRecord.getDocument(widget!.cartRef!),
+      stream: CartRecord.getDocument(widget.cartRef!),
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
@@ -76,11 +73,11 @@ class _CartPageAdd2BetWidgetState extends State<CartPageAdd2BetWidget> {
             body: SafeArea(
               top: true,
               child: Align(
-                alignment: AlignmentDirectional(0.0, -1.0),
+                alignment: const AlignmentDirectional(0.0, -1.0),
                 child: Padding(
-                  padding: EdgeInsets.all(10.0),
+                  padding: const EdgeInsets.all(10.0),
                   child: StreamBuilder<MyBetsRecord>(
-                    stream: MyBetsRecord.getDocument(widget!.myBetRef!),
+                    stream: MyBetsRecord.getDocument(widget.myBetRef!),
                     builder: (context, snapshot) {
                       // Customize what your widget looks like when it's loading.
                       if (!snapshot.hasData) {
@@ -108,7 +105,7 @@ class _CartPageAdd2BetWidgetState extends State<CartPageAdd2BetWidget> {
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 5.0, 0.0, 5.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -120,64 +117,32 @@ class _CartPageAdd2BetWidgetState extends State<CartPageAdd2BetWidget> {
                                           Row(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
-                                              InkWell(
-                                                splashColor: Colors.transparent,
-                                                focusColor: Colors.transparent,
-                                                hoverColor: Colors.transparent,
-                                                highlightColor:
-                                                    Colors.transparent,
-                                                onTap: () async {
-                                                  context.pushNamed(
-                                                    'MenuPage',
-                                                    extra: <String, dynamic>{
-                                                      kTransitionInfoKey:
-                                                          TransitionInfo(
-                                                        hasTransition: true,
-                                                        transitionType:
-                                                            PageTransitionType
-                                                                .leftToRight,
-                                                        duration: Duration(
-                                                            milliseconds: 400),
-                                                      ),
-                                                    },
-                                                  );
-
-                                                  await widget!.cartRef!
-                                                      .delete();
-                                                },
-                                                child: Icon(
-                                                  Icons.menu_rounded,
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primaryText,
-                                                  size: 30.0,
-                                                ),
-                                              ),
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         10.0, 0.0, 0.0, 0.0),
-                                                child: InkWell(
-                                                  splashColor:
-                                                      Colors.transparent,
-                                                  focusColor:
-                                                      Colors.transparent,
-                                                  hoverColor:
-                                                      Colors.transparent,
-                                                  highlightColor:
-                                                      Colors.transparent,
-                                                  onTap: () async {
-                                                    context.safePop();
-                                                    await widget!.cartRef!
-                                                        .delete();
-                                                  },
-                                                  child: Icon(
-                                                    Icons
-                                                        .arrow_back_ios_new_rounded,
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .primaryText,
-                                                    size: 30.0,
+                                                child: AuthUserStreamWidget(
+                                                  builder: (context) => InkWell(
+                                                    splashColor:
+                                                        Colors.transparent,
+                                                    focusColor:
+                                                        Colors.transparent,
+                                                    hoverColor:
+                                                        Colors.transparent,
+                                                    highlightColor:
+                                                        Colors.transparent,
+                                                    onTap: () async {
+                                                      context.safePop();
+                                                      await widget.cartRef!
+                                                          .delete();
+                                                    },
+                                                    child: Icon(
+                                                      Icons
+                                                          .arrow_back_ios_new_rounded,
+                                                      color: currentUserDocument
+                                                          ?.color1,
+                                                      size: 30.0,
+                                                    ),
                                                   ),
                                                 ),
                                               ),
@@ -186,7 +151,7 @@ class _CartPageAdd2BetWidgetState extends State<CartPageAdd2BetWidget> {
                                         ],
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             10.0, 0.0, 0.0, 0.0),
                                         child: Text(
                                           'Ajouter le 2 ème paris ?',
@@ -202,10 +167,11 @@ class _CartPageAdd2BetWidgetState extends State<CartPageAdd2BetWidget> {
                                     ],
                                   ),
                                 ),
-                                Divider(
-                                  thickness: 1.0,
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
+                                AuthUserStreamWidget(
+                                  builder: (context) => Divider(
+                                    thickness: 1.0,
+                                    color: currentUserDocument?.color2,
+                                  ),
                                 ),
                               ],
                             ),
@@ -244,7 +210,7 @@ class _CartPageAdd2BetWidgetState extends State<CartPageAdd2BetWidget> {
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 10.0, 0.0, 0.0),
                                               child: Column(
@@ -252,7 +218,7 @@ class _CartPageAdd2BetWidgetState extends State<CartPageAdd2BetWidget> {
                                                 children: [
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 5.0,
                                                                 0.0, 0.0),
                                                     child: StreamBuilder<
@@ -304,11 +270,11 @@ class _CartPageAdd2BetWidgetState extends State<CartPageAdd2BetWidget> {
                                                               ),
                                                               child: Align(
                                                                 alignment:
-                                                                    AlignmentDirectional(
+                                                                    const AlignmentDirectional(
                                                                         1.0,
                                                                         0.0),
                                                                 child: Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -356,11 +322,11 @@ class _CartPageAdd2BetWidgetState extends State<CartPageAdd2BetWidget> {
                                                               ),
                                                               child: Align(
                                                                 alignment:
-                                                                    AlignmentDirectional(
+                                                                    const AlignmentDirectional(
                                                                         -1.0,
                                                                         0.0),
                                                                 child: Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           5.0,
                                                                           0.0,
@@ -392,7 +358,7 @@ class _CartPageAdd2BetWidgetState extends State<CartPageAdd2BetWidget> {
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 5.0,
                                                                 0.0, 5.0),
                                                     child: Row(
@@ -404,7 +370,7 @@ class _CartPageAdd2BetWidgetState extends State<CartPageAdd2BetWidget> {
                                                       children: [
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       20.0,
                                                                       0.0,
@@ -426,7 +392,7 @@ class _CartPageAdd2BetWidgetState extends State<CartPageAdd2BetWidget> {
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -466,13 +432,14 @@ class _CartPageAdd2BetWidgetState extends State<CartPageAdd2BetWidget> {
                                     ),
                                   ],
                                 ),
-                                Divider(
-                                  thickness: 1.0,
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
+                                AuthUserStreamWidget(
+                                  builder: (context) => Divider(
+                                    thickness: 1.0,
+                                    color: currentUserDocument?.color2,
+                                  ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 10.0, 0.0, 0.0),
                                   child: StreamBuilder<BetsRecord>(
                                     stream: BetsRecord.getDocument(
@@ -503,7 +470,7 @@ class _CartPageAdd2BetWidgetState extends State<CartPageAdd2BetWidget> {
                                         children: [
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 5.0, 0.0, 0.0),
                                             child: StreamBuilder<EventsRecord>(
                                               stream: EventsRecord.getDocument(
@@ -550,11 +517,11 @@ class _CartPageAdd2BetWidgetState extends State<CartPageAdd2BetWidget> {
                                                       ),
                                                       child: Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 1.0, 0.0),
                                                         child: Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -599,11 +566,11 @@ class _CartPageAdd2BetWidgetState extends State<CartPageAdd2BetWidget> {
                                                       ),
                                                       child: Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 -1.0, 0.0),
                                                         child: Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       5.0,
                                                                       0.0,
@@ -634,7 +601,7 @@ class _CartPageAdd2BetWidgetState extends State<CartPageAdd2BetWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 5.0, 0.0, 5.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -643,7 +610,7 @@ class _CartPageAdd2BetWidgetState extends State<CartPageAdd2BetWidget> {
                                                       .spaceBetween,
                                               children: [
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           20.0, 0.0, 0.0, 0.0),
                                                   child: Text(
@@ -659,7 +626,7 @@ class _CartPageAdd2BetWidgetState extends State<CartPageAdd2BetWidget> {
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 30.0, 0.0),
                                                   child: Text(
@@ -695,18 +662,19 @@ class _CartPageAdd2BetWidgetState extends State<CartPageAdd2BetWidget> {
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 10.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
-                                      Divider(
-                                        thickness: 1.0,
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondaryBackground,
+                                      AuthUserStreamWidget(
+                                        builder: (context) => Divider(
+                                          thickness: 1.0,
+                                          color: currentUserDocument?.color2,
+                                        ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 10.0, 0.0, 10.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -714,14 +682,14 @@ class _CartPageAdd2BetWidgetState extends State<CartPageAdd2BetWidget> {
                                               MainAxisAlignment.spaceBetween,
                                           children: [
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       25.0, 0.0, 0.0, 0.0),
                                               child: Text(
-                                                'Mise',
+                                                'Mise de départ',
                                                 style:
                                                     FlutterFlowTheme.of(context)
-                                                        .bodyMedium
+                                                        .labelSmall
                                                         .override(
                                                           fontFamily: 'Poppins',
                                                           letterSpacing: 0.0,
@@ -729,14 +697,14 @@ class _CartPageAdd2BetWidgetState extends State<CartPageAdd2BetWidget> {
                                               ),
                                             ),
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
-                                                      0.0, 0.0, 33.0, 0.0),
+                                                      0.0, 0.0, 30.0, 0.0),
                                               child: Text(
                                                 'Cote totale',
                                                 style:
                                                     FlutterFlowTheme.of(context)
-                                                        .bodyMedium
+                                                        .labelSmall
                                                         .override(
                                                           fontFamily: 'Poppins',
                                                           letterSpacing: 0.0,
@@ -747,7 +715,7 @@ class _CartPageAdd2BetWidgetState extends State<CartPageAdd2BetWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 5.0, 0.0, 5.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -755,9 +723,9 @@ class _CartPageAdd2BetWidgetState extends State<CartPageAdd2BetWidget> {
                                               MainAxisAlignment.spaceBetween,
                                           children: [
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
-                                                      10.0, 0.0, 0.0, 0.0),
+                                                      25.0, 0.0, 0.0, 0.0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
@@ -780,7 +748,7 @@ class _CartPageAdd2BetWidgetState extends State<CartPageAdd2BetWidget> {
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(5.0, 0.0,
                                                                 0.0, 0.0),
                                                     child: Container(
@@ -800,7 +768,7 @@ class _CartPageAdd2BetWidgetState extends State<CartPageAdd2BetWidget> {
                                                       ),
                                                       child: Padding(
                                                         padding:
-                                                            EdgeInsets.all(2.0),
+                                                            const EdgeInsets.all(2.0),
                                                         child: ClipRRect(
                                                           borderRadius:
                                                               BorderRadius
@@ -820,7 +788,7 @@ class _CartPageAdd2BetWidgetState extends State<CartPageAdd2BetWidget> {
                                               ),
                                             ),
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 0.0, 30.0, 0.0),
                                               child: Text(
@@ -857,18 +825,19 @@ class _CartPageAdd2BetWidgetState extends State<CartPageAdd2BetWidget> {
                                           ],
                                         ),
                                       ),
-                                      Divider(
-                                        thickness: 1.0,
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondaryBackground,
+                                      AuthUserStreamWidget(
+                                        builder: (context) => Divider(
+                                          thickness: 1.0,
+                                          color: currentUserDocument?.color2,
+                                        ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 10.0, 0.0, 0.0),
                                         child: Text(
                                           'Gain potentiel',
                                           style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
+                                              .labelSmall
                                               .override(
                                                 fontFamily: 'Poppins',
                                                 letterSpacing: 0.0,
@@ -876,7 +845,7 @@ class _CartPageAdd2BetWidgetState extends State<CartPageAdd2BetWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 5.0, 0.0, 5.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -914,7 +883,7 @@ class _CartPageAdd2BetWidgetState extends State<CartPageAdd2BetWidget> {
                                                       ),
                                             ),
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(5.0, 0.0, 0.0, 0.0),
                                               child: Container(
                                                 width: 30.0,
@@ -931,7 +900,7 @@ class _CartPageAdd2BetWidgetState extends State<CartPageAdd2BetWidget> {
                                                   ),
                                                 ),
                                                 child: Padding(
-                                                  padding: EdgeInsets.all(2.0),
+                                                  padding: const EdgeInsets.all(2.0),
                                                   child: ClipRRect(
                                                     borderRadius:
                                                         BorderRadius.circular(
@@ -956,7 +925,7 @@ class _CartPageAdd2BetWidgetState extends State<CartPageAdd2BetWidget> {
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 20.0, 0.0, 10.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -965,22 +934,16 @@ class _CartPageAdd2BetWidgetState extends State<CartPageAdd2BetWidget> {
                                         children: [
                                           FFButtonWidget(
                                             onPressed: () async {
-                                              await widget!.cartRef!.update({
-                                                ...mapToFirestore(
-                                                  {
-                                                    'bet': FieldValue.delete(),
-                                                  },
-                                                ),
-                                              });
                                               context.safePop();
+                                              await widget.cartRef!.delete();
                                             },
                                             text: 'Annuler',
                                             options: FFButtonOptions(
                                               height: 30.0,
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       12.0, 0.0, 12.0, 0.0),
-                                              iconPadding: EdgeInsetsDirectional
+                                              iconPadding: const EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
                                               color:
                                                   FlutterFlowTheme.of(context)
@@ -996,7 +959,7 @@ class _CartPageAdd2BetWidgetState extends State<CartPageAdd2BetWidget> {
                                                         letterSpacing: 0.0,
                                                       ),
                                               elevation: 3.0,
-                                              borderSide: BorderSide(
+                                              borderSide: const BorderSide(
                                                 color: Colors.transparent,
                                                 width: 1.0,
                                               ),
@@ -1009,7 +972,7 @@ class _CartPageAdd2BetWidgetState extends State<CartPageAdd2BetWidget> {
                                           ),
                                           FFButtonWidget(
                                             onPressed: () async {
-                                              await widget!.myBetRef!.update({
+                                              await widget.myBetRef!.update({
                                                 ...createMyBetsRecordData(
                                                   potentialy:
                                                       valueOrDefault<double>(
@@ -1068,11 +1031,11 @@ class _CartPageAdd2BetWidgetState extends State<CartPageAdd2BetWidget> {
                                                 ),
                                               });
 
-                                              context.pushNamed(
+                                              context.goNamed(
                                                 'MyProfilPage',
                                                 extra: <String, dynamic>{
                                                   kTransitionInfoKey:
-                                                      TransitionInfo(
+                                                      const TransitionInfo(
                                                     hasTransition: true,
                                                     transitionType:
                                                         PageTransitionType
@@ -1085,15 +1048,15 @@ class _CartPageAdd2BetWidgetState extends State<CartPageAdd2BetWidget> {
                                                 },
                                               );
 
-                                              await widget!.cartRef!.delete();
+                                              await widget.cartRef!.delete();
                                             },
                                             text: 'Valider',
                                             options: FFButtonOptions(
                                               height: 30.0,
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       12.0, 0.0, 12.0, 0.0),
-                                              iconPadding: EdgeInsetsDirectional
+                                              iconPadding: const EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
                                               color:
                                                   FlutterFlowTheme.of(context)
@@ -1109,7 +1072,7 @@ class _CartPageAdd2BetWidgetState extends State<CartPageAdd2BetWidget> {
                                                         letterSpacing: 0.0,
                                                       ),
                                               elevation: 3.0,
-                                              borderSide: BorderSide(
+                                              borderSide: const BorderSide(
                                                 color: Colors.transparent,
                                                 width: 1.0,
                                               ),
@@ -1124,11 +1087,11 @@ class _CartPageAdd2BetWidgetState extends State<CartPageAdd2BetWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 20.0, 0.0, 0.0),
                                       child: FFButtonWidget(
                                         onPressed: () async {
-                                          await widget!.myBetRef!.update({
+                                          await widget.myBetRef!.update({
                                             ...createMyBetsRecordData(
                                               potentialy:
                                                   valueOrDefault<double>(
@@ -1183,26 +1146,26 @@ class _CartPageAdd2BetWidgetState extends State<CartPageAdd2BetWidget> {
                                             ),
                                           });
 
-                                          context.pushNamed(
+                                          context.goNamed(
                                             'ListEventsAdd3Bet',
                                             queryParameters: {
                                               'myBetRef': serializeParam(
-                                                widget!.myBetRef,
+                                                widget.myBetRef,
                                                 ParamType.DocumentReference,
                                               ),
                                             }.withoutNulls,
                                           );
 
-                                          await widget!.cartRef!.delete();
+                                          await widget.cartRef!.delete();
                                         },
                                         text: 'Valider et ajouter un paris',
                                         options: FFButtonOptions(
                                           height: 30.0,
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   12.0, 0.0, 12.0, 0.0),
                                           iconPadding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
                                           color: FlutterFlowTheme.of(context)
                                               .success,
@@ -1217,7 +1180,7 @@ class _CartPageAdd2BetWidgetState extends State<CartPageAdd2BetWidget> {
                                                 letterSpacing: 0.0,
                                               ),
                                           elevation: 3.0,
-                                          borderSide: BorderSide(
+                                          borderSide: const BorderSide(
                                             color: Colors.transparent,
                                             width: 1.0,
                                           ),

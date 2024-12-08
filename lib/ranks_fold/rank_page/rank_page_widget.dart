@@ -3,13 +3,10 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'rank_page_model.dart';
 export 'rank_page_model.dart';
 
@@ -51,9 +48,9 @@ class _RankPageWidgetState extends State<RankPageWidget> {
             visible: valueOrDefault<bool>(currentUserDocument?.esport, false) ==
                 false,
             child: Align(
-              alignment: AlignmentDirectional(0.0, -1.0),
+              alignment: const AlignmentDirectional(0.0, -1.0),
               child: Padding(
-                padding: EdgeInsets.all(10.0),
+                padding: const EdgeInsets.all(10.0),
                 child: AuthUserStreamWidget(
                   builder: (context) => SingleChildScrollView(
                     child: Column(
@@ -75,7 +72,7 @@ class _RankPageWidgetState extends State<RankPageWidget> {
                                     context.pushNamed(
                                       'MenuPage',
                                       extra: <String, dynamic>{
-                                        kTransitionInfoKey: TransitionInfo(
+                                        kTransitionInfoKey: const TransitionInfo(
                                           hasTransition: true,
                                           transitionType:
                                               PageTransitionType.leftToRight,
@@ -86,13 +83,12 @@ class _RankPageWidgetState extends State<RankPageWidget> {
                                   },
                                   child: Icon(
                                     Icons.menu_rounded,
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryText,
+                                    color: currentUserDocument?.color1,
                                     size: 30.0,
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       10.0, 0.0, 0.0, 0.0),
                                   child: InkWell(
                                     splashColor: Colors.transparent,
@@ -104,8 +100,7 @@ class _RankPageWidgetState extends State<RankPageWidget> {
                                     },
                                     child: Icon(
                                       Icons.arrow_back_ios_new_rounded,
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
+                                      color: currentUserDocument?.color1,
                                       size: 30.0,
                                     ),
                                   ),
@@ -113,7 +108,7 @@ class _RankPageWidgetState extends State<RankPageWidget> {
                               ],
                             ),
                             Align(
-                              alignment: AlignmentDirectional(0.0, 0.0),
+                              alignment: const AlignmentDirectional(0.0, 0.0),
                               child: Text(
                                 'Classement',
                                 style: FlutterFlowTheme.of(context)
@@ -128,7 +123,7 @@ class _RankPageWidgetState extends State<RankPageWidget> {
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 15.0, 0.0),
                                   child: InkWell(
                                     splashColor: Colors.transparent,
@@ -139,7 +134,7 @@ class _RankPageWidgetState extends State<RankPageWidget> {
                                       context.pushNamed(
                                         'RankTypstersPage',
                                         extra: <String, dynamic>{
-                                          kTransitionInfoKey: TransitionInfo(
+                                          kTransitionInfoKey: const TransitionInfo(
                                             hasTransition: true,
                                             transitionType:
                                                 PageTransitionType.bottomToTop,
@@ -151,14 +146,13 @@ class _RankPageWidgetState extends State<RankPageWidget> {
                                     },
                                     child: FaIcon(
                                       FontAwesomeIcons.crown,
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryText,
+                                      color: currentUserDocument?.color1,
                                       size: 25.0,
                                     ),
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 10.0, 0.0),
                                   child: InkWell(
                                     splashColor: Colors.transparent,
@@ -169,7 +163,7 @@ class _RankPageWidgetState extends State<RankPageWidget> {
                                       context.pushNamed(
                                         'MyBestsRankPage',
                                         extra: <String, dynamic>{
-                                          kTransitionInfoKey: TransitionInfo(
+                                          kTransitionInfoKey: const TransitionInfo(
                                             hasTransition: true,
                                             transitionType:
                                                 PageTransitionType.rightToLeft,
@@ -181,8 +175,7 @@ class _RankPageWidgetState extends State<RankPageWidget> {
                                     },
                                     child: FaIcon(
                                       FontAwesomeIcons.userCircle,
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryText,
+                                      color: currentUserDocument?.color1,
                                       size: 30.0,
                                     ),
                                   ),
@@ -202,7 +195,7 @@ class _RankPageWidgetState extends State<RankPageWidget> {
                               ),
                               options: List<String>.from(
                                   ['legende', 'champion', 'pro', 'amateur']),
-                              optionLabels: [
+                              optionLabels: const [
                                 'Légende',
                                 'Champion',
                                 'Pro',
@@ -232,7 +225,7 @@ class _RankPageWidgetState extends State<RankPageWidget> {
                                   FlutterFlowTheme.of(context).alternate,
                               borderWidth: 2.0,
                               borderRadius: 8.0,
-                              margin: EdgeInsetsDirectional.fromSTEB(
+                              margin: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 4.0, 16.0, 4.0),
                               hidesUnderline: true,
                               isOverButton: true,
@@ -245,7 +238,7 @@ class _RankPageWidgetState extends State<RankPageWidget> {
                                 _model.dropDivisionValue ??= '',
                               ),
                               options: List<String>.from(['1', '2', '3']),
-                              optionLabels: [
+                              optionLabels: const [
                                 'Division 1',
                                 'Division 2',
                                 'Division 3'
@@ -274,7 +267,7 @@ class _RankPageWidgetState extends State<RankPageWidget> {
                                   FlutterFlowTheme.of(context).alternate,
                               borderWidth: 2.0,
                               borderRadius: 8.0,
-                              margin: EdgeInsetsDirectional.fromSTEB(
+                              margin: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 4.0, 16.0, 4.0),
                               hidesUnderline: true,
                               isOverButton: true,
@@ -323,7 +316,7 @@ class _RankPageWidgetState extends State<RankPageWidget> {
                                       children: [
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   30.0, 0.0, 0.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -335,14 +328,13 @@ class _RankPageWidgetState extends State<RankPageWidget> {
                                                 children: [
                                                   Icon(
                                                     Icons.groups_rounded,
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .primaryText,
+                                                    color: currentUserDocument
+                                                        ?.color2,
                                                     size: 30.0,
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(10.0, 0.0,
                                                                 0.0, 0.0),
                                                     child: Text(
@@ -416,7 +408,7 @@ class _RankPageWidgetState extends State<RankPageWidget> {
                                                       children: [
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       10.0,
                                                                       0.0,
@@ -438,7 +430,7 @@ class _RankPageWidgetState extends State<RankPageWidget> {
                                                                 extra: <String,
                                                                     dynamic>{
                                                                   kTransitionInfoKey:
-                                                                      TransitionInfo(
+                                                                      const TransitionInfo(
                                                                     hasTransition:
                                                                         true,
                                                                     transitionType:
@@ -456,7 +448,7 @@ class _RankPageWidgetState extends State<RankPageWidget> {
                                                                   .notifications_active_outlined,
                                                               color: FlutterFlowTheme
                                                                       .of(context)
-                                                                  .accent3,
+                                                                  .accent1,
                                                               size: 40.0,
                                                             ),
                                                           ),
@@ -510,7 +502,7 @@ class _RankPageWidgetState extends State<RankPageWidget> {
                                       children: [
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 10.0, 10.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -518,7 +510,7 @@ class _RankPageWidgetState extends State<RankPageWidget> {
                                                 MainAxisAlignment.end,
                                             children: [
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 0.0, 10.0, 0.0),
                                                 child: Text(
@@ -538,8 +530,7 @@ class _RankPageWidgetState extends State<RankPageWidget> {
                                               Icon(
                                                 Icons.groups_rounded,
                                                 color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryText,
+                                                    currentUserDocument?.color2,
                                                 size: 30.0,
                                               ),
                                             ],
@@ -567,7 +558,7 @@ class _RankPageWidgetState extends State<RankPageWidget> {
                                         CrossAxisAlignment.start,
                                     children: [
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 9.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -604,7 +595,7 @@ class _RankPageWidgetState extends State<RankPageWidget> {
                                                 ),
                                               ),
                                               child: Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     1.0, 0.0),
                                                 child: Text(
                                                   'Pseudo',
@@ -635,7 +626,7 @@ class _RankPageWidgetState extends State<RankPageWidget> {
                                                 ),
                                               ),
                                               child: Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Text(
                                                   'Total\nbénéfices',
@@ -668,7 +659,7 @@ class _RankPageWidgetState extends State<RankPageWidget> {
                                                 ),
                                               ),
                                               child: Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Text(
                                                   'Stock',
@@ -699,7 +690,7 @@ class _RankPageWidgetState extends State<RankPageWidget> {
                                                 ),
                                               ),
                                               child: Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Text(
                                                   'Gagnés',
@@ -730,7 +721,7 @@ class _RankPageWidgetState extends State<RankPageWidget> {
                                                 ),
                                               ),
                                               child: Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Text(
                                                   'Cote moyenne',
@@ -766,7 +757,7 @@ class _RankPageWidgetState extends State<RankPageWidget> {
                                                 ),
                                               ),
                                               child: Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Text(
                                                   'Perdus',
@@ -797,7 +788,7 @@ class _RankPageWidgetState extends State<RankPageWidget> {
                                                 ),
                                               ),
                                               child: Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Text(
                                                   'ClickSTeam',
@@ -828,7 +819,7 @@ class _RankPageWidgetState extends State<RankPageWidget> {
                                                 ),
                                               ),
                                               child: Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Text(
                                                   'Signals',
@@ -923,7 +914,7 @@ class _RankPageWidgetState extends State<RankPageWidget> {
                                                       ),
                                                       child: Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 0.0, 0.0),
                                                         child: Text(
                                                           valueOrDefault<
@@ -964,7 +955,7 @@ class _RankPageWidgetState extends State<RankPageWidget> {
                                                       ),
                                                       child: Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 1.0, 0.0),
                                                         child: InkWell(
                                                           splashColor: Colors
@@ -1002,6 +993,9 @@ class _RankPageWidgetState extends State<RankPageWidget> {
                                                                 .override(
                                                                   fontFamily:
                                                                       'Poppins',
+                                                                  color:
+                                                                      columnUsersEarningsScrollUsersRecord
+                                                                          .color1,
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),
@@ -1024,7 +1018,7 @@ class _RankPageWidgetState extends State<RankPageWidget> {
                                                       ),
                                                       child: Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 0.0, 0.0),
                                                         child: Text(
                                                           valueOrDefault<
@@ -1065,7 +1059,7 @@ class _RankPageWidgetState extends State<RankPageWidget> {
                                                       ),
                                                       child: Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 0.0, 0.0),
                                                         child: Text(
                                                           valueOrDefault<
@@ -1104,7 +1098,7 @@ class _RankPageWidgetState extends State<RankPageWidget> {
                                                       ),
                                                       child: Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 0.0, 0.0),
                                                         child: Text(
                                                           valueOrDefault<
@@ -1141,7 +1135,7 @@ class _RankPageWidgetState extends State<RankPageWidget> {
                                                       ),
                                                       child: Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 0.0, 0.0),
                                                         child: Text(
                                                           valueOrDefault<
@@ -1173,7 +1167,7 @@ class _RankPageWidgetState extends State<RankPageWidget> {
                                                     ),
                                                     Align(
                                                       alignment:
-                                                          AlignmentDirectional(
+                                                          const AlignmentDirectional(
                                                               0.0, 0.0),
                                                       child: Container(
                                                         width: 65.0,
@@ -1191,7 +1185,7 @@ class _RankPageWidgetState extends State<RankPageWidget> {
                                                         ),
                                                         child: Align(
                                                           alignment:
-                                                              AlignmentDirectional(
+                                                              const AlignmentDirectional(
                                                                   0.0, 0.0),
                                                           child: Text(
                                                             valueOrDefault<
@@ -1235,7 +1229,7 @@ class _RankPageWidgetState extends State<RankPageWidget> {
                                                       ),
                                                       child: Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 0.0, 0.0),
                                                         child: Text(
                                                           valueOrDefault<
@@ -1265,7 +1259,7 @@ class _RankPageWidgetState extends State<RankPageWidget> {
                                                                 .of(context)
                                                             .primaryBackground,
                                                         borderRadius:
-                                                            BorderRadius.only(
+                                                            const BorderRadius.only(
                                                           bottomLeft:
                                                               Radius.circular(
                                                                   0.0),
@@ -1287,7 +1281,7 @@ class _RankPageWidgetState extends State<RankPageWidget> {
                                                       ),
                                                       child: Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 0.0, 0.0),
                                                         child: Text(
                                                           valueOrDefault<

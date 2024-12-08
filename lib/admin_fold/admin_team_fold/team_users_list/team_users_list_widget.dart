@@ -1,12 +1,7 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'team_users_list_model.dart';
 export 'team_users_list_model.dart';
 
@@ -43,7 +38,7 @@ class _TeamUsersListWidgetState extends State<TeamUsersListWidget> {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<TeamsRecord>(
-      stream: TeamsRecord.getDocument(widget!.teamRef!),
+      stream: TeamsRecord.getDocument(widget.teamRef!),
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
@@ -71,16 +66,16 @@ class _TeamUsersListWidgetState extends State<TeamUsersListWidget> {
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             body: Align(
-              alignment: AlignmentDirectional(0.0, -1.0),
+              alignment: const AlignmentDirectional(0.0, -1.0),
               child: Padding(
-                padding: EdgeInsets.all(10.0),
+                padding: const EdgeInsets.all(10.0),
                 child: SingleChildScrollView(
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.start,
@@ -97,7 +92,7 @@ class _TeamUsersListWidgetState extends State<TeamUsersListWidget> {
                                     context.pushNamed(
                                       'MenuPage',
                                       extra: <String, dynamic>{
-                                        kTransitionInfoKey: TransitionInfo(
+                                        kTransitionInfoKey: const TransitionInfo(
                                           hasTransition: true,
                                           transitionType:
                                               PageTransitionType.leftToRight,
@@ -114,7 +109,7 @@ class _TeamUsersListWidgetState extends State<TeamUsersListWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       10.0, 0.0, 0.0, 0.0),
                                   child: InkWell(
                                     splashColor: Colors.transparent,
@@ -135,7 +130,7 @@ class _TeamUsersListWidgetState extends State<TeamUsersListWidget> {
                               ],
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 10.0, 10.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -159,7 +154,7 @@ class _TeamUsersListWidgetState extends State<TeamUsersListWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       teamUsersListTeamsRecord.name,
@@ -177,12 +172,20 @@ class _TeamUsersListWidgetState extends State<TeamUsersListWidget> {
                           ],
                         ),
                       ),
+                      Text(
+                        teamUsersListTeamsRecord.reference.id,
+                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                              fontFamily: 'Poppins',
+                              color: FlutterFlowTheme.of(context).warning,
+                              letterSpacing: 0.0,
+                            ),
+                      ),
                       Column(
                         mainAxisSize: MainAxisSize.max,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 10.0, 0.0, 0.0),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
@@ -206,19 +209,19 @@ class _TeamUsersListWidgetState extends State<TeamUsersListWidget> {
                                           ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           7.0, 0.0, 0.0, 0.0),
                                       child: Icon(
                                         Icons.star_rounded,
                                         color: FlutterFlowTheme.of(context)
-                                            .accent3,
+                                            .accent1,
                                         size: 33.0,
                                       ),
                                     ),
                                   ],
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 10.0, 0.0, 0.0),
                                   child: StreamBuilder<List<UsersRecord>>(
                                     stream: queryUsersRecord(),
@@ -256,7 +259,7 @@ class _TeamUsersListWidgetState extends State<TeamUsersListWidget> {
                                                 .contains(columnUsersRecord
                                                     .reference),
                                             child: Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 5.0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
@@ -273,7 +276,7 @@ class _TeamUsersListWidgetState extends State<TeamUsersListWidget> {
                                                     children: [
                                                       Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     10.0,
                                                                     0.0,
@@ -285,7 +288,7 @@ class _TeamUsersListWidgetState extends State<TeamUsersListWidget> {
                                                           children: [
                                                             Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -333,11 +336,11 @@ class _TeamUsersListWidgetState extends State<TeamUsersListWidget> {
                                                               ),
                                                               child: Align(
                                                                 alignment:
-                                                                    AlignmentDirectional(
+                                                                    const AlignmentDirectional(
                                                                         -1.0,
                                                                         0.0),
                                                                 child: Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           10.0,
                                                                           0.0,
@@ -398,54 +401,112 @@ class _TeamUsersListWidgetState extends State<TeamUsersListWidget> {
                                                           ],
                                                         ),
                                                       ),
-                                                      Align(
-                                                        alignment:
-                                                            AlignmentDirectional(
-                                                                1.0, 0.0),
-                                                        child: Padding(
-                                                          padding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      0.0,
-                                                                      10.0,
-                                                                      0.0),
-                                                          child: InkWell(
-                                                            splashColor: Colors
-                                                                .transparent,
-                                                            focusColor: Colors
-                                                                .transparent,
-                                                            hoverColor: Colors
-                                                                .transparent,
-                                                            highlightColor:
-                                                                Colors
-                                                                    .transparent,
-                                                            onTap: () async {
-                                                              await teamUsersListTeamsRecord
-                                                                  .reference
-                                                                  .update({
-                                                                ...mapToFirestore(
-                                                                  {
-                                                                    'members':
-                                                                        FieldValue
-                                                                            .arrayRemove([
-                                                                      columnUsersRecord
-                                                                          .reference
-                                                                    ]),
-                                                                  },
-                                                                ),
-                                                              });
-                                                            },
-                                                            child: Icon(
-                                                              Icons
-                                                                  .remove_circle_outline_rounded,
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .error,
-                                                              size: 30.0,
-                                                            ),
+                                                      StreamBuilder<
+                                                          List<MyTeamsRecord>>(
+                                                        stream:
+                                                            queryMyTeamsRecord(
+                                                          parent:
+                                                              columnUsersRecord
+                                                                  .reference,
+                                                          queryBuilder:
+                                                              (myTeamsRecord) =>
+                                                                  myTeamsRecord
+                                                                      .where(
+                                                            'teams',
+                                                            arrayContains:
+                                                                widget.teamRef,
                                                           ),
+                                                          singleRecord: true,
                                                         ),
+                                                        builder: (context,
+                                                            snapshot) {
+                                                          // Customize what your widget looks like when it's loading.
+                                                          if (!snapshot
+                                                              .hasData) {
+                                                            return Center(
+                                                              child: SizedBox(
+                                                                width: 50.0,
+                                                                height: 50.0,
+                                                                child:
+                                                                    CircularProgressIndicator(
+                                                                  valueColor:
+                                                                      AlwaysStoppedAnimation<
+                                                                          Color>(
+                                                                    FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .accent4,
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                            );
+                                                          }
+                                                          List<MyTeamsRecord>
+                                                              rowMyTeamsRecordList =
+                                                              snapshot.data!;
+                                                          // Return an empty Container when the item does not exist.
+                                                          if (snapshot
+                                                              .data!.isEmpty) {
+                                                            return Container();
+                                                          }
+                                                          final rowMyTeamsRecord =
+                                                              rowMyTeamsRecordList
+                                                                      .isNotEmpty
+                                                                  ? rowMyTeamsRecordList
+                                                                      .first
+                                                                  : null;
+
+                                                          return Row(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            children: [
+                                                              Align(
+                                                                alignment:
+                                                                    const AlignmentDirectional(
+                                                                        1.0,
+                                                                        0.0),
+                                                                child: InkWell(
+                                                                  splashColor:
+                                                                      Colors
+                                                                          .transparent,
+                                                                  focusColor: Colors
+                                                                      .transparent,
+                                                                  hoverColor: Colors
+                                                                      .transparent,
+                                                                  highlightColor:
+                                                                      Colors
+                                                                          .transparent,
+                                                                  onTap:
+                                                                      () async {
+                                                                    await widget
+                                                                        .teamRef!
+                                                                        .update({
+                                                                      ...mapToFirestore(
+                                                                        {
+                                                                          'members':
+                                                                              FieldValue.arrayRemove([
+                                                                            columnUsersRecord.reference
+                                                                          ]),
+                                                                        },
+                                                                      ),
+                                                                    });
+                                                                    await rowMyTeamsRecord!
+                                                                        .reference
+                                                                        .delete();
+                                                                  },
+                                                                  child: Icon(
+                                                                    Icons
+                                                                        .remove_circle_outline_rounded,
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .error,
+                                                                    size: 30.0,
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                            ],
+                                                          );
+                                                        },
                                                       ),
                                                     ],
                                                   ),
@@ -467,7 +528,7 @@ class _TeamUsersListWidgetState extends State<TeamUsersListWidget> {
                                 .secondaryBackground,
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 10.0, 0.0, 0.0),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
@@ -488,7 +549,7 @@ class _TeamUsersListWidgetState extends State<TeamUsersListWidget> {
                                           ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           10.0, 0.0, 0.0, 0.0),
                                       child: Icon(
                                         Icons.group_rounded,
@@ -500,7 +561,7 @@ class _TeamUsersListWidgetState extends State<TeamUsersListWidget> {
                                   ],
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 10.0, 0.0, 0.0),
                                   child: StreamBuilder<List<UsersRecord>>(
                                     stream: queryUsersRecord(),
@@ -538,7 +599,7 @@ class _TeamUsersListWidgetState extends State<TeamUsersListWidget> {
                                                 .contains(columnUsersRecord
                                                     .reference),
                                             child: Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 5.0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
@@ -555,7 +616,7 @@ class _TeamUsersListWidgetState extends State<TeamUsersListWidget> {
                                                     children: [
                                                       Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     10.0,
                                                                     0.0,
@@ -567,7 +628,7 @@ class _TeamUsersListWidgetState extends State<TeamUsersListWidget> {
                                                           children: [
                                                             Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -615,11 +676,11 @@ class _TeamUsersListWidgetState extends State<TeamUsersListWidget> {
                                                               ),
                                                               child: Align(
                                                                 alignment:
-                                                                    AlignmentDirectional(
+                                                                    const AlignmentDirectional(
                                                                         -1.0,
                                                                         0.0),
                                                                 child: Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           10.0,
                                                                           0.0,
@@ -680,75 +741,130 @@ class _TeamUsersListWidgetState extends State<TeamUsersListWidget> {
                                                           ],
                                                         ),
                                                       ),
-                                                      Align(
-                                                        alignment:
-                                                            AlignmentDirectional(
-                                                                1.0, 0.0),
-                                                        child: Padding(
-                                                          padding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      0.0,
-                                                                      10.0,
-                                                                      0.0),
-                                                          child: InkWell(
-                                                            splashColor: Colors
-                                                                .transparent,
-                                                            focusColor: Colors
-                                                                .transparent,
-                                                            hoverColor: Colors
-                                                                .transparent,
-                                                            highlightColor:
-                                                                Colors
-                                                                    .transparent,
-                                                            onTap: () async {
-                                                              await teamUsersListTeamsRecord
-                                                                  .reference
-                                                                  .update({
-                                                                ...createTeamsRecordData(
-                                                                  adminUser:
-                                                                      currentUserReference,
-                                                                ),
-                                                                ...mapToFirestore(
-                                                                  {
-                                                                    'fans': FieldValue
-                                                                        .arrayRemove([
-                                                                      columnUsersRecord
-                                                                          .reference
-                                                                    ]),
-                                                                    'blocks':
-                                                                        FieldValue
-                                                                            .arrayUnion([
-                                                                      columnUsersRecord
-                                                                          .reference
-                                                                    ]),
-                                                                  },
-                                                                ),
-                                                              });
-
-                                                              await columnUsersRecord
-                                                                  .reference
-                                                                  .update({
-                                                                ...mapToFirestore(
-                                                                  {
-                                                                    'num_penalities':
-                                                                        FieldValue
-                                                                            .increment(3),
-                                                                  },
-                                                                ),
-                                                              });
-                                                            },
-                                                            child: Icon(
-                                                              Icons
-                                                                  .remove_circle_outline_rounded,
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .error,
-                                                              size: 30.0,
-                                                            ),
+                                                      StreamBuilder<
+                                                          List<
+                                                              MyTeamslikeRecord>>(
+                                                        stream:
+                                                            queryMyTeamslikeRecord(
+                                                          parent:
+                                                              columnUsersRecord
+                                                                  .reference,
+                                                          queryBuilder:
+                                                              (myTeamslikeRecord) =>
+                                                                  myTeamslikeRecord
+                                                                      .where(
+                                                            'teams',
+                                                            arrayContains:
+                                                                widget.teamRef,
                                                           ),
+                                                          singleRecord: true,
                                                         ),
+                                                        builder: (context,
+                                                            snapshot) {
+                                                          // Customize what your widget looks like when it's loading.
+                                                          if (!snapshot
+                                                              .hasData) {
+                                                            return Center(
+                                                              child: SizedBox(
+                                                                width: 50.0,
+                                                                height: 50.0,
+                                                                child:
+                                                                    CircularProgressIndicator(
+                                                                  valueColor:
+                                                                      AlwaysStoppedAnimation<
+                                                                          Color>(
+                                                                    FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .accent4,
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                            );
+                                                          }
+                                                          List<MyTeamslikeRecord>
+                                                              rowMyTeamslikeRecordList =
+                                                              snapshot.data!;
+                                                          // Return an empty Container when the item does not exist.
+                                                          if (snapshot
+                                                              .data!.isEmpty) {
+                                                            return Container();
+                                                          }
+                                                          final rowMyTeamslikeRecord =
+                                                              rowMyTeamslikeRecordList
+                                                                      .isNotEmpty
+                                                                  ? rowMyTeamslikeRecordList
+                                                                      .first
+                                                                  : null;
+
+                                                          return Row(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            children: [
+                                                              Align(
+                                                                alignment:
+                                                                    const AlignmentDirectional(
+                                                                        1.0,
+                                                                        0.0),
+                                                                child: InkWell(
+                                                                  splashColor:
+                                                                      Colors
+                                                                          .transparent,
+                                                                  focusColor: Colors
+                                                                      .transparent,
+                                                                  hoverColor: Colors
+                                                                      .transparent,
+                                                                  highlightColor:
+                                                                      Colors
+                                                                          .transparent,
+                                                                  onTap:
+                                                                      () async {
+                                                                    await widget
+                                                                        .teamRef!
+                                                                        .update({
+                                                                      ...mapToFirestore(
+                                                                        {
+                                                                          'fans':
+                                                                              FieldValue.arrayRemove([
+                                                                            columnUsersRecord.reference
+                                                                          ]),
+                                                                          'blocks':
+                                                                              FieldValue.arrayUnion([
+                                                                            columnUsersRecord.reference
+                                                                          ]),
+                                                                        },
+                                                                      ),
+                                                                    });
+                                                                    await rowMyTeamslikeRecord!
+                                                                        .reference
+                                                                        .delete();
+
+                                                                    await columnUsersRecord
+                                                                        .reference
+                                                                        .update({
+                                                                      ...mapToFirestore(
+                                                                        {
+                                                                          'num_penalities':
+                                                                              FieldValue.increment(3),
+                                                                          'stock':
+                                                                              FieldValue.increment(-(10.0)),
+                                                                        },
+                                                                      ),
+                                                                    });
+                                                                  },
+                                                                  child: Icon(
+                                                                    Icons
+                                                                        .remove_circle_outline_rounded,
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .error,
+                                                                    size: 30.0,
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                            ],
+                                                          );
+                                                        },
                                                       ),
                                                     ],
                                                   ),
@@ -770,7 +886,7 @@ class _TeamUsersListWidgetState extends State<TeamUsersListWidget> {
                                 .secondaryBackground,
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 10.0, 0.0, 0.0),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
@@ -794,7 +910,7 @@ class _TeamUsersListWidgetState extends State<TeamUsersListWidget> {
                                           ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           10.0, 0.0, 0.0, 0.0),
                                       child: Icon(
                                         Icons.group_off_outlined,
@@ -806,7 +922,7 @@ class _TeamUsersListWidgetState extends State<TeamUsersListWidget> {
                                   ],
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 10.0, 0.0, 0.0),
                                   child: StreamBuilder<List<UsersRecord>>(
                                     stream: queryUsersRecord(),
@@ -844,7 +960,7 @@ class _TeamUsersListWidgetState extends State<TeamUsersListWidget> {
                                                 .contains(columnUsersRecord
                                                     .reference),
                                             child: Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 5.0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
@@ -861,7 +977,7 @@ class _TeamUsersListWidgetState extends State<TeamUsersListWidget> {
                                                     children: [
                                                       Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     10.0,
                                                                     0.0,
@@ -873,7 +989,7 @@ class _TeamUsersListWidgetState extends State<TeamUsersListWidget> {
                                                           children: [
                                                             Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -921,11 +1037,11 @@ class _TeamUsersListWidgetState extends State<TeamUsersListWidget> {
                                                               ),
                                                               child: Align(
                                                                 alignment:
-                                                                    AlignmentDirectional(
+                                                                    const AlignmentDirectional(
                                                                         -1.0,
                                                                         0.0),
                                                                 child: Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           10.0,
                                                                           0.0,
@@ -988,11 +1104,11 @@ class _TeamUsersListWidgetState extends State<TeamUsersListWidget> {
                                                       ),
                                                       Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 1.0, 0.0),
                                                         child: Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,

@@ -2,12 +2,9 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'my_bests_e_team_rank_page_model.dart';
 export 'my_bests_e_team_rank_page_model.dart';
 
@@ -51,9 +48,9 @@ class _MyBestsETeamRankPageWidgetState
             visible: valueOrDefault<bool>(currentUserDocument?.esport, false) ==
                 true,
             child: Align(
-              alignment: AlignmentDirectional(0.0, -1.0),
+              alignment: const AlignmentDirectional(0.0, -1.0),
               child: Padding(
-                padding: EdgeInsets.all(10.0),
+                padding: const EdgeInsets.all(10.0),
                 child: AuthUserStreamWidget(
                   builder: (context) => SingleChildScrollView(
                     child: Column(
@@ -75,7 +72,7 @@ class _MyBestsETeamRankPageWidgetState
                                     context.pushNamed(
                                       'MenuPage',
                                       extra: <String, dynamic>{
-                                        kTransitionInfoKey: TransitionInfo(
+                                        kTransitionInfoKey: const TransitionInfo(
                                           hasTransition: true,
                                           transitionType:
                                               PageTransitionType.leftToRight,
@@ -86,13 +83,12 @@ class _MyBestsETeamRankPageWidgetState
                                   },
                                   child: Icon(
                                     Icons.menu_rounded,
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryText,
+                                    color: currentUserDocument?.color1,
                                     size: 30.0,
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       10.0, 0.0, 0.0, 0.0),
                                   child: InkWell(
                                     splashColor: Colors.transparent,
@@ -104,8 +100,7 @@ class _MyBestsETeamRankPageWidgetState
                                     },
                                     child: Icon(
                                       Icons.arrow_back_ios_new_rounded,
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
+                                      color: currentUserDocument?.color1,
                                       size: 30.0,
                                     ),
                                   ),
@@ -113,7 +108,7 @@ class _MyBestsETeamRankPageWidgetState
                               ],
                             ),
                             Align(
-                              alignment: AlignmentDirectional(0.0, 0.0),
+                              alignment: const AlignmentDirectional(0.0, 0.0),
                               child: Text(
                                 'Classement de\nmes E Teams',
                                 textAlign: TextAlign.center,
@@ -129,7 +124,7 @@ class _MyBestsETeamRankPageWidgetState
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 15.0, 0.0),
                                   child: InkWell(
                                     splashColor: Colors.transparent,
@@ -140,7 +135,7 @@ class _MyBestsETeamRankPageWidgetState
                                       context.pushNamed(
                                         'ETeamRankPage',
                                         extra: <String, dynamic>{
-                                          kTransitionInfoKey: TransitionInfo(
+                                          kTransitionInfoKey: const TransitionInfo(
                                             hasTransition: true,
                                             transitionType:
                                                 PageTransitionType.bottomToTop,
@@ -152,8 +147,7 @@ class _MyBestsETeamRankPageWidgetState
                                     },
                                     child: Icon(
                                       Icons.bar_chart,
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryText,
+                                      color: currentUserDocument?.color1,
                                       size: 30.0,
                                     ),
                                   ),
@@ -203,7 +197,7 @@ class _MyBestsETeamRankPageWidgetState
                                       children: [
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   30.0, 0.0, 0.0, 5.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -228,7 +222,7 @@ class _MyBestsETeamRankPageWidgetState
                                                         extra: <String,
                                                             dynamic>{
                                                           kTransitionInfoKey:
-                                                              TransitionInfo(
+                                                              const TransitionInfo(
                                                             hasTransition: true,
                                                             transitionType:
                                                                 PageTransitionType
@@ -243,15 +237,19 @@ class _MyBestsETeamRankPageWidgetState
                                                     child: Icon(
                                                       Icons.favorite_rounded,
                                                       color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .error,
+                                                          valueOrDefault<Color>(
+                                                        currentUserDocument
+                                                            ?.color2,
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .secondaryText,
+                                                      ),
                                                       size: 30.0,
                                                     ),
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(10.0, 0.0,
                                                                 0.0, 0.0),
                                                     child: Text(
@@ -325,7 +323,7 @@ class _MyBestsETeamRankPageWidgetState
                                                       children: [
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       10.0,
                                                                       0.0,
@@ -347,7 +345,7 @@ class _MyBestsETeamRankPageWidgetState
                                                                 extra: <String,
                                                                     dynamic>{
                                                                   kTransitionInfoKey:
-                                                                      TransitionInfo(
+                                                                      const TransitionInfo(
                                                                     hasTransition:
                                                                         true,
                                                                     transitionType:
@@ -365,7 +363,7 @@ class _MyBestsETeamRankPageWidgetState
                                                                   .notifications_active_outlined,
                                                               color: FlutterFlowTheme
                                                                       .of(context)
-                                                                  .accent3,
+                                                                  .accent1,
                                                               size: 40.0,
                                                             ),
                                                           ),
@@ -411,7 +409,7 @@ class _MyBestsETeamRankPageWidgetState
                                         CrossAxisAlignment.start,
                                     children: [
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 9.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -464,7 +462,7 @@ class _MyBestsETeamRankPageWidgetState
                                                 ),
                                               ),
                                               child: Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     1.0, 0.0),
                                                 child: Text(
                                                   'E Teams',
@@ -512,7 +510,7 @@ class _MyBestsETeamRankPageWidgetState
                                                 ),
                                               ),
                                               child: Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Text(
                                                   'Pts/MJ',
@@ -543,7 +541,7 @@ class _MyBestsETeamRankPageWidgetState
                                                 ),
                                               ),
                                               child: Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Text(
                                                   'Pts',
@@ -574,7 +572,7 @@ class _MyBestsETeamRankPageWidgetState
                                                 ),
                                               ),
                                               child: Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Text(
                                                   'G',
@@ -605,7 +603,7 @@ class _MyBestsETeamRankPageWidgetState
                                                 ),
                                               ),
                                               child: Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Text(
                                                   'N',
@@ -635,7 +633,7 @@ class _MyBestsETeamRankPageWidgetState
                                                 ),
                                               ),
                                               child: Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Text(
                                                   'P',
@@ -665,7 +663,7 @@ class _MyBestsETeamRankPageWidgetState
                                                 ),
                                               ),
                                               child: Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Text(
                                                   'Diff',
@@ -695,7 +693,7 @@ class _MyBestsETeamRankPageWidgetState
                                                 ),
                                               ),
                                               child: Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Text(
                                                   'Pour',
@@ -725,7 +723,7 @@ class _MyBestsETeamRankPageWidgetState
                                                 ),
                                               ),
                                               child: Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Text(
                                                   'Contre',
@@ -755,7 +753,7 @@ class _MyBestsETeamRankPageWidgetState
                                                 ),
                                               ),
                                               child: Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Text(
                                                   'MJ',
@@ -861,16 +859,20 @@ class _MyBestsETeamRankPageWidgetState
                                                                         currentUserReference))
                                                                   Align(
                                                                     alignment:
-                                                                        AlignmentDirectional(
+                                                                        const AlignmentDirectional(
                                                                             0.0,
                                                                             0.0),
                                                                     child:
                                                                         FaIcon(
                                                                       FontAwesomeIcons
                                                                           .userCircle,
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .success,
+                                                                      color: valueOrDefault<
+                                                                          Color>(
+                                                                        columnETeamsScrollTeamsRecord
+                                                                            .color1,
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .secondaryText,
+                                                                      ),
                                                                       size:
                                                                           25.0,
                                                                     ),
@@ -889,14 +891,17 @@ class _MyBestsETeamRankPageWidgetState
                                                                           .contains(
                                                                               currentUserReference))
                                                                         Align(
-                                                                          alignment: AlignmentDirectional(
+                                                                          alignment: const AlignmentDirectional(
                                                                               0.0,
                                                                               0.0),
                                                                           child:
                                                                               Icon(
                                                                             Icons.favorite_rounded,
                                                                             color:
-                                                                                FlutterFlowTheme.of(context).error,
+                                                                                valueOrDefault<Color>(
+                                                                              columnETeamsScrollTeamsRecord.color1,
+                                                                              FlutterFlowTheme.of(context).secondaryText,
+                                                                            ),
                                                                             size:
                                                                                 30.0,
                                                                           ),
@@ -923,7 +928,7 @@ class _MyBestsETeamRankPageWidgetState
                                                           ),
                                                           child: Align(
                                                             alignment:
-                                                                AlignmentDirectional(
+                                                                const AlignmentDirectional(
                                                                     0.0, 0.0),
                                                             child: Text(
                                                               valueOrDefault<
@@ -965,7 +970,7 @@ class _MyBestsETeamRankPageWidgetState
                                                           ),
                                                           child: Align(
                                                             alignment:
-                                                                AlignmentDirectional(
+                                                                const AlignmentDirectional(
                                                                     1.0, 0.0),
                                                             child: InkWell(
                                                               splashColor: Colors
@@ -1002,6 +1007,8 @@ class _MyBestsETeamRankPageWidgetState
                                                                     .override(
                                                                       fontFamily:
                                                                           'Poppins',
+                                                                      color: columnETeamsScrollTeamsRecord
+                                                                          .color1,
                                                                       letterSpacing:
                                                                           0.0,
                                                                     ),
@@ -1025,7 +1032,7 @@ class _MyBestsETeamRankPageWidgetState
                                                           ),
                                                           child: Padding(
                                                             padding:
-                                                                EdgeInsets.all(
+                                                                const EdgeInsets.all(
                                                                     3.0),
                                                             child: ClipRRect(
                                                               borderRadius:
@@ -1060,7 +1067,7 @@ class _MyBestsETeamRankPageWidgetState
                                                           ),
                                                           child: Align(
                                                             alignment:
-                                                                AlignmentDirectional(
+                                                                const AlignmentDirectional(
                                                                     0.0, 0.0),
                                                             child: Text(
                                                               valueOrDefault<
@@ -1108,7 +1115,7 @@ class _MyBestsETeamRankPageWidgetState
                                                           ),
                                                           child: Align(
                                                             alignment:
-                                                                AlignmentDirectional(
+                                                                const AlignmentDirectional(
                                                                     0.0, 0.0),
                                                             child: Text(
                                                               valueOrDefault<
@@ -1149,7 +1156,7 @@ class _MyBestsETeamRankPageWidgetState
                                                           ),
                                                           child: Align(
                                                             alignment:
-                                                                AlignmentDirectional(
+                                                                const AlignmentDirectional(
                                                                     0.0, 0.0),
                                                             child: Text(
                                                               valueOrDefault<
@@ -1187,7 +1194,7 @@ class _MyBestsETeamRankPageWidgetState
                                                           ),
                                                           child: Align(
                                                             alignment:
-                                                                AlignmentDirectional(
+                                                                const AlignmentDirectional(
                                                                     0.0, 0.0),
                                                             child: Text(
                                                               valueOrDefault<
@@ -1228,7 +1235,7 @@ class _MyBestsETeamRankPageWidgetState
                                                           ),
                                                           child: Align(
                                                             alignment:
-                                                                AlignmentDirectional(
+                                                                const AlignmentDirectional(
                                                                     0.0, 0.0),
                                                             child: Text(
                                                               valueOrDefault<
@@ -1259,7 +1266,7 @@ class _MyBestsETeamRankPageWidgetState
                                                                     .of(context)
                                                                 .primaryBackground,
                                                             borderRadius:
-                                                                BorderRadius
+                                                                const BorderRadius
                                                                     .only(
                                                               bottomLeft: Radius
                                                                   .circular(
@@ -1283,7 +1290,7 @@ class _MyBestsETeamRankPageWidgetState
                                                           ),
                                                           child: Align(
                                                             alignment:
-                                                                AlignmentDirectional(
+                                                                const AlignmentDirectional(
                                                                     0.0, 0.0),
                                                             child: Text(
                                                               valueOrDefault<
@@ -1314,7 +1321,7 @@ class _MyBestsETeamRankPageWidgetState
                                                         ),
                                                         Align(
                                                           alignment:
-                                                              AlignmentDirectional(
+                                                              const AlignmentDirectional(
                                                                   0.0, 0.0),
                                                           child: Container(
                                                             width: 55.0,
@@ -1333,7 +1340,7 @@ class _MyBestsETeamRankPageWidgetState
                                                             ),
                                                             child: Align(
                                                               alignment:
-                                                                  AlignmentDirectional(
+                                                                  const AlignmentDirectional(
                                                                       0.0, 0.0),
                                                               child: Text(
                                                                 valueOrDefault<
@@ -1378,7 +1385,7 @@ class _MyBestsETeamRankPageWidgetState
                                                           ),
                                                           child: Align(
                                                             alignment:
-                                                                AlignmentDirectional(
+                                                                const AlignmentDirectional(
                                                                     0.0, 0.0),
                                                             child: Text(
                                                               valueOrDefault<
@@ -1419,7 +1426,7 @@ class _MyBestsETeamRankPageWidgetState
                                                           ),
                                                           child: Align(
                                                             alignment:
-                                                                AlignmentDirectional(
+                                                                const AlignmentDirectional(
                                                                     0.0, 0.0),
                                                             child: Text(
                                                               valueOrDefault<

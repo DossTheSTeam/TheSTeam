@@ -3,12 +3,8 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'list_post_messages_model.dart';
 export 'list_post_messages_model.dart';
 
@@ -45,7 +41,7 @@ class _ListPostMessagesWidgetState extends State<ListPostMessagesWidget> {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<PostsRecord>(
-      stream: PostsRecord.getDocument(widget!.postRef!),
+      stream: PostsRecord.getDocument(widget.postRef!),
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
@@ -75,9 +71,9 @@ class _ListPostMessagesWidgetState extends State<ListPostMessagesWidget> {
             body: SafeArea(
               top: true,
               child: Align(
-                alignment: AlignmentDirectional(0.0, -1.0),
+                alignment: const AlignmentDirectional(0.0, -1.0),
                 child: Padding(
-                  padding: EdgeInsets.all(10.0),
+                  padding: const EdgeInsets.all(10.0),
                   child: SingleChildScrollView(
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
@@ -87,7 +83,7 @@ class _ListPostMessagesWidgetState extends State<ListPostMessagesWidget> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 10.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -96,57 +92,60 @@ class _ListPostMessagesWidgetState extends State<ListPostMessagesWidget> {
                                   Row(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
-                                      InkWell(
-                                        splashColor: Colors.transparent,
-                                        focusColor: Colors.transparent,
-                                        hoverColor: Colors.transparent,
-                                        highlightColor: Colors.transparent,
-                                        onTap: () async {
-                                          context.pushNamed(
-                                            'MenuPage',
-                                            extra: <String, dynamic>{
-                                              kTransitionInfoKey:
-                                                  TransitionInfo(
-                                                hasTransition: true,
-                                                transitionType:
-                                                    PageTransitionType
-                                                        .leftToRight,
-                                                duration:
-                                                    Duration(milliseconds: 400),
-                                              ),
-                                            },
-                                          );
-                                        },
-                                        child: Icon(
-                                          Icons.menu_rounded,
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryText,
-                                          size: 30.0,
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            10.0, 0.0, 0.0, 0.0),
-                                        child: InkWell(
+                                      AuthUserStreamWidget(
+                                        builder: (context) => InkWell(
                                           splashColor: Colors.transparent,
                                           focusColor: Colors.transparent,
                                           hoverColor: Colors.transparent,
                                           highlightColor: Colors.transparent,
                                           onTap: () async {
-                                            context.safePop();
+                                            context.pushNamed(
+                                              'MenuPage',
+                                              extra: <String, dynamic>{
+                                                kTransitionInfoKey:
+                                                    const TransitionInfo(
+                                                  hasTransition: true,
+                                                  transitionType:
+                                                      PageTransitionType
+                                                          .leftToRight,
+                                                  duration: Duration(
+                                                      milliseconds: 400),
+                                                ),
+                                              },
+                                            );
                                           },
                                           child: Icon(
-                                            Icons.arrow_back_ios_new_rounded,
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryText,
+                                            Icons.menu_rounded,
+                                            color: currentUserDocument?.color1,
                                             size: 30.0,
+                                          ),
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            10.0, 0.0, 0.0, 0.0),
+                                        child: AuthUserStreamWidget(
+                                          builder: (context) => InkWell(
+                                            splashColor: Colors.transparent,
+                                            focusColor: Colors.transparent,
+                                            hoverColor: Colors.transparent,
+                                            highlightColor: Colors.transparent,
+                                            onTap: () async {
+                                              context.safePop();
+                                            },
+                                            child: Icon(
+                                              Icons.arrow_back_ios_new_rounded,
+                                              color:
+                                                  currentUserDocument?.color1,
+                                              size: 30.0,
+                                            ),
                                           ),
                                         ),
                                       ),
                                     ],
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         25.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       'Commentaires',
@@ -163,36 +162,72 @@ class _ListPostMessagesWidgetState extends State<ListPostMessagesWidget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   5.0, 0.0, 5.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 10.0, 0.0),
-                                    child: Text(
-                                      listPostMessagesPostsRecord.title,
-                                      maxLines: 2,
-                                      style: FlutterFlowTheme.of(context)
-                                          .labelLarge
-                                          .override(
-                                            fontFamily: 'Montserrat',
-                                            letterSpacing: 0.0,
-                                          ),
-                                    ),
+                                  Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Text(
+                                        listPostMessagesPostsRecord.title,
+                                        maxLines: 2,
+                                        style: FlutterFlowTheme.of(context)
+                                            .labelLarge
+                                            .override(
+                                              fontFamily: 'Montserrat',
+                                              letterSpacing: 0.0,
+                                            ),
+                                      ),
+                                    ],
                                   ),
                                 ],
                               ),
                             ),
-                            Divider(
-                              thickness: 1.0,
-                              color: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
+                            AuthUserStreamWidget(
+                              builder: (context) => Divider(
+                                thickness: 1.0,
+                                color: currentUserDocument?.color2,
+                              ),
                             ),
+                            if (valueOrDefault<bool>(
+                                    currentUserDocument?.helpNav, false) ==
+                                true)
+                              Align(
+                                alignment: const AlignmentDirectional(0.0, 0.0),
+                                child: AuthUserStreamWidget(
+                                  builder: (context) => Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 3.0, 0.0, 0.0),
+                                        child: Text(
+                                          'Choisir la ligue',
+                                          textAlign: TextAlign.center,
+                                          maxLines: 3,
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Poppins',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryText,
+                                                fontSize: 10.0,
+                                                letterSpacing: 0.0,
+                                                lineHeight: 1.0,
+                                              ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 10.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -210,7 +245,7 @@ class _ListPostMessagesWidgetState extends State<ListPostMessagesWidget> {
                                       'champion',
                                       'legende'
                                     ]),
-                                    optionLabels: [
+                                    optionLabels: const [
                                       'Amateur',
                                       'Pro',
                                       'Champion',
@@ -240,7 +275,7 @@ class _ListPostMessagesWidgetState extends State<ListPostMessagesWidget> {
                                         FlutterFlowTheme.of(context).alternate,
                                     borderWidth: 2.0,
                                     borderRadius: 8.0,
-                                    margin: EdgeInsetsDirectional.fromSTEB(
+                                    margin: const EdgeInsetsDirectional.fromSTEB(
                                         16.0, 4.0, 16.0, 4.0),
                                     hidesUnderline: true,
                                     isOverButton: true,
@@ -250,13 +285,47 @@ class _ListPostMessagesWidgetState extends State<ListPostMessagesWidget> {
                                 ],
                               ),
                             ),
+                            if (valueOrDefault<bool>(
+                                    currentUserDocument?.helpNav, false) ==
+                                true)
+                              Align(
+                                alignment: const AlignmentDirectional(0.0, 0.0),
+                                child: AuthUserStreamWidget(
+                                  builder: (context) => Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 3.0, 0.0, 0.0),
+                                        child: Text(
+                                          'Classés par plus commentés/likés, \nfonctionnalités pas encore disponibles.',
+                                          textAlign: TextAlign.center,
+                                          maxLines: 3,
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Poppins',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .error,
+                                                fontSize: 10.0,
+                                                letterSpacing: 0.0,
+                                                lineHeight: 1.0,
+                                              ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
                             Row(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
                                 Icon(
                                   Icons.update_rounded,
-                                  color: FlutterFlowTheme.of(context).error,
+                                  color: FlutterFlowTheme.of(context).success,
                                   size: 30.0,
                                 ),
                                 Icon(
@@ -313,7 +382,7 @@ class _ListPostMessagesWidgetState extends State<ListPostMessagesWidget> {
                                         children: [
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     10.0, 0.0, 10.0, 0.0),
                                             child: InkWell(
                                               splashColor: Colors.transparent,
@@ -326,7 +395,7 @@ class _ListPostMessagesWidgetState extends State<ListPostMessagesWidget> {
                                                   'MyNotifsList',
                                                   extra: <String, dynamic>{
                                                     kTransitionInfoKey:
-                                                        TransitionInfo(
+                                                        const TransitionInfo(
                                                       hasTransition: true,
                                                       transitionType:
                                                           PageTransitionType
@@ -342,7 +411,7 @@ class _ListPostMessagesWidgetState extends State<ListPostMessagesWidget> {
                                                     .notifications_active_outlined,
                                                 color:
                                                     FlutterFlowTheme.of(context)
-                                                        .accent3,
+                                                        .accent1,
                                                 size: 40.0,
                                               ),
                                             ),
@@ -353,24 +422,59 @@ class _ListPostMessagesWidgetState extends State<ListPostMessagesWidget> {
                                   ),
                               ],
                             ),
+                            if (valueOrDefault<bool>(
+                                    currentUserDocument?.helpNav, false) ==
+                                true)
+                              Align(
+                                alignment: const AlignmentDirectional(0.0, 0.0),
+                                child: AuthUserStreamWidget(
+                                  builder: (context) => Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 3.0, 0.0, 0.0),
+                                        child: Text(
+                                          'Classés par plus récents',
+                                          textAlign: TextAlign.center,
+                                          maxLines: 3,
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Poppins',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .success,
+                                                fontSize: 10.0,
+                                                letterSpacing: 0.0,
+                                                lineHeight: 1.0,
+                                              ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
                           ],
                         ),
-                        Divider(
-                          thickness: 1.0,
-                          color:
-                              FlutterFlowTheme.of(context).secondaryBackground,
+                        AuthUserStreamWidget(
+                          builder: (context) => Divider(
+                            thickness: 1.0,
+                            color: currentUserDocument?.color2,
+                          ),
                         ),
                         if (listPostMessagesPostsRecord.esport ==
                             valueOrDefault<bool>(
                                 currentUserDocument?.esport, false))
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 5.0, 5.0, 5.0, 0.0),
                             child: AuthUserStreamWidget(
                               builder: (context) =>
                                   StreamBuilder<List<PostMessagesRecord>>(
                                 stream: queryPostMessagesRecord(
-                                  parent: widget!.postRef,
+                                  parent: widget.postRef,
                                   queryBuilder: (postMessagesRecord) =>
                                       postMessagesRecord.orderBy('created_time',
                                           descending: true),
@@ -410,7 +514,7 @@ class _ListPostMessagesWidgetState extends State<ListPostMessagesWidget> {
                                             null,
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 5.0, 0.0, 5.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
@@ -469,7 +573,7 @@ class _ListPostMessagesWidgetState extends State<ListPostMessagesWidget> {
                                                                           .max,
                                                                   children: [
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           10.0,
                                                                           0.0,
                                                                           0.0,
@@ -480,7 +584,7 @@ class _ListPostMessagesWidgetState extends State<ListPostMessagesWidget> {
                                                                             MainAxisSize.max,
                                                                         children: [
                                                                           Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 0.0,
                                                                                 0.0,
                                                                                 6.0,
@@ -505,7 +609,7 @@ class _ListPostMessagesWidgetState extends State<ListPostMessagesWidget> {
                                                                             ),
                                                                           ),
                                                                           Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 10.0,
                                                                                 0.0,
                                                                                 0.0,
@@ -526,7 +630,7 @@ class _ListPostMessagesWidgetState extends State<ListPostMessagesWidget> {
                                                                                     ),
                                                                                   }.withoutNulls,
                                                                                   extra: <String, dynamic>{
-                                                                                    kTransitionInfoKey: TransitionInfo(
+                                                                                    kTransitionInfoKey: const TransitionInfo(
                                                                                       hasTransition: true,
                                                                                       transitionType: PageTransitionType.bottomToTop,
                                                                                       duration: Duration(milliseconds: 400),
@@ -542,6 +646,7 @@ class _ListPostMessagesWidgetState extends State<ListPostMessagesWidget> {
                                                                                 maxLines: 1,
                                                                                 style: FlutterFlowTheme.of(context).labelLarge.override(
                                                                                       fontFamily: 'Montserrat',
+                                                                                      color: columnSportUsersRecord.color1,
                                                                                       letterSpacing: 0.0,
                                                                                     ),
                                                                               ),
@@ -551,7 +656,7 @@ class _ListPostMessagesWidgetState extends State<ListPostMessagesWidget> {
                                                                       ),
                                                                     ),
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           0.0,
@@ -574,7 +679,7 @@ class _ListPostMessagesWidgetState extends State<ListPostMessagesWidget> {
                                                                             ),
                                                                             child:
                                                                                 Padding(
-                                                                              padding: EdgeInsets.all(5.0),
+                                                                              padding: const EdgeInsets.all(5.0),
                                                                               child: Text(
                                                                                 columnCommsPostMessagesRecord.text,
                                                                                 maxLines: 2,
@@ -604,7 +709,7 @@ class _ListPostMessagesWidgetState extends State<ListPostMessagesWidget> {
                                                                                       ),
                                                                                     }.withoutNulls,
                                                                                     extra: <String, dynamic>{
-                                                                                      kTransitionInfoKey: TransitionInfo(
+                                                                                      kTransitionInfoKey: const TransitionInfo(
                                                                                         hasTransition: true,
                                                                                         transitionType: PageTransitionType.scale,
                                                                                         alignment: Alignment.bottomCenter,
@@ -615,7 +720,7 @@ class _ListPostMessagesWidgetState extends State<ListPostMessagesWidget> {
                                                                                 },
                                                                                 child: Icon(
                                                                                   Icons.remove_red_eye_outlined,
-                                                                                  color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                  color: currentUserDocument?.color1,
                                                                                   size: 30.0,
                                                                                 ),
                                                                               ),
@@ -626,12 +731,12 @@ class _ListPostMessagesWidgetState extends State<ListPostMessagesWidget> {
                                                                     ),
                                                                     Align(
                                                                       alignment:
-                                                                          AlignmentDirectional(
+                                                                          const AlignmentDirectional(
                                                                               -1.0,
                                                                               0.0),
                                                                       child:
                                                                           Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             0.0,
@@ -653,7 +758,7 @@ class _ListPostMessagesWidgetState extends State<ListPostMessagesWidget> {
                                                                       ),
                                                                     ),
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           10.0,
                                                                           5.0,
                                                                           10.0,
@@ -670,12 +775,12 @@ class _ListPostMessagesWidgetState extends State<ListPostMessagesWidget> {
                                                                               MainAxisAlignment.spaceBetween,
                                                                           children: [
                                                                             Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
+                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
                                                                               child: Row(
                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                 children: [
                                                                                   Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
                                                                                     child: Icon(
                                                                                       Icons.insert_comment_rounded,
                                                                                       color: FlutterFlowTheme.of(context).secondaryText,
@@ -697,12 +802,12 @@ class _ListPostMessagesWidgetState extends State<ListPostMessagesWidget> {
                                                                               ),
                                                                             ),
                                                                             Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
+                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
                                                                               child: Row(
                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                 children: [
                                                                                   Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
                                                                                     child: Icon(
                                                                                       Icons.favorite_rounded,
                                                                                       color: FlutterFlowTheme.of(context).secondaryText,
@@ -724,12 +829,12 @@ class _ListPostMessagesWidgetState extends State<ListPostMessagesWidget> {
                                                                               ),
                                                                             ),
                                                                             Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
+                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
                                                                               child: Row(
                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                 children: [
                                                                                   Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
                                                                                     child: Icon(
                                                                                       Icons.heart_broken_rounded,
                                                                                       color: FlutterFlowTheme.of(context).secondaryText,
@@ -754,7 +859,7 @@ class _ListPostMessagesWidgetState extends State<ListPostMessagesWidget> {
                                                                               mainAxisSize: MainAxisSize.max,
                                                                               children: [
                                                                                 Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
                                                                                   child: Container(
                                                                                     width: 15.0,
                                                                                     height: 20.0,
@@ -784,9 +889,8 @@ class _ListPostMessagesWidgetState extends State<ListPostMessagesWidget> {
                                                                     Divider(
                                                                       thickness:
                                                                           1.0,
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .secondaryBackground,
+                                                                      color: currentUserDocument
+                                                                          ?.color2,
                                                                     ),
                                                                   ],
                                                                 ),
@@ -850,7 +954,7 @@ class _ListPostMessagesWidgetState extends State<ListPostMessagesWidget> {
                                                                           .max,
                                                                   children: [
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           10.0,
                                                                           0.0,
                                                                           0.0,
@@ -861,7 +965,7 @@ class _ListPostMessagesWidgetState extends State<ListPostMessagesWidget> {
                                                                             MainAxisSize.max,
                                                                         children: [
                                                                           Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 0.0,
                                                                                 0.0,
                                                                                 6.0,
@@ -886,7 +990,7 @@ class _ListPostMessagesWidgetState extends State<ListPostMessagesWidget> {
                                                                             ),
                                                                           ),
                                                                           Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 10.0,
                                                                                 0.0,
                                                                                 0.0,
@@ -907,7 +1011,7 @@ class _ListPostMessagesWidgetState extends State<ListPostMessagesWidget> {
                                                                                     ),
                                                                                   }.withoutNulls,
                                                                                   extra: <String, dynamic>{
-                                                                                    kTransitionInfoKey: TransitionInfo(
+                                                                                    kTransitionInfoKey: const TransitionInfo(
                                                                                       hasTransition: true,
                                                                                       transitionType: PageTransitionType.bottomToTop,
                                                                                       duration: Duration(milliseconds: 400),
@@ -932,7 +1036,7 @@ class _ListPostMessagesWidgetState extends State<ListPostMessagesWidget> {
                                                                       ),
                                                                     ),
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           0.0,
@@ -955,7 +1059,7 @@ class _ListPostMessagesWidgetState extends State<ListPostMessagesWidget> {
                                                                             ),
                                                                             child:
                                                                                 Padding(
-                                                                              padding: EdgeInsets.all(5.0),
+                                                                              padding: const EdgeInsets.all(5.0),
                                                                               child: Text(
                                                                                 columnCommsPostMessagesRecord.text,
                                                                                 maxLines: 2,
@@ -985,7 +1089,7 @@ class _ListPostMessagesWidgetState extends State<ListPostMessagesWidget> {
                                                                                       ),
                                                                                     }.withoutNulls,
                                                                                     extra: <String, dynamic>{
-                                                                                      kTransitionInfoKey: TransitionInfo(
+                                                                                      kTransitionInfoKey: const TransitionInfo(
                                                                                         hasTransition: true,
                                                                                         transitionType: PageTransitionType.scale,
                                                                                         alignment: Alignment.bottomCenter,
@@ -1007,12 +1111,12 @@ class _ListPostMessagesWidgetState extends State<ListPostMessagesWidget> {
                                                                     ),
                                                                     Align(
                                                                       alignment:
-                                                                          AlignmentDirectional(
+                                                                          const AlignmentDirectional(
                                                                               -1.0,
                                                                               0.0),
                                                                       child:
                                                                           Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             0.0,
@@ -1034,7 +1138,7 @@ class _ListPostMessagesWidgetState extends State<ListPostMessagesWidget> {
                                                                       ),
                                                                     ),
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           10.0,
                                                                           5.0,
                                                                           10.0,
@@ -1051,12 +1155,12 @@ class _ListPostMessagesWidgetState extends State<ListPostMessagesWidget> {
                                                                               MainAxisAlignment.spaceBetween,
                                                                           children: [
                                                                             Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
+                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
                                                                               child: Row(
                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                 children: [
                                                                                   Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
                                                                                     child: Icon(
                                                                                       Icons.insert_comment_rounded,
                                                                                       color: FlutterFlowTheme.of(context).secondaryText,
@@ -1078,12 +1182,12 @@ class _ListPostMessagesWidgetState extends State<ListPostMessagesWidget> {
                                                                               ),
                                                                             ),
                                                                             Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
+                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
                                                                               child: Row(
                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                 children: [
                                                                                   Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
                                                                                     child: Icon(
                                                                                       Icons.favorite_rounded,
                                                                                       color: FlutterFlowTheme.of(context).secondaryText,
@@ -1105,12 +1209,12 @@ class _ListPostMessagesWidgetState extends State<ListPostMessagesWidget> {
                                                                               ),
                                                                             ),
                                                                             Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
+                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
                                                                               child: Row(
                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                 children: [
                                                                                   Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
                                                                                     child: Icon(
                                                                                       Icons.heart_broken_rounded,
                                                                                       color: FlutterFlowTheme.of(context).secondaryText,
@@ -1135,7 +1239,7 @@ class _ListPostMessagesWidgetState extends State<ListPostMessagesWidget> {
                                                                               mainAxisSize: MainAxisSize.max,
                                                                               children: [
                                                                                 Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
                                                                                   child: Container(
                                                                                     width: 15.0,
                                                                                     height: 20.0,

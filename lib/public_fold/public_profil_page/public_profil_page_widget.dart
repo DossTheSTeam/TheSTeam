@@ -4,13 +4,9 @@ import '/backend/push_notifications/push_notifications_util.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'public_profil_page_model.dart';
 export 'public_profil_page_model.dart';
 
@@ -47,7 +43,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<UsersRecord>(
-      stream: UsersRecord.getDocument(widget!.userRef!),
+      stream: UsersRecord.getDocument(widget.userRef!),
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
@@ -78,133 +74,91 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
-                  Container(
-                    height: 290.0,
+                  SizedBox(
+                    height: 240.0,
                     child: Stack(
                       children: [
-                        Container(
-                          width: double.infinity,
-                          height: 245.0,
-                          decoration: BoxDecoration(
-                            color: FlutterFlowTheme.of(context)
-                                .secondaryBackground,
-                            image: DecorationImage(
-                              fit: BoxFit.cover,
-                              image: CachedNetworkImageProvider(
-                                publicProfilPageUsersRecord.imageFond,
+                        Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              45.0, 0.0, 0.0, 0.0),
+                          child: Container(
+                            width: double.infinity,
+                            height: 240.0,
+                            decoration: BoxDecoration(
+                              color: FlutterFlowTheme.of(context)
+                                  .secondaryBackground,
+                              image: DecorationImage(
+                                fit: BoxFit.cover,
+                                image: CachedNetworkImageProvider(
+                                  publicProfilPageUsersRecord.imageFond,
+                                ),
                               ),
                             ),
                           ),
-                          child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                20.0, 30.0, 20.0, 0.0),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                FlutterFlowIconButton(
-                                  borderColor:
-                                      FlutterFlowTheme.of(context).primary,
-                                  borderRadius: 50.0,
-                                  borderWidth: 1.0,
-                                  buttonSize: 50.0,
-                                  fillColor:
-                                      FlutterFlowTheme.of(context).tertiary,
-                                  icon: Icon(
-                                    Icons.arrow_back_ios_new_rounded,
-                                    color: FlutterFlowTheme.of(context).primary,
-                                    size: 30.0,
-                                  ),
-                                  onPressed: () async {
-                                    context.safePop();
-                                  },
-                                ),
-                                FlutterFlowIconButton(
-                                  borderColor:
-                                      FlutterFlowTheme.of(context).primary,
-                                  borderRadius: 50.0,
-                                  borderWidth: 1.0,
-                                  buttonSize: 50.0,
-                                  fillColor:
-                                      FlutterFlowTheme.of(context).tertiary,
-                                  icon: Icon(
-                                    Icons.menu_rounded,
-                                    color: FlutterFlowTheme.of(context).primary,
-                                    size: 30.0,
-                                  ),
-                                  onPressed: () async {
-                                    context.pushNamed(
-                                      'MenuPage',
-                                      extra: <String, dynamic>{
-                                        kTransitionInfoKey: TransitionInfo(
-                                          hasTransition: true,
-                                          transitionType:
-                                              PageTransitionType.leftToRight,
-                                          duration: Duration(milliseconds: 400),
-                                        ),
-                                      },
-                                    );
-                                  },
-                                ),
-                              ],
-                            ),
-                          ),
                         ),
-                        Align(
-                          alignment: AlignmentDirectional(-1.0, 1.0),
-                          child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                24.0, 0.0, 0.0, 0.0),
-                            child: Container(
-                              width: 90.0,
-                              height: 90.0,
-                              decoration: BoxDecoration(
-                                color: FlutterFlowTheme.of(context).alternate,
-                                boxShadow: [
-                                  BoxShadow(
-                                    blurRadius: 4.0,
-                                    color: Color(0x53000000),
-                                    offset: Offset(
-                                      0.0,
-                                      2.0,
-                                    ),
-                                  )
+                        Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              33.0, 0.0, 0.0, 0.0),
+                          child: Container(
+                            width: double.infinity,
+                            height: 240.0,
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                fit: BoxFit.cover,
+                                image: Image.asset(
+                                  'assets/images/photo-1434394354979-a235cd36269d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fG1vdW50YWluc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=900&q=60',
+                                ).image,
+                              ),
+                              gradient: LinearGradient(
+                                colors: [
+                                  FlutterFlowTheme.of(context).tertiary,
+                                  FlutterFlowTheme.of(context).primaryBackground
                                 ],
-                                shape: BoxShape.circle,
-                                border: Border.all(
-                                  color: FlutterFlowTheme.of(context)
-                                      .primaryBackground,
-                                  width: 2.0,
-                                ),
+                                stops: const [0.2, 0.89],
+                                begin: const AlignmentDirectional(0.0, -1.0),
+                                end: const AlignmentDirectional(0, 1.0),
                               ),
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(50.0),
-                                child: CachedNetworkImage(
-                                  fadeInDuration: Duration(milliseconds: 500),
-                                  fadeOutDuration: Duration(milliseconds: 500),
-                                  imageUrl:
-                                      publicProfilPageUsersRecord.photoUrl,
-                                  width: 100.0,
-                                  height: 100.0,
-                                  fit: BoxFit.fitHeight,
-                                ),
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              33.0, 0.0, 0.0, 0.0),
+                          child: Container(
+                            width: double.infinity,
+                            height: 240.0,
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                fit: BoxFit.cover,
+                                image: Image.asset(
+                                  'assets/images/photo-1434394354979-a235cd36269d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fG1vdW50YWluc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=900&q=60',
+                                ).image,
+                              ),
+                              gradient: LinearGradient(
+                                colors: [
+                                  FlutterFlowTheme.of(context).tertiary,
+                                  FlutterFlowTheme.of(context).tertiary,
+                                  FlutterFlowTheme.of(context).primaryBackground
+                                ],
+                                stops: const [0.0, 0.7, 0.95],
+                                begin: const AlignmentDirectional(1.0, 0.0),
+                                end: const AlignmentDirectional(-1.0, 0),
                               ),
                             ),
                           ),
                         ),
                         Align(
-                          alignment: AlignmentDirectional(0.0, 1.0),
+                          alignment: const AlignmentDirectional(0.0, 1.0),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                125.0, 20.0, 20.0, 0.0),
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                115.0, 0.0, 5.0, 10.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.end,
                               children: [
                                 Align(
-                                  alignment: AlignmentDirectional(0.0, 1.0),
+                                  alignment: const AlignmentDirectional(0.0, 1.0),
                                   child: Text(
                                     valueOrDefault<String>(
                                       publicProfilPageUsersRecord.displayName,
@@ -215,6 +169,8 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                         .headlineSmall
                                         .override(
                                           fontFamily: 'Poppins',
+                                          color: publicProfilPageUsersRecord
+                                              .color1,
                                           letterSpacing: 0.0,
                                         ),
                                   ),
@@ -223,120 +179,295 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                             ),
                           ),
                         ),
+                        Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              10.0, 30.0, 20.0, 0.0),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.max,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 5.0, 0.0, 0.0),
+                                child: FlutterFlowIconButton(
+                                  borderColor: valueOrDefault<Color>(
+                                    publicProfilPageUsersRecord.color2,
+                                    FlutterFlowTheme.of(context).secondaryText,
+                                  ),
+                                  borderRadius: 50.0,
+                                  borderWidth: 1.0,
+                                  buttonSize: 50.0,
+                                  fillColor:
+                                      FlutterFlowTheme.of(context).tertiary,
+                                  icon: Icon(
+                                    Icons.arrow_back_ios_new_rounded,
+                                    color: valueOrDefault<Color>(
+                                      publicProfilPageUsersRecord.color1,
+                                      FlutterFlowTheme.of(context).primaryText,
+                                    ),
+                                    size: 30.0,
+                                  ),
+                                  onPressed: () async {
+                                    context.safePop();
+                                  },
+                                ),
+                              ),
+                              if (true /* Warning: Trying to access variable not yet defined. */)
+                                FutureBuilder<List<MyNotificationsRecord>>(
+                                  future: queryMyNotificationsRecordOnce(
+                                    parent: currentUserReference,
+                                    singleRecord: true,
+                                  ),
+                                  builder: (context, snapshot) {
+                                    // Customize what your widget looks like when it's loading.
+                                    if (!snapshot.hasData) {
+                                      return Center(
+                                        child: SizedBox(
+                                          width: 50.0,
+                                          height: 50.0,
+                                          child: CircularProgressIndicator(
+                                            valueColor:
+                                                AlwaysStoppedAnimation<Color>(
+                                              FlutterFlowTheme.of(context)
+                                                  .accent4,
+                                            ),
+                                          ),
+                                        ),
+                                      );
+                                    }
+                                    List<MyNotificationsRecord>
+                                        rowNotifsMyNotificationsRecordList =
+                                        snapshot.data!;
+                                    // Return an empty Container when the item does not exist.
+                                    if (snapshot.data!.isEmpty) {
+                                      return Container();
+                                    }
+                                    final rowNotifsMyNotificationsRecord =
+                                        rowNotifsMyNotificationsRecordList
+                                                .isNotEmpty
+                                            ? rowNotifsMyNotificationsRecordList
+                                                .first
+                                            : null;
+
+                                    return Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      children: [
+                                        Padding(
+                                          padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  5.0, 10.0, 0.0, 0.0),
+                                          child: InkWell(
+                                            splashColor: Colors.transparent,
+                                            focusColor: Colors.transparent,
+                                            hoverColor: Colors.transparent,
+                                            highlightColor: Colors.transparent,
+                                            onTap: () async {
+                                              context.pushNamed(
+                                                'MyNotifsList',
+                                                extra: <String, dynamic>{
+                                                  kTransitionInfoKey:
+                                                      const TransitionInfo(
+                                                    hasTransition: true,
+                                                    transitionType:
+                                                        PageTransitionType
+                                                            .rightToLeft,
+                                                    duration: Duration(
+                                                        milliseconds: 400),
+                                                  ),
+                                                },
+                                              );
+                                            },
+                                            child: Icon(
+                                              Icons
+                                                  .notifications_active_outlined,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .accent1,
+                                              size: 40.0,
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    );
+                                  },
+                                ),
+                            ],
+                          ),
+                        ),
+                        Align(
+                          alignment: const AlignmentDirectional(-1.0, 1.0),
+                          child: Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                24.0, 0.0, 0.0, 5.0),
+                            child: Container(
+                              width: 90.0,
+                              height: 90.0,
+                              decoration: BoxDecoration(
+                                color: FlutterFlowTheme.of(context).alternate,
+                                boxShadow: [
+                                  BoxShadow(
+                                    blurRadius: 4.0,
+                                    color: FlutterFlowTheme.of(context).accent3,
+                                    offset: const Offset(
+                                      0.0,
+                                      2.0,
+                                    ),
+                                  )
+                                ],
+                                shape: BoxShape.circle,
+                                border: Border.all(
+                                  color: valueOrDefault<Color>(
+                                    publicProfilPageUsersRecord.color1,
+                                    FlutterFlowTheme.of(context)
+                                        .primaryBackground,
+                                  ),
+                                  width: 2.0,
+                                ),
+                              ),
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(50.0),
+                                child: CachedNetworkImage(
+                                  fadeInDuration: const Duration(milliseconds: 500),
+                                  fadeOutDuration: const Duration(milliseconds: 500),
+                                  imageUrl:
+                                      publicProfilPageUsersRecord.photoUrl,
+                                  width: 100.0,
+                                  height: 100.0,
+                                  fit: BoxFit.fitHeight,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
                       ],
                     ),
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 10.0),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Row(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  20.0, 0.0, 0.0, 0.0),
-                              child: Text(
-                                'Membre depuis le',
-                                style: FlutterFlowTheme.of(context)
-                                    .labelMedium
-                                    .override(
-                                      fontFamily: 'Poppins',
-                                      letterSpacing: 0.0,
-                                    ),
-                              ),
-                            ),
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  2.0, 0.0, 0.0, 0.0),
-                              child: Text(
-                                dateTimeFormat("d/M/y",
-                                    publicProfilPageUsersRecord.createdTime!),
-                                style: FlutterFlowTheme.of(context)
-                                    .labelMedium
-                                    .override(
-                                      fontFamily: 'Poppins',
-                                      letterSpacing: 0.0,
-                                    ),
-                              ),
-                            ),
-                          ],
+                        const EdgeInsetsDirectional.fromSTEB(50.0, 5.0, 50.0, 5.0),
+                    child: AuthUserStreamWidget(
+                      builder: (context) =>
+                          StreamBuilder<List<MyTeamslikeRecord>>(
+                        stream: queryMyTeamslikeRecord(
+                          parent: publicProfilPageUsersRecord.reference,
+                          queryBuilder: (myTeamslikeRecord) => myTeamslikeRecord
+                              .where(
+                                'esport',
+                                isEqualTo: valueOrDefault<bool>(
+                                    currentUserDocument?.esport, false),
+                              )
+                              .orderBy('created_time'),
                         ),
-                        if (true /* Warning: Trying to access variable not yet defined. */)
-                          FutureBuilder<List<MyNotificationsRecord>>(
-                            future: queryMyNotificationsRecordOnce(
-                              parent: currentUserReference,
-                              singleRecord: true,
-                            ),
-                            builder: (context, snapshot) {
-                              // Customize what your widget looks like when it's loading.
-                              if (!snapshot.hasData) {
-                                return Center(
-                                  child: SizedBox(
-                                    width: 50.0,
-                                    height: 50.0,
-                                    child: CircularProgressIndicator(
-                                      valueColor: AlwaysStoppedAnimation<Color>(
-                                        FlutterFlowTheme.of(context).accent4,
-                                      ),
-                                    ),
+                        builder: (context, snapshot) {
+                          // Customize what your widget looks like when it's loading.
+                          if (!snapshot.hasData) {
+                            return Center(
+                              child: SizedBox(
+                                width: 50.0,
+                                height: 50.0,
+                                child: CircularProgressIndicator(
+                                  valueColor: AlwaysStoppedAnimation<Color>(
+                                    FlutterFlowTheme.of(context).accent4,
+                                  ),
+                                ),
+                              ),
+                            );
+                          }
+                          List<MyTeamslikeRecord> rowMyTeamslikeRecordList =
+                              snapshot.data!;
+
+                          return SingleChildScrollView(
+                            scrollDirection: Axis.horizontal,
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: List.generate(
+                                  rowMyTeamslikeRecordList.length, (rowIndex) {
+                                final rowMyTeamslikeRecord =
+                                    rowMyTeamslikeRecordList[rowIndex];
+                                return Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      4.0, 0.0, 5.0, 0.0),
+                                  child: StreamBuilder<TeamsRecord>(
+                                    stream: TeamsRecord.getDocument(
+                                        rowMyTeamslikeRecord.teams.first),
+                                    builder: (context, snapshot) {
+                                      // Customize what your widget looks like when it's loading.
+                                      if (!snapshot.hasData) {
+                                        return Center(
+                                          child: SizedBox(
+                                            width: 50.0,
+                                            height: 50.0,
+                                            child: CircularProgressIndicator(
+                                              valueColor:
+                                                  AlwaysStoppedAnimation<Color>(
+                                                FlutterFlowTheme.of(context)
+                                                    .accent4,
+                                              ),
+                                            ),
+                                          ),
+                                        );
+                                      }
+
+                                      final containerTeamsRecord =
+                                          snapshot.data!;
+
+                                      return InkWell(
+                                        splashColor: Colors.transparent,
+                                        focusColor: Colors.transparent,
+                                        hoverColor: Colors.transparent,
+                                        highlightColor: Colors.transparent,
+                                        onTap: () async {
+                                          context.pushNamed(
+                                            'TeamPage',
+                                            queryParameters: {
+                                              'teamRef': serializeParam(
+                                                containerTeamsRecord.reference,
+                                                ParamType.DocumentReference,
+                                              ),
+                                            }.withoutNulls,
+                                            extra: <String, dynamic>{
+                                              kTransitionInfoKey:
+                                                  const TransitionInfo(
+                                                hasTransition: true,
+                                                transitionType:
+                                                    PageTransitionType
+                                                        .bottomToTop,
+                                                duration:
+                                                    Duration(milliseconds: 400),
+                                              ),
+                                            },
+                                          );
+                                        },
+                                        child: Container(
+                                          width: 65.0,
+                                          height: 50.0,
+                                          decoration: BoxDecoration(
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryBackground,
+                                          ),
+                                          child: ClipRRect(
+                                            borderRadius:
+                                                BorderRadius.circular(0.0),
+                                            child: Image.network(
+                                              containerTeamsRecord.logo,
+                                              width: 300.0,
+                                              height: 200.0,
+                                              fit: BoxFit.fitHeight,
+                                            ),
+                                          ),
+                                        ),
+                                      );
+                                    },
                                   ),
                                 );
-                              }
-                              List<MyNotificationsRecord>
-                                  rowNotifsMyNotificationsRecordList =
-                                  snapshot.data!;
-                              // Return an empty Container when the item does not exist.
-                              if (snapshot.data!.isEmpty) {
-                                return Container();
-                              }
-                              final rowNotifsMyNotificationsRecord =
-                                  rowNotifsMyNotificationsRecordList.isNotEmpty
-                                      ? rowNotifsMyNotificationsRecordList.first
-                                      : null;
-
-                              return Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.end,
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        10.0, 0.0, 10.0, 0.0),
-                                    child: InkWell(
-                                      splashColor: Colors.transparent,
-                                      focusColor: Colors.transparent,
-                                      hoverColor: Colors.transparent,
-                                      highlightColor: Colors.transparent,
-                                      onTap: () async {
-                                        context.pushNamed(
-                                          'MyNotifsList',
-                                          extra: <String, dynamic>{
-                                            kTransitionInfoKey: TransitionInfo(
-                                              hasTransition: true,
-                                              transitionType: PageTransitionType
-                                                  .rightToLeft,
-                                              duration:
-                                                  Duration(milliseconds: 400),
-                                            ),
-                                          },
-                                        );
-                                      },
-                                      child: Icon(
-                                        Icons.notifications_active_outlined,
-                                        color: FlutterFlowTheme.of(context)
-                                            .accent3,
-                                        size: 40.0,
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              );
-                            },
-                          ),
-                      ],
+                              }),
+                            ),
+                          );
+                        },
+                      ),
                     ),
                   ),
                   if (!publicProfilPageUsersRecord.blocks
@@ -344,15 +475,72 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                     Column(
                       mainAxisSize: MainAxisSize.max,
                       children: [
+                        if (valueOrDefault<bool>(
+                                currentUserDocument?.helpNav, false) ==
+                            true)
+                          Align(
+                            alignment: const AlignmentDirectional(0.0, 0.0),
+                            child: Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 3.0, 0.0, 0.0),
+                              child: AuthUserStreamWidget(
+                                builder: (context) => Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 0.0, 10.0, 0.0),
+                                      child: Text(
+                                        'Suivre/Ne plus suivre',
+                                        textAlign: TextAlign.center,
+                                        maxLines: 3,
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Poppins',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .accent1,
+                                              fontSize: 10.0,
+                                              letterSpacing: 0.0,
+                                              lineHeight: 1.0,
+                                            ),
+                                      ),
+                                    ),
+                                    if (publicProfilPageUsersRecord
+                                            .stsocialapp !=
+                                        'moderateur')
+                                      Text(
+                                        'Bloquer/Débloquer',
+                                        textAlign: TextAlign.center,
+                                        maxLines: 3,
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Poppins',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .error,
+                                              fontSize: 10.0,
+                                              letterSpacing: 0.0,
+                                              lineHeight: 1.0,
+                                            ),
+                                      ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 10.0, 0.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 10.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -365,7 +553,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                         hoverColor: Colors.transparent,
                                         highlightColor: Colors.transparent,
                                         onTap: () async {
-                                          await widget!.userRef!.update({
+                                          await widget.userRef!.update({
                                             ...mapToFirestore(
                                               {
                                                 'fans': FieldValue.arrayUnion(
@@ -378,13 +566,13 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                             ...mapToFirestore(
                                               {
                                                 'bests': FieldValue.arrayUnion(
-                                                    [widget!.userRef]),
+                                                    [widget.userRef]),
                                               },
                                             ),
                                           });
 
                                           await MyNotificationsRecord.createDoc(
-                                                  widget!.userRef!)
+                                                  widget.userRef!)
                                               .set({
                                             ...createMyNotificationsRecordData(
                                               text: 'fait partie de vos fans.',
@@ -406,7 +594,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                             notificationImageUrl:
                                                 currentUserPhoto,
                                             notificationSound: 'default',
-                                            userRefs: [widget!.userRef!],
+                                            userRefs: [widget.userRef!],
                                             initialPageName: 'MyNotifsList',
                                             parameterData: {},
                                           );
@@ -414,7 +602,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                         child: Icon(
                                           Icons.star_border_rounded,
                                           color: FlutterFlowTheme.of(context)
-                                              .accent3,
+                                              .accent1,
                                           size: 35.0,
                                         ),
                                       ),
@@ -426,7 +614,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                         hoverColor: Colors.transparent,
                                         highlightColor: Colors.transparent,
                                         onTap: () async {
-                                          await widget!.userRef!.update({
+                                          await widget.userRef!.update({
                                             ...mapToFirestore(
                                               {
                                                 'fans': FieldValue.arrayRemove(
@@ -439,7 +627,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                             ...mapToFirestore(
                                               {
                                                 'bests': FieldValue.arrayRemove(
-                                                    [widget!.userRef]),
+                                                    [widget.userRef]),
                                               },
                                             ),
                                           });
@@ -447,7 +635,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                         child: Icon(
                                           Icons.star_rounded,
                                           color: FlutterFlowTheme.of(context)
-                                              .accent3,
+                                              .accent1,
                                           size: 35.0,
                                         ),
                                       ),
@@ -457,12 +645,8 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                               Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
-                                  if ((publicProfilPageUsersRecord
-                                              .stsocialapp !=
-                                          'moderateur') &&
-                                      (publicProfilPageUsersRecord
-                                              .stsocialapp !=
-                                          'administrateur'))
+                                  if (publicProfilPageUsersRecord.stsocialapp !=
+                                      'moderateur')
                                     Row(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
@@ -480,7 +664,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                                   {
                                                     'blocks':
                                                         FieldValue.arrayUnion(
-                                                            [widget!.userRef]),
+                                                            [widget.userRef]),
                                                   },
                                                 ),
                                               });
@@ -507,7 +691,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                                   {
                                                     'blocks':
                                                         FieldValue.arrayRemove(
-                                                            [widget!.userRef]),
+                                                            [widget.userRef]),
                                                   },
                                                 ),
                                               });
@@ -531,20 +715,20 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                 currentUserDocument?.esport, false) ==
                             false)
                           Align(
-                            alignment: AlignmentDirectional(0.0, 0.0),
+                            alignment: const AlignmentDirectional(0.0, 0.0),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 10.0, 0.0, 10.0),
                               child: AuthUserStreamWidget(
                                 builder: (context) => Column(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           20.0, 4.0, 30.0, 5.0),
                                       child: StreamBuilder<List<MyBetsRecord>>(
                                         stream: queryMyBetsRecord(
-                                          parent: widget!.userRef,
+                                          parent: widget.userRef,
                                           singleRecord: true,
                                         ),
                                         builder: (context, snapshot) {
@@ -613,14 +797,19 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                                         ParamType
                                                             .DocumentReference,
                                                       ),
+                                                      'userRef': serializeParam(
+                                                        widget.userRef,
+                                                        ParamType
+                                                            .DocumentReference,
+                                                      ),
                                                     }.withoutNulls,
                                                   );
                                                 },
                                                 child: Icon(
                                                   Icons.attach_money_rounded,
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .secondaryText,
+                                                  color:
+                                                      publicProfilPageUsersRecord
+                                                          .color1,
                                                   size: 30.0,
                                                 ),
                                               ),
@@ -631,11 +820,10 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                     ),
                                     Divider(
                                       thickness: 1.0,
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryBackground,
+                                      color: publicProfilPageUsersRecord.color2,
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           20.0, 0.0, 30.0, 5.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -661,7 +849,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                                 'PublicStats',
                                                 queryParameters: {
                                                   'userRef': serializeParam(
-                                                    widget!.userRef,
+                                                    widget.userRef,
                                                     ParamType.DocumentReference,
                                                   ),
                                                 }.withoutNulls,
@@ -669,9 +857,8 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                             },
                                             child: Icon(
                                               Icons.query_stats,
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondaryText,
+                                              color: publicProfilPageUsersRecord
+                                                  .color1,
                                               size: 30.0,
                                             ),
                                           ),
@@ -679,7 +866,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           20.0, 5.0, 30.0, 5.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -700,7 +887,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     3.0, 0.0, 0.0, 0.0),
                                             child: Text(
                                               valueOrDefault<String>(
@@ -725,7 +912,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           20.0, 10.0, 30.0, 5.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -763,7 +950,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                                         ),
                                               ),
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         5.0, 0.0, 0.0, 0.0),
                                                 child: Container(
@@ -777,8 +964,10 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                                       BoxShadow(
                                                         blurRadius: 4.0,
                                                         color:
-                                                            Color(0x53000000),
-                                                        offset: Offset(
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .accent3,
+                                                        offset: const Offset(
                                                           0.0,
                                                           2.0,
                                                         ),
@@ -794,7 +983,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                                   ),
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsets.all(2.0),
+                                                        const EdgeInsets.all(2.0),
                                                     child: ClipRRect(
                                                       borderRadius:
                                                           BorderRadius.circular(
@@ -816,11 +1005,10 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                     ),
                                     Divider(
                                       thickness: 1.0,
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryBackground,
+                                      color: publicProfilPageUsersRecord.color2,
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           20.0, 0.0, 30.0, 5.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -849,7 +1037,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           20.0, 5.0, 30.0, 5.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -894,8 +1082,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                     ),
                                     Divider(
                                       thickness: 1.0,
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryBackground,
+                                      color: publicProfilPageUsersRecord.color2,
                                     ),
                                   ],
                                 ),
@@ -906,9 +1093,9 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                 currentUserDocument?.esport, false) ==
                             true)
                           Align(
-                            alignment: AlignmentDirectional(0.0, 0.0),
+                            alignment: const AlignmentDirectional(0.0, 0.0),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 10.0, 0.0, 10.0),
                               child: AuthUserStreamWidget(
                                 builder: (context) => Column(
@@ -919,7 +1106,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                       children: [
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   20.0, 4.0, 30.0, 10.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -997,7 +1184,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                                                 false))
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         10.0,
                                                                         0.0,
@@ -1016,7 +1203,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                                               onTap: () async {
                                                                 await MyNotificationsRecord
                                                                         .createDoc(
-                                                                            widget!.userRef!)
+                                                                            widget.userRef!)
                                                                     .set({
                                                                   ...createMyNotificationsRecordData(
                                                                     text:
@@ -1046,7 +1233,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                                                   notificationSound:
                                                                       'default',
                                                                   userRefs: [
-                                                                    widget!
+                                                                    widget
                                                                         .userRef!
                                                                   ],
                                                                   initialPageName:
@@ -1054,7 +1241,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                                                   parameterData: {},
                                                                 );
 
-                                                                await widget!
+                                                                await widget
                                                                     .userRef!
                                                                     .update(
                                                                         createUsersRecordData(
@@ -1083,7 +1270,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                             null)
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     20.0, 4.0, 30.0, 10.0),
                                             child: StreamBuilder<TeamsRecord>(
                                               stream: TeamsRecord.getDocument(
@@ -1165,7 +1352,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                                         ),
                                                         child: Padding(
                                                           padding:
-                                                              EdgeInsets.all(
+                                                              const EdgeInsets.all(
                                                                   3.0),
                                                           child: ClipRRect(
                                                             borderRadius:
@@ -1194,11 +1381,10 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                     ),
                                     Divider(
                                       thickness: 1.0,
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryBackground,
+                                      color: publicProfilPageUsersRecord.color2,
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           20.0, 0.0, 30.0, 5.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -1224,7 +1410,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                                 'PublicStats',
                                                 queryParameters: {
                                                   'userRef': serializeParam(
-                                                    widget!.userRef,
+                                                    widget.userRef,
                                                     ParamType.DocumentReference,
                                                   ),
                                                 }.withoutNulls,
@@ -1232,9 +1418,8 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                             },
                                             child: Icon(
                                               Icons.query_stats,
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondaryText,
+                                              color: publicProfilPageUsersRecord
+                                                  .color1,
                                               size: 30.0,
                                             ),
                                           ),
@@ -1242,7 +1427,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           20.0, 5.0, 30.0, 5.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -1263,7 +1448,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     3.0, 0.0, 0.0, 0.0),
                                             child: Text(
                                               valueOrDefault<String>(
@@ -1289,11 +1474,10 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                     ),
                                     Divider(
                                       thickness: 1.0,
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryBackground,
+                                      color: publicProfilPageUsersRecord.color2,
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           20.0, 0.0, 30.0, 5.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -1322,7 +1506,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           20.0, 5.0, 30.0, 5.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -1373,8 +1557,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                     ),
                                     Divider(
                                       thickness: 1.0,
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryBackground,
+                                      color: publicProfilPageUsersRecord.color2,
                                     ),
                                   ],
                                 ),
@@ -1382,11 +1565,11 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                             ),
                           ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               20.0, 0.0, 30.0, 5.0),
                           child: StreamBuilder<List<MyPostsRecord>>(
                             stream: queryMyPostsRecord(
-                              parent: widget!.userRef,
+                              parent: widget.userRef,
                               singleRecord: true,
                             ),
                             builder: (context, snapshot) {
@@ -1453,8 +1636,8 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                         },
                                         child: Icon(
                                           Icons.newspaper_rounded,
-                                          color: FlutterFlowTheme.of(context)
-                                              .secondaryText,
+                                          color: publicProfilPageUsersRecord
+                                              .color1,
                                           size: 30.0,
                                         ),
                                       ),
@@ -1465,15 +1648,10 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                             },
                           ),
                         ),
-                        Divider(
-                          thickness: 1.0,
-                          color:
-                              FlutterFlowTheme.of(context).secondaryBackground,
-                        ),
                         Align(
-                          alignment: AlignmentDirectional(-1.0, 0.0),
+                          alignment: const AlignmentDirectional(-1.0, 0.0),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 20.0, 0.0, 0.0, 5.0),
                             child: Text(
                               'Réseaux',
@@ -1487,7 +1665,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               20.0, 5.0, 30.0, 5.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -1497,7 +1675,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 10.0, 0.0),
                                     child: Text(
                                       valueOrDefault<String>(
@@ -1524,8 +1702,8 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              20.0, 5.0, 30.0, 5.0),
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              20.0, 5.0, 30.0, 20.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.end,
@@ -1534,7 +1712,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 10.0, 0.0),
                                     child: Text(
                                       valueOrDefault<String>(
@@ -1552,7 +1730,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                   ),
                                   Icon(
                                     Icons.star_rate_rounded,
-                                    color: FlutterFlowTheme.of(context).accent3,
+                                    color: FlutterFlowTheme.of(context).accent1,
                                     size: 30.0,
                                   ),
                                 ],
@@ -1560,11 +1738,65 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                             ],
                           ),
                         ),
-                        Divider(
-                          thickness: 1.0,
-                          color:
-                              FlutterFlowTheme.of(context).secondaryBackground,
+                        Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              10.0, 0.0, 10.0, 5.0),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Row(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Text(
+                                    'Membre depuis le',
+                                    style: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          color: publicProfilPageUsersRecord
+                                              .color1,
+                                          letterSpacing: 0.0,
+                                        ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        2.0, 0.0, 0.0, 0.0),
+                                    child: Text(
+                                      dateTimeFormat(
+                                          "d/M/y",
+                                          publicProfilPageUsersRecord
+                                              .createdTime!),
+                                      style: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            color: publicProfilPageUsersRecord
+                                                .color1,
+                                            letterSpacing: 0.0,
+                                          ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
                         ),
+                        if (valueOrDefault(
+                                currentUserDocument?.stsocialapp, '') ==
+                            'moderateur')
+                          AuthUserStreamWidget(
+                            builder: (context) => Text(
+                              publicProfilPageUsersRecord.uid,
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    color: FlutterFlowTheme.of(context).warning,
+                                    letterSpacing: 0.0,
+                                  ),
+                            ),
+                          ),
                       ],
                     ),
                 ],

@@ -1,20 +1,33 @@
-import '/backend/backend.dart';
-import '/flutter_flow/flutter_flow_drop_down.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'mod_teams_list_widget.dart' show ModTeamsListWidget;
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 
 class ModTeamsListModel extends FlutterFlowModel<ModTeamsListWidget> {
+  ///  Local state fields for this page.
+
+  String? showLigueFilter;
+
   ///  State fields for stateful widgets in this page.
 
-  // State field(s) for DropLigue widget.
-  String? dropLigueValue;
-  FormFieldController<String>? dropLigueValueController;
+  // State field(s) for DropSport widget.
+  String? dropSportValue;
+  FormFieldController<String>? dropSportValueController;
+  // State field(s) for DropLigueFoot widget.
+  String? dropLigueFootValue;
+  FormFieldController<String>? dropLigueFootValueController;
+  // State field(s) for DropLigueBasket widget.
+  String? dropLigueBasketValue;
+  FormFieldController<String>? dropLigueBasketValueController;
+  // State field(s) for DropLigueTennis widget.
+  String? dropLigueTennisValue;
+  FormFieldController<String>? dropLigueTennisValueController;
+  // State field(s) for DropLigueFight widget.
+  String? dropLigueFightValue;
+  FormFieldController<String>? dropLigueFightValueController;
+  // State field(s) for DropLigueHockey widget.
+  String? dropLigueHockeyValue;
+  FormFieldController<String>? dropLigueHockeyValueController;
 
   @override
   void initState(BuildContext context) {}

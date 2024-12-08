@@ -7,10 +7,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'list_messages_boss_event_model.dart';
 export 'list_messages_boss_event_model.dart';
 
@@ -54,7 +51,7 @@ class _ListMessagesBossEventWidgetState
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<EventsRecord>(
-      stream: EventsRecord.getDocument(widget!.eventRef!),
+      stream: EventsRecord.getDocument(widget.eventRef!),
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
@@ -84,7 +81,7 @@ class _ListMessagesBossEventWidgetState
             body: SafeArea(
               top: true,
               child: Padding(
-                padding: EdgeInsets.all(10.0),
+                padding: const EdgeInsets.all(10.0),
                 child: SingleChildScrollView(
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
@@ -94,7 +91,7 @@ class _ListMessagesBossEventWidgetState
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 10.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -103,54 +100,58 @@ class _ListMessagesBossEventWidgetState
                                 Row(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
-                                    InkWell(
-                                      splashColor: Colors.transparent,
-                                      focusColor: Colors.transparent,
-                                      hoverColor: Colors.transparent,
-                                      highlightColor: Colors.transparent,
-                                      onTap: () async {
-                                        context.pushNamed(
-                                          'ModifETeamPage',
-                                          queryParameters: {
-                                            'teamRef': serializeParam(
-                                              widget!.eTeamRef,
-                                              ParamType.DocumentReference,
-                                            ),
-                                          }.withoutNulls,
-                                          extra: <String, dynamic>{
-                                            kTransitionInfoKey: TransitionInfo(
-                                              hasTransition: true,
-                                              transitionType: PageTransitionType
-                                                  .leftToRight,
-                                              duration:
-                                                  Duration(milliseconds: 400),
-                                            ),
-                                          },
-                                        );
-                                      },
-                                      child: Icon(
-                                        Icons.menu_rounded,
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryText,
-                                        size: 30.0,
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          10.0, 0.0, 0.0, 0.0),
-                                      child: InkWell(
+                                    AuthUserStreamWidget(
+                                      builder: (context) => InkWell(
                                         splashColor: Colors.transparent,
                                         focusColor: Colors.transparent,
                                         hoverColor: Colors.transparent,
                                         highlightColor: Colors.transparent,
                                         onTap: () async {
-                                          context.safePop();
+                                          context.pushNamed(
+                                            'ModifETeamPage',
+                                            queryParameters: {
+                                              'teamRef': serializeParam(
+                                                widget.eTeamRef,
+                                                ParamType.DocumentReference,
+                                              ),
+                                            }.withoutNulls,
+                                            extra: <String, dynamic>{
+                                              kTransitionInfoKey:
+                                                  const TransitionInfo(
+                                                hasTransition: true,
+                                                transitionType:
+                                                    PageTransitionType
+                                                        .leftToRight,
+                                                duration:
+                                                    Duration(milliseconds: 400),
+                                              ),
+                                            },
+                                          );
                                         },
                                         child: Icon(
-                                          Icons.arrow_back_ios_new_rounded,
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryText,
+                                          Icons.menu_rounded,
+                                          color: currentUserDocument?.color1,
                                           size: 30.0,
+                                        ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          10.0, 0.0, 0.0, 0.0),
+                                      child: AuthUserStreamWidget(
+                                        builder: (context) => InkWell(
+                                          splashColor: Colors.transparent,
+                                          focusColor: Colors.transparent,
+                                          hoverColor: Colors.transparent,
+                                          highlightColor: Colors.transparent,
+                                          onTap: () async {
+                                            context.safePop();
+                                          },
+                                          child: Icon(
+                                            Icons.arrow_back_ios_new_rounded,
+                                            color: currentUserDocument?.color1,
+                                            size: 30.0,
+                                          ),
                                         ),
                                       ),
                                     ),
@@ -174,7 +175,7 @@ class _ListMessagesBossEventWidgetState
                                             ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             2.0, 0.0, 2.0, 0.0),
                                         child: Text(
                                           '-',
@@ -200,7 +201,7 @@ class _ListMessagesBossEventWidgetState
                                             ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             2.0, 0.0, 2.0, 0.0),
                                         child: Text(
                                           ':',
@@ -231,50 +232,9 @@ class _ListMessagesBossEventWidgetState
                                 Row(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
-                                    if (listMessagesBossEventEventsRecord
-                                            .statut ==
-                                        false)
-                                      InkWell(
-                                        splashColor: Colors.transparent,
-                                        focusColor: Colors.transparent,
-                                        hoverColor: Colors.transparent,
-                                        highlightColor: Colors.transparent,
-                                        onTap: () async {
-                                          context.pushNamed(
-                                            'DeleteEventPage',
-                                            queryParameters: {
-                                              'eventRef': serializeParam(
-                                                widget!.eventRef,
-                                                ParamType.DocumentReference,
-                                              ),
-                                              'eTeamRef': serializeParam(
-                                                currentUserDocument?.eteamRef,
-                                                ParamType.DocumentReference,
-                                              ),
-                                            }.withoutNulls,
-                                            extra: <String, dynamic>{
-                                              kTransitionInfoKey:
-                                                  TransitionInfo(
-                                                hasTransition: true,
-                                                transitionType:
-                                                    PageTransitionType
-                                                        .rightToLeft,
-                                                duration:
-                                                    Duration(milliseconds: 400),
-                                              ),
-                                            },
-                                          );
-                                        },
-                                        child: Icon(
-                                          Icons.delete_forever,
-                                          color: FlutterFlowTheme.of(context)
-                                              .error,
-                                          size: 30.0,
-                                        ),
-                                      ),
                                     if (true /* Warning: Trying to access variable not yet defined. */)
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             5.0, 0.0, 0.0, 0.0),
                                         child: FutureBuilder<
                                             List<MyNotificationsRecord>>(
@@ -323,7 +283,7 @@ class _ListMessagesBossEventWidgetState
                                                   MainAxisAlignment.end,
                                               children: [
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 10.0, 0.0),
                                                   child: InkWell(
@@ -341,7 +301,7 @@ class _ListMessagesBossEventWidgetState
                                                         extra: <String,
                                                             dynamic>{
                                                           kTransitionInfoKey:
-                                                              TransitionInfo(
+                                                              const TransitionInfo(
                                                             hasTransition: true,
                                                             transitionType:
                                                                 PageTransitionType
@@ -359,7 +319,7 @@ class _ListMessagesBossEventWidgetState
                                                       color:
                                                           FlutterFlowTheme.of(
                                                                   context)
-                                                              .accent3,
+                                                              .accent1,
                                                       size: 40.0,
                                                     ),
                                                   ),
@@ -375,7 +335,7 @@ class _ListMessagesBossEventWidgetState
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 5.0, 0.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -414,10 +374,10 @@ class _ListMessagesBossEventWidgetState
                                       ),
                                       child: Align(
                                         alignment:
-                                            AlignmentDirectional(1.0, 0.0),
+                                            const AlignmentDirectional(1.0, 0.0),
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 5.0, 0.0),
                                           child: Text(
                                             valueOrDefault<String>(
@@ -479,10 +439,10 @@ class _ListMessagesBossEventWidgetState
                                       ),
                                       child: Align(
                                         alignment:
-                                            AlignmentDirectional(-1.0, 0.0),
+                                            const AlignmentDirectional(-1.0, 0.0),
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   5.0, 0.0, 0.0, 0.0),
                                           child: Text(
                                             valueOrDefault<String>(
@@ -508,16 +468,16 @@ class _ListMessagesBossEventWidgetState
                           if (listMessagesBossEventEventsRecord.seenScore ==
                               true)
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 5.0, 0.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Align(
-                                    alignment: AlignmentDirectional(1.0, 0.0),
+                                    alignment: const AlignmentDirectional(1.0, 0.0),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 10.0, 0.0),
                                       child: Text(
                                         listMessagesBossEventEventsRecord
@@ -543,9 +503,9 @@ class _ListMessagesBossEventWidgetState
                                         ),
                                   ),
                                   Align(
-                                    alignment: AlignmentDirectional(-1.0, 0.0),
+                                    alignment: const AlignmentDirectional(-1.0, 0.0),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           10.0, 0.0, 0.0, 0.0),
                                       child: Text(
                                         listMessagesBossEventEventsRecord
@@ -582,10 +542,10 @@ class _ListMessagesBossEventWidgetState
                                       children: [
                                         Align(
                                           alignment:
-                                              AlignmentDirectional(-1.0, 0.0),
+                                              const AlignmentDirectional(-1.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 10.0, 0.0, 0.0),
                                             child: FFButtonWidget(
                                               onPressed: () async {
@@ -593,7 +553,7 @@ class _ListMessagesBossEventWidgetState
                                                   'AddDateForEEvent',
                                                   queryParameters: {
                                                     'eventRef': serializeParam(
-                                                      widget!.eventRef,
+                                                      widget.eventRef,
                                                       ParamType
                                                           .DocumentReference,
                                                     ),
@@ -609,11 +569,11 @@ class _ListMessagesBossEventWidgetState
                                               text: 'Proposer une date',
                                               options: FFButtonOptions(
                                                 height: 30.0,
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         16.0, 0.0, 16.0, 0.0),
                                                 iconPadding:
-                                                    EdgeInsetsDirectional
+                                                    const EdgeInsetsDirectional
                                                         .fromSTEB(
                                                             0.0, 0.0, 0.0, 0.0),
                                                 color:
@@ -650,10 +610,10 @@ class _ListMessagesBossEventWidgetState
                                       children: [
                                         Align(
                                           alignment:
-                                              AlignmentDirectional(-1.0, 0.0),
+                                              const AlignmentDirectional(-1.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 10.0, 0.0, 0.0),
                                             child: FFButtonWidget(
                                               onPressed: () async {
@@ -661,7 +621,7 @@ class _ListMessagesBossEventWidgetState
                                                   'AddDateForEEvent',
                                                   queryParameters: {
                                                     'eventRef': serializeParam(
-                                                      widget!.eventRef,
+                                                      widget.eventRef,
                                                       ParamType
                                                           .DocumentReference,
                                                     ),
@@ -677,11 +637,11 @@ class _ListMessagesBossEventWidgetState
                                               text: 'Proposer une date',
                                               options: FFButtonOptions(
                                                 height: 30.0,
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         16.0, 0.0, 16.0, 0.0),
                                                 iconPadding:
-                                                    EdgeInsetsDirectional
+                                                    const EdgeInsetsDirectional
                                                         .fromSTEB(
                                                             0.0, 0.0, 0.0, 0.0),
                                                 color:
@@ -724,7 +684,7 @@ class _ListMessagesBossEventWidgetState
                                       children: [
                                         Align(
                                           alignment:
-                                              AlignmentDirectional(-1.0, 0.0),
+                                              const AlignmentDirectional(-1.0, 0.0),
                                           child: StreamBuilder<
                                               List<TeamEventsRecord>>(
                                             stream: queryTeamEventsRecord(
@@ -734,7 +694,7 @@ class _ListMessagesBossEventWidgetState
                                                   (teamEventsRecord) =>
                                                       teamEventsRecord.where(
                                                 'events',
-                                                isEqualTo: widget!.eventRef,
+                                                isEqualTo: widget.eventRef,
                                               ),
                                               singleRecord: true,
                                             ),
@@ -800,11 +760,11 @@ class _ListMessagesBossEventWidgetState
                                                 text: 'Valider',
                                                 options: FFButtonOptions(
                                                   height: 30.0,
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           16.0, 0.0, 16.0, 0.0),
                                                   iconPadding:
-                                                      EdgeInsetsDirectional
+                                                      const EdgeInsetsDirectional
                                                           .fromSTEB(0.0, 0.0,
                                                               0.0, 0.0),
                                                   color: FlutterFlowTheme.of(
@@ -850,7 +810,7 @@ class _ListMessagesBossEventWidgetState
                                                         ),
                                               ),
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         2.0, 0.0, 2.0, 0.0),
                                                 child: Text(
@@ -880,7 +840,7 @@ class _ListMessagesBossEventWidgetState
                                                         ),
                                               ),
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         2.0, 0.0, 2.0, 0.0),
                                                 child: Text(
@@ -913,10 +873,10 @@ class _ListMessagesBossEventWidgetState
                                           ),
                                         Align(
                                           alignment:
-                                              AlignmentDirectional(-1.0, 0.0),
+                                              const AlignmentDirectional(-1.0, 0.0),
                                           child: FFButtonWidget(
                                             onPressed: () async {
-                                              await widget!.eventRef!.update({
+                                              await widget.eventRef!.update({
                                                 ...mapToFirestore(
                                                   {
                                                     'date_dom':
@@ -930,16 +890,16 @@ class _ListMessagesBossEventWidgetState
                                                           .teamdomRef!)
                                                   .set(
                                                       createTeamEventsRecordData(
-                                                events: widget!.eventRef,
+                                                events: widget.eventRef,
                                               ));
                                             },
                                             text: 'Refuser',
                                             options: FFButtonOptions(
                                               height: 30.0,
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       16.0, 0.0, 16.0, 0.0),
-                                              iconPadding: EdgeInsetsDirectional
+                                              iconPadding: const EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
                                               color:
                                                   FlutterFlowTheme.of(context)
@@ -974,7 +934,7 @@ class _ListMessagesBossEventWidgetState
                                             .domReady ==
                                         true))
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 5.0),
                                     child: AuthUserStreamWidget(
                                       builder: (context) => Row(
@@ -984,7 +944,7 @@ class _ListMessagesBossEventWidgetState
                                         children: [
                                           Align(
                                             alignment:
-                                                AlignmentDirectional(-1.0, 0.0),
+                                                const AlignmentDirectional(-1.0, 0.0),
                                             child: StreamBuilder<
                                                 List<TeamEventsRecord>>(
                                               stream: queryTeamEventsRecord(
@@ -994,7 +954,7 @@ class _ListMessagesBossEventWidgetState
                                                     (teamEventsRecord) =>
                                                         teamEventsRecord.where(
                                                   'events',
-                                                  isEqualTo: widget!.eventRef,
+                                                  isEqualTo: widget.eventRef,
                                                 ),
                                                 singleRecord: true,
                                               ),
@@ -1062,11 +1022,11 @@ class _ListMessagesBossEventWidgetState
                                                   options: FFButtonOptions(
                                                     height: 30.0,
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(16.0, 0.0,
                                                                 16.0, 0.0),
                                                     iconPadding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 0.0),
                                                     color: FlutterFlowTheme.of(
@@ -1111,7 +1071,7 @@ class _ListMessagesBossEventWidgetState
                                                       ),
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           2.0, 0.0, 2.0, 0.0),
                                                   child: Text(
@@ -1141,7 +1101,7 @@ class _ListMessagesBossEventWidgetState
                                                       ),
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           2.0, 0.0, 2.0, 0.0),
                                                   child: Text(
@@ -1174,10 +1134,10 @@ class _ListMessagesBossEventWidgetState
                                             ),
                                           Align(
                                             alignment:
-                                                AlignmentDirectional(-1.0, 0.0),
+                                                const AlignmentDirectional(-1.0, 0.0),
                                             child: FFButtonWidget(
                                               onPressed: () async {
-                                                await widget!.eventRef!.update({
+                                                await widget.eventRef!.update({
                                                   ...mapToFirestore(
                                                     {
                                                       'date_ext':
@@ -1191,17 +1151,17 @@ class _ListMessagesBossEventWidgetState
                                                             .teamextRef!)
                                                     .set(
                                                         createTeamEventsRecordData(
-                                                  events: widget!.eventRef,
+                                                  events: widget.eventRef,
                                                 ));
                                               },
                                               text: 'Refuser',
                                               options: FFButtonOptions(
                                                 height: 30.0,
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         16.0, 0.0, 16.0, 0.0),
                                                 iconPadding:
-                                                    EdgeInsetsDirectional
+                                                    const EdgeInsetsDirectional
                                                         .fromSTEB(
                                                             0.0, 0.0, 0.0, 0.0),
                                                 color:
@@ -1228,12 +1188,12 @@ class _ListMessagesBossEventWidgetState
                                     ),
                                   ),
                                 Align(
-                                  alignment: AlignmentDirectional(-1.0, 0.0),
+                                  alignment: const AlignmentDirectional(-1.0, 0.0),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         10.0, 10.0, 10.0, 0.0),
                                     child: Text(
-                                      'Discutez avec votre adversaire, prenez le temps de vous organiser avec vos co-équipiés.',
+                                      'Discutez avec votre adversaire, prenez le temps de vous organiser avec vos co-équipiers.',
                                       textAlign: TextAlign.center,
                                       style: FlutterFlowTheme.of(context)
                                           .labelSmall
@@ -1261,10 +1221,10 @@ class _ListMessagesBossEventWidgetState
                                     children: [
                                       Align(
                                         alignment:
-                                            AlignmentDirectional(-1.0, 0.0),
+                                            const AlignmentDirectional(-1.0, 0.0),
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 10.0, 0.0),
                                           child: Text(
                                             'Validez votre composition d\'équipe\navant de valider la date de la confrontation.',
@@ -1287,7 +1247,7 @@ class _ListMessagesBossEventWidgetState
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 10.0, 0.0),
                                         child: InkWell(
                                           splashColor: Colors.transparent,
@@ -1299,7 +1259,7 @@ class _ListMessagesBossEventWidgetState
                                               'AddPlayersEventPage',
                                               queryParameters: {
                                                 'eventRef': serializeParam(
-                                                  widget!.eventRef,
+                                                  widget.eventRef,
                                                   ParamType.DocumentReference,
                                                 ),
                                                 'myETeamRef': serializeParam(
@@ -1310,7 +1270,7 @@ class _ListMessagesBossEventWidgetState
                                               }.withoutNulls,
                                               extra: <String, dynamic>{
                                                 kTransitionInfoKey:
-                                                    TransitionInfo(
+                                                    const TransitionInfo(
                                                   hasTransition: true,
                                                   transitionType:
                                                       PageTransitionType
@@ -1349,10 +1309,10 @@ class _ListMessagesBossEventWidgetState
                                     children: [
                                       Align(
                                         alignment:
-                                            AlignmentDirectional(-1.0, 0.0),
+                                            const AlignmentDirectional(-1.0, 0.0),
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 10.0, 0.0),
                                           child: Text(
                                             'Validez votre composition d\'équipe\navant de valider la date de la confrontation.',
@@ -1375,7 +1335,7 @@ class _ListMessagesBossEventWidgetState
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 10.0, 0.0),
                                         child: InkWell(
                                           splashColor: Colors.transparent,
@@ -1387,7 +1347,7 @@ class _ListMessagesBossEventWidgetState
                                               'AddPlayersEventPage',
                                               queryParameters: {
                                                 'eventRef': serializeParam(
-                                                  widget!.eventRef,
+                                                  widget.eventRef,
                                                   ParamType.DocumentReference,
                                                 ),
                                                 'myETeamRef': serializeParam(
@@ -1398,7 +1358,7 @@ class _ListMessagesBossEventWidgetState
                                               }.withoutNulls,
                                               extra: <String, dynamic>{
                                                 kTransitionInfoKey:
-                                                    TransitionInfo(
+                                                    const TransitionInfo(
                                                   hasTransition: true,
                                                   transitionType:
                                                       PageTransitionType
@@ -1422,13 +1382,18 @@ class _ListMessagesBossEventWidgetState
                                 ],
                               ),
                             ),
-                          Divider(
-                            thickness: 1.0,
-                            color: FlutterFlowTheme.of(context)
-                                .secondaryBackground,
+                          AuthUserStreamWidget(
+                            builder: (context) => Divider(
+                              thickness: 1.0,
+                              color: valueOrDefault<Color>(
+                                currentUserDocument?.color2,
+                                FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
+                              ),
+                            ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 5.0, 10.0, 5.0, 10.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -1437,7 +1402,7 @@ class _ListMessagesBossEventWidgetState
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 5.0, 0.0),
                                       child: Icon(
                                         Icons.mic_rounded,
@@ -1447,91 +1412,96 @@ class _ListMessagesBossEventWidgetState
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 10.0, 0.0),
-                                      child: InkWell(
-                                        splashColor: Colors.transparent,
-                                        focusColor: Colors.transparent,
-                                        hoverColor: Colors.transparent,
-                                        highlightColor: Colors.transparent,
-                                        onTap: () async {
-                                          final selectedMedia =
-                                              await selectMediaWithSourceBottomSheet(
-                                            context: context,
-                                            maxWidth: 1000.00,
-                                            maxHeight: 1000.00,
-                                            allowPhoto: true,
-                                          );
-                                          if (selectedMedia != null &&
-                                              selectedMedia.every((m) =>
-                                                  validateFileFormat(
-                                                      m.storagePath,
-                                                      context))) {
-                                            safeSetState(() =>
-                                                _model.isDataUploading = true);
-                                            var selectedUploadedFiles =
-                                                <FFUploadedFile>[];
+                                      child: AuthUserStreamWidget(
+                                        builder: (context) => InkWell(
+                                          splashColor: Colors.transparent,
+                                          focusColor: Colors.transparent,
+                                          hoverColor: Colors.transparent,
+                                          highlightColor: Colors.transparent,
+                                          onTap: () async {
+                                            final selectedMedia =
+                                                await selectMediaWithSourceBottomSheet(
+                                              context: context,
+                                              maxWidth: 1000.00,
+                                              maxHeight: 1000.00,
+                                              allowPhoto: true,
+                                            );
+                                            if (selectedMedia != null &&
+                                                selectedMedia.every((m) =>
+                                                    validateFileFormat(
+                                                        m.storagePath,
+                                                        context))) {
+                                              safeSetState(() => _model
+                                                  .isDataUploading = true);
+                                              var selectedUploadedFiles =
+                                                  <FFUploadedFile>[];
 
-                                            var downloadUrls = <String>[];
-                                            try {
-                                              selectedUploadedFiles =
-                                                  selectedMedia
-                                                      .map(
-                                                          (m) => FFUploadedFile(
-                                                                name: m
-                                                                    .storagePath
-                                                                    .split('/')
-                                                                    .last,
-                                                                bytes: m.bytes,
-                                                                height: m
-                                                                    .dimensions
-                                                                    ?.height,
-                                                                width: m
-                                                                    .dimensions
-                                                                    ?.width,
-                                                                blurHash:
-                                                                    m.blurHash,
-                                                              ))
-                                                      .toList();
+                                              var downloadUrls = <String>[];
+                                              try {
+                                                selectedUploadedFiles =
+                                                    selectedMedia
+                                                        .map((m) =>
+                                                            FFUploadedFile(
+                                                              name: m
+                                                                  .storagePath
+                                                                  .split('/')
+                                                                  .last,
+                                                              bytes: m.bytes,
+                                                              height: m
+                                                                  .dimensions
+                                                                  ?.height,
+                                                              width: m
+                                                                  .dimensions
+                                                                  ?.width,
+                                                              blurHash:
+                                                                  m.blurHash,
+                                                            ))
+                                                        .toList();
 
-                                              downloadUrls = (await Future.wait(
-                                                selectedMedia.map(
-                                                  (m) async => await uploadData(
-                                                      m.storagePath, m.bytes),
-                                                ),
-                                              ))
-                                                  .where((u) => u != null)
-                                                  .map((u) => u!)
-                                                  .toList();
-                                            } finally {
-                                              _model.isDataUploading = false;
+                                                downloadUrls =
+                                                    (await Future.wait(
+                                                  selectedMedia.map(
+                                                    (m) async =>
+                                                        await uploadData(
+                                                            m.storagePath,
+                                                            m.bytes),
+                                                  ),
+                                                ))
+                                                        .where((u) => u != null)
+                                                        .map((u) => u!)
+                                                        .toList();
+                                              } finally {
+                                                _model.isDataUploading = false;
+                                              }
+                                              if (selectedUploadedFiles
+                                                          .length ==
+                                                      selectedMedia.length &&
+                                                  downloadUrls.length ==
+                                                      selectedMedia.length) {
+                                                safeSetState(() {
+                                                  _model.uploadedLocalFile =
+                                                      selectedUploadedFiles
+                                                          .first;
+                                                  _model.uploadedFileUrl =
+                                                      downloadUrls.first;
+                                                });
+                                              } else {
+                                                safeSetState(() {});
+                                                return;
+                                              }
                                             }
-                                            if (selectedUploadedFiles.length ==
-                                                    selectedMedia.length &&
-                                                downloadUrls.length ==
-                                                    selectedMedia.length) {
-                                              safeSetState(() {
-                                                _model.uploadedLocalFile =
-                                                    selectedUploadedFiles.first;
-                                                _model.uploadedFileUrl =
-                                                    downloadUrls.first;
-                                              });
-                                            } else {
-                                              safeSetState(() {});
-                                              return;
-                                            }
-                                          }
-                                        },
-                                        child: Icon(
-                                          Icons.image_search_rounded,
-                                          color: FlutterFlowTheme.of(context)
-                                              .secondaryText,
-                                          size: 30.0,
+                                          },
+                                          child: Icon(
+                                            Icons.image_search_rounded,
+                                            color: currentUserDocument?.color1,
+                                            size: 30.0,
+                                          ),
                                         ),
                                       ),
                                     ),
-                                    if (_model.uploadedFileUrl != null &&
-                                        _model.uploadedFileUrl != '')
+                                    if (_model.uploadedFileUrl != '')
                                       Container(
                                         width: 50.0,
                                         height: 40.0,
@@ -1542,7 +1512,7 @@ class _ListMessagesBossEventWidgetState
                                               BorderRadius.circular(6.0),
                                         ),
                                         child: Padding(
-                                          padding: EdgeInsets.all(2.0),
+                                          padding: const EdgeInsets.all(2.0),
                                           child: ClipRRect(
                                             borderRadius:
                                                 BorderRadius.circular(4.0),
@@ -1559,156 +1529,173 @@ class _ListMessagesBossEventWidgetState
                                 ),
                                 Expanded(
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         8.0, 0.0, 8.0, 0.0),
-                                    child: TextFormField(
-                                      controller:
-                                          _model.commFieldTextController,
-                                      focusNode: _model.commFieldFocusNode,
-                                      autofocus: true,
-                                      obscureText: false,
-                                      decoration: InputDecoration(
-                                        labelStyle: FlutterFlowTheme.of(context)
-                                            .labelMedium
+                                    child: AuthUserStreamWidget(
+                                      builder: (context) => TextFormField(
+                                        controller:
+                                            _model.commFieldTextController,
+                                        focusNode: _model.commFieldFocusNode,
+                                        autofocus: true,
+                                        obscureText: false,
+                                        decoration: InputDecoration(
+                                          labelStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMedium
+                                                  .override(
+                                                    fontFamily: 'Poppins',
+                                                    letterSpacing: 0.0,
+                                                  ),
+                                          hintText: '.......................',
+                                          hintStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyLarge
+                                                  .override(
+                                                    fontFamily: 'Poppins',
+                                                    letterSpacing: 0.0,
+                                                  ),
+                                          enabledBorder: UnderlineInputBorder(
+                                            borderSide: BorderSide(
+                                              color: valueOrDefault<Color>(
+                                                currentUserDocument?.color2,
+                                                FlutterFlowTheme.of(context)
+                                                    .secondaryBackground,
+                                              ),
+                                              width: 2.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                          ),
+                                          focusedBorder: UnderlineInputBorder(
+                                            borderSide: BorderSide(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                              width: 2.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                          ),
+                                          errorBorder: UnderlineInputBorder(
+                                            borderSide: BorderSide(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .error,
+                                              width: 2.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                          ),
+                                          focusedErrorBorder:
+                                              UnderlineInputBorder(
+                                            borderSide: BorderSide(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .error,
+                                              width: 2.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                          ),
+                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
                                             .override(
                                               fontFamily: 'Poppins',
                                               letterSpacing: 0.0,
                                             ),
-                                        hintText: '.......................',
-                                        hintStyle: FlutterFlowTheme.of(context)
-                                            .bodyLarge
-                                            .override(
-                                              fontFamily: 'Poppins',
-                                              letterSpacing: 0.0,
-                                            ),
-                                        enabledBorder: UnderlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryBackground,
-                                            width: 2.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
-                                        ),
-                                        focusedBorder: UnderlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
-                                                .primary,
-                                            width: 2.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
-                                        ),
-                                        errorBorder: UnderlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
-                                                .error,
-                                            width: 2.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
-                                        ),
-                                        focusedErrorBorder:
-                                            UnderlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
-                                                .error,
-                                            width: 2.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
-                                        ),
+                                        validator: _model
+                                            .commFieldTextControllerValidator
+                                            .asValidator(context),
                                       ),
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily: 'Poppins',
-                                            letterSpacing: 0.0,
-                                          ),
-                                      validator: _model
-                                          .commFieldTextControllerValidator
-                                          .asValidator(context),
                                     ),
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       10.0, 0.0, 5.0, 0.0),
-                                  child: InkWell(
-                                    splashColor: Colors.transparent,
-                                    focusColor: Colors.transparent,
-                                    hoverColor: Colors.transparent,
-                                    highlightColor: Colors.transparent,
-                                    onTap: () async {
-                                      var teamMessagesRecordReference =
-                                          TeamMessagesRecord.createDoc(
-                                              listMessagesBossEventEventsRecord
-                                                  .teamdomRef!);
-                                      await teamMessagesRecordReference.set({
-                                        ...createTeamMessagesRecordData(
-                                          text: _model
-                                              .commFieldTextController.text,
-                                          image: _model.uploadedFileUrl,
-                                          userRef: currentUserReference,
-                                          eEvent: widget!.eventRef,
-                                        ),
-                                        ...mapToFirestore(
-                                          {
-                                            'date_time':
-                                                FieldValue.serverTimestamp(),
-                                          },
-                                        ),
-                                      });
-                                      _model.eventMessage = TeamMessagesRecord
-                                          .getDocumentFromData({
-                                        ...createTeamMessagesRecordData(
-                                          text: _model
-                                              .commFieldTextController.text,
-                                          image: _model.uploadedFileUrl,
-                                          userRef: currentUserReference,
-                                          eEvent: widget!.eventRef,
-                                        ),
-                                        ...mapToFirestore(
-                                          {
-                                            'date_time': DateTime.now(),
-                                          },
-                                        ),
-                                      }, teamMessagesRecordReference);
-                                      safeSetState(() {
-                                        _model.commFieldTextController?.clear();
-                                      });
+                                  child: AuthUserStreamWidget(
+                                    builder: (context) => InkWell(
+                                      splashColor: Colors.transparent,
+                                      focusColor: Colors.transparent,
+                                      hoverColor: Colors.transparent,
+                                      highlightColor: Colors.transparent,
+                                      onTap: () async {
+                                        var teamMessagesRecordReference =
+                                            TeamMessagesRecord.createDoc(
+                                                listMessagesBossEventEventsRecord
+                                                    .teamdomRef!);
+                                        await teamMessagesRecordReference.set({
+                                          ...createTeamMessagesRecordData(
+                                            text: _model
+                                                .commFieldTextController.text,
+                                            image: _model.uploadedFileUrl,
+                                            userRef: currentUserReference,
+                                            eEvent: widget.eventRef,
+                                          ),
+                                          ...mapToFirestore(
+                                            {
+                                              'date_time':
+                                                  FieldValue.serverTimestamp(),
+                                            },
+                                          ),
+                                        });
+                                        _model.eventMessage = TeamMessagesRecord
+                                            .getDocumentFromData({
+                                          ...createTeamMessagesRecordData(
+                                            text: _model
+                                                .commFieldTextController.text,
+                                            image: _model.uploadedFileUrl,
+                                            userRef: currentUserReference,
+                                            eEvent: widget.eventRef,
+                                          ),
+                                          ...mapToFirestore(
+                                            {
+                                              'date_time': DateTime.now(),
+                                            },
+                                          ),
+                                        }, teamMessagesRecordReference);
+                                        safeSetState(() {
+                                          _model.commFieldTextController
+                                              ?.clear();
+                                        });
 
-                                      safeSetState(() {});
-                                    },
-                                    child: Icon(
-                                      Icons.send_rounded,
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryText,
-                                      size: 30.0,
+                                        safeSetState(() {});
+                                      },
+                                      child: Icon(
+                                        Icons.send_rounded,
+                                        color: currentUserDocument?.color1,
+                                        size: 30.0,
+                                      ),
                                     ),
                                   ),
                                 ),
                               ],
                             ),
                           ),
-                          Divider(
-                            thickness: 1.0,
-                            color: FlutterFlowTheme.of(context)
-                                .secondaryBackground,
+                          AuthUserStreamWidget(
+                            builder: (context) => Divider(
+                              thickness: 1.0,
+                              color: valueOrDefault<Color>(
+                                currentUserDocument?.color2,
+                                FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
+                              ),
+                            ),
                           ),
                         ],
                       ),
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(5.0, 5.0, 5.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(5.0, 5.0, 5.0, 0.0),
                         child: StreamBuilder<List<TeamMessagesRecord>>(
                           stream: queryTeamMessagesRecord(
-                            parent: widget!.eTeamRef,
+                            parent: widget.eTeamRef,
                             queryBuilder: (teamMessagesRecord) =>
                                 teamMessagesRecord
                                     .where(
                                       'e_event',
-                                      isEqualTo: widget!.eventRef,
+                                      isEqualTo: widget.eventRef,
                                     )
                                     .orderBy('date_time', descending: true),
                           ),
@@ -1740,7 +1727,7 @@ class _ListMessagesBossEventWidgetState
                                     columnCommsTeamMessagesRecordList[
                                         columnCommsIndex];
                                 return Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 5.0, 0.0, 5.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
@@ -1785,7 +1772,7 @@ class _ListMessagesBossEventWidgetState
                                                   children: [
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   10.0,
                                                                   0.0,
@@ -1805,7 +1792,7 @@ class _ListMessagesBossEventWidgetState
                                                             children: [
                                                               Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -1844,7 +1831,7 @@ class _ListMessagesBossEventWidgetState
                                                               ),
                                                               Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             10.0,
                                                                             0.0,
@@ -1879,7 +1866,7 @@ class _ListMessagesBossEventWidgetState
                                                                       extra: <String,
                                                                           dynamic>{
                                                                         kTransitionInfoKey:
-                                                                            TransitionInfo(
+                                                                            const TransitionInfo(
                                                                           hasTransition:
                                                                               true,
                                                                           transitionType:
@@ -1914,11 +1901,11 @@ class _ListMessagesBossEventWidgetState
                                                           ),
                                                           Align(
                                                             alignment:
-                                                                AlignmentDirectional(
+                                                                const AlignmentDirectional(
                                                                     -1.0, 0.0),
                                                             child: Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           10.0,
                                                                           0.0,
@@ -1952,11 +1939,11 @@ class _ListMessagesBossEventWidgetState
                                                     ),
                                                     Align(
                                                       alignment:
-                                                          AlignmentDirectional(
+                                                          const AlignmentDirectional(
                                                               -1.0, 0.0),
                                                       child: Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     30.0,
                                                                     5.0,
@@ -1981,17 +1968,14 @@ class _ListMessagesBossEventWidgetState
                                                     ),
                                                     if (columnCommsTeamMessagesRecord
                                                                 .image !=
-                                                            null &&
-                                                        columnCommsTeamMessagesRecord
-                                                                .image !=
                                                             '')
                                                       Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 -1.0, 0.0),
                                                         child: Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       10.0,
                                                                       0.0,
@@ -2012,7 +1996,7 @@ class _ListMessagesBossEventWidgetState
                                                             ),
                                                             child: Padding(
                                                               padding:
-                                                                  EdgeInsets
+                                                                  const EdgeInsets
                                                                       .all(3.0),
                                                               child: ClipRRect(
                                                                 borderRadius:
@@ -2035,17 +2019,14 @@ class _ListMessagesBossEventWidgetState
                                                       ),
                                                     if (columnCommsTeamMessagesRecord
                                                                 .audio !=
-                                                            null &&
-                                                        columnCommsTeamMessagesRecord
-                                                                .audio !=
                                                             '')
                                                       Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 -1.0, 0.0),
                                                         child: Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       10.0,
                                                                       0.0,
@@ -2062,7 +2043,7 @@ class _ListMessagesBossEventWidgetState
                                                             ),
                                                             child: Padding(
                                                               padding:
-                                                                  EdgeInsets
+                                                                  const EdgeInsets
                                                                       .all(3.0),
                                                               child:
                                                                   FlutterFlowAudioPlayer(
@@ -2119,11 +2100,19 @@ class _ListMessagesBossEventWidgetState
                                                           ),
                                                         ),
                                                       ),
-                                                    Divider(
-                                                      thickness: 1.0,
-                                                      color: FlutterFlowTheme
-                                                              .of(context)
-                                                          .secondaryBackground,
+                                                    AuthUserStreamWidget(
+                                                      builder: (context) =>
+                                                          Divider(
+                                                        thickness: 1.0,
+                                                        color: valueOrDefault<
+                                                            Color>(
+                                                          currentUserDocument
+                                                              ?.color2,
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .secondaryBackground,
+                                                        ),
+                                                      ),
                                                     ),
                                                   ],
                                                 ),
@@ -2143,7 +2132,7 @@ class _ListMessagesBossEventWidgetState
                                                   CrossAxisAlignment.end,
                                               children: [
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           10.0, 0.0, 0.0, 0.0),
                                                   child: Row(
@@ -2155,11 +2144,11 @@ class _ListMessagesBossEventWidgetState
                                                     children: [
                                                       Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 1.0, 0.0),
                                                         child: Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -2194,7 +2183,7 @@ class _ListMessagesBossEventWidgetState
                                                         children: [
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         10.0,
                                                                         0.0,
@@ -2225,7 +2214,7 @@ class _ListMessagesBossEventWidgetState
                                                           ),
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
@@ -2272,11 +2261,11 @@ class _ListMessagesBossEventWidgetState
                                                 ),
                                                 Align(
                                                   alignment:
-                                                      AlignmentDirectional(
+                                                      const AlignmentDirectional(
                                                           1.0, -1.0),
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 5.0,
                                                                 30.0, 5.0),
                                                     child: Text(
@@ -2296,17 +2285,14 @@ class _ListMessagesBossEventWidgetState
                                                 ),
                                                 if (columnCommsTeamMessagesRecord
                                                             .image !=
-                                                        null &&
-                                                    columnCommsTeamMessagesRecord
-                                                            .image !=
                                                         '')
                                                   Align(
                                                     alignment:
-                                                        AlignmentDirectional(
+                                                        const AlignmentDirectional(
                                                             1.0, 0.0),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   10.0,
                                                                   0.0,
@@ -2327,7 +2313,7 @@ class _ListMessagesBossEventWidgetState
                                                         ),
                                                         child: Padding(
                                                           padding:
-                                                              EdgeInsets.all(
+                                                              const EdgeInsets.all(
                                                                   3.0),
                                                           child: ClipRRect(
                                                             borderRadius:
@@ -2349,17 +2335,14 @@ class _ListMessagesBossEventWidgetState
                                                   ),
                                                 if (columnCommsTeamMessagesRecord
                                                             .audio !=
-                                                        null &&
-                                                    columnCommsTeamMessagesRecord
-                                                            .audio !=
                                                         '')
                                                   Align(
                                                     alignment:
-                                                        AlignmentDirectional(
+                                                        const AlignmentDirectional(
                                                             1.0, 0.0),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   10.0,
                                                                   0.0,
@@ -2376,7 +2359,7 @@ class _ListMessagesBossEventWidgetState
                                                         ),
                                                         child: Padding(
                                                           padding:
-                                                              EdgeInsets.all(
+                                                              const EdgeInsets.all(
                                                                   3.0),
                                                           child:
                                                               FlutterFlowAudioPlayer(
@@ -2433,11 +2416,18 @@ class _ListMessagesBossEventWidgetState
                                                       ),
                                                     ),
                                                   ),
-                                                Divider(
-                                                  thickness: 1.0,
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .secondaryBackground,
+                                                AuthUserStreamWidget(
+                                                  builder: (context) => Divider(
+                                                    thickness: 1.0,
+                                                    color:
+                                                        valueOrDefault<Color>(
+                                                      currentUserDocument
+                                                          ?.color2,
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .secondaryBackground,
+                                                    ),
+                                                  ),
                                                 ),
                                               ],
                                             ),

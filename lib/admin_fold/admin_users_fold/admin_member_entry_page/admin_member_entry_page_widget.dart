@@ -5,10 +5,8 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'admin_member_entry_page_model.dart';
 export 'admin_member_entry_page_model.dart';
 
@@ -47,7 +45,7 @@ class _AdminMemberEntryPageWidgetState
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<MyNotificationsRecord>(
-      stream: MyNotificationsRecord.getDocument(widget!.notifRef!),
+      stream: MyNotificationsRecord.getDocument(widget.notifRef!),
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
@@ -77,9 +75,9 @@ class _AdminMemberEntryPageWidgetState
             body: SafeArea(
               top: true,
               child: Align(
-                alignment: AlignmentDirectional(0.0, -1.0),
+                alignment: const AlignmentDirectional(0.0, -1.0),
                 child: Padding(
-                  padding: EdgeInsets.all(10.0),
+                  padding: const EdgeInsets.all(10.0),
                   child: SingleChildScrollView(
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
@@ -100,7 +98,7 @@ class _AdminMemberEntryPageWidgetState
                                     context.pushNamed(
                                       'MenuPage',
                                       extra: <String, dynamic>{
-                                        kTransitionInfoKey: TransitionInfo(
+                                        kTransitionInfoKey: const TransitionInfo(
                                           hasTransition: true,
                                           transitionType:
                                               PageTransitionType.leftToRight,
@@ -117,7 +115,7 @@ class _AdminMemberEntryPageWidgetState
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       10.0, 0.0, 0.0, 0.0),
                                   child: InkWell(
                                     splashColor: Colors.transparent,
@@ -155,7 +153,7 @@ class _AdminMemberEntryPageWidgetState
                               FlutterFlowTheme.of(context).secondaryBackground,
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 10.0, 0.0, 0.0),
                           child: StreamBuilder<UsersRecord>(
                             stream: UsersRecord.getDocument(
@@ -183,7 +181,7 @@ class _AdminMemberEntryPageWidgetState
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 5.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -192,7 +190,7 @@ class _AdminMemberEntryPageWidgetState
                                       children: [
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   5.0, 0.0, 6.0, 0.0),
                                           child: Container(
                                             width: 35.0,
@@ -231,7 +229,7 @@ class _AdminMemberEntryPageWidgetState
                                               }.withoutNulls,
                                               extra: <String, dynamic>{
                                                 kTransitionInfoKey:
-                                                    TransitionInfo(
+                                                    const TransitionInfo(
                                                   hasTransition: true,
                                                   transitionType:
                                                       PageTransitionType
@@ -260,7 +258,7 @@ class _AdminMemberEntryPageWidgetState
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         20.0, 10.0, 30.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -270,19 +268,24 @@ class _AdminMemberEntryPageWidgetState
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Text(
-                                              columnUsersRecord.stock
-                                                  .toString(),
+                                              valueOrDefault<String>(
+                                                functions
+                                                    .limitOf2Decimal(
+                                                        columnUsersRecord.stock)
+                                                    .toString(),
+                                                '900.00',
+                                              ),
                                               maxLines: 1,
                                               style:
                                                   FlutterFlowTheme.of(context)
-                                                      .labelMedium
+                                                      .bodyMedium
                                                       .override(
                                                         fontFamily: 'Poppins',
                                                         letterSpacing: 0.0,
                                                       ),
                                             ),
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(5.0, 0.0, 0.0, 0.0),
                                               child: Container(
                                                 width: 30.0,
@@ -299,7 +302,7 @@ class _AdminMemberEntryPageWidgetState
                                                   ),
                                                 ),
                                                 child: Padding(
-                                                  padding: EdgeInsets.all(2.0),
+                                                  padding: const EdgeInsets.all(2.0),
                                                   child: ClipRRect(
                                                     borderRadius:
                                                         BorderRadius.circular(
@@ -320,7 +323,7 @@ class _AdminMemberEntryPageWidgetState
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         20.0, 10.0, 30.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -330,7 +333,7 @@ class _AdminMemberEntryPageWidgetState
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 0.0, 10.0, 0.0),
                                               child: Text(
@@ -361,7 +364,7 @@ class _AdminMemberEntryPageWidgetState
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         20.0, 10.0, 30.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -371,7 +374,7 @@ class _AdminMemberEntryPageWidgetState
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 0.0, 10.0, 0.0),
                                               child: Text(
@@ -402,7 +405,7 @@ class _AdminMemberEntryPageWidgetState
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         20.0, 10.0, 30.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -412,7 +415,7 @@ class _AdminMemberEntryPageWidgetState
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 0.0, 10.0, 0.0),
                                               child: Text(
@@ -449,9 +452,9 @@ class _AdminMemberEntryPageWidgetState
                           ),
                         ),
                         Align(
-                          alignment: AlignmentDirectional(-1.0, 0.0),
+                          alignment: const AlignmentDirectional(-1.0, 0.0),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 10.0, 20.0, 0.0, 10.0),
                             child: Text(
                               'Souhaite devenir membre du club suivant',
@@ -491,14 +494,14 @@ class _AdminMemberEntryPageWidgetState
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 5.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     children: [
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             5.0, 0.0, 6.0, 0.0),
                                         child: Container(
                                           width: 65.0,
@@ -551,7 +554,7 @@ class _AdminMemberEntryPageWidgetState
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       20.0, 10.0, 30.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -562,7 +565,7 @@ class _AdminMemberEntryPageWidgetState
                                         children: [
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 10.0, 0.0),
                                             child: Text(
                                               valueOrDefault<String>(
@@ -592,7 +595,7 @@ class _AdminMemberEntryPageWidgetState
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       20.0, 10.0, 30.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -603,7 +606,7 @@ class _AdminMemberEntryPageWidgetState
                                         children: [
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 10.0, 0.0),
                                             child: Text(
                                               valueOrDefault<String>(
@@ -637,9 +640,9 @@ class _AdminMemberEntryPageWidgetState
                           },
                         ),
                         Align(
-                          alignment: AlignmentDirectional(-1.0, 0.0),
+                          alignment: const AlignmentDirectional(-1.0, 0.0),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 10.0, 20.0, 0.0, 10.0),
                             child: Text(
                               'Pour la raison suivante',
@@ -654,9 +657,9 @@ class _AdminMemberEntryPageWidgetState
                           ),
                         ),
                         Align(
-                          alignment: AlignmentDirectional(-1.0, 0.0),
+                          alignment: const AlignmentDirectional(-1.0, 0.0),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 10.0, 0.0, 0.0, 0.0),
                             child: Text(
                               adminMemberEntryPageMyNotificationsRecord.text,
@@ -670,9 +673,9 @@ class _AdminMemberEntryPageWidgetState
                           ),
                         ),
                         Align(
-                          alignment: AlignmentDirectional(-1.0, 0.0),
+                          alignment: const AlignmentDirectional(-1.0, 0.0),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 10.0, 10.0, 0.0, 0.0),
                             child: Text(
                               adminMemberEntryPageMyNotificationsRecord
@@ -687,9 +690,9 @@ class _AdminMemberEntryPageWidgetState
                           ),
                         ),
                         Align(
-                          alignment: AlignmentDirectional(-1.0, 0.0),
+                          alignment: const AlignmentDirectional(-1.0, 0.0),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 20.0, 0.0, 0.0),
                             child: Text(
                               dateTimeFormat(
@@ -709,9 +712,9 @@ class _AdminMemberEntryPageWidgetState
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Align(
-                              alignment: AlignmentDirectional(0.0, -1.0),
+                              alignment: const AlignmentDirectional(0.0, -1.0),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 40.0, 0.0, 20.0),
                                 child: FFButtonWidget(
                                   onPressed: () async {
@@ -745,7 +748,7 @@ class _AdminMemberEntryPageWidgetState
                                       ),
                                     });
 
-                                    await widget!.notifRef!
+                                    await widget.notifRef!
                                         .update(createMyNotificationsRecordData(
                                       modSeen: true,
                                     ));
@@ -770,15 +773,15 @@ class _AdminMemberEntryPageWidgetState
                                         },
                                       ),
                                     });
-                                    await widget!.notifRef!.delete();
+                                    await widget.notifRef!.delete();
                                     context.safePop();
                                   },
                                   text: 'Accepter la candidature ',
                                   options: FFButtonOptions(
                                     width: 350.0,
                                     height: 50.0,
-                                    padding: EdgeInsets.all(0.0),
-                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsets.all(0.0),
+                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryText,
@@ -791,7 +794,7 @@ class _AdminMemberEntryPageWidgetState
                                           letterSpacing: 0.0,
                                         ),
                                     elevation: 3.0,
-                                    borderSide: BorderSide(
+                                    borderSide: const BorderSide(
                                       color: Colors.transparent,
                                       width: 1.0,
                                     ),
@@ -807,9 +810,9 @@ class _AdminMemberEntryPageWidgetState
                           ],
                         ),
                         Align(
-                          alignment: AlignmentDirectional(0.0, 0.0),
+                          alignment: const AlignmentDirectional(0.0, 0.0),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 20.0, 0.0, 10.0),
                             child: Text(
                               'Refuser',
@@ -824,9 +827,9 @@ class _AdminMemberEntryPageWidgetState
                           ),
                         ),
                         Align(
-                          alignment: AlignmentDirectional(0.0, 0.0),
+                          alignment: const AlignmentDirectional(0.0, 0.0),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 20.0, 0.0, 10.0),
                             child: Text(
                               'Pour la raison suivante',
@@ -851,7 +854,7 @@ class _AdminMemberEntryPageWidgetState
                             'manque.elements',
                             'fautes.ortographe'
                           ]),
-                          optionLabels: [
+                          optionLabels: const [
                             'Déjà trop de membres',
                             'Vous avez trop de bloqués',
                             'Manque d\'éléments',
@@ -878,7 +881,7 @@ class _AdminMemberEntryPageWidgetState
                           borderColor: FlutterFlowTheme.of(context).alternate,
                           borderWidth: 2.0,
                           borderRadius: 8.0,
-                          margin: EdgeInsetsDirectional.fromSTEB(
+                          margin: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 4.0, 16.0, 4.0),
                           hidesUnderline: true,
                           isOverButton: true,
@@ -886,9 +889,9 @@ class _AdminMemberEntryPageWidgetState
                           isMultiSelect: false,
                         ),
                         Align(
-                          alignment: AlignmentDirectional(0.0, -1.0),
+                          alignment: const AlignmentDirectional(0.0, -1.0),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 40.0, 0.0, 20.0),
                             child: FFButtonWidget(
                               onPressed: () async {
@@ -913,19 +916,19 @@ class _AdminMemberEntryPageWidgetState
                                   ),
                                 });
 
-                                await widget!.notifRef!
+                                await widget.notifRef!
                                     .update(createMyNotificationsRecordData(
                                   modSeen: true,
                                 ));
-                                await widget!.notifRef!.delete();
+                                await widget.notifRef!.delete();
                                 context.safePop();
                               },
                               text: 'Refuser la candidature ',
                               options: FFButtonOptions(
                                 width: 350.0,
                                 height: 50.0,
-                                padding: EdgeInsets.all(0.0),
-                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsets.all(0.0),
+                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: FlutterFlowTheme.of(context).error,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -937,7 +940,7 @@ class _AdminMemberEntryPageWidgetState
                                       letterSpacing: 0.0,
                                     ),
                                 elevation: 3.0,
-                                borderSide: BorderSide(
+                                borderSide: const BorderSide(
                                   color: Colors.transparent,
                                   width: 1.0,
                                 ),

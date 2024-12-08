@@ -6,12 +6,8 @@ import '/flutter_flow/flutter_flow_audio_player.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_video_player.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'post_page_model.dart';
 export 'post_page_model.dart';
 
@@ -51,7 +47,7 @@ class _PostPageWidgetState extends State<PostPageWidget> {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<PostsRecord>(
-      stream: PostsRecord.getDocument(widget!.postRef!),
+      stream: PostsRecord.getDocument(widget.postRef!),
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
@@ -81,9 +77,9 @@ class _PostPageWidgetState extends State<PostPageWidget> {
             body: SafeArea(
               top: true,
               child: Align(
-                alignment: AlignmentDirectional(0.0, -1.0),
+                alignment: const AlignmentDirectional(0.0, -1.0),
                 child: Padding(
-                  padding: EdgeInsets.all(10.0),
+                  padding: const EdgeInsets.all(10.0),
                   child: StreamBuilder<UsersRecord>(
                     stream:
                         UsersRecord.getDocument(postPagePostsRecord.member!),
@@ -135,7 +131,7 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                                   'MenuPage',
                                                   extra: <String, dynamic>{
                                                     kTransitionInfoKey:
-                                                        TransitionInfo(
+                                                        const TransitionInfo(
                                                       hasTransition: true,
                                                       transitionType:
                                                           PageTransitionType
@@ -160,7 +156,7 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                                     false) ==
                                                 true)
                                               Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: AuthUserStreamWidget(
                                                   builder: (context) => Row(
@@ -171,7 +167,7 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                                     children: [
                                                       Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     3.0,
@@ -206,7 +202,7 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   10.0, 0.0, 0.0, 0.0),
                                           child: InkWell(
                                             splashColor: Colors.transparent,
@@ -227,7 +223,7 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   45.0, 0.0, 0.0, 0.0),
                                           child: Text(
                                             'Détails de \nl\'actualité',
@@ -249,7 +245,7 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                         queryBuilder: (myPostsRecord) =>
                                             myPostsRecord.where(
                                           'posts',
-                                          isEqualTo: widget!.postRef,
+                                          isEqualTo: widget.postRef,
                                         ),
                                         singleRecord: true,
                                       ),
@@ -295,7 +291,7 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                                     (teamPostsRecord) =>
                                                         teamPostsRecord.where(
                                                   'posts',
-                                                  isEqualTo: widget!.postRef,
+                                                  isEqualTo: widget.postRef,
                                                 ),
                                                 singleRecord: true,
                                               ),
@@ -357,7 +353,7 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                                           highlightColor: Colors
                                                               .transparent,
                                                           onTap: () async {
-                                                            await widget!
+                                                            await widget
                                                                 .postRef!
                                                                 .delete();
                                                             await rowTeamPostsRecord!
@@ -390,12 +386,27 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                     ),
                                   ],
                                 ),
-                                if (postPagePostsRecord.title != null &&
-                                    postPagePostsRecord.title != '')
+                                if (valueOrDefault(
+                                        currentUserDocument?.stsocialapp, '') ==
+                                    'moderateur')
+                                  AuthUserStreamWidget(
+                                    builder: (context) => Text(
+                                      postPagePostsRecord.reference.id,
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            color: FlutterFlowTheme.of(context)
+                                                .warning,
+                                            letterSpacing: 0.0,
+                                          ),
+                                    ),
+                                  ),
+                                if (postPagePostsRecord.title != '')
                                   Align(
-                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    alignment: const AlignmentDirectional(0.0, 0.0),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 20.0, 0.0, 0.0),
                                       child: Text(
                                         postPagePostsRecord.title,
@@ -409,10 +420,9 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                       ),
                                     ),
                                   ),
-                                if (postPagePostsRecord.image != null &&
-                                    postPagePostsRecord.image != '')
+                                if (postPagePostsRecord.image != '')
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 20.0, 0.0, 20.0),
                                     child: Container(
                                       width: 350.0,
@@ -424,7 +434,7 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                             BorderRadius.circular(18.0),
                                       ),
                                       child: Padding(
-                                        padding: EdgeInsets.all(3.0),
+                                        padding: const EdgeInsets.all(3.0),
                                         child: ClipRRect(
                                           borderRadius:
                                               BorderRadius.circular(15.0),
@@ -438,9 +448,8 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                       ),
                                     ),
                                   ),
-                                if (postPagePostsRecord.video != null &&
-                                    postPagePostsRecord.video != '')
-                                  Padding(
+                                if (postPagePostsRecord.video != '')
+                                  const Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 20.0, 0.0, 0.0),
                                     child: FlutterFlowVideoPlayer(
@@ -454,12 +463,11 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                       allowPlaybackSpeedMenu: false,
                                     ),
                                   ),
-                                if (postPagePostsRecord.audio != null &&
-                                    postPagePostsRecord.audio != '')
+                                if (postPagePostsRecord.audio != '')
                                   Align(
-                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    alignment: const AlignmentDirectional(0.0, 0.0),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 6.0, 0.0, 0.0),
                                       child: Container(
                                         width: 350.0,
@@ -469,7 +477,7 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                               .primaryBackground,
                                         ),
                                         child: Padding(
-                                          padding: EdgeInsets.all(3.0),
+                                          padding: const EdgeInsets.all(3.0),
                                           child: FlutterFlowAudioPlayer(
                                             audio: Audio.network(
                                               postPagePostsRecord.audio,
@@ -513,19 +521,18 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                   ),
                               ],
                             ),
-                            if (postPagePostsRecord.description != null &&
-                                postPagePostsRecord.description != '')
+                            if (postPagePostsRecord.description != '')
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 20.0, 0.0, 20.0),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Align(
                                       alignment:
-                                          AlignmentDirectional(-1.0, 0.0),
+                                          const AlignmentDirectional(-1.0, 0.0),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             10.0, 0.0, 10.0, 0.0),
                                         child: Text(
                                           postPagePostsRecord.description,
@@ -548,9 +555,9 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Align(
-                                    alignment: AlignmentDirectional(-1.0, 0.0),
+                                    alignment: const AlignmentDirectional(-1.0, 0.0),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           20.0, 0.0, 10.0, 0.0),
                                       child: Text(
                                         dateTimeFormat("d/M H:mm",
@@ -566,7 +573,7 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 10.0, 0.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -575,7 +582,7 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                       children: [
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   20.0, 3.0, 0.0, 0.0),
                                           child: Text(
                                             'Ecrit par',
@@ -589,13 +596,13 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   5.0, 0.0, 0.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         5.0, 0.0, 6.0, 0.0),
                                                 child: Container(
@@ -647,7 +654,7 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                                       }.withoutNulls,
                                                       extra: <String, dynamic>{
                                                         kTransitionInfoKey:
-                                                            TransitionInfo(
+                                                            const TransitionInfo(
                                                           hasTransition: true,
                                                           transitionType:
                                                               PageTransitionType
@@ -672,6 +679,9 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                                         .override(
                                                           fontFamily:
                                                               'Montserrat',
+                                                          color:
+                                                              columnUsersRecord
+                                                                  .color1,
                                                           letterSpacing: 0.0,
                                                         ),
                                                   ),
@@ -682,13 +692,14 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                       ],
                                     ),
                                   ),
-                                  Divider(
-                                    thickness: 1.0,
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryBackground,
+                                  AuthUserStreamWidget(
+                                    builder: (context) => Divider(
+                                      thickness: 1.0,
+                                      color: currentUserDocument?.color2,
+                                    ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 10.0, 0.0),
                                     child: SingleChildScrollView(
                                       scrollDirection: Axis.horizontal,
@@ -699,59 +710,62 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                         children: [
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 10.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 5.0, 0.0),
-                                                  child: InkWell(
-                                                    splashColor:
-                                                        Colors.transparent,
-                                                    focusColor:
-                                                        Colors.transparent,
-                                                    hoverColor:
-                                                        Colors.transparent,
-                                                    highlightColor:
-                                                        Colors.transparent,
-                                                    onTap: () async {
-                                                      context.pushNamed(
-                                                        'ListPostMessages',
-                                                        queryParameters: {
-                                                          'postRef':
-                                                              serializeParam(
-                                                            postPagePostsRecord
-                                                                .reference,
-                                                            ParamType
-                                                                .DocumentReference,
-                                                          ),
-                                                        }.withoutNulls,
-                                                        extra: <String,
-                                                            dynamic>{
-                                                          kTransitionInfoKey:
-                                                              TransitionInfo(
-                                                            hasTransition: true,
-                                                            transitionType:
-                                                                PageTransitionType
-                                                                    .bottomToTop,
-                                                            duration: Duration(
-                                                                milliseconds:
-                                                                    400),
-                                                          ),
-                                                        },
-                                                      );
-                                                    },
-                                                    child: Icon(
-                                                      Icons
-                                                          .insert_comment_rounded,
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .secondaryText,
-                                                      size: 30.0,
+                                                  child: AuthUserStreamWidget(
+                                                    builder: (context) =>
+                                                        InkWell(
+                                                      splashColor:
+                                                          Colors.transparent,
+                                                      focusColor:
+                                                          Colors.transparent,
+                                                      hoverColor:
+                                                          Colors.transparent,
+                                                      highlightColor:
+                                                          Colors.transparent,
+                                                      onTap: () async {
+                                                        context.pushNamed(
+                                                          'ListPostMessages',
+                                                          queryParameters: {
+                                                            'postRef':
+                                                                serializeParam(
+                                                              postPagePostsRecord
+                                                                  .reference,
+                                                              ParamType
+                                                                  .DocumentReference,
+                                                            ),
+                                                          }.withoutNulls,
+                                                          extra: <String,
+                                                              dynamic>{
+                                                            kTransitionInfoKey:
+                                                                const TransitionInfo(
+                                                              hasTransition:
+                                                                  true,
+                                                              transitionType:
+                                                                  PageTransitionType
+                                                                      .bottomToTop,
+                                                              duration: Duration(
+                                                                  milliseconds:
+                                                                      400),
+                                                            ),
+                                                          },
+                                                        );
+                                                      },
+                                                      child: Icon(
+                                                        Icons
+                                                            .insert_comment_rounded,
+                                                        color:
+                                                            currentUserDocument
+                                                                ?.color1,
+                                                        size: 30.0,
+                                                      ),
                                                     ),
                                                   ),
                                                 ),
@@ -776,7 +790,7 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     5.0, 0.0, 10.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -786,78 +800,80 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                                         currentUserReference))
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 5.0, 0.0),
-                                                    child: InkWell(
-                                                      splashColor:
-                                                          Colors.transparent,
-                                                      focusColor:
-                                                          Colors.transparent,
-                                                      hoverColor:
-                                                          Colors.transparent,
-                                                      highlightColor:
-                                                          Colors.transparent,
-                                                      onTap: () async {
-                                                        await widget!.postRef!
-                                                            .update({
-                                                          ...mapToFirestore(
-                                                            {
-                                                              'num_likes':
-                                                                  FieldValue
-                                                                      .increment(
-                                                                          1),
-                                                              'likes': FieldValue
-                                                                  .arrayUnion([
-                                                                currentUserReference
-                                                              ]),
-                                                            },
-                                                          ),
-                                                        });
+                                                    child: AuthUserStreamWidget(
+                                                      builder: (context) =>
+                                                          InkWell(
+                                                        splashColor:
+                                                            Colors.transparent,
+                                                        focusColor:
+                                                            Colors.transparent,
+                                                        hoverColor:
+                                                            Colors.transparent,
+                                                        highlightColor:
+                                                            Colors.transparent,
+                                                        onTap: () async {
+                                                          await widget.postRef!
+                                                              .update({
+                                                            ...mapToFirestore(
+                                                              {
+                                                                'num_likes':
+                                                                    FieldValue
+                                                                        .increment(
+                                                                            1),
+                                                                'likes': FieldValue
+                                                                    .arrayUnion([
+                                                                  currentUserReference
+                                                                ]),
+                                                              },
+                                                            ),
+                                                          });
 
-                                                        await MyNotificationsRecord
-                                                                .createDoc(
-                                                                    postPagePostsRecord
-                                                                        .member!)
-                                                            .set({
-                                                          ...createMyNotificationsRecordData(
-                                                            text:
-                                                                'aime votre actualité :',
-                                                            userRef:
-                                                                currentUserReference,
-                                                            seen: false,
-                                                            post:
-                                                                widget!.postRef,
-                                                          ),
-                                                          ...mapToFirestore(
-                                                            {
-                                                              'date_time':
-                                                                  FieldValue
-                                                                      .serverTimestamp(),
-                                                            },
-                                                          ),
-                                                        });
+                                                          await MyNotificationsRecord
+                                                                  .createDoc(
+                                                                      postPagePostsRecord
+                                                                          .member!)
+                                                              .set({
+                                                            ...createMyNotificationsRecordData(
+                                                              text:
+                                                                  'aime votre actualité :',
+                                                              userRef:
+                                                                  currentUserReference,
+                                                              seen: false,
+                                                              post: widget
+                                                                  .postRef,
+                                                            ),
+                                                            ...mapToFirestore(
+                                                              {
+                                                                'date_time':
+                                                                    FieldValue
+                                                                        .serverTimestamp(),
+                                                              },
+                                                            ),
+                                                          });
 
-                                                        await columnUsersRecord
-                                                            .reference
-                                                            .update({
-                                                          ...mapToFirestore(
-                                                            {
-                                                              'stock': FieldValue
-                                                                  .increment(
-                                                                      0.5),
-                                                            },
-                                                          ),
-                                                        });
-                                                      },
-                                                      child: Icon(
-                                                        Icons
-                                                            .favorite_border_rounded,
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .error,
-                                                        size: 30.0,
+                                                          await columnUsersRecord
+                                                              .reference
+                                                              .update({
+                                                            ...mapToFirestore(
+                                                              {
+                                                                'stock': FieldValue
+                                                                    .increment(
+                                                                        0.5),
+                                                              },
+                                                            ),
+                                                          });
+                                                        },
+                                                        child: Icon(
+                                                          Icons
+                                                              .favorite_border_rounded,
+                                                          color:
+                                                              currentUserDocument
+                                                                  ?.color1,
+                                                          size: 30.0,
+                                                        ),
                                                       ),
                                                     ),
                                                   ),
@@ -866,54 +882,57 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                                         currentUserReference))
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 5.0, 0.0),
-                                                    child: InkWell(
-                                                      splashColor:
-                                                          Colors.transparent,
-                                                      focusColor:
-                                                          Colors.transparent,
-                                                      hoverColor:
-                                                          Colors.transparent,
-                                                      highlightColor:
-                                                          Colors.transparent,
-                                                      onTap: () async {
-                                                        await widget!.postRef!
-                                                            .update({
-                                                          ...mapToFirestore(
-                                                            {
-                                                              'num_likes':
-                                                                  FieldValue
-                                                                      .increment(
-                                                                          -(1)),
-                                                              'likes': FieldValue
-                                                                  .arrayRemove([
-                                                                currentUserReference
-                                                              ]),
-                                                            },
-                                                          ),
-                                                        });
+                                                    child: AuthUserStreamWidget(
+                                                      builder: (context) =>
+                                                          InkWell(
+                                                        splashColor:
+                                                            Colors.transparent,
+                                                        focusColor:
+                                                            Colors.transparent,
+                                                        hoverColor:
+                                                            Colors.transparent,
+                                                        highlightColor:
+                                                            Colors.transparent,
+                                                        onTap: () async {
+                                                          await widget.postRef!
+                                                              .update({
+                                                            ...mapToFirestore(
+                                                              {
+                                                                'num_likes':
+                                                                    FieldValue
+                                                                        .increment(
+                                                                            -(1)),
+                                                                'likes': FieldValue
+                                                                    .arrayRemove([
+                                                                  currentUserReference
+                                                                ]),
+                                                              },
+                                                            ),
+                                                          });
 
-                                                        await columnUsersRecord
-                                                            .reference
-                                                            .update({
-                                                          ...mapToFirestore(
-                                                            {
-                                                              'stock': FieldValue
-                                                                  .increment(
-                                                                      -(0.5)),
-                                                            },
-                                                          ),
-                                                        });
-                                                      },
-                                                      child: Icon(
-                                                        Icons.favorite_rounded,
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .error,
-                                                        size: 30.0,
+                                                          await columnUsersRecord
+                                                              .reference
+                                                              .update({
+                                                            ...mapToFirestore(
+                                                              {
+                                                                'stock': FieldValue
+                                                                    .increment(
+                                                                        -(0.5)),
+                                                              },
+                                                            ),
+                                                          });
+                                                        },
+                                                        child: Icon(
+                                                          Icons
+                                                              .favorite_rounded,
+                                                          color:
+                                                              currentUserDocument
+                                                                  ?.color1,
+                                                          size: 30.0,
+                                                        ),
                                                       ),
                                                     ),
                                                   ),
@@ -937,7 +956,7 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     5.0, 0.0, 10.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -948,79 +967,81 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                                         currentUserReference))
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 5.0, 0.0),
-                                                    child: InkWell(
-                                                      splashColor:
-                                                          Colors.transparent,
-                                                      focusColor:
-                                                          Colors.transparent,
-                                                      hoverColor:
-                                                          Colors.transparent,
-                                                      highlightColor:
-                                                          Colors.transparent,
-                                                      onTap: () async {
-                                                        await widget!.postRef!
-                                                            .update({
-                                                          ...mapToFirestore(
-                                                            {
-                                                              'dislikes':
-                                                                  FieldValue
-                                                                      .arrayUnion([
-                                                                currentUserReference
-                                                              ]),
-                                                              'num_dislikes':
-                                                                  FieldValue
-                                                                      .increment(
-                                                                          1),
-                                                            },
-                                                          ),
-                                                        });
+                                                    child: AuthUserStreamWidget(
+                                                      builder: (context) =>
+                                                          InkWell(
+                                                        splashColor:
+                                                            Colors.transparent,
+                                                        focusColor:
+                                                            Colors.transparent,
+                                                        hoverColor:
+                                                            Colors.transparent,
+                                                        highlightColor:
+                                                            Colors.transparent,
+                                                        onTap: () async {
+                                                          await widget.postRef!
+                                                              .update({
+                                                            ...mapToFirestore(
+                                                              {
+                                                                'dislikes':
+                                                                    FieldValue
+                                                                        .arrayUnion([
+                                                                  currentUserReference
+                                                                ]),
+                                                                'num_dislikes':
+                                                                    FieldValue
+                                                                        .increment(
+                                                                            1),
+                                                              },
+                                                            ),
+                                                          });
 
-                                                        await MyNotificationsRecord
-                                                                .createDoc(
-                                                                    postPagePostsRecord
-                                                                        .member!)
-                                                            .set({
-                                                          ...createMyNotificationsRecordData(
-                                                            text:
-                                                                'a réagis à votre actualité :',
-                                                            userRef:
-                                                                currentUserReference,
-                                                            seen: false,
-                                                            post:
-                                                                widget!.postRef,
-                                                          ),
-                                                          ...mapToFirestore(
-                                                            {
-                                                              'date_time':
-                                                                  FieldValue
-                                                                      .serverTimestamp(),
-                                                            },
-                                                          ),
-                                                        });
+                                                          await MyNotificationsRecord
+                                                                  .createDoc(
+                                                                      postPagePostsRecord
+                                                                          .member!)
+                                                              .set({
+                                                            ...createMyNotificationsRecordData(
+                                                              text:
+                                                                  'a réagis à votre actualité :',
+                                                              userRef:
+                                                                  currentUserReference,
+                                                              seen: false,
+                                                              post: widget
+                                                                  .postRef,
+                                                            ),
+                                                            ...mapToFirestore(
+                                                              {
+                                                                'date_time':
+                                                                    FieldValue
+                                                                        .serverTimestamp(),
+                                                              },
+                                                            ),
+                                                          });
 
-                                                        await columnUsersRecord
-                                                            .reference
-                                                            .update({
-                                                          ...mapToFirestore(
-                                                            {
-                                                              'stock': FieldValue
-                                                                  .increment(
-                                                                      0.5),
-                                                            },
-                                                          ),
-                                                        });
-                                                      },
-                                                      child: Icon(
-                                                        Icons
-                                                            .heart_broken_outlined,
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .error,
-                                                        size: 30.0,
+                                                          await columnUsersRecord
+                                                              .reference
+                                                              .update({
+                                                            ...mapToFirestore(
+                                                              {
+                                                                'stock': FieldValue
+                                                                    .increment(
+                                                                        0.5),
+                                                              },
+                                                            ),
+                                                          });
+                                                        },
+                                                        child: Icon(
+                                                          Icons
+                                                              .heart_broken_outlined,
+                                                          color:
+                                                              currentUserDocument
+                                                                  ?.color1,
+                                                          size: 30.0,
+                                                        ),
                                                       ),
                                                     ),
                                                   ),
@@ -1029,55 +1050,58 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                                         currentUserReference))
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 5.0, 0.0),
-                                                    child: InkWell(
-                                                      splashColor:
-                                                          Colors.transparent,
-                                                      focusColor:
-                                                          Colors.transparent,
-                                                      hoverColor:
-                                                          Colors.transparent,
-                                                      highlightColor:
-                                                          Colors.transparent,
-                                                      onTap: () async {
-                                                        await widget!.postRef!
-                                                            .update({
-                                                          ...mapToFirestore(
-                                                            {
-                                                              'dislikes': FieldValue
-                                                                  .arrayRemove([
-                                                                currentUserReference
-                                                              ]),
-                                                              'num_dislikes':
-                                                                  FieldValue
-                                                                      .increment(
-                                                                          -(1)),
-                                                            },
-                                                          ),
-                                                        });
+                                                    child: AuthUserStreamWidget(
+                                                      builder: (context) =>
+                                                          InkWell(
+                                                        splashColor:
+                                                            Colors.transparent,
+                                                        focusColor:
+                                                            Colors.transparent,
+                                                        hoverColor:
+                                                            Colors.transparent,
+                                                        highlightColor:
+                                                            Colors.transparent,
+                                                        onTap: () async {
+                                                          await widget.postRef!
+                                                              .update({
+                                                            ...mapToFirestore(
+                                                              {
+                                                                'dislikes':
+                                                                    FieldValue
+                                                                        .arrayRemove([
+                                                                  currentUserReference
+                                                                ]),
+                                                                'num_dislikes':
+                                                                    FieldValue
+                                                                        .increment(
+                                                                            -(1)),
+                                                              },
+                                                            ),
+                                                          });
 
-                                                        await columnUsersRecord
-                                                            .reference
-                                                            .update({
-                                                          ...mapToFirestore(
-                                                            {
-                                                              'stock': FieldValue
-                                                                  .increment(
-                                                                      -(0.5)),
-                                                            },
-                                                          ),
-                                                        });
-                                                      },
-                                                      child: Icon(
-                                                        Icons
-                                                            .heart_broken_rounded,
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .error,
-                                                        size: 30.0,
+                                                          await columnUsersRecord
+                                                              .reference
+                                                              .update({
+                                                            ...mapToFirestore(
+                                                              {
+                                                                'stock': FieldValue
+                                                                    .increment(
+                                                                        -(0.5)),
+                                                              },
+                                                            ),
+                                                          });
+                                                        },
+                                                        child: Icon(
+                                                          Icons
+                                                              .heart_broken_rounded,
+                                                          color:
+                                                              currentUserDocument
+                                                                  ?.color1,
+                                                          size: 30.0,
+                                                        ),
                                                       ),
                                                     ),
                                                   ),
@@ -1102,7 +1126,7 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     5.0, 0.0, 0.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -1113,7 +1137,7 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                                         currentUserReference))
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 5.0, 0.0),
                                                     child: InkWell(
@@ -1131,7 +1155,7 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                                           queryParameters: {
                                                             'postRef':
                                                                 serializeParam(
-                                                              widget!.postRef,
+                                                              widget.postRef,
                                                               ParamType
                                                                   .DocumentReference,
                                                             ),
@@ -1165,7 +1189,7 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                                         currentUserReference))
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 5.0, 0.0),
                                                     child: Container(
@@ -1205,13 +1229,14 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                       ),
                                     ),
                                   ),
-                                  Divider(
-                                    thickness: 1.0,
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryBackground,
+                                  AuthUserStreamWidget(
+                                    builder: (context) => Divider(
+                                      thickness: 1.0,
+                                      color: currentUserDocument?.color2,
+                                    ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         5.0, 0.0, 5.0, 20.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -1220,7 +1245,7 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 5.0, 0.0),
                                               child: Icon(
                                                 Icons.mic_rounded,
@@ -1231,108 +1256,111 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                               ),
                                             ),
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 0.0, 10.0, 0.0),
-                                              child: InkWell(
-                                                splashColor: Colors.transparent,
-                                                focusColor: Colors.transparent,
-                                                hoverColor: Colors.transparent,
-                                                highlightColor:
-                                                    Colors.transparent,
-                                                onTap: () async {
-                                                  final selectedMedia =
-                                                      await selectMediaWithSourceBottomSheet(
-                                                    context: context,
-                                                    maxWidth: 1000.00,
-                                                    maxHeight: 1000.00,
-                                                    allowPhoto: true,
-                                                  );
-                                                  if (selectedMedia != null &&
-                                                      selectedMedia.every((m) =>
-                                                          validateFileFormat(
-                                                              m.storagePath,
-                                                              context))) {
-                                                    safeSetState(() =>
+                                              child: AuthUserStreamWidget(
+                                                builder: (context) => InkWell(
+                                                  splashColor:
+                                                      Colors.transparent,
+                                                  focusColor:
+                                                      Colors.transparent,
+                                                  hoverColor:
+                                                      Colors.transparent,
+                                                  highlightColor:
+                                                      Colors.transparent,
+                                                  onTap: () async {
+                                                    final selectedMedia =
+                                                        await selectMediaWithSourceBottomSheet(
+                                                      context: context,
+                                                      maxWidth: 1000.00,
+                                                      maxHeight: 1000.00,
+                                                      allowPhoto: true,
+                                                    );
+                                                    if (selectedMedia != null &&
+                                                        selectedMedia.every((m) =>
+                                                            validateFileFormat(
+                                                                m.storagePath,
+                                                                context))) {
+                                                      safeSetState(() => _model
+                                                              .isDataUploading =
+                                                          true);
+                                                      var selectedUploadedFiles =
+                                                          <FFUploadedFile>[];
+
+                                                      var downloadUrls =
+                                                          <String>[];
+                                                      try {
+                                                        selectedUploadedFiles =
+                                                            selectedMedia
+                                                                .map((m) =>
+                                                                    FFUploadedFile(
+                                                                      name: m
+                                                                          .storagePath
+                                                                          .split(
+                                                                              '/')
+                                                                          .last,
+                                                                      bytes: m
+                                                                          .bytes,
+                                                                      height: m
+                                                                          .dimensions
+                                                                          ?.height,
+                                                                      width: m
+                                                                          .dimensions
+                                                                          ?.width,
+                                                                      blurHash:
+                                                                          m.blurHash,
+                                                                    ))
+                                                                .toList();
+
+                                                        downloadUrls =
+                                                            (await Future.wait(
+                                                          selectedMedia.map(
+                                                            (m) async =>
+                                                                await uploadData(
+                                                                    m.storagePath,
+                                                                    m.bytes),
+                                                          ),
+                                                        ))
+                                                                .where((u) =>
+                                                                    u != null)
+                                                                .map((u) => u!)
+                                                                .toList();
+                                                      } finally {
                                                         _model.isDataUploading =
-                                                            true);
-                                                    var selectedUploadedFiles =
-                                                        <FFUploadedFile>[];
-
-                                                    var downloadUrls =
-                                                        <String>[];
-                                                    try {
-                                                      selectedUploadedFiles =
-                                                          selectedMedia
-                                                              .map((m) =>
-                                                                  FFUploadedFile(
-                                                                    name: m
-                                                                        .storagePath
-                                                                        .split(
-                                                                            '/')
-                                                                        .last,
-                                                                    bytes:
-                                                                        m.bytes,
-                                                                    height: m
-                                                                        .dimensions
-                                                                        ?.height,
-                                                                    width: m
-                                                                        .dimensions
-                                                                        ?.width,
-                                                                    blurHash: m
-                                                                        .blurHash,
-                                                                  ))
-                                                              .toList();
-
-                                                      downloadUrls =
-                                                          (await Future.wait(
-                                                        selectedMedia.map(
-                                                          (m) async =>
-                                                              await uploadData(
-                                                                  m.storagePath,
-                                                                  m.bytes),
-                                                        ),
-                                                      ))
-                                                              .where((u) =>
-                                                                  u != null)
-                                                              .map((u) => u!)
-                                                              .toList();
-                                                    } finally {
-                                                      _model.isDataUploading =
-                                                          false;
+                                                            false;
+                                                      }
+                                                      if (selectedUploadedFiles
+                                                                  .length ==
+                                                              selectedMedia
+                                                                  .length &&
+                                                          downloadUrls.length ==
+                                                              selectedMedia
+                                                                  .length) {
+                                                        safeSetState(() {
+                                                          _model.uploadedLocalFile =
+                                                              selectedUploadedFiles
+                                                                  .first;
+                                                          _model.uploadedFileUrl =
+                                                              downloadUrls
+                                                                  .first;
+                                                        });
+                                                      } else {
+                                                        safeSetState(() {});
+                                                        return;
+                                                      }
                                                     }
-                                                    if (selectedUploadedFiles
-                                                                .length ==
-                                                            selectedMedia
-                                                                .length &&
-                                                        downloadUrls.length ==
-                                                            selectedMedia
-                                                                .length) {
-                                                      safeSetState(() {
-                                                        _model.uploadedLocalFile =
-                                                            selectedUploadedFiles
-                                                                .first;
-                                                        _model.uploadedFileUrl =
-                                                            downloadUrls.first;
-                                                      });
-                                                    } else {
-                                                      safeSetState(() {});
-                                                      return;
-                                                    }
-                                                  }
-                                                },
-                                                child: Icon(
-                                                  Icons.image_search_rounded,
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .secondaryText,
-                                                  size: 30.0,
+                                                  },
+                                                  child: Icon(
+                                                    Icons.image_search_rounded,
+                                                    color: currentUserDocument
+                                                        ?.color1,
+                                                    size: 30.0,
+                                                  ),
                                                 ),
                                               ),
                                             ),
-                                            if (_model.uploadedFileUrl !=
-                                                    null &&
-                                                _model.uploadedFileUrl != '')
+                                            if (_model.uploadedFileUrl != '')
                                               Container(
                                                 width: 50.0,
                                                 height: 40.0,
@@ -1345,7 +1373,7 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                                           6.0),
                                                 ),
                                                 child: Padding(
-                                                  padding: EdgeInsets.all(2.0),
+                                                  padding: const EdgeInsets.all(2.0),
                                                   child: ClipRRect(
                                                     borderRadius:
                                                         BorderRadius.circular(
@@ -1364,235 +1392,258 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                         Expanded(
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     8.0, 0.0, 8.0, 0.0),
-                                            child: TextFormField(
-                                              controller: _model
-                                                  .commFieldTextController,
-                                              focusNode:
-                                                  _model.commFieldFocusNode,
-                                              autofocus: false,
-                                              obscureText: false,
-                                              decoration: InputDecoration(
-                                                labelStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                hintText:
-                                                    '.......................',
-                                                hintStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyLarge
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                enabledBorder:
-                                                    UnderlineInputBorder(
-                                                  borderSide: BorderSide(
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .secondaryBackground,
-                                                    width: 2.0,
-                                                  ),
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          8.0),
-                                                ),
-                                                focusedBorder:
-                                                    UnderlineInputBorder(
-                                                  borderSide: BorderSide(
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .primary,
-                                                    width: 2.0,
-                                                  ),
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          8.0),
-                                                ),
-                                                errorBorder:
-                                                    UnderlineInputBorder(
-                                                  borderSide: BorderSide(
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .error,
-                                                    width: 2.0,
-                                                  ),
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          8.0),
-                                                ),
-                                                focusedErrorBorder:
-                                                    UnderlineInputBorder(
-                                                  borderSide: BorderSide(
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .error,
-                                                    width: 2.0,
-                                                  ),
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          8.0),
-                                                ),
-                                              ),
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
+                                            child: AuthUserStreamWidget(
+                                              builder: (context) =>
+                                                  TextFormField(
+                                                controller: _model
+                                                    .commFieldTextController,
+                                                focusNode:
+                                                    _model.commFieldFocusNode,
+                                                autofocus: false,
+                                                obscureText: false,
+                                                decoration: InputDecoration(
+                                                  labelStyle: FlutterFlowTheme
+                                                          .of(context)
+                                                      .labelMedium
                                                       .override(
                                                         fontFamily: 'Poppins',
                                                         letterSpacing: 0.0,
                                                       ),
-                                              validator: _model
-                                                  .commFieldTextControllerValidator
-                                                  .asValidator(context),
+                                                  hintText:
+                                                      '.......................',
+                                                  hintStyle: FlutterFlowTheme
+                                                          .of(context)
+                                                      .bodyLarge
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                  enabledBorder:
+                                                      UnderlineInputBorder(
+                                                    borderSide: BorderSide(
+                                                      color:
+                                                          valueOrDefault<Color>(
+                                                        currentUserDocument
+                                                            ?.color2,
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .secondaryBackground,
+                                                      ),
+                                                      width: 2.0,
+                                                    ),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            8.0),
+                                                  ),
+                                                  focusedBorder:
+                                                      UnderlineInputBorder(
+                                                    borderSide: BorderSide(
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primary,
+                                                      width: 2.0,
+                                                    ),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            8.0),
+                                                  ),
+                                                  errorBorder:
+                                                      UnderlineInputBorder(
+                                                    borderSide: BorderSide(
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .error,
+                                                      width: 2.0,
+                                                    ),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            8.0),
+                                                  ),
+                                                  focusedErrorBorder:
+                                                      UnderlineInputBorder(
+                                                    borderSide: BorderSide(
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .error,
+                                                      width: 2.0,
+                                                    ),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            8.0),
+                                                  ),
+                                                ),
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                validator: _model
+                                                    .commFieldTextControllerValidator
+                                                    .asValidator(context),
+                                              ),
                                             ),
                                           ),
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   10.0, 0.0, 5.0, 0.0),
-                                          child: InkWell(
-                                            splashColor: Colors.transparent,
-                                            focusColor: Colors.transparent,
-                                            hoverColor: Colors.transparent,
-                                            highlightColor: Colors.transparent,
-                                            onTap: () async {
-                                              var postMessagesRecordReference =
-                                                  PostMessagesRecord.createDoc(
-                                                      widget!.postRef!);
-                                              await postMessagesRecordReference
-                                                  .set({
-                                                ...createPostMessagesRecordData(
-                                                  commUser:
-                                                      currentUserReference,
-                                                  text: _model
-                                                      .commFieldTextController
-                                                      .text,
-                                                  image: _model.uploadedFileUrl,
-                                                  moderator: postPagePostsRecord
-                                                      .moderator,
-                                                ),
-                                                ...mapToFirestore(
-                                                  {
-                                                    'created_time': FieldValue
-                                                        .serverTimestamp(),
-                                                  },
-                                                ),
-                                              });
-                                              _model.commentRef =
-                                                  PostMessagesRecord
-                                                      .getDocumentFromData({
-                                                ...createPostMessagesRecordData(
-                                                  commUser:
-                                                      currentUserReference,
-                                                  text: _model
-                                                      .commFieldTextController
-                                                      .text,
-                                                  image: _model.uploadedFileUrl,
-                                                  moderator: postPagePostsRecord
-                                                      .moderator,
-                                                ),
-                                                ...mapToFirestore(
-                                                  {
-                                                    'created_time':
-                                                        DateTime.now(),
-                                                  },
-                                                ),
-                                              }, postMessagesRecordReference);
-                                              triggerPushNotification(
-                                                notificationTitle:
-                                                    currentUserDisplayName,
-                                                notificationText:
-                                                    'A commenté votre actualité.',
-                                                notificationImageUrl:
-                                                    currentUserPhoto,
-                                                userRefs: [
-                                                  postPagePostsRecord.member!
-                                                ],
-                                                initialPageName: 'MyNotifsList',
-                                                parameterData: {},
-                                              );
-
-                                              await widget!.postRef!.update({
-                                                ...mapToFirestore(
-                                                  {
-                                                    'num_comments':
-                                                        FieldValue.increment(1),
-                                                  },
-                                                ),
-                                              });
-
-                                              await MyNotificationsRecord
-                                                      .createDoc(
-                                                          postPagePostsRecord
-                                                              .member!)
-                                                  .set({
-                                                ...createMyNotificationsRecordData(
-                                                  text:
-                                                      'a commenté votre actualité :',
-                                                  userRef: currentUserReference,
-                                                  seen: false,
-                                                  post: widget!.postRef,
-                                                ),
-                                                ...mapToFirestore(
-                                                  {
-                                                    'date_time': FieldValue
-                                                        .serverTimestamp(),
-                                                  },
-                                                ),
-                                              });
-
-                                              context.pushNamed(
-                                                'ListPostMessages',
-                                                queryParameters: {
-                                                  'postRef': serializeParam(
-                                                    widget!.postRef,
-                                                    ParamType.DocumentReference,
+                                          child: AuthUserStreamWidget(
+                                            builder: (context) => InkWell(
+                                              splashColor: Colors.transparent,
+                                              focusColor: Colors.transparent,
+                                              hoverColor: Colors.transparent,
+                                              highlightColor:
+                                                  Colors.transparent,
+                                              onTap: () async {
+                                                var postMessagesRecordReference =
+                                                    PostMessagesRecord
+                                                        .createDoc(
+                                                            widget.postRef!);
+                                                await postMessagesRecordReference
+                                                    .set({
+                                                  ...createPostMessagesRecordData(
+                                                    commUser:
+                                                        currentUserReference,
+                                                    text: _model
+                                                        .commFieldTextController
+                                                        .text,
+                                                    image:
+                                                        _model.uploadedFileUrl,
+                                                    moderator:
+                                                        postPagePostsRecord
+                                                            .moderator,
                                                   ),
-                                                }.withoutNulls,
-                                                extra: <String, dynamic>{
-                                                  kTransitionInfoKey:
-                                                      TransitionInfo(
-                                                    hasTransition: true,
-                                                    transitionType:
-                                                        PageTransitionType
-                                                            .scale,
-                                                    alignment:
-                                                        Alignment.bottomCenter,
-                                                    duration: Duration(
-                                                        milliseconds: 600),
+                                                  ...mapToFirestore(
+                                                    {
+                                                      'created_time': FieldValue
+                                                          .serverTimestamp(),
+                                                    },
                                                   ),
-                                                },
-                                              );
+                                                });
+                                                _model.commentRef =
+                                                    PostMessagesRecord
+                                                        .getDocumentFromData({
+                                                  ...createPostMessagesRecordData(
+                                                    commUser:
+                                                        currentUserReference,
+                                                    text: _model
+                                                        .commFieldTextController
+                                                        .text,
+                                                    image:
+                                                        _model.uploadedFileUrl,
+                                                    moderator:
+                                                        postPagePostsRecord
+                                                            .moderator,
+                                                  ),
+                                                  ...mapToFirestore(
+                                                    {
+                                                      'created_time':
+                                                          DateTime.now(),
+                                                    },
+                                                  ),
+                                                }, postMessagesRecordReference);
+                                                triggerPushNotification(
+                                                  notificationTitle:
+                                                      currentUserDisplayName,
+                                                  notificationText:
+                                                      'A commenté votre actualité.',
+                                                  notificationImageUrl:
+                                                      currentUserPhoto,
+                                                  userRefs: [
+                                                    postPagePostsRecord.member!
+                                                  ],
+                                                  initialPageName:
+                                                      'MyNotifsList',
+                                                  parameterData: {},
+                                                );
 
-                                              await columnUsersRecord.reference
-                                                  .update({
-                                                ...mapToFirestore(
-                                                  {
-                                                    'stock':
-                                                        FieldValue.increment(
-                                                            0.5),
+                                                await widget.postRef!.update({
+                                                  ...mapToFirestore(
+                                                    {
+                                                      'num_comments':
+                                                          FieldValue.increment(
+                                                              1),
+                                                    },
+                                                  ),
+                                                });
+
+                                                await MyNotificationsRecord
+                                                        .createDoc(
+                                                            postPagePostsRecord
+                                                                .member!)
+                                                    .set({
+                                                  ...createMyNotificationsRecordData(
+                                                    text:
+                                                        'a commenté votre actualité :',
+                                                    userRef:
+                                                        currentUserReference,
+                                                    seen: false,
+                                                    post: widget.postRef,
+                                                  ),
+                                                  ...mapToFirestore(
+                                                    {
+                                                      'date_time': FieldValue
+                                                          .serverTimestamp(),
+                                                    },
+                                                  ),
+                                                });
+
+                                                context.pushNamed(
+                                                  'ListPostMessages',
+                                                  queryParameters: {
+                                                    'postRef': serializeParam(
+                                                      widget.postRef,
+                                                      ParamType
+                                                          .DocumentReference,
+                                                    ),
+                                                  }.withoutNulls,
+                                                  extra: <String, dynamic>{
+                                                    kTransitionInfoKey:
+                                                        const TransitionInfo(
+                                                      hasTransition: true,
+                                                      transitionType:
+                                                          PageTransitionType
+                                                              .scale,
+                                                      alignment: Alignment
+                                                          .bottomCenter,
+                                                      duration: Duration(
+                                                          milliseconds: 600),
+                                                    ),
                                                   },
-                                                ),
-                                              });
-                                              safeSetState(() {
-                                                _model.commFieldTextController
-                                                    ?.clear();
-                                              });
+                                                );
 
-                                              safeSetState(() {});
-                                            },
-                                            child: Icon(
-                                              Icons.send_rounded,
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondaryText,
-                                              size: 30.0,
+                                                await columnUsersRecord
+                                                    .reference
+                                                    .update({
+                                                  ...mapToFirestore(
+                                                    {
+                                                      'stock':
+                                                          FieldValue.increment(
+                                                              0.5),
+                                                    },
+                                                  ),
+                                                });
+                                                safeSetState(() {
+                                                  _model.commFieldTextController
+                                                      ?.clear();
+                                                });
+
+                                                safeSetState(() {});
+                                              },
+                                              child: Icon(
+                                                Icons.send_rounded,
+                                                color:
+                                                    currentUserDocument?.color1,
+                                                size: 30.0,
+                                              ),
                                             ),
                                           ),
                                         ),

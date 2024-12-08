@@ -4,10 +4,7 @@ import '/backend/push_notifications/push_notifications_util.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'member_entry_page_model.dart';
 export 'member_entry_page_model.dart';
 
@@ -47,7 +44,7 @@ class _MemberEntryPageWidgetState extends State<MemberEntryPageWidget> {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<TeamsRecord>(
-      stream: TeamsRecord.getDocument(widget!.teamRef!),
+      stream: TeamsRecord.getDocument(widget.teamRef!),
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
@@ -77,9 +74,9 @@ class _MemberEntryPageWidgetState extends State<MemberEntryPageWidget> {
             body: SafeArea(
               top: true,
               child: Align(
-                alignment: AlignmentDirectional(0.0, -1.0),
+                alignment: const AlignmentDirectional(0.0, -1.0),
                 child: Padding(
-                  padding: EdgeInsets.all(10.0),
+                  padding: const EdgeInsets.all(10.0),
                   child: SingleChildScrollView(
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
@@ -100,7 +97,7 @@ class _MemberEntryPageWidgetState extends State<MemberEntryPageWidget> {
                                     context.pushNamed(
                                       'MenuPage',
                                       extra: <String, dynamic>{
-                                        kTransitionInfoKey: TransitionInfo(
+                                        kTransitionInfoKey: const TransitionInfo(
                                           hasTransition: true,
                                           transitionType:
                                               PageTransitionType.leftToRight,
@@ -117,7 +114,7 @@ class _MemberEntryPageWidgetState extends State<MemberEntryPageWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       10.0, 0.0, 0.0, 0.0),
                                   child: InkWell(
                                     splashColor: Colors.transparent,
@@ -138,7 +135,7 @@ class _MemberEntryPageWidgetState extends State<MemberEntryPageWidget> {
                               ],
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   30.0, 0.0, 0.0, 0.0),
                               child: Text(
                                 'Devenir membre ?',
@@ -154,9 +151,9 @@ class _MemberEntryPageWidgetState extends State<MemberEntryPageWidget> {
                           ],
                         ),
                         Align(
-                          alignment: AlignmentDirectional(0.0, 0.0),
+                          alignment: const AlignmentDirectional(0.0, 0.0),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 10.0),
                             child: Text(
                               'Pour créer des actualités sur ',
@@ -175,7 +172,7 @@ class _MemberEntryPageWidgetState extends State<MemberEntryPageWidget> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   5.0, 0.0, 6.0, 0.0),
                               child: Container(
                                 width: 65.0,
@@ -214,7 +211,7 @@ class _MemberEntryPageWidgetState extends State<MemberEntryPageWidget> {
                               FlutterFlowTheme.of(context).secondaryBackground,
                         ),
                         Align(
-                          alignment: AlignmentDirectional(0.0, 0.0),
+                          alignment: const AlignmentDirectional(0.0, 0.0),
                           child: Text(
                             'Vous avez le sens de l\'écriture et une passion pour le sport ?',
                             textAlign: TextAlign.center,
@@ -227,7 +224,7 @@ class _MemberEntryPageWidgetState extends State<MemberEntryPageWidget> {
                           ),
                         ),
                         Align(
-                          alignment: AlignmentDirectional(0.0, 0.0),
+                          alignment: const AlignmentDirectional(0.0, 0.0),
                           child: Text(
                             'Pour garantir la qualité des contenus proposés, chaque nouvelle plume sera soumise à une validation par nos modérateurs.',
                             textAlign: TextAlign.start,
@@ -245,7 +242,7 @@ class _MemberEntryPageWidgetState extends State<MemberEntryPageWidget> {
                               FlutterFlowTheme.of(context).secondaryBackground,
                         ),
                         Align(
-                          alignment: AlignmentDirectional(0.0, 0.0),
+                          alignment: const AlignmentDirectional(0.0, 0.0),
                           child: Text(
                             'Parlez-nous de votre passion',
                             style: FlutterFlowTheme.of(context)
@@ -257,7 +254,7 @@ class _MemberEntryPageWidgetState extends State<MemberEntryPageWidget> {
                           ),
                         ),
                         Align(
-                          alignment: AlignmentDirectional(-1.0, 0.0),
+                          alignment: const AlignmentDirectional(-1.0, 0.0),
                           child: Text(
                             'Pourquoi souhaitez-vous contribuer à la vie de cette communauté en partageant vos actualités ?',
                             style: FlutterFlowTheme.of(context)
@@ -269,9 +266,9 @@ class _MemberEntryPageWidgetState extends State<MemberEntryPageWidget> {
                           ),
                         ),
                         Align(
-                          alignment: AlignmentDirectional(-1.0, 0.0),
+                          alignment: const AlignmentDirectional(-1.0, 0.0),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 5.0, 0.0, 5.0),
                             child: Text(
                               'Qu\'est-ce qui vous pousse à vouloir informer les autres fans ?',
@@ -285,7 +282,7 @@ class _MemberEntryPageWidgetState extends State<MemberEntryPageWidget> {
                           ),
                         ),
                         Align(
-                          alignment: AlignmentDirectional(-1.0, 0.0),
+                          alignment: const AlignmentDirectional(-1.0, 0.0),
                           child: Text(
                             'Nous sommes curieux de savoir ce qui vous motive à contribuer à notre plateforme en partageant vos connaissances sur le club.',
                             style: FlutterFlowTheme.of(context)
@@ -301,7 +298,7 @@ class _MemberEntryPageWidgetState extends State<MemberEntryPageWidget> {
                           color: FlutterFlowTheme.of(context).secondaryText,
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               8.0, 10.0, 8.0, 10.0),
                           child: TextFormField(
                             controller: _model.textController,
@@ -362,9 +359,9 @@ class _MemberEntryPageWidgetState extends State<MemberEntryPageWidget> {
                           color: FlutterFlowTheme.of(context).secondaryText,
                         ),
                         Align(
-                          alignment: AlignmentDirectional(-1.0, 0.0),
+                          alignment: const AlignmentDirectional(-1.0, 0.0),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 10.0, 0.0, 0.0),
                             child: Text(
                               'Exprimez-vous toujours avec respect envers les athlètes, les équipes et les autres utilisateurs.',
@@ -378,7 +375,7 @@ class _MemberEntryPageWidgetState extends State<MemberEntryPageWidget> {
                           ),
                         ),
                         Align(
-                          alignment: AlignmentDirectional(-1.0, 0.0),
+                          alignment: const AlignmentDirectional(-1.0, 0.0),
                           child: Text(
                             'Évitez les propos haineux, les insultes et les discriminations de toute nature.',
                             style: FlutterFlowTheme.of(context)
@@ -395,9 +392,9 @@ class _MemberEntryPageWidgetState extends State<MemberEntryPageWidget> {
                               FlutterFlowTheme.of(context).secondaryBackground,
                         ),
                         Align(
-                          alignment: AlignmentDirectional(-1.0, 0.0),
+                          alignment: const AlignmentDirectional(-1.0, 0.0),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 5.0, 0.0, 0.0),
                             child: Text(
                               'Respectez les droits d\'auteur en ne partageant que des contenus dont vous êtes l\'auteur ou dont vous avez obtenu l\'autorisation de diffusion.',
@@ -411,9 +408,9 @@ class _MemberEntryPageWidgetState extends State<MemberEntryPageWidget> {
                           ),
                         ),
                         Align(
-                          alignment: AlignmentDirectional(-1.0, 0.0),
+                          alignment: const AlignmentDirectional(-1.0, 0.0),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 5.0, 0.0, 5.0),
                             child: Text(
                               'Citez toujours vos sources et évitez le plagiat.',
@@ -427,9 +424,9 @@ class _MemberEntryPageWidgetState extends State<MemberEntryPageWidget> {
                           ),
                         ),
                         Align(
-                          alignment: AlignmentDirectional(-1.0, 0.0),
+                          alignment: const AlignmentDirectional(-1.0, 0.0),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 5.0),
                             child: Text(
                               'Vérifiez les faits et évitez la propagation de fausses informations (fake news).',
@@ -443,7 +440,7 @@ class _MemberEntryPageWidgetState extends State<MemberEntryPageWidget> {
                           ),
                         ),
                         Align(
-                          alignment: AlignmentDirectional(-1.0, 0.0),
+                          alignment: const AlignmentDirectional(-1.0, 0.0),
                           child: Text(
                             'Soignez la qualité de votre écriture pour faciliter la compréhension de tous.',
                             style: FlutterFlowTheme.of(context)
@@ -460,7 +457,7 @@ class _MemberEntryPageWidgetState extends State<MemberEntryPageWidget> {
                               FlutterFlowTheme.of(context).secondaryBackground,
                         ),
                         Align(
-                          alignment: AlignmentDirectional(-1.0, 0.0),
+                          alignment: const AlignmentDirectional(-1.0, 0.0),
                           child: Text(
                             'Nous vous conseillons de consulter les conditions générales d\'utilisation afin de vous informer sur les risques liés à un comportement inapproprié.',
                             style: FlutterFlowTheme.of(context)
@@ -472,9 +469,9 @@ class _MemberEntryPageWidgetState extends State<MemberEntryPageWidget> {
                           ),
                         ),
                         Align(
-                          alignment: AlignmentDirectional(1.0, 0.0),
+                          alignment: const AlignmentDirectional(1.0, 0.0),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 10.0, 0.0),
                             child: InkWell(
                               splashColor: Colors.transparent,
@@ -485,7 +482,7 @@ class _MemberEntryPageWidgetState extends State<MemberEntryPageWidget> {
                                 context.pushNamed(
                                   'GeneralsCondidtionsPage',
                                   extra: <String, dynamic>{
-                                    kTransitionInfoKey: TransitionInfo(
+                                    kTransitionInfoKey: const TransitionInfo(
                                       hasTransition: true,
                                       transitionType:
                                           PageTransitionType.bottomToTop,
@@ -513,7 +510,7 @@ class _MemberEntryPageWidgetState extends State<MemberEntryPageWidget> {
                           color: FlutterFlowTheme.of(context).secondaryText,
                         ),
                         Align(
-                          alignment: AlignmentDirectional(-1.0, 0.0),
+                          alignment: const AlignmentDirectional(-1.0, 0.0),
                           child: Text(
                             'Après verifications de vos informations, les modérateurs vont étudier votre demande. Seuls les profils les plus motivés et répondant à nos critères seront sélectionnés.',
                             textAlign: TextAlign.center,
@@ -528,9 +525,9 @@ class _MemberEntryPageWidgetState extends State<MemberEntryPageWidget> {
                           ),
                         ),
                         Align(
-                          alignment: AlignmentDirectional(0.0, 0.0),
+                          alignment: const AlignmentDirectional(0.0, 0.0),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 5.0, 0.0, 0.0),
                             child: Text(
                               'En confirmant votre candidature vous acceptez les conditions ci-dessus',
@@ -547,9 +544,9 @@ class _MemberEntryPageWidgetState extends State<MemberEntryPageWidget> {
                           ),
                         ),
                         Align(
-                          alignment: AlignmentDirectional(0.0, -1.0),
+                          alignment: const AlignmentDirectional(0.0, -1.0),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 20.0, 0.0, 20.0),
                             child: FFButtonWidget(
                               onPressed: () async {
@@ -559,7 +556,7 @@ class _MemberEntryPageWidgetState extends State<MemberEntryPageWidget> {
                                   ...createMyNotificationsRecordData(
                                     userRef: currentUserReference,
                                     modSeen: false,
-                                    teamRef: widget!.teamRef,
+                                    teamRef: widget.teamRef,
                                     text:
                                         'Veut devenir membre du club suivant.',
                                     textReasons: _model.textController.text,
@@ -588,8 +585,8 @@ class _MemberEntryPageWidgetState extends State<MemberEntryPageWidget> {
                               options: FFButtonOptions(
                                 width: 350.0,
                                 height: 50.0,
-                                padding: EdgeInsets.all(0.0),
-                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsets.all(0.0),
+                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color:
                                     FlutterFlowTheme.of(context).secondaryText,
@@ -602,7 +599,7 @@ class _MemberEntryPageWidgetState extends State<MemberEntryPageWidget> {
                                       letterSpacing: 0.0,
                                     ),
                                 elevation: 3.0,
-                                borderSide: BorderSide(
+                                borderSide: const BorderSide(
                                   color: Colors.transparent,
                                   width: 1.0,
                                 ),

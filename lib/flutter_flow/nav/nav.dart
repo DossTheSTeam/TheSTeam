@@ -1,22 +1,15 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
-import '/backend/backend.dart';
 
 import '/auth/base_auth_user_provider.dart';
 
 import '/backend/push_notifications/push_notifications_handler.dart'
     show PushNotificationsHandler;
 import '/index.dart';
-import '/main.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
-import '/flutter_flow/lat_lng.dart';
-import '/flutter_flow/place.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'serialization_util.dart';
 
 export 'package:go_router/go_router.dart';
 export 'serialization_util.dart';
@@ -81,19 +74,19 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? MyProfilPageWidget() : AuthPageWidget(),
+          appStateNotifier.loggedIn ? const MyProfilPageWidget() : const AuthPageWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) => appStateNotifier.loggedIn
-              ? MyProfilPageWidget()
-              : AuthPageWidget(),
+              ? const MyProfilPageWidget()
+              : const AuthPageWidget(),
         ),
         FFRoute(
           name: 'AuthPage',
           path: '/authPage',
-          builder: (context, params) => AuthPageWidget(),
+          builder: (context, params) => const AuthPageWidget(),
         ),
         FFRoute(
           name: 'MyBetPage',
@@ -110,52 +103,52 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'MyBetsList',
           path: '/myBetsList',
-          builder: (context, params) => MyBetsListWidget(),
+          builder: (context, params) => const MyBetsListWidget(),
         ),
         FFRoute(
           name: 'MyEditProfil',
           path: '/myEditProfil',
-          builder: (context, params) => MyEditProfilWidget(),
+          builder: (context, params) => const MyEditProfilWidget(),
         ),
         FFRoute(
           name: 'MyImagePage',
           path: '/myImagePage',
-          builder: (context, params) => MyImagePageWidget(),
+          builder: (context, params) => const MyImagePageWidget(),
         ),
         FFRoute(
           name: 'MyNotifsList',
           path: '/myNotifsList',
-          builder: (context, params) => MyNotifsListWidget(),
+          builder: (context, params) => const MyNotifsListWidget(),
         ),
         FFRoute(
           name: 'MyPostsList',
           path: '/myPostsList',
-          builder: (context, params) => MyPostsListWidget(),
+          builder: (context, params) => const MyPostsListWidget(),
         ),
         FFRoute(
           name: 'MyProfilStats',
           path: '/myProfilStats',
-          builder: (context, params) => MyProfilStatsWidget(),
+          builder: (context, params) => const MyProfilStatsWidget(),
         ),
         FFRoute(
           name: 'MyProfilPage',
           path: '/myProfilPage',
-          builder: (context, params) => MyProfilPageWidget(),
+          builder: (context, params) => const MyProfilPageWidget(),
         ),
         FFRoute(
           name: 'MyProfilSocial',
           path: '/myProfilSocial',
-          builder: (context, params) => MyProfilSocialWidget(),
+          builder: (context, params) => const MyProfilSocialWidget(),
         ),
         FFRoute(
           name: 'MyTeamList',
           path: '/myTeamList',
-          builder: (context, params) => MyTeamListWidget(),
+          builder: (context, params) => const MyTeamListWidget(),
         ),
         FFRoute(
           name: 'MenuPage',
           path: '/menuPage',
-          builder: (context, params) => MenuPageWidget(),
+          builder: (context, params) => const MenuPageWidget(),
         ),
         FFRoute(
           name: 'PublicBetsList',
@@ -166,6 +159,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ParamType.DocumentReference,
               isList: false,
               collectionNamePath: ['users', 'my_bets'],
+            ),
+            userRef: params.getParam(
+              'userRef',
+              ParamType.DocumentReference,
+              isList: false,
+              collectionNamePath: ['users'],
             ),
           ),
         ),
@@ -208,7 +207,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'TheSTeamPage',
           path: '/theSTeamPage',
-          builder: (context, params) => TheSTeamPageWidget(),
+          builder: (context, params) => const TheSTeamPageWidget(),
         ),
         FFRoute(
           name: 'MemberEntryPage',
@@ -237,7 +236,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'TeamList',
           path: '/teamList',
-          builder: (context, params) => TeamListWidget(),
+          builder: (context, params) => const TeamListWidget(),
         ),
         FFRoute(
           name: 'PostMessagePage',
@@ -309,6 +308,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               isList: false,
               collectionNamePath: ['users', 'cart'],
             ),
+            eventRef: params.getParam(
+              'eventRef',
+              ParamType.DocumentReference,
+              isList: false,
+              collectionNamePath: ['events'],
+            ),
           ),
         ),
         FFRoute(
@@ -326,7 +331,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'ListEvents',
           path: '/listEvents',
-          builder: (context, params) => ListEventsWidget(),
+          builder: (context, params) => const ListEventsWidget(),
         ),
         FFRoute(
           name: 'TeamEventsList',
@@ -355,17 +360,17 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'ListBestsPosts',
           path: '/listBestsPosts',
-          builder: (context, params) => ListBestsPostsWidget(),
+          builder: (context, params) => const ListBestsPostsWidget(),
         ),
         FFRoute(
           name: 'ListPosts',
           path: '/listPosts',
-          builder: (context, params) => ListPostsWidget(),
+          builder: (context, params) => const ListPostsWidget(),
         ),
         FFRoute(
           name: 'ListPostsMyTeams',
           path: '/listPostsMyTeams',
-          builder: (context, params) => ListPostsMyTeamsWidget(),
+          builder: (context, params) => const ListPostsMyTeamsWidget(),
         ),
         FFRoute(
           name: 'PostPage',
@@ -418,12 +423,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'AddEventPage',
           path: '/addEventPage',
-          builder: (context, params) => AddEventPageWidget(),
+          builder: (context, params) => const AddEventPageWidget(),
         ),
         FFRoute(
           name: 'ListEventsAdmin',
           path: '/listEventsAdmin',
-          builder: (context, params) => ListEventsAdminWidget(),
+          builder: (context, params) => const ListEventsAdminWidget(),
         ),
         FFRoute(
           name: 'ModifBetPage',
@@ -452,7 +457,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'AddTeamPage',
           path: '/addTeamPage',
-          builder: (context, params) => AddTeamPageWidget(),
+          builder: (context, params) => const AddTeamPageWidget(),
         ),
         FFRoute(
           name: 'AdminMemberEntryPage',
@@ -481,7 +486,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'AdminUsersList',
           path: '/adminUsersList',
-          builder: (context, params) => AdminUsersListWidget(),
+          builder: (context, params) => const AdminUsersListWidget(),
         ),
         FFRoute(
           name: 'ProfilPublicAdmin',
@@ -510,47 +515,47 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'AdminPage',
           path: '/adminPage',
-          builder: (context, params) => AdminPageWidget(),
+          builder: (context, params) => const AdminPageWidget(),
         ),
         FFRoute(
           name: 'ModeratorPage',
           path: '/moderatorPage',
-          builder: (context, params) => ModeratorPageWidget(),
+          builder: (context, params) => const ModeratorPageWidget(),
         ),
         FFRoute(
           name: 'AdminTeamsList',
           path: '/adminTeamsList',
-          builder: (context, params) => AdminTeamsListWidget(),
+          builder: (context, params) => const AdminTeamsListWidget(),
         ),
         FFRoute(
           name: 'MyBestsRankPage',
           path: '/myBestsRankPage',
-          builder: (context, params) => MyBestsRankPageWidget(),
+          builder: (context, params) => const MyBestsRankPageWidget(),
         ),
         FFRoute(
           name: 'RankPage',
           path: '/rankPage',
-          builder: (context, params) => RankPageWidget(),
+          builder: (context, params) => const RankPageWidget(),
         ),
         FFRoute(
           name: 'ConfidentialityPage',
           path: '/confidentialityPage',
-          builder: (context, params) => ConfidentialityPageWidget(),
+          builder: (context, params) => const ConfidentialityPageWidget(),
         ),
         FFRoute(
           name: 'GeneralsCondidtionsPage',
           path: '/generalsCondidtionsPage',
-          builder: (context, params) => GeneralsCondidtionsPageWidget(),
+          builder: (context, params) => const GeneralsCondidtionsPageWidget(),
         ),
         FFRoute(
           name: 'InfosRankPage',
           path: '/infosRankPage',
-          builder: (context, params) => InfosRankPageWidget(),
+          builder: (context, params) => const InfosRankPageWidget(),
         ),
         FFRoute(
           name: 'ShoppingPage',
           path: '/shoppingPage',
-          builder: (context, params) => ShoppingPageWidget(),
+          builder: (context, params) => const ShoppingPageWidget(),
         ),
         FFRoute(
           name: 'ModifETeamPage',
@@ -567,7 +572,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'ModTeamsList',
           path: '/modTeamsList',
-          builder: (context, params) => ModTeamsListWidget(),
+          builder: (context, params) => const ModTeamsListWidget(),
         ),
         FFRoute(
           name: 'ListEventsAdd2Bet',
@@ -627,6 +632,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               isList: false,
               collectionNamePath: ['users', 'my_bets'],
             ),
+            userRef: params.getParam(
+              'userRef',
+              ParamType.DocumentReference,
+              isList: false,
+              collectionNamePath: ['users'],
+            ),
           ),
         ),
         FFRoute(
@@ -680,12 +691,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'ModNotifsList',
           path: '/modNotifsList',
-          builder: (context, params) => ModNotifsListWidget(),
+          builder: (context, params) => const ModNotifsListWidget(),
         ),
         FFRoute(
           name: 'AdminRankPage',
           path: '/adminRankPage',
-          builder: (context, params) => AdminRankPageWidget(),
+          builder: (context, params) => const AdminRankPageWidget(),
         ),
         FFRoute(
           name: 'SignalPostMessagePage',
@@ -762,12 +773,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'RankTypstersPage',
           path: '/rankTypstersPage',
-          builder: (context, params) => RankTypstersPageWidget(),
+          builder: (context, params) => const RankTypstersPageWidget(),
         ),
         FFRoute(
           name: 'MyTeamsListEvents',
           path: '/myTeamsListEvents',
-          builder: (context, params) => MyTeamsListEventsWidget(),
+          builder: (context, params) => const MyTeamsListEventsWidget(),
         ),
         FFRoute(
           name: 'SearchUsersList',
@@ -784,17 +795,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'AdminStAppUsersList',
           path: '/adminStAppUsersList',
-          builder: (context, params) => AdminStAppUsersListWidget(),
-        ),
-        FFRoute(
-          name: 'ListLiguesEvents',
-          path: '/listLiguesEvents',
-          builder: (context, params) => ListLiguesEventsWidget(),
+          builder: (context, params) => const AdminStAppUsersListWidget(),
         ),
         FFRoute(
           name: 'AddETeamPageIUDAdmin',
           path: '/addETeamPageIUDAdmin',
-          builder: (context, params) => AddETeamPageIUDAdminWidget(),
+          builder: (context, params) => const AddETeamPageIUDAdminWidget(),
         ),
         FFRoute(
           name: 'ModifTeamPage',
@@ -847,32 +853,32 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'EUserRankPage',
           path: '/eUserRankPage',
-          builder: (context, params) => EUserRankPageWidget(),
+          builder: (context, params) => const EUserRankPageWidget(),
         ),
         FFRoute(
           name: 'ETeamRankPage',
           path: '/eTeamRankPage',
-          builder: (context, params) => ETeamRankPageWidget(),
+          builder: (context, params) => const ETeamRankPageWidget(),
         ),
         FFRoute(
           name: 'MyBestsEUserRankPage',
           path: '/myBestsEUserRankPage',
-          builder: (context, params) => MyBestsEUserRankPageWidget(),
+          builder: (context, params) => const MyBestsEUserRankPageWidget(),
         ),
         FFRoute(
           name: 'AdminEUserRankPage',
           path: '/adminEUserRankPage',
-          builder: (context, params) => AdminEUserRankPageWidget(),
+          builder: (context, params) => const AdminEUserRankPageWidget(),
         ),
         FFRoute(
           name: 'AdminETeamRankPage',
           path: '/adminETeamRankPage',
-          builder: (context, params) => AdminETeamRankPageWidget(),
+          builder: (context, params) => const AdminETeamRankPageWidget(),
         ),
         FFRoute(
           name: 'MyBestsETeamRankPage',
           path: '/myBestsETeamRankPage',
-          builder: (context, params) => MyBestsETeamRankPageWidget(),
+          builder: (context, params) => const MyBestsETeamRankPageWidget(),
         ),
         FFRoute(
           name: 'BossEMemberEntryPage',
@@ -1093,7 +1099,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'LiguesRankPage',
           path: '/liguesRankPage',
-          builder: (context, params) => LiguesRankPageWidget(),
+          builder: (context, params) => const LiguesRankPageWidget(),
         ),
         FFRoute(
           name: 'TheSTeamPostPage',
@@ -1186,27 +1192,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'DeleteEventPage',
-          path: '/deleteEventPage',
-          builder: (context, params) => DeleteEventPageWidget(
-            eventRef: params.getParam(
-              'eventRef',
-              ParamType.DocumentReference,
-              isList: false,
-              collectionNamePath: ['events'],
-            ),
-            eTeamRef: params.getParam(
-              'eTeamRef',
-              ParamType.DocumentReference,
-              isList: false,
-              collectionNamePath: ['teams'],
-            ),
-          ),
-        ),
-        FFRoute(
           name: 'TeamListCup',
           path: '/teamListCup',
-          builder: (context, params) => TeamListCupWidget(),
+          builder: (context, params) => const TeamListCupWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],
@@ -1444,7 +1432,7 @@ class TransitionInfo {
   final Duration duration;
   final Alignment? alignment;
 
-  static TransitionInfo appDefault() => TransitionInfo(hasTransition: false);
+  static TransitionInfo appDefault() => const TransitionInfo(hasTransition: false);
 }
 
 class RootPageContext {

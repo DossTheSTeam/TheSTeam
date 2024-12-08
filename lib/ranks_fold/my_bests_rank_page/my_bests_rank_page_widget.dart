@@ -2,12 +2,9 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'my_bests_rank_page_model.dart';
 export 'my_bests_rank_page_model.dart';
 
@@ -49,9 +46,9 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
             visible: valueOrDefault<bool>(currentUserDocument?.esport, false) ==
                 false,
             child: Align(
-              alignment: AlignmentDirectional(0.0, -1.0),
+              alignment: const AlignmentDirectional(0.0, -1.0),
               child: Padding(
-                padding: EdgeInsets.all(10.0),
+                padding: const EdgeInsets.all(10.0),
                 child: AuthUserStreamWidget(
                   builder: (context) => SingleChildScrollView(
                     child: Column(
@@ -73,7 +70,7 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                     context.pushNamed(
                                       'MenuPage',
                                       extra: <String, dynamic>{
-                                        kTransitionInfoKey: TransitionInfo(
+                                        kTransitionInfoKey: const TransitionInfo(
                                           hasTransition: true,
                                           transitionType:
                                               PageTransitionType.leftToRight,
@@ -84,13 +81,12 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                   },
                                   child: Icon(
                                     Icons.menu_rounded,
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryText,
+                                    color: currentUserDocument?.color1,
                                     size: 30.0,
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       10.0, 0.0, 0.0, 0.0),
                                   child: InkWell(
                                     splashColor: Colors.transparent,
@@ -102,8 +98,7 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                     },
                                     child: Icon(
                                       Icons.arrow_back_ios_new_rounded,
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
+                                      color: currentUserDocument?.color1,
                                       size: 30.0,
                                     ),
                                   ),
@@ -111,7 +106,7 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                               ],
                             ),
                             Align(
-                              alignment: AlignmentDirectional(0.0, 0.0),
+                              alignment: const AlignmentDirectional(0.0, 0.0),
                               child: Text(
                                 'Classement',
                                 style: FlutterFlowTheme.of(context)
@@ -126,7 +121,7 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 15.0, 0.0),
                                   child: InkWell(
                                     splashColor: Colors.transparent,
@@ -137,7 +132,7 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                       context.pushNamed(
                                         'RankPage',
                                         extra: <String, dynamic>{
-                                          kTransitionInfoKey: TransitionInfo(
+                                          kTransitionInfoKey: const TransitionInfo(
                                             hasTransition: true,
                                             transitionType:
                                                 PageTransitionType.bottomToTop,
@@ -149,14 +144,13 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                     },
                                     child: Icon(
                                       Icons.bar_chart,
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryText,
+                                      color: currentUserDocument?.color1,
                                       size: 30.0,
                                     ),
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 10.0, 0.0),
                                   child: InkWell(
                                     splashColor: Colors.transparent,
@@ -167,7 +161,7 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                       context.pushNamed(
                                         'RankTypstersPage',
                                         extra: <String, dynamic>{
-                                          kTransitionInfoKey: TransitionInfo(
+                                          kTransitionInfoKey: const TransitionInfo(
                                             hasTransition: true,
                                             transitionType:
                                                 PageTransitionType.bottomToTop,
@@ -179,8 +173,7 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                     },
                                     child: FaIcon(
                                       FontAwesomeIcons.crown,
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryText,
+                                      color: currentUserDocument?.color1,
                                       size: 25.0,
                                     ),
                                   ),
@@ -200,7 +193,7 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           30.0, 10.0, 0.0, 0.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -221,7 +214,7 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                                     'MyProfilSocial',
                                                     extra: <String, dynamic>{
                                                       kTransitionInfoKey:
-                                                          TransitionInfo(
+                                                          const TransitionInfo(
                                                         hasTransition: true,
                                                         transitionType:
                                                             PageTransitionType
@@ -234,20 +227,22 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                                 },
                                                 child: Icon(
                                                   Icons.star_rounded,
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .accent3,
+                                                  color: valueOrDefault<Color>(
+                                                    currentUserDocument?.color2,
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryText,
+                                                  ),
                                                   size: 30.0,
                                                 ),
                                               ),
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         10.0, 0.0, 0.0, 0.0),
                                                 child: Text(
                                                   valueOrDefault<String>(
                                                     (currentUserDocument?.bests
-                                                                ?.toList() ??
+                                                                .toList() ??
                                                             [])
                                                         .length
                                                         .toString(),
@@ -314,7 +309,7 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                                   children: [
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   10.0,
                                                                   0.0,
@@ -335,7 +330,7 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                                             extra: <String,
                                                                 dynamic>{
                                                               kTransitionInfoKey:
-                                                                  TransitionInfo(
+                                                                  const TransitionInfo(
                                                                 hasTransition:
                                                                     true,
                                                                 transitionType:
@@ -353,7 +348,7 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                                               .notifications_active_outlined,
                                                           color: FlutterFlowTheme
                                                                   .of(context)
-                                                              .accent3,
+                                                              .accent1,
                                                           size: 40.0,
                                                         ),
                                                       ),
@@ -366,7 +361,7 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           30.0, 0.0, 0.0, 0.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -383,7 +378,7 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                                 'MyProfilSocial',
                                                 extra: <String, dynamic>{
                                                   kTransitionInfoKey:
-                                                      TransitionInfo(
+                                                      const TransitionInfo(
                                                     hasTransition: true,
                                                     transitionType:
                                                         PageTransitionType
@@ -396,20 +391,22 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                             },
                                             child: Icon(
                                               Icons.groups_rounded,
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .success,
+                                              color: valueOrDefault<Color>(
+                                                currentUserDocument?.color2,
+                                                FlutterFlowTheme.of(context)
+                                                    .secondaryText,
+                                              ),
                                               size: 30.0,
                                             ),
                                           ),
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     10.0, 0.0, 0.0, 0.0),
                                             child: Text(
                                               valueOrDefault<String>(
                                                 (currentUserDocument?.fans
-                                                            ?.toList() ??
+                                                            .toList() ??
                                                         [])
                                                     .length
                                                     .toString(),
@@ -447,7 +444,7 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                         CrossAxisAlignment.start,
                                     children: [
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 9.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -500,7 +497,7 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                                 ),
                                               ),
                                               child: Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     1.0, 0.0),
                                                 child: Text(
                                                   'Pseudo',
@@ -530,7 +527,7 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                                 ),
                                               ),
                                               child: Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Text(
                                                   'Total\nbénéfices',
@@ -562,7 +559,7 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                                 ),
                                               ),
                                               child: Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Text(
                                                   'Stock',
@@ -593,7 +590,7 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                                 ),
                                               ),
                                               child: Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Text(
                                                   'Gagnés',
@@ -624,7 +621,7 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                                 ),
                                               ),
                                               child: Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Text(
                                                   'Cote moyenne',
@@ -660,7 +657,7 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                                 ),
                                               ),
                                               child: Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Text(
                                                   'Perdus',
@@ -691,7 +688,7 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                                 ),
                                               ),
                                               child: Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Text(
                                                   'ClickSTeam',
@@ -722,7 +719,7 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                                 ),
                                               ),
                                               child: Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Text(
                                                   'Signals',
@@ -744,10 +741,8 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                         ),
                                       ),
                                       if ((currentUserDocument?.fans
-                                                      ?.toList() ??
-                                                  [])
-                                              .length ==
-                                          0)
+                                                      .toList() ??
+                                                  []).isEmpty)
                                         Text(
                                           'Etre suivis  par des utilisateurs pour augmenter le contenu du classement',
                                           textAlign: TextAlign.center,
@@ -760,10 +755,8 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                               ),
                                         ),
                                       if ((currentUserDocument?.bests
-                                                      ?.toList() ??
-                                                  [])
-                                              .length ==
-                                          0)
+                                                      .toList() ??
+                                                  []).isEmpty)
                                         Text(
                                           'Suivre des utilisateurs pour augmenter le contenu du classement',
                                           textAlign: TextAlign.center,
@@ -776,7 +769,7 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                               ),
                                         ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 5.0, 0.0, 0.0),
                                         child: StreamBuilder<List<UsersRecord>>(
                                           stream: queryUsersRecord(
@@ -831,14 +824,14 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                                                     .reference) ||
                                                             (currentUserDocument
                                                                         ?.bests
-                                                                        ?.toList() ??
+                                                                        .toList() ??
                                                                     [])
                                                                 .contains(
                                                                     columnUsersEarningsScrollUsersRecord
                                                                         .reference) ||
                                                             (currentUserDocument
                                                                         ?.fans
-                                                                        ?.toList() ??
+                                                                        .toList() ??
                                                                     [])
                                                                 .contains(
                                                                     columnUsersEarningsScrollUsersRecord
@@ -879,48 +872,57 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                                                           columnUsersEarningsScrollUsersRecord
                                                                               .reference)
                                                                         Align(
-                                                                          alignment: AlignmentDirectional(
+                                                                          alignment: const AlignmentDirectional(
                                                                               0.0,
                                                                               0.0),
                                                                           child:
                                                                               FaIcon(
                                                                             FontAwesomeIcons.userCircle,
                                                                             color:
-                                                                                FlutterFlowTheme.of(context).success,
+                                                                                valueOrDefault<Color>(
+                                                                              columnUsersEarningsScrollUsersRecord.color1,
+                                                                              FlutterFlowTheme.of(context).secondaryText,
+                                                                            ),
                                                                             size:
                                                                                 25.0,
                                                                           ),
                                                                         ),
-                                                                      if ((currentUserDocument?.bests?.toList() ??
+                                                                      if ((currentUserDocument?.bests.toList() ??
                                                                               [])
                                                                           .contains(
                                                                               columnUsersEarningsScrollUsersRecord.reference))
                                                                         Align(
-                                                                          alignment: AlignmentDirectional(
+                                                                          alignment: const AlignmentDirectional(
                                                                               0.0,
                                                                               0.0),
                                                                           child:
                                                                               Icon(
                                                                             Icons.star_rounded,
                                                                             color:
-                                                                                FlutterFlowTheme.of(context).accent3,
+                                                                                valueOrDefault<Color>(
+                                                                              columnUsersEarningsScrollUsersRecord.color1,
+                                                                              FlutterFlowTheme.of(context).secondaryText,
+                                                                            ),
                                                                             size:
                                                                                 30.0,
                                                                           ),
                                                                         ),
-                                                                      if ((currentUserDocument?.fans?.toList() ??
+                                                                      if ((currentUserDocument?.fans.toList() ??
                                                                               [])
                                                                           .contains(
                                                                               columnUsersEarningsScrollUsersRecord.reference))
                                                                         Align(
-                                                                          alignment: AlignmentDirectional(
+                                                                          alignment: const AlignmentDirectional(
                                                                               0.0,
                                                                               0.0),
                                                                           child:
                                                                               Icon(
                                                                             Icons.groups_rounded,
                                                                             color:
-                                                                                FlutterFlowTheme.of(context).success,
+                                                                                valueOrDefault<Color>(
+                                                                              columnUsersEarningsScrollUsersRecord.color1,
+                                                                              FlutterFlowTheme.of(context).secondaryText,
+                                                                            ),
                                                                             size:
                                                                                 30.0,
                                                                           ),
@@ -946,7 +948,7 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                                                 ),
                                                                 child: Align(
                                                                   alignment:
-                                                                      AlignmentDirectional(
+                                                                      const AlignmentDirectional(
                                                                           0.0,
                                                                           0.0),
                                                                   child: Text(
@@ -989,7 +991,7 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                                                 ),
                                                                 child: Align(
                                                                   alignment:
-                                                                      AlignmentDirectional(
+                                                                      const AlignmentDirectional(
                                                                           1.0,
                                                                           0.0),
                                                                   child:
@@ -1037,6 +1039,8 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                                                           .override(
                                                                             fontFamily:
                                                                                 'Poppins',
+                                                                            color:
+                                                                                columnUsersEarningsScrollUsersRecord.color1,
                                                                             letterSpacing:
                                                                                 0.0,
                                                                           ),
@@ -1061,7 +1065,7 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                                                 ),
                                                                 child: Align(
                                                                   alignment:
-                                                                      AlignmentDirectional(
+                                                                      const AlignmentDirectional(
                                                                           0.0,
                                                                           0.0),
                                                                   child: Text(
@@ -1105,7 +1109,7 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                                                 ),
                                                                 child: Align(
                                                                   alignment:
-                                                                      AlignmentDirectional(
+                                                                      const AlignmentDirectional(
                                                                           0.0,
                                                                           0.0),
                                                                   child: Text(
@@ -1146,7 +1150,7 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                                                 ),
                                                                 child: Align(
                                                                   alignment:
-                                                                      AlignmentDirectional(
+                                                                      const AlignmentDirectional(
                                                                           0.0,
                                                                           0.0),
                                                                   child: Text(
@@ -1186,7 +1190,7 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                                                 ),
                                                                 child: Align(
                                                                   alignment:
-                                                                      AlignmentDirectional(
+                                                                      const AlignmentDirectional(
                                                                           0.0,
                                                                           0.0),
                                                                   child: Text(
@@ -1217,7 +1221,7 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                                               ),
                                                               Align(
                                                                 alignment:
-                                                                    AlignmentDirectional(
+                                                                    const AlignmentDirectional(
                                                                         0.0,
                                                                         0.0),
                                                                 child:
@@ -1239,7 +1243,7 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                                                   ),
                                                                   child: Align(
                                                                     alignment:
-                                                                        AlignmentDirectional(
+                                                                        const AlignmentDirectional(
                                                                             0.0,
                                                                             0.0),
                                                                     child: Text(
@@ -1284,7 +1288,7 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                                                 ),
                                                                 child: Align(
                                                                   alignment:
-                                                                      AlignmentDirectional(
+                                                                      const AlignmentDirectional(
                                                                           0.0,
                                                                           0.0),
                                                                   child: Text(
@@ -1316,7 +1320,7 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                                                           context)
                                                                       .primaryBackground,
                                                                   borderRadius:
-                                                                      BorderRadius
+                                                                      const BorderRadius
                                                                           .only(
                                                                     bottomLeft:
                                                                         Radius.circular(
@@ -1340,7 +1344,7 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                                                 ),
                                                                 child: Align(
                                                                   alignment:
-                                                                      AlignmentDirectional(
+                                                                      const AlignmentDirectional(
                                                                           0.0,
                                                                           0.0),
                                                                   child: Text(

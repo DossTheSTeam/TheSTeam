@@ -3,12 +3,8 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'list_comms_post_com_page_model.dart';
 export 'list_comms_post_com_page_model.dart';
 
@@ -47,7 +43,7 @@ class _ListCommsPostComPageWidgetState
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<PostMessagesRecord>(
-      stream: PostMessagesRecord.getDocument(widget!.startedCommRef!),
+      stream: PostMessagesRecord.getDocument(widget.startedCommRef!),
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
@@ -77,9 +73,9 @@ class _ListCommsPostComPageWidgetState
             body: SafeArea(
               top: true,
               child: Align(
-                alignment: AlignmentDirectional(0.0, -1.0),
+                alignment: const AlignmentDirectional(0.0, -1.0),
                 child: Padding(
-                  padding: EdgeInsets.all(10.0),
+                  padding: const EdgeInsets.all(10.0),
                   child: SingleChildScrollView(
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
@@ -89,7 +85,7 @@ class _ListCommsPostComPageWidgetState
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 10.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -98,57 +94,60 @@ class _ListCommsPostComPageWidgetState
                                   Row(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
-                                      InkWell(
-                                        splashColor: Colors.transparent,
-                                        focusColor: Colors.transparent,
-                                        hoverColor: Colors.transparent,
-                                        highlightColor: Colors.transparent,
-                                        onTap: () async {
-                                          context.pushNamed(
-                                            'MenuPage',
-                                            extra: <String, dynamic>{
-                                              kTransitionInfoKey:
-                                                  TransitionInfo(
-                                                hasTransition: true,
-                                                transitionType:
-                                                    PageTransitionType
-                                                        .leftToRight,
-                                                duration:
-                                                    Duration(milliseconds: 400),
-                                              ),
-                                            },
-                                          );
-                                        },
-                                        child: Icon(
-                                          Icons.menu_rounded,
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryText,
-                                          size: 30.0,
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            10.0, 0.0, 0.0, 0.0),
-                                        child: InkWell(
+                                      AuthUserStreamWidget(
+                                        builder: (context) => InkWell(
                                           splashColor: Colors.transparent,
                                           focusColor: Colors.transparent,
                                           hoverColor: Colors.transparent,
                                           highlightColor: Colors.transparent,
                                           onTap: () async {
-                                            context.safePop();
+                                            context.pushNamed(
+                                              'MenuPage',
+                                              extra: <String, dynamic>{
+                                                kTransitionInfoKey:
+                                                    const TransitionInfo(
+                                                  hasTransition: true,
+                                                  transitionType:
+                                                      PageTransitionType
+                                                          .leftToRight,
+                                                  duration: Duration(
+                                                      milliseconds: 400),
+                                                ),
+                                              },
+                                            );
                                           },
                                           child: Icon(
-                                            Icons.arrow_back_ios_new_rounded,
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryText,
+                                            Icons.menu_rounded,
+                                            color: currentUserDocument?.color1,
                                             size: 30.0,
+                                          ),
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            10.0, 0.0, 0.0, 0.0),
+                                        child: AuthUserStreamWidget(
+                                          builder: (context) => InkWell(
+                                            splashColor: Colors.transparent,
+                                            focusColor: Colors.transparent,
+                                            hoverColor: Colors.transparent,
+                                            highlightColor: Colors.transparent,
+                                            onTap: () async {
+                                              context.safePop();
+                                            },
+                                            child: Icon(
+                                              Icons.arrow_back_ios_new_rounded,
+                                              color:
+                                                  currentUserDocument?.color1,
+                                              size: 30.0,
+                                            ),
                                           ),
                                         ),
                                       ),
                                     ],
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         5.0, 0.0, 0.0, 0.0),
                                     child: StreamBuilder<UsersRecord>(
                                       stream: UsersRecord.getDocument(
@@ -179,7 +178,7 @@ class _ListCommsPostComPageWidgetState
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(5.0, 0.0, 6.0, 0.0),
                                               child: Container(
                                                 width: 35.0,
@@ -204,7 +203,7 @@ class _ListCommsPostComPageWidgetState
                                               ),
                                             ),
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 0.0, 10.0, 0.0),
                                               child: InkWell(
@@ -226,7 +225,7 @@ class _ListCommsPostComPageWidgetState
                                                     }.withoutNulls,
                                                     extra: <String, dynamic>{
                                                       kTransitionInfoKey:
-                                                          TransitionInfo(
+                                                          const TransitionInfo(
                                                         hasTransition: true,
                                                         transitionType:
                                                             PageTransitionType
@@ -245,6 +244,8 @@ class _ListCommsPostComPageWidgetState
                                                       .titleSmall
                                                       .override(
                                                         fontFamily: 'Poppins',
+                                                        color: rowUsersRecord
+                                                            .color1,
                                                         letterSpacing: 0.0,
                                                       ),
                                                 ),
@@ -258,13 +259,14 @@ class _ListCommsPostComPageWidgetState
                                 ],
                               ),
                             ),
-                            Divider(
-                              thickness: 1.0,
-                              color: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
+                            AuthUserStreamWidget(
+                              builder: (context) => Divider(
+                                thickness: 1.0,
+                                color: currentUserDocument?.color2,
+                              ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 10.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -283,7 +285,7 @@ class _ListCommsPostComPageWidgetState
                                       'champion',
                                       'legende'
                                     ]),
-                                    optionLabels: [
+                                    optionLabels: const [
                                       'Amateur',
                                       'Pro',
                                       'Champion',
@@ -313,7 +315,7 @@ class _ListCommsPostComPageWidgetState
                                         FlutterFlowTheme.of(context).alternate,
                                     borderWidth: 2.0,
                                     borderRadius: 8.0,
-                                    margin: EdgeInsetsDirectional.fromSTEB(
+                                    margin: const EdgeInsetsDirectional.fromSTEB(
                                         16.0, 4.0, 16.0, 4.0),
                                     hidesUnderline: true,
                                     isOverButton: true,
@@ -364,7 +366,7 @@ class _ListCommsPostComPageWidgetState
                                               MainAxisAlignment.end,
                                           children: [
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       10.0, 0.0, 10.0, 0.0),
                                               child: InkWell(
@@ -378,7 +380,7 @@ class _ListCommsPostComPageWidgetState
                                                     'MyNotifsList',
                                                     extra: <String, dynamic>{
                                                       kTransitionInfoKey:
-                                                          TransitionInfo(
+                                                          const TransitionInfo(
                                                         hasTransition: true,
                                                         transitionType:
                                                             PageTransitionType
@@ -394,7 +396,7 @@ class _ListCommsPostComPageWidgetState
                                                       .notifications_active_outlined,
                                                   color: FlutterFlowTheme.of(
                                                           context)
-                                                      .accent3,
+                                                      .accent1,
                                                   size: 40.0,
                                                 ),
                                               ),
@@ -406,13 +408,47 @@ class _ListCommsPostComPageWidgetState
                                 ],
                               ),
                             ),
+                            if (valueOrDefault<bool>(
+                                    currentUserDocument?.helpNav, false) ==
+                                true)
+                              Align(
+                                alignment: const AlignmentDirectional(0.0, 0.0),
+                                child: AuthUserStreamWidget(
+                                  builder: (context) => Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 3.0, 0.0, 0.0),
+                                        child: Text(
+                                          'Classés par plus commentés/likés, \nfonctionnalités pas encore disponibles.',
+                                          textAlign: TextAlign.center,
+                                          maxLines: 3,
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Poppins',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .error,
+                                                fontSize: 10.0,
+                                                letterSpacing: 0.0,
+                                                lineHeight: 1.0,
+                                              ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
                             Row(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
                                 Icon(
                                   Icons.update_rounded,
-                                  color: FlutterFlowTheme.of(context).error,
+                                  color: FlutterFlowTheme.of(context).success,
                                   size: 30.0,
                                 ),
                                 Icon(
@@ -427,18 +463,53 @@ class _ListCommsPostComPageWidgetState
                                 ),
                               ],
                             ),
+                            if (valueOrDefault<bool>(
+                                    currentUserDocument?.helpNav, false) ==
+                                true)
+                              Align(
+                                alignment: const AlignmentDirectional(0.0, 0.0),
+                                child: AuthUserStreamWidget(
+                                  builder: (context) => Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 3.0, 0.0, 0.0),
+                                        child: Text(
+                                          'Classés par plus récents',
+                                          textAlign: TextAlign.center,
+                                          maxLines: 3,
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Poppins',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .success,
+                                                fontSize: 10.0,
+                                                letterSpacing: 0.0,
+                                                lineHeight: 1.0,
+                                              ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
                           ],
                         ),
-                        Divider(
-                          thickness: 1.0,
-                          color:
-                              FlutterFlowTheme.of(context).secondaryBackground,
+                        AuthUserStreamWidget(
+                          builder: (context) => Divider(
+                            thickness: 1.0,
+                            color: currentUserDocument?.color2,
+                          ),
                         ),
                         if (valueOrDefault<bool>(
                                 currentUserDocument?.esport, false) ==
                             false)
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 5.0, 5.0, 5.0, 0.0),
                             child: AuthUserStreamWidget(
                               builder: (context) =>
@@ -448,7 +519,7 @@ class _ListCommsPostComPageWidgetState
                                       postMessagesRecord
                                           .where(
                                             'started_comm',
-                                            isEqualTo: widget!.startedCommRef,
+                                            isEqualTo: widget.startedCommRef,
                                           )
                                           .orderBy('created_time',
                                               descending: true),
@@ -483,7 +554,7 @@ class _ListCommsPostComPageWidgetState
                                           columnCommsSportPostMessagesRecordList[
                                               columnCommsSportIndex];
                                       return Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 5.0, 0.0, 5.0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
@@ -537,7 +608,7 @@ class _ListCommsPostComPageWidgetState
                                                                       .max,
                                                               children: [
                                                                 Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           10.0,
                                                                           0.0,
@@ -549,7 +620,7 @@ class _ListCommsPostComPageWidgetState
                                                                             .max,
                                                                     children: [
                                                                       Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             6.0,
@@ -582,7 +653,7 @@ class _ListCommsPostComPageWidgetState
                                                                         ),
                                                                       ),
                                                                       Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                                                             10.0,
                                                                             0.0,
                                                                             0.0,
@@ -608,7 +679,7 @@ class _ListCommsPostComPageWidgetState
                                                                                 ),
                                                                               }.withoutNulls,
                                                                               extra: <String, dynamic>{
-                                                                                kTransitionInfoKey: TransitionInfo(
+                                                                                kTransitionInfoKey: const TransitionInfo(
                                                                                   hasTransition: true,
                                                                                   transitionType: PageTransitionType.bottomToTop,
                                                                                   duration: Duration(milliseconds: 400),
@@ -626,6 +697,7 @@ class _ListCommsPostComPageWidgetState
                                                                                 1,
                                                                             style: FlutterFlowTheme.of(context).labelLarge.override(
                                                                                   fontFamily: 'Montserrat',
+                                                                                  color: columnUsersRecord.color1,
                                                                                   letterSpacing: 0.0,
                                                                                 ),
                                                                           ),
@@ -635,7 +707,7 @@ class _ListCommsPostComPageWidgetState
                                                                   ),
                                                                 ),
                                                                 Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -662,7 +734,7 @@ class _ListCommsPostComPageWidgetState
                                                                         child:
                                                                             Padding(
                                                                           padding:
-                                                                              EdgeInsets.all(5.0),
+                                                                              const EdgeInsets.all(5.0),
                                                                           child:
                                                                               Text(
                                                                             columnCommsSportPostMessagesRecord.text,
@@ -699,7 +771,7 @@ class _ListCommsPostComPageWidgetState
                                                                                   ),
                                                                                 }.withoutNulls,
                                                                                 extra: <String, dynamic>{
-                                                                                  kTransitionInfoKey: TransitionInfo(
+                                                                                  kTransitionInfoKey: const TransitionInfo(
                                                                                     hasTransition: true,
                                                                                     transitionType: PageTransitionType.scale,
                                                                                     alignment: Alignment.bottomCenter,
@@ -722,12 +794,12 @@ class _ListCommsPostComPageWidgetState
                                                                 ),
                                                                 Align(
                                                                   alignment:
-                                                                      AlignmentDirectional(
+                                                                      const AlignmentDirectional(
                                                                           -1.0,
                                                                           0.0),
                                                                   child:
                                                                       Padding(
-                                                                    padding: EdgeInsetsDirectional
+                                                                    padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -753,7 +825,7 @@ class _ListCommsPostComPageWidgetState
                                                                   ),
                                                                 ),
                                                                 Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           10.0,
                                                                           5.0,
@@ -772,7 +844,7 @@ class _ListCommsPostComPageWidgetState
                                                                               .spaceBetween,
                                                                       children: [
                                                                         Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
                                                                               0.0,
                                                                               0.0,
                                                                               10.0,
@@ -783,7 +855,7 @@ class _ListCommsPostComPageWidgetState
                                                                                 MainAxisSize.max,
                                                                             children: [
                                                                               Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
                                                                                 child: Icon(
                                                                                   Icons.insert_comment_rounded,
                                                                                   color: FlutterFlowTheme.of(context).secondaryText,
@@ -805,7 +877,7 @@ class _ListCommsPostComPageWidgetState
                                                                           ),
                                                                         ),
                                                                         Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
                                                                               0.0,
                                                                               0.0,
                                                                               10.0,
@@ -816,7 +888,7 @@ class _ListCommsPostComPageWidgetState
                                                                                 MainAxisSize.max,
                                                                             children: [
                                                                               Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
                                                                                 child: Icon(
                                                                                   Icons.favorite_rounded,
                                                                                   color: FlutterFlowTheme.of(context).secondaryText,
@@ -838,7 +910,7 @@ class _ListCommsPostComPageWidgetState
                                                                           ),
                                                                         ),
                                                                         Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
                                                                               0.0,
                                                                               0.0,
                                                                               10.0,
@@ -849,7 +921,7 @@ class _ListCommsPostComPageWidgetState
                                                                                 MainAxisSize.max,
                                                                             children: [
                                                                               Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
                                                                                 child: Icon(
                                                                                   Icons.heart_broken_rounded,
                                                                                   color: FlutterFlowTheme.of(context).secondaryText,
@@ -875,7 +947,7 @@ class _ListCommsPostComPageWidgetState
                                                                               MainAxisSize.max,
                                                                           children: [
                                                                             Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
                                                                               child: Container(
                                                                                 width: 15.0,
                                                                                 height: 20.0,
@@ -905,9 +977,8 @@ class _ListCommsPostComPageWidgetState
                                                                 Divider(
                                                                   thickness:
                                                                       1.0,
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .secondaryBackground,
+                                                                  color: currentUserDocument
+                                                                      ?.color2,
                                                                 ),
                                                               ],
                                                             ),
@@ -930,7 +1001,7 @@ class _ListCommsPostComPageWidgetState
                                 currentUserDocument?.esport, false) ==
                             true)
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 5.0, 5.0, 5.0, 0.0),
                             child: AuthUserStreamWidget(
                               builder: (context) =>
@@ -940,7 +1011,7 @@ class _ListCommsPostComPageWidgetState
                                       postMessagesRecord
                                           .where(
                                             'started_comm',
-                                            isEqualTo: widget!.startedCommRef,
+                                            isEqualTo: widget.startedCommRef,
                                           )
                                           .orderBy('created_time',
                                               descending: true),
@@ -975,7 +1046,7 @@ class _ListCommsPostComPageWidgetState
                                           columnCommsESportPostMessagesRecordList[
                                               columnCommsESportIndex];
                                       return Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 5.0, 0.0, 5.0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
@@ -1029,7 +1100,7 @@ class _ListCommsPostComPageWidgetState
                                                                       .max,
                                                               children: [
                                                                 Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           10.0,
                                                                           0.0,
@@ -1041,7 +1112,7 @@ class _ListCommsPostComPageWidgetState
                                                                             .max,
                                                                     children: [
                                                                       Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             6.0,
@@ -1074,7 +1145,7 @@ class _ListCommsPostComPageWidgetState
                                                                         ),
                                                                       ),
                                                                       Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                                                             10.0,
                                                                             0.0,
                                                                             0.0,
@@ -1100,7 +1171,7 @@ class _ListCommsPostComPageWidgetState
                                                                                 ),
                                                                               }.withoutNulls,
                                                                               extra: <String, dynamic>{
-                                                                                kTransitionInfoKey: TransitionInfo(
+                                                                                kTransitionInfoKey: const TransitionInfo(
                                                                                   hasTransition: true,
                                                                                   transitionType: PageTransitionType.bottomToTop,
                                                                                   duration: Duration(milliseconds: 400),
@@ -1118,6 +1189,7 @@ class _ListCommsPostComPageWidgetState
                                                                                 1,
                                                                             style: FlutterFlowTheme.of(context).labelLarge.override(
                                                                                   fontFamily: 'Montserrat',
+                                                                                  color: columnUsersRecord.color1,
                                                                                   letterSpacing: 0.0,
                                                                                 ),
                                                                           ),
@@ -1127,7 +1199,7 @@ class _ListCommsPostComPageWidgetState
                                                                   ),
                                                                 ),
                                                                 Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -1154,7 +1226,7 @@ class _ListCommsPostComPageWidgetState
                                                                         child:
                                                                             Padding(
                                                                           padding:
-                                                                              EdgeInsets.all(5.0),
+                                                                              const EdgeInsets.all(5.0),
                                                                           child:
                                                                               Text(
                                                                             columnCommsESportPostMessagesRecord.text,
@@ -1191,7 +1263,7 @@ class _ListCommsPostComPageWidgetState
                                                                                   ),
                                                                                 }.withoutNulls,
                                                                                 extra: <String, dynamic>{
-                                                                                  kTransitionInfoKey: TransitionInfo(
+                                                                                  kTransitionInfoKey: const TransitionInfo(
                                                                                     hasTransition: true,
                                                                                     transitionType: PageTransitionType.scale,
                                                                                     alignment: Alignment.bottomCenter,
@@ -1214,12 +1286,12 @@ class _ListCommsPostComPageWidgetState
                                                                 ),
                                                                 Align(
                                                                   alignment:
-                                                                      AlignmentDirectional(
+                                                                      const AlignmentDirectional(
                                                                           -1.0,
                                                                           0.0),
                                                                   child:
                                                                       Padding(
-                                                                    padding: EdgeInsetsDirectional
+                                                                    padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -1245,7 +1317,7 @@ class _ListCommsPostComPageWidgetState
                                                                   ),
                                                                 ),
                                                                 Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           10.0,
                                                                           5.0,
@@ -1264,7 +1336,7 @@ class _ListCommsPostComPageWidgetState
                                                                               .spaceBetween,
                                                                       children: [
                                                                         Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
                                                                               0.0,
                                                                               0.0,
                                                                               10.0,
@@ -1275,7 +1347,7 @@ class _ListCommsPostComPageWidgetState
                                                                                 MainAxisSize.max,
                                                                             children: [
                                                                               Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
                                                                                 child: Icon(
                                                                                   Icons.insert_comment_rounded,
                                                                                   color: FlutterFlowTheme.of(context).secondaryText,
@@ -1297,7 +1369,7 @@ class _ListCommsPostComPageWidgetState
                                                                           ),
                                                                         ),
                                                                         Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
                                                                               0.0,
                                                                               0.0,
                                                                               10.0,
@@ -1308,7 +1380,7 @@ class _ListCommsPostComPageWidgetState
                                                                                 MainAxisSize.max,
                                                                             children: [
                                                                               Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
                                                                                 child: Icon(
                                                                                   Icons.favorite_rounded,
                                                                                   color: FlutterFlowTheme.of(context).secondaryText,
@@ -1330,7 +1402,7 @@ class _ListCommsPostComPageWidgetState
                                                                           ),
                                                                         ),
                                                                         Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
                                                                               0.0,
                                                                               0.0,
                                                                               10.0,
@@ -1341,7 +1413,7 @@ class _ListCommsPostComPageWidgetState
                                                                                 MainAxisSize.max,
                                                                             children: [
                                                                               Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
                                                                                 child: Icon(
                                                                                   Icons.heart_broken_rounded,
                                                                                   color: FlutterFlowTheme.of(context).secondaryText,
@@ -1367,7 +1439,7 @@ class _ListCommsPostComPageWidgetState
                                                                               MainAxisSize.max,
                                                                           children: [
                                                                             Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
                                                                               child: Container(
                                                                                 width: 15.0,
                                                                                 height: 20.0,
@@ -1397,9 +1469,8 @@ class _ListCommsPostComPageWidgetState
                                                                 Divider(
                                                                   thickness:
                                                                       1.0,
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .secondaryBackground,
+                                                                  color: currentUserDocument
+                                                                      ?.color2,
                                                                 ),
                                                               ],
                                                             ),
