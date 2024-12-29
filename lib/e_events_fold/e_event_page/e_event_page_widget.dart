@@ -68,7 +68,10 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
         final eEventPageEventsRecord = snapshot.data!;
 
         return GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -115,7 +118,11 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                                       },
                                       child: Icon(
                                         Icons.menu_rounded,
-                                        color: currentUserDocument?.color1,
+                                        color: valueOrDefault<Color>(
+                                          currentUserDocument?.color1,
+                                          FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                        ),
                                         size: 30.0,
                                       ),
                                     ),
@@ -134,7 +141,11 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                                         },
                                         child: Icon(
                                           Icons.arrow_back_ios_new_rounded,
-                                          color: currentUserDocument?.color1,
+                                          color: valueOrDefault<Color>(
+                                            currentUserDocument?.color1,
+                                            FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                          ),
                                           size: 30.0,
                                         ),
                                       ),
@@ -202,34 +213,39 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                                           padding:
                                               const EdgeInsetsDirectional.fromSTEB(
                                                   10.0, 0.0, 10.0, 0.0),
-                                          child: InkWell(
-                                            splashColor: Colors.transparent,
-                                            focusColor: Colors.transparent,
-                                            hoverColor: Colors.transparent,
-                                            highlightColor: Colors.transparent,
-                                            onTap: () async {
-                                              context.pushNamed(
-                                                'MyNotifsList',
-                                                extra: <String, dynamic>{
-                                                  kTransitionInfoKey:
-                                                      const TransitionInfo(
-                                                    hasTransition: true,
-                                                    transitionType:
-                                                        PageTransitionType
-                                                            .rightToLeft,
-                                                    duration: Duration(
-                                                        milliseconds: 400),
-                                                  ),
-                                                },
-                                              );
-                                            },
-                                            child: Icon(
-                                              Icons
-                                                  .notifications_active_outlined,
-                                              color:
+                                          child: AuthUserStreamWidget(
+                                            builder: (context) => InkWell(
+                                              splashColor: Colors.transparent,
+                                              focusColor: Colors.transparent,
+                                              hoverColor: Colors.transparent,
+                                              highlightColor:
+                                                  Colors.transparent,
+                                              onTap: () async {
+                                                context.pushNamed(
+                                                  'MyNotifsList',
+                                                  extra: <String, dynamic>{
+                                                    kTransitionInfoKey:
+                                                        const TransitionInfo(
+                                                      hasTransition: true,
+                                                      transitionType:
+                                                          PageTransitionType
+                                                              .rightToLeft,
+                                                      duration: Duration(
+                                                          milliseconds: 400),
+                                                    ),
+                                                  },
+                                                );
+                                              },
+                                              child: Icon(
+                                                Icons
+                                                    .notifications_active_outlined,
+                                                color: valueOrDefault<Color>(
+                                                  currentUserDocument?.color1,
                                                   FlutterFlowTheme.of(context)
                                                       .accent1,
-                                              size: 40.0,
+                                                ),
+                                                size: 40.0,
+                                              ),
                                             ),
                                           ),
                                         ),
@@ -266,6 +282,42 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                             Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      20.0, 0.0, 10.0, 0.0),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      if (eEventPageEventsRecord.statut == true)
+                                        Container(
+                                          width: 20.0,
+                                          height: 20.0,
+                                          decoration: BoxDecoration(
+                                            color: FlutterFlowTheme.of(context)
+                                                .success,
+                                            shape: BoxShape.circle,
+                                          ),
+                                        ),
+                                      if (eEventPageEventsRecord.statut ==
+                                          false)
+                                        Padding(
+                                          padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  5.0, 0.0, 0.0, 0.0),
+                                          child: Container(
+                                            width: 20.0,
+                                            height: 20.0,
+                                            decoration: BoxDecoration(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .error,
+                                              shape: BoxShape.circle,
+                                            ),
+                                          ),
+                                        ),
+                                    ],
+                                  ),
+                                ),
                                 Text(
                                   dateTimeFormat(
                                       "d/M/y", eEventPageEventsRecord.date!),
@@ -329,35 +381,6 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                                 ),
                               ],
                             ),
-                            Row(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                if (eEventPageEventsRecord.statut == true)
-                                  Container(
-                                    width: 25.0,
-                                    height: 25.0,
-                                    decoration: BoxDecoration(
-                                      color:
-                                          FlutterFlowTheme.of(context).success,
-                                      shape: BoxShape.circle,
-                                    ),
-                                  ),
-                                if (eEventPageEventsRecord.statut == false)
-                                  Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        5.0, 0.0, 0.0, 0.0),
-                                    child: Container(
-                                      width: 25.0,
-                                      height: 25.0,
-                                      decoration: BoxDecoration(
-                                        color:
-                                            FlutterFlowTheme.of(context).error,
-                                        shape: BoxShape.circle,
-                                      ),
-                                    ),
-                                  ),
-                              ],
-                            ),
                           ],
                         ),
                         Padding(
@@ -392,7 +415,7 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
 
                                   return Container(
                                     width: 160.0,
-                                    height: 70.0,
+                                    height: 80.0,
                                     decoration: BoxDecoration(
                                       color: FlutterFlowTheme.of(context)
                                           .primaryBackground,
@@ -447,7 +470,7 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                                               },
                                               child: Text(
                                                 contDomTeamsRecord.name,
-                                                textAlign: TextAlign.start,
+                                                textAlign: TextAlign.center,
                                                 maxLines: 2,
                                                 style:
                                                     FlutterFlowTheme.of(context)
@@ -458,6 +481,100 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                                                         ),
                                               ),
                                             ),
+                                          ),
+                                          Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              Padding(
+                                                padding: const EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 0.0, 5.0, 0.0),
+                                                child: Text(
+                                                  valueOrDefault<String>(
+                                                    contDomTeamsRecord.wins
+                                                        .toString(),
+                                                    '0',
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        fontSize: 10.0,
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                              Padding(
+                                                padding: const EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 0.0, 5.0, 0.0),
+                                                child: Text(
+                                                  '-',
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        fontSize: 10.0,
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                              Padding(
+                                                padding: const EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 0.0, 5.0, 0.0),
+                                                child: Text(
+                                                  valueOrDefault<String>(
+                                                    contDomTeamsRecord.draws
+                                                        .toString(),
+                                                    '0',
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        fontSize: 10.0,
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                              Padding(
+                                                padding: const EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 0.0, 5.0, 0.0),
+                                                child: Text(
+                                                  '-',
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        fontSize: 10.0,
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                              Text(
+                                                valueOrDefault<String>(
+                                                  contDomTeamsRecord.looses
+                                                      .toString(),
+                                                  '0',
+                                                ),
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          fontSize: 10.0,
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                              ),
+                                            ],
                                           ),
                                         ],
                                       ),
@@ -499,7 +616,7 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
 
                                   return Container(
                                     width: 160.0,
-                                    height: 70.0,
+                                    height: 80.0,
                                     decoration: BoxDecoration(
                                       color: FlutterFlowTheme.of(context)
                                           .primaryBackground,
@@ -554,7 +671,7 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                                               },
                                               child: Text(
                                                 contExtTeamsRecord.name,
-                                                textAlign: TextAlign.start,
+                                                textAlign: TextAlign.center,
                                                 maxLines: 2,
                                                 style:
                                                     FlutterFlowTheme.of(context)
@@ -565,6 +682,100 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                                                         ),
                                               ),
                                             ),
+                                          ),
+                                          Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              Padding(
+                                                padding: const EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 0.0, 5.0, 0.0),
+                                                child: Text(
+                                                  valueOrDefault<String>(
+                                                    contExtTeamsRecord.wins
+                                                        .toString(),
+                                                    '0',
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        fontSize: 10.0,
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                              Padding(
+                                                padding: const EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 0.0, 5.0, 0.0),
+                                                child: Text(
+                                                  '-',
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        fontSize: 10.0,
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                              Padding(
+                                                padding: const EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 0.0, 5.0, 0.0),
+                                                child: Text(
+                                                  valueOrDefault<String>(
+                                                    contExtTeamsRecord.draws
+                                                        .toString(),
+                                                    '0',
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        fontSize: 10.0,
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                              Padding(
+                                                padding: const EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 0.0, 5.0, 0.0),
+                                                child: Text(
+                                                  '-',
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        fontSize: 10.0,
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                              Text(
+                                                valueOrDefault<String>(
+                                                  contExtTeamsRecord.looses
+                                                      .toString(),
+                                                  '0',
+                                                ),
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          fontSize: 10.0,
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                              ),
+                                            ],
                                           ),
                                         ],
                                       ),
@@ -595,7 +806,7 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                                     child: Text(
                                       eEventPageEventsRecord.scoreDom
                                           .toString(),
-                                      textAlign: TextAlign.end,
+                                      textAlign: TextAlign.center,
                                       style: FlutterFlowTheme.of(context)
                                           .labelMedium
                                           .override(
@@ -617,7 +828,7 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                                     child: Text(
                                       eEventPageEventsRecord.scoreExt
                                           .toString(),
-                                      textAlign: TextAlign.end,
+                                      textAlign: TextAlign.center,
                                       style: FlutterFlowTheme.of(context)
                                           .labelMedium
                                           .override(
@@ -1193,8 +1404,11 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                                             },
                                             child: Icon(
                                               Icons.insert_comment_rounded,
-                                              color:
-                                                  currentUserDocument?.color1,
+                                              color: valueOrDefault<Color>(
+                                                currentUserDocument?.color1,
+                                                FlutterFlowTheme.of(context)
+                                                    .primaryText,
+                                              ),
                                               size: 30.0,
                                             ),
                                           ),
@@ -1625,6 +1839,13 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                                                                     .override(
                                                                       fontFamily:
                                                                           'Montserrat',
+                                                                      color: valueOrDefault<
+                                                                          Color>(
+                                                                        columnUsersRecord
+                                                                            .color1,
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .primaryText,
+                                                                      ),
                                                                       letterSpacing:
                                                                           0.0,
                                                                     ),
@@ -1726,9 +1947,15 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                                                                 child: Icon(
                                                                   Icons
                                                                       .remove_red_eye_outlined,
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .secondaryText,
+                                                                  color:
+                                                                      valueOrDefault<
+                                                                          Color>(
+                                                                    columnUsersRecord
+                                                                        .color1,
+                                                                    FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primaryText,
+                                                                  ),
                                                                   size: 30.0,
                                                                 ),
                                                               ),
@@ -2111,7 +2338,11 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                                         },
                                         child: Icon(
                                           Icons.image_search_rounded,
-                                          color: currentUserDocument?.color1,
+                                          color: valueOrDefault<Color>(
+                                            currentUserDocument?.color1,
+                                            FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                          ),
                                           size: 30.0,
                                         ),
                                       ),
@@ -2152,7 +2383,7 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                                       controller:
                                           _model.commFieldTextController,
                                       focusNode: _model.commFieldFocusNode,
-                                      autofocus: true,
+                                      autofocus: false,
                                       obscureText: false,
                                       decoration: InputDecoration(
                                         labelStyle: FlutterFlowTheme.of(context)
@@ -2304,7 +2535,11 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                                     },
                                     child: Icon(
                                       Icons.send_rounded,
-                                      color: currentUserDocument?.color1,
+                                      color: valueOrDefault<Color>(
+                                        currentUserDocument?.color1,
+                                        FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                      ),
                                       size: 30.0,
                                     ),
                                   ),

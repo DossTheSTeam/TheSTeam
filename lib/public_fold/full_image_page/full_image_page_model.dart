@@ -1,8 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'list_bests_posts_widget.dart' show ListBestsPostsWidget;
+import 'full_image_page_widget.dart' show FullImagePageWidget;
 import 'package:flutter/material.dart';
 
-class ListBestsPostsModel extends FlutterFlowModel<ListBestsPostsWidget> {
+class FullImagePageModel extends FlutterFlowModel<FullImagePageWidget> {
   @override
   void initState(BuildContext context) {}
 

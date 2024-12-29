@@ -74,7 +74,10 @@ class _ModifEndEEventPageWidgetState extends State<ModifEndEEventPageWidget> {
         final modifEndEEventPageEventsRecord = snapshot.data!;
 
         return GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -124,7 +127,11 @@ class _ModifEndEEventPageWidgetState extends State<ModifEndEEventPageWidget> {
                                     },
                                     child: Icon(
                                       Icons.menu_rounded,
-                                      color: currentUserDocument?.color1,
+                                      color: valueOrDefault<Color>(
+                                        currentUserDocument?.color1,
+                                        FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                      ),
                                       size: 30.0,
                                     ),
                                   ),
@@ -143,7 +150,11 @@ class _ModifEndEEventPageWidgetState extends State<ModifEndEEventPageWidget> {
                                       },
                                       child: Icon(
                                         Icons.arrow_back_ios_new_rounded,
-                                        color: currentUserDocument?.color1,
+                                        color: valueOrDefault<Color>(
+                                          currentUserDocument?.color1,
+                                          FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                        ),
                                         size: 30.0,
                                       ),
                                     ),
@@ -183,6 +194,45 @@ class _ModifEndEEventPageWidgetState extends State<ModifEndEEventPageWidget> {
                             Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      20.0, 0.0, 10.0, 0.0),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      if (modifEndEEventPageEventsRecord
+                                              .statut ==
+                                          true)
+                                        Container(
+                                          width: 20.0,
+                                          height: 20.0,
+                                          decoration: BoxDecoration(
+                                            color: FlutterFlowTheme.of(context)
+                                                .success,
+                                            shape: BoxShape.circle,
+                                          ),
+                                        ),
+                                      if (modifEndEEventPageEventsRecord
+                                              .statut ==
+                                          false)
+                                        Padding(
+                                          padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  5.0, 0.0, 0.0, 0.0),
+                                          child: Container(
+                                            width: 20.0,
+                                            height: 20.0,
+                                            decoration: BoxDecoration(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .error,
+                                              shape: BoxShape.circle,
+                                            ),
+                                          ),
+                                        ),
+                                    ],
+                                  ),
+                                ),
                                 Text(
                                   dateTimeFormat("d/M/y",
                                       modifEndEEventPageEventsRecord.date!),
@@ -245,37 +295,6 @@ class _ModifEndEEventPageWidgetState extends State<ModifEndEEventPageWidget> {
                                         letterSpacing: 0.0,
                                       ),
                                 ),
-                              ],
-                            ),
-                            Row(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                if (modifEndEEventPageEventsRecord.statut ==
-                                    true)
-                                  Container(
-                                    width: 25.0,
-                                    height: 25.0,
-                                    decoration: BoxDecoration(
-                                      color:
-                                          FlutterFlowTheme.of(context).success,
-                                      shape: BoxShape.circle,
-                                    ),
-                                  ),
-                                if (modifEndEEventPageEventsRecord.statut ==
-                                    false)
-                                  Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        5.0, 0.0, 0.0, 0.0),
-                                    child: Container(
-                                      width: 25.0,
-                                      height: 25.0,
-                                      decoration: BoxDecoration(
-                                        color:
-                                            FlutterFlowTheme.of(context).error,
-                                        shape: BoxShape.circle,
-                                      ),
-                                    ),
-                                  ),
                               ],
                             ),
                           ],
@@ -364,7 +383,7 @@ class _ModifEndEEventPageWidgetState extends State<ModifEndEEventPageWidget> {
                                             },
                                             child: Text(
                                               contDomTeamsRecord.name,
-                                              textAlign: TextAlign.start,
+                                              textAlign: TextAlign.center,
                                               maxLines: 2,
                                               style:
                                                   FlutterFlowTheme.of(context)
@@ -467,7 +486,7 @@ class _ModifEndEEventPageWidgetState extends State<ModifEndEEventPageWidget> {
                                             },
                                             child: Text(
                                               contExtTeamsRecord.name,
-                                              textAlign: TextAlign.start,
+                                              textAlign: TextAlign.center,
                                               maxLines: 2,
                                               style:
                                                   FlutterFlowTheme.of(context)

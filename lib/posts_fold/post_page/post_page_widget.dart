@@ -70,7 +70,10 @@ class _PostPageWidgetState extends State<PostPageWidget> {
         final postPagePostsRecord = snapshot.data!;
 
         return GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -353,14 +356,14 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                                           highlightColor: Colors
                                                               .transparent,
                                                           onTap: () async {
-                                                            await widget
-                                                                .postRef!
+                                                            await rowMyPostsRecord!
+                                                                .reference
                                                                 .delete();
                                                             await rowTeamPostsRecord!
                                                                 .reference
                                                                 .delete();
-                                                            await rowMyPostsRecord!
-                                                                .reference
+                                                            await widget
+                                                                .postRef!
                                                                 .delete();
 
                                                             context.pushNamed(
@@ -429,20 +432,41 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                       height: 200.0,
                                       decoration: BoxDecoration(
                                         color: FlutterFlowTheme.of(context)
-                                            .secondaryBackground,
+                                            .primaryBackground,
                                         borderRadius:
                                             BorderRadius.circular(18.0),
                                       ),
                                       child: Padding(
                                         padding: const EdgeInsets.all(3.0),
-                                        child: ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(15.0),
-                                          child: Image.network(
-                                            postPagePostsRecord.image,
-                                            width: 300.0,
-                                            height: 200.0,
-                                            fit: BoxFit.cover,
+                                        child: InkWell(
+                                          splashColor: Colors.transparent,
+                                          focusColor: Colors.transparent,
+                                          hoverColor: Colors.transparent,
+                                          highlightColor: Colors.transparent,
+                                          onTap: () async {
+                                            context.pushNamed(
+                                              'FullImagePage',
+                                              queryParameters: {
+                                                'imageRef': serializeParam(
+                                                  postPagePostsRecord.image,
+                                                  ParamType.String,
+                                                ),
+                                                'userRef': serializeParam(
+                                                  postPagePostsRecord.member,
+                                                  ParamType.DocumentReference,
+                                                ),
+                                              }.withoutNulls,
+                                            );
+                                          },
+                                          child: ClipRRect(
+                                            borderRadius:
+                                                BorderRadius.circular(15.0),
+                                            child: Image.network(
+                                              postPagePostsRecord.image,
+                                              width: 300.0,
+                                              height: 200.0,
+                                              fit: BoxFit.fitHeight,
+                                            ),
                                           ),
                                         ),
                                       ),
@@ -623,7 +647,7 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                                           .photoUrl,
                                                       width: 300.0,
                                                       height: 200.0,
-                                                      fit: BoxFit.cover,
+                                                      fit: BoxFit.fitHeight,
                                                     ),
                                                   ),
                                                 ),
@@ -761,9 +785,14 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                                       child: Icon(
                                                         Icons
                                                             .insert_comment_rounded,
-                                                        color:
-                                                            currentUserDocument
-                                                                ?.color1,
+                                                        color: valueOrDefault<
+                                                            Color>(
+                                                          currentUserDocument
+                                                              ?.color1,
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryText,
+                                                        ),
                                                         size: 30.0,
                                                       ),
                                                     ),
@@ -1246,17 +1275,6 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                           children: [
                                             Padding(
                                               padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 0.0, 5.0, 0.0),
-                                              child: Icon(
-                                                Icons.mic_rounded,
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .error,
-                                                size: 30.0,
-                                              ),
-                                            ),
-                                            Padding(
-                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 0.0, 10.0, 0.0),
                                               child: AuthUserStreamWidget(
@@ -1353,8 +1371,14 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                                   },
                                                   child: Icon(
                                                     Icons.image_search_rounded,
-                                                    color: currentUserDocument
-                                                        ?.color1,
+                                                    color:
+                                                        valueOrDefault<Color>(
+                                                      currentUserDocument
+                                                          ?.color1,
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .primaryText,
+                                                    ),
                                                     size: 30.0,
                                                   ),
                                                 ),
@@ -1640,8 +1664,11 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                               },
                                               child: Icon(
                                                 Icons.send_rounded,
-                                                color:
-                                                    currentUserDocument?.color1,
+                                                color: valueOrDefault<Color>(
+                                                  currentUserDocument?.color1,
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryText,
+                                                ),
                                                 size: 30.0,
                                               ),
                                             ),

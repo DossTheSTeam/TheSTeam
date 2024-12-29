@@ -36,7 +36,10 @@ class _MyImagePageWidgetState extends State<MyImagePageWidget> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -64,7 +67,10 @@ class _MyImagePageWidgetState extends State<MyImagePageWidget> {
                           },
                           child: Icon(
                             Icons.arrow_back_ios_new_rounded,
-                            color: currentUserDocument?.color1,
+                            color: valueOrDefault<Color>(
+                              currentUserDocument?.color1,
+                              FlutterFlowTheme.of(context).primaryText,
+                            ),
                             size: 30.0,
                           ),
                         ),
@@ -150,7 +156,10 @@ class _MyImagePageWidgetState extends State<MyImagePageWidget> {
                           },
                           child: Icon(
                             Icons.image_search_rounded,
-                            color: currentUserDocument?.color1,
+                            color: valueOrDefault<Color>(
+                              currentUserDocument?.color1,
+                              FlutterFlowTheme.of(context).primaryText,
+                            ),
                             size: 30.0,
                           ),
                         ),
@@ -178,6 +187,193 @@ class _MyImagePageWidgetState extends State<MyImagePageWidget> {
                                   ),
                             ),
                           ],
+                        ),
+                      ),
+                    ),
+                  AuthUserStreamWidget(
+                    builder: (context) => Divider(
+                      thickness: 1.0,
+                      color: valueOrDefault<Color>(
+                        currentUserDocument?.color2,
+                        FlutterFlowTheme.of(context).secondaryBackground,
+                      ),
+                    ),
+                  ),
+                  if (valueOrDefault<bool>(
+                          currentUserDocument?.helpNav, false) ==
+                      true)
+                    Align(
+                      alignment: const AlignmentDirectional(0.0, 0.0),
+                      child: Padding(
+                        padding:
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                        child: AuthUserStreamWidget(
+                          builder: (context) => Column(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Align(
+                                alignment: const AlignmentDirectional(0.0, -1.0),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceAround,
+                                  children: [
+                                    Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Icon(
+                                          Icons.location_history_outlined,
+                                          color: valueOrDefault<Color>(
+                                            currentUserDocument?.color1,
+                                            FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                          ),
+                                          size: 25.0,
+                                        ),
+                                        Padding(
+                                          padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  3.0, 0.0, 0.0, 0.0),
+                                          child: Text(
+                                            'Choisir comme photo\nde profil',
+                                            textAlign: TextAlign.center,
+                                            maxLines: 2,
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Poppins',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryText,
+                                                  fontSize: 10.0,
+                                                  letterSpacing: 0.0,
+                                                  lineHeight: 1.0,
+                                                ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Icon(
+                                          Icons.image_outlined,
+                                          color: valueOrDefault<Color>(
+                                            currentUserDocument?.color1,
+                                            FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                          ),
+                                          size: 25.0,
+                                        ),
+                                        Padding(
+                                          padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  3.0, 0.0, 0.0, 0.0),
+                                          child: Text(
+                                            'Choisir comme photo\nde fond',
+                                            textAlign: TextAlign.center,
+                                            maxLines: 2,
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Poppins',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryText,
+                                                  fontSize: 10.0,
+                                                  letterSpacing: 0.0,
+                                                  lineHeight: 1.0,
+                                                ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceAround,
+                                children: [
+                                  Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 0.0, 10.0, 0.0),
+                                        child: Container(
+                                          width: 20.0,
+                                          height: 20.0,
+                                          decoration: BoxDecoration(
+                                            color: valueOrDefault<Color>(
+                                              currentUserDocument?.color2,
+                                              FlutterFlowTheme.of(context)
+                                                  .secondaryText,
+                                            ),
+                                            shape: BoxShape.circle,
+                                          ),
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            3.0, 0.0, 0.0, 0.0),
+                                        child: Text(
+                                          'Image active',
+                                          textAlign: TextAlign.center,
+                                          maxLines: 2,
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Poppins',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryText,
+                                                fontSize: 10.0,
+                                                letterSpacing: 0.0,
+                                                lineHeight: 1.0,
+                                              ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Icon(
+                                        Icons.delete_forever,
+                                        color:
+                                            FlutterFlowTheme.of(context).error,
+                                        size: 25.0,
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 3.0, 0.0, 0.0),
+                                        child: Text(
+                                          'Supprimer la photo',
+                                          textAlign: TextAlign.center,
+                                          maxLines: 2,
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Poppins',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryText,
+                                                fontSize: 10.0,
+                                                letterSpacing: 0.0,
+                                                lineHeight: 1.0,
+                                              ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),
@@ -285,7 +481,7 @@ class _MyImagePageWidgetState extends State<MyImagePageWidget> {
                                                 decoration: BoxDecoration(
                                                   color: FlutterFlowTheme.of(
                                                           context)
-                                                      .primaryText,
+                                                      .primaryBackground,
                                                   borderRadius:
                                                       BorderRadius.circular(
                                                           9.0),
@@ -317,129 +513,198 @@ class _MyImagePageWidgetState extends State<MyImagePageWidget> {
                                                     MainAxisAlignment
                                                         .spaceBetween,
                                                 children: [
-                                                  InkWell(
-                                                    splashColor:
-                                                        Colors.transparent,
-                                                    focusColor:
-                                                        Colors.transparent,
-                                                    hoverColor:
-                                                        Colors.transparent,
-                                                    highlightColor:
-                                                        Colors.transparent,
-                                                    onTap: () async {
-                                                      await currentUserReference!
-                                                          .update(
-                                                              createUsersRecordData(
-                                                        photoUrl:
-                                                            containerImagesRecord
-                                                                .image,
-                                                      ));
+                                                  if (containerImagesRecord
+                                                          .image !=
+                                                      currentUserPhoto)
+                                                    AuthUserStreamWidget(
+                                                      builder: (context) =>
+                                                          InkWell(
+                                                        splashColor:
+                                                            Colors.transparent,
+                                                        focusColor:
+                                                            Colors.transparent,
+                                                        hoverColor:
+                                                            Colors.transparent,
+                                                        highlightColor:
+                                                            Colors.transparent,
+                                                        onTap: () async {
+                                                          await currentUserReference!
+                                                              .update(
+                                                                  createUsersRecordData(
+                                                            photoUrl:
+                                                                containerImagesRecord
+                                                                    .image,
+                                                          ));
 
-                                                      context.pushNamed(
-                                                        'MyProfilPage',
-                                                        extra: <String,
-                                                            dynamic>{
-                                                          kTransitionInfoKey:
-                                                              const TransitionInfo(
-                                                            hasTransition: true,
-                                                            transitionType:
-                                                                PageTransitionType
-                                                                    .scale,
-                                                            alignment: Alignment
-                                                                .bottomCenter,
-                                                            duration: Duration(
-                                                                milliseconds:
-                                                                    600),
-                                                          ),
+                                                          context.pushNamed(
+                                                            'MyProfilPage',
+                                                            extra: <String,
+                                                                dynamic>{
+                                                              kTransitionInfoKey:
+                                                                  const TransitionInfo(
+                                                                hasTransition:
+                                                                    true,
+                                                                transitionType:
+                                                                    PageTransitionType
+                                                                        .scale,
+                                                                alignment: Alignment
+                                                                    .bottomCenter,
+                                                                duration: Duration(
+                                                                    milliseconds:
+                                                                        600),
+                                                              ),
+                                                            },
+                                                          );
                                                         },
-                                                      );
-                                                    },
-                                                    child: Icon(
-                                                      Icons
-                                                          .location_history_outlined,
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .secondaryText,
-                                                      size: 25.0,
-                                                    ),
-                                                  ),
-                                                  InkWell(
-                                                    splashColor:
-                                                        Colors.transparent,
-                                                    focusColor:
-                                                        Colors.transparent,
-                                                    hoverColor:
-                                                        Colors.transparent,
-                                                    highlightColor:
-                                                        Colors.transparent,
-                                                    onTap: () async {
-                                                      await currentUserReference!
-                                                          .update(
-                                                              createUsersRecordData(
-                                                        imageFond:
-                                                            containerImagesRecord
-                                                                .image,
-                                                      ));
-
-                                                      context.pushNamed(
-                                                        'MyProfilPage',
-                                                        extra: <String,
-                                                            dynamic>{
-                                                          kTransitionInfoKey:
-                                                              const TransitionInfo(
-                                                            hasTransition: true,
-                                                            transitionType:
-                                                                PageTransitionType
-                                                                    .scale,
-                                                            alignment: Alignment
-                                                                .bottomCenter,
-                                                            duration: Duration(
-                                                                milliseconds:
-                                                                    600),
+                                                        child: Icon(
+                                                          Icons
+                                                              .location_history_outlined,
+                                                          color: valueOrDefault<
+                                                              Color>(
+                                                            currentUserDocument
+                                                                ?.color1,
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primaryText,
                                                           ),
-                                                        },
-                                                      );
-                                                    },
-                                                    child: Icon(
-                                                      Icons.image_outlined,
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .secondaryText,
-                                                      size: 25.0,
-                                                    ),
-                                                  ),
-                                                  InkWell(
-                                                    splashColor:
-                                                        Colors.transparent,
-                                                    focusColor:
-                                                        Colors.transparent,
-                                                    hoverColor:
-                                                        Colors.transparent,
-                                                    highlightColor:
-                                                        Colors.transparent,
-                                                    onTap: () async {
-                                                      await containerImagesRecord
-                                                          .reference
-                                                          .update({
-                                                        ...mapToFirestore(
-                                                          {
-                                                            'image': FieldValue
-                                                                .delete(),
-                                                          },
+                                                          size: 25.0,
                                                         ),
-                                                      });
-                                                    },
-                                                    child: Icon(
-                                                      Icons.delete_forever,
-                                                      color:
+                                                      ),
+                                                    ),
+                                                  if (containerImagesRecord
+                                                          .image ==
+                                                      currentUserPhoto)
+                                                    AuthUserStreamWidget(
+                                                      builder: (context) =>
+                                                          Icon(
+                                                        Icons
+                                                            .location_history_outlined,
+                                                        color: valueOrDefault<
+                                                            Color>(
+                                                          currentUserDocument
+                                                              ?.color2,
                                                           FlutterFlowTheme.of(
                                                                   context)
-                                                              .error,
-                                                      size: 25.0,
+                                                              .secondaryText,
+                                                        ),
+                                                        size: 25.0,
+                                                      ),
                                                     ),
-                                                  ),
+                                                  if (containerImagesRecord
+                                                          .image !=
+                                                      valueOrDefault(
+                                                          currentUserDocument
+                                                              ?.imageFond,
+                                                          ''))
+                                                    AuthUserStreamWidget(
+                                                      builder: (context) =>
+                                                          InkWell(
+                                                        splashColor:
+                                                            Colors.transparent,
+                                                        focusColor:
+                                                            Colors.transparent,
+                                                        hoverColor:
+                                                            Colors.transparent,
+                                                        highlightColor:
+                                                            Colors.transparent,
+                                                        onTap: () async {
+                                                          await currentUserReference!
+                                                              .update(
+                                                                  createUsersRecordData(
+                                                            imageFond:
+                                                                containerImagesRecord
+                                                                    .image,
+                                                          ));
+
+                                                          context.pushNamed(
+                                                            'MyProfilPage',
+                                                            extra: <String,
+                                                                dynamic>{
+                                                              kTransitionInfoKey:
+                                                                  const TransitionInfo(
+                                                                hasTransition:
+                                                                    true,
+                                                                transitionType:
+                                                                    PageTransitionType
+                                                                        .scale,
+                                                                alignment: Alignment
+                                                                    .bottomCenter,
+                                                                duration: Duration(
+                                                                    milliseconds:
+                                                                        600),
+                                                              ),
+                                                            },
+                                                          );
+                                                        },
+                                                        child: Icon(
+                                                          Icons.image_outlined,
+                                                          color: valueOrDefault<
+                                                              Color>(
+                                                            currentUserDocument
+                                                                ?.color1,
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primaryText,
+                                                          ),
+                                                          size: 25.0,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  if (containerImagesRecord
+                                                          .image ==
+                                                      valueOrDefault(
+                                                          currentUserDocument
+                                                              ?.imageFond,
+                                                          ''))
+                                                    AuthUserStreamWidget(
+                                                      builder: (context) =>
+                                                          Icon(
+                                                        Icons.image_outlined,
+                                                        color: valueOrDefault<
+                                                            Color>(
+                                                          currentUserDocument
+                                                              ?.color2,
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .secondaryText,
+                                                        ),
+                                                        size: 25.0,
+                                                      ),
+                                                    ),
+                                                  if ((containerImagesRecord
+                                                              .image !=
+                                                          currentUserPhoto) &&
+                                                      (containerImagesRecord
+                                                              .image !=
+                                                          valueOrDefault(
+                                                              currentUserDocument
+                                                                  ?.imageFond,
+                                                              '')))
+                                                    AuthUserStreamWidget(
+                                                      builder: (context) =>
+                                                          InkWell(
+                                                        splashColor:
+                                                            Colors.transparent,
+                                                        focusColor:
+                                                            Colors.transparent,
+                                                        hoverColor:
+                                                            Colors.transparent,
+                                                        highlightColor:
+                                                            Colors.transparent,
+                                                        onTap: () async {
+                                                          await containerImagesRecord
+                                                              .reference
+                                                              .delete();
+                                                        },
+                                                        child: Icon(
+                                                          Icons.delete_forever,
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .error,
+                                                          size: 25.0,
+                                                        ),
+                                                      ),
+                                                    ),
                                                 ],
                                               ),
                                             ),

@@ -26,9 +26,24 @@ class ModifTeamPageModel extends FlutterFlowModel<ModifTeamPageWidget> {
       FFUploadedFile(bytes: Uint8List.fromList([]));
   String uploadedFileUrl = '';
 
-  // State field(s) for DropLigue widget.
-  String? dropLigueValue;
-  FormFieldController<String>? dropLigueValueController;
+  // State field(s) for DropLigueFoot widget.
+  String? dropLigueFootValue;
+  FormFieldController<String>? dropLigueFootValueController;
+  // State field(s) for DropLigueBasket widget.
+  String? dropLigueBasketValue;
+  FormFieldController<String>? dropLigueBasketValueController;
+  // State field(s) for DropLigueTennis widget.
+  String? dropLigueTennisValue;
+  FormFieldController<String>? dropLigueTennisValueController;
+  // State field(s) for DropLigueHockey widget.
+  String? dropLigueHockeyValue;
+  FormFieldController<String>? dropLigueHockeyValueController;
+  // State field(s) for DropLigueMMA widget.
+  String? dropLigueMMAValue;
+  FormFieldController<String>? dropLigueMMAValueController;
+  // State field(s) for DropLigueBoxe widget.
+  String? dropLigueBoxeValue;
+  FormFieldController<String>? dropLigueBoxeValueController;
   // State field(s) for DropFootCup widget.
   String? dropFootCupValue;
   FormFieldController<String>? dropFootCupValueController;

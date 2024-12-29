@@ -71,7 +71,10 @@ class _RedCardEventCommPageWidgetState
         final redCardEventCommPageEventMessagesRecord = snapshot.data!;
 
         return GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -231,7 +234,7 @@ class _RedCardEventCommPageWidgetState
                                         rowUserRedCardUsersRecord.photoUrl,
                                         width: 300.0,
                                         height: 200.0,
-                                        fit: BoxFit.cover,
+                                        fit: BoxFit.fitHeight,
                                       ),
                                     ),
                                   ),

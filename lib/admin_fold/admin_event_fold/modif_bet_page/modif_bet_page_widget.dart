@@ -63,7 +63,10 @@ class _ModifBetPageWidgetState extends State<ModifBetPageWidget> {
         final modifBetPageBetsRecord = snapshot.data!;
 
         return GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -354,6 +357,21 @@ class _ModifBetPageWidgetState extends State<ModifBetPageWidget> {
                                       letterSpacing: 0.0,
                                     ),
                               ),
+                              if ((modifBetPageBetsRecord.choice == 'plus') ||
+                                  (modifBetPageBetsRecord.choice == 'moins'))
+                                Text(
+                                  valueOrDefault<String>(
+                                    modifBetPageBetsRecord.points,
+                                    '00.0',
+                                  ),
+                                  maxLines: 2,
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Poppins',
+                                        letterSpacing: 0.0,
+                                      ),
+                                ),
                               Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [

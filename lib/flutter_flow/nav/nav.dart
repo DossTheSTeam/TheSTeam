@@ -16,6 +16,8 @@ export 'serialization_util.dart';
 
 const kTransitionInfoKey = '__transition_info__';
 
+GlobalKey<NavigatorState> appNavigatorKey = GlobalKey<NavigatorState>();
+
 class AppStateNotifier extends ChangeNotifier {
   AppStateNotifier._();
 
@@ -73,6 +75,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       initialLocation: '/',
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
+      navigatorKey: appNavigatorKey,
       errorBuilder: (context, state) =>
           appStateNotifier.loggedIn ? const MyProfilPageWidget() : const AuthPageWidget(),
       routes: [
@@ -356,11 +359,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               collectionNamePath: ['teams'],
             ),
           ),
-        ),
-        FFRoute(
-          name: 'ListBestsPosts',
-          path: '/listBestsPosts',
-          builder: (context, params) => const ListBestsPostsWidget(),
         ),
         FFRoute(
           name: 'ListPosts',
@@ -1195,6 +1193,34 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'TeamListCup',
           path: '/teamListCup',
           builder: (context, params) => const TeamListCupWidget(),
+        ),
+        FFRoute(
+          name: 'PublicStatsCompare',
+          path: '/publicStatsCompare',
+          builder: (context, params) => PublicStatsCompareWidget(
+            userRef: params.getParam(
+              'userRef',
+              ParamType.DocumentReference,
+              isList: false,
+              collectionNamePath: ['users'],
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'FullImagePage',
+          path: '/fullImagePage',
+          builder: (context, params) => FullImagePageWidget(
+            imageRef: params.getParam(
+              'imageRef',
+              ParamType.String,
+            ),
+            userRef: params.getParam(
+              'userRef',
+              ParamType.DocumentReference,
+              isList: false,
+              collectionNamePath: ['users'],
+            ),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],

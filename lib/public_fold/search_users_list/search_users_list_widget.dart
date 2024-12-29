@@ -62,7 +62,10 @@ class _SearchUsersListWidgetState extends State<SearchUsersListWidget> {
         final searchUsersListUsersRecord = snapshot.data!;
 
         return GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -108,7 +111,11 @@ class _SearchUsersListWidgetState extends State<SearchUsersListWidget> {
                                       },
                                       child: Icon(
                                         Icons.menu_rounded,
-                                        color: currentUserDocument?.color1,
+                                        color: valueOrDefault<Color>(
+                                          currentUserDocument?.color1,
+                                          FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                        ),
                                         size: 30.0,
                                       ),
                                     ),
@@ -127,7 +134,11 @@ class _SearchUsersListWidgetState extends State<SearchUsersListWidget> {
                                         },
                                         child: Icon(
                                           Icons.arrow_back_ios_new_rounded,
-                                          color: currentUserDocument?.color1,
+                                          color: valueOrDefault<Color>(
+                                            currentUserDocument?.color1,
+                                            FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                          ),
                                           size: 30.0,
                                         ),
                                       ),
@@ -164,6 +175,15 @@ class _SearchUsersListWidgetState extends State<SearchUsersListWidget> {
                                 fontFamily: 'Montserrat',
                                 letterSpacing: 0.0,
                               ),
+                        ),
+                        AuthUserStreamWidget(
+                          builder: (context) => Divider(
+                            thickness: 1.0,
+                            color: valueOrDefault<Color>(
+                              currentUserDocument?.color2,
+                              FlutterFlowTheme.of(context).secondaryBackground,
+                            ),
+                          ),
                         ),
                         Padding(
                           padding: const EdgeInsetsDirectional.fromSTEB(
@@ -274,9 +294,14 @@ class _SearchUsersListWidgetState extends State<SearchUsersListWidget> {
                                                         .labelMedium
                                                         .override(
                                                           fontFamily: 'Poppins',
-                                                          color:
-                                                              columnUsersUsersRecord
-                                                                  .color1,
+                                                          color: valueOrDefault<
+                                                              Color>(
+                                                            columnUsersUsersRecord
+                                                                .color1,
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primaryText,
+                                                          ),
                                                           letterSpacing: 0.0,
                                                         ),
                                                   ),

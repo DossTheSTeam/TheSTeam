@@ -30,12 +30,18 @@ class TeamPostsRecord extends FirestoreRecord {
   bool get survey => _survey ?? false;
   bool hasSurvey() => _survey != null;
 
+  // "fold_categorie" field.
+  String? _foldCategorie;
+  String get foldCategorie => _foldCategorie ?? '';
+  bool hasFoldCategorie() => _foldCategorie != null;
+
   DocumentReference get parentReference => reference.parent.parent!;
 
   void _initializeFields() {
     _createdTime = snapshotData['created_time'] as DateTime?;
     _posts = snapshotData['posts'] as DocumentReference?;
     _survey = snapshotData['survey'] as bool?;
+    _foldCategorie = snapshotData['fold_categorie'] as String?;
   }
 
   static Query<Map<String, dynamic>> collection([DocumentReference? parent]) =>
@@ -81,12 +87,14 @@ Map<String, dynamic> createTeamPostsRecordData({
   DateTime? createdTime,
   DocumentReference? posts,
   bool? survey,
+  String? foldCategorie,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
       'created_time': createdTime,
       'posts': posts,
       'survey': survey,
+      'fold_categorie': foldCategorie,
     }.withoutNulls,
   );
 
@@ -100,12 +108,13 @@ class TeamPostsRecordDocumentEquality implements Equality<TeamPostsRecord> {
   bool equals(TeamPostsRecord? e1, TeamPostsRecord? e2) {
     return e1?.createdTime == e2?.createdTime &&
         e1?.posts == e2?.posts &&
-        e1?.survey == e2?.survey;
+        e1?.survey == e2?.survey &&
+        e1?.foldCategorie == e2?.foldCategorie;
   }
 
   @override
-  int hash(TeamPostsRecord? e) =>
-      const ListEquality().hash([e?.createdTime, e?.posts, e?.survey]);
+  int hash(TeamPostsRecord? e) => const ListEquality()
+      .hash([e?.createdTime, e?.posts, e?.survey, e?.foldCategorie]);
 
   @override
   bool isValidKey(Object? o) => o is TeamPostsRecord;

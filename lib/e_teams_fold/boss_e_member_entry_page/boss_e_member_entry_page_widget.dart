@@ -70,7 +70,10 @@ class _BossEMemberEntryPageWidgetState
         final bossEMemberEntryPageMyNotificationsRecord = snapshot.data!;
 
         return GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -120,7 +123,11 @@ class _BossEMemberEntryPageWidgetState
                                     },
                                     child: Icon(
                                       Icons.menu_rounded,
-                                      color: currentUserDocument?.color1,
+                                      color: valueOrDefault<Color>(
+                                        currentUserDocument?.color1,
+                                        FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                      ),
                                       size: 30.0,
                                     ),
                                   ),
@@ -139,7 +146,11 @@ class _BossEMemberEntryPageWidgetState
                                       },
                                       child: Icon(
                                         Icons.arrow_back_ios_new_rounded,
-                                        color: currentUserDocument?.color1,
+                                        color: valueOrDefault<Color>(
+                                          currentUserDocument?.color1,
+                                          FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                        ),
                                         size: 30.0,
                                       ),
                                     ),
@@ -225,7 +236,7 @@ class _BossEMemberEntryPageWidgetState
                                                 columnUsersRecord.photoUrl,
                                                 width: 300.0,
                                                 height: 200.0,
-                                                fit: BoxFit.cover,
+                                                fit: BoxFit.fitHeight,
                                               ),
                                             ),
                                           ),
@@ -267,8 +278,11 @@ class _BossEMemberEntryPageWidgetState
                                                 .titleSmall
                                                 .override(
                                                   fontFamily: 'Poppins',
-                                                  color:
-                                                      columnUsersRecord.color1,
+                                                  color: valueOrDefault<Color>(
+                                                    columnUsersRecord.color1,
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryText,
+                                                  ),
                                                   letterSpacing: 0.0,
                                                 ),
                                           ),
@@ -580,7 +594,7 @@ class _BossEMemberEntryPageWidgetState
                                               Icons.star_rounded,
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .accent3,
+                                                      .accent1,
                                               size: 24.0,
                                             ),
                                           ],
@@ -688,7 +702,11 @@ class _BossEMemberEntryPageWidgetState
                                               .titleSmall
                                               .override(
                                                 fontFamily: 'Poppins',
-                                                color: columnTeamsRecord.color1,
+                                                color: valueOrDefault<Color>(
+                                                  columnTeamsRecord.color1,
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryText,
+                                                ),
                                                 letterSpacing: 0.0,
                                               ),
                                         ),

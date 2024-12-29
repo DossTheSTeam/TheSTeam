@@ -37,7 +37,10 @@ class _ETeamRankPageWidgetState extends State<ETeamRankPageWidget> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -82,7 +85,10 @@ class _ETeamRankPageWidgetState extends State<ETeamRankPageWidget> {
                                   },
                                   child: Icon(
                                     Icons.menu_rounded,
-                                    color: currentUserDocument?.color1,
+                                    color: valueOrDefault<Color>(
+                                      currentUserDocument?.color1,
+                                      FlutterFlowTheme.of(context).primaryText,
+                                    ),
                                     size: 30.0,
                                   ),
                                 ),
@@ -99,7 +105,11 @@ class _ETeamRankPageWidgetState extends State<ETeamRankPageWidget> {
                                     },
                                     child: Icon(
                                       Icons.arrow_back_ios_new_rounded,
-                                      color: currentUserDocument?.color1,
+                                      color: valueOrDefault<Color>(
+                                        currentUserDocument?.color1,
+                                        FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                      ),
                                       size: 30.0,
                                     ),
                                   ),
@@ -146,7 +156,11 @@ class _ETeamRankPageWidgetState extends State<ETeamRankPageWidget> {
                                     },
                                     child: Icon(
                                       Icons.favorite_rounded,
-                                      color: currentUserDocument?.color1,
+                                      color: valueOrDefault<Color>(
+                                        currentUserDocument?.color1,
+                                        FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                      ),
                                       size: 30.0,
                                     ),
                                   ),
@@ -204,8 +218,13 @@ class _ETeamRankPageWidgetState extends State<ETeamRankPageWidget> {
                                   'E Sport Basketball',
                                   'E Sport War'
                                 ],
-                                onChanged: (val) => safeSetState(
-                                    () => _model.dropESportValue = val),
+                                onChanged: (val) async {
+                                  safeSetState(
+                                      () => _model.dropESportValue = val);
+                                  _model.showEsportFilter =
+                                      _model.dropESportValue;
+                                  safeSetState(() {});
+                                },
                                 width: 180.0,
                                 height: 40.0,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -302,8 +321,11 @@ class _ETeamRankPageWidgetState extends State<ETeamRankPageWidget> {
                                           },
                                           child: Icon(
                                             Icons.notifications_active_outlined,
-                                            color: FlutterFlowTheme.of(context)
-                                                .accent1,
+                                            color: valueOrDefault<Color>(
+                                              currentUserDocument?.color1,
+                                              FlutterFlowTheme.of(context)
+                                                  .accent1,
+                                            ),
                                             size: 40.0,
                                           ),
                                         ),
@@ -331,8 +353,11 @@ class _ETeamRankPageWidgetState extends State<ETeamRankPageWidget> {
                                 'Pro',
                                 'Amateur'
                               ],
-                              onChanged: (val) => safeSetState(
-                                  () => _model.dropLigueValue = val),
+                              onChanged: (val) async {
+                                safeSetState(() => _model.dropLigueValue = val);
+                                _model.showELIgueFilter = _model.dropLigueValue;
+                                safeSetState(() {});
+                              },
                               width: 150.0,
                               height: 56.0,
                               textStyle: FlutterFlowTheme.of(context)
@@ -373,8 +398,13 @@ class _ETeamRankPageWidgetState extends State<ETeamRankPageWidget> {
                                 'Division 2',
                                 'Division 3'
                               ],
-                              onChanged: (val) => safeSetState(
-                                  () => _model.dropDivisionValue = val),
+                              onChanged: (val) async {
+                                safeSetState(
+                                    () => _model.dropDivisionValue = val);
+                                _model.showEDivFilter =
+                                    _model.dropDivisionValue;
+                                safeSetState(() {});
+                              },
                               width: 150.0,
                               height: 56.0,
                               textStyle: FlutterFlowTheme.of(context)
@@ -459,8 +489,11 @@ class _ETeamRankPageWidgetState extends State<ETeamRankPageWidget> {
                                             children: [
                                               Icon(
                                                 Icons.security_rounded,
-                                                color:
-                                                    currentUserDocument?.color2,
+                                                color: valueOrDefault<Color>(
+                                                  currentUserDocument?.color2,
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryText,
+                                                ),
                                                 size: 30.0,
                                               ),
                                               Padding(
@@ -559,8 +592,11 @@ class _ETeamRankPageWidgetState extends State<ETeamRankPageWidget> {
                                               ),
                                               Icon(
                                                 Icons.security_rounded,
-                                                color:
-                                                    currentUserDocument?.color2,
+                                                color: valueOrDefault<Color>(
+                                                  currentUserDocument?.color2,
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryText,
+                                                ),
                                                 size: 30.0,
                                               ),
                                             ],
@@ -593,6 +629,42 @@ class _ETeamRankPageWidgetState extends State<ETeamRankPageWidget> {
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
+                                            Padding(
+                                              padding: const EdgeInsetsDirectional
+                                                  .fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                              child: Container(
+                                                width: 140.0,
+                                                height: 30.0,
+                                                decoration: BoxDecoration(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryBackground,
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          25.0),
+                                                  border: Border.all(
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryBackground,
+                                                  ),
+                                                ),
+                                                child: Align(
+                                                  alignment:
+                                                      const AlignmentDirectional(
+                                                          -1.0, 0.0),
+                                                  child: Text(
+                                                    'E Teams',
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .labelSmall
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
                                             Container(
                                               width: 45.0,
                                               height: 30.0,
@@ -606,36 +678,6 @@ class _ETeamRankPageWidgetState extends State<ETeamRankPageWidget> {
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primaryBackground,
-                                                ),
-                                              ),
-                                            ),
-                                            Container(
-                                              width: 140.0,
-                                              height: 30.0,
-                                              decoration: BoxDecoration(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryBackground,
-                                                borderRadius:
-                                                    BorderRadius.circular(25.0),
-                                                border: Border.all(
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primaryBackground,
-                                                ),
-                                              ),
-                                              child: Align(
-                                                alignment: const AlignmentDirectional(
-                                                    1.0, 0.0),
-                                                child: Text(
-                                                  'E Teams',
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .labelSmall
-                                                      .override(
-                                                        fontFamily: 'Poppins',
-                                                        letterSpacing: 0.0,
-                                                      ),
                                                 ),
                                               ),
                                             ),
@@ -682,6 +724,10 @@ class _ETeamRankPageWidgetState extends State<ETeamRankPageWidget> {
                                                       .bodyMedium
                                                       .override(
                                                         fontFamily: 'Poppins',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .secondaryText,
                                                         letterSpacing: 0.0,
                                                       ),
                                                 ),
@@ -713,6 +759,10 @@ class _ETeamRankPageWidgetState extends State<ETeamRankPageWidget> {
                                                       .bodyMedium
                                                       .override(
                                                         fontFamily: 'Poppins',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .secondaryText,
                                                         letterSpacing: 0.0,
                                                       ),
                                                 ),
@@ -738,12 +788,16 @@ class _ETeamRankPageWidgetState extends State<ETeamRankPageWidget> {
                                                 alignment: const AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Text(
-                                                  'G',
+                                                  'V',
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodyMedium
                                                       .override(
                                                         fontFamily: 'Poppins',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .secondaryText,
                                                         letterSpacing: 0.0,
                                                       ),
                                                 ),
@@ -775,6 +829,10 @@ class _ETeamRankPageWidgetState extends State<ETeamRankPageWidget> {
                                                       .bodyMedium
                                                       .override(
                                                         fontFamily: 'Poppins',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .secondaryText,
                                                         letterSpacing: 0.0,
                                                       ),
                                                 ),
@@ -799,7 +857,7 @@ class _ETeamRankPageWidgetState extends State<ETeamRankPageWidget> {
                                                 alignment: const AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Text(
-                                                  'P',
+                                                  'D',
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .labelSmall
@@ -835,13 +893,17 @@ class _ETeamRankPageWidgetState extends State<ETeamRankPageWidget> {
                                                       .bodyMedium
                                                       .override(
                                                         fontFamily: 'Poppins',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .secondaryText,
                                                         letterSpacing: 0.0,
                                                       ),
                                                 ),
                                               ),
                                             ),
                                             Container(
-                                              width: 45.0,
+                                              width: 90.0,
                                               height: 30.0,
                                               decoration: BoxDecoration(
                                                 color:
@@ -859,42 +921,16 @@ class _ETeamRankPageWidgetState extends State<ETeamRankPageWidget> {
                                                 alignment: const AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Text(
-                                                  'Pour',
+                                                  'Pour : Contre',
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodyMedium
                                                       .override(
                                                         fontFamily: 'Poppins',
-                                                        letterSpacing: 0.0,
-                                                      ),
-                                                ),
-                                              ),
-                                            ),
-                                            Container(
-                                              width: 45.0,
-                                              height: 30.0,
-                                              decoration: BoxDecoration(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryBackground,
-                                                borderRadius:
-                                                    BorderRadius.circular(25.0),
-                                                border: Border.all(
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primaryBackground,
-                                                ),
-                                              ),
-                                              child: Align(
-                                                alignment: const AlignmentDirectional(
-                                                    0.0, 0.0),
-                                                child: Text(
-                                                  'Contre',
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Poppins',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .secondaryText,
                                                         letterSpacing: 0.0,
                                                       ),
                                                 ),
@@ -925,6 +961,45 @@ class _ETeamRankPageWidgetState extends State<ETeamRankPageWidget> {
                                                       .bodyMedium
                                                       .override(
                                                         fontFamily: 'Poppins',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .secondaryText,
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                            Container(
+                                              width: 45.0,
+                                              height: 30.0,
+                                              decoration: BoxDecoration(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryBackground,
+                                                borderRadius:
+                                                    BorderRadius.circular(25.0),
+                                                border: Border.all(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryBackground,
+                                                ),
+                                              ),
+                                              child: Align(
+                                                alignment: const AlignmentDirectional(
+                                                    0.0, 0.0),
+                                                child: Text(
+                                                  'Signals',
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .secondaryText,
+                                                        fontSize: 11.0,
                                                         letterSpacing: 0.0,
                                                       ),
                                                 ),
@@ -940,17 +1015,17 @@ class _ETeamRankPageWidgetState extends State<ETeamRankPageWidget> {
                                                   .where(
                                                     'sport_value',
                                                     isEqualTo:
-                                                        _model.dropESportValue,
+                                                        _model.showEsportFilter,
                                                   )
                                                   .where(
                                                     'division_value',
-                                                    isEqualTo: _model
-                                                        .dropDivisionValue,
+                                                    isEqualTo:
+                                                        _model.showEDivFilter,
                                                   )
                                                   .where(
                                                     'league_value',
                                                     isEqualTo:
-                                                        _model.dropLigueValue,
+                                                        _model.showELIgueFilter,
                                                   )
                                                   .orderBy('points',
                                                       descending: true),
@@ -997,6 +1072,82 @@ class _ETeamRankPageWidgetState extends State<ETeamRankPageWidget> {
                                                   mainAxisSize:
                                                       MainAxisSize.max,
                                                   children: [
+                                                    Padding(
+                                                      padding:
+                                                          const EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  0.0,
+                                                                  0.0,
+                                                                  5.0,
+                                                                  0.0),
+                                                      child: Container(
+                                                        width: 140.0,
+                                                        height: 30.0,
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primaryBackground,
+                                                          border: Border.all(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryBackground,
+                                                          ),
+                                                        ),
+                                                        child: Align(
+                                                          alignment:
+                                                              const AlignmentDirectional(
+                                                                  -1.0, 0.0),
+                                                          child: InkWell(
+                                                            splashColor: Colors
+                                                                .transparent,
+                                                            focusColor: Colors
+                                                                .transparent,
+                                                            hoverColor: Colors
+                                                                .transparent,
+                                                            highlightColor:
+                                                                Colors
+                                                                    .transparent,
+                                                            onTap: () async {
+                                                              context.pushNamed(
+                                                                'TeamPage',
+                                                                queryParameters:
+                                                                    {
+                                                                  'teamRef':
+                                                                      serializeParam(
+                                                                    columnETeamsPointsScrollTeamsRecord
+                                                                        .reference,
+                                                                    ParamType
+                                                                        .DocumentReference,
+                                                                  ),
+                                                                }.withoutNulls,
+                                                              );
+                                                            },
+                                                            child: Text(
+                                                              columnETeamsPointsScrollTeamsRecord
+                                                                  .name,
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Poppins',
+                                                                    color: valueOrDefault<
+                                                                        Color>(
+                                                                      columnETeamsPointsScrollTeamsRecord
+                                                                          .color1,
+                                                                      FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primaryText,
+                                                                    ),
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                  ),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ),
                                                     Container(
                                                       width: 45.0,
                                                       height: 30.0,
@@ -1013,83 +1164,33 @@ class _ETeamRankPageWidgetState extends State<ETeamRankPageWidget> {
                                                       child: Align(
                                                         alignment:
                                                             const AlignmentDirectional(
-                                                                0.0, 0.0),
-                                                        child: Text(
-                                                          valueOrDefault<
-                                                              String>(
-                                                            functions
-                                                                .zeroTo1(
-                                                                    columnETeamsPointsScrollIndex)
-                                                                .toString(),
-                                                            '1',
-                                                          ),
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Poppins',
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .primaryText,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                              ),
-                                                        ),
-                                                      ),
-                                                    ),
-                                                    Container(
-                                                      width: 140.0,
-                                                      height: 30.0,
-                                                      decoration: BoxDecoration(
-                                                        color: FlutterFlowTheme
-                                                                .of(context)
-                                                            .primaryBackground,
-                                                        border: Border.all(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryBackground,
-                                                        ),
-                                                      ),
-                                                      child: Align(
-                                                        alignment:
-                                                            const AlignmentDirectional(
                                                                 1.0, 0.0),
-                                                        child: InkWell(
-                                                          splashColor: Colors
-                                                              .transparent,
-                                                          focusColor: Colors
-                                                              .transparent,
-                                                          hoverColor: Colors
-                                                              .transparent,
-                                                          highlightColor: Colors
-                                                              .transparent,
-                                                          onTap: () async {
-                                                            context.pushNamed(
-                                                              'TeamPage',
-                                                              queryParameters: {
-                                                                'teamRef':
-                                                                    serializeParam(
-                                                                  columnETeamsPointsScrollTeamsRecord
-                                                                      .reference,
-                                                                  ParamType
-                                                                      .DocumentReference,
-                                                                ),
-                                                              }.withoutNulls,
-                                                            );
-                                                          },
+                                                        child: Padding(
+                                                          padding:
+                                                              const EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      0.0,
+                                                                      3.0,
+                                                                      0.0),
                                                           child: Text(
-                                                            columnETeamsPointsScrollTeamsRecord
-                                                                .name,
+                                                            valueOrDefault<
+                                                                String>(
+                                                              functions
+                                                                  .zeroTo1(
+                                                                      columnETeamsPointsScrollIndex)
+                                                                  .toString(),
+                                                              '1',
+                                                            ),
                                                             style: FlutterFlowTheme
                                                                     .of(context)
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
                                                                       'Poppins',
-                                                                  color:
-                                                                      columnETeamsPointsScrollTeamsRecord
-                                                                          .color1,
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primaryText,
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),
@@ -1389,7 +1490,7 @@ class _ETeamRankPageWidgetState extends State<ETeamRankPageWidget> {
                                                       ),
                                                     ),
                                                     Container(
-                                                      width: 45.0,
+                                                      width: 90.0,
                                                       height: 30.0,
                                                       decoration: BoxDecoration(
                                                         color: FlutterFlowTheme
@@ -1401,31 +1502,95 @@ class _ETeamRankPageWidgetState extends State<ETeamRankPageWidget> {
                                                               .primaryBackground,
                                                         ),
                                                       ),
-                                                      child: Align(
-                                                        alignment:
-                                                            const AlignmentDirectional(
-                                                                0.0, 0.0),
-                                                        child: Text(
-                                                          valueOrDefault<
-                                                              String>(
-                                                            columnETeamsPointsScrollTeamsRecord
-                                                                .goalsPointsIn
-                                                                .toString(),
-                                                            '0',
-                                                          ),
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Poppins',
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .primaryText,
-                                                                letterSpacing:
-                                                                    0.0,
+                                                      child: Row(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .center,
+                                                        children: [
+                                                          Align(
+                                                            alignment:
+                                                                const AlignmentDirectional(
+                                                                    0.0, 0.0),
+                                                            child: Text(
+                                                              valueOrDefault<
+                                                                  String>(
+                                                                columnETeamsPointsScrollTeamsRecord
+                                                                    .goalsPointsIn
+                                                                    .toString(),
+                                                                '0',
                                                               ),
-                                                        ),
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Poppins',
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primaryText,
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                  ),
+                                                            ),
+                                                          ),
+                                                          Align(
+                                                            alignment:
+                                                                const AlignmentDirectional(
+                                                                    0.0, 0.0),
+                                                            child: Padding(
+                                                              padding:
+                                                                  const EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          2.0,
+                                                                          0.0,
+                                                                          2.0,
+                                                                          0.0),
+                                                              child: Text(
+                                                                ':',
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'Poppins',
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primaryText,
+                                                                      letterSpacing:
+                                                                          0.0,
+                                                                    ),
+                                                              ),
+                                                            ),
+                                                          ),
+                                                          Align(
+                                                            alignment:
+                                                                const AlignmentDirectional(
+                                                                    0.0, 0.0),
+                                                            child: Text(
+                                                              valueOrDefault<
+                                                                  String>(
+                                                                columnETeamsPointsScrollTeamsRecord
+                                                                    .goalsPointsOut
+                                                                    .toString(),
+                                                                '0',
+                                                              ),
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .center,
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Poppins',
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                  ),
+                                                            ),
+                                                          ),
+                                                        ],
                                                       ),
                                                     ),
                                                     Container(
@@ -1449,7 +1614,7 @@ class _ETeamRankPageWidgetState extends State<ETeamRankPageWidget> {
                                                           valueOrDefault<
                                                               String>(
                                                             columnETeamsPointsScrollTeamsRecord
-                                                                .goalsPointsOut
+                                                                .totalGames
                                                                 .toString(),
                                                             '0',
                                                           ),
@@ -1488,7 +1653,7 @@ class _ETeamRankPageWidgetState extends State<ETeamRankPageWidget> {
                                                           valueOrDefault<
                                                               String>(
                                                             columnETeamsPointsScrollTeamsRecord
-                                                                .totalGames
+                                                                .redCards
                                                                 .toString(),
                                                             '0',
                                                           ),

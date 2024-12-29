@@ -66,7 +66,10 @@ class _CartPageAdd2BetWidgetState extends State<CartPageAdd2BetWidget> {
         final cartPageAdd2BetCartRecord = snapshot.data!;
 
         return GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -139,8 +142,14 @@ class _CartPageAdd2BetWidgetState extends State<CartPageAdd2BetWidget> {
                                                     child: Icon(
                                                       Icons
                                                           .arrow_back_ios_new_rounded,
-                                                      color: currentUserDocument
-                                                          ?.color1,
+                                                      color:
+                                                          valueOrDefault<Color>(
+                                                        currentUserDocument
+                                                            ?.color1,
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .primaryText,
+                                                      ),
                                                       size: 30.0,
                                                     ),
                                                   ),
@@ -170,7 +179,11 @@ class _CartPageAdd2BetWidgetState extends State<CartPageAdd2BetWidget> {
                                 AuthUserStreamWidget(
                                   builder: (context) => Divider(
                                     thickness: 1.0,
-                                    color: currentUserDocument?.color2,
+                                    color: valueOrDefault<Color>(
+                                      currentUserDocument?.color2,
+                                      FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
+                                    ),
                                   ),
                                 ),
                               ],
@@ -390,6 +403,30 @@ class _CartPageAdd2BetWidgetState extends State<CartPageAdd2BetWidget> {
                                                                 ),
                                                           ),
                                                         ),
+                                                        if ((columnBet1BetsRecord
+                                                                    .choice ==
+                                                                'plus') ||
+                                                            (columnBet1BetsRecord
+                                                                    .choice ==
+                                                                'moins'))
+                                                          Text(
+                                                            valueOrDefault<
+                                                                String>(
+                                                              columnBet1BetsRecord
+                                                                  .points,
+                                                              '00.0',
+                                                            ),
+                                                            maxLines: 2,
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Poppins',
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
+                                                          ),
                                                         Padding(
                                                           padding:
                                                               const EdgeInsetsDirectional
@@ -423,6 +460,20 @@ class _CartPageAdd2BetWidgetState extends State<CartPageAdd2BetWidget> {
                                                       ],
                                                     ),
                                                   ),
+                                                  AuthUserStreamWidget(
+                                                    builder: (context) =>
+                                                        Divider(
+                                                      thickness: 1.0,
+                                                      color:
+                                                          valueOrDefault<Color>(
+                                                        currentUserDocument
+                                                            ?.color2,
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .secondaryBackground,
+                                                      ),
+                                                    ),
+                                                  ),
                                                 ],
                                               ),
                                             ),
@@ -431,12 +482,6 @@ class _CartPageAdd2BetWidgetState extends State<CartPageAdd2BetWidget> {
                                       },
                                     ),
                                   ],
-                                ),
-                                AuthUserStreamWidget(
-                                  builder: (context) => Divider(
-                                    thickness: 1.0,
-                                    color: currentUserDocument?.color2,
-                                  ),
                                 ),
                                 Padding(
                                   padding: const EdgeInsetsDirectional.fromSTEB(
@@ -625,6 +670,27 @@ class _CartPageAdd2BetWidgetState extends State<CartPageAdd2BetWidget> {
                                                         ),
                                                   ),
                                                 ),
+                                                if ((columnCartBetBetsRecord
+                                                            .choice ==
+                                                        'plus') ||
+                                                    (columnCartBetBetsRecord
+                                                            .choice ==
+                                                        'moins'))
+                                                  Text(
+                                                    valueOrDefault<String>(
+                                                      columnCartBetBetsRecord
+                                                          .points,
+                                                      '00.0',
+                                                    ),
+                                                    maxLines: 2,
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                  ),
                                                 Padding(
                                                   padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
@@ -651,6 +717,16 @@ class _CartPageAdd2BetWidgetState extends State<CartPageAdd2BetWidget> {
                                               ],
                                             ),
                                           ),
+                                          AuthUserStreamWidget(
+                                            builder: (context) => Divider(
+                                              thickness: 1.0,
+                                              color: valueOrDefault<Color>(
+                                                currentUserDocument?.color2,
+                                                FlutterFlowTheme.of(context)
+                                                    .secondaryBackground,
+                                              ),
+                                            ),
+                                          ),
                                         ],
                                       );
                                     },
@@ -667,12 +743,6 @@ class _CartPageAdd2BetWidgetState extends State<CartPageAdd2BetWidget> {
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
-                                      AuthUserStreamWidget(
-                                        builder: (context) => Divider(
-                                          thickness: 1.0,
-                                          color: currentUserDocument?.color2,
-                                        ),
-                                      ),
                                       Padding(
                                         padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 10.0, 0.0, 10.0),
@@ -763,7 +833,7 @@ class _CartPageAdd2BetWidgetState extends State<CartPageAdd2BetWidget> {
                                                         border: Border.all(
                                                           color: FlutterFlowTheme
                                                                   .of(context)
-                                                              .primaryText,
+                                                              .secondary,
                                                         ),
                                                       ),
                                                       child: Padding(
@@ -794,21 +864,26 @@ class _CartPageAdd2BetWidgetState extends State<CartPageAdd2BetWidget> {
                                               child: Text(
                                                 valueOrDefault<String>(
                                                   functions
-                                                      .totalOdds(
+                                                      .limitOf2Decimal(
                                                           valueOrDefault<
                                                               double>(
-                                                            columnMyBetsRecord
-                                                                .totalOdds,
-                                                            0.0,
-                                                          ),
-                                                          valueOrDefault<
-                                                              double>(
-                                                            cartPageAdd2BetCartRecord
-                                                                .totalOdds,
-                                                            0.0,
-                                                          ))
+                                                        functions.totalOdds(
+                                                            valueOrDefault<
+                                                                double>(
+                                                              columnMyBetsRecord
+                                                                  .totalOdds,
+                                                              0.0,
+                                                            ),
+                                                            valueOrDefault<
+                                                                double>(
+                                                              cartPageAdd2BetCartRecord
+                                                                  .totalOdds,
+                                                              0.0,
+                                                            )),
+                                                        0.0,
+                                                      ))
                                                       .toString(),
-                                                  '0.0',
+                                                  '00.00',
                                                 ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
@@ -828,7 +903,11 @@ class _CartPageAdd2BetWidgetState extends State<CartPageAdd2BetWidget> {
                                       AuthUserStreamWidget(
                                         builder: (context) => Divider(
                                           thickness: 1.0,
-                                          color: currentUserDocument?.color2,
+                                          color: valueOrDefault<Color>(
+                                            currentUserDocument?.color2,
+                                            FlutterFlowTheme.of(context)
+                                                .secondaryBackground,
+                                          ),
                                         ),
                                       ),
                                       Padding(
@@ -855,19 +934,25 @@ class _CartPageAdd2BetWidgetState extends State<CartPageAdd2BetWidget> {
                                             Text(
                                               valueOrDefault<String>(
                                                 functions
-                                                    .potentialGain(
+                                                    .limitOf2Decimal(
                                                         valueOrDefault<double>(
-                                                          columnMyBetsRecord
-                                                              .potentialy,
-                                                          0.0,
-                                                        ),
-                                                        valueOrDefault<double>(
-                                                          cartPageAdd2BetCartRecord
-                                                              .totalOdds,
-                                                          0.0,
-                                                        ))
+                                                      functions.potentialGain(
+                                                          valueOrDefault<
+                                                              double>(
+                                                            columnMyBetsRecord
+                                                                .potentialy,
+                                                            0.0,
+                                                          ),
+                                                          valueOrDefault<
+                                                              double>(
+                                                            cartPageAdd2BetCartRecord
+                                                                .totalOdds,
+                                                            0.0,
+                                                          )),
+                                                      0.0,
+                                                    ))
                                                     .toString(),
-                                                '0.0',
+                                                '00000.00',
                                               ),
                                               maxLines: 1,
                                               style:
@@ -896,7 +981,7 @@ class _CartPageAdd2BetWidgetState extends State<CartPageAdd2BetWidget> {
                                                   border: Border.all(
                                                     color: FlutterFlowTheme.of(
                                                             context)
-                                                        .primaryText,
+                                                        .secondary,
                                                   ),
                                                 ),
                                                 child: Padding(

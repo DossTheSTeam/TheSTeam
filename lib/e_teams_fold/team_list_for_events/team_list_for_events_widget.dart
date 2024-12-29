@@ -64,7 +64,10 @@ class _TeamListForEventsWidgetState extends State<TeamListForEventsWidget> {
         final teamListForEventsTeamsRecord = snapshot.data!;
 
         return GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -115,8 +118,11 @@ class _TeamListForEventsWidgetState extends State<TeamListForEventsWidget> {
                                     },
                                     child: Icon(
                                       Icons.menu_rounded,
-                                      color:
-                                          teamListForEventsTeamsRecord.color1,
+                                      color: valueOrDefault<Color>(
+                                        teamListForEventsTeamsRecord.color1,
+                                        FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                      ),
                                       size: 30.0,
                                     ),
                                   ),
@@ -133,8 +139,11 @@ class _TeamListForEventsWidgetState extends State<TeamListForEventsWidget> {
                                       },
                                       child: Icon(
                                         Icons.arrow_back_ios_new_rounded,
-                                        color:
-                                            teamListForEventsTeamsRecord.color1,
+                                        color: valueOrDefault<Color>(
+                                          teamListForEventsTeamsRecord.color1,
+                                          FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                        ),
                                         size: 30.0,
                                       ),
                                     ),
@@ -200,34 +209,39 @@ class _TeamListForEventsWidgetState extends State<TeamListForEventsWidget> {
                                           padding:
                                               const EdgeInsetsDirectional.fromSTEB(
                                                   10.0, 0.0, 10.0, 0.0),
-                                          child: InkWell(
-                                            splashColor: Colors.transparent,
-                                            focusColor: Colors.transparent,
-                                            hoverColor: Colors.transparent,
-                                            highlightColor: Colors.transparent,
-                                            onTap: () async {
-                                              context.pushNamed(
-                                                'MyNotifsList',
-                                                extra: <String, dynamic>{
-                                                  kTransitionInfoKey:
-                                                      const TransitionInfo(
-                                                    hasTransition: true,
-                                                    transitionType:
-                                                        PageTransitionType
-                                                            .rightToLeft,
-                                                    duration: Duration(
-                                                        milliseconds: 400),
-                                                  ),
-                                                },
-                                              );
-                                            },
-                                            child: Icon(
-                                              Icons
-                                                  .notifications_active_outlined,
-                                              color:
+                                          child: AuthUserStreamWidget(
+                                            builder: (context) => InkWell(
+                                              splashColor: Colors.transparent,
+                                              focusColor: Colors.transparent,
+                                              hoverColor: Colors.transparent,
+                                              highlightColor:
+                                                  Colors.transparent,
+                                              onTap: () async {
+                                                context.pushNamed(
+                                                  'MyNotifsList',
+                                                  extra: <String, dynamic>{
+                                                    kTransitionInfoKey:
+                                                        const TransitionInfo(
+                                                      hasTransition: true,
+                                                      transitionType:
+                                                          PageTransitionType
+                                                              .rightToLeft,
+                                                      duration: Duration(
+                                                          milliseconds: 400),
+                                                    ),
+                                                  },
+                                                );
+                                              },
+                                              child: Icon(
+                                                Icons
+                                                    .notifications_active_outlined,
+                                                color: valueOrDefault<Color>(
+                                                  currentUserDocument?.color1,
                                                   FlutterFlowTheme.of(context)
                                                       .accent1,
-                                              size: 40.0,
+                                                ),
+                                                size: 40.0,
+                                              ),
                                             ),
                                           ),
                                         ),
@@ -236,6 +250,13 @@ class _TeamListForEventsWidgetState extends State<TeamListForEventsWidget> {
                                   },
                                 ),
                             ],
+                          ),
+                        ),
+                        Divider(
+                          thickness: 1.0,
+                          color: valueOrDefault<Color>(
+                            teamListForEventsTeamsRecord.color2,
+                            FlutterFlowTheme.of(context).secondaryBackground,
                           ),
                         ),
                         if (valueOrDefault<bool>(
@@ -505,8 +526,14 @@ class _TeamListForEventsWidgetState extends State<TeamListForEventsWidget> {
                                                                 Icons
                                                                     .send_rounded,
                                                                 color:
-                                                                    columnTeamsTeamsRecord
-                                                                        .color1,
+                                                                    valueOrDefault<
+                                                                        Color>(
+                                                                  columnTeamsTeamsRecord
+                                                                      .color1,
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primaryText,
+                                                                ),
                                                                 size: 24.0,
                                                               ),
                                                             ),

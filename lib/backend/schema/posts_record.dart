@@ -141,6 +141,11 @@ class PostsRecord extends FirestoreRecord {
   List<DocumentReference> get list4choice3 => _list4choice3 ?? const [];
   bool hasList4choice3() => _list4choice3 != null;
 
+  // "fold_categorie" field.
+  String? _foldCategorie;
+  String get foldCategorie => _foldCategorie ?? '';
+  bool hasFoldCategorie() => _foldCategorie != null;
+
   void _initializeFields() {
     _member = snapshotData['member'] as DocumentReference?;
     _title = snapshotData['title'] as String?;
@@ -167,6 +172,7 @@ class PostsRecord extends FirestoreRecord {
     _list4choice1 = getDataList(snapshotData['list4choice1']);
     _list4choice2 = getDataList(snapshotData['list4choice2']);
     _list4choice3 = getDataList(snapshotData['list4choice3']);
+    _foldCategorie = snapshotData['fold_categorie'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -222,6 +228,7 @@ Map<String, dynamic> createPostsRecordData({
   String? choice1,
   String? choice2,
   String? choice3,
+  String? foldCategorie,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -244,6 +251,7 @@ Map<String, dynamic> createPostsRecordData({
       'choice1': choice1,
       'choice2': choice2,
       'choice3': choice3,
+      'fold_categorie': foldCategorie,
     }.withoutNulls,
   );
 
@@ -280,7 +288,8 @@ class PostsRecordDocumentEquality implements Equality<PostsRecord> {
         e1?.choice3 == e2?.choice3 &&
         listEquality.equals(e1?.list4choice1, e2?.list4choice1) &&
         listEquality.equals(e1?.list4choice2, e2?.list4choice2) &&
-        listEquality.equals(e1?.list4choice3, e2?.list4choice3);
+        listEquality.equals(e1?.list4choice3, e2?.list4choice3) &&
+        e1?.foldCategorie == e2?.foldCategorie;
   }
 
   @override
@@ -309,7 +318,8 @@ class PostsRecordDocumentEquality implements Equality<PostsRecord> {
         e?.choice3,
         e?.list4choice1,
         e?.list4choice2,
-        e?.list4choice3
+        e?.list4choice3,
+        e?.foldCategorie
       ]);
 
   @override

@@ -71,7 +71,10 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
         final modifETeamPageTeamsRecord = snapshot.data!;
 
         return GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -85,7 +88,7 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                     children: [
                       Padding(
                         padding: const EdgeInsetsDirectional.fromSTEB(
-                            10.0, 0.0, 10.0, 20.0),
+                            10.0, 0.0, 10.0, 10.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -113,7 +116,10 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                                   },
                                   child: Icon(
                                     Icons.menu_rounded,
-                                    color: modifETeamPageTeamsRecord.color1,
+                                    color: valueOrDefault<Color>(
+                                      modifETeamPageTeamsRecord.color1,
+                                      FlutterFlowTheme.of(context).primaryText,
+                                    ),
                                     size: 30.0,
                                   ),
                                 ),
@@ -179,32 +185,38 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                                       Padding(
                                         padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 10.0, 0.0),
-                                        child: InkWell(
-                                          splashColor: Colors.transparent,
-                                          focusColor: Colors.transparent,
-                                          hoverColor: Colors.transparent,
-                                          highlightColor: Colors.transparent,
-                                          onTap: () async {
-                                            context.pushNamed(
-                                              'MyNotifsList',
-                                              extra: <String, dynamic>{
-                                                kTransitionInfoKey:
-                                                    const TransitionInfo(
-                                                  hasTransition: true,
-                                                  transitionType:
-                                                      PageTransitionType
-                                                          .rightToLeft,
-                                                  duration: Duration(
-                                                      milliseconds: 400),
-                                                ),
-                                              },
-                                            );
-                                          },
-                                          child: Icon(
-                                            Icons.notifications_active_outlined,
-                                            color: FlutterFlowTheme.of(context)
-                                                .accent1,
-                                            size: 40.0,
+                                        child: AuthUserStreamWidget(
+                                          builder: (context) => InkWell(
+                                            splashColor: Colors.transparent,
+                                            focusColor: Colors.transparent,
+                                            hoverColor: Colors.transparent,
+                                            highlightColor: Colors.transparent,
+                                            onTap: () async {
+                                              context.pushNamed(
+                                                'MyNotifsList',
+                                                extra: <String, dynamic>{
+                                                  kTransitionInfoKey:
+                                                      const TransitionInfo(
+                                                    hasTransition: true,
+                                                    transitionType:
+                                                        PageTransitionType
+                                                            .rightToLeft,
+                                                    duration: Duration(
+                                                        milliseconds: 400),
+                                                  ),
+                                                },
+                                              );
+                                            },
+                                            child: Icon(
+                                              Icons
+                                                  .notifications_active_outlined,
+                                              color: valueOrDefault<Color>(
+                                                currentUserDocument?.color1,
+                                                FlutterFlowTheme.of(context)
+                                                    .accent1,
+                                              ),
+                                              size: 40.0,
+                                            ),
                                           ),
                                         ),
                                       ),
@@ -213,6 +225,13 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                                 },
                               ),
                           ],
+                        ),
+                      ),
+                      Divider(
+                        thickness: 2.0,
+                        color: valueOrDefault<Color>(
+                          modifETeamPageTeamsRecord.color2,
+                          FlutterFlowTheme.of(context).secondaryBackground,
                         ),
                       ),
                       Text(
@@ -326,7 +345,7 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                                       modifETeamPageTeamsRecord.logo,
                                       width: 300.0,
                                       height: 200.0,
-                                      fit: BoxFit.scaleDown,
+                                      fit: BoxFit.fitHeight,
                                     ),
                                   ),
                                 ),
@@ -409,8 +428,11 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                                         },
                                         child: Icon(
                                           Icons.search_rounded,
-                                          color:
-                                              modifETeamPageTeamsRecord.color1,
+                                          color: valueOrDefault<Color>(
+                                            modifETeamPageTeamsRecord.color1,
+                                            FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                          ),
                                           size: 30.0,
                                         ),
                                       ),
@@ -473,8 +495,11 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                                         },
                                         child: Icon(
                                           Icons.edit_calendar_outlined,
-                                          color:
-                                              modifETeamPageTeamsRecord.color1,
+                                          color: valueOrDefault<Color>(
+                                            modifETeamPageTeamsRecord.color1,
+                                            FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                          ),
                                           size: 30.0,
                                         ),
                                       ),
@@ -537,8 +562,11 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                                         },
                                         child: Icon(
                                           Icons.stadium_rounded,
-                                          color:
-                                              modifETeamPageTeamsRecord.color1,
+                                          color: valueOrDefault<Color>(
+                                            modifETeamPageTeamsRecord.color1,
+                                            FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                          ),
                                           size: 30.0,
                                         ),
                                       ),
@@ -596,8 +624,11 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                                         },
                                         child: FaIcon(
                                           FontAwesomeIcons.edit,
-                                          color:
-                                              modifETeamPageTeamsRecord.color1,
+                                          color: valueOrDefault<Color>(
+                                            modifETeamPageTeamsRecord.color1,
+                                            FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                          ),
                                           size: 30.0,
                                         ),
                                       ),
@@ -644,8 +675,11 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                                         },
                                         child: Icon(
                                           Icons.comment,
-                                          color:
-                                              modifETeamPageTeamsRecord.color1,
+                                          color: valueOrDefault<Color>(
+                                            modifETeamPageTeamsRecord.color1,
+                                            FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                          ),
                                           size: 30.0,
                                         ),
                                       ),
@@ -703,8 +737,11 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                                         },
                                         child: Icon(
                                           Icons.groups_rounded,
-                                          color:
-                                              modifETeamPageTeamsRecord.color1,
+                                          color: valueOrDefault<Color>(
+                                            modifETeamPageTeamsRecord.color1,
+                                            FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                          ),
                                           size: 30.0,
                                         ),
                                       ),
@@ -756,8 +793,11 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                                         },
                                         child: Icon(
                                           Icons.bar_chart,
-                                          color:
-                                              modifETeamPageTeamsRecord.color1,
+                                          color: valueOrDefault<Color>(
+                                            modifETeamPageTeamsRecord.color1,
+                                            FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                          ),
                                           size: 30.0,
                                         ),
                                       ),
@@ -767,7 +807,11 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                               ),
                               Divider(
                                 thickness: 2.0,
-                                color: modifETeamPageTeamsRecord.color2,
+                                color: valueOrDefault<Color>(
+                                  modifETeamPageTeamsRecord.color2,
+                                  FlutterFlowTheme.of(context)
+                                      .secondaryBackground,
+                                ),
                               ),
                               Padding(
                                 padding: const EdgeInsetsDirectional.fromSTEB(
@@ -920,8 +964,11 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                                         },
                                         child: Icon(
                                           Icons.send_rounded,
-                                          color:
-                                              modifETeamPageTeamsRecord.color1,
+                                          color: valueOrDefault<Color>(
+                                            modifETeamPageTeamsRecord.color1,
+                                            FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                          ),
                                           size: 30.0,
                                         ),
                                       ),
@@ -943,33 +990,29 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                                       ),
                                 ),
                               ),
+                              Align(
+                                alignment: const AlignmentDirectional(0.0, 0.0),
+                                child: Text(
+                                  'Couleur princiaple',
+                                  textAlign: TextAlign.center,
+                                  maxLines: 6,
+                                  style: FlutterFlowTheme.of(context)
+                                      .labelMedium
+                                      .override(
+                                        fontFamily: 'Poppins',
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                        letterSpacing: 0.0,
+                                      ),
+                                ),
+                              ),
                               Padding(
                                 padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 10.0, 0.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    Align(
-                                      alignment: const AlignmentDirectional(0.0, 0.0),
-                                      child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            10.0, 0.0, 0.0, 0.0),
-                                        child: Text(
-                                          'Couleur 1...',
-                                          textAlign: TextAlign.center,
-                                          maxLines: 6,
-                                          style: FlutterFlowTheme.of(context)
-                                              .labelMedium
-                                              .override(
-                                                fontFamily: 'Poppins',
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryText,
-                                                letterSpacing: 0.0,
-                                              ),
-                                        ),
-                                      ),
-                                    ),
                                     Padding(
                                       padding: const EdgeInsetsDirectional.fromSTEB(
                                           10.0, 0.0, 20.0, 0.0),
@@ -1000,7 +1043,8 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                                           '#808080',
                                           '#C0C0C0',
                                           '#FFD700',
-                                          '#B22222'
+                                          '#B22222',
+                                          '#860038'
                                         ]),
                                         optionLabels: const [
                                           'Jaune',
@@ -1023,7 +1067,8 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                                           'Gris 2',
                                           'Gris 1',
                                           'Gold',
-                                          'Rouge 3'
+                                          'Rouge 3',
+                                          'Bordeaux'
                                         ],
                                         onChanged: (val) => safeSetState(() =>
                                             _model.dropColor1Value1 = val),
@@ -1113,33 +1158,33 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                                   ],
                                 ),
                               ),
+                              Align(
+                                alignment: const AlignmentDirectional(0.0, 0.0),
+                                child: Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      10.0, 0.0, 0.0, 0.0),
+                                  child: Text(
+                                    'Couleur secondaire',
+                                    textAlign: TextAlign.center,
+                                    maxLines: 6,
+                                    style: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                          letterSpacing: 0.0,
+                                        ),
+                                  ),
+                                ),
+                              ),
                               Padding(
                                 padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 10.0, 0.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    Align(
-                                      alignment: const AlignmentDirectional(0.0, 0.0),
-                                      child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            10.0, 0.0, 0.0, 0.0),
-                                        child: Text(
-                                          'Couleur 2..',
-                                          textAlign: TextAlign.center,
-                                          maxLines: 6,
-                                          style: FlutterFlowTheme.of(context)
-                                              .labelMedium
-                                              .override(
-                                                fontFamily: 'Poppins',
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryText,
-                                                letterSpacing: 0.0,
-                                              ),
-                                        ),
-                                      ),
-                                    ),
                                     Padding(
                                       padding: const EdgeInsetsDirectional.fromSTEB(
                                           10.0, 0.0, 20.0, 0.0),
@@ -1170,7 +1215,8 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                                           '#808080',
                                           '#C0C0C0',
                                           '#FFD700',
-                                          '#B22222'
+                                          '#B22222',
+                                          '#860038'
                                         ]),
                                         optionLabels: const [
                                           'Jaune',
@@ -1193,7 +1239,8 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                                           'Gris 2',
                                           'Gris 1',
                                           'Gold',
-                                          'Rouge 3'
+                                          'Rouge 3',
+                                          'Bordeaux'
                                         ],
                                         onChanged: (val) => safeSetState(() =>
                                             _model.dropColor1Value2 = val),
@@ -1399,7 +1446,11 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                                       },
                                       child: Icon(
                                         Icons.image_search_outlined,
-                                        color: modifETeamPageTeamsRecord.color1,
+                                        color: valueOrDefault<Color>(
+                                          modifETeamPageTeamsRecord.color1,
+                                          FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                        ),
                                         size: 30.0,
                                       ),
                                     ),

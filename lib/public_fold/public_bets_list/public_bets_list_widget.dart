@@ -78,7 +78,10 @@ class _PublicBetsListWidgetState extends State<PublicBetsListWidget>
         final publicBetsListMyBetsRecord = snapshot.data!;
 
         return GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -212,7 +215,7 @@ class _PublicBetsListWidgetState extends State<PublicBetsListWidget>
                                                 columnUsersRecord.photoUrl,
                                                 width: 300.0,
                                                 height: 200.0,
-                                                fit: BoxFit.cover,
+                                                fit: BoxFit.fitHeight,
                                               ),
                                             ),
                                           ),
@@ -234,6 +237,14 @@ class _PublicBetsListWidgetState extends State<PublicBetsListWidget>
                                     ),
                                   ),
                                 ],
+                              ),
+                            ),
+                            Divider(
+                              thickness: 1.0,
+                              color: valueOrDefault<Color>(
+                                columnUsersRecord.color2,
+                                FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
                               ),
                             ),
                             Row(
@@ -279,7 +290,7 @@ class _PublicBetsListWidgetState extends State<PublicBetsListWidget>
                                       shape: BoxShape.circle,
                                       border: Border.all(
                                         color: FlutterFlowTheme.of(context)
-                                            .primaryText,
+                                            .secondary,
                                       ),
                                     ),
                                     child: Padding(
@@ -343,35 +354,39 @@ class _PublicBetsListWidgetState extends State<PublicBetsListWidget>
                                             padding:
                                                 const EdgeInsetsDirectional.fromSTEB(
                                                     10.0, 0.0, 10.0, 0.0),
-                                            child: InkWell(
-                                              splashColor: Colors.transparent,
-                                              focusColor: Colors.transparent,
-                                              hoverColor: Colors.transparent,
-                                              highlightColor:
-                                                  Colors.transparent,
-                                              onTap: () async {
-                                                context.pushNamed(
-                                                  'MyNotifsList',
-                                                  extra: <String, dynamic>{
-                                                    kTransitionInfoKey:
-                                                        const TransitionInfo(
-                                                      hasTransition: true,
-                                                      transitionType:
-                                                          PageTransitionType
-                                                              .rightToLeft,
-                                                      duration: Duration(
-                                                          milliseconds: 400),
-                                                    ),
-                                                  },
-                                                );
-                                              },
-                                              child: Icon(
-                                                Icons
-                                                    .notifications_active_outlined,
-                                                color:
+                                            child: AuthUserStreamWidget(
+                                              builder: (context) => InkWell(
+                                                splashColor: Colors.transparent,
+                                                focusColor: Colors.transparent,
+                                                hoverColor: Colors.transparent,
+                                                highlightColor:
+                                                    Colors.transparent,
+                                                onTap: () async {
+                                                  context.pushNamed(
+                                                    'MyNotifsList',
+                                                    extra: <String, dynamic>{
+                                                      kTransitionInfoKey:
+                                                          const TransitionInfo(
+                                                        hasTransition: true,
+                                                        transitionType:
+                                                            PageTransitionType
+                                                                .rightToLeft,
+                                                        duration: Duration(
+                                                            milliseconds: 400),
+                                                      ),
+                                                    },
+                                                  );
+                                                },
+                                                child: Icon(
+                                                  Icons
+                                                      .notifications_active_outlined,
+                                                  color: valueOrDefault<Color>(
+                                                    currentUserDocument?.color1,
                                                     FlutterFlowTheme.of(context)
                                                         .accent1,
-                                                size: 40.0,
+                                                  ),
+                                                  size: 40.0,
+                                                ),
                                               ),
                                             ),
                                           ),
@@ -705,7 +720,7 @@ class _PublicBetsListWidgetState extends State<PublicBetsListWidget>
                                                                                     await columnMyBetsMyBetsRecord.parentReference.update({
                                                                                       ...mapToFirestore(
                                                                                         {
-                                                                                          'stock': FieldValue.increment(5.00),
+                                                                                          'stock': FieldValue.increment(2.00),
                                                                                           'click_s_team': FieldValue.increment(1),
                                                                                         },
                                                                                       ),
@@ -726,6 +741,7 @@ class _PublicBetsListWidgetState extends State<PublicBetsListWidget>
                                                                                         text: 'A regarder votre paris en cours.',
                                                                                         userRef: currentUserReference,
                                                                                         seen: false,
+                                                                                        textReasons: 'Cette action ajoute 2 pièces à votre stock',
                                                                                       ),
                                                                                       ...mapToFirestore(
                                                                                         {
@@ -974,7 +990,7 @@ class _PublicBetsListWidgetState extends State<PublicBetsListWidget>
                                                                   0.0),
                                                       child: Text(
                                                         dateTimeFormat(
-                                                            "d/M/y",
+                                                            "d/M H:mm",
                                                             columnMyBetsMyBetsRecord
                                                                 .createdTime!),
                                                         textAlign:
@@ -1121,9 +1137,9 @@ class _PublicBetsListWidgetState extends State<PublicBetsListWidget>
                                                                       child:
                                                                           Container(
                                                                         width:
-                                                                            25.0,
+                                                                            20.0,
                                                                         height:
-                                                                            25.0,
+                                                                            20.0,
                                                                         decoration:
                                                                             BoxDecoration(
                                                                           color:
@@ -1145,9 +1161,9 @@ class _PublicBetsListWidgetState extends State<PublicBetsListWidget>
                                                                       child:
                                                                           Container(
                                                                         width:
-                                                                            25.0,
+                                                                            20.0,
                                                                         height:
-                                                                            25.0,
+                                                                            20.0,
                                                                         decoration:
                                                                             BoxDecoration(
                                                                           color:
@@ -1215,9 +1231,9 @@ class _PublicBetsListWidgetState extends State<PublicBetsListWidget>
                                                                         child:
                                                                             Container(
                                                                           width:
-                                                                              25.0,
+                                                                              20.0,
                                                                           height:
-                                                                              25.0,
+                                                                              20.0,
                                                                           decoration:
                                                                               BoxDecoration(
                                                                             color:
@@ -1239,9 +1255,9 @@ class _PublicBetsListWidgetState extends State<PublicBetsListWidget>
                                                                         child:
                                                                             Container(
                                                                           width:
-                                                                              25.0,
+                                                                              20.0,
                                                                           height:
-                                                                              25.0,
+                                                                              20.0,
                                                                           decoration:
                                                                               BoxDecoration(
                                                                             color:
@@ -1309,9 +1325,9 @@ class _PublicBetsListWidgetState extends State<PublicBetsListWidget>
                                                                         child:
                                                                             Container(
                                                                           width:
-                                                                              25.0,
+                                                                              20.0,
                                                                           height:
-                                                                              25.0,
+                                                                              20.0,
                                                                           decoration:
                                                                               BoxDecoration(
                                                                             color:
@@ -1333,9 +1349,9 @@ class _PublicBetsListWidgetState extends State<PublicBetsListWidget>
                                                                         child:
                                                                             Container(
                                                                           width:
-                                                                              25.0,
+                                                                              20.0,
                                                                           height:
-                                                                              25.0,
+                                                                              20.0,
                                                                           decoration:
                                                                               BoxDecoration(
                                                                             color:
@@ -1435,7 +1451,7 @@ class _PublicBetsListWidgetState extends State<PublicBetsListWidget>
                                                                   Border.all(
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .primaryText,
+                                                                    .secondary,
                                                               ),
                                                             ),
                                                             child: Padding(
@@ -1530,7 +1546,7 @@ class _PublicBetsListWidgetState extends State<PublicBetsListWidget>
                                                             border: Border.all(
                                                               color: FlutterFlowTheme
                                                                       .of(context)
-                                                                  .primaryText,
+                                                                  .secondary,
                                                             ),
                                                           ),
                                                           child: Padding(
@@ -1605,7 +1621,7 @@ class _PublicBetsListWidgetState extends State<PublicBetsListWidget>
                                                             border: Border.all(
                                                               color: FlutterFlowTheme
                                                                       .of(context)
-                                                                  .primaryText,
+                                                                  .secondary,
                                                             ),
                                                           ),
                                                           child: Padding(

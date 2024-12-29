@@ -67,7 +67,10 @@ class _AddPlayersEventPageWidgetState extends State<AddPlayersEventPageWidget> {
         final addPlayersEventPageEventsRecord = snapshot.data!;
 
         return GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -117,7 +120,11 @@ class _AddPlayersEventPageWidgetState extends State<AddPlayersEventPageWidget> {
                                     },
                                     child: Icon(
                                       Icons.menu_rounded,
-                                      color: currentUserDocument?.color1,
+                                      color: valueOrDefault<Color>(
+                                        currentUserDocument?.color1,
+                                        FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                      ),
                                       size: 30.0,
                                     ),
                                   ),
@@ -136,7 +143,11 @@ class _AddPlayersEventPageWidgetState extends State<AddPlayersEventPageWidget> {
                                       },
                                       child: Icon(
                                         Icons.arrow_back_ios_new_rounded,
-                                        color: currentUserDocument?.color1,
+                                        color: valueOrDefault<Color>(
+                                          currentUserDocument?.color1,
+                                          FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                        ),
                                         size: 30.0,
                                       ),
                                     ),
@@ -178,7 +189,7 @@ class _AddPlayersEventPageWidgetState extends State<AddPlayersEventPageWidget> {
                             const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             StreamBuilder<TeamsRecord>(
                               stream: TeamsRecord.getDocument(
@@ -239,7 +250,7 @@ class _AddPlayersEventPageWidgetState extends State<AddPlayersEventPageWidget> {
                                               const AlignmentDirectional(0.0, 0.0),
                                           child: Text(
                                             contDomTeamsRecord.name,
-                                            textAlign: TextAlign.start,
+                                            textAlign: TextAlign.center,
                                             maxLines: 2,
                                             style: FlutterFlowTheme.of(context)
                                                 .labelSmall
@@ -323,7 +334,7 @@ class _AddPlayersEventPageWidgetState extends State<AddPlayersEventPageWidget> {
                                               const AlignmentDirectional(0.0, 0.0),
                                           child: Text(
                                             contExtTeamsRecord.name,
-                                            textAlign: TextAlign.start,
+                                            textAlign: TextAlign.center,
                                             maxLines: 2,
                                             style: FlutterFlowTheme.of(context)
                                                 .labelSmall

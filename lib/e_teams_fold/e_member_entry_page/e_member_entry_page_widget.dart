@@ -67,7 +67,10 @@ class _EMemberEntryPageWidgetState extends State<EMemberEntryPageWidget> {
         final eMemberEntryPageTeamsRecord = snapshot.data!;
 
         return GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -106,8 +109,10 @@ class _EMemberEntryPageWidgetState extends State<EMemberEntryPageWidget> {
                                 },
                                 child: Icon(
                                   Icons.menu_rounded,
-                                  color:
-                                      FlutterFlowTheme.of(context).primaryText,
+                                  color: valueOrDefault<Color>(
+                                    eMemberEntryPageTeamsRecord.color1,
+                                    FlutterFlowTheme.of(context).primaryText,
+                                  ),
                                   size: 30.0,
                                 ),
                               ),
@@ -124,8 +129,10 @@ class _EMemberEntryPageWidgetState extends State<EMemberEntryPageWidget> {
                                   },
                                   child: Icon(
                                     Icons.arrow_back_ios_new_rounded,
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryText,
+                                    color: valueOrDefault<Color>(
+                                      eMemberEntryPageTeamsRecord.color1,
+                                      FlutterFlowTheme.of(context).primaryText,
+                                    ),
                                     size: 30.0,
                                   ),
                                 ),
@@ -205,7 +212,10 @@ class _EMemberEntryPageWidgetState extends State<EMemberEntryPageWidget> {
                       ),
                       Divider(
                         thickness: 1.0,
-                        color: FlutterFlowTheme.of(context).secondaryBackground,
+                        color: valueOrDefault<Color>(
+                          eMemberEntryPageTeamsRecord.color2,
+                          FlutterFlowTheme.of(context).secondaryBackground,
+                        ),
                       ),
                       Align(
                         alignment: const AlignmentDirectional(-1.0, 0.0),
@@ -220,7 +230,10 @@ class _EMemberEntryPageWidgetState extends State<EMemberEntryPageWidget> {
                       ),
                       Divider(
                         thickness: 1.0,
-                        color: FlutterFlowTheme.of(context).secondaryText,
+                        color: valueOrDefault<Color>(
+                          eMemberEntryPageTeamsRecord.color2,
+                          FlutterFlowTheme.of(context).secondaryBackground,
+                        ),
                       ),
                       Align(
                         alignment: const AlignmentDirectional(-1.0, 0.0),
@@ -289,11 +302,10 @@ class _EMemberEntryPageWidgetState extends State<EMemberEntryPageWidget> {
                       ),
                       Divider(
                         thickness: 1.0,
-                        color: FlutterFlowTheme.of(context).secondaryText,
-                      ),
-                      Divider(
-                        thickness: 1.0,
-                        color: FlutterFlowTheme.of(context).secondaryBackground,
+                        color: valueOrDefault<Color>(
+                          eMemberEntryPageTeamsRecord.color2,
+                          FlutterFlowTheme.of(context).secondaryBackground,
+                        ),
                       ),
                       Align(
                         alignment: const AlignmentDirectional(-1.0, 0.0),
@@ -344,7 +356,10 @@ class _EMemberEntryPageWidgetState extends State<EMemberEntryPageWidget> {
                       ),
                       Divider(
                         thickness: 1.0,
-                        color: FlutterFlowTheme.of(context).secondaryText,
+                        color: valueOrDefault<Color>(
+                          eMemberEntryPageTeamsRecord.color2,
+                          FlutterFlowTheme.of(context).secondaryBackground,
+                        ),
                       ),
                       Align(
                         alignment: const AlignmentDirectional(-1.0, 0.0),

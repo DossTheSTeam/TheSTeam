@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'signal_post_message_page_model.dart';
 export 'signal_post_message_page_model.dart';
 
@@ -67,7 +68,10 @@ class _SignalPostMessagePageWidgetState
         final signalPostMessagePageMyNotificationsRecord = snapshot.data!;
 
         return GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -278,18 +282,28 @@ class _SignalPostMessagePageWidgetState
                                           ),
                                         ],
                                       ),
-                                      Text(
-                                        columnUsersRecord.uid,
-                                        maxLines: 1,
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily: 'Poppins',
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .warning,
-                                              letterSpacing: 0.0,
-                                            ),
+                                      InkWell(
+                                        splashColor: Colors.transparent,
+                                        focusColor: Colors.transparent,
+                                        hoverColor: Colors.transparent,
+                                        highlightColor: Colors.transparent,
+                                        onTap: () async {
+                                          await Clipboard.setData(ClipboardData(
+                                              text: columnUsersRecord.uid));
+                                        },
+                                        child: Text(
+                                          columnUsersRecord.uid,
+                                          maxLines: 1,
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Poppins',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .warning,
+                                                letterSpacing: 0.0,
+                                              ),
+                                        ),
                                       ),
                                       Padding(
                                         padding: const EdgeInsetsDirectional.fromSTEB(
@@ -394,7 +408,7 @@ class _SignalPostMessagePageWidgetState
                                               Icons.star_rounded,
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .accent3,
+                                                      .accent1,
                                               size: 24.0,
                                             ),
                                           ],
@@ -613,18 +627,28 @@ class _SignalPostMessagePageWidgetState
                                           ),
                                         ],
                                       ),
-                                      Text(
-                                        columnUsersRecord.uid,
-                                        maxLines: 1,
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily: 'Poppins',
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .warning,
-                                              letterSpacing: 0.0,
-                                            ),
+                                      InkWell(
+                                        splashColor: Colors.transparent,
+                                        focusColor: Colors.transparent,
+                                        hoverColor: Colors.transparent,
+                                        highlightColor: Colors.transparent,
+                                        onTap: () async {
+                                          await Clipboard.setData(ClipboardData(
+                                              text: columnUsersRecord.uid));
+                                        },
+                                        child: Text(
+                                          columnUsersRecord.uid,
+                                          maxLines: 1,
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Poppins',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .warning,
+                                                letterSpacing: 0.0,
+                                              ),
+                                        ),
                                       ),
                                       Padding(
                                         padding: const EdgeInsetsDirectional.fromSTEB(
@@ -729,7 +753,7 @@ class _SignalPostMessagePageWidgetState
                                               Icons.star_rounded,
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .accent3,
+                                                      .accent1,
                                               size: 24.0,
                                             ),
                                           ],
@@ -950,6 +974,8 @@ class _SignalPostMessagePageWidgetState
                                       .bodyMedium
                                       .override(
                                         fontFamily: 'Poppins',
+                                        color: FlutterFlowTheme.of(context)
+                                            .warning,
                                         letterSpacing: 0.0,
                                       ),
                                 ),
@@ -1216,16 +1242,6 @@ class _SignalPostMessagePageWidgetState
                                   ),
                                 ),
                               ),
-                            ),
-                            Text(
-                              columnPostMessagesRecord.reference.id,
-                              maxLines: 1,
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: 'Poppins',
-                                    letterSpacing: 0.0,
-                                  ),
                             ),
                             Align(
                               alignment: const AlignmentDirectional(0.0, -1.0),

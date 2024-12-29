@@ -74,7 +74,10 @@ class _ListMessagesBossEventWidgetState
         final listMessagesBossEventEventsRecord = snapshot.data!;
 
         return GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -130,7 +133,11 @@ class _ListMessagesBossEventWidgetState
                                         },
                                         child: Icon(
                                           Icons.menu_rounded,
-                                          color: currentUserDocument?.color1,
+                                          color: valueOrDefault<Color>(
+                                            currentUserDocument?.color1,
+                                            FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                          ),
                                           size: 30.0,
                                         ),
                                       ),
@@ -149,7 +156,11 @@ class _ListMessagesBossEventWidgetState
                                           },
                                           child: Icon(
                                             Icons.arrow_back_ios_new_rounded,
-                                            color: currentUserDocument?.color1,
+                                            color: valueOrDefault<Color>(
+                                              currentUserDocument?.color1,
+                                              FlutterFlowTheme.of(context)
+                                                  .primaryText,
+                                            ),
                                             size: 30.0,
                                           ),
                                         ),
@@ -286,41 +297,49 @@ class _ListMessagesBossEventWidgetState
                                                   padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 10.0, 0.0),
-                                                  child: InkWell(
-                                                    splashColor:
-                                                        Colors.transparent,
-                                                    focusColor:
-                                                        Colors.transparent,
-                                                    hoverColor:
-                                                        Colors.transparent,
-                                                    highlightColor:
-                                                        Colors.transparent,
-                                                    onTap: () async {
-                                                      context.pushNamed(
-                                                        'MyNotifsList',
-                                                        extra: <String,
-                                                            dynamic>{
-                                                          kTransitionInfoKey:
-                                                              const TransitionInfo(
-                                                            hasTransition: true,
-                                                            transitionType:
-                                                                PageTransitionType
-                                                                    .rightToLeft,
-                                                            duration: Duration(
-                                                                milliseconds:
-                                                                    400),
-                                                          ),
-                                                        },
-                                                      );
-                                                    },
-                                                    child: Icon(
-                                                      Icons
-                                                          .notifications_active_outlined,
-                                                      color:
+                                                  child: AuthUserStreamWidget(
+                                                    builder: (context) =>
+                                                        InkWell(
+                                                      splashColor:
+                                                          Colors.transparent,
+                                                      focusColor:
+                                                          Colors.transparent,
+                                                      hoverColor:
+                                                          Colors.transparent,
+                                                      highlightColor:
+                                                          Colors.transparent,
+                                                      onTap: () async {
+                                                        context.pushNamed(
+                                                          'MyNotifsList',
+                                                          extra: <String,
+                                                              dynamic>{
+                                                            kTransitionInfoKey:
+                                                                const TransitionInfo(
+                                                              hasTransition:
+                                                                  true,
+                                                              transitionType:
+                                                                  PageTransitionType
+                                                                      .rightToLeft,
+                                                              duration: Duration(
+                                                                  milliseconds:
+                                                                      400),
+                                                            ),
+                                                          },
+                                                        );
+                                                      },
+                                                      child: Icon(
+                                                        Icons
+                                                            .notifications_active_outlined,
+                                                        color: valueOrDefault<
+                                                            Color>(
+                                                          currentUserDocument
+                                                              ?.color1,
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .accent1,
-                                                      size: 40.0,
+                                                        ),
+                                                        size: 40.0,
+                                                      ),
                                                     ),
                                                   ),
                                                 ),
@@ -374,24 +393,19 @@ class _ListMessagesBossEventWidgetState
                                       ),
                                       child: Align(
                                         alignment:
-                                            const AlignmentDirectional(1.0, 0.0),
-                                        child: Padding(
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 5.0, 0.0),
-                                          child: Text(
-                                            valueOrDefault<String>(
-                                              containerTeamsRecord.name,
-                                              'NewTeam',
-                                            ),
-                                            textAlign: TextAlign.end,
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyMedium
-                                                .override(
-                                                  fontFamily: 'Poppins',
-                                                  letterSpacing: 0.0,
-                                                ),
+                                            const AlignmentDirectional(0.0, 0.0),
+                                        child: Text(
+                                          valueOrDefault<String>(
+                                            containerTeamsRecord.name,
+                                            'NewTeam',
                                           ),
+                                          textAlign: TextAlign.center,
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Poppins',
+                                                letterSpacing: 0.0,
+                                              ),
                                         ),
                                       ),
                                     );
@@ -439,24 +453,19 @@ class _ListMessagesBossEventWidgetState
                                       ),
                                       child: Align(
                                         alignment:
-                                            const AlignmentDirectional(-1.0, 0.0),
-                                        child: Padding(
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  5.0, 0.0, 0.0, 0.0),
-                                          child: Text(
-                                            valueOrDefault<String>(
-                                              containerTeamsRecord.name,
-                                              'NewTeam',
-                                            ),
-                                            textAlign: TextAlign.start,
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyMedium
-                                                .override(
-                                                  fontFamily: 'Poppins',
-                                                  letterSpacing: 0.0,
-                                                ),
+                                            const AlignmentDirectional(0.0, 0.0),
+                                        child: Text(
+                                          valueOrDefault<String>(
+                                            containerTeamsRecord.name,
+                                            'NewTeam',
                                           ),
+                                          textAlign: TextAlign.center,
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Poppins',
+                                                letterSpacing: 0.0,
+                                              ),
                                         ),
                                       ),
                                     );
@@ -472,18 +481,23 @@ class _ListMessagesBossEventWidgetState
                                   0.0, 5.0, 0.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.center,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
-                                  Align(
-                                    alignment: const AlignmentDirectional(1.0, 0.0),
-                                    child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 0.0, 10.0, 0.0),
+                                  Container(
+                                    width: 160.0,
+                                    height: 30.0,
+                                    decoration: BoxDecoration(
+                                      color: FlutterFlowTheme.of(context)
+                                          .alternate,
+                                    ),
+                                    child: Align(
+                                      alignment: const AlignmentDirectional(0.0, 0.0),
                                       child: Text(
                                         listMessagesBossEventEventsRecord
                                             .scoreDom
                                             .toString(),
-                                        textAlign: TextAlign.end,
+                                        textAlign: TextAlign.center,
                                         style: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
@@ -493,25 +507,20 @@ class _ListMessagesBossEventWidgetState
                                       ),
                                     ),
                                   ),
-                                  Text(
-                                    '-',
-                                    style: FlutterFlowTheme.of(context)
-                                        .headlineSmall
-                                        .override(
-                                          fontFamily: 'Poppins',
-                                          letterSpacing: 0.0,
-                                        ),
-                                  ),
-                                  Align(
-                                    alignment: const AlignmentDirectional(-1.0, 0.0),
-                                    child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          10.0, 0.0, 0.0, 0.0),
+                                  Container(
+                                    width: 160.0,
+                                    height: 30.0,
+                                    decoration: BoxDecoration(
+                                      color: FlutterFlowTheme.of(context)
+                                          .alternate,
+                                    ),
+                                    child: Align(
+                                      alignment: const AlignmentDirectional(0.0, 0.0),
                                       child: Text(
                                         listMessagesBossEventEventsRecord
                                             .scoreExt
                                             .toString(),
-                                        textAlign: TextAlign.start,
+                                        textAlign: TextAlign.center,
                                         style: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
@@ -1495,7 +1504,11 @@ class _ListMessagesBossEventWidgetState
                                           },
                                           child: Icon(
                                             Icons.image_search_rounded,
-                                            color: currentUserDocument?.color1,
+                                            color: valueOrDefault<Color>(
+                                              currentUserDocument?.color1,
+                                              FlutterFlowTheme.of(context)
+                                                  .primaryText,
+                                            ),
                                             size: 30.0,
                                           ),
                                         ),
@@ -1536,7 +1549,7 @@ class _ListMessagesBossEventWidgetState
                                         controller:
                                             _model.commFieldTextController,
                                         focusNode: _model.commFieldFocusNode,
-                                        autofocus: true,
+                                        autofocus: false,
                                         obscureText: false,
                                         decoration: InputDecoration(
                                           labelStyle:
@@ -1664,7 +1677,11 @@ class _ListMessagesBossEventWidgetState
                                       },
                                       child: Icon(
                                         Icons.send_rounded,
-                                        color: currentUserDocument?.color1,
+                                        color: valueOrDefault<Color>(
+                                          currentUserDocument?.color1,
+                                          FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                        ),
                                         size: 30.0,
                                       ),
                                     ),
@@ -1824,7 +1841,7 @@ class _ListMessagesBossEventWidgetState
                                                                       height:
                                                                           200.0,
                                                                       fit: BoxFit
-                                                                          .cover,
+                                                                          .fitHeight,
                                                                     ),
                                                                   ),
                                                                 ),
@@ -1891,6 +1908,11 @@ class _ListMessagesBossEventWidgetState
                                                                         .override(
                                                                           fontFamily:
                                                                               'Montserrat',
+                                                                          color:
+                                                                              valueOrDefault<Color>(
+                                                                            columnCommUserUsersRecord.color1,
+                                                                            FlutterFlowTheme.of(context).primaryText,
+                                                                          ),
                                                                           letterSpacing:
                                                                               0.0,
                                                                         ),
@@ -1988,7 +2010,7 @@ class _ListMessagesBossEventWidgetState
                                                                 BoxDecoration(
                                                               color: FlutterFlowTheme
                                                                       .of(context)
-                                                                  .secondaryBackground,
+                                                                  .primaryBackground,
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .circular(
@@ -1998,19 +2020,57 @@ class _ListMessagesBossEventWidgetState
                                                               padding:
                                                                   const EdgeInsets
                                                                       .all(3.0),
-                                                              child: ClipRRect(
-                                                                borderRadius:
-                                                                    BorderRadius
-                                                                        .circular(
-                                                                            15.0),
-                                                                child: Image
-                                                                    .network(
-                                                                  columnCommsTeamMessagesRecord
-                                                                      .image,
-                                                                  width: 300.0,
-                                                                  height: 200.0,
-                                                                  fit: BoxFit
-                                                                      .cover,
+                                                              child: InkWell(
+                                                                splashColor: Colors
+                                                                    .transparent,
+                                                                focusColor: Colors
+                                                                    .transparent,
+                                                                hoverColor: Colors
+                                                                    .transparent,
+                                                                highlightColor:
+                                                                    Colors
+                                                                        .transparent,
+                                                                onTap:
+                                                                    () async {
+                                                                  context
+                                                                      .pushNamed(
+                                                                    'FullImagePage',
+                                                                    queryParameters:
+                                                                        {
+                                                                      'imageRef':
+                                                                          serializeParam(
+                                                                        columnCommsTeamMessagesRecord
+                                                                            .image,
+                                                                        ParamType
+                                                                            .String,
+                                                                      ),
+                                                                      'userRef':
+                                                                          serializeParam(
+                                                                        columnCommsTeamMessagesRecord
+                                                                            .userRef,
+                                                                        ParamType
+                                                                            .DocumentReference,
+                                                                      ),
+                                                                    }.withoutNulls,
+                                                                  );
+                                                                },
+                                                                child:
+                                                                    ClipRRect(
+                                                                  borderRadius:
+                                                                      BorderRadius
+                                                                          .circular(
+                                                                              15.0),
+                                                                  child: Image
+                                                                      .network(
+                                                                    columnCommsTeamMessagesRecord
+                                                                        .image,
+                                                                    width:
+                                                                        300.0,
+                                                                    height:
+                                                                        200.0,
+                                                                    fit: BoxFit
+                                                                        .fitHeight,
+                                                                  ),
                                                                 ),
                                                               ),
                                                             ),
@@ -2199,6 +2259,9 @@ class _ListMessagesBossEventWidgetState
                                                                   currentUserDisplayName,
                                                                   'NewUser',
                                                                 ),
+                                                                textAlign:
+                                                                    TextAlign
+                                                                        .center,
                                                                 maxLines: 1,
                                                                 style: FlutterFlowTheme.of(
                                                                         context)
@@ -2206,6 +2269,13 @@ class _ListMessagesBossEventWidgetState
                                                                     .override(
                                                                       fontFamily:
                                                                           'Montserrat',
+                                                                      color: valueOrDefault<
+                                                                          Color>(
+                                                                        currentUserDocument
+                                                                            ?.color1,
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .primaryText,
+                                                                      ),
                                                                       letterSpacing:
                                                                           0.0,
                                                                     ),
@@ -2248,7 +2318,7 @@ class _ListMessagesBossEventWidgetState
                                                                     height:
                                                                         200.0,
                                                                     fit: BoxFit
-                                                                        .cover,
+                                                                        .fitHeight,
                                                                   ),
                                                                 ),
                                                               ),
@@ -2305,7 +2375,7 @@ class _ListMessagesBossEventWidgetState
                                                             BoxDecoration(
                                                           color: FlutterFlowTheme
                                                                   .of(context)
-                                                              .secondaryBackground,
+                                                              .primaryBackground,
                                                           borderRadius:
                                                               BorderRadius
                                                                   .circular(
@@ -2315,18 +2385,51 @@ class _ListMessagesBossEventWidgetState
                                                           padding:
                                                               const EdgeInsets.all(
                                                                   3.0),
-                                                          child: ClipRRect(
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        15.0),
-                                                            child:
-                                                                Image.network(
-                                                              columnCommsTeamMessagesRecord
-                                                                  .image,
-                                                              width: 300.0,
-                                                              height: 200.0,
-                                                              fit: BoxFit.cover,
+                                                          child: InkWell(
+                                                            splashColor: Colors
+                                                                .transparent,
+                                                            focusColor: Colors
+                                                                .transparent,
+                                                            hoverColor: Colors
+                                                                .transparent,
+                                                            highlightColor:
+                                                                Colors
+                                                                    .transparent,
+                                                            onTap: () async {
+                                                              context.pushNamed(
+                                                                'FullImagePage',
+                                                                queryParameters:
+                                                                    {
+                                                                  'imageRef':
+                                                                      serializeParam(
+                                                                    columnCommsTeamMessagesRecord
+                                                                        .image,
+                                                                    ParamType
+                                                                        .String,
+                                                                  ),
+                                                                  'userRef':
+                                                                      serializeParam(
+                                                                    currentUserReference,
+                                                                    ParamType
+                                                                        .DocumentReference,
+                                                                  ),
+                                                                }.withoutNulls,
+                                                              );
+                                                            },
+                                                            child: ClipRRect(
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          15.0),
+                                                              child:
+                                                                  Image.network(
+                                                                columnCommsTeamMessagesRecord
+                                                                    .image,
+                                                                width: 300.0,
+                                                                height: 200.0,
+                                                                fit: BoxFit
+                                                                    .fitHeight,
+                                                              ),
                                                             ),
                                                           ),
                                                         ),

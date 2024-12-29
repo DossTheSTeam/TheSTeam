@@ -2,10 +2,12 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/firebase_storage/storage.dart';
 import '/flutter_flow/flutter_flow_audio_player.dart';
+import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_video_player.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/upload_data.dart';
 import 'package:flutter/material.dart';
 import 'add_post_page_model.dart';
@@ -76,7 +78,10 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
         final addPostPageTeamsRecord = snapshot.data!;
 
         return GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -193,6 +198,49 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
                             ),
                           ],
                         ),
+                        if (addPostPageTeamsRecord.leagueValue == 'admin')
+                          Align(
+                            alignment: const AlignmentDirectional(0.0, 0.0),
+                            child: FlutterFlowDropDown<String>(
+                              controller: _model.dropAdviceValueController ??=
+                                  FormFieldController<String>(null),
+                              options: List<String>.from(
+                                  ['appli.conseils', 'bets.conseils']),
+                              optionLabels: const [
+                                'Conseils sur l\'appli',
+                                'Conseils de parieur'
+                              ],
+                              onChanged: (val) => safeSetState(
+                                  () => _model.dropAdviceValue = val),
+                              width: 180.0,
+                              height: 50.0,
+                              textStyle: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    letterSpacing: 0.0,
+                                  ),
+                              hintText: 'Catégorie de conseil',
+                              icon: Icon(
+                                Icons.keyboard_arrow_down_rounded,
+                                color:
+                                    FlutterFlowTheme.of(context).secondaryText,
+                                size: 24.0,
+                              ),
+                              fillColor: FlutterFlowTheme.of(context)
+                                  .primaryBackground,
+                              elevation: 2.0,
+                              borderColor: Colors.transparent,
+                              borderWidth: 0.0,
+                              borderRadius: 8.0,
+                              margin: const EdgeInsetsDirectional.fromSTEB(
+                                  12.0, 0.0, 12.0, 0.0),
+                              hidesUnderline: true,
+                              isOverButton: false,
+                              isSearchable: false,
+                              isMultiSelect: false,
+                            ),
+                          ),
                         Padding(
                           padding: const EdgeInsetsDirectional.fromSTEB(
                               10.0, 5.0, 10.0, 5.0),
@@ -415,7 +463,7 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
                                 height: 175.0,
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
+                                      .primaryBackground,
                                   borderRadius: BorderRadius.circular(18.0),
                                 ),
                                 child: Padding(
@@ -426,7 +474,7 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
                                       _model.uploadedFileUrl,
                                       width: 300.0,
                                       height: 200.0,
-                                      fit: BoxFit.cover,
+                                      fit: BoxFit.fitHeight,
                                     ),
                                   ),
                                 ),
@@ -454,14 +502,14 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
                                         child: Icon(
                                           Icons.video_camera_back_outlined,
                                           color: FlutterFlowTheme.of(context)
-                                              .secondaryText,
+                                              .error,
                                           size: 30.0,
                                         ),
                                       ),
                                       Icon(
                                         Icons.play_circle_rounded,
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondaryText,
+                                        color:
+                                            FlutterFlowTheme.of(context).error,
                                         size: 30.0,
                                       ),
                                     ],
@@ -471,7 +519,7 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
                                     height: 175.0,
                                     decoration: BoxDecoration(
                                       color: FlutterFlowTheme.of(context)
-                                          .secondaryBackground,
+                                          .primaryBackground,
                                       borderRadius: BorderRadius.circular(18.0),
                                     ),
                                     child: const FlutterFlowVideoPlayer(
@@ -576,11 +624,6 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
-                              Icon(
-                                Icons.mic_rounded,
-                                color: FlutterFlowTheme.of(context).error,
-                                size: 30.0,
-                              ),
                               Align(
                                 alignment: const AlignmentDirectional(0.0, 0.0),
                                 child: Padding(
@@ -652,63 +695,55 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
                                   onPressed: () async {
                                     var postsRecordReference =
                                         PostsRecord.collection.doc();
-                                    await postsRecordReference.set({
-                                      ...createPostsRecordData(
-                                        member: currentUserReference,
-                                        title: _model
-                                            .titleFieldTextController.text,
-                                        description: _model
-                                            .descriptionFieldTextController
-                                            .text,
-                                        image: _model.uploadedFileUrl,
-                                        leagueValue:
-                                            addPostPageTeamsRecord.leagueValue,
-                                        moderator:
-                                            addPostPageTeamsRecord.adminUser,
-                                        teamRef: widget.teamRef,
-                                        esport: addPostPageTeamsRecord.esport,
-                                        sportValue:
-                                            addPostPageTeamsRecord.sportValue,
-                                      ),
-                                      ...mapToFirestore(
-                                        {
-                                          'created_time':
-                                              FieldValue.serverTimestamp(),
-                                        },
-                                      ),
-                                    });
+                                    await postsRecordReference
+                                        .set(createPostsRecordData(
+                                      member: currentUserReference,
+                                      title:
+                                          _model.titleFieldTextController.text,
+                                      description: _model
+                                          .descriptionFieldTextController.text,
+                                      createdTime: getCurrentTimestamp,
+                                      image: _model.uploadedFileUrl,
+                                      leagueValue:
+                                          addPostPageTeamsRecord.leagueValue,
+                                      moderator:
+                                          addPostPageTeamsRecord.adminUser,
+                                      teamRef: widget.teamRef,
+                                      esport: addPostPageTeamsRecord.esport,
+                                      sportValue:
+                                          addPostPageTeamsRecord.sportValue,
+                                    ));
                                     _model.postRef =
-                                        PostsRecord.getDocumentFromData({
-                                      ...createPostsRecordData(
-                                        member: currentUserReference,
-                                        title: _model
-                                            .titleFieldTextController.text,
-                                        description: _model
-                                            .descriptionFieldTextController
-                                            .text,
-                                        image: _model.uploadedFileUrl,
-                                        leagueValue:
-                                            addPostPageTeamsRecord.leagueValue,
-                                        moderator:
-                                            addPostPageTeamsRecord.adminUser,
-                                        teamRef: widget.teamRef,
-                                        esport: addPostPageTeamsRecord.esport,
-                                        sportValue:
-                                            addPostPageTeamsRecord.sportValue,
-                                      ),
-                                      ...mapToFirestore(
-                                        {
-                                          'created_time': DateTime.now(),
-                                        },
-                                      ),
-                                    }, postsRecordReference);
+                                        PostsRecord.getDocumentFromData(
+                                            createPostsRecordData(
+                                              member: currentUserReference,
+                                              title: _model
+                                                  .titleFieldTextController
+                                                  .text,
+                                              description: _model
+                                                  .descriptionFieldTextController
+                                                  .text,
+                                              createdTime: getCurrentTimestamp,
+                                              image: _model.uploadedFileUrl,
+                                              leagueValue:
+                                                  addPostPageTeamsRecord
+                                                      .leagueValue,
+                                              moderator: addPostPageTeamsRecord
+                                                  .adminUser,
+                                              teamRef: widget.teamRef,
+                                              esport:
+                                                  addPostPageTeamsRecord.esport,
+                                              sportValue: addPostPageTeamsRecord
+                                                  .sportValue,
+                                            ),
+                                            postsRecordReference);
 
                                     await MyPostsRecord.createDoc(
                                             currentUserReference!)
                                         .set({
                                       ...createMyPostsRecordData(
-                                        posts: _model.postRef?.reference,
                                         esport: addPostPageTeamsRecord.esport,
+                                        posts: _model.postRef?.reference,
                                       ),
                                       ...mapToFirestore(
                                         {
@@ -804,6 +839,7 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
                                         esport: addPostPageTeamsRecord.esport,
                                         sportValue:
                                             addPostPageTeamsRecord.sportValue,
+                                        foldCategorie: _model.dropAdviceValue,
                                       ),
                                       ...mapToFirestore(
                                         {
@@ -830,6 +866,7 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
                                         esport: addPostPageTeamsRecord.esport,
                                         sportValue:
                                             addPostPageTeamsRecord.sportValue,
+                                        foldCategorie: _model.dropAdviceValue,
                                       ),
                                       ...mapToFirestore(
                                         {
@@ -842,27 +879,13 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
                                             widget.teamRef!)
                                         .set({
                                       ...createTeamPostsRecordData(
-                                        posts: _model.adminPostRef?.reference,
                                         survey: false,
+                                        posts: _model.adminPostRef?.reference,
+                                        foldCategorie: _model.dropAdviceValue,
                                       ),
                                       ...mapToFirestore(
                                         {
                                           'created_time':
-                                              FieldValue.serverTimestamp(),
-                                        },
-                                      ),
-                                    });
-
-                                    await MyPostsRecord.createDoc(
-                                            currentUserReference!)
-                                        .set({
-                                      ...createMyPostsRecordData(
-                                        posts: _model.postRef?.reference,
-                                        esport: false,
-                                      ),
-                                      ...mapToFirestore(
-                                        {
-                                          'date_time':
                                               FieldValue.serverTimestamp(),
                                         },
                                       ),

@@ -36,7 +36,10 @@ class _MyProfilStatsWidgetState extends State<MyProfilStatsWidget>
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -83,7 +86,11 @@ class _MyProfilStatsWidgetState extends State<MyProfilStatsWidget>
                                     },
                                     child: Icon(
                                       Icons.menu_rounded,
-                                      color: currentUserDocument?.color1,
+                                      color: valueOrDefault<Color>(
+                                        currentUserDocument?.color1,
+                                        FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                      ),
                                       size: 30.0,
                                     ),
                                   ),
@@ -102,7 +109,11 @@ class _MyProfilStatsWidgetState extends State<MyProfilStatsWidget>
                                       },
                                       child: Icon(
                                         Icons.arrow_back_ios_new_rounded,
-                                        color: currentUserDocument?.color1,
+                                        color: valueOrDefault<Color>(
+                                          currentUserDocument?.color1,
+                                          FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                        ),
                                         size: 30.0,
                                       ),
                                     ),
@@ -171,30 +182,37 @@ class _MyProfilStatsWidgetState extends State<MyProfilStatsWidget>
                                   Padding(
                                     padding: const EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 10.0, 0.0),
-                                    child: InkWell(
-                                      splashColor: Colors.transparent,
-                                      focusColor: Colors.transparent,
-                                      hoverColor: Colors.transparent,
-                                      highlightColor: Colors.transparent,
-                                      onTap: () async {
-                                        context.pushNamed(
-                                          'MyNotifsList',
-                                          extra: <String, dynamic>{
-                                            kTransitionInfoKey: const TransitionInfo(
-                                              hasTransition: true,
-                                              transitionType: PageTransitionType
-                                                  .rightToLeft,
-                                              duration:
-                                                  Duration(milliseconds: 400),
-                                            ),
-                                          },
-                                        );
-                                      },
-                                      child: Icon(
-                                        Icons.notifications_active_outlined,
-                                        color: FlutterFlowTheme.of(context)
-                                            .accent1,
-                                        size: 40.0,
+                                    child: AuthUserStreamWidget(
+                                      builder: (context) => InkWell(
+                                        splashColor: Colors.transparent,
+                                        focusColor: Colors.transparent,
+                                        hoverColor: Colors.transparent,
+                                        highlightColor: Colors.transparent,
+                                        onTap: () async {
+                                          context.pushNamed(
+                                            'MyNotifsList',
+                                            extra: <String, dynamic>{
+                                              kTransitionInfoKey:
+                                                  const TransitionInfo(
+                                                hasTransition: true,
+                                                transitionType:
+                                                    PageTransitionType
+                                                        .rightToLeft,
+                                                duration:
+                                                    Duration(milliseconds: 400),
+                                              ),
+                                            },
+                                          );
+                                        },
+                                        child: Icon(
+                                          Icons.notifications_active_outlined,
+                                          color: valueOrDefault<Color>(
+                                            currentUserDocument?.color1,
+                                            FlutterFlowTheme.of(context)
+                                                .accent1,
+                                          ),
+                                          size: 40.0,
+                                        ),
                                       ),
                                     ),
                                   ),
@@ -203,6 +221,15 @@ class _MyProfilStatsWidgetState extends State<MyProfilStatsWidget>
                             },
                           ),
                       ],
+                    ),
+                  ),
+                  AuthUserStreamWidget(
+                    builder: (context) => Divider(
+                      thickness: 1.0,
+                      color: valueOrDefault<Color>(
+                        currentUserDocument?.color2,
+                        FlutterFlowTheme.of(context).secondaryBackground,
+                      ),
                     ),
                   ),
                   Align(
@@ -215,7 +242,8 @@ class _MyProfilStatsWidgetState extends State<MyProfilStatsWidget>
                                 currentUserDocument?.esport, false) ==
                             false)
                           Padding(
-                            padding: const EdgeInsets.all(16.0),
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                16.0, 0.0, 16.0, 16.0),
                             child: AuthUserStreamWidget(
                               builder: (context) => Column(
                                 mainAxisSize: MainAxisSize.max,
@@ -264,8 +292,11 @@ class _MyProfilStatsWidgetState extends State<MyProfilStatsWidget>
                                               },
                                               child: Icon(
                                                 Icons.attach_money_rounded,
-                                                color:
-                                                    currentUserDocument?.color1,
+                                                color: valueOrDefault<Color>(
+                                                  currentUserDocument?.color1,
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryText,
+                                                ),
                                                 size: 30.0,
                                               ),
                                             ),
@@ -424,7 +455,7 @@ class _MyProfilStatsWidgetState extends State<MyProfilStatsWidget>
                                                         border: Border.all(
                                                           color: FlutterFlowTheme
                                                                   .of(context)
-                                                              .primaryText,
+                                                              .secondary,
                                                         ),
                                                       ),
                                                       child: Padding(
@@ -1061,7 +1092,8 @@ class _MyProfilStatsWidgetState extends State<MyProfilStatsWidget>
                                 currentUserDocument?.esport, false) ==
                             true)
                           Padding(
-                            padding: const EdgeInsets.all(16.0),
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                16.0, 0.0, 16.0, 16.0),
                             child: AuthUserStreamWidget(
                               builder: (context) => Column(
                                 mainAxisSize: MainAxisSize.max,

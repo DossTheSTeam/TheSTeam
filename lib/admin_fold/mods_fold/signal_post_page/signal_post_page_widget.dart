@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'signal_post_page_model.dart';
 export 'signal_post_page_model.dart';
 
@@ -65,7 +66,10 @@ class _SignalPostPageWidgetState extends State<SignalPostPageWidget> {
         final signalPostPageMyNotificationsRecord = snapshot.data!;
 
         return GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -285,18 +289,29 @@ class _SignalPostPageWidgetState extends State<SignalPostPageWidget> {
                                           ],
                                         ),
                                       ),
-                                      Text(
-                                        columnNotifUserUsersRecord.uid,
-                                        maxLines: 1,
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily: 'Poppins',
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .warning,
-                                              letterSpacing: 0.0,
-                                            ),
+                                      InkWell(
+                                        splashColor: Colors.transparent,
+                                        focusColor: Colors.transparent,
+                                        hoverColor: Colors.transparent,
+                                        highlightColor: Colors.transparent,
+                                        onTap: () async {
+                                          await Clipboard.setData(ClipboardData(
+                                              text: columnNotifUserUsersRecord
+                                                  .uid));
+                                        },
+                                        child: Text(
+                                          columnNotifUserUsersRecord.uid,
+                                          maxLines: 1,
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Poppins',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .warning,
+                                                letterSpacing: 0.0,
+                                              ),
+                                        ),
                                       ),
                                       Padding(
                                         padding: const EdgeInsetsDirectional.fromSTEB(
@@ -402,7 +417,7 @@ class _SignalPostPageWidgetState extends State<SignalPostPageWidget> {
                                               Icons.star_rounded,
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .accent3,
+                                                      .accent1,
                                               size: 24.0,
                                             ),
                                           ],
@@ -631,18 +646,29 @@ class _SignalPostPageWidgetState extends State<SignalPostPageWidget> {
                                           ],
                                         ),
                                       ),
-                                      Text(
-                                        columnMemberUsersRecord.uid,
-                                        maxLines: 1,
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily: 'Poppins',
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .warning,
-                                              letterSpacing: 0.0,
-                                            ),
+                                      InkWell(
+                                        splashColor: Colors.transparent,
+                                        focusColor: Colors.transparent,
+                                        hoverColor: Colors.transparent,
+                                        highlightColor: Colors.transparent,
+                                        onTap: () async {
+                                          await Clipboard.setData(ClipboardData(
+                                              text:
+                                                  columnMemberUsersRecord.uid));
+                                        },
+                                        child: Text(
+                                          columnMemberUsersRecord.uid,
+                                          maxLines: 1,
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Poppins',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .warning,
+                                                letterSpacing: 0.0,
+                                              ),
+                                        ),
                                       ),
                                       Padding(
                                         padding: const EdgeInsetsDirectional.fromSTEB(
@@ -747,7 +773,7 @@ class _SignalPostPageWidgetState extends State<SignalPostPageWidget> {
                                               Icons.star_rounded,
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .accent3,
+                                                      .accent1,
                                               size: 24.0,
                                             ),
                                           ],
@@ -995,6 +1021,8 @@ class _SignalPostPageWidgetState extends State<SignalPostPageWidget> {
                                       .bodyMedium
                                       .override(
                                         fontFamily: 'Poppins',
+                                        color: FlutterFlowTheme.of(context)
+                                            .warning,
                                         letterSpacing: 0.0,
                                       ),
                                 ),
@@ -1252,16 +1280,6 @@ class _SignalPostPageWidgetState extends State<SignalPostPageWidget> {
                                   ),
                                 ),
                               ),
-                            ),
-                            Text(
-                              columnPostPostsRecord.reference.id,
-                              maxLines: 1,
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: 'Poppins',
-                                    letterSpacing: 0.0,
-                                  ),
                             ),
                             Align(
                               alignment: const AlignmentDirectional(0.0, -1.0),

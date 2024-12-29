@@ -15,6 +15,10 @@ class ProfilPublicAdminModel extends FlutterFlowModel<ProfilPublicAdminWidget> {
   // State field(s) for DropStatut widget.
   String? dropStatutValue;
   FormFieldController<String>? dropStatutValueController;
+  // State field(s) for CountController widget.
+  int? countControllerValue1;
+  // State field(s) for CountController widget.
+  int? countControllerValue2;
   // State field(s) for DropSport widget.
   String? dropSportValue;
   FormFieldController<String>? dropSportValueController;

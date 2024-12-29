@@ -51,8 +51,6 @@ export '/event_fold/team_events_list/team_events_list_widget.dart'
     show TeamEventsListWidget;
 export '/posts_fold/add_post_page/add_post_page_widget.dart'
     show AddPostPageWidget;
-export '/posts_fold/list_bests_posts/list_bests_posts_widget.dart'
-    show ListBestsPostsWidget;
 export '/posts_fold/list_posts/list_posts_widget.dart' show ListPostsWidget;
 export '/posts_fold/list_posts_my_teams/list_posts_my_teams_widget.dart'
     show ListPostsMyTeamsWidget;
@@ -210,3 +208,7 @@ export '/e_events_fold/add_rating_players_page/add_rating_players_page_widget.da
     show AddRatingPlayersPageWidget;
 export '/team_fold/team_list_cup/team_list_cup_widget.dart'
     show TeamListCupWidget;
+export '/public_fold/public_stats_compare/public_stats_compare_widget.dart'
+    show PublicStatsCompareWidget;
+export '/public_fold/full_image_page/full_image_page_widget.dart'
+    show FullImagePageWidget;

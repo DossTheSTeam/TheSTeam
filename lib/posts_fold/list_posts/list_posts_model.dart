@@ -8,6 +8,8 @@ class ListPostsModel extends FlutterFlowModel<ListPostsWidget> {
 
   String? showLigueFilter;
 
+  String? showSportFilter = '';
+
   ///  State fields for stateful widgets in this page.
 
   // State field(s) for DropSport widget.
@@ -22,12 +24,15 @@ class ListPostsModel extends FlutterFlowModel<ListPostsWidget> {
   // State field(s) for DropLigueTennis widget.
   String? dropLigueTennisValue;
   FormFieldController<String>? dropLigueTennisValueController;
-  // State field(s) for DropLigueFight widget.
-  String? dropLigueFightValue;
-  FormFieldController<String>? dropLigueFightValueController;
   // State field(s) for DropLigueHockey widget.
   String? dropLigueHockeyValue;
   FormFieldController<String>? dropLigueHockeyValueController;
+  // State field(s) for DropLigueMMA widget.
+  String? dropLigueMMAValue;
+  FormFieldController<String>? dropLigueMMAValueController;
+  // State field(s) for DropLigueBoxe widget.
+  String? dropLigueBoxeValue;
+  FormFieldController<String>? dropLigueBoxeValueController;
   // State field(s) for DropESport widget.
   String? dropESportValue;
   FormFieldController<String>? dropESportValueController;

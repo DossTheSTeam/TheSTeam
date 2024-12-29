@@ -80,7 +80,10 @@ class _AddSurveyPageWidgetState extends State<AddSurveyPageWidget> {
         final addSurveyPageTeamsRecord = snapshot.data!;
 
         return GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -355,7 +358,7 @@ class _AddSurveyPageWidgetState extends State<AddSurveyPageWidget> {
                                 height: 175.0,
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
+                                      .primaryBackground,
                                   borderRadius: BorderRadius.circular(18.0),
                                 ),
                                 child: Padding(
@@ -366,7 +369,7 @@ class _AddSurveyPageWidgetState extends State<AddSurveyPageWidget> {
                                       _model.uploadedFileUrl,
                                       width: 300.0,
                                       height: 200.0,
-                                      fit: BoxFit.cover,
+                                      fit: BoxFit.fitHeight,
                                     ),
                                   ),
                                 ),
@@ -715,19 +718,6 @@ class _AddSurveyPageWidgetState extends State<AddSurveyPageWidget> {
                               ...mapToFirestore(
                                 {
                                   'created_time': FieldValue.serverTimestamp(),
-                                },
-                              ),
-                            });
-
-                            await MyPostsRecord.createDoc(currentUserReference!)
-                                .set({
-                              ...createMyPostsRecordData(
-                                posts: _model.postRef?.reference,
-                                esport: false,
-                              ),
-                              ...mapToFirestore(
-                                {
-                                  'date_time': FieldValue.serverTimestamp(),
                                 },
                               ),
                             });

@@ -19,12 +19,15 @@ class AdminTeamsListModel extends FlutterFlowModel<AdminTeamsListWidget> {
   // State field(s) for DropLigueTennis widget.
   String? dropLigueTennisValue1;
   FormFieldController<String>? dropLigueTennisValueController1;
-  // State field(s) for DropLigueFight widget.
-  String? dropLigueFightValue1;
-  FormFieldController<String>? dropLigueFightValueController1;
   // State field(s) for DropLigueHockey widget.
   String? dropLigueHockeyValue1;
   FormFieldController<String>? dropLigueHockeyValueController1;
+  // State field(s) for DropLigueMMA widget.
+  String? dropLigueMMAValue1;
+  FormFieldController<String>? dropLigueMMAValueController1;
+  // State field(s) for DropLigueBoxe widget.
+  String? dropLigueBoxeValue1;
+  FormFieldController<String>? dropLigueBoxeValueController1;
   // State field(s) for DropLigueFoot widget.
   String? dropLigueFootValue2;
   FormFieldController<String>? dropLigueFootValueController2;
@@ -34,12 +37,15 @@ class AdminTeamsListModel extends FlutterFlowModel<AdminTeamsListWidget> {
   // State field(s) for DropLigueTennis widget.
   String? dropLigueTennisValue2;
   FormFieldController<String>? dropLigueTennisValueController2;
-  // State field(s) for DropLigueFight widget.
-  String? dropLigueFightValue2;
-  FormFieldController<String>? dropLigueFightValueController2;
   // State field(s) for DropLigueHockey widget.
   String? dropLigueHockeyValue2;
   FormFieldController<String>? dropLigueHockeyValueController2;
+  // State field(s) for DropLigueMMA widget.
+  String? dropLigueMMAValue2;
+  FormFieldController<String>? dropLigueMMAValueController2;
+  // State field(s) for DropLigueBoxe widget.
+  String? dropLigueBoxeValue2;
+  FormFieldController<String>? dropLigueBoxeValueController2;
   // State field(s) for DropESports widget.
   String? dropESportsValue;
   FormFieldController<String>? dropESportsValueController;

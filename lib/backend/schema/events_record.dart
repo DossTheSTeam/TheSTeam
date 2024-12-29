@@ -181,6 +181,21 @@ class EventsRecord extends FirestoreRecord {
   bool get dateExt => _dateExt ?? false;
   bool hasDateExt() => _dateExt != null;
 
+  // "points" field.
+  String? _points;
+  String get points => _points ?? '';
+  bool hasPoints() => _points != null;
+
+  // "plus" field.
+  String? _plus;
+  String get plus => _plus ?? '';
+  bool hasPlus() => _plus != null;
+
+  // "moins" field.
+  String? _moins;
+  String get moins => _moins ?? '';
+  bool hasMoins() => _moins != null;
+
   void _initializeFields() {
     _date = snapshotData['date'] as DateTime?;
     _hour = castToType<int>(snapshotData['hour']);
@@ -215,6 +230,9 @@ class EventsRecord extends FirestoreRecord {
     _divisionValue = snapshotData['division_value'] as String?;
     _dateDom = snapshotData['date_dom'] as bool?;
     _dateExt = snapshotData['date_ext'] as bool?;
+    _points = snapshotData['points'] as String?;
+    _plus = snapshotData['plus'] as String?;
+    _moins = snapshotData['moins'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -281,6 +299,9 @@ Map<String, dynamic> createEventsRecordData({
   String? divisionValue,
   bool? dateDom,
   bool? dateExt,
+  String? points,
+  String? plus,
+  String? moins,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -314,6 +335,9 @@ Map<String, dynamic> createEventsRecordData({
       'division_value': divisionValue,
       'date_dom': dateDom,
       'date_ext': dateExt,
+      'points': points,
+      'plus': plus,
+      'moins': moins,
     }.withoutNulls,
   );
 
@@ -358,7 +382,10 @@ class EventsRecordDocumentEquality implements Equality<EventsRecord> {
         e1?.boolRedcard == e2?.boolRedcard &&
         e1?.divisionValue == e2?.divisionValue &&
         e1?.dateDom == e2?.dateDom &&
-        e1?.dateExt == e2?.dateExt;
+        e1?.dateExt == e2?.dateExt &&
+        e1?.points == e2?.points &&
+        e1?.plus == e2?.plus &&
+        e1?.moins == e2?.moins;
   }
 
   @override
@@ -395,7 +422,10 @@ class EventsRecordDocumentEquality implements Equality<EventsRecord> {
         e?.boolRedcard,
         e?.divisionValue,
         e?.dateDom,
-        e?.dateExt
+        e?.dateExt,
+        e?.points,
+        e?.plus,
+        e?.moins
       ]);
 
   @override

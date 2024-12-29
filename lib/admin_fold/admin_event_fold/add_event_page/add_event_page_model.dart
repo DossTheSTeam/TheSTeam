@@ -38,12 +38,15 @@ class AddEventPageModel extends FlutterFlowModel<AddEventPageWidget> {
   // State field(s) for DropLigueTennis widget.
   String? dropLigueTennisValue;
   FormFieldController<String>? dropLigueTennisValueController;
-  // State field(s) for DropLigueFight widget.
-  String? dropLigueFightValue;
-  FormFieldController<String>? dropLigueFightValueController;
   // State field(s) for DropLigueHockey widget.
   String? dropLigueHockeyValue;
   FormFieldController<String>? dropLigueHockeyValueController;
+  // State field(s) for DropLigueMMA widget.
+  String? dropLigueMMAValue;
+  FormFieldController<String>? dropLigueMMAValueController;
+  // State field(s) for DropLigueBoxe widget.
+  String? dropLigueBoxeValue;
+  FormFieldController<String>? dropLigueBoxeValueController;
   // State field(s) for DropTeamDomBasket widget.
   String? dropTeamDomBasketValue;
   FormFieldController<String>? dropTeamDomBasketValueController;
@@ -54,28 +57,36 @@ class AddEventPageModel extends FlutterFlowModel<AddEventPageWidget> {
   FormFieldController<String>? dropTeamDomTennisValueController;
   // Stores action output result for [Backend Call - Create Document] action in Button widget.
   EventsRecord? eventTennisRef;
-  // State field(s) for DropTeamDomFight widget.
-  String? dropTeamDomFightValue;
-  FormFieldController<String>? dropTeamDomFightValueController;
-  // Stores action output result for [Backend Call - Create Document] action in Button widget.
-  EventsRecord? eventFightRef;
   // State field(s) for DropTeamDomHockey widget.
   String? dropTeamDomHockeyValue;
   FormFieldController<String>? dropTeamDomHockeyValueController;
   // Stores action output result for [Backend Call - Create Document] action in Button widget.
   EventsRecord? eventHockeyRef;
+  // State field(s) for DropTeamDomMMA widget.
+  String? dropTeamDomMMAValue;
+  FormFieldController<String>? dropTeamDomMMAValueController;
+  // Stores action output result for [Backend Call - Create Document] action in Button widget.
+  EventsRecord? eventMMARef;
+  // State field(s) for DropTeamDomBoxe widget.
+  String? dropTeamDomBoxeValue;
+  FormFieldController<String>? dropTeamDomBoxeValueController;
+  // Stores action output result for [Backend Call - Create Document] action in Button widget.
+  EventsRecord? eventBoxeRef;
   // State field(s) for DropTeamExtBasket widget.
   String? dropTeamExtBasketValue;
   FormFieldController<String>? dropTeamExtBasketValueController;
   // State field(s) for DropTeamExtTennis widget.
   String? dropTeamExtTennisValue;
   FormFieldController<String>? dropTeamExtTennisValueController;
-  // State field(s) for DropTeamExtFight widget.
-  String? dropTeamExtFightValue;
-  FormFieldController<String>? dropTeamExtFightValueController;
   // State field(s) for DropTeamExtHockey widget.
   String? dropTeamExtHockeyValue;
   FormFieldController<String>? dropTeamExtHockeyValueController;
+  // State field(s) for DropTeamExtMMA widget.
+  String? dropTeamExtMMAValue;
+  FormFieldController<String>? dropTeamExtMMAValueController;
+  // State field(s) for DropTeamExtBoxe widget.
+  String? dropTeamExtBoxeValue;
+  FormFieldController<String>? dropTeamExtBoxeValueController;
 
   @override
   void initState(BuildContext context) {

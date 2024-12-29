@@ -10,7 +10,7 @@
         },
         {
           "fieldPath": "created_time",
-          "order": "DESCENDING"
+          "order": "ASCENDING"
         }
       ]
     },
@@ -43,11 +43,43 @@
       ]
     },
     {
+      "collectionGroup": "my_bets",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "statut",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "created_time",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
       "collectionGroup": "teams",
       "queryScope": "COLLECTION",
       "fields": [
         {
           "fieldPath": "league_value",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "points",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "teams",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "league_value",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "sport_value",
           "order": "ASCENDING"
         },
         {
@@ -83,53 +115,21 @@
           "order": "ASCENDING"
         },
         {
-          "fieldPath": "league_value",
-          "order": "ASCENDING"
-        },
-        {
           "fieldPath": "hour",
           "order": "ASCENDING"
         }
       ]
     },
     {
-      "collectionGroup": "events",
+      "collectionGroup": "posts",
       "queryScope": "COLLECTION",
       "fields": [
         {
-          "fieldPath": "date",
+          "fieldPath": "league_value",
           "order": "ASCENDING"
         },
         {
           "fieldPath": "sport_value",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "hour",
-          "order": "ASCENDING"
-        }
-      ]
-    },
-    {
-      "collectionGroup": "posts",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "member",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "created_time",
-          "order": "DESCENDING"
-        }
-      ]
-    },
-    {
-      "collectionGroup": "posts",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "league_value",
           "order": "ASCENDING"
         },
         {
@@ -153,6 +153,28 @@
         {
           "fieldPath": "hour",
           "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "teams",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "league_value",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "sport_value",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "division_value",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "points",
+          "order": "DESCENDING"
         }
       ]
     },
@@ -203,6 +225,50 @@
       ]
     },
     {
+      "collectionGroup": "users",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "rank_value",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "division_value",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "num_penalities",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "events",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "date",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "league_value",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "sport_value",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "statut",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "hour",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
       "collectionGroup": "my_notifications",
       "queryScope": "COLLECTION_GROUP",
       "fields": [
@@ -217,20 +283,6 @@
         {
           "fieldPath": "date_time",
           "order": "ASCENDING"
-        }
-      ]
-    },
-    {
-      "collectionGroup": "users",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "stsocialapp",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "earnings_total",
-          "order": "DESCENDING"
         }
       ]
     },
@@ -271,6 +323,28 @@
       ]
     },
     {
+      "collectionGroup": "users",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "erank_value",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "edivision_value",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "esport_value",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "num_penalities",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
       "collectionGroup": "teams",
       "queryScope": "COLLECTION",
       "fields": [
@@ -287,7 +361,7 @@
           "order": "ASCENDING"
         },
         {
-          "fieldPath": "points",
+          "fieldPath": "red_cards",
           "order": "DESCENDING"
         }
       ]
@@ -351,12 +425,54 @@
           "order": "DESCENDING"
         }
       ]
+    },
+    {
+      "collectionGroup": "team_posts",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "survey",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "fold_categorie",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "created_time",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "users",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "stsocialapp",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "earnings_total",
+          "order": "DESCENDING"
+        }
+      ]
     }
   ],
   "fieldOverrides": [
     {
       "collectionGroup": "fcm_tokens",
       "fieldPath": "fcm_token",
+      "indexes": [
+        {
+          "order": "ASCENDING",
+          "queryScope": "COLLECTION_GROUP"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "my_posts",
+      "fieldPath": "date_time",
       "indexes": [
         {
           "order": "ASCENDING",

@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'shopping_page_model.dart';
 export 'shopping_page_model.dart';
@@ -36,7 +37,10 @@ class _ShoppingPageWidgetState extends State<ShoppingPageWidget> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -50,73 +54,73 @@ class _ShoppingPageWidgetState extends State<ShoppingPageWidget> {
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   children: [
-                    Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Row(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              InkWell(
-                                splashColor: Colors.transparent,
-                                focusColor: Colors.transparent,
-                                hoverColor: Colors.transparent,
-                                highlightColor: Colors.transparent,
-                                onTap: () async {
-                                  context.pushNamed(
-                                    'MenuPage',
-                                    extra: <String, dynamic>{
-                                      kTransitionInfoKey: const TransitionInfo(
-                                        hasTransition: true,
-                                        transitionType:
-                                            PageTransitionType.leftToRight,
-                                        duration: Duration(milliseconds: 400),
-                                      ),
-                                    },
-                                  );
-                                },
-                                child: Icon(
-                                  Icons.menu_rounded,
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryText,
-                                  size: 30.0,
-                                ),
+                    Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Row(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            InkWell(
+                              splashColor: Colors.transparent,
+                              focusColor: Colors.transparent,
+                              hoverColor: Colors.transparent,
+                              highlightColor: Colors.transparent,
+                              onTap: () async {
+                                context.pushNamed(
+                                  'MenuPage',
+                                  extra: <String, dynamic>{
+                                    kTransitionInfoKey: const TransitionInfo(
+                                      hasTransition: true,
+                                      transitionType:
+                                          PageTransitionType.leftToRight,
+                                      duration: Duration(milliseconds: 400),
+                                    ),
+                                  },
+                                );
+                              },
+                              child: Icon(
+                                Icons.menu_rounded,
+                                color:
+                                    FlutterFlowTheme.of(context).secondaryText,
+                                size: 30.0,
                               ),
-                              InkWell(
-                                splashColor: Colors.transparent,
-                                focusColor: Colors.transparent,
-                                hoverColor: Colors.transparent,
-                                highlightColor: Colors.transparent,
-                                onTap: () async {
-                                  context.safePop();
-                                },
-                                child: Icon(
-                                  Icons.arrow_back_ios_new_rounded,
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryText,
-                                  size: 30.0,
-                                ),
-                              ),
-                            ],
-                          ),
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                70.0, 0.0, 0.0, 0.0),
-                            child: Text(
-                              'Boutique',
-                              style: FlutterFlowTheme.of(context)
-                                  .headlineLarge
-                                  .override(
-                                    fontFamily: 'Montserrat',
-                                    letterSpacing: 0.0,
-                                  ),
                             ),
+                            InkWell(
+                              splashColor: Colors.transparent,
+                              focusColor: Colors.transparent,
+                              hoverColor: Colors.transparent,
+                              highlightColor: Colors.transparent,
+                              onTap: () async {
+                                context.safePop();
+                              },
+                              child: Icon(
+                                Icons.arrow_back_ios_new_rounded,
+                                color:
+                                    FlutterFlowTheme.of(context).secondaryText,
+                                size: 30.0,
+                              ),
+                            ),
+                          ],
+                        ),
+                        Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              70.0, 0.0, 0.0, 0.0),
+                          child: Text(
+                            'Boutique',
+                            style: FlutterFlowTheme.of(context)
+                                .headlineLarge
+                                .override(
+                                  fontFamily: 'Montserrat',
+                                  letterSpacing: 0.0,
+                                ),
                           ),
-                        ],
-                      ),
+                        ),
+                      ],
+                    ),
+                    Divider(
+                      thickness: 2.0,
+                      color: FlutterFlowTheme.of(context).secondaryBackground,
                     ),
                     Column(
                       mainAxisSize: MainAxisSize.max,
@@ -132,7 +136,8 @@ class _ShoppingPageWidgetState extends State<ShoppingPageWidget> {
                                 width: 40.0,
                                 height: 40.0,
                                 decoration: BoxDecoration(
-                                  color: FlutterFlowTheme.of(context).primary,
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryText,
                                   shape: BoxShape.circle,
                                   border: Border.all(
                                     color: FlutterFlowTheme.of(context)
@@ -140,7 +145,7 @@ class _ShoppingPageWidgetState extends State<ShoppingPageWidget> {
                                   ),
                                 ),
                                 child: Padding(
-                                  padding: const EdgeInsets.all(2.0),
+                                  padding: const EdgeInsets.all(1.0),
                                   child: AuthUserStreamWidget(
                                     builder: (context) => ClipRRect(
                                       borderRadius: BorderRadius.circular(24.0),
@@ -148,7 +153,7 @@ class _ShoppingPageWidgetState extends State<ShoppingPageWidget> {
                                         currentUserPhoto,
                                         width: 50.0,
                                         height: 50.0,
-                                        fit: BoxFit.cover,
+                                        fit: BoxFit.fitHeight,
                                       ),
                                     ),
                                   ),
@@ -185,15 +190,16 @@ class _ShoppingPageWidgetState extends State<ShoppingPageWidget> {
                               AuthUserStreamWidget(
                                 builder: (context) => Text(
                                   valueOrDefault<String>(
-                                    valueOrDefault(
-                                            currentUserDocument?.stock, 0.0)
+                                    functions
+                                        .limitOf2Decimal(valueOrDefault(
+                                            currentUserDocument?.stock, 0.0))
                                         .toString(),
-                                    '900',
+                                    '900.00',
                                   ),
                                   style: FlutterFlowTheme.of(context)
-                                      .labelLarge
+                                      .labelMedium
                                       .override(
-                                        fontFamily: 'Montserrat',
+                                        fontFamily: 'Poppins',
                                         letterSpacing: 0.0,
                                       ),
                                 ),
@@ -209,7 +215,7 @@ class _ShoppingPageWidgetState extends State<ShoppingPageWidget> {
                                     shape: BoxShape.circle,
                                     border: Border.all(
                                       color: FlutterFlowTheme.of(context)
-                                          .primaryText,
+                                          .secondary,
                                     ),
                                   ),
                                   child: Padding(
@@ -365,7 +371,7 @@ class _ShoppingPageWidgetState extends State<ShoppingPageWidget> {
                                           shape: BoxShape.circle,
                                           border: Border.all(
                                             color: FlutterFlowTheme.of(context)
-                                                .primaryText,
+                                                .secondary,
                                           ),
                                         ),
                                         child: Padding(
@@ -414,7 +420,7 @@ class _ShoppingPageWidgetState extends State<ShoppingPageWidget> {
                                           shape: BoxShape.circle,
                                           border: Border.all(
                                             color: FlutterFlowTheme.of(context)
-                                                .primaryText,
+                                                .secondary,
                                           ),
                                         ),
                                         child: Padding(
@@ -463,7 +469,7 @@ class _ShoppingPageWidgetState extends State<ShoppingPageWidget> {
                                           shape: BoxShape.circle,
                                           border: Border.all(
                                             color: FlutterFlowTheme.of(context)
-                                                .primaryText,
+                                                .secondary,
                                           ),
                                         ),
                                         child: Padding(
@@ -512,7 +518,7 @@ class _ShoppingPageWidgetState extends State<ShoppingPageWidget> {
                                           shape: BoxShape.circle,
                                           border: Border.all(
                                             color: FlutterFlowTheme.of(context)
-                                                .primaryText,
+                                                .secondary,
                                           ),
                                         ),
                                         child: Padding(

@@ -2,10 +2,12 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/firebase_storage/storage.dart';
 import '/flutter_flow/flutter_flow_audio_player.dart';
+import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_video_player.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/upload_data.dart';
 import 'package:flutter/material.dart';
 import 'add_advice_page_model.dart';
@@ -76,7 +78,10 @@ class _AddAdvicePageWidgetState extends State<AddAdvicePageWidget> {
         final addAdvicePageTeamsRecord = snapshot.data!;
 
         return GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -190,6 +195,49 @@ class _AddAdvicePageWidgetState extends State<AddAdvicePageWidget> {
                             ),
                           ],
                         ),
+                        if (addAdvicePageTeamsRecord.leagueValue == 'admin')
+                          Align(
+                            alignment: const AlignmentDirectional(0.0, 0.0),
+                            child: FlutterFlowDropDown<String>(
+                              controller: _model.dropAdviceValueController ??=
+                                  FormFieldController<String>(null),
+                              options: List<String>.from(
+                                  ['appli.conseils', 'bets.conseils']),
+                              optionLabels: const [
+                                'Conseils sur l\'appli',
+                                'Conseils de parieur'
+                              ],
+                              onChanged: (val) => safeSetState(
+                                  () => _model.dropAdviceValue = val),
+                              width: 180.0,
+                              height: 50.0,
+                              textStyle: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    letterSpacing: 0.0,
+                                  ),
+                              hintText: 'Catégorie de conseil',
+                              icon: Icon(
+                                Icons.keyboard_arrow_down_rounded,
+                                color:
+                                    FlutterFlowTheme.of(context).secondaryText,
+                                size: 24.0,
+                              ),
+                              fillColor: FlutterFlowTheme.of(context)
+                                  .primaryBackground,
+                              elevation: 2.0,
+                              borderColor: Colors.transparent,
+                              borderWidth: 0.0,
+                              borderRadius: 8.0,
+                              margin: const EdgeInsetsDirectional.fromSTEB(
+                                  12.0, 0.0, 12.0, 0.0),
+                              hidesUnderline: true,
+                              isOverButton: false,
+                              isSearchable: false,
+                              isMultiSelect: false,
+                            ),
+                          ),
                         Padding(
                           padding: const EdgeInsetsDirectional.fromSTEB(
                               10.0, 5.0, 10.0, 5.0),
@@ -413,7 +461,7 @@ class _AddAdvicePageWidgetState extends State<AddAdvicePageWidget> {
                                 height: 175.0,
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
+                                      .primaryBackground,
                                   borderRadius: BorderRadius.circular(18.0),
                                 ),
                                 child: Padding(
@@ -452,14 +500,14 @@ class _AddAdvicePageWidgetState extends State<AddAdvicePageWidget> {
                                         child: Icon(
                                           Icons.video_camera_back_outlined,
                                           color: FlutterFlowTheme.of(context)
-                                              .secondaryText,
+                                              .error,
                                           size: 30.0,
                                         ),
                                       ),
                                       Icon(
                                         Icons.play_circle_rounded,
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondaryText,
+                                        color:
+                                            FlutterFlowTheme.of(context).error,
                                         size: 30.0,
                                       ),
                                     ],
@@ -496,7 +544,7 @@ class _AddAdvicePageWidgetState extends State<AddAdvicePageWidget> {
                                     child: TextFormField(
                                       controller: _model.textController3,
                                       focusNode: _model.textFieldFocusNode,
-                                      autofocus: true,
+                                      autofocus: false,
                                       obscureText: false,
                                       decoration: InputDecoration(
                                         hintText: 'Coller le lien video',
@@ -557,8 +605,7 @@ class _AddAdvicePageWidgetState extends State<AddAdvicePageWidget> {
                                 ),
                                 Icon(
                                   Icons.send_rounded,
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryText,
+                                  color: FlutterFlowTheme.of(context).error,
                                   size: 30.0,
                                 ),
                               ],
@@ -652,6 +699,7 @@ class _AddAdvicePageWidgetState extends State<AddAdvicePageWidget> {
                                         addAdvicePageTeamsRecord.adminUser,
                                     teamRef: widget.teamRef,
                                     esport: addAdvicePageTeamsRecord.esport,
+                                    foldCategorie: _model.dropAdviceValue,
                                   ),
                                   ...mapToFirestore(
                                     {
@@ -672,6 +720,7 @@ class _AddAdvicePageWidgetState extends State<AddAdvicePageWidget> {
                                         addAdvicePageTeamsRecord.adminUser,
                                     teamRef: widget.teamRef,
                                     esport: addAdvicePageTeamsRecord.esport,
+                                    foldCategorie: _model.dropAdviceValue,
                                   ),
                                   ...mapToFirestore(
                                     {
@@ -684,8 +733,8 @@ class _AddAdvicePageWidgetState extends State<AddAdvicePageWidget> {
                                         widget.teamRef!)
                                     .set({
                                   ...createTeamPostsRecordData(
-                                    posts: _model.postRef?.reference,
                                     survey: false,
+                                    posts: _model.postRef?.reference,
                                   ),
                                   ...mapToFirestore(
                                     {

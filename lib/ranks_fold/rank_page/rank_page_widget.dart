@@ -38,7 +38,10 @@ class _RankPageWidgetState extends State<RankPageWidget> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -83,7 +86,10 @@ class _RankPageWidgetState extends State<RankPageWidget> {
                                   },
                                   child: Icon(
                                     Icons.menu_rounded,
-                                    color: currentUserDocument?.color1,
+                                    color: valueOrDefault<Color>(
+                                      currentUserDocument?.color1,
+                                      FlutterFlowTheme.of(context).primaryText,
+                                    ),
                                     size: 30.0,
                                   ),
                                 ),
@@ -100,7 +106,11 @@ class _RankPageWidgetState extends State<RankPageWidget> {
                                     },
                                     child: Icon(
                                       Icons.arrow_back_ios_new_rounded,
-                                      color: currentUserDocument?.color1,
+                                      color: valueOrDefault<Color>(
+                                        currentUserDocument?.color1,
+                                        FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                      ),
                                       size: 30.0,
                                     ),
                                   ),
@@ -146,7 +156,11 @@ class _RankPageWidgetState extends State<RankPageWidget> {
                                     },
                                     child: FaIcon(
                                       FontAwesomeIcons.crown,
-                                      color: currentUserDocument?.color1,
+                                      color: valueOrDefault<Color>(
+                                        currentUserDocument?.color1,
+                                        FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                      ),
                                       size: 25.0,
                                     ),
                                   ),
@@ -175,7 +189,11 @@ class _RankPageWidgetState extends State<RankPageWidget> {
                                     },
                                     child: FaIcon(
                                       FontAwesomeIcons.userCircle,
-                                      color: currentUserDocument?.color1,
+                                      color: valueOrDefault<Color>(
+                                        currentUserDocument?.color1,
+                                        FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                      ),
                                       size: 30.0,
                                     ),
                                   ),
@@ -201,8 +219,11 @@ class _RankPageWidgetState extends State<RankPageWidget> {
                                 'Pro',
                                 'Amateur'
                               ],
-                              onChanged: (val) => safeSetState(
-                                  () => _model.dropLigueValue = val),
+                              onChanged: (val) async {
+                                safeSetState(() => _model.dropLigueValue = val);
+                                _model.showLigueFilter = _model.dropLigueValue;
+                                safeSetState(() {});
+                              },
                               width: 150.0,
                               height: 56.0,
                               textStyle: FlutterFlowTheme.of(context)
@@ -232,48 +253,56 @@ class _RankPageWidgetState extends State<RankPageWidget> {
                               isSearchable: false,
                               isMultiSelect: false,
                             ),
-                            FlutterFlowDropDown<String>(
-                              controller: _model.dropDivisionValueController ??=
-                                  FormFieldController<String>(
-                                _model.dropDivisionValue ??= '',
+                            if (_model.showLigueFilter != null &&
+                                _model.showLigueFilter != '')
+                              FlutterFlowDropDown<String>(
+                                controller:
+                                    _model.dropDivisionValueController ??=
+                                        FormFieldController<String>(
+                                  _model.dropDivisionValue ??= '',
+                                ),
+                                options: List<String>.from(['1', '2', '3']),
+                                optionLabels: const [
+                                  'Division 1',
+                                  'Division 2',
+                                  'Division 3'
+                                ],
+                                onChanged: (val) async {
+                                  safeSetState(
+                                      () => _model.dropDivisionValue = val);
+                                  _model.showDivFilter =
+                                      _model.dropDivisionValue;
+                                  safeSetState(() {});
+                                },
+                                width: 150.0,
+                                height: 56.0,
+                                textStyle: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Poppins',
+                                      letterSpacing: 0.0,
+                                    ),
+                                hintText: 'Divisions',
+                                icon: Icon(
+                                  Icons.keyboard_arrow_down_rounded,
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryText,
+                                  size: 24.0,
+                                ),
+                                fillColor: FlutterFlowTheme.of(context)
+                                    .primaryBackground,
+                                elevation: 2.0,
+                                borderColor:
+                                    FlutterFlowTheme.of(context).alternate,
+                                borderWidth: 2.0,
+                                borderRadius: 8.0,
+                                margin: const EdgeInsetsDirectional.fromSTEB(
+                                    16.0, 4.0, 16.0, 4.0),
+                                hidesUnderline: true,
+                                isOverButton: true,
+                                isSearchable: false,
+                                isMultiSelect: false,
                               ),
-                              options: List<String>.from(['1', '2', '3']),
-                              optionLabels: const [
-                                'Division 1',
-                                'Division 2',
-                                'Division 3'
-                              ],
-                              onChanged: (val) => safeSetState(
-                                  () => _model.dropDivisionValue = val),
-                              width: 150.0,
-                              height: 56.0,
-                              textStyle: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: 'Poppins',
-                                    letterSpacing: 0.0,
-                                  ),
-                              hintText: 'Divisions',
-                              icon: Icon(
-                                Icons.keyboard_arrow_down_rounded,
-                                color:
-                                    FlutterFlowTheme.of(context).secondaryText,
-                                size: 24.0,
-                              ),
-                              fillColor: FlutterFlowTheme.of(context)
-                                  .primaryBackground,
-                              elevation: 2.0,
-                              borderColor:
-                                  FlutterFlowTheme.of(context).alternate,
-                              borderWidth: 2.0,
-                              borderRadius: 8.0,
-                              margin: const EdgeInsetsDirectional.fromSTEB(
-                                  16.0, 4.0, 16.0, 4.0),
-                              hidesUnderline: true,
-                              isOverButton: true,
-                              isSearchable: false,
-                              isMultiSelect: false,
-                            ),
                           ],
                         ),
                         Column(
@@ -328,8 +357,14 @@ class _RankPageWidgetState extends State<RankPageWidget> {
                                                 children: [
                                                   Icon(
                                                     Icons.groups_rounded,
-                                                    color: currentUserDocument
-                                                        ?.color2,
+                                                    color:
+                                                        valueOrDefault<Color>(
+                                                      currentUserDocument
+                                                          ?.color2,
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .secondaryText,
+                                                    ),
                                                     size: 30.0,
                                                   ),
                                                   Padding(
@@ -446,9 +481,15 @@ class _RankPageWidgetState extends State<RankPageWidget> {
                                                             child: Icon(
                                                               Icons
                                                                   .notifications_active_outlined,
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .accent1,
+                                                              color:
+                                                                  valueOrDefault<
+                                                                      Color>(
+                                                                currentUserDocument
+                                                                    ?.color1,
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .accent1,
+                                                              ),
                                                               size: 40.0,
                                                             ),
                                                           ),
@@ -529,8 +570,11 @@ class _RankPageWidgetState extends State<RankPageWidget> {
                                               ),
                                               Icon(
                                                 Icons.groups_rounded,
-                                                color:
-                                                    currentUserDocument?.color2,
+                                                color: valueOrDefault<Color>(
+                                                  currentUserDocument?.color2,
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryText,
+                                                ),
                                                 size: 30.0,
                                               ),
                                             ],
@@ -564,6 +608,36 @@ class _RankPageWidgetState extends State<RankPageWidget> {
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Container(
+                                              width: 125.0,
+                                              height: 30.0,
+                                              decoration: BoxDecoration(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryBackground,
+                                                borderRadius:
+                                                    BorderRadius.circular(25.0),
+                                                border: Border.all(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryBackground,
+                                                ),
+                                              ),
+                                              child: Align(
+                                                alignment: const AlignmentDirectional(
+                                                    -1.0, 0.0),
+                                                child: Text(
+                                                  'Pseudo',
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .labelSmall
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                            Container(
                                               width: 45.0,
                                               height: 30.0,
                                               decoration: BoxDecoration(
@@ -580,7 +654,7 @@ class _RankPageWidgetState extends State<RankPageWidget> {
                                               ),
                                             ),
                                             Container(
-                                              width: 130.0,
+                                              width: 30.0,
                                               height: 30.0,
                                               decoration: BoxDecoration(
                                                 color:
@@ -592,20 +666,6 @@ class _RankPageWidgetState extends State<RankPageWidget> {
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primaryBackground,
-                                                ),
-                                              ),
-                                              child: Align(
-                                                alignment: const AlignmentDirectional(
-                                                    1.0, 0.0),
-                                                child: Text(
-                                                  'Pseudo',
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .labelSmall
-                                                      .override(
-                                                        fontFamily: 'Poppins',
-                                                        letterSpacing: 0.0,
-                                                      ),
                                                 ),
                                               ),
                                             ),
@@ -636,6 +696,10 @@ class _RankPageWidgetState extends State<RankPageWidget> {
                                                       .bodyMedium
                                                       .override(
                                                         fontFamily: 'Poppins',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .secondaryText,
                                                         fontSize: 11.0,
                                                         letterSpacing: 0.0,
                                                       ),
@@ -668,6 +732,10 @@ class _RankPageWidgetState extends State<RankPageWidget> {
                                                       .bodyMedium
                                                       .override(
                                                         fontFamily: 'Poppins',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .secondaryText,
                                                         letterSpacing: 0.0,
                                                       ),
                                                 ),
@@ -847,12 +915,12 @@ class _RankPageWidgetState extends State<RankPageWidget> {
                                                   .where(
                                                     'rank_value',
                                                     isEqualTo:
-                                                        _model.dropLigueValue,
+                                                        _model.showLigueFilter,
                                                   )
                                                   .where(
                                                     'division_value',
-                                                    isEqualTo: _model
-                                                        .dropDivisionValue,
+                                                    isEqualTo:
+                                                        _model.showDivFilter,
                                                   )
                                                   .orderBy('earnings_total',
                                                       descending: true),
@@ -900,7 +968,7 @@ class _RankPageWidgetState extends State<RankPageWidget> {
                                                       MainAxisSize.max,
                                                   children: [
                                                     Container(
-                                                      width: 45.0,
+                                                      width: 125.0,
                                                       height: 30.0,
                                                       decoration: BoxDecoration(
                                                         color: FlutterFlowTheme
@@ -915,48 +983,7 @@ class _RankPageWidgetState extends State<RankPageWidget> {
                                                       child: Align(
                                                         alignment:
                                                             const AlignmentDirectional(
-                                                                0.0, 0.0),
-                                                        child: Text(
-                                                          valueOrDefault<
-                                                              String>(
-                                                            functions
-                                                                .zeroTo1(
-                                                                    columnUsersEarningsScrollIndex)
-                                                                .toString(),
-                                                            '1',
-                                                          ),
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Poppins',
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .primaryText,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                              ),
-                                                        ),
-                                                      ),
-                                                    ),
-                                                    Container(
-                                                      width: 130.0,
-                                                      height: 30.0,
-                                                      decoration: BoxDecoration(
-                                                        color: FlutterFlowTheme
-                                                                .of(context)
-                                                            .primaryBackground,
-                                                        border: Border.all(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryBackground,
-                                                        ),
-                                                      ),
-                                                      child: Align(
-                                                        alignment:
-                                                            const AlignmentDirectional(
-                                                                1.0, 0.0),
+                                                                -1.0, 0.0),
                                                         child: InkWell(
                                                           splashColor: Colors
                                                               .transparent,
@@ -994,12 +1021,94 @@ class _RankPageWidgetState extends State<RankPageWidget> {
                                                                   fontFamily:
                                                                       'Poppins',
                                                                   color:
-                                                                      columnUsersEarningsScrollUsersRecord
-                                                                          .color1,
+                                                                      valueOrDefault<
+                                                                          Color>(
+                                                                    columnUsersEarningsScrollUsersRecord
+                                                                        .color1,
+                                                                    FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primaryText,
+                                                                  ),
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),
                                                           ),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                    Container(
+                                                      width: 45.0,
+                                                      height: 30.0,
+                                                      decoration: BoxDecoration(
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .primaryBackground,
+                                                        border: Border.all(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primaryBackground,
+                                                        ),
+                                                      ),
+                                                      child: Align(
+                                                        alignment:
+                                                            const AlignmentDirectional(
+                                                                1.0, 0.0),
+                                                        child: Padding(
+                                                          padding:
+                                                              const EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      0.0,
+                                                                      3.0,
+                                                                      0.0),
+                                                          child: Text(
+                                                            valueOrDefault<
+                                                                String>(
+                                                              functions
+                                                                  .zeroTo1(
+                                                                      columnUsersEarningsScrollIndex)
+                                                                  .toString(),
+                                                              '1',
+                                                            ),
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Poppins',
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primaryText,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                    Container(
+                                                      width: 30.0,
+                                                      height: 30.0,
+                                                      decoration: BoxDecoration(
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .primaryBackground,
+                                                        border: Border.all(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primaryBackground,
+                                                        ),
+                                                      ),
+                                                      child: ClipRRect(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(25.0),
+                                                        child: Image.network(
+                                                          columnUsersEarningsScrollUsersRecord
+                                                              .photoUrl,
+                                                          width: 200.0,
+                                                          height: 200.0,
+                                                          fit: BoxFit.fitHeight,
                                                         ),
                                                       ),
                                                     ),

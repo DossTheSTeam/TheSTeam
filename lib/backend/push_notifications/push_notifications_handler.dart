@@ -203,7 +203,6 @@ final parametersBuilderMap =
           'teamRef': getParameter<DocumentReference>(data, 'teamRef'),
         },
       ),
-  'ListBestsPosts': ParameterData.none(),
   'ListPosts': ParameterData.none(),
   'ListPostsMyTeams': ParameterData.none(),
   'PostPage': (data) async => ParameterData(
@@ -500,6 +499,17 @@ final parametersBuilderMap =
         },
       ),
   'TeamListCup': ParameterData.none(),
+  'PublicStatsCompare': (data) async => ParameterData(
+        allParams: {
+          'userRef': getParameter<DocumentReference>(data, 'userRef'),
+        },
+      ),
+  'FullImagePage': (data) async => ParameterData(
+        allParams: {
+          'imageRef': getParameter<String>(data, 'imageRef'),
+          'userRef': getParameter<DocumentReference>(data, 'userRef'),
+        },
+      ),
 };
 
 Map<String, dynamic> getInitialParameterData(Map<String, dynamic> data) {

@@ -70,7 +70,10 @@ class _BossNotifEEventPageIUDAdminWidgetState
         final bossNotifEEventPageIUDAdminMyNotificationsRecord = snapshot.data!;
 
         return GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -140,8 +143,11 @@ class _BossNotifEEventPageIUDAdminWidgetState
                                             },
                                             child: Icon(
                                               Icons.menu_rounded,
-                                              color:
-                                                  currentUserDocument?.color1,
+                                              color: valueOrDefault<Color>(
+                                                currentUserDocument?.color1,
+                                                FlutterFlowTheme.of(context)
+                                                    .primaryText,
+                                              ),
                                               size: 30.0,
                                             ),
                                           ),
@@ -161,8 +167,11 @@ class _BossNotifEEventPageIUDAdminWidgetState
                                               child: Icon(
                                                 Icons
                                                     .arrow_back_ios_new_rounded,
-                                                color:
-                                                    currentUserDocument?.color1,
+                                                color: valueOrDefault<Color>(
+                                                  currentUserDocument?.color1,
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryText,
+                                                ),
                                                 size: 30.0,
                                               ),
                                             ),

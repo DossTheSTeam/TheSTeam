@@ -251,6 +251,36 @@ class UsersRecord extends FirestoreRecord {
   Color? get color2 => _color2;
   bool hasColor2() => _color2 != null;
 
+  // "testor" field.
+  bool? _testor;
+  bool get testor => _testor ?? false;
+  bool hasTestor() => _testor != null;
+
+  // "suspension_times" field.
+  int? _suspensionTimes;
+  int get suspensionTimes => _suspensionTimes ?? 0;
+  bool hasSuspensionTimes() => _suspensionTimes != null;
+
+  // "suspension_days" field.
+  int? _suspensionDays;
+  int get suspensionDays => _suspensionDays ?? 0;
+  bool hasSuspensionDays() => _suspensionDays != null;
+
+  // "dateof_birth" field.
+  String? _dateofBirth;
+  String get dateofBirth => _dateofBirth ?? '';
+  bool hasDateofBirth() => _dateofBirth != null;
+
+  // "adult" field.
+  bool? _adult;
+  bool get adult => _adult ?? false;
+  bool hasAdult() => _adult != null;
+
+  // "player" field.
+  bool? _player;
+  bool get player => _player ?? false;
+  bool hasPlayer() => _player != null;
+
   void _initializeFields() {
     _email = snapshotData['email'] as String?;
     _displayName = snapshotData['display_name'] as String?;
@@ -299,6 +329,12 @@ class UsersRecord extends FirestoreRecord {
     _adminSportvalue = snapshotData['admin_sportvalue'] as String?;
     _color1 = getSchemaColor(snapshotData['color1']);
     _color2 = getSchemaColor(snapshotData['color2']);
+    _testor = snapshotData['testor'] as bool?;
+    _suspensionTimes = castToType<int>(snapshotData['suspension_times']);
+    _suspensionDays = castToType<int>(snapshotData['suspension_days']);
+    _dateofBirth = snapshotData['dateof_birth'] as String?;
+    _adult = snapshotData['adult'] as bool?;
+    _player = snapshotData['player'] as bool?;
   }
 
   static CollectionReference get collection =>
@@ -379,6 +415,12 @@ Map<String, dynamic> createUsersRecordData({
   String? adminSportvalue,
   Color? color1,
   Color? color2,
+  bool? testor,
+  int? suspensionTimes,
+  int? suspensionDays,
+  String? dateofBirth,
+  bool? adult,
+  bool? player,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -426,6 +468,12 @@ Map<String, dynamic> createUsersRecordData({
       'admin_sportvalue': adminSportvalue,
       'color1': color1,
       'color2': color2,
+      'testor': testor,
+      'suspension_times': suspensionTimes,
+      'suspension_days': suspensionDays,
+      'dateof_birth': dateofBirth,
+      'adult': adult,
+      'player': player,
     }.withoutNulls,
   );
 
@@ -484,7 +532,13 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e1?.adminSport == e2?.adminSport &&
         e1?.adminSportvalue == e2?.adminSportvalue &&
         e1?.color1 == e2?.color1 &&
-        e1?.color2 == e2?.color2;
+        e1?.color2 == e2?.color2 &&
+        e1?.testor == e2?.testor &&
+        e1?.suspensionTimes == e2?.suspensionTimes &&
+        e1?.suspensionDays == e2?.suspensionDays &&
+        e1?.dateofBirth == e2?.dateofBirth &&
+        e1?.adult == e2?.adult &&
+        e1?.player == e2?.player;
   }
 
   @override
@@ -535,7 +589,13 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e?.adminSport,
         e?.adminSportvalue,
         e?.color1,
-        e?.color2
+        e?.color2,
+        e?.testor,
+        e?.suspensionTimes,
+        e?.suspensionDays,
+        e?.dateofBirth,
+        e?.adult,
+        e?.player
       ]);
 
   @override

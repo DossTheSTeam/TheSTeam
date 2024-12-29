@@ -36,7 +36,10 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -81,7 +84,10 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                   },
                                   child: Icon(
                                     Icons.menu_rounded,
-                                    color: currentUserDocument?.color1,
+                                    color: valueOrDefault<Color>(
+                                      currentUserDocument?.color1,
+                                      FlutterFlowTheme.of(context).primaryText,
+                                    ),
                                     size: 30.0,
                                   ),
                                 ),
@@ -98,7 +104,11 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                     },
                                     child: Icon(
                                       Icons.arrow_back_ios_new_rounded,
-                                      color: currentUserDocument?.color1,
+                                      color: valueOrDefault<Color>(
+                                        currentUserDocument?.color1,
+                                        FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                      ),
                                       size: 30.0,
                                     ),
                                   ),
@@ -144,7 +154,10 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                     },
                                     child: Icon(
                                       Icons.bar_chart,
-                                      color: currentUserDocument?.color1,
+                                      color: valueOrDefault<Color>(
+                                        currentUserDocument?.color1,
+                                        FlutterFlowTheme.of(context).primary,
+                                      ),
                                       size: 30.0,
                                     ),
                                   ),
@@ -173,7 +186,11 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                     },
                                     child: FaIcon(
                                       FontAwesomeIcons.crown,
-                                      color: currentUserDocument?.color1,
+                                      color: valueOrDefault<Color>(
+                                        currentUserDocument?.color1,
+                                        FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                      ),
                                       size: 25.0,
                                     ),
                                   ),
@@ -192,6 +209,189 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                   mainAxisSize: MainAxisSize.max,
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
+                                    if (valueOrDefault<bool>(
+                                            currentUserDocument?.helpNav,
+                                            false) ==
+                                        true)
+                                      Align(
+                                        alignment:
+                                            const AlignmentDirectional(0.0, 0.0),
+                                        child: Padding(
+                                          padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  5.0, 5.0, 5.0, 0.0),
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceBetween,
+                                            children: [
+                                              Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                children: [
+                                                  Align(
+                                                    alignment:
+                                                        const AlignmentDirectional(
+                                                            0.0, 0.0),
+                                                    child: Padding(
+                                                      padding:
+                                                          const EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  0.0,
+                                                                  0.0,
+                                                                  5.0,
+                                                                  0.0),
+                                                      child: FaIcon(
+                                                        FontAwesomeIcons
+                                                            .userCircle,
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .secondaryText,
+                                                        size: 20.0,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                  Text(
+                                                    'Moi',
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                  ),
+                                                ],
+                                              ),
+                                              Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                children: [
+                                                  InkWell(
+                                                    splashColor:
+                                                        Colors.transparent,
+                                                    focusColor:
+                                                        Colors.transparent,
+                                                    hoverColor:
+                                                        Colors.transparent,
+                                                    highlightColor:
+                                                        Colors.transparent,
+                                                    onTap: () async {
+                                                      context.pushNamed(
+                                                        'MyProfilSocial',
+                                                        extra: <String,
+                                                            dynamic>{
+                                                          kTransitionInfoKey:
+                                                              const TransitionInfo(
+                                                            hasTransition: true,
+                                                            transitionType:
+                                                                PageTransitionType
+                                                                    .bottomToTop,
+                                                            duration: Duration(
+                                                                milliseconds:
+                                                                    400),
+                                                          ),
+                                                        },
+                                                      );
+                                                    },
+                                                    child: Icon(
+                                                      Icons.star_rounded,
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .secondaryText,
+                                                      size: 25.0,
+                                                    ),
+                                                  ),
+                                                  Text(
+                                                    'Abonnements',
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                  ),
+                                                ],
+                                              ),
+                                              Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                children: [
+                                                  Align(
+                                                    alignment:
+                                                        const AlignmentDirectional(
+                                                            0.0, 0.0),
+                                                    child: Padding(
+                                                      padding:
+                                                          const EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  0.0,
+                                                                  0.0,
+                                                                  5.0,
+                                                                  0.0),
+                                                      child: Icon(
+                                                        Icons.groups_rounded,
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .secondaryText,
+                                                        size: 25.0,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                  Text(
+                                                    'Abonnés',
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                  ),
+                                                ],
+                                              ),
+                                              Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                children: [
+                                                  Align(
+                                                    alignment:
+                                                        const AlignmentDirectional(
+                                                            0.0, 0.0),
+                                                    child: Padding(
+                                                      padding:
+                                                          const EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  0.0,
+                                                                  0.0,
+                                                                  5.0,
+                                                                  0.0),
+                                                      child: Icon(
+                                                        Icons.favorite_rounded,
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .secondaryText,
+                                                        size: 20.0,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                  Text(
+                                                    'Amis',
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
                                     Padding(
                                       padding: const EdgeInsetsDirectional.fromSTEB(
                                           30.0, 10.0, 0.0, 0.0),
@@ -230,7 +430,7 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                                   color: valueOrDefault<Color>(
                                                     currentUserDocument?.color2,
                                                     FlutterFlowTheme.of(context)
-                                                        .secondaryText,
+                                                        .accent1,
                                                   ),
                                                   size: 30.0,
                                                 ),
@@ -346,9 +546,14 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                                         child: Icon(
                                                           Icons
                                                               .notifications_active_outlined,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .accent1,
+                                                          color: valueOrDefault<
+                                                              Color>(
+                                                            currentUserDocument
+                                                                ?.color1,
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .accent1,
+                                                          ),
                                                           size: 40.0,
                                                         ),
                                                       ),
@@ -394,7 +599,7 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                               color: valueOrDefault<Color>(
                                                 currentUserDocument?.color2,
                                                 FlutterFlowTheme.of(context)
-                                                    .secondaryText,
+                                                    .success,
                                               ),
                                               size: 30.0,
                                             ),
@@ -466,6 +671,36 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                               ),
                                             ),
                                             Container(
+                                              width: 125.0,
+                                              height: 30.0,
+                                              decoration: BoxDecoration(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryBackground,
+                                                borderRadius:
+                                                    BorderRadius.circular(25.0),
+                                                border: Border.all(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryBackground,
+                                                ),
+                                              ),
+                                              child: Align(
+                                                alignment: const AlignmentDirectional(
+                                                    -1.0, 0.0),
+                                                child: Text(
+                                                  'Pseudo',
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .labelSmall
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                            Container(
                                               width: 45.0,
                                               height: 30.0,
                                               decoration: BoxDecoration(
@@ -482,7 +717,7 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                               ),
                                             ),
                                             Container(
-                                              width: 130.0,
+                                              width: 30.0,
                                               height: 30.0,
                                               decoration: BoxDecoration(
                                                 color:
@@ -494,20 +729,6 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primaryBackground,
-                                                ),
-                                              ),
-                                              child: Align(
-                                                alignment: const AlignmentDirectional(
-                                                    1.0, 0.0),
-                                                child: Text(
-                                                  'Pseudo',
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .labelSmall
-                                                      .override(
-                                                        fontFamily: 'Poppins',
-                                                        letterSpacing: 0.0,
-                                                      ),
                                                 ),
                                               ),
                                             ),
@@ -537,6 +758,10 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                                       .bodyMedium
                                                       .override(
                                                         fontFamily: 'Poppins',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .secondaryText,
                                                         letterSpacing: 0.0,
                                                       ),
                                                 ),
@@ -568,6 +793,10 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                                       .bodyMedium
                                                       .override(
                                                         fontFamily: 'Poppins',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .secondaryText,
                                                         letterSpacing: 0.0,
                                                       ),
                                                 ),
@@ -887,47 +1116,155 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                                                                 25.0,
                                                                           ),
                                                                         ),
+                                                                      if (!(currentUserDocument?.fans.toList() ??
+                                                                              [])
+                                                                          .contains(
+                                                                              columnUsersEarningsScrollUsersRecord.reference))
+                                                                        Row(
+                                                                          mainAxisSize:
+                                                                              MainAxisSize.max,
+                                                                          children: [
+                                                                            if ((currentUserDocument?.bests.toList() ?? []).contains(columnUsersEarningsScrollUsersRecord.reference))
+                                                                              Align(
+                                                                                alignment: const AlignmentDirectional(0.0, 0.0),
+                                                                                child: Icon(
+                                                                                  Icons.star_rounded,
+                                                                                  color: valueOrDefault<Color>(
+                                                                                    columnUsersEarningsScrollUsersRecord.color1,
+                                                                                    FlutterFlowTheme.of(context).accent1,
+                                                                                  ),
+                                                                                  size: 30.0,
+                                                                                ),
+                                                                              ),
+                                                                          ],
+                                                                        ),
+                                                                      if (!(currentUserDocument?.bests.toList() ??
+                                                                              [])
+                                                                          .contains(
+                                                                              columnUsersEarningsScrollUsersRecord.reference))
+                                                                        Row(
+                                                                          mainAxisSize:
+                                                                              MainAxisSize.max,
+                                                                          children: [
+                                                                            if ((currentUserDocument?.fans.toList() ?? []).contains(columnUsersEarningsScrollUsersRecord.reference))
+                                                                              Align(
+                                                                                alignment: const AlignmentDirectional(0.0, 0.0),
+                                                                                child: Icon(
+                                                                                  Icons.groups_rounded,
+                                                                                  color: valueOrDefault<Color>(
+                                                                                    columnUsersEarningsScrollUsersRecord.color1,
+                                                                                    FlutterFlowTheme.of(context).success,
+                                                                                  ),
+                                                                                  size: 30.0,
+                                                                                ),
+                                                                              ),
+                                                                          ],
+                                                                        ),
                                                                       if ((currentUserDocument?.bests.toList() ??
                                                                               [])
                                                                           .contains(
                                                                               columnUsersEarningsScrollUsersRecord.reference))
-                                                                        Align(
-                                                                          alignment: const AlignmentDirectional(
-                                                                              0.0,
-                                                                              0.0),
-                                                                          child:
-                                                                              Icon(
-                                                                            Icons.star_rounded,
-                                                                            color:
-                                                                                valueOrDefault<Color>(
-                                                                              columnUsersEarningsScrollUsersRecord.color1,
-                                                                              FlutterFlowTheme.of(context).secondaryText,
-                                                                            ),
-                                                                            size:
-                                                                                30.0,
-                                                                          ),
-                                                                        ),
-                                                                      if ((currentUserDocument?.fans.toList() ??
-                                                                              [])
-                                                                          .contains(
-                                                                              columnUsersEarningsScrollUsersRecord.reference))
-                                                                        Align(
-                                                                          alignment: const AlignmentDirectional(
-                                                                              0.0,
-                                                                              0.0),
-                                                                          child:
-                                                                              Icon(
-                                                                            Icons.groups_rounded,
-                                                                            color:
-                                                                                valueOrDefault<Color>(
-                                                                              columnUsersEarningsScrollUsersRecord.color1,
-                                                                              FlutterFlowTheme.of(context).secondaryText,
-                                                                            ),
-                                                                            size:
-                                                                                30.0,
-                                                                          ),
+                                                                        Row(
+                                                                          mainAxisSize:
+                                                                              MainAxisSize.max,
+                                                                          children: [
+                                                                            if ((currentUserDocument?.fans.toList() ?? []).contains(columnUsersEarningsScrollUsersRecord.reference))
+                                                                              Align(
+                                                                                alignment: const AlignmentDirectional(0.0, 0.0),
+                                                                                child: Icon(
+                                                                                  Icons.favorite_rounded,
+                                                                                  color: valueOrDefault<Color>(
+                                                                                    columnUsersEarningsScrollUsersRecord.color1,
+                                                                                    FlutterFlowTheme.of(context).error,
+                                                                                  ),
+                                                                                  size: 25.0,
+                                                                                ),
+                                                                              ),
+                                                                          ],
                                                                         ),
                                                                     ],
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                              Container(
+                                                                width: 125.0,
+                                                                height: 30.0,
+                                                                decoration:
+                                                                    BoxDecoration(
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primaryBackground,
+                                                                  border: Border
+                                                                      .all(
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primaryBackground,
+                                                                  ),
+                                                                ),
+                                                                child: Align(
+                                                                  alignment:
+                                                                      const AlignmentDirectional(
+                                                                          -1.0,
+                                                                          0.0),
+                                                                  child:
+                                                                      Padding(
+                                                                    padding: const EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            3.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                    child:
+                                                                        InkWell(
+                                                                      splashColor:
+                                                                          Colors
+                                                                              .transparent,
+                                                                      focusColor:
+                                                                          Colors
+                                                                              .transparent,
+                                                                      hoverColor:
+                                                                          Colors
+                                                                              .transparent,
+                                                                      highlightColor:
+                                                                          Colors
+                                                                              .transparent,
+                                                                      onTap:
+                                                                          () async {
+                                                                        context
+                                                                            .pushNamed(
+                                                                          'PublicProfilPage',
+                                                                          queryParameters:
+                                                                              {
+                                                                            'userRef':
+                                                                                serializeParam(
+                                                                              columnUsersEarningsScrollUsersRecord.reference,
+                                                                              ParamType.DocumentReference,
+                                                                            ),
+                                                                          }.withoutNulls,
+                                                                        );
+                                                                      },
+                                                                      child:
+                                                                          Text(
+                                                                        valueOrDefault<
+                                                                            String>(
+                                                                          columnUsersEarningsScrollUsersRecord
+                                                                              .displayName,
+                                                                          'NewUser',
+                                                                        ),
+                                                                        textAlign:
+                                                                            TextAlign.start,
+                                                                        style: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .override(
+                                                                              fontFamily: 'Poppins',
+                                                                              color: valueOrDefault<Color>(
+                                                                                columnUsersEarningsScrollUsersRecord.color1,
+                                                                                FlutterFlowTheme.of(context).primaryText,
+                                                                              ),
+                                                                              letterSpacing: 0.0,
+                                                                            ),
+                                                                      ),
+                                                                    ),
                                                                   ),
                                                                 ),
                                                               ),
@@ -949,33 +1286,44 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                                                 child: Align(
                                                                   alignment:
                                                                       const AlignmentDirectional(
-                                                                          0.0,
+                                                                          1.0,
                                                                           0.0),
-                                                                  child: Text(
-                                                                    valueOrDefault<
-                                                                        String>(
-                                                                      functions
-                                                                          .zeroTo1(
-                                                                              columnUsersEarningsScrollIndex)
-                                                                          .toString(),
-                                                                      '1',
+                                                                  child:
+                                                                      Padding(
+                                                                    padding: const EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            3.0,
+                                                                            0.0),
+                                                                    child: Text(
+                                                                      valueOrDefault<
+                                                                          String>(
+                                                                        functions
+                                                                            .zeroTo1(columnUsersEarningsScrollIndex)
+                                                                            .toString(),
+                                                                        '1',
+                                                                      ),
+                                                                      textAlign:
+                                                                          TextAlign
+                                                                              .end,
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                'Poppins',
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).primaryText,
+                                                                            letterSpacing:
+                                                                                0.0,
+                                                                          ),
                                                                     ),
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              'Poppins',
-                                                                          color:
-                                                                              FlutterFlowTheme.of(context).primaryText,
-                                                                          letterSpacing:
-                                                                              0.0,
-                                                                        ),
                                                                   ),
                                                                 ),
                                                               ),
                                                               Container(
-                                                                width: 130.0,
+                                                                width: 30.0,
                                                                 height: 30.0,
                                                                 decoration:
                                                                     BoxDecoration(
@@ -989,62 +1337,22 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                                                         .primaryBackground,
                                                                   ),
                                                                 ),
-                                                                child: Align(
-                                                                  alignment:
-                                                                      const AlignmentDirectional(
-                                                                          1.0,
-                                                                          0.0),
-                                                                  child:
-                                                                      InkWell(
-                                                                    splashColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    focusColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    hoverColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    highlightColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    onTap:
-                                                                        () async {
-                                                                      context
-                                                                          .pushNamed(
-                                                                        'PublicProfilPage',
-                                                                        queryParameters:
-                                                                            {
-                                                                          'userRef':
-                                                                              serializeParam(
-                                                                            columnUsersEarningsScrollUsersRecord.reference,
-                                                                            ParamType.DocumentReference,
-                                                                          ),
-                                                                        }.withoutNulls,
-                                                                      );
-                                                                    },
-                                                                    child: Text(
-                                                                      valueOrDefault<
-                                                                          String>(
-                                                                        columnUsersEarningsScrollUsersRecord
-                                                                            .displayName,
-                                                                        'NewUser',
-                                                                      ),
-                                                                      textAlign:
-                                                                          TextAlign
-                                                                              .end,
-                                                                      style: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium
-                                                                          .override(
-                                                                            fontFamily:
-                                                                                'Poppins',
-                                                                            color:
-                                                                                columnUsersEarningsScrollUsersRecord.color1,
-                                                                            letterSpacing:
-                                                                                0.0,
-                                                                          ),
-                                                                    ),
+                                                                child:
+                                                                    ClipRRect(
+                                                                  borderRadius:
+                                                                      BorderRadius
+                                                                          .circular(
+                                                                              25.0),
+                                                                  child: Image
+                                                                      .network(
+                                                                    columnUsersEarningsScrollUsersRecord
+                                                                        .photoUrl,
+                                                                    width:
+                                                                        200.0,
+                                                                    height:
+                                                                        200.0,
+                                                                    fit: BoxFit
+                                                                        .fitHeight,
                                                                   ),
                                                                 ),
                                                               ),

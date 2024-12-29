@@ -4,6 +4,14 @@ import 'e_team_rank_page_widget.dart' show ETeamRankPageWidget;
 import 'package:flutter/material.dart';
 
 class ETeamRankPageModel extends FlutterFlowModel<ETeamRankPageWidget> {
+  ///  Local state fields for this page.
+
+  String? showEsportFilter;
+
+  String? showELIgueFilter;
+
+  String? showEDivFilter;
+
   ///  State fields for stateful widgets in this page.
 
   // State field(s) for DropESport widget.

@@ -34,7 +34,10 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -284,7 +287,7 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                                   width: 300.0,
                                                                   height: 200.0,
                                                                   fit: BoxFit
-                                                                      .cover,
+                                                                      .fitHeight,
                                                                 ),
                                                               ),
                                                             ),
@@ -338,6 +341,14 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                                   .override(
                                                                     fontFamily:
                                                                         'Poppins',
+                                                                    color: valueOrDefault<
+                                                                        Color>(
+                                                                      rowNotifUserUsersRecord
+                                                                          .color1,
+                                                                      FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primaryText,
+                                                                    ),
                                                                     letterSpacing:
                                                                         0.0,
                                                                   ),
@@ -935,7 +946,7 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                                   children: [
                                                                     Container(
                                                                       width:
-                                                                          30.0,
+                                                                          45.0,
                                                                       height:
                                                                           30.0,
                                                                       decoration:
@@ -958,7 +969,7 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                                           height:
                                                                               200.0,
                                                                           fit: BoxFit
-                                                                              .cover,
+                                                                              .fitHeight,
                                                                         ),
                                                                       ),
                                                                     ),
@@ -1036,7 +1047,10 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                                             child:
                                                                                 Icon(
                                                                               Icons.remove_red_eye_outlined,
-                                                                              color: currentUserDocument?.color1,
+                                                                              color: valueOrDefault<Color>(
+                                                                                currentUserDocument?.color1,
+                                                                                FlutterFlowTheme.of(context).primaryText,
+                                                                              ),
                                                                               size: 30.0,
                                                                             ),
                                                                           ),
@@ -1292,8 +1306,14 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                             Icons
                                                                 .stadium_rounded,
                                                             color:
-                                                                currentUserDocument
-                                                                    ?.color1,
+                                                                valueOrDefault<
+                                                                    Color>(
+                                                              currentUserDocument
+                                                                  ?.color1,
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .primaryText,
+                                                            ),
                                                             size: 30.0,
                                                           ),
                                                         ),
@@ -1532,7 +1552,10 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                                           Icons
                                                                               .location_history_outlined,
                                                                           color:
-                                                                              currentUserDocument?.color1,
+                                                                              valueOrDefault<Color>(
+                                                                            currentUserDocument?.color1,
+                                                                            FlutterFlowTheme.of(context).primaryText,
+                                                                          ),
                                                                           size:
                                                                               30.0,
                                                                         ),
@@ -1581,7 +1604,10 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                                           Icons
                                                                               .settings_suggest,
                                                                           color:
-                                                                              currentUserDocument?.color1,
+                                                                              valueOrDefault<Color>(
+                                                                            currentUserDocument?.color1,
+                                                                            FlutterFlowTheme.of(context).primaryText,
+                                                                          ),
                                                                           size:
                                                                               30.0,
                                                                         ),
@@ -1629,7 +1655,10 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                                           Icons
                                                                               .bar_chart,
                                                                           color:
-                                                                              currentUserDocument?.color1,
+                                                                              valueOrDefault<Color>(
+                                                                            currentUserDocument?.color1,
+                                                                            FlutterFlowTheme.of(context).primaryText,
+                                                                          ),
                                                                           size:
                                                                               30.0,
                                                                         ),
@@ -1715,8 +1744,11 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                             AuthUserStreamWidget(
                                               builder: (context) => Divider(
                                                 thickness: 1.0,
-                                                color:
-                                                    currentUserDocument?.color2,
+                                                color: valueOrDefault<Color>(
+                                                  currentUserDocument?.color2,
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryBackground,
+                                                ),
                                               ),
                                             ),
                                           ],
@@ -1970,7 +2002,7 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                             MainAxisSize.max,
                                                         children: [
                                                           Container(
-                                                            width: 30.0,
+                                                            width: 45.0,
                                                             height: 30.0,
                                                             decoration:
                                                                 BoxDecoration(
@@ -1992,7 +2024,7 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                                 width: 200.0,
                                                                 height: 200.0,
                                                                 fit: BoxFit
-                                                                    .cover,
+                                                                    .fitHeight,
                                                               ),
                                                             ),
                                                           ),
@@ -2674,8 +2706,11 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                           AuthUserStreamWidget(
                                             builder: (context) => Divider(
                                               thickness: 1.0,
-                                              color:
-                                                  currentUserDocument?.color2,
+                                              color: valueOrDefault<Color>(
+                                                currentUserDocument?.color2,
+                                                FlutterFlowTheme.of(context)
+                                                    .secondaryBackground,
+                                              ),
                                             ),
                                           ),
                                         ],

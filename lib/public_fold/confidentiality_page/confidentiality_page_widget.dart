@@ -35,7 +35,10 @@ class _ConfidentialityPageWidgetState extends State<ConfidentialityPageWidget> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -47,145 +50,143 @@ class _ConfidentialityPageWidgetState extends State<ConfidentialityPageWidget> {
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
-                  Padding(
-                    padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Row(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            InkWell(
-                              splashColor: Colors.transparent,
-                              focusColor: Colors.transparent,
-                              hoverColor: Colors.transparent,
-                              highlightColor: Colors.transparent,
-                              onTap: () async {
-                                context.pushNamed(
-                                  'MenuPage',
-                                  extra: <String, dynamic>{
-                                    kTransitionInfoKey: const TransitionInfo(
-                                      hasTransition: true,
-                                      transitionType:
-                                          PageTransitionType.leftToRight,
-                                      duration: Duration(milliseconds: 400),
-                                    ),
-                                  },
-                                );
-                              },
-                              child: Icon(
-                                Icons.menu_rounded,
-                                color:
-                                    FlutterFlowTheme.of(context).secondaryText,
-                                size: 30.0,
-                              ),
-                            ),
-                            InkWell(
-                              splashColor: Colors.transparent,
-                              focusColor: Colors.transparent,
-                              hoverColor: Colors.transparent,
-                              highlightColor: Colors.transparent,
-                              onTap: () async {
-                                context.safePop();
-                              },
-                              child: Icon(
-                                Icons.arrow_back_ios_new_rounded,
-                                color:
-                                    FlutterFlowTheme.of(context).secondaryText,
-                                size: 30.0,
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  25.0, 0.0, 0.0, 0.0),
-                              child: Text(
-                                'Politique de\nConfidentialité',
-                                textAlign: TextAlign.center,
-                                style: FlutterFlowTheme.of(context)
-                                    .headlineLarge
-                                    .override(
-                                      fontFamily: 'Montserrat',
-                                      letterSpacing: 0.0,
-                                    ),
-                              ),
-                            ),
-                          ],
-                        ),
-                        if (true /* Warning: Trying to access variable not yet defined. */)
-                          FutureBuilder<List<MyNotificationsRecord>>(
-                            future: queryMyNotificationsRecordOnce(
-                              parent: currentUserReference,
-                              singleRecord: true,
-                            ),
-                            builder: (context, snapshot) {
-                              // Customize what your widget looks like when it's loading.
-                              if (!snapshot.hasData) {
-                                return Center(
-                                  child: SizedBox(
-                                    width: 50.0,
-                                    height: 50.0,
-                                    child: CircularProgressIndicator(
-                                      valueColor: AlwaysStoppedAnimation<Color>(
-                                        FlutterFlowTheme.of(context).accent4,
-                                      ),
-                                    ),
+                  Row(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Row(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              context.pushNamed(
+                                'MenuPage',
+                                extra: <String, dynamic>{
+                                  kTransitionInfoKey: const TransitionInfo(
+                                    hasTransition: true,
+                                    transitionType:
+                                        PageTransitionType.leftToRight,
+                                    duration: Duration(milliseconds: 400),
                                   ),
-                                );
-                              }
-                              List<MyNotificationsRecord>
-                                  rowNotifsMyNotificationsRecordList =
-                                  snapshot.data!;
-                              // Return an empty Container when the item does not exist.
-                              if (snapshot.data!.isEmpty) {
-                                return Container();
-                              }
-                              final rowNotifsMyNotificationsRecord =
-                                  rowNotifsMyNotificationsRecordList.isNotEmpty
-                                      ? rowNotifsMyNotificationsRecordList.first
-                                      : null;
-
-                              return Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.end,
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        10.0, 0.0, 10.0, 0.0),
-                                    child: InkWell(
-                                      splashColor: Colors.transparent,
-                                      focusColor: Colors.transparent,
-                                      hoverColor: Colors.transparent,
-                                      highlightColor: Colors.transparent,
-                                      onTap: () async {
-                                        context.pushNamed(
-                                          'MyNotifsList',
-                                          extra: <String, dynamic>{
-                                            kTransitionInfoKey: const TransitionInfo(
-                                              hasTransition: true,
-                                              transitionType: PageTransitionType
-                                                  .rightToLeft,
-                                              duration:
-                                                  Duration(milliseconds: 400),
-                                            ),
-                                          },
-                                        );
-                                      },
-                                      child: Icon(
-                                        Icons.notifications_active_outlined,
-                                        color: FlutterFlowTheme.of(context)
-                                            .accent1,
-                                        size: 40.0,
-                                      ),
-                                    ),
-                                  ),
-                                ],
+                                },
                               );
                             },
+                            child: Icon(
+                              Icons.menu_rounded,
+                              color: FlutterFlowTheme.of(context).secondaryText,
+                              size: 30.0,
+                            ),
                           ),
-                      ],
-                    ),
+                          InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              context.safePop();
+                            },
+                            child: Icon(
+                              Icons.arrow_back_ios_new_rounded,
+                              color: FlutterFlowTheme.of(context).secondaryText,
+                              size: 30.0,
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                25.0, 0.0, 0.0, 0.0),
+                            child: Text(
+                              'Politique de\nConfidentialité',
+                              textAlign: TextAlign.center,
+                              style: FlutterFlowTheme.of(context)
+                                  .headlineLarge
+                                  .override(
+                                    fontFamily: 'Montserrat',
+                                    letterSpacing: 0.0,
+                                  ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      if (true /* Warning: Trying to access variable not yet defined. */)
+                        FutureBuilder<List<MyNotificationsRecord>>(
+                          future: queryMyNotificationsRecordOnce(
+                            parent: currentUserReference,
+                            singleRecord: true,
+                          ),
+                          builder: (context, snapshot) {
+                            // Customize what your widget looks like when it's loading.
+                            if (!snapshot.hasData) {
+                              return Center(
+                                child: SizedBox(
+                                  width: 50.0,
+                                  height: 50.0,
+                                  child: CircularProgressIndicator(
+                                    valueColor: AlwaysStoppedAnimation<Color>(
+                                      FlutterFlowTheme.of(context).accent4,
+                                    ),
+                                  ),
+                                ),
+                              );
+                            }
+                            List<MyNotificationsRecord>
+                                rowNotifsMyNotificationsRecordList =
+                                snapshot.data!;
+                            // Return an empty Container when the item does not exist.
+                            if (snapshot.data!.isEmpty) {
+                              return Container();
+                            }
+                            final rowNotifsMyNotificationsRecord =
+                                rowNotifsMyNotificationsRecordList.isNotEmpty
+                                    ? rowNotifsMyNotificationsRecordList.first
+                                    : null;
+
+                            return Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      10.0, 0.0, 10.0, 0.0),
+                                  child: InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      context.pushNamed(
+                                        'MyNotifsList',
+                                        extra: <String, dynamic>{
+                                          kTransitionInfoKey: const TransitionInfo(
+                                            hasTransition: true,
+                                            transitionType:
+                                                PageTransitionType.rightToLeft,
+                                            duration:
+                                                Duration(milliseconds: 400),
+                                          ),
+                                        },
+                                      );
+                                    },
+                                    child: Icon(
+                                      Icons.notifications_active_outlined,
+                                      color:
+                                          FlutterFlowTheme.of(context).accent1,
+                                      size: 40.0,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            );
+                          },
+                        ),
+                    ],
+                  ),
+                  Divider(
+                    thickness: 1.0,
+                    color: FlutterFlowTheme.of(context).secondaryBackground,
                   ),
                   Padding(
                     padding:
@@ -227,7 +228,7 @@ class _ConfidentialityPageWidgetState extends State<ConfidentialityPageWidget> {
                     padding:
                         const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                     child: Text(
-                      'Données d\'identification: Nom d\'utilisateur, adresse électronique, mot de passe.\nDonnées techniques: Adresse IP, type de navigateur, appareil utilisé, informations de localisation (si autorisées par l\'utilisateur).\nDonnées relatives à l\'utilisation de l\'Application: Historique de navigation, interactions avec d\'autres utilisateurs, données relatives aux paris sportifs (mises, gains, etc.).',
+                      'Données d\'identification: Nom d\'utilisateur, adresse électronique, mot de passe.\nDonnées techniques: Adresse IP, type de navigateur, appareil utilisé, informations de localisation (si autorisées par l\'utilisateur).\nDonnées relatives à l\'utilisation de l\'Application: Historique de navigation, interactions avec d\'autres utilisateurs, données relatives aux paris sportifs (mises, gains, etc.) et aux performances E sport.',
                       style: FlutterFlowTheme.of(context).bodyLarge.override(
                             fontFamily: 'Poppins',
                             letterSpacing: 0.0,
@@ -362,7 +363,7 @@ class _ConfidentialityPageWidgetState extends State<ConfidentialityPageWidget> {
                       padding:
                           const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                       child: Text(
-                        'thesteam.mod@gmail.com',
+                        'thesteam.sport@gmail.com',
                         style: FlutterFlowTheme.of(context).bodyLarge.override(
                               fontFamily: 'Poppins',
                               letterSpacing: 0.0,
@@ -413,7 +414,7 @@ class _ConfidentialityPageWidgetState extends State<ConfidentialityPageWidget> {
                     padding:
                         const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                     child: Text(
-                      'L\'Application utilise des cookies. Les cookies sont de petits fichiers texte enregistrés sur le terminal de l\'utilisateur. Ils permettent de collecter des informations sur la navigation de l\'utilisateur. L\'utilisateur peut à tout moment désactiver les cookies depuis les paramètres de son navigateur.',
+                      'L\'Application n\'utilise pas de cookies. Les cookies sont de petits fichiers texte enregistrés sur le terminal de l\'utilisateur. Ils permettent de collecter des informations sur la navigation de l\'utilisateur. ',
                       style: FlutterFlowTheme.of(context).bodyLarge.override(
                             fontFamily: 'Poppins',
                             letterSpacing: 0.0,

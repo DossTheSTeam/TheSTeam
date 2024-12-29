@@ -66,7 +66,10 @@ class _ListCommsPostComPageWidgetState
         final listCommsPostComPagePostMessagesRecord = snapshot.data!;
 
         return GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -84,185 +87,190 @@ class _ListCommsPostComPageWidgetState
                         Column(
                           mainAxisSize: MainAxisSize.max,
                           children: [
-                            Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 0.0, 10.0),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: [
-                                  Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: [
-                                      AuthUserStreamWidget(
+                            Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    AuthUserStreamWidget(
+                                      builder: (context) => InkWell(
+                                        splashColor: Colors.transparent,
+                                        focusColor: Colors.transparent,
+                                        hoverColor: Colors.transparent,
+                                        highlightColor: Colors.transparent,
+                                        onTap: () async {
+                                          context.pushNamed(
+                                            'MenuPage',
+                                            extra: <String, dynamic>{
+                                              kTransitionInfoKey:
+                                                  const TransitionInfo(
+                                                hasTransition: true,
+                                                transitionType:
+                                                    PageTransitionType
+                                                        .leftToRight,
+                                                duration:
+                                                    Duration(milliseconds: 400),
+                                              ),
+                                            },
+                                          );
+                                        },
+                                        child: Icon(
+                                          Icons.menu_rounded,
+                                          color: valueOrDefault<Color>(
+                                            currentUserDocument?.color1,
+                                            FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                          ),
+                                          size: 30.0,
+                                        ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          10.0, 0.0, 0.0, 0.0),
+                                      child: AuthUserStreamWidget(
                                         builder: (context) => InkWell(
                                           splashColor: Colors.transparent,
                                           focusColor: Colors.transparent,
                                           hoverColor: Colors.transparent,
                                           highlightColor: Colors.transparent,
                                           onTap: () async {
-                                            context.pushNamed(
-                                              'MenuPage',
-                                              extra: <String, dynamic>{
-                                                kTransitionInfoKey:
-                                                    const TransitionInfo(
-                                                  hasTransition: true,
-                                                  transitionType:
-                                                      PageTransitionType
-                                                          .leftToRight,
-                                                  duration: Duration(
-                                                      milliseconds: 400),
-                                                ),
-                                              },
-                                            );
+                                            context.safePop();
                                           },
                                           child: Icon(
-                                            Icons.menu_rounded,
-                                            color: currentUserDocument?.color1,
+                                            Icons.arrow_back_ios_new_rounded,
+                                            color: valueOrDefault<Color>(
+                                              currentUserDocument?.color1,
+                                              FlutterFlowTheme.of(context)
+                                                  .primaryText,
+                                            ),
                                             size: 30.0,
                                           ),
                                         ),
                                       ),
-                                      Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            10.0, 0.0, 0.0, 0.0),
-                                        child: AuthUserStreamWidget(
-                                          builder: (context) => InkWell(
-                                            splashColor: Colors.transparent,
-                                            focusColor: Colors.transparent,
-                                            hoverColor: Colors.transparent,
-                                            highlightColor: Colors.transparent,
-                                            onTap: () async {
-                                              context.safePop();
-                                            },
-                                            child: Icon(
-                                              Icons.arrow_back_ios_new_rounded,
-                                              color:
-                                                  currentUserDocument?.color1,
-                                              size: 30.0,
+                                    ),
+                                  ],
+                                ),
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      5.0, 0.0, 0.0, 0.0),
+                                  child: StreamBuilder<UsersRecord>(
+                                    stream: UsersRecord.getDocument(
+                                        listCommsPostComPagePostMessagesRecord
+                                            .commUser!),
+                                    builder: (context, snapshot) {
+                                      // Customize what your widget looks like when it's loading.
+                                      if (!snapshot.hasData) {
+                                        return Center(
+                                          child: SizedBox(
+                                            width: 50.0,
+                                            height: 50.0,
+                                            child: CircularProgressIndicator(
+                                              valueColor:
+                                                  AlwaysStoppedAnimation<Color>(
+                                                FlutterFlowTheme.of(context)
+                                                    .accent4,
+                                              ),
                                             ),
                                           ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        5.0, 0.0, 0.0, 0.0),
-                                    child: StreamBuilder<UsersRecord>(
-                                      stream: UsersRecord.getDocument(
-                                          listCommsPostComPagePostMessagesRecord
-                                              .commUser!),
-                                      builder: (context, snapshot) {
-                                        // Customize what your widget looks like when it's loading.
-                                        if (!snapshot.hasData) {
-                                          return Center(
-                                            child: SizedBox(
-                                              width: 50.0,
-                                              height: 50.0,
-                                              child: CircularProgressIndicator(
-                                                valueColor:
-                                                    AlwaysStoppedAnimation<
-                                                        Color>(
-                                                  FlutterFlowTheme.of(context)
-                                                      .accent4,
-                                                ),
-                                              ),
-                                            ),
-                                          );
-                                        }
-
-                                        final rowUsersRecord = snapshot.data!;
-
-                                        return Row(
-                                          mainAxisSize: MainAxisSize.max,
-                                          children: [
-                                            Padding(
-                                              padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(5.0, 0.0, 6.0, 0.0),
-                                              child: Container(
-                                                width: 35.0,
-                                                height: 35.0,
-                                                decoration: BoxDecoration(
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primaryBackground,
-                                                  shape: BoxShape.circle,
-                                                ),
-                                                child: ClipRRect(
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          25.0),
-                                                  child: Image.network(
-                                                    rowUsersRecord.photoUrl,
-                                                    width: 300.0,
-                                                    height: 200.0,
-                                                    fit: BoxFit.cover,
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                            Padding(
-                                              padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      0.0, 0.0, 10.0, 0.0),
-                                              child: InkWell(
-                                                splashColor: Colors.transparent,
-                                                focusColor: Colors.transparent,
-                                                hoverColor: Colors.transparent,
-                                                highlightColor:
-                                                    Colors.transparent,
-                                                onTap: () async {
-                                                  context.pushNamed(
-                                                    'PublicProfilPage',
-                                                    queryParameters: {
-                                                      'userRef': serializeParam(
-                                                        rowUsersRecord
-                                                            .reference,
-                                                        ParamType
-                                                            .DocumentReference,
-                                                      ),
-                                                    }.withoutNulls,
-                                                    extra: <String, dynamic>{
-                                                      kTransitionInfoKey:
-                                                          const TransitionInfo(
-                                                        hasTransition: true,
-                                                        transitionType:
-                                                            PageTransitionType
-                                                                .rightToLeft,
-                                                        duration: Duration(
-                                                            milliseconds: 400),
-                                                      ),
-                                                    },
-                                                  );
-                                                },
-                                                child: Text(
-                                                  rowUsersRecord.displayName,
-                                                  maxLines: 1,
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .titleSmall
-                                                      .override(
-                                                        fontFamily: 'Poppins',
-                                                        color: rowUsersRecord
-                                                            .color1,
-                                                        letterSpacing: 0.0,
-                                                      ),
-                                                ),
-                                              ),
-                                            ),
-                                          ],
                                         );
-                                      },
-                                    ),
+                                      }
+
+                                      final rowUsersRecord = snapshot.data!;
+
+                                      return Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Padding(
+                                            padding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    5.0, 0.0, 6.0, 0.0),
+                                            child: Container(
+                                              width: 35.0,
+                                              height: 35.0,
+                                              decoration: BoxDecoration(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryBackground,
+                                                shape: BoxShape.circle,
+                                              ),
+                                              child: ClipRRect(
+                                                borderRadius:
+                                                    BorderRadius.circular(25.0),
+                                                child: Image.network(
+                                                  rowUsersRecord.photoUrl,
+                                                  width: 300.0,
+                                                  height: 200.0,
+                                                  fit: BoxFit.fitHeight,
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                          Padding(
+                                            padding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 10.0, 0.0),
+                                            child: InkWell(
+                                              splashColor: Colors.transparent,
+                                              focusColor: Colors.transparent,
+                                              hoverColor: Colors.transparent,
+                                              highlightColor:
+                                                  Colors.transparent,
+                                              onTap: () async {
+                                                context.pushNamed(
+                                                  'PublicProfilPage',
+                                                  queryParameters: {
+                                                    'userRef': serializeParam(
+                                                      rowUsersRecord.reference,
+                                                      ParamType
+                                                          .DocumentReference,
+                                                    ),
+                                                  }.withoutNulls,
+                                                  extra: <String, dynamic>{
+                                                    kTransitionInfoKey:
+                                                        const TransitionInfo(
+                                                      hasTransition: true,
+                                                      transitionType:
+                                                          PageTransitionType
+                                                              .rightToLeft,
+                                                      duration: Duration(
+                                                          milliseconds: 400),
+                                                    ),
+                                                  },
+                                                );
+                                              },
+                                              child: Text(
+                                                rowUsersRecord.displayName,
+                                                maxLines: 1,
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleSmall
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          color: rowUsersRecord
+                                                              .color1,
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      );
+                                    },
                                   ),
-                                ],
-                              ),
+                                ),
+                              ],
                             ),
                             AuthUserStreamWidget(
                               builder: (context) => Divider(
                                 thickness: 1.0,
-                                color: currentUserDocument?.color2,
+                                color: valueOrDefault<Color>(
+                                  currentUserDocument?.color2,
+                                  FlutterFlowTheme.of(context)
+                                      .secondaryBackground,
+                                ),
                               ),
                             ),
                             Padding(
@@ -369,35 +377,46 @@ class _ListCommsPostComPageWidgetState
                                               padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       10.0, 0.0, 10.0, 0.0),
-                                              child: InkWell(
-                                                splashColor: Colors.transparent,
-                                                focusColor: Colors.transparent,
-                                                hoverColor: Colors.transparent,
-                                                highlightColor:
-                                                    Colors.transparent,
-                                                onTap: () async {
-                                                  context.pushNamed(
-                                                    'MyNotifsList',
-                                                    extra: <String, dynamic>{
-                                                      kTransitionInfoKey:
-                                                          const TransitionInfo(
-                                                        hasTransition: true,
-                                                        transitionType:
-                                                            PageTransitionType
-                                                                .rightToLeft,
-                                                        duration: Duration(
-                                                            milliseconds: 400),
-                                                      ),
-                                                    },
-                                                  );
-                                                },
-                                                child: Icon(
-                                                  Icons
-                                                      .notifications_active_outlined,
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .accent1,
-                                                  size: 40.0,
+                                              child: AuthUserStreamWidget(
+                                                builder: (context) => InkWell(
+                                                  splashColor:
+                                                      Colors.transparent,
+                                                  focusColor:
+                                                      Colors.transparent,
+                                                  hoverColor:
+                                                      Colors.transparent,
+                                                  highlightColor:
+                                                      Colors.transparent,
+                                                  onTap: () async {
+                                                    context.pushNamed(
+                                                      'MyNotifsList',
+                                                      extra: <String, dynamic>{
+                                                        kTransitionInfoKey:
+                                                            const TransitionInfo(
+                                                          hasTransition: true,
+                                                          transitionType:
+                                                              PageTransitionType
+                                                                  .rightToLeft,
+                                                          duration: Duration(
+                                                              milliseconds:
+                                                                  400),
+                                                        ),
+                                                      },
+                                                    );
+                                                  },
+                                                  child: Icon(
+                                                    Icons
+                                                        .notifications_active_outlined,
+                                                    color:
+                                                        valueOrDefault<Color>(
+                                                      currentUserDocument
+                                                          ?.color1,
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .accent1,
+                                                    ),
+                                                    size: 40.0,
+                                                  ),
                                                 ),
                                               ),
                                             ),
@@ -408,106 +427,23 @@ class _ListCommsPostComPageWidgetState
                                 ],
                               ),
                             ),
-                            if (valueOrDefault<bool>(
-                                    currentUserDocument?.helpNav, false) ==
-                                true)
-                              Align(
-                                alignment: const AlignmentDirectional(0.0, 0.0),
-                                child: AuthUserStreamWidget(
-                                  builder: (context) => Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 3.0, 0.0, 0.0),
-                                        child: Text(
-                                          'Classés par plus commentés/likés, \nfonctionnalités pas encore disponibles.',
-                                          textAlign: TextAlign.center,
-                                          maxLines: 3,
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                fontFamily: 'Poppins',
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .error,
-                                                fontSize: 10.0,
-                                                letterSpacing: 0.0,
-                                                lineHeight: 1.0,
-                                              ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            Row(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.spaceAround,
-                              children: [
-                                Icon(
-                                  Icons.update_rounded,
-                                  color: FlutterFlowTheme.of(context).success,
-                                  size: 30.0,
-                                ),
-                                Icon(
-                                  Icons.insert_comment_rounded,
-                                  color: FlutterFlowTheme.of(context).error,
-                                  size: 30.0,
-                                ),
-                                Icon(
-                                  Icons.favorite_rounded,
-                                  color: FlutterFlowTheme.of(context).error,
-                                  size: 30.0,
-                                ),
-                              ],
-                            ),
-                            if (valueOrDefault<bool>(
-                                    currentUserDocument?.helpNav, false) ==
-                                true)
-                              Align(
-                                alignment: const AlignmentDirectional(0.0, 0.0),
-                                child: AuthUserStreamWidget(
-                                  builder: (context) => Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    children: [
-                                      Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 3.0, 0.0, 0.0),
-                                        child: Text(
-                                          'Classés par plus récents',
-                                          textAlign: TextAlign.center,
-                                          maxLines: 3,
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                fontFamily: 'Poppins',
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .success,
-                                                fontSize: 10.0,
-                                                letterSpacing: 0.0,
-                                                lineHeight: 1.0,
-                                              ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
                           ],
                         ),
                         AuthUserStreamWidget(
                           builder: (context) => Divider(
                             thickness: 1.0,
-                            color: currentUserDocument?.color2,
+                            color: valueOrDefault<Color>(
+                              currentUserDocument?.color2,
+                              FlutterFlowTheme.of(context).secondaryBackground,
+                            ),
                           ),
                         ),
-                        if (valueOrDefault<bool>(
-                                currentUserDocument?.esport, false) ==
-                            false)
+                        if ((valueOrDefault<bool>(
+                                    currentUserDocument?.esport, false) ==
+                                false) &&
+                            !(currentUserDocument?.blocks.toList() ?? [])
+                                .contains(listCommsPostComPagePostMessagesRecord
+                                    .commUser))
                           Padding(
                             padding: const EdgeInsetsDirectional.fromSTEB(
                                 5.0, 5.0, 5.0, 0.0),
@@ -647,7 +583,7 @@ class _ListCommsPostComPageWidgetState
                                                                               columnUsersRecord.photoUrl,
                                                                               width: 300.0,
                                                                               height: 200.0,
-                                                                              fit: BoxFit.cover,
+                                                                              fit: BoxFit.fitHeight,
                                                                             ),
                                                                           ),
                                                                         ),
@@ -697,7 +633,10 @@ class _ListCommsPostComPageWidgetState
                                                                                 1,
                                                                             style: FlutterFlowTheme.of(context).labelLarge.override(
                                                                                   fontFamily: 'Montserrat',
-                                                                                  color: columnUsersRecord.color1,
+                                                                                  color: valueOrDefault<Color>(
+                                                                                    columnUsersRecord.color1,
+                                                                                    FlutterFlowTheme.of(context).primaryText,
+                                                                                  ),
                                                                                   letterSpacing: 0.0,
                                                                                 ),
                                                                           ),
@@ -783,7 +722,10 @@ class _ListCommsPostComPageWidgetState
                                                                             child:
                                                                                 Icon(
                                                                               Icons.remove_red_eye_outlined,
-                                                                              color: FlutterFlowTheme.of(context).secondaryText,
+                                                                              color: valueOrDefault<Color>(
+                                                                                columnUsersRecord.color1,
+                                                                                FlutterFlowTheme.of(context).primaryText,
+                                                                              ),
                                                                               size: 30.0,
                                                                             ),
                                                                           ),
@@ -977,8 +919,15 @@ class _ListCommsPostComPageWidgetState
                                                                 Divider(
                                                                   thickness:
                                                                       1.0,
-                                                                  color: currentUserDocument
-                                                                      ?.color2,
+                                                                  color:
+                                                                      valueOrDefault<
+                                                                          Color>(
+                                                                    columnUsersRecord
+                                                                        .color2,
+                                                                    FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .secondaryBackground,
+                                                                  ),
                                                                 ),
                                                               ],
                                                             ),
@@ -1189,7 +1138,10 @@ class _ListCommsPostComPageWidgetState
                                                                                 1,
                                                                             style: FlutterFlowTheme.of(context).labelLarge.override(
                                                                                   fontFamily: 'Montserrat',
-                                                                                  color: columnUsersRecord.color1,
+                                                                                  color: valueOrDefault<Color>(
+                                                                                    columnUsersRecord.color1,
+                                                                                    FlutterFlowTheme.of(context).primaryText,
+                                                                                  ),
                                                                                   letterSpacing: 0.0,
                                                                                 ),
                                                                           ),
@@ -1275,7 +1227,10 @@ class _ListCommsPostComPageWidgetState
                                                                             child:
                                                                                 Icon(
                                                                               Icons.remove_red_eye_outlined,
-                                                                              color: FlutterFlowTheme.of(context).secondaryText,
+                                                                              color: valueOrDefault<Color>(
+                                                                                columnUsersRecord.color1,
+                                                                                FlutterFlowTheme.of(context).primaryText,
+                                                                              ),
                                                                               size: 30.0,
                                                                             ),
                                                                           ),
@@ -1469,8 +1424,15 @@ class _ListCommsPostComPageWidgetState
                                                                 Divider(
                                                                   thickness:
                                                                       1.0,
-                                                                  color: currentUserDocument
-                                                                      ?.color2,
+                                                                  color:
+                                                                      valueOrDefault<
+                                                                          Color>(
+                                                                    columnUsersRecord
+                                                                        .color2,
+                                                                    FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .secondaryBackground,
+                                                                  ),
                                                                 ),
                                                               ],
                                                             ),

@@ -1,10 +1,11 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
+import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
-import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'cart_page_model.dart';
 export 'cart_page_model.dart';
@@ -32,9 +33,6 @@ class _CartPageWidgetState extends State<CartPageWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => CartPageModel());
-
-    _model.miseFieldTextController ??= TextEditingController();
-    _model.miseFieldFocusNode ??= FocusNode();
   }
 
   @override
@@ -70,7 +68,10 @@ class _CartPageWidgetState extends State<CartPageWidget> {
         final cartPageCartRecord = snapshot.data!;
 
         return GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -118,8 +119,11 @@ class _CartPageWidgetState extends State<CartPageWidget> {
                                               child: Icon(
                                                 Icons
                                                     .arrow_back_ios_new_rounded,
-                                                color:
-                                                    currentUserDocument?.color1,
+                                                color: valueOrDefault<Color>(
+                                                  currentUserDocument?.color1,
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryText,
+                                                ),
                                                 size: 30.0,
                                               ),
                                             ),
@@ -151,73 +155,83 @@ class _CartPageWidgetState extends State<CartPageWidget> {
                               ],
                             ),
                           ),
-                          Row(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              AuthUserStreamWidget(
-                                builder: (context) => Text(
-                                  valueOrDefault<String>(
-                                    functions
-                                        .limitOf2Decimal(valueOrDefault(
-                                            currentUserDocument?.stock, 0.0))
-                                        .toString(),
-                                    '900.00',
-                                  ),
-                                  maxLines: 1,
-                                  style: FlutterFlowTheme.of(context)
-                                      .labelMedium
-                                      .override(
-                                        fontFamily: 'Poppins',
-                                        letterSpacing: 0.0,
-                                      ),
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    5.0, 0.0, 0.0, 0.0),
-                                child: Container(
-                                  width: 30.0,
-                                  height: 30.0,
-                                  decoration: BoxDecoration(
-                                    color: FlutterFlowTheme.of(context).primary,
-                                    boxShadow: [
-                                      BoxShadow(
-                                        blurRadius: 4.0,
-                                        color: FlutterFlowTheme.of(context)
-                                            .accent3,
-                                        offset: const Offset(
-                                          0.0,
-                                          2.0,
+                          Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 10.0, 0.0),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                AuthUserStreamWidget(
+                                  builder: (context) => Text(
+                                    valueOrDefault<String>(
+                                      functions
+                                          .limitOf2Decimal(valueOrDefault(
+                                              currentUserDocument?.stock, 0.0))
+                                          .toString(),
+                                      '900.00',
+                                    ),
+                                    maxLines: 1,
+                                    style: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          letterSpacing: 0.0,
                                         ),
-                                      )
-                                    ],
-                                    shape: BoxShape.circle,
-                                    border: Border.all(
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
-                                    ),
                                   ),
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(2.0),
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(24.0),
-                                      child: Image.asset(
-                                        'assets/images/logo_monnaiel.jpg',
-                                        width: 50.0,
-                                        height: 50.0,
-                                        fit: BoxFit.cover,
+                                ),
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      5.0, 0.0, 0.0, 0.0),
+                                  child: Container(
+                                    width: 30.0,
+                                    height: 30.0,
+                                    decoration: BoxDecoration(
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
+                                      boxShadow: [
+                                        BoxShadow(
+                                          blurRadius: 4.0,
+                                          color: FlutterFlowTheme.of(context)
+                                              .accent3,
+                                          offset: const Offset(
+                                            0.0,
+                                            2.0,
+                                          ),
+                                        )
+                                      ],
+                                      shape: BoxShape.circle,
+                                      border: Border.all(
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondary,
+                                      ),
+                                    ),
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(2.0),
+                                      child: ClipRRect(
+                                        borderRadius:
+                                            BorderRadius.circular(24.0),
+                                        child: Image.asset(
+                                          'assets/images/logo_monnaiel.jpg',
+                                          width: 50.0,
+                                          height: 50.0,
+                                          fit: BoxFit.cover,
+                                        ),
                                       ),
                                     ),
                                   ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
                           AuthUserStreamWidget(
                             builder: (context) => Divider(
                               thickness: 1.0,
-                              color: currentUserDocument?.color2,
+                              color: valueOrDefault<Color>(
+                                currentUserDocument?.color2,
+                                FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
+                              ),
                             ),
                           ),
                         ],
@@ -393,6 +407,24 @@ class _CartPageWidgetState extends State<CartPageWidget> {
                                                       ),
                                             ),
                                           ),
+                                          if ((columnCartBetBetsRecord.choice ==
+                                                  'plus') ||
+                                              (columnCartBetBetsRecord.choice ==
+                                                  'moins'))
+                                            Text(
+                                              valueOrDefault<String>(
+                                                columnCartBetBetsRecord.points,
+                                                '00.0',
+                                              ),
+                                              maxLines: 2,
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                            ),
                                           Padding(
                                             padding:
                                                 const EdgeInsetsDirectional.fromSTEB(
@@ -417,6 +449,16 @@ class _CartPageWidgetState extends State<CartPageWidget> {
                                         ],
                                       ),
                                     ),
+                                    AuthUserStreamWidget(
+                                      builder: (context) => Divider(
+                                        thickness: 1.0,
+                                        color: valueOrDefault<Color>(
+                                          currentUserDocument?.color2,
+                                          FlutterFlowTheme.of(context)
+                                              .secondaryBackground,
+                                        ),
+                                      ),
+                                    ),
                                   ],
                                 );
                               },
@@ -433,12 +475,6 @@ class _CartPageWidgetState extends State<CartPageWidget> {
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
                               children: [
-                                AuthUserStreamWidget(
-                                  builder: (context) => Divider(
-                                    thickness: 1.0,
-                                    color: currentUserDocument?.color2,
-                                  ),
-                                ),
                                 Padding(
                                   padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 3.0, 0.0, 0.0),
@@ -462,7 +498,7 @@ class _CartPageWidgetState extends State<CartPageWidget> {
                                       ),
                                       Padding(
                                         padding: const EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 0.0, 33.0, 0.0),
+                                            0.0, 0.0, 15.0, 0.0),
                                         child: Text(
                                           'Cote totale',
                                           style: FlutterFlowTheme.of(context)
@@ -490,131 +526,121 @@ class _CartPageWidgetState extends State<CartPageWidget> {
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
-                                            Padding(
-                                              padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      0.0, 0.0, 10.0, 0.0),
-                                              child: Container(
-                                                width: 100.0,
-                                                height: 40.0,
-                                                decoration: BoxDecoration(
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primaryBackground,
-                                                ),
-                                                child: Padding(
-                                                  padding: const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          8.0, 0.0, 8.0, 0.0),
-                                                  child: AuthUserStreamWidget(
-                                                    builder: (context) =>
-                                                        TextFormField(
-                                                      controller: _model
-                                                          .miseFieldTextController,
-                                                      focusNode: _model
-                                                          .miseFieldFocusNode,
-                                                      onChanged: (_) =>
-                                                          EasyDebounce.debounce(
-                                                        '_model.miseFieldTextController',
-                                                        const Duration(
-                                                            milliseconds: 1000),
-                                                        () =>
-                                                            safeSetState(() {}),
-                                                      ),
-                                                      autofocus: false,
-                                                      obscureText: false,
-                                                      decoration:
-                                                          InputDecoration(
-                                                        hintText: '0000.00',
-                                                        hintStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .titleSmall
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                ),
-                                                        enabledBorder:
-                                                            UnderlineInputBorder(
-                                                          borderSide:
-                                                              BorderSide(
-                                                            color:
-                                                                valueOrDefault<
-                                                                    Color>(
+                                            Align(
+                                              alignment: const AlignmentDirectional(
+                                                  -1.0, 0.0),
+                                              child: AuthUserStreamWidget(
+                                                builder: (context) =>
+                                                    FlutterFlowDropDown<double>(
+                                                  controller: _model
+                                                          .dropMiseValueController ??=
+                                                      FormFieldController<
+                                                          double>(null),
+                                                  options: List<double>.from([
+                                                    0.005,
+                                                    0.01,
+                                                    0.02,
+                                                    0.05,
+                                                    0.1,
+                                                    0.2
+                                                  ]),
+                                                  optionLabels: const [
+                                                    '0.5 %',
+                                                    '1 %',
+                                                    '2 %',
+                                                    '5 %',
+                                                    '10 %',
+                                                    '20 %'
+                                                  ],
+                                                  onChanged: (val) async {
+                                                    safeSetState(() => _model
+                                                        .dropMiseValue = val);
+                                                    await currentUserReference!
+                                                        .update(
+                                                            createUsersRecordData(
+                                                      mise: functions.pourcentToValue(
+                                                          valueOrDefault(
                                                               currentUserDocument
-                                                                  ?.color2,
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .secondaryBackground,
-                                                            ),
-                                                            width: 2.0,
-                                                          ),
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      8.0),
-                                                        ),
-                                                        focusedBorder:
-                                                            UnderlineInputBorder(
-                                                          borderSide:
-                                                              BorderSide(
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .primary,
-                                                            width: 2.0,
-                                                          ),
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      8.0),
-                                                        ),
-                                                        errorBorder:
-                                                            UnderlineInputBorder(
-                                                          borderSide:
-                                                              BorderSide(
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .error,
-                                                            width: 2.0,
-                                                          ),
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      8.0),
-                                                        ),
-                                                        focusedErrorBorder:
-                                                            UnderlineInputBorder(
-                                                          borderSide:
-                                                              BorderSide(
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .error,
-                                                            width: 2.0,
-                                                          ),
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      8.0),
-                                                        ),
+                                                                  ?.stock,
+                                                              0.0),
+                                                          _model
+                                                              .dropMiseValue!),
+                                                    ));
+                                                  },
+                                                  width: 100.0,
+                                                  height: 30.0,
+                                                  textStyle: FlutterFlowTheme
+                                                          .of(context)
+                                                      .labelMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
                                                       ),
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyMedium
-                                                          .override(
-                                                            fontFamily:
-                                                                'Poppins',
-                                                            letterSpacing: 0.0,
-                                                          ),
-                                                      textAlign:
-                                                          TextAlign.center,
-                                                      validator: _model
-                                                          .miseFieldTextControllerValidator
-                                                          .asValidator(context),
-                                                    ),
+                                                  hintText: 'Mise',
+                                                  icon: Icon(
+                                                    Icons
+                                                        .keyboard_arrow_down_rounded,
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .secondaryText,
+                                                    size: 24.0,
                                                   ),
+                                                  fillColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .primaryBackground,
+                                                  elevation: 2.0,
+                                                  borderColor:
+                                                      valueOrDefault<Color>(
+                                                    currentUserDocument?.color1,
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryText,
+                                                  ),
+                                                  borderWidth: 2.0,
+                                                  borderRadius: 25.0,
+                                                  margin: const EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          20.0, 0.0, 12.0, 0.0),
+                                                  hidesUnderline: true,
+                                                  isOverButton: false,
+                                                  isSearchable: false,
+                                                  isMultiSelect: false,
                                                 ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      if (_model.dropMiseValue != null)
+                                        Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          children: [
+                                            AuthUserStreamWidget(
+                                              builder: (context) => Text(
+                                                valueOrDefault<String>(
+                                                  functions
+                                                      .limitOf2Decimal(functions
+                                                          .pourcentToValue(
+                                                              valueOrDefault(
+                                                                  currentUserDocument
+                                                                      ?.stock,
+                                                                  0.0),
+                                                              _model
+                                                                  .dropMiseValue!)!)
+                                                      .toString(),
+                                                  '00000.00',
+                                                ),
+                                                maxLines: 1,
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmall
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primaryText,
+                                                          letterSpacing: 0.0,
+                                                        ),
                                               ),
                                             ),
                                             Padding(
@@ -631,7 +657,7 @@ class _CartPageWidgetState extends State<CartPageWidget> {
                                                   border: Border.all(
                                                     color: FlutterFlowTheme.of(
                                                             context)
-                                                        .primaryText,
+                                                        .secondary,
                                                   ),
                                                 ),
                                                 child: Padding(
@@ -652,7 +678,6 @@ class _CartPageWidgetState extends State<CartPageWidget> {
                                             ),
                                           ],
                                         ),
-                                      ),
                                       Padding(
                                         padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 30.0, 0.0),
@@ -680,29 +705,14 @@ class _CartPageWidgetState extends State<CartPageWidget> {
                                     ],
                                   ),
                                 ),
-                                Align(
-                                  alignment: const AlignmentDirectional(-1.0, 0.0),
-                                  child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        20.0, 0.0, 0.0, 0.0),
-                                    child: Text(
-                                      'Ne pas utiliser de virgule',
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily: 'Poppins',
-                                            color: FlutterFlowTheme.of(context)
-                                                .error,
-                                            fontSize: 10.0,
-                                            letterSpacing: 0.0,
-                                          ),
-                                    ),
-                                  ),
-                                ),
                                 AuthUserStreamWidget(
                                   builder: (context) => Divider(
                                     thickness: 1.0,
-                                    color: currentUserDocument?.color2,
+                                    color: valueOrDefault<Color>(
+                                      currentUserDocument?.color2,
+                                      FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
+                                    ),
                                   ),
                                 ),
                                 Padding(
@@ -718,82 +728,82 @@ class _CartPageWidgetState extends State<CartPageWidget> {
                                         ),
                                   ),
                                 ),
-                                Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 5.0, 0.0, 5.0),
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Text(
-                                        valueOrDefault<String>(
-                                          formatNumber(
-                                            functions.potentialGain(
-                                                valueOrDefault<double>(
-                                                  double.tryParse(_model
-                                                      .miseFieldTextController
-                                                      .text),
-                                                  00.00,
+                                if (_model.dropMiseValue != null)
+                                  Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 5.0, 0.0, 5.0),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        AuthUserStreamWidget(
+                                          builder: (context) => Text(
+                                            valueOrDefault<String>(
+                                              functions
+                                                  .limitOf2Decimal(
+                                                      functions.potentialGain(
+                                                          valueOrDefault(
+                                                              currentUserDocument
+                                                                  ?.mise,
+                                                              0.0),
+                                                          cartPageCartRecord
+                                                              .totalOdds)!)
+                                                  .toString(),
+                                              '00000.00',
+                                            ),
+                                            maxLines: 1,
+                                            style: FlutterFlowTheme.of(context)
+                                                .headlineSmall
+                                                .override(
+                                                  fontFamily: 'Poppins',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryText,
+                                                  letterSpacing: 0.0,
                                                 ),
-                                                valueOrDefault<double>(
-                                                  cartPageCartRecord.totalOdds,
-                                                  0.0,
-                                                )),
-                                            formatType: FormatType.decimal,
-                                            decimalType:
-                                                DecimalType.periodDecimal,
                                           ),
-                                          '0.0',
                                         ),
-                                        maxLines: 1,
-                                        style: FlutterFlowTheme.of(context)
-                                            .headlineSmall
-                                            .override(
-                                              fontFamily: 'Poppins',
+                                        Padding(
+                                          padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  5.0, 0.0, 0.0, 0.0),
+                                          child: Container(
+                                            width: 30.0,
+                                            height: 30.0,
+                                            decoration: BoxDecoration(
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .primaryText,
-                                              letterSpacing: 0.0,
+                                                      .primary,
+                                              shape: BoxShape.circle,
+                                              border: Border.all(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondary,
+                                              ),
                                             ),
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            5.0, 0.0, 0.0, 0.0),
-                                        child: Container(
-                                          width: 30.0,
-                                          height: 30.0,
-                                          decoration: BoxDecoration(
-                                            color: FlutterFlowTheme.of(context)
-                                                .primary,
-                                            shape: BoxShape.circle,
-                                            border: Border.all(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primaryText,
-                                            ),
-                                          ),
-                                          child: Padding(
-                                            padding: const EdgeInsets.all(2.0),
-                                            child: ClipRRect(
-                                              borderRadius:
-                                                  BorderRadius.circular(24.0),
-                                              child: Image.asset(
-                                                'assets/images/logo_monnaiel.jpg',
-                                                width: 50.0,
-                                                height: 50.0,
-                                                fit: BoxFit.cover,
+                                            child: Padding(
+                                              padding: const EdgeInsets.all(2.0),
+                                              child: ClipRRect(
+                                                borderRadius:
+                                                    BorderRadius.circular(24.0),
+                                                child: Image.asset(
+                                                  'assets/images/logo_monnaiel.jpg',
+                                                  width: 50.0,
+                                                  height: 50.0,
+                                                  fit: BoxFit.cover,
+                                                ),
                                               ),
                                             ),
                                           ),
                                         ),
-                                      ),
-                                    ],
+                                      ],
+                                    ),
                                   ),
-                                ),
                               ],
                             ),
                           ),
-                          if (_model.miseFieldTextController.text != '')
+                          if (_model.dropMiseValue != null)
                             Padding(
                               padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 40.0),
@@ -849,9 +859,9 @@ class _CartPageWidgetState extends State<CartPageWidget> {
                                         FFButtonWidget(
                                           onPressed: () async {
                                             if (functions.checkStock(
-                                                double.parse(_model
-                                                    .miseFieldTextController
-                                                    .text),
+                                                valueOrDefault(
+                                                    currentUserDocument?.mise,
+                                                    0.0),
                                                 valueOrDefault(
                                                     currentUserDocument?.stock,
                                                     0.0))) {
@@ -859,18 +869,16 @@ class _CartPageWidgetState extends State<CartPageWidget> {
                                                       currentUserReference!)
                                                   .set({
                                                 ...createMyBetsRecordData(
-                                                  mise: double.tryParse(_model
-                                                      .miseFieldTextController
-                                                      .text),
+                                                  mise: valueOrDefault(
+                                                      currentUserDocument?.mise,
+                                                      0.0),
                                                   potentialy:
                                                       valueOrDefault<double>(
                                                     functions.potentialGain(
-                                                        valueOrDefault<double>(
-                                                          double.tryParse(_model
-                                                              .miseFieldTextController
-                                                              .text),
-                                                          0.0,
-                                                        ),
+                                                        valueOrDefault(
+                                                            currentUserDocument
+                                                                ?.mise,
+                                                            0.0),
                                                         valueOrDefault<double>(
                                                           cartPageCartRecord
                                                               .totalOdds,
@@ -897,21 +905,23 @@ class _CartPageWidgetState extends State<CartPageWidget> {
                                                 ...mapToFirestore(
                                                   {
                                                     'stock': FieldValue.increment(
-                                                        -(double.parse(_model
-                                                            .miseFieldTextController
-                                                            .text))),
+                                                        -(valueOrDefault(
+                                                            currentUserDocument
+                                                                ?.mise,
+                                                            0.0))),
                                                     'total_bets':
                                                         FieldValue.increment(1),
-                                                    'total_mises':
+                                                    'total_mises': FieldValue
+                                                        .increment(valueOrDefault(
+                                                            currentUserDocument
+                                                                ?.mise,
+                                                            0.0)),
+                                                    'earnings_total':
                                                         FieldValue.increment(
-                                                            double.parse(_model
-                                                                .miseFieldTextController
-                                                                .text)),
-                                                    'earnings_total': FieldValue
-                                                        .increment(-(double
-                                                            .parse(_model
-                                                                .miseFieldTextController
-                                                                .text))),
+                                                            -(valueOrDefault(
+                                                                currentUserDocument
+                                                                    ?.mise,
+                                                                0.0))),
                                                   },
                                                 ),
                                               });
@@ -1011,8 +1021,8 @@ class _CartPageWidgetState extends State<CartPageWidget> {
                                     child: FFButtonWidget(
                                       onPressed: () async {
                                         if (functions.checkStock(
-                                            double.parse(_model
-                                                .miseFieldTextController.text),
+                                            valueOrDefault(
+                                                currentUserDocument?.mise, 0.0),
                                             valueOrDefault(
                                                 currentUserDocument?.stock,
                                                 0.0))) {
@@ -1021,18 +1031,16 @@ class _CartPageWidgetState extends State<CartPageWidget> {
                                                   currentUserReference!);
                                           await myBetsRecordReference.set({
                                             ...createMyBetsRecordData(
-                                              mise: double.tryParse(_model
-                                                  .miseFieldTextController
-                                                  .text),
+                                              mise: valueOrDefault(
+                                                  currentUserDocument?.mise,
+                                                  0.0),
                                               potentialy:
                                                   valueOrDefault<double>(
                                                 functions.potentialGain(
-                                                    valueOrDefault<double>(
-                                                      double.tryParse(_model
-                                                          .miseFieldTextController
-                                                          .text),
-                                                      0.0,
-                                                    ),
+                                                    valueOrDefault(
+                                                        currentUserDocument
+                                                            ?.mise,
+                                                        0.0),
                                                     valueOrDefault<double>(
                                                       cartPageCartRecord
                                                           .totalOdds,
@@ -1053,21 +1061,19 @@ class _CartPageWidgetState extends State<CartPageWidget> {
                                               },
                                             ),
                                           });
-                                          _model.myBetRef =
+                                          _model.myBet100Ref =
                                               MyBetsRecord.getDocumentFromData({
                                             ...createMyBetsRecordData(
-                                              mise: double.tryParse(_model
-                                                  .miseFieldTextController
-                                                  .text),
+                                              mise: valueOrDefault(
+                                                  currentUserDocument?.mise,
+                                                  0.0),
                                               potentialy:
                                                   valueOrDefault<double>(
                                                 functions.potentialGain(
-                                                    valueOrDefault<double>(
-                                                      double.tryParse(_model
-                                                          .miseFieldTextController
-                                                          .text),
-                                                      0.0,
-                                                    ),
+                                                    valueOrDefault(
+                                                        currentUserDocument
+                                                            ?.mise,
+                                                        0.0),
                                                     valueOrDefault<double>(
                                                       cartPageCartRecord
                                                           .totalOdds,
@@ -1092,20 +1098,24 @@ class _CartPageWidgetState extends State<CartPageWidget> {
                                             ...mapToFirestore(
                                               {
                                                 'stock': FieldValue.increment(
-                                                    -(double.parse(_model
-                                                        .miseFieldTextController
-                                                        .text))),
+                                                    -(valueOrDefault(
+                                                        currentUserDocument
+                                                            ?.mise,
+                                                        0.0))),
                                                 'total_bets':
                                                     FieldValue.increment(1),
-                                                'total_mises': FieldValue
-                                                    .increment(double.parse(_model
-                                                        .miseFieldTextController
-                                                        .text)),
+                                                'total_mises':
+                                                    FieldValue.increment(
+                                                        valueOrDefault(
+                                                            currentUserDocument
+                                                                ?.mise,
+                                                            0.0)),
                                                 'earnings_total':
                                                     FieldValue.increment(
-                                                        -(double.parse(_model
-                                                            .miseFieldTextController
-                                                            .text))),
+                                                        -(valueOrDefault(
+                                                            currentUserDocument
+                                                                ?.mise,
+                                                            0.0))),
                                               },
                                             ),
                                           });
@@ -1124,7 +1134,7 @@ class _CartPageWidgetState extends State<CartPageWidget> {
                                             'ListEventsAdd2Bet',
                                             queryParameters: {
                                               'myBetRef': serializeParam(
-                                                _model.myBetRef?.reference,
+                                                _model.myBet100Ref?.reference,
                                                 ParamType.DocumentReference,
                                               ),
                                             }.withoutNulls,

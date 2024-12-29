@@ -59,6 +59,8 @@
     <string>In order to upload data, this app requires permission to access the photo library.</string>
 	<key>PermissionGroupNotification</key>
     <string>Recevez des notifications</string>
+	<key>NSMicrophoneUsageDescription</key>
+    <string>Permission d'utiliser le micro de votre téléphone</string>
     <key>UIBackgroundModes</key>
     <array>
         <string>fetch</string>

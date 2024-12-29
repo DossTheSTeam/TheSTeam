@@ -8,6 +8,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'my_profil_page_model.dart';
@@ -73,7 +74,10 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -90,11 +94,11 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                     children: [
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(45.0, 0.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(46.0, 0.0, 0.0, 0.0),
                         child: AuthUserStreamWidget(
                           builder: (context) => Container(
                             width: double.infinity,
-                            height: 240.0,
+                            height: 239.0,
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context)
                                   .secondaryBackground,
@@ -167,7 +171,7 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                               0.0, 30.0, 0.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Column(
@@ -178,7 +182,7 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                                     alignment: const AlignmentDirectional(0.0, -1.0),
                                     child: Padding(
                                       padding: const EdgeInsetsDirectional.fromSTEB(
-                                          10.0, 0.0, 0.0, 0.0),
+                                          10.0, 10.0, 0.0, 0.0),
                                       child: AuthUserStreamWidget(
                                         builder: (context) =>
                                             FlutterFlowIconButton(
@@ -222,52 +226,216 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                                       ),
                                     ),
                                   ),
-                                  Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 10.0, 0.0, 0.0),
-                                    child: AuthUserStreamWidget(
-                                      builder: (context) =>
-                                          FlutterFlowIconButton(
-                                        borderColor: valueOrDefault<Color>(
-                                          currentUserDocument?.color2,
-                                          FlutterFlowTheme.of(context)
-                                              .secondaryText,
-                                        ),
-                                        borderRadius: 50.0,
-                                        borderWidth: 1.0,
-                                        buttonSize: 50.0,
-                                        fillColor: FlutterFlowTheme.of(context)
-                                            .tertiary,
-                                        icon: Icon(
-                                          Icons.image_search_rounded,
-                                          color: valueOrDefault<Color>(
-                                            currentUserDocument?.color1,
-                                            FlutterFlowTheme.of(context)
-                                                .primaryText,
-                                          ),
-                                          size: 30.0,
-                                        ),
-                                        onPressed: () async {
-                                          context.pushNamed(
-                                            'MyImagePage',
-                                            extra: <String, dynamic>{
-                                              kTransitionInfoKey:
-                                                  const TransitionInfo(
-                                                hasTransition: true,
-                                                transitionType:
-                                                    PageTransitionType.scale,
-                                                alignment:
-                                                    Alignment.bottomCenter,
-                                                duration:
-                                                    Duration(milliseconds: 600),
+                                  if (valueOrDefault<bool>(
+                                          currentUserDocument?.helpNav,
+                                          false) ==
+                                      true)
+                                    Align(
+                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                      child: Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 5.0, 0.0, 0.0),
+                                        child: AuthUserStreamWidget(
+                                          builder: (context) => Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.end,
+                                            children: [
+                                              Padding(
+                                                padding: const EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 3.0, 10.0, 0.0),
+                                                child: Text(
+                                                  'Menu',
+                                                  textAlign: TextAlign.center,
+                                                  maxLines: 2,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primaryText,
+                                                        fontSize: 10.0,
+                                                        letterSpacing: 0.0,
+                                                        lineHeight: 1.0,
+                                                      ),
+                                                ),
                                               ),
-                                            },
-                                          );
-                                        },
+                                            ],
+                                          ),
+                                        ),
                                       ),
                                     ),
-                                  ),
                                 ],
+                              ),
+                              FutureBuilder<List<MyNotificationsRecord>>(
+                                future: queryMyNotificationsRecordOnce(
+                                  parent: currentUserReference,
+                                  singleRecord: true,
+                                ),
+                                builder: (context, snapshot) {
+                                  // Customize what your widget looks like when it's loading.
+                                  if (!snapshot.hasData) {
+                                    return Center(
+                                      child: SizedBox(
+                                        width: 50.0,
+                                        height: 50.0,
+                                        child: CircularProgressIndicator(
+                                          valueColor:
+                                              AlwaysStoppedAnimation<Color>(
+                                            FlutterFlowTheme.of(context)
+                                                .accent4,
+                                          ),
+                                        ),
+                                      ),
+                                    );
+                                  }
+                                  List<MyNotificationsRecord>
+                                      columnMyNotificationsRecordList =
+                                      snapshot.data!;
+                                  // Return an empty Container when the item does not exist.
+                                  if (snapshot.data!.isEmpty) {
+                                    return Container();
+                                  }
+                                  final columnMyNotificationsRecord =
+                                      columnMyNotificationsRecordList.isNotEmpty
+                                          ? columnMyNotificationsRecordList
+                                              .first
+                                          : null;
+
+                                  return Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      if (columnMyNotificationsRecord
+                                              ?.reference !=
+                                          null)
+                                        Padding(
+                                          padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 20.0, 10.0, 0.0),
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceBetween,
+                                            children: [
+                                              FutureBuilder<int>(
+                                                future:
+                                                    queryMyNotificationsRecordCount(
+                                                  parent: currentUserReference,
+                                                ),
+                                                builder: (context, snapshot) {
+                                                  // Customize what your widget looks like when it's loading.
+                                                  if (!snapshot.hasData) {
+                                                    return Center(
+                                                      child: SizedBox(
+                                                        width: 50.0,
+                                                        height: 50.0,
+                                                        child:
+                                                            CircularProgressIndicator(
+                                                          valueColor:
+                                                              AlwaysStoppedAnimation<
+                                                                  Color>(
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .accent4,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    );
+                                                  }
+                                                  int rowCount = snapshot.data!;
+
+                                                  return Row(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    children: [
+                                                      AuthUserStreamWidget(
+                                                        builder: (context) =>
+                                                            Text(
+                                                          valueOrDefault<
+                                                              String>(
+                                                            rowCount.toString(),
+                                                            '0',
+                                                          ),
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .headlineSmall
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Poppins',
+                                                                color:
+                                                                    valueOrDefault<
+                                                                        Color>(
+                                                                  currentUserDocument
+                                                                      ?.color2,
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .accent1,
+                                                                ),
+                                                                letterSpacing:
+                                                                    0.0,
+                                                              ),
+                                                        ),
+                                                      ),
+                                                      AuthUserStreamWidget(
+                                                        builder: (context) =>
+                                                            InkWell(
+                                                          splashColor: Colors
+                                                              .transparent,
+                                                          focusColor: Colors
+                                                              .transparent,
+                                                          hoverColor: Colors
+                                                              .transparent,
+                                                          highlightColor: Colors
+                                                              .transparent,
+                                                          onTap: () async {
+                                                            context.pushNamed(
+                                                              'MyNotifsList',
+                                                              extra: <String,
+                                                                  dynamic>{
+                                                                kTransitionInfoKey:
+                                                                    const TransitionInfo(
+                                                                  hasTransition:
+                                                                      true,
+                                                                  transitionType:
+                                                                      PageTransitionType
+                                                                          .rightToLeft,
+                                                                  duration: Duration(
+                                                                      milliseconds:
+                                                                          400),
+                                                                ),
+                                                              },
+                                                            );
+                                                          },
+                                                          child: Icon(
+                                                            Icons
+                                                                .notifications_none,
+                                                            color:
+                                                                valueOrDefault<
+                                                                    Color>(
+                                                              currentUserDocument
+                                                                  ?.color1,
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .accent1,
+                                                            ),
+                                                            size: 40.0,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  );
+                                                },
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                    ],
+                                  );
+                                },
                               ),
                             ],
                           ),
@@ -295,9 +463,9 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                                     builder: (context) => Text(
                                       valueOrDefault<String>(
                                         currentUserDisplayName,
-                                        'Ajouter mon \'\'Pseudo\'\' dans Modifier profil',
+                                        '\'\'Pseudo\'\' -> Modifier mon profil',
                                       ),
-                                      maxLines: 2,
+                                      maxLines: 3,
                                       style: FlutterFlowTheme.of(context)
                                           .headlineSmall
                                           .override(
@@ -319,40 +487,62 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                           padding: const EdgeInsetsDirectional.fromSTEB(
                               10.0, 0.0, 0.0, 5.0),
                           child: AuthUserStreamWidget(
-                            builder: (context) => Container(
-                              width: 90.0,
-                              height: 90.0,
-                              decoration: BoxDecoration(
-                                color: FlutterFlowTheme.of(context).alternate,
-                                boxShadow: [
-                                  BoxShadow(
-                                    blurRadius: 4.0,
-                                    color: FlutterFlowTheme.of(context).accent3,
-                                    offset: const Offset(
-                                      0.0,
-                                      2.0,
+                            builder: (context) => InkWell(
+                              splashColor: Colors.transparent,
+                              focusColor: Colors.transparent,
+                              hoverColor: Colors.transparent,
+                              highlightColor: Colors.transparent,
+                              onTap: () async {
+                                context.pushNamed(
+                                  'MyImagePage',
+                                  extra: <String, dynamic>{
+                                    kTransitionInfoKey: const TransitionInfo(
+                                      hasTransition: true,
+                                      transitionType: PageTransitionType.scale,
+                                      alignment: Alignment.bottomCenter,
+                                      duration: Duration(milliseconds: 600),
                                     ),
-                                  )
-                                ],
-                                shape: BoxShape.circle,
-                                border: Border.all(
-                                  color: valueOrDefault<Color>(
-                                    currentUserDocument?.color1,
-                                    FlutterFlowTheme.of(context)
-                                        .primaryBackground,
+                                  },
+                                );
+                              },
+                              child: Container(
+                                width: 90.0,
+                                height: 90.0,
+                                decoration: BoxDecoration(
+                                  color: FlutterFlowTheme.of(context)
+                                      .primaryBackground,
+                                  boxShadow: [
+                                    BoxShadow(
+                                      blurRadius: 4.0,
+                                      color:
+                                          FlutterFlowTheme.of(context).accent3,
+                                      offset: const Offset(
+                                        0.0,
+                                        2.0,
+                                      ),
+                                    )
+                                  ],
+                                  shape: BoxShape.circle,
+                                  border: Border.all(
+                                    color: valueOrDefault<Color>(
+                                      currentUserDocument?.color1,
+                                      FlutterFlowTheme.of(context)
+                                          .primaryBackground,
+                                    ),
+                                    width: 2.0,
                                   ),
-                                  width: 2.0,
                                 ),
-                              ),
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(50.0),
-                                child: CachedNetworkImage(
-                                  fadeInDuration: const Duration(milliseconds: 500),
-                                  fadeOutDuration: const Duration(milliseconds: 500),
-                                  imageUrl: currentUserPhoto,
-                                  width: 100.0,
-                                  height: 100.0,
-                                  fit: BoxFit.fitHeight,
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(50.0),
+                                  child: CachedNetworkImage(
+                                    fadeInDuration: const Duration(milliseconds: 500),
+                                    fadeOutDuration:
+                                        const Duration(milliseconds: 500),
+                                    imageUrl: currentUserPhoto,
+                                    width: 100.0,
+                                    height: 100.0,
+                                    fit: BoxFit.fitHeight,
+                                  ),
                                 ),
                               ),
                             ),
@@ -363,81 +553,236 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                   ),
                 ),
                 Align(
-                  alignment: const AlignmentDirectional(1.0, 0.0),
+                  alignment: const AlignmentDirectional(0.0, 0.0),
                   child: Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(50.0, 0.0, 50.0, 0.0),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        if (valueOrDefault(
-                                currentUserDocument?.stsocialapp, '') ==
-                            'administrateur')
-                          Align(
-                            alignment: const AlignmentDirectional(0.0, -1.0),
-                            child: AuthUserStreamWidget(
-                              builder: (context) => FlutterFlowIconButton(
-                                borderColor: valueOrDefault<Color>(
-                                  currentUserDocument?.color2,
-                                  FlutterFlowTheme.of(context).secondaryText,
-                                ),
-                                borderRadius: 50.0,
-                                borderWidth: 1.0,
-                                buttonSize: 50.0,
-                                fillColor:
-                                    FlutterFlowTheme.of(context).tertiary,
-                                icon: Icon(
-                                  Icons.local_police_outlined,
-                                  color: valueOrDefault<Color>(
-                                    currentUserDocument?.color1,
-                                    FlutterFlowTheme.of(context).primaryText,
+                        const EdgeInsetsDirectional.fromSTEB(50.0, 0.0, 50.0, 10.0),
+                    child: SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          if (valueOrDefault(
+                                  currentUserDocument?.stsocialapp, '') ==
+                              'administrateur')
+                            Align(
+                              alignment: const AlignmentDirectional(0.0, -1.0),
+                              child: Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    5.0, 0.0, 5.0, 0.0),
+                                child: AuthUserStreamWidget(
+                                  builder: (context) => FlutterFlowIconButton(
+                                    borderColor: valueOrDefault<Color>(
+                                      currentUserDocument?.color2,
+                                      FlutterFlowTheme.of(context)
+                                          .secondaryText,
+                                    ),
+                                    borderRadius: 50.0,
+                                    borderWidth: 1.0,
+                                    buttonSize: 50.0,
+                                    fillColor:
+                                        FlutterFlowTheme.of(context).tertiary,
+                                    icon: Icon(
+                                      Icons.local_police_outlined,
+                                      color: valueOrDefault<Color>(
+                                        currentUserDocument?.color1,
+                                        FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                      ),
+                                      size: 30.0,
+                                    ),
+                                    onPressed: () async {
+                                      context.pushNamed('ModeratorPage');
+                                    },
                                   ),
-                                  size: 30.0,
                                 ),
-                                onPressed: () async {
-                                  context.pushNamed('ModeratorPage');
-                                },
                               ),
                             ),
-                          ),
-                        if (valueOrDefault(
-                                currentUserDocument?.stsocialapp, '') ==
-                            'moderateur')
-                          Align(
-                            alignment: const AlignmentDirectional(0.0, -1.0),
-                            child: AuthUserStreamWidget(
-                              builder: (context) => FlutterFlowIconButton(
-                                borderColor: valueOrDefault<Color>(
-                                  currentUserDocument?.color2,
-                                  FlutterFlowTheme.of(context).secondaryText,
-                                ),
-                                borderRadius: 50.0,
-                                borderWidth: 1.0,
-                                buttonSize: 50.0,
-                                fillColor:
-                                    FlutterFlowTheme.of(context).tertiary,
-                                icon: Icon(
-                                  Icons.local_police_outlined,
-                                  color: valueOrDefault<Color>(
-                                    currentUserDocument?.color1,
-                                    FlutterFlowTheme.of(context).primaryText,
+                          if (valueOrDefault(
+                                  currentUserDocument?.stsocialapp, '') ==
+                              'administrateur')
+                            Align(
+                              alignment: const AlignmentDirectional(0.0, -1.0),
+                              child: Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    5.0, 0.0, 5.0, 0.0),
+                                child: AuthUserStreamWidget(
+                                  builder: (context) => FlutterFlowIconButton(
+                                    borderColor: valueOrDefault<Color>(
+                                      currentUserDocument?.color2,
+                                      FlutterFlowTheme.of(context)
+                                          .secondaryText,
+                                    ),
+                                    borderRadius: 50.0,
+                                    borderWidth: 1.0,
+                                    buttonSize: 50.0,
+                                    fillColor:
+                                        FlutterFlowTheme.of(context).tertiary,
+                                    icon: Icon(
+                                      Icons.admin_panel_settings_rounded,
+                                      color: valueOrDefault<Color>(
+                                        currentUserDocument?.color1,
+                                        FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                      ),
+                                      size: 30.0,
+                                    ),
+                                    onPressed: () async {
+                                      context.pushNamed('AdminPage');
+                                    },
                                   ),
-                                  size: 30.0,
                                 ),
-                                onPressed: () async {
-                                  context.pushNamed('ModeratorPage');
-                                },
                               ),
                             ),
-                          ),
-                      ],
+                          if (valueOrDefault(
+                                  currentUserDocument?.stsocialapp, '') ==
+                              'moderateur')
+                            Align(
+                              alignment: const AlignmentDirectional(0.0, -1.0),
+                              child: Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    5.0, 0.0, 5.0, 0.0),
+                                child: AuthUserStreamWidget(
+                                  builder: (context) => FlutterFlowIconButton(
+                                    borderColor: valueOrDefault<Color>(
+                                      currentUserDocument?.color2,
+                                      FlutterFlowTheme.of(context)
+                                          .secondaryText,
+                                    ),
+                                    borderRadius: 50.0,
+                                    borderWidth: 1.0,
+                                    buttonSize: 50.0,
+                                    fillColor:
+                                        FlutterFlowTheme.of(context).tertiary,
+                                    icon: Icon(
+                                      Icons.local_police_outlined,
+                                      color: valueOrDefault<Color>(
+                                        currentUserDocument?.color1,
+                                        FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                      ),
+                                      size: 30.0,
+                                    ),
+                                    onPressed: () async {
+                                      context.pushNamed('ModeratorPage');
+                                    },
+                                  ),
+                                ),
+                              ),
+                            ),
+                          if (valueOrDefault<bool>(
+                                  currentUserDocument?.testor, false) ==
+                              true)
+                            AuthUserStreamWidget(
+                              builder: (context) => Row(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        5.0, 0.0, 5.0, 0.0),
+                                    child: StreamBuilder<List<TeamsRecord>>(
+                                      stream: queryTeamsRecord(
+                                        queryBuilder: (teamsRecord) =>
+                                            teamsRecord.where(
+                                          'league_value',
+                                          isEqualTo: 'test',
+                                        ),
+                                        singleRecord: true,
+                                      ),
+                                      builder: (context, snapshot) {
+                                        // Customize what your widget looks like when it's loading.
+                                        if (!snapshot.hasData) {
+                                          return Center(
+                                            child: SizedBox(
+                                              width: 50.0,
+                                              height: 50.0,
+                                              child: CircularProgressIndicator(
+                                                valueColor:
+                                                    AlwaysStoppedAnimation<
+                                                        Color>(
+                                                  FlutterFlowTheme.of(context)
+                                                      .accent4,
+                                                ),
+                                              ),
+                                            ),
+                                          );
+                                        }
+                                        List<TeamsRecord>
+                                            containerTeamsRecordList =
+                                            snapshot.data!;
+                                        final containerTeamsRecord =
+                                            containerTeamsRecordList.isNotEmpty
+                                                ? containerTeamsRecordList.first
+                                                : null;
+
+                                        return InkWell(
+                                          splashColor: Colors.transparent,
+                                          focusColor: Colors.transparent,
+                                          hoverColor: Colors.transparent,
+                                          highlightColor: Colors.transparent,
+                                          onTap: () async {
+                                            context.pushNamed(
+                                              'DiscusionETeamPage',
+                                              queryParameters: {
+                                                'eTeamRef': serializeParam(
+                                                  containerTeamsRecord
+                                                      ?.reference,
+                                                  ParamType.DocumentReference,
+                                                ),
+                                              }.withoutNulls,
+                                              extra: <String, dynamic>{
+                                                kTransitionInfoKey:
+                                                    const TransitionInfo(
+                                                  hasTransition: true,
+                                                  transitionType:
+                                                      PageTransitionType
+                                                          .rightToLeft,
+                                                  duration: Duration(
+                                                      milliseconds: 400),
+                                                ),
+                                              },
+                                            );
+                                          },
+                                          child: Container(
+                                            width: 50.0,
+                                            height: 50.0,
+                                            decoration: BoxDecoration(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .tertiary,
+                                              shape: BoxShape.circle,
+                                              border: Border.all(
+                                                color: valueOrDefault<Color>(
+                                                  currentUserDocument?.color2,
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryText,
+                                                ),
+                                                width: 1.0,
+                                              ),
+                                            ),
+                                            child: Icon(
+                                              Icons.bolt,
+                                              color:
+                                                  currentUserDocument?.color1,
+                                              size: 30.0,
+                                            ),
+                                          ),
+                                        );
+                                      },
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                        ],
+                      ),
                     ),
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(50.0, 5.0, 50.0, 5.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(48.0, 5.0, 48.0, 5.0),
                   child: AuthUserStreamWidget(
                     builder: (context) =>
                         StreamBuilder<List<MyTeamslikeRecord>>(
@@ -483,7 +828,7 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                                     3.0, 0.0, 3.0, 0.0),
                                 child: StreamBuilder<TeamsRecord>(
                                   stream: TeamsRecord.getDocument(
-                                      rowMyTeamslikeRecord.teams.first),
+                                      rowMyTeamslikeRecord.teams.firstOrNull!),
                                   builder: (context, snapshot) {
                                     // Customize what your widget looks like when it's loading.
                                     if (!snapshot.hasData) {
@@ -807,7 +1152,7 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                                     shape: BoxShape.circle,
                                     border: Border.all(
                                       color: FlutterFlowTheme.of(context)
-                                          .primaryText,
+                                          .secondary,
                                     ),
                                   ),
                                   child: Padding(
@@ -831,169 +1176,53 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                     ],
                   ),
                 ),
+                AuthUserStreamWidget(
+                  builder: (context) => Divider(
+                    thickness: 1.0,
+                    color: valueOrDefault<Color>(
+                      currentUserDocument?.color2,
+                      FlutterFlowTheme.of(context).secondaryBackground,
+                    ),
+                  ),
+                ),
                 if (valueOrDefault(currentUserDocument?.stsocialapp, '') !=
                     'suspendu')
                   AuthUserStreamWidget(
                     builder: (context) => Column(
                       mainAxisSize: MainAxisSize.max,
                       children: [
-                        FutureBuilder<List<MyNotificationsRecord>>(
-                          future: queryMyNotificationsRecordOnce(
-                            parent: currentUserReference,
-                            singleRecord: true,
-                          ),
-                          builder: (context, snapshot) {
-                            // Customize what your widget looks like when it's loading.
-                            if (!snapshot.hasData) {
-                              return Center(
-                                child: SizedBox(
-                                  width: 50.0,
-                                  height: 50.0,
-                                  child: CircularProgressIndicator(
-                                    valueColor: AlwaysStoppedAnimation<Color>(
-                                      FlutterFlowTheme.of(context).accent4,
-                                    ),
-                                  ),
-                                ),
-                              );
-                            }
-                            List<MyNotificationsRecord>
-                                columnMyNotificationsRecordList =
-                                snapshot.data!;
-                            // Return an empty Container when the item does not exist.
-                            if (snapshot.data!.isEmpty) {
-                              return Container();
-                            }
-                            final columnMyNotificationsRecord =
-                                columnMyNotificationsRecordList.isNotEmpty
-                                    ? columnMyNotificationsRecordList.first
-                                    : null;
-
-                            return Column(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                if (columnMyNotificationsRecord?.reference !=
-                                    null)
-                                  Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        20.0, 10.0, 30.0, 5.0),
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Padding(
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  12.0, 0.0, 0.0, 0.0),
-                                          child: Text(
-                                            'Mes notifications',
-                                            style: FlutterFlowTheme.of(context)
-                                                .labelLarge
-                                                .override(
-                                                  fontFamily: 'Montserrat',
-                                                  letterSpacing: 0.0,
-                                                ),
-                                          ),
-                                        ),
-                                        FutureBuilder<int>(
-                                          future:
-                                              queryMyNotificationsRecordCount(
-                                            parent: currentUserReference,
-                                          ),
-                                          builder: (context, snapshot) {
-                                            // Customize what your widget looks like when it's loading.
-                                            if (!snapshot.hasData) {
-                                              return Center(
-                                                child: SizedBox(
-                                                  width: 50.0,
-                                                  height: 50.0,
-                                                  child:
-                                                      CircularProgressIndicator(
-                                                    valueColor:
-                                                        AlwaysStoppedAnimation<
-                                                            Color>(
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .accent4,
-                                                    ),
-                                                  ),
-                                                ),
-                                              );
-                                            }
-                                            int rowCount = snapshot.data!;
-
-                                            return Row(
-                                              mainAxisSize: MainAxisSize.max,
-                                              children: [
-                                                Text(
-                                                  valueOrDefault<String>(
-                                                    rowCount.toString(),
-                                                    '0',
-                                                  ),
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .headlineSmall
-                                                      .override(
-                                                        fontFamily: 'Poppins',
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .accent1,
-                                                        letterSpacing: 0.0,
-                                                      ),
-                                                ),
-                                                InkWell(
-                                                  splashColor:
-                                                      Colors.transparent,
-                                                  focusColor:
-                                                      Colors.transparent,
-                                                  hoverColor:
-                                                      Colors.transparent,
-                                                  highlightColor:
-                                                      Colors.transparent,
-                                                  onTap: () async {
-                                                    context.pushNamed(
-                                                      'MyNotifsList',
-                                                      extra: <String, dynamic>{
-                                                        kTransitionInfoKey:
-                                                            const TransitionInfo(
-                                                          hasTransition: true,
-                                                          transitionType:
-                                                              PageTransitionType
-                                                                  .rightToLeft,
-                                                          duration: Duration(
-                                                              milliseconds:
-                                                                  400),
-                                                        ),
-                                                      },
-                                                    );
-                                                  },
-                                                  child: Icon(
-                                                    Icons.notifications_none,
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .accent1,
-                                                    size: 30.0,
-                                                  ),
-                                                ),
-                                              ],
-                                            );
-                                          },
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                              ],
-                            );
-                          },
-                        ),
                         if (valueOrDefault<bool>(
                                 currentUserDocument?.esport, false) ==
                             false)
                           Column(
                             mainAxisSize: MainAxisSize.max,
                             children: [
+                              if (valueOrDefault<bool>(
+                                      currentUserDocument?.helpNav, false) ==
+                                  true)
+                                Align(
+                                  alignment: const AlignmentDirectional(0.0, 0.0),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        'Sport',
+                                        style: FlutterFlowTheme.of(context)
+                                            .labelLarge
+                                            .override(
+                                              fontFamily: 'Montserrat',
+                                              color: valueOrDefault<Color>(
+                                                currentUserDocument?.color2,
+                                                FlutterFlowTheme.of(context)
+                                                    .secondaryText,
+                                              ),
+                                              letterSpacing: 0.0,
+                                            ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
                               Padding(
                                 padding: const EdgeInsetsDirectional.fromSTEB(
                                     20.0, 10.0, 30.0, 5.0),
@@ -1036,7 +1265,11 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                                       },
                                       child: Icon(
                                         Icons.attach_money_rounded,
-                                        color: currentUserDocument?.color1,
+                                        color: valueOrDefault<Color>(
+                                          currentUserDocument?.color1,
+                                          FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                        ),
                                         size: 30.0,
                                       ),
                                     ),
@@ -1085,7 +1318,11 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                                       },
                                       child: Icon(
                                         Icons.query_stats,
-                                        color: currentUserDocument?.color1,
+                                        color: valueOrDefault<Color>(
+                                          currentUserDocument?.color1,
+                                          FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                        ),
                                         size: 30.0,
                                       ),
                                     ),
@@ -1134,7 +1371,11 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                                       },
                                       child: Icon(
                                         Icons.bar_chart,
-                                        color: currentUserDocument?.color1,
+                                        color: valueOrDefault<Color>(
+                                          currentUserDocument?.color1,
+                                          FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                        ),
                                         size: 30.0,
                                       ),
                                     ),
@@ -1183,7 +1424,11 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                                       },
                                       child: Icon(
                                         Icons.security_rounded,
-                                        color: currentUserDocument?.color1,
+                                        color: valueOrDefault<Color>(
+                                          currentUserDocument?.color1,
+                                          FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                        ),
                                         size: 30.0,
                                       ),
                                     ),
@@ -1198,6 +1443,32 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                           Column(
                             mainAxisSize: MainAxisSize.max,
                             children: [
+                              if (valueOrDefault<bool>(
+                                      currentUserDocument?.helpNav, false) ==
+                                  true)
+                                Align(
+                                  alignment: const AlignmentDirectional(0.0, 0.0),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        'E Sport',
+                                        style: FlutterFlowTheme.of(context)
+                                            .labelLarge
+                                            .override(
+                                              fontFamily: 'Montserrat',
+                                              color: valueOrDefault<Color>(
+                                                currentUserDocument?.color2,
+                                                FlutterFlowTheme.of(context)
+                                                    .secondaryText,
+                                              ),
+                                              letterSpacing: 0.0,
+                                            ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
                               Padding(
                                 padding: const EdgeInsetsDirectional.fromSTEB(
                                     20.0, 10.0, 30.0, 5.0),
@@ -1240,7 +1511,11 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                                       },
                                       child: Icon(
                                         Icons.query_stats,
-                                        color: currentUserDocument?.color1,
+                                        color: valueOrDefault<Color>(
+                                          currentUserDocument?.color1,
+                                          FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                        ),
                                         size: 30.0,
                                       ),
                                     ),
@@ -1289,7 +1564,11 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                                       },
                                       child: Icon(
                                         Icons.bar_chart,
-                                        color: currentUserDocument?.color1,
+                                        color: valueOrDefault<Color>(
+                                          currentUserDocument?.color1,
+                                          FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                        ),
                                         size: 30.0,
                                       ),
                                     ),
@@ -1338,7 +1617,11 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                                       },
                                       child: Icon(
                                         Icons.security_rounded,
-                                        color: currentUserDocument?.color1,
+                                        color: valueOrDefault<Color>(
+                                          currentUserDocument?.color1,
+                                          FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                        ),
                                         size: 30.0,
                                       ),
                                     ),
@@ -1387,7 +1670,10 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                                 },
                                 child: Icon(
                                   Icons.newspaper_rounded,
-                                  color: currentUserDocument?.color1,
+                                  color: valueOrDefault<Color>(
+                                    currentUserDocument?.color1,
+                                    FlutterFlowTheme.of(context).primaryText,
+                                  ),
                                   size: 30.0,
                                 ),
                               ),
@@ -1434,7 +1720,10 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                                 },
                                 child: Icon(
                                   Icons.groups_2,
-                                  color: currentUserDocument?.color1,
+                                  color: valueOrDefault<Color>(
+                                    currentUserDocument?.color1,
+                                    FlutterFlowTheme.of(context).primaryText,
+                                  ),
                                   size: 30.0,
                                 ),
                               ),
@@ -1444,41 +1733,10 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                       ],
                     ),
                   ),
-                Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 5.0),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(25.0, 0.0, 0.0, 0.0),
-                        child: Text(
-                          'Membre depuis le',
-                          style:
-                              FlutterFlowTheme.of(context).labelMedium.override(
-                                    fontFamily: 'Poppins',
-                                    letterSpacing: 0.0,
-                                  ),
-                        ),
-                      ),
-                      Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(2.0, 0.0, 0.0, 0.0),
-                        child: AuthUserStreamWidget(
-                          builder: (context) => Text(
-                            dateTimeFormat(
-                                "d/M/y", currentUserDocument!.createdTime!),
-                            style: FlutterFlowTheme.of(context)
-                                .labelMedium
-                                .override(
-                                  fontFamily: 'Poppins',
-                                  letterSpacing: 0.0,
-                                ),
-                          ),
-                        ),
-                      ),
-                    ],
+                AuthUserStreamWidget(
+                  builder: (context) => Divider(
+                    thickness: 1.0,
+                    color: currentUserDocument?.color2,
                   ),
                 ),
                 if (valueOrDefault<bool>(currentUserDocument?.helpNav, false) ==
@@ -1488,25 +1746,107 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                     child: AuthUserStreamWidget(
                       builder: (context) => Row(
                         mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.end,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Padding(
                             padding: const EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 10.0, 0.0),
-                            child: Text(
-                              'L\'aide à la navigation est active\nChanger ce paramètre dans - Modifier mon profil',
-                              textAlign: TextAlign.end,
-                              maxLines: 2,
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: 'Poppins',
-                                    color: FlutterFlowTheme.of(context).success,
-                                    fontSize: 10.0,
-                                    letterSpacing: 0.0,
-                                    lineHeight: 1.0,
+                                5.0, 0.0, 0.0, 0.0),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                if (valueOrDefault<bool>(
+                                        currentUserDocument?.adult, false) ==
+                                    true)
+                                  Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        5.0, 0.0, 0.0, 0.0),
+                                    child: Container(
+                                      width: 30.0,
+                                      height: 30.0,
+                                      decoration: BoxDecoration(
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryBackground,
+                                        shape: BoxShape.circle,
+                                        border: Border.all(
+                                          color: FlutterFlowTheme.of(context)
+                                              .success,
+                                          width: 2.0,
+                                        ),
+                                      ),
+                                      child: Align(
+                                        alignment:
+                                            const AlignmentDirectional(0.0, 0.0),
+                                        child: Text(
+                                          '+18',
+                                          style: FlutterFlowTheme.of(context)
+                                              .labelMedium
+                                              .override(
+                                                fontFamily: 'Poppins',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .success,
+                                                fontSize: 13.0,
+                                                letterSpacing: 0.0,
+                                              ),
+                                        ),
+                                      ),
+                                    ),
                                   ),
+                                if (valueOrDefault<bool>(
+                                        currentUserDocument?.adult, false) ==
+                                    false)
+                                  Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        5.0, 0.0, 0.0, 0.0),
+                                    child: Container(
+                                      width: 30.0,
+                                      height: 30.0,
+                                      decoration: BoxDecoration(
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryBackground,
+                                        shape: BoxShape.circle,
+                                        border: Border.all(
+                                          color: FlutterFlowTheme.of(context)
+                                              .error,
+                                          width: 2.0,
+                                        ),
+                                      ),
+                                      child: Align(
+                                        alignment:
+                                            const AlignmentDirectional(0.0, 0.0),
+                                        child: Text(
+                                          '-18',
+                                          style: FlutterFlowTheme.of(context)
+                                              .labelMedium
+                                              .override(
+                                                fontFamily: 'Poppins',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .error,
+                                                fontSize: 13.0,
+                                                letterSpacing: 0.0,
+                                              ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                              ],
                             ),
+                          ),
+                          Text(
+                            'L\'aide à la navigation est active\nChanger ce paramètre dans - Modifier mon profil',
+                            textAlign: TextAlign.end,
+                            maxLines: 2,
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Poppins',
+                                  color: FlutterFlowTheme.of(context).success,
+                                  fontSize: 10.0,
+                                  letterSpacing: 0.0,
+                                  lineHeight: 1.0,
+                                ),
                           ),
                           if (valueOrDefault<bool>(
                                   currentUserDocument?.helpNav, false) ==
@@ -1575,7 +1915,10 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                             },
                             child: FaIcon(
                               FontAwesomeIcons.tools,
-                              color: currentUserDocument?.color1,
+                              color: valueOrDefault<Color>(
+                                currentUserDocument?.color1,
+                                FlutterFlowTheme.of(context).primaryText,
+                              ),
                               size: 22.0,
                             ),
                           ),
@@ -1584,6 +1927,77 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                     ],
                   ),
                 ),
+                Padding(
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Membre depuis le',
+                        style:
+                            FlutterFlowTheme.of(context).labelMedium.override(
+                                  fontFamily: 'Poppins',
+                                  letterSpacing: 0.0,
+                                ),
+                      ),
+                      Padding(
+                        padding:
+                            const EdgeInsetsDirectional.fromSTEB(2.0, 0.0, 0.0, 0.0),
+                        child: AuthUserStreamWidget(
+                          builder: (context) => Text(
+                            dateTimeFormat(
+                                "d/M/y", currentUserDocument!.createdTime!),
+                            style: FlutterFlowTheme.of(context)
+                                .labelMedium
+                                .override(
+                                  fontFamily: 'Poppins',
+                                  letterSpacing: 0.0,
+                                ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                AuthUserStreamWidget(
+                  builder: (context) => Divider(
+                    thickness: 1.0,
+                    color: currentUserDocument?.color2,
+                  ),
+                ),
+                if (valueOrDefault<bool>(currentUserDocument?.helpNav, false) ==
+                    true)
+                  Align(
+                    alignment: const AlignmentDirectional(0.0, 0.0),
+                    child: AuthUserStreamWidget(
+                      builder: (context) => Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Align(
+                            alignment: const AlignmentDirectional(0.0, 0.0),
+                            child: Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 5.0),
+                              child: Text(
+                                'Les informations suivantes sont confidentielles,\nseulement vous et l\'administrateur y ont accès',
+                                textAlign: TextAlign.center,
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Poppins',
+                                      color:
+                                          FlutterFlowTheme.of(context).warning,
+                                      letterSpacing: 0.0,
+                                    ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
                 Align(
                   alignment: const AlignmentDirectional(-1.0, 0.0),
                   child: Padding(
@@ -1624,6 +2038,53 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                     ),
                   ),
                 ),
+                Padding(
+                  padding: const EdgeInsetsDirectional.fromSTEB(25.0, 0.0, 30.0, 0.0),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Align(
+                        alignment: const AlignmentDirectional(-1.0, 0.0),
+                        child: Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              0.0, 5.0, 0.0, 5.0),
+                          child: Text(
+                            'Date de naissance :',
+                            style: FlutterFlowTheme.of(context)
+                                .labelMedium
+                                .override(
+                                  fontFamily: 'Poppins',
+                                  letterSpacing: 0.0,
+                                ),
+                          ),
+                        ),
+                      ),
+                      Align(
+                        alignment: const AlignmentDirectional(-1.0, 0.0),
+                        child: Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              5.0, 5.0, 0.0, 5.0),
+                          child: AuthUserStreamWidget(
+                            builder: (context) => Text(
+                              valueOrDefault<String>(
+                                valueOrDefault(
+                                    currentUserDocument?.dateofBirth, ''),
+                                '00/00/0000',
+                              ),
+                              style: FlutterFlowTheme.of(context)
+                                  .labelMedium
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    letterSpacing: 0.0,
+                                  ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
                 Align(
                   alignment: const AlignmentDirectional(-1.0, 0.0),
                   child: Padding(
@@ -1642,7 +2103,7 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                   alignment: const AlignmentDirectional(-1.0, 0.0),
                   child: Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(25.0, 5.0, 0.0, 5.0),
+                        const EdgeInsetsDirectional.fromSTEB(25.0, 5.0, 0.0, 0.0),
                     child: AuthUserStreamWidget(
                       builder: (context) => Text(
                         valueOrDefault<String>(
@@ -1658,18 +2119,56 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                     ),
                   ),
                 ),
+                AuthUserStreamWidget(
+                  builder: (context) => Divider(
+                    thickness: 1.0,
+                    color: currentUserDocument?.color2,
+                  ),
+                ),
+                Align(
+                  alignment: const AlignmentDirectional(0.0, 0.0),
+                  child: Padding(
+                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 5.0),
+                    child: Text(
+                      'Votre ID d\'utilisateur\n(visible aussi par les modérateurs)',
+                      textAlign: TextAlign.center,
+                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                            fontFamily: 'Poppins',
+                            letterSpacing: 0.0,
+                          ),
+                    ),
+                  ),
+                ),
                 Align(
                   alignment: const AlignmentDirectional(0.0, 0.0),
                   child: Padding(
                     padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 5.0),
-                    child: Text(
-                      currentUserUid,
-                      style: FlutterFlowTheme.of(context).labelMedium.override(
-                            fontFamily: 'Poppins',
-                            color: FlutterFlowTheme.of(context).warning,
-                            letterSpacing: 0.0,
-                          ),
+                    child: InkWell(
+                      splashColor: Colors.transparent,
+                      focusColor: Colors.transparent,
+                      hoverColor: Colors.transparent,
+                      highlightColor: Colors.transparent,
+                      onTap: () async {
+                        await Clipboard.setData(
+                            ClipboardData(text: currentUserUid));
+                      },
+                      child: Text(
+                        currentUserUid,
+                        style: FlutterFlowTheme.of(context)
+                            .labelMedium
+                            .override(
+                              fontFamily: 'Poppins',
+                              color: FlutterFlowTheme.of(context).primaryText,
+                              letterSpacing: 0.0,
+                            ),
+                      ),
                     ),
+                  ),
+                ),
+                AuthUserStreamWidget(
+                  builder: (context) => Divider(
+                    thickness: 1.0,
+                    color: currentUserDocument?.color2,
                   ),
                 ),
                 Align(

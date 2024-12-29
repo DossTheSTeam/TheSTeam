@@ -68,7 +68,10 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
         final signalEEventPageMyNotificationsRecord = snapshot.data!;
 
         return GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -797,6 +800,9 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                             .bodyMedium
                                             .override(
                                               fontFamily: 'Poppins',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .warning,
                                               letterSpacing: 0.0,
                                             ),
                                       ),
@@ -1084,14 +1090,38 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                           .primaryBackground,
                                       shape: BoxShape.rectangle,
                                     ),
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(0.0),
-                                      child: Image.network(
-                                        signalEEventPageMyNotificationsRecord
-                                            .image,
-                                        width: 300.0,
-                                        height: 200.0,
-                                        fit: BoxFit.fitHeight,
+                                    child: InkWell(
+                                      splashColor: Colors.transparent,
+                                      focusColor: Colors.transparent,
+                                      hoverColor: Colors.transparent,
+                                      highlightColor: Colors.transparent,
+                                      onTap: () async {
+                                        context.pushNamed(
+                                          'FullImagePage',
+                                          queryParameters: {
+                                            'imageRef': serializeParam(
+                                              signalEEventPageMyNotificationsRecord
+                                                  .image,
+                                              ParamType.String,
+                                            ),
+                                            'userRef': serializeParam(
+                                              signalEEventPageMyNotificationsRecord
+                                                  .userRef,
+                                              ParamType.DocumentReference,
+                                            ),
+                                          }.withoutNulls,
+                                        );
+                                      },
+                                      child: ClipRRect(
+                                        borderRadius:
+                                            BorderRadius.circular(0.0),
+                                        child: Image.network(
+                                          signalEEventPageMyNotificationsRecord
+                                              .image,
+                                          width: 300.0,
+                                          height: 200.0,
+                                          fit: BoxFit.fitHeight,
+                                        ),
                                       ),
                                     ),
                                   ),

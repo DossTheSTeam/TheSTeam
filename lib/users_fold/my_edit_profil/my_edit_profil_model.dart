@@ -6,12 +6,6 @@ import 'package:flutter/material.dart';
 class MyEditProfilModel extends FlutterFlowModel<MyEditProfilWidget> {
   ///  State fields for stateful widgets in this page.
 
-  // State field(s) for DropColor1 widget.
-  String? dropColor1Value1;
-  FormFieldController<String>? dropColor1ValueController1;
-  // State field(s) for DropColor1 widget.
-  String? dropColor1Value2;
-  FormFieldController<String>? dropColor1ValueController2;
   // State field(s) for PseudoField widget.
   FocusNode? pseudoFieldFocusNode;
   TextEditingController? pseudoFieldTextController;
@@ -24,6 +18,16 @@ class MyEditProfilModel extends FlutterFlowModel<MyEditProfilWidget> {
   FocusNode? nameFieldFocusNode2;
   TextEditingController? nameFieldTextController2;
   String? Function(BuildContext, String?)? nameFieldTextController2Validator;
+  // State field(s) for DateField widget.
+  FocusNode? dateFieldFocusNode;
+  TextEditingController? dateFieldTextController;
+  String? Function(BuildContext, String?)? dateFieldTextControllerValidator;
+  // State field(s) for DropColor1 widget.
+  String? dropColor1Value1;
+  FormFieldController<String>? dropColor1ValueController1;
+  // State field(s) for DropColor1 widget.
+  String? dropColor1Value2;
+  FormFieldController<String>? dropColor1ValueController2;
   // State field(s) for PhoneField widget.
   FocusNode? phoneFieldFocusNode;
   TextEditingController? phoneFieldTextController;
@@ -42,6 +46,9 @@ class MyEditProfilModel extends FlutterFlowModel<MyEditProfilWidget> {
 
     nameFieldFocusNode2?.dispose();
     nameFieldTextController2?.dispose();
+
+    dateFieldFocusNode?.dispose();
+    dateFieldTextController?.dispose();
 
     phoneFieldFocusNode?.dispose();
     phoneFieldTextController?.dispose();

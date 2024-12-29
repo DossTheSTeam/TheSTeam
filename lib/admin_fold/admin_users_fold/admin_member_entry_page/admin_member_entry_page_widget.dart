@@ -68,7 +68,10 @@ class _AdminMemberEntryPageWidgetState
         final adminMemberEntryPageMyNotificationsRecord = snapshot.data!;
 
         return GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -208,7 +211,7 @@ class _AdminMemberEntryPageWidgetState
                                                 columnUsersRecord.photoUrl,
                                                 width: 300.0,
                                                 height: 200.0,
-                                                fit: BoxFit.cover,
+                                                fit: BoxFit.fitHeight,
                                               ),
                                             ),
                                           ),
@@ -357,7 +360,7 @@ class _AdminMemberEntryPageWidgetState
                                         Icon(
                                           Icons.star_rounded,
                                           color: FlutterFlowTheme.of(context)
-                                              .accent3,
+                                              .accent1,
                                           size: 24.0,
                                         ),
                                       ],
@@ -588,7 +591,7 @@ class _AdminMemberEntryPageWidgetState
                                       Icon(
                                         Icons.star_rounded,
                                         color: FlutterFlowTheme.of(context)
-                                            .accent3,
+                                            .accent1,
                                         size: 24.0,
                                       ),
                                     ],

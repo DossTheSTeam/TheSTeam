@@ -64,7 +64,10 @@ class _ETeamEventsNoDateListWidgetState
         final eTeamEventsNoDateListTeamsRecord = snapshot.data!;
 
         return GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -116,8 +119,11 @@ class _ETeamEventsNoDateListWidgetState
                                     },
                                     child: Icon(
                                       Icons.menu_rounded,
-                                      color: eTeamEventsNoDateListTeamsRecord
-                                          .color1,
+                                      color: valueOrDefault<Color>(
+                                        eTeamEventsNoDateListTeamsRecord.color1,
+                                        FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                      ),
                                       size: 30.0,
                                     ),
                                   ),
@@ -134,8 +140,12 @@ class _ETeamEventsNoDateListWidgetState
                                       },
                                       child: Icon(
                                         Icons.arrow_back_ios_new_rounded,
-                                        color: eTeamEventsNoDateListTeamsRecord
-                                            .color1,
+                                        color: valueOrDefault<Color>(
+                                          eTeamEventsNoDateListTeamsRecord
+                                              .color1,
+                                          FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                        ),
                                         size: 30.0,
                                       ),
                                     ),
@@ -598,7 +608,7 @@ class _ETeamEventsNoDateListWidgetState
                                                                           .name,
                                                                       textAlign:
                                                                           TextAlign
-                                                                              .start,
+                                                                              .center,
                                                                       maxLines:
                                                                           2,
                                                                       style: FlutterFlowTheme.of(
@@ -685,8 +695,13 @@ class _ETeamEventsNoDateListWidgetState
                                                                     child: Icon(
                                                                       Icons
                                                                           .comment_rounded,
-                                                                      color: eTeamEventsNoDateListTeamsRecord
-                                                                          .color1,
+                                                                      color: valueOrDefault<
+                                                                          Color>(
+                                                                        eTeamEventsNoDateListTeamsRecord
+                                                                            .color1,
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .primaryText,
+                                                                      ),
                                                                       size:
                                                                           30.0,
                                                                     ),
@@ -744,7 +759,10 @@ class _ETeamEventsNoDateListWidgetState
                                                                           Icons
                                                                               .location_history_outlined,
                                                                           color:
-                                                                              eTeamEventsNoDateListTeamsRecord.color1,
+                                                                              valueOrDefault<Color>(
+                                                                            eTeamEventsNoDateListTeamsRecord.color1,
+                                                                            FlutterFlowTheme.of(context).primaryText,
+                                                                          ),
                                                                           size:
                                                                               30.0,
                                                                         ),
@@ -904,7 +922,7 @@ class _ETeamEventsNoDateListWidgetState
                                                                           .name,
                                                                       textAlign:
                                                                           TextAlign
-                                                                              .start,
+                                                                              .center,
                                                                       maxLines:
                                                                           2,
                                                                       style: FlutterFlowTheme.of(
@@ -941,7 +959,7 @@ class _ETeamEventsNoDateListWidgetState
                                                               .scoreDom
                                                               .toString(),
                                                           textAlign:
-                                                              TextAlign.end,
+                                                              TextAlign.center,
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .labelMedium
@@ -957,7 +975,7 @@ class _ETeamEventsNoDateListWidgetState
                                                               .scoreExt
                                                               .toString(),
                                                           textAlign:
-                                                              TextAlign.start,
+                                                              TextAlign.center,
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .labelMedium

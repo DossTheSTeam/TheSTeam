@@ -4,6 +4,12 @@ import 'rank_page_widget.dart' show RankPageWidget;
 import 'package:flutter/material.dart';
 
 class RankPageModel extends FlutterFlowModel<RankPageWidget> {
+  ///  Local state fields for this page.
+
+  String? showLigueFilter;
+
+  String? showDivFilter;
+
   ///  State fields for stateful widgets in this page.
 
   // State field(s) for DropLigue widget.

@@ -70,7 +70,10 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
         final discusionETeamPageTeamsRecord = snapshot.data!;
 
         return GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -112,7 +115,10 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                                   },
                                   child: Icon(
                                     Icons.menu_rounded,
-                                    color: discusionETeamPageTeamsRecord.color1,
+                                    color: valueOrDefault<Color>(
+                                      discusionETeamPageTeamsRecord.color1,
+                                      FlutterFlowTheme.of(context).primaryText,
+                                    ),
                                     size: 30.0,
                                   ),
                                 ),
@@ -129,8 +135,11 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                                     },
                                     child: Icon(
                                       Icons.arrow_back_ios_new_rounded,
-                                      color:
-                                          discusionETeamPageTeamsRecord.color1,
+                                      color: valueOrDefault<Color>(
+                                        discusionETeamPageTeamsRecord.color1,
+                                        FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                      ),
                                       size: 30.0,
                                     ),
                                   ),
@@ -169,86 +178,101 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                                     0.0, 0.0, 10.0, 0.0),
                                 child: FaIcon(
                                   FontAwesomeIcons.headset,
-                                  color: discusionETeamPageTeamsRecord.color1,
+                                  color: valueOrDefault<Color>(
+                                    discusionETeamPageTeamsRecord.color1,
+                                    FlutterFlowTheme.of(context).primaryText,
+                                  ),
                                   size: 30.0,
                                 ),
                               ),
                           ],
                         ),
-                        if (true /* Warning: Trying to access variable not yet defined. */)
-                          FutureBuilder<List<MyNotificationsRecord>>(
-                            future: queryMyNotificationsRecordOnce(
-                              parent: currentUserReference,
-                              singleRecord: true,
-                            ),
-                            builder: (context, snapshot) {
-                              // Customize what your widget looks like when it's loading.
-                              if (!snapshot.hasData) {
-                                return Center(
-                                  child: SizedBox(
-                                    width: 50.0,
-                                    height: 50.0,
-                                    child: CircularProgressIndicator(
-                                      valueColor: AlwaysStoppedAnimation<Color>(
-                                        FlutterFlowTheme.of(context).accent4,
-                                      ),
-                                    ),
-                                  ),
-                                );
-                              }
-                              List<MyNotificationsRecord>
-                                  rowNotifsMyNotificationsRecordList =
-                                  snapshot.data!;
-                              // Return an empty Container when the item does not exist.
-                              if (snapshot.data!.isEmpty) {
-                                return Container();
-                              }
-                              final rowNotifsMyNotificationsRecord =
-                                  rowNotifsMyNotificationsRecordList.isNotEmpty
-                                      ? rowNotifsMyNotificationsRecordList.first
-                                      : null;
-
-                              return Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.end,
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        10.0, 0.0, 10.0, 0.0),
-                                    child: InkWell(
-                                      splashColor: Colors.transparent,
-                                      focusColor: Colors.transparent,
-                                      hoverColor: Colors.transparent,
-                                      highlightColor: Colors.transparent,
-                                      onTap: () async {
-                                        context.pushNamed(
-                                          'MyNotifsList',
-                                          extra: <String, dynamic>{
-                                            kTransitionInfoKey: const TransitionInfo(
-                                              hasTransition: true,
-                                              transitionType: PageTransitionType
-                                                  .rightToLeft,
-                                              duration:
-                                                  Duration(milliseconds: 400),
-                                            ),
-                                          },
-                                        );
-                                      },
-                                      child: Icon(
-                                        Icons.notifications_active_outlined,
-                                        color: FlutterFlowTheme.of(context)
-                                            .accent1,
-                                        size: 40.0,
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              );
-                            },
-                          ),
                         Column(
                           mainAxisSize: MainAxisSize.max,
                           children: [
+                            if (true /* Warning: Trying to access variable not yet defined. */)
+                              FutureBuilder<List<MyNotificationsRecord>>(
+                                future: queryMyNotificationsRecordOnce(
+                                  parent: currentUserReference,
+                                  singleRecord: true,
+                                ),
+                                builder: (context, snapshot) {
+                                  // Customize what your widget looks like when it's loading.
+                                  if (!snapshot.hasData) {
+                                    return Center(
+                                      child: SizedBox(
+                                        width: 50.0,
+                                        height: 50.0,
+                                        child: CircularProgressIndicator(
+                                          valueColor:
+                                              AlwaysStoppedAnimation<Color>(
+                                            FlutterFlowTheme.of(context)
+                                                .accent4,
+                                          ),
+                                        ),
+                                      ),
+                                    );
+                                  }
+                                  List<MyNotificationsRecord>
+                                      rowNotifsMyNotificationsRecordList =
+                                      snapshot.data!;
+                                  // Return an empty Container when the item does not exist.
+                                  if (snapshot.data!.isEmpty) {
+                                    return Container();
+                                  }
+                                  final rowNotifsMyNotificationsRecord =
+                                      rowNotifsMyNotificationsRecordList
+                                              .isNotEmpty
+                                          ? rowNotifsMyNotificationsRecordList
+                                              .first
+                                          : null;
+
+                                  return Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            10.0, 0.0, 10.0, 0.0),
+                                        child: AuthUserStreamWidget(
+                                          builder: (context) => InkWell(
+                                            splashColor: Colors.transparent,
+                                            focusColor: Colors.transparent,
+                                            hoverColor: Colors.transparent,
+                                            highlightColor: Colors.transparent,
+                                            onTap: () async {
+                                              context.pushNamed(
+                                                'MyNotifsList',
+                                                extra: <String, dynamic>{
+                                                  kTransitionInfoKey:
+                                                      const TransitionInfo(
+                                                    hasTransition: true,
+                                                    transitionType:
+                                                        PageTransitionType
+                                                            .rightToLeft,
+                                                    duration: Duration(
+                                                        milliseconds: 400),
+                                                  ),
+                                                },
+                                              );
+                                            },
+                                            child: Icon(
+                                              Icons
+                                                  .notifications_active_outlined,
+                                              color: valueOrDefault<Color>(
+                                                currentUserDocument?.color1,
+                                                FlutterFlowTheme.of(context)
+                                                    .accent1,
+                                              ),
+                                              size: 40.0,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  );
+                                },
+                              ),
                             Divider(
                               thickness: 1.0,
                               color: discusionETeamPageTeamsRecord.color2,
@@ -262,16 +286,6 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                                   Row(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
-                                      Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 0.0, 5.0, 0.0),
-                                        child: Icon(
-                                          Icons.mic_rounded,
-                                          color: FlutterFlowTheme.of(context)
-                                              .error,
-                                          size: 30.0,
-                                        ),
-                                      ),
                                       Padding(
                                         padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 10.0, 0.0),
@@ -355,8 +369,12 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                                           },
                                           child: Icon(
                                             Icons.image_search_rounded,
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryText,
+                                            color: valueOrDefault<Color>(
+                                              discusionETeamPageTeamsRecord
+                                                  .color1,
+                                              FlutterFlowTheme.of(context)
+                                                  .primaryText,
+                                            ),
                                             size: 30.0,
                                           ),
                                         ),
@@ -520,8 +538,11 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                                       },
                                       child: Icon(
                                         Icons.send_rounded,
-                                        color: discusionETeamPageTeamsRecord
-                                            .color1,
+                                        color: valueOrDefault<Color>(
+                                          discusionETeamPageTeamsRecord.color1,
+                                          FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                        ),
                                         size: 30.0,
                                       ),
                                     ),
@@ -657,28 +678,61 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                                                                 width: 300.0,
                                                                 height: 200.0,
                                                                 fit: BoxFit
-                                                                    .cover,
+                                                                    .fitHeight,
                                                               ),
                                                             ),
                                                           ),
                                                         ),
-                                                        Text(
-                                                          valueOrDefault<
-                                                              String>(
-                                                            rowUserUsersRecord
-                                                                .displayName,
-                                                            'NewUser',
+                                                        InkWell(
+                                                          splashColor: Colors
+                                                              .transparent,
+                                                          focusColor: Colors
+                                                              .transparent,
+                                                          hoverColor: Colors
+                                                              .transparent,
+                                                          highlightColor: Colors
+                                                              .transparent,
+                                                          onTap: () async {
+                                                            context.pushNamed(
+                                                              'PublicProfilPage',
+                                                              queryParameters: {
+                                                                'userRef':
+                                                                    serializeParam(
+                                                                  rowUserUsersRecord
+                                                                      .reference,
+                                                                  ParamType
+                                                                      .DocumentReference,
+                                                                ),
+                                                              }.withoutNulls,
+                                                            );
+                                                          },
+                                                          child: Text(
+                                                            valueOrDefault<
+                                                                String>(
+                                                              rowUserUsersRecord
+                                                                  .displayName,
+                                                              'NewUser',
+                                                            ),
+                                                            maxLines: 1,
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .titleSmall
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Poppins',
+                                                                  color:
+                                                                      valueOrDefault<
+                                                                          Color>(
+                                                                    rowUserUsersRecord
+                                                                        .color1,
+                                                                    FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primaryText,
+                                                                  ),
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
                                                           ),
-                                                          maxLines: 1,
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .titleSmall
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Poppins',
-                                                                letterSpacing:
-                                                                    0.0,
-                                                              ),
                                                         ),
                                                       ],
                                                     ),
@@ -735,23 +789,53 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                                                 decoration: BoxDecoration(
                                                   color: FlutterFlowTheme.of(
                                                           context)
-                                                      .secondaryBackground,
+                                                      .primaryBackground,
                                                   borderRadius:
                                                       BorderRadius.circular(
                                                           18.0),
                                                 ),
                                                 child: Padding(
                                                   padding: const EdgeInsets.all(3.0),
-                                                  child: ClipRRect(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            15.0),
-                                                    child: Image.network(
-                                                      columnETeamMessagesTeamMessagesRecord
-                                                          .image,
-                                                      width: 300.0,
-                                                      height: 200.0,
-                                                      fit: BoxFit.cover,
+                                                  child: InkWell(
+                                                    splashColor:
+                                                        Colors.transparent,
+                                                    focusColor:
+                                                        Colors.transparent,
+                                                    hoverColor:
+                                                        Colors.transparent,
+                                                    highlightColor:
+                                                        Colors.transparent,
+                                                    onTap: () async {
+                                                      context.pushNamed(
+                                                        'FullImagePage',
+                                                        queryParameters: {
+                                                          'imageRef':
+                                                              serializeParam(
+                                                            columnETeamMessagesTeamMessagesRecord
+                                                                .image,
+                                                            ParamType.String,
+                                                          ),
+                                                          'userRef':
+                                                              serializeParam(
+                                                            columnETeamMessagesTeamMessagesRecord
+                                                                .userRef,
+                                                            ParamType
+                                                                .DocumentReference,
+                                                          ),
+                                                        }.withoutNulls,
+                                                      );
+                                                    },
+                                                    child: ClipRRect(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              15.0),
+                                                      child: Image.network(
+                                                        columnETeamMessagesTeamMessagesRecord
+                                                            .image,
+                                                        width: 300.0,
+                                                        height: 200.0,
+                                                        fit: BoxFit.fitHeight,
+                                                      ),
                                                     ),
                                                   ),
                                                 ),
@@ -781,9 +865,9 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                                                     child:
                                                         FlutterFlowAudioPlayer(
                                                       audio: Audio.network(
-                                                        'https://filesamples.com/samples/audio/mp3/sample3.mp3',
+                                                        columnETeamMessagesTeamMessagesRecord
+                                                            .audio,
                                                         metas: Metas(
-                                                          id: 'sample3.mp3-cad6b09b',
                                                           title: ' ',
                                                         ),
                                                       ),
@@ -939,6 +1023,15 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                                                                 .override(
                                                                   fontFamily:
                                                                       'Poppins',
+                                                                  color:
+                                                                      valueOrDefault<
+                                                                          Color>(
+                                                                    currentUserDocument
+                                                                        ?.color1,
+                                                                    FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primaryText,
+                                                                  ),
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),
@@ -976,7 +1069,8 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                                                               currentUserPhoto,
                                                               width: 300.0,
                                                               height: 200.0,
-                                                              fit: BoxFit.cover,
+                                                              fit: BoxFit
+                                                                  .fitHeight,
                                                             ),
                                                           ),
                                                         ),
@@ -1000,23 +1094,52 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                                                 decoration: BoxDecoration(
                                                   color: FlutterFlowTheme.of(
                                                           context)
-                                                      .secondaryBackground,
+                                                      .primaryBackground,
                                                   borderRadius:
                                                       BorderRadius.circular(
                                                           18.0),
                                                 ),
                                                 child: Padding(
                                                   padding: const EdgeInsets.all(3.0),
-                                                  child: ClipRRect(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            15.0),
-                                                    child: Image.network(
-                                                      columnETeamMessagesTeamMessagesRecord
-                                                          .image,
-                                                      width: 300.0,
-                                                      height: 200.0,
-                                                      fit: BoxFit.cover,
+                                                  child: InkWell(
+                                                    splashColor:
+                                                        Colors.transparent,
+                                                    focusColor:
+                                                        Colors.transparent,
+                                                    hoverColor:
+                                                        Colors.transparent,
+                                                    highlightColor:
+                                                        Colors.transparent,
+                                                    onTap: () async {
+                                                      context.pushNamed(
+                                                        'FullImagePage',
+                                                        queryParameters: {
+                                                          'imageRef':
+                                                              serializeParam(
+                                                            columnETeamMessagesTeamMessagesRecord
+                                                                .image,
+                                                            ParamType.String,
+                                                          ),
+                                                          'userRef':
+                                                              serializeParam(
+                                                            currentUserReference,
+                                                            ParamType
+                                                                .DocumentReference,
+                                                          ),
+                                                        }.withoutNulls,
+                                                      );
+                                                    },
+                                                    child: ClipRRect(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              15.0),
+                                                      child: Image.network(
+                                                        columnETeamMessagesTeamMessagesRecord
+                                                            .image,
+                                                        width: 300.0,
+                                                        height: 200.0,
+                                                        fit: BoxFit.fitHeight,
+                                                      ),
                                                     ),
                                                   ),
                                                 ),
@@ -1046,9 +1169,9 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                                                     child:
                                                         FlutterFlowAudioPlayer(
                                                       audio: Audio.network(
-                                                        'https://filesamples.com/samples/audio/mp3/sample3.mp3',
+                                                        columnETeamMessagesTeamMessagesRecord
+                                                            .audio,
                                                         metas: Metas(
-                                                          id: 'sample3.mp3-5a8f842d',
                                                           title: ' ',
                                                         ),
                                                       ),

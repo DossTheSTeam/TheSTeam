@@ -38,7 +38,10 @@ class _AdminStAppUsersListWidgetState extends State<AdminStAppUsersListWidget> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -315,7 +318,7 @@ class _AdminStAppUsersListWidgetState extends State<AdminStAppUsersListWidget> {
                                                           .photoUrl,
                                                       width: 300.0,
                                                       height: 200.0,
-                                                      fit: BoxFit.cover,
+                                                      fit: BoxFit.fitHeight,
                                                     ),
                                                   ),
                                                 ),
@@ -439,7 +442,7 @@ class _AdminStAppUsersListWidgetState extends State<AdminStAppUsersListWidget> {
                                         'suspendu')
                                       Padding(
                                         padding: const EdgeInsetsDirectional.fromSTEB(
-                                            20.0, 0.0, 20.0, 0.0),
+                                            0.0, 0.0, 20.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
                                           mainAxisAlignment:
@@ -459,11 +462,76 @@ class _AdminStAppUsersListWidgetState extends State<AdminStAppUsersListWidget> {
                                                         letterSpacing: 0.0,
                                                       ),
                                                 ),
+                                                Column(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  children: [
+                                                    Text(
+                                                      dateTimeFormat(
+                                                          "d/M/y",
+                                                          columnUsersRecord
+                                                              .updateTime!),
+                                                      maxLines: 1,
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Poppins',
+                                                            letterSpacing: 0.0,
+                                                          ),
+                                                    ),
+                                                    Text(
+                                                      dateTimeFormat(
+                                                          "d/M/y",
+                                                          columnUsersRecord
+                                                              .eUpdateTime!),
+                                                      maxLines: 1,
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Poppins',
+                                                            letterSpacing: 0.0,
+                                                          ),
+                                                    ),
+                                                  ],
+                                                ),
                                                 Text(
-                                                  dateTimeFormat(
-                                                      "d/M/y",
+                                                  ' : ',
+                                                  maxLines: 1,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                                Padding(
+                                                  padding: const EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 0.0, 5.0, 0.0),
+                                                  child: Text(
+                                                    valueOrDefault<String>(
                                                       columnUsersRecord
-                                                          .updateTime!),
+                                                          .suspensionDays
+                                                          .toString(),
+                                                      '0',
+                                                    ),
+                                                    maxLines: 1,
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                  ),
+                                                ),
+                                                Text(
+                                                  'jours',
                                                   maxLines: 1,
                                                   style: FlutterFlowTheme.of(
                                                           context)

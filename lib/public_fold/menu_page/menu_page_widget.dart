@@ -38,7 +38,10 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -54,112 +57,132 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       children: [
-                        if (valueOrDefault<bool>(
-                                currentUserDocument?.helpNav, false) ==
-                            true)
-                          Align(
-                            alignment: const AlignmentDirectional(0.0, 0.0),
-                            child: AuthUserStreamWidget(
-                              builder: (context) => Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.end,
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 3.0),
-                                    child: Text(
-                                      'Mon profil',
-                                      textAlign: TextAlign.center,
-                                      maxLines: 2,
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily: 'Poppins',
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryText,
-                                            fontSize: 10.0,
-                                            letterSpacing: 0.0,
-                                            lineHeight: 1.0,
-                                          ),
-                                    ),
+                        Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            AuthUserStreamWidget(
+                              builder: (context) => InkWell(
+                                splashColor: Colors.transparent,
+                                focusColor: Colors.transparent,
+                                hoverColor: Colors.transparent,
+                                highlightColor: Colors.transparent,
+                                onTap: () async {
+                                  context.pushNamed(
+                                    'MyEditProfil',
+                                    extra: <String, dynamic>{
+                                      kTransitionInfoKey: const TransitionInfo(
+                                        hasTransition: true,
+                                        transitionType:
+                                            PageTransitionType.rightToLeft,
+                                        duration: Duration(milliseconds: 400),
+                                      ),
+                                    },
+                                  );
+                                },
+                                child: Icon(
+                                  Icons.settings_rounded,
+                                  color: valueOrDefault<Color>(
+                                    currentUserDocument?.color1,
+                                    FlutterFlowTheme.of(context).primaryText,
                                   ),
-                                ],
+                                  size: 30.0,
+                                ),
                               ),
                             ),
-                          ),
-                        Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 0.0, 20.0),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              AuthUserStreamWidget(
-                                builder: (context) => InkWell(
-                                  splashColor: Colors.transparent,
-                                  focusColor: Colors.transparent,
-                                  hoverColor: Colors.transparent,
-                                  highlightColor: Colors.transparent,
-                                  onTap: () async {
-                                    context.safePop();
-                                  },
-                                  child: Icon(
-                                    Icons.arrow_back_ios_new_rounded,
-                                    color: currentUserDocument?.color1,
-                                    size: 30.0,
-                                  ),
+                            AuthUserStreamWidget(
+                              builder: (context) => Text(
+                                valueOrDefault<String>(
+                                  currentUserDisplayName,
+                                  'NewUser',
                                 ),
+                                maxLines: 1,
+                                style: FlutterFlowTheme.of(context)
+                                    .headlineSmall
+                                    .override(
+                                      fontFamily: 'Poppins',
+                                      letterSpacing: 0.0,
+                                    ),
                               ),
-                              AuthUserStreamWidget(
-                                builder: (context) => Text(
-                                  valueOrDefault<String>(
-                                    currentUserDisplayName,
-                                    'NewUser',
-                                  ),
-                                  maxLines: 1,
-                                  style: FlutterFlowTheme.of(context)
-                                      .headlineSmall
-                                      .override(
-                                        fontFamily: 'Poppins',
-                                        letterSpacing: 0.0,
+                            ),
+                            AuthUserStreamWidget(
+                              builder: (context) => InkWell(
+                                splashColor: Colors.transparent,
+                                focusColor: Colors.transparent,
+                                hoverColor: Colors.transparent,
+                                highlightColor: Colors.transparent,
+                                onTap: () async {
+                                  context.pushNamed(
+                                    'MyProfilPage',
+                                    extra: <String, dynamic>{
+                                      kTransitionInfoKey: const TransitionInfo(
+                                        hasTransition: true,
+                                        transitionType:
+                                            PageTransitionType.rightToLeft,
+                                        duration: Duration(milliseconds: 400),
                                       ),
-                                ),
-                              ),
-                              AuthUserStreamWidget(
-                                builder: (context) => InkWell(
-                                  splashColor: Colors.transparent,
-                                  focusColor: Colors.transparent,
-                                  hoverColor: Colors.transparent,
-                                  highlightColor: Colors.transparent,
-                                  onTap: () async {
-                                    context.pushNamed(
-                                      'MyProfilPage',
-                                      extra: <String, dynamic>{
-                                        kTransitionInfoKey: const TransitionInfo(
-                                          hasTransition: true,
-                                          transitionType:
-                                              PageTransitionType.rightToLeft,
-                                          duration: Duration(milliseconds: 400),
-                                        ),
-                                      },
-                                    );
-                                  },
-                                  child: FaIcon(
-                                    FontAwesomeIcons.userCircle,
-                                    color: currentUserDocument?.color1,
-                                    size: 30.0,
+                                    },
+                                  );
+                                },
+                                child: FaIcon(
+                                  FontAwesomeIcons.userCircle,
+                                  color: valueOrDefault<Color>(
+                                    currentUserDocument?.color1,
+                                    FlutterFlowTheme.of(context).primaryText,
                                   ),
+                                  size: 30.0,
                                 ),
                               ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
                         AuthUserStreamWidget(
                           builder: (context) => Divider(
                             thickness: 1.0,
-                            color: currentUserDocument?.color2,
+                            color: valueOrDefault<Color>(
+                              currentUserDocument?.color2,
+                              FlutterFlowTheme.of(context).secondaryBackground,
+                            ),
                           ),
                         ),
+                        if (currentUserDisplayName == '')
+                          AuthUserStreamWidget(
+                            builder: (context) => InkWell(
+                              splashColor: Colors.transparent,
+                              focusColor: Colors.transparent,
+                              hoverColor: Colors.transparent,
+                              highlightColor: Colors.transparent,
+                              onTap: () async {
+                                context.pushNamed(
+                                  'MyEditProfil',
+                                  extra: <String, dynamic>{
+                                    kTransitionInfoKey: const TransitionInfo(
+                                      hasTransition: true,
+                                      transitionType:
+                                          PageTransitionType.bottomToTop,
+                                      duration: Duration(milliseconds: 400),
+                                    ),
+                                  },
+                                );
+
+                                await currentUserReference!
+                                    .update(createUsersRecordData(
+                                  helpNav: true,
+                                ));
+                              },
+                              child: Text(
+                                'La configuration actuelle de votre profil ne vous permet pas d\'afficher le contenu du menu.\nProceder aux modifications en cliquant sur ce texte',
+                                textAlign: TextAlign.center,
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Poppins',
+                                      color: FlutterFlowTheme.of(context).error,
+                                      letterSpacing: 0.0,
+                                    ),
+                              ),
+                            ),
+                          ),
                         if (true /* Warning: Trying to access variable not yet defined. */)
                           Padding(
                             padding: const EdgeInsetsDirectional.fromSTEB(
@@ -207,17 +230,21 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                     Padding(
                                       padding: const EdgeInsetsDirectional.fromSTEB(
                                           12.0, 0.0, 0.0, 0.0),
-                                      child: Text(
-                                        'Nouvelle notification',
-                                        style: FlutterFlowTheme.of(context)
-                                            .labelSmall
-                                            .override(
-                                              fontFamily: 'Poppins',
-                                              color:
+                                      child: AuthUserStreamWidget(
+                                        builder: (context) => Text(
+                                          'Nouvelle notification',
+                                          style: FlutterFlowTheme.of(context)
+                                              .labelSmall
+                                              .override(
+                                                fontFamily: 'Poppins',
+                                                color: valueOrDefault<Color>(
+                                                  currentUserDocument?.color2,
                                                   FlutterFlowTheme.of(context)
                                                       .accent1,
-                                              letterSpacing: 0.0,
-                                            ),
+                                                ),
+                                                letterSpacing: 0.0,
+                                              ),
+                                        ),
                                       ),
                                     ),
                                     FutureBuilder<int>(
@@ -251,21 +278,28 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                               padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       12.0, 0.0, 0.0, 0.0),
-                                              child: Text(
-                                                valueOrDefault<String>(
-                                                  rowCount.toString(),
-                                                  '0',
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .headlineSmall
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
+                                              child: AuthUserStreamWidget(
+                                                builder: (context) => Text(
+                                                  valueOrDefault<String>(
+                                                    rowCount.toString(),
+                                                    '0',
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .headlineSmall
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        color: valueOrDefault<
+                                                            Color>(
+                                                          currentUserDocument
+                                                              ?.color2,
+                                                          FlutterFlowTheme.of(
+                                                                  context)
                                                               .accent1,
-                                                          letterSpacing: 0.0,
                                                         ),
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
                                               ),
                                             ),
                                           ],
@@ -275,67 +309,43 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                     Padding(
                                       padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 15.0, 0.0),
-                                      child: InkWell(
-                                        splashColor: Colors.transparent,
-                                        focusColor: Colors.transparent,
-                                        hoverColor: Colors.transparent,
-                                        highlightColor: Colors.transparent,
-                                        onTap: () async {
-                                          context.pushNamed(
-                                            'MyNotifsList',
-                                            extra: <String, dynamic>{
-                                              kTransitionInfoKey:
-                                                  const TransitionInfo(
-                                                hasTransition: true,
-                                                transitionType:
-                                                    PageTransitionType
-                                                        .rightToLeft,
-                                                duration:
-                                                    Duration(milliseconds: 400),
-                                              ),
-                                            },
-                                          );
-                                        },
-                                        child: Icon(
-                                          Icons.notifications_active_outlined,
-                                          color: FlutterFlowTheme.of(context)
-                                              .accent1,
-                                          size: 35.0,
+                                      child: AuthUserStreamWidget(
+                                        builder: (context) => InkWell(
+                                          splashColor: Colors.transparent,
+                                          focusColor: Colors.transparent,
+                                          hoverColor: Colors.transparent,
+                                          highlightColor: Colors.transparent,
+                                          onTap: () async {
+                                            context.pushNamed(
+                                              'MyNotifsList',
+                                              extra: <String, dynamic>{
+                                                kTransitionInfoKey:
+                                                    const TransitionInfo(
+                                                  hasTransition: true,
+                                                  transitionType:
+                                                      PageTransitionType
+                                                          .rightToLeft,
+                                                  duration: Duration(
+                                                      milliseconds: 400),
+                                                ),
+                                              },
+                                            );
+                                          },
+                                          child: Icon(
+                                            Icons.notifications_active_outlined,
+                                            color: valueOrDefault<Color>(
+                                              currentUserDocument?.color1,
+                                              FlutterFlowTheme.of(context)
+                                                  .accent1,
+                                            ),
+                                            size: 35.0,
+                                          ),
                                         ),
                                       ),
                                     ),
                                   ],
                                 );
                               },
-                            ),
-                          ),
-                        if (valueOrDefault<bool>(
-                                currentUserDocument?.helpNav, false) ==
-                            true)
-                          Align(
-                            alignment: const AlignmentDirectional(0.0, 0.0),
-                            child: AuthUserStreamWidget(
-                              builder: (context) => Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.end,
-                                children: [
-                                  Text(
-                                    'Inscrire le pseudo exacte pour créer la fonction de recherche',
-                                    textAlign: TextAlign.center,
-                                    maxLines: 2,
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Poppins',
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryText,
-                                          fontSize: 10.0,
-                                          letterSpacing: 0.0,
-                                          lineHeight: 1.0,
-                                        ),
-                                  ),
-                                ],
-                              ),
                             ),
                           ),
                         if (valueOrDefault(
@@ -348,9 +358,39 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                               builder: (context) => Column(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
+                                  if (valueOrDefault<bool>(
+                                          currentUserDocument?.helpNav,
+                                          false) ==
+                                      true)
+                                    Align(
+                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                      child: Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.end,
+                                        children: [
+                                          Text(
+                                            'Inscrire le pseudo exacte pour créer la fonction de recherche',
+                                            textAlign: TextAlign.center,
+                                            maxLines: 2,
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Poppins',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryText,
+                                                  fontSize: 10.0,
+                                                  letterSpacing: 0.0,
+                                                  lineHeight: 1.0,
+                                                ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
                                   Padding(
                                     padding: const EdgeInsetsDirectional.fromSTEB(
-                                        10.0, 0.0, 10.0, 10.0),
+                                        10.0, 3.0, 10.0, 10.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
@@ -440,13 +480,21 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                                           8.0),
                                                 ),
                                               ),
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Poppins',
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    fontFamily: 'Poppins',
+                                                    color:
+                                                        valueOrDefault<Color>(
+                                                      currentUserDocument
+                                                          ?.color2,
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .secondaryBackground,
+                                                    ),
+                                                    letterSpacing: 0.0,
+                                                  ),
                                               validator: _model
                                                   .textControllerValidator
                                                   .asValidator(context),
@@ -533,7 +581,7 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                                             ?.color1,
                                                         FlutterFlowTheme.of(
                                                                 context)
-                                                            .secondaryText,
+                                                            .primaryText,
                                                       ),
                                                       size: 35.0,
                                                     ),
@@ -547,8 +595,57 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                     ),
                                   ),
                                   if (valueOrDefault<bool>(
-                                          currentUserDocument?.esport, false) ==
-                                      false)
+                                          currentUserDocument?.helpNav,
+                                          false) ==
+                                      true)
+                                    Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        if (valueOrDefault<bool>(
+                                                currentUserDocument?.esport,
+                                                false) ==
+                                            false)
+                                          Text(
+                                            'Menu Sport',
+                                            style: FlutterFlowTheme.of(context)
+                                                .labelLarge
+                                                .override(
+                                                  fontFamily: 'Montserrat',
+                                                  color: valueOrDefault<Color>(
+                                                    currentUserDocument?.color2,
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryText,
+                                                  ),
+                                                  letterSpacing: 0.0,
+                                                ),
+                                          ),
+                                        if (valueOrDefault<bool>(
+                                                currentUserDocument?.esport,
+                                                false) ==
+                                            true)
+                                          Text(
+                                            'Menu E Sport',
+                                            style: FlutterFlowTheme.of(context)
+                                                .labelLarge
+                                                .override(
+                                                  fontFamily: 'Montserrat',
+                                                  color: valueOrDefault<Color>(
+                                                    currentUserDocument?.color2,
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryText,
+                                                  ),
+                                                  letterSpacing: 0.0,
+                                                ),
+                                          ),
+                                      ],
+                                    ),
+                                  if ((valueOrDefault<bool>(
+                                              currentUserDocument?.esport,
+                                              false) ==
+                                          false) &&
+                                      (currentUserDisplayName != ''))
                                     Padding(
                                       padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 10.0),
@@ -557,7 +654,11 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                         children: [
                                           Divider(
                                             thickness: 1.0,
-                                            color: currentUserDocument?.color2,
+                                            color: valueOrDefault<Color>(
+                                              currentUserDocument?.color2,
+                                              FlutterFlowTheme.of(context)
+                                                  .secondaryBackground,
+                                            ),
                                           ),
                                           if (valueOrDefault<bool>(
                                                   currentUserDocument?.helpNav,
@@ -575,26 +676,34 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                                     alignment:
                                                         const AlignmentDirectional(
                                                             -1.0, 0.0),
-                                                    child: Text(
-                                                      'La partie ci-dessous est liée aux utilisateurs',
-                                                      textAlign:
-                                                          TextAlign.center,
-                                                      maxLines: 2,
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Poppins',
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .primaryText,
-                                                                fontSize: 10.0,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                lineHeight: 1.0,
-                                                              ),
+                                                    child: Padding(
+                                                      padding:
+                                                          const EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  0.0,
+                                                                  5.0,
+                                                                  0.0,
+                                                                  0.0),
+                                                      child: Text(
+                                                        'La partie ci-dessous est liée aux utilisateurs',
+                                                        textAlign:
+                                                            TextAlign.center,
+                                                        maxLines: 2,
+                                                        style: FlutterFlowTheme
+                                                                .of(context)
+                                                            .bodyMedium
+                                                            .override(
+                                                              fontFamily:
+                                                                  'Poppins',
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .primaryText,
+                                                              fontSize: 10.0,
+                                                              letterSpacing:
+                                                                  0.0,
+                                                              lineHeight: 1.0,
+                                                            ),
+                                                      ),
                                                     ),
                                                   ),
                                                 ],
@@ -710,8 +819,14 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                                               Icons
                                                                   .attach_money_rounded,
                                                               color:
-                                                                  currentUserDocument
-                                                                      ?.color1,
+                                                                  valueOrDefault<
+                                                                      Color>(
+                                                                currentUserDocument
+                                                                    ?.color1,
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primaryText,
+                                                              ),
                                                               size: 35.0,
                                                             ),
                                                           ),
@@ -756,8 +871,14 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                                             child: Icon(
                                                               Icons.query_stats,
                                                               color:
-                                                                  currentUserDocument
-                                                                      ?.color1,
+                                                                  valueOrDefault<
+                                                                      Color>(
+                                                                currentUserDocument
+                                                                    ?.color1,
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primaryText,
+                                                              ),
                                                               size: 30.0,
                                                             ),
                                                           ),
@@ -924,7 +1045,7 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                                   mainAxisSize:
                                                       MainAxisSize.max,
                                                   crossAxisAlignment:
-                                                      CrossAxisAlignment.center,
+                                                      CrossAxisAlignment.end,
                                                   children: [
                                                     Row(
                                                       mainAxisSize:
@@ -971,56 +1092,15 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                                               Icons
                                                                   .security_rounded,
                                                               color:
-                                                                  currentUserDocument
-                                                                      ?.color1,
+                                                                  valueOrDefault<
+                                                                      Color>(
+                                                                currentUserDocument
+                                                                    ?.color1,
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primaryText,
+                                                              ),
                                                               size: 30.0,
-                                                            ),
-                                                          ),
-                                                        ),
-                                                        Padding(
-                                                          padding:
-                                                              const EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      0.0,
-                                                                      30.0,
-                                                                      0.0),
-                                                          child: InkWell(
-                                                            splashColor: Colors
-                                                                .transparent,
-                                                            focusColor: Colors
-                                                                .transparent,
-                                                            hoverColor: Colors
-                                                                .transparent,
-                                                            highlightColor:
-                                                                Colors
-                                                                    .transparent,
-                                                            onTap: () async {
-                                                              context.pushNamed(
-                                                                'RankTypstersPage',
-                                                                extra: <String,
-                                                                    dynamic>{
-                                                                  kTransitionInfoKey:
-                                                                      const TransitionInfo(
-                                                                    hasTransition:
-                                                                        true,
-                                                                    transitionType:
-                                                                        PageTransitionType
-                                                                            .bottomToTop,
-                                                                    duration: Duration(
-                                                                        milliseconds:
-                                                                            400),
-                                                                  ),
-                                                                },
-                                                              );
-                                                            },
-                                                            child: FaIcon(
-                                                              FontAwesomeIcons
-                                                                  .crown,
-                                                              color:
-                                                                  currentUserDocument
-                                                                      ?.color1,
-                                                              size: 25.0,
                                                             ),
                                                           ),
                                                         ),
@@ -1065,8 +1145,14 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                                               Icons
                                                                   .groups_rounded,
                                                               color:
-                                                                  currentUserDocument
-                                                                      ?.color1,
+                                                                  valueOrDefault<
+                                                                      Color>(
+                                                                currentUserDocument
+                                                                    ?.color1,
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primaryText,
+                                                              ),
                                                               size: 30.0,
                                                             ),
                                                           ),
@@ -1104,7 +1190,7 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
-                                                                            6.0,
+                                                                            23.0,
                                                                             0.0),
                                                                 child: Text(
                                                                   'Par\nligues',
@@ -1130,14 +1216,15 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                                                 ),
                                                               ),
                                                               Padding(
-                                                                padding: const EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        17.0,
-                                                                        0.0,
-                                                                        17.0,
-                                                                        0.0),
+                                                                padding:
+                                                                    const EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            4.0,
+                                                                            0.0),
                                                                 child: Text(
-                                                                  'Typsters',
+                                                                  'Mon\nrésseau',
                                                                   textAlign:
                                                                       TextAlign
                                                                           .center,
@@ -1159,29 +1246,6 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                                                       ),
                                                                 ),
                                                               ),
-                                                              Text(
-                                                                'Mon\nrésseau',
-                                                                textAlign:
-                                                                    TextAlign
-                                                                        .center,
-                                                                maxLines: 2,
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          'Poppins',
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .primaryText,
-                                                                      fontSize:
-                                                                          10.0,
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                      lineHeight:
-                                                                          1.0,
-                                                                    ),
-                                                              ),
                                                             ],
                                                           ),
                                                         ),
@@ -1193,7 +1257,11 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                           ),
                                           Divider(
                                             thickness: 1.0,
-                                            color: currentUserDocument?.color2,
+                                            color: valueOrDefault<Color>(
+                                              currentUserDocument?.color2,
+                                              FlutterFlowTheme.of(context)
+                                                  .secondaryBackground,
+                                            ),
                                           ),
                                           if (valueOrDefault<bool>(
                                                   currentUserDocument?.helpNav,
@@ -1338,8 +1406,14 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                                               Icons
                                                                   .security_rounded,
                                                               color:
-                                                                  currentUserDocument
-                                                                      ?.color1,
+                                                                  valueOrDefault<
+                                                                      Color>(
+                                                                currentUserDocument
+                                                                    ?.color1,
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primaryText,
+                                                              ),
                                                               size: 30.0,
                                                             ),
                                                           ),
@@ -1385,8 +1459,14 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                                               Icons
                                                                   .favorite_rounded,
                                                               color:
-                                                                  currentUserDocument
-                                                                      ?.color1,
+                                                                  valueOrDefault<
+                                                                      Color>(
+                                                                currentUserDocument
+                                                                    ?.color1,
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primaryText,
+                                                              ),
                                                               size: 30.0,
                                                             ),
                                                           ),
@@ -1431,8 +1511,14 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                                             child: Icon(
                                                               Icons.bar_chart,
                                                               color:
-                                                                  currentUserDocument
-                                                                      ?.color1,
+                                                                  valueOrDefault<
+                                                                      Color>(
+                                                                currentUserDocument
+                                                                    ?.color1,
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primaryText,
+                                                              ),
                                                               size: 30.0,
                                                             ),
                                                           ),
@@ -1557,38 +1643,6 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                               ],
                                             ),
                                           ),
-                                          if (valueOrDefault<bool>(
-                                                  currentUserDocument?.helpNav,
-                                                  false) ==
-                                              true)
-                                            Align(
-                                              alignment: const AlignmentDirectional(
-                                                  0.0, 0.0),
-                                              child: Row(
-                                                mainAxisSize: MainAxisSize.max,
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.end,
-                                                children: [
-                                                  Text(
-                                                    'Paris sportifs, discussions entre fans',
-                                                    textAlign: TextAlign.center,
-                                                    maxLines: 2,
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryText,
-                                                          fontSize: 10.0,
-                                                          letterSpacing: 0.0,
-                                                          lineHeight: 1.0,
-                                                        ),
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
                                           Padding(
                                             padding:
                                                 const EdgeInsetsDirectional.fromSTEB(
@@ -1703,8 +1757,14 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                                               FontAwesomeIcons
                                                                   .clock,
                                                               color:
-                                                                  currentUserDocument
-                                                                      ?.color1,
+                                                                  valueOrDefault<
+                                                                      Color>(
+                                                                currentUserDocument
+                                                                    ?.color1,
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primaryText,
+                                                              ),
                                                               size: 27.0,
                                                             ),
                                                           ),
@@ -1750,8 +1810,14 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                                               Icons
                                                                   .favorite_rounded,
                                                               color:
-                                                                  currentUserDocument
-                                                                      ?.color1,
+                                                                  valueOrDefault<
+                                                                      Color>(
+                                                                currentUserDocument
+                                                                    ?.color1,
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primaryText,
+                                                              ),
                                                               size: 30.0,
                                                             ),
                                                           ),
@@ -1772,9 +1838,9 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                                               const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
-                                                                      3.0,
+                                                                      0.0,
                                                                       15.0,
-                                                                      0.0),
+                                                                      5.0),
                                                           child: Row(
                                                             mainAxisSize:
                                                                 MainAxisSize
@@ -1849,43 +1915,53 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                                           ),
                                                         ),
                                                       ),
+                                                    if (valueOrDefault<bool>(
+                                                            currentUserDocument
+                                                                ?.helpNav,
+                                                            false) ==
+                                                        true)
+                                                      Align(
+                                                        alignment:
+                                                            const AlignmentDirectional(
+                                                                0.0, 0.0),
+                                                        child: Row(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .end,
+                                                          children: [
+                                                            Text(
+                                                              'Paris sportifs, discussions entre fans',
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .center,
+                                                              maxLines: 2,
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Poppins',
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primaryText,
+                                                                    fontSize:
+                                                                        10.0,
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                    lineHeight:
+                                                                        1.0,
+                                                                  ),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                      ),
                                                   ],
                                                 ),
                                               ],
                                             ),
                                           ),
-                                          if (valueOrDefault<bool>(
-                                                  currentUserDocument?.helpNav,
-                                                  false) ==
-                                              true)
-                                            Align(
-                                              alignment: const AlignmentDirectional(
-                                                  0.0, 0.0),
-                                              child: Row(
-                                                mainAxisSize: MainAxisSize.max,
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.end,
-                                                children: [
-                                                  Text(
-                                                    'S\'informer, discuter entre fans',
-                                                    textAlign: TextAlign.center,
-                                                    maxLines: 2,
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryText,
-                                                          fontSize: 10.0,
-                                                          letterSpacing: 0.0,
-                                                          lineHeight: 1.0,
-                                                        ),
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
                                           Padding(
                                             padding:
                                                 const EdgeInsetsDirectional.fromSTEB(
@@ -1946,6 +2022,8 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                                 Column(
                                                   mainAxisSize:
                                                       MainAxisSize.max,
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.end,
                                                   children: [
                                                     Row(
                                                       mainAxisSize:
@@ -1995,8 +2073,14 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                                               Icons
                                                                   .security_rounded,
                                                               color:
-                                                                  currentUserDocument
-                                                                      ?.color1,
+                                                                  valueOrDefault<
+                                                                      Color>(
+                                                                currentUserDocument
+                                                                    ?.color1,
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primaryText,
+                                                              ),
                                                               size: 30.0,
                                                             ),
                                                           ),
@@ -2042,8 +2126,14 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                                               Icons
                                                                   .favorite_rounded,
                                                               color:
-                                                                  currentUserDocument
-                                                                      ?.color1,
+                                                                  valueOrDefault<
+                                                                      Color>(
+                                                                currentUserDocument
+                                                                    ?.color1,
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primaryText,
+                                                              ),
                                                               size: 30.0,
                                                             ),
                                                           ),
@@ -2068,7 +2158,7 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                                                     .transparent,
                                                             onTap: () async {
                                                               context.pushNamed(
-                                                                'ListBestsPosts',
+                                                                'MyPostsList',
                                                                 extra: <String,
                                                                     dynamic>{
                                                                   kTransitionInfoKey:
@@ -2089,8 +2179,14 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                                               Icons
                                                                   .groups_rounded,
                                                               color:
-                                                                  currentUserDocument
-                                                                      ?.color1,
+                                                                  valueOrDefault<
+                                                                      Color>(
+                                                                currentUserDocument
+                                                                    ?.color1,
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primaryText,
+                                                              ),
                                                               size: 30.0,
                                                             ),
                                                           ),
@@ -2113,7 +2209,7 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                                                       0.0,
                                                                       0.0,
                                                                       19.0,
-                                                                      0.0),
+                                                                      5.0),
                                                           child: Row(
                                                             mainAxisSize:
                                                                 MainAxisSize
@@ -2158,7 +2254,7 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                                                     .fromSTEB(
                                                                         14.0,
                                                                         0.0,
-                                                                        15.0,
+                                                                        20.0,
                                                                         0.0),
                                                                 child: Text(
                                                                   'Mes\néquipes',
@@ -2192,7 +2288,7 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                                                             0.0,
                                                                             0.0),
                                                                 child: Text(
-                                                                  'Mon\nréseau',
+                                                                  'Mes\nactus',
                                                                   textAlign:
                                                                       TextAlign
                                                                           .center,
@@ -2218,135 +2314,6 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                                           ),
                                                         ),
                                                       ),
-                                                  ],
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                          Divider(
-                                            thickness: 1.0,
-                                            color: currentUserDocument?.color2,
-                                          ),
-                                          if (valueOrDefault<bool>(
-                                                  currentUserDocument?.helpNav,
-                                                  false) ==
-                                              true)
-                                            Align(
-                                              alignment: const AlignmentDirectional(
-                                                  0.0, 0.0),
-                                              child: Row(
-                                                mainAxisSize: MainAxisSize.max,
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
-                                                children: [
-                                                  Text(
-                                                    'Dans la partie ci-dessous vous pouvez rejoindre l\'univers E Sport.\nCréer ou rejoindre une E Team, affrontements classés, etc...',
-                                                    textAlign: TextAlign.center,
-                                                    maxLines: 3,
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryText,
-                                                          fontSize: 10.0,
-                                                          letterSpacing: 0.0,
-                                                          lineHeight: 1.0,
-                                                        ),
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
-                                          Padding(
-                                            padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
-                                                    10.0, 5.0, 10.0, 10.0),
-                                            child: Row(
-                                              mainAxisSize: MainAxisSize.max,
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment
-                                                      .spaceBetween,
-                                              children: [
-                                                Padding(
-                                                  padding: const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          12.0, 0.0, 0.0, 0.0),
-                                                  child: InkWell(
-                                                    splashColor:
-                                                        Colors.transparent,
-                                                    focusColor:
-                                                        Colors.transparent,
-                                                    hoverColor:
-                                                        Colors.transparent,
-                                                    highlightColor:
-                                                        Colors.transparent,
-                                                    onTap: () async {
-                                                      await currentUserReference!
-                                                          .update(
-                                                              createUsersRecordData(
-                                                        esport: true,
-                                                      ));
-                                                    },
-                                                    child: Text(
-                                                      'E Sport',
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .headlineSmall
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Poppins',
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .secondaryText,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                              ),
-                                                    ),
-                                                  ),
-                                                ),
-                                                Column(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  crossAxisAlignment:
-                                                      CrossAxisAlignment.start,
-                                                  children: [
-                                                    Padding(
-                                                      padding:
-                                                          const EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  0.0,
-                                                                  0.0,
-                                                                  67.0,
-                                                                  0.0),
-                                                      child: InkWell(
-                                                        splashColor:
-                                                            Colors.transparent,
-                                                        focusColor:
-                                                            Colors.transparent,
-                                                        hoverColor:
-                                                            Colors.transparent,
-                                                        highlightColor:
-                                                            Colors.transparent,
-                                                        onTap: () async {
-                                                          await currentUserReference!
-                                                              .update(
-                                                                  createUsersRecordData(
-                                                            esport: true,
-                                                          ));
-                                                        },
-                                                        child: Icon(
-                                                          Icons
-                                                              .sports_esports_outlined,
-                                                          color:
-                                                              currentUserDocument
-                                                                  ?.color1,
-                                                          size: 35.0,
-                                                        ),
-                                                      ),
-                                                    ),
                                                     if (valueOrDefault<bool>(
                                                             currentUserDocument
                                                                 ?.helpNav,
@@ -2363,28 +2330,37 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                                               MainAxisAlignment
                                                                   .end,
                                                           children: [
-                                                            Text(
-                                                              'Voir e sport',
-                                                              textAlign:
-                                                                  TextAlign
-                                                                      .center,
-                                                              maxLines: 2,
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .bodyMedium
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        'Poppins',
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primaryText,
-                                                                    fontSize:
-                                                                        10.0,
-                                                                    letterSpacing:
-                                                                        0.0,
-                                                                    lineHeight:
-                                                                        1.0,
-                                                                  ),
+                                                            Padding(
+                                                              padding:
+                                                                  const EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          8.0,
+                                                                          0.0),
+                                                              child: Text(
+                                                                'S\'informer, discuter entre fans',
+                                                                textAlign:
+                                                                    TextAlign
+                                                                        .center,
+                                                                maxLines: 2,
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'Poppins',
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primaryText,
+                                                                      fontSize:
+                                                                          10.0,
+                                                                      letterSpacing:
+                                                                          0.0,
+                                                                      lineHeight:
+                                                                          1.0,
+                                                                    ),
+                                                              ),
                                                             ),
                                                           ],
                                                         ),
@@ -2397,9 +2373,11 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                         ],
                                       ),
                                     ),
-                                  if (valueOrDefault<bool>(
-                                          currentUserDocument?.esport, false) ==
-                                      true)
+                                  if ((valueOrDefault<bool>(
+                                              currentUserDocument?.esport,
+                                              false) ==
+                                          true) &&
+                                      (currentUserDisplayName != ''))
                                     Padding(
                                       padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 10.0),
@@ -2408,7 +2386,11 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                         children: [
                                           Divider(
                                             thickness: 1.0,
-                                            color: currentUserDocument?.color2,
+                                            color: valueOrDefault<Color>(
+                                              currentUserDocument?.color2,
+                                              FlutterFlowTheme.of(context)
+                                                  .secondaryBackground,
+                                            ),
                                           ),
                                           if (valueOrDefault<bool>(
                                                   currentUserDocument?.helpNav,
@@ -2422,22 +2404,32 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                                 mainAxisAlignment:
                                                     MainAxisAlignment.start,
                                                 children: [
-                                                  Text(
-                                                    'La partie ci-dessous est liée aux utilisateurs',
-                                                    textAlign: TextAlign.center,
-                                                    maxLines: 2,
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryText,
-                                                          fontSize: 10.0,
-                                                          letterSpacing: 0.0,
-                                                          lineHeight: 1.0,
-                                                        ),
+                                                  Padding(
+                                                    padding:
+                                                        const EdgeInsetsDirectional
+                                                            .fromSTEB(0.0, 5.0,
+                                                                0.0, 0.0),
+                                                    child: Text(
+                                                      'La partie ci-dessous est liée aux utilisateurs',
+                                                      textAlign:
+                                                          TextAlign.center,
+                                                      maxLines: 2,
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Poppins',
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primaryText,
+                                                                fontSize: 10.0,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                lineHeight: 1.0,
+                                                              ),
+                                                    ),
                                                   ),
                                                 ],
                                               ),
@@ -2549,8 +2541,14 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                                             child: Icon(
                                                               Icons.query_stats,
                                                               color:
-                                                                  currentUserDocument
-                                                                      ?.color1,
+                                                                  valueOrDefault<
+                                                                      Color>(
+                                                                currentUserDocument
+                                                                    ?.color1,
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primaryText,
+                                                              ),
                                                               size: 30.0,
                                                             ),
                                                           ),
@@ -2733,8 +2731,14 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                                               Icons
                                                                   .security_rounded,
                                                               color:
-                                                                  currentUserDocument
-                                                                      ?.color1,
+                                                                  valueOrDefault<
+                                                                      Color>(
+                                                                currentUserDocument
+                                                                    ?.color1,
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primaryText,
+                                                              ),
                                                               size: 30.0,
                                                             ),
                                                           ),
@@ -2780,8 +2784,14 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                                               Icons
                                                                   .groups_rounded,
                                                               color:
-                                                                  currentUserDocument
-                                                                      ?.color1,
+                                                                  valueOrDefault<
+                                                                      Color>(
+                                                                currentUserDocument
+                                                                    ?.color1,
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primaryText,
+                                                              ),
                                                               size: 30.0,
                                                             ),
                                                           ),
@@ -2819,7 +2829,7 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
-                                                                            21.0,
+                                                                            25.0,
                                                                             0.0),
                                                                 child: Text(
                                                                   'Par\nligues',
@@ -2878,7 +2888,11 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                           ),
                                           Divider(
                                             thickness: 1.0,
-                                            color: currentUserDocument?.color2,
+                                            color: valueOrDefault<Color>(
+                                              currentUserDocument?.color2,
+                                              FlutterFlowTheme.of(context)
+                                                  .secondaryBackground,
+                                            ),
                                           ),
                                           if (valueOrDefault<bool>(
                                                   currentUserDocument?.helpNav,
@@ -3225,8 +3239,14 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                                               Icons
                                                                   .security_rounded,
                                                               color:
-                                                                  currentUserDocument
-                                                                      ?.color1,
+                                                                  valueOrDefault<
+                                                                      Color>(
+                                                                currentUserDocument
+                                                                    ?.color1,
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primaryText,
+                                                              ),
                                                               size: 30.0,
                                                             ),
                                                           ),
@@ -3272,8 +3292,14 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                                               Icons
                                                                   .favorite_rounded,
                                                               color:
-                                                                  currentUserDocument
-                                                                      ?.color1,
+                                                                  valueOrDefault<
+                                                                      Color>(
+                                                                currentUserDocument
+                                                                    ?.color1,
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primaryText,
+                                                              ),
                                                               size: 30.0,
                                                             ),
                                                           ),
@@ -3319,8 +3345,14 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                                               Icons
                                                                   .bar_chart_outlined,
                                                               color:
-                                                                  currentUserDocument
-                                                                      ?.color1,
+                                                                  valueOrDefault<
+                                                                      Color>(
+                                                                currentUserDocument
+                                                                    ?.color1,
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primaryText,
+                                                              ),
                                                               size: 30.0,
                                                             ),
                                                           ),
@@ -3558,8 +3590,14 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                                               FontAwesomeIcons
                                                                   .clock,
                                                               color:
-                                                                  currentUserDocument
-                                                                      ?.color1,
+                                                                  valueOrDefault<
+                                                                      Color>(
+                                                                currentUserDocument
+                                                                    ?.color1,
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primaryText,
+                                                              ),
                                                               size: 27.0,
                                                             ),
                                                           ),
@@ -3605,8 +3643,14 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                                               Icons
                                                                   .favorite_rounded,
                                                               color:
-                                                                  currentUserDocument
-                                                                      ?.color1,
+                                                                  valueOrDefault<
+                                                                      Color>(
+                                                                currentUserDocument
+                                                                    ?.color1,
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primaryText,
+                                                              ),
                                                               size: 30.0,
                                                             ),
                                                           ),
@@ -3627,9 +3671,9 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                                               const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
-                                                                      3.0,
+                                                                      0.0,
                                                                       15.0,
-                                                                      0.0),
+                                                                      5.0),
                                                           child: Row(
                                                             mainAxisSize:
                                                                 MainAxisSize
@@ -3702,6 +3746,57 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                                               ),
                                                             ],
                                                           ),
+                                                        ),
+                                                      ),
+                                                    if (valueOrDefault<bool>(
+                                                            currentUserDocument
+                                                                ?.helpNav,
+                                                            false) ==
+                                                        true)
+                                                      Align(
+                                                        alignment:
+                                                            const AlignmentDirectional(
+                                                                0.0, 0.0),
+                                                        child: Row(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .end,
+                                                          children: [
+                                                            Padding(
+                                                              padding:
+                                                                  const EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          8.0,
+                                                                          0.0),
+                                                              child: Text(
+                                                                'Performances, discussion entre fans',
+                                                                textAlign:
+                                                                    TextAlign
+                                                                        .center,
+                                                                maxLines: 2,
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'Poppins',
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primaryText,
+                                                                      fontSize:
+                                                                          10.0,
+                                                                      letterSpacing:
+                                                                          0.0,
+                                                                      lineHeight:
+                                                                          1.0,
+                                                                    ),
+                                                              ),
+                                                            ),
+                                                          ],
                                                         ),
                                                       ),
                                                   ],
@@ -3820,8 +3915,14 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                                               Icons
                                                                   .security_rounded,
                                                               color:
-                                                                  currentUserDocument
-                                                                      ?.color1,
+                                                                  valueOrDefault<
+                                                                      Color>(
+                                                                currentUserDocument
+                                                                    ?.color1,
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primaryText,
+                                                              ),
                                                               size: 30.0,
                                                             ),
                                                           ),
@@ -3867,8 +3968,14 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                                               Icons
                                                                   .favorite_rounded,
                                                               color:
-                                                                  currentUserDocument
-                                                                      ?.color1,
+                                                                  valueOrDefault<
+                                                                      Color>(
+                                                                currentUserDocument
+                                                                    ?.color1,
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primaryText,
+                                                              ),
                                                               size: 30.0,
                                                             ),
                                                           ),
@@ -3893,7 +4000,7 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                                                     .transparent,
                                                             onTap: () async {
                                                               context.pushNamed(
-                                                                'ListBestsPosts',
+                                                                'MyPostsList',
                                                                 extra: <String,
                                                                     dynamic>{
                                                                   kTransitionInfoKey:
@@ -3914,8 +4021,14 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                                               Icons
                                                                   .groups_rounded,
                                                               color:
-                                                                  currentUserDocument
-                                                                      ?.color1,
+                                                                  valueOrDefault<
+                                                                      Color>(
+                                                                currentUserDocument
+                                                                    ?.color1,
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primaryText,
+                                                              ),
                                                               size: 30.0,
                                                             ),
                                                           ),
@@ -3936,9 +4049,9 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                                               const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
-                                                                      3.0,
-                                                                      12.0,
-                                                                      0.0),
+                                                                      0.0,
+                                                                      20.0,
+                                                                      5.0),
                                                           child: Row(
                                                             mainAxisSize:
                                                                 MainAxisSize
@@ -3981,9 +4094,9 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                                               Padding(
                                                                 padding: const EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        20.0,
+                                                                        13.0,
                                                                         0.0,
-                                                                        19.0,
+                                                                        24.0,
                                                                         0.0),
                                                                 child: Text(
                                                                   'Mes\nE Teams',
@@ -4009,7 +4122,7 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                                                 ),
                                                               ),
                                                               Text(
-                                                                'Mon\nréseau',
+                                                                'Mes\nactus',
                                                                 textAlign:
                                                                     TextAlign
                                                                         .center,
@@ -4035,134 +4148,6 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                                           ),
                                                         ),
                                                       ),
-                                                  ],
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                          Divider(
-                                            thickness: 1.0,
-                                            color: currentUserDocument?.color2,
-                                          ),
-                                          if (valueOrDefault<bool>(
-                                                  currentUserDocument?.helpNav,
-                                                  false) ==
-                                              true)
-                                            Align(
-                                              alignment: const AlignmentDirectional(
-                                                  0.0, 0.0),
-                                              child: Row(
-                                                mainAxisSize: MainAxisSize.max,
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
-                                                children: [
-                                                  Text(
-                                                    'Dans la partie ci-dessous vous pouvez rejoindre l\'univers du Sport.\nActualités, Rencontres, classement des équipes et des parieurs, etc...',
-                                                    textAlign: TextAlign.center,
-                                                    maxLines: 3,
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryText,
-                                                          fontSize: 10.0,
-                                                          letterSpacing: 0.0,
-                                                          lineHeight: 1.0,
-                                                        ),
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
-                                          Padding(
-                                            padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
-                                                    10.0, 5.0, 10.0, 10.0),
-                                            child: Row(
-                                              mainAxisSize: MainAxisSize.max,
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment
-                                                      .spaceBetween,
-                                              children: [
-                                                Padding(
-                                                  padding: const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          12.0, 0.0, 0.0, 0.0),
-                                                  child: InkWell(
-                                                    splashColor:
-                                                        Colors.transparent,
-                                                    focusColor:
-                                                        Colors.transparent,
-                                                    hoverColor:
-                                                        Colors.transparent,
-                                                    highlightColor:
-                                                        Colors.transparent,
-                                                    onTap: () async {
-                                                      await currentUserReference!
-                                                          .update(
-                                                              createUsersRecordData(
-                                                        esport: false,
-                                                      ));
-                                                    },
-                                                    child: Text(
-                                                      'Sport',
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .headlineSmall
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Poppins',
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .secondaryText,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                              ),
-                                                    ),
-                                                  ),
-                                                ),
-                                                Column(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  crossAxisAlignment:
-                                                      CrossAxisAlignment.start,
-                                                  children: [
-                                                    Padding(
-                                                      padding:
-                                                          const EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  0.0,
-                                                                  0.0,
-                                                                  67.0,
-                                                                  0.0),
-                                                      child: InkWell(
-                                                        splashColor:
-                                                            Colors.transparent,
-                                                        focusColor:
-                                                            Colors.transparent,
-                                                        hoverColor:
-                                                            Colors.transparent,
-                                                        highlightColor:
-                                                            Colors.transparent,
-                                                        onTap: () async {
-                                                          await currentUserReference!
-                                                              .update(
-                                                                  createUsersRecordData(
-                                                            esport: false,
-                                                          ));
-                                                        },
-                                                        child: Icon(
-                                                          Icons.home_rounded,
-                                                          color:
-                                                              currentUserDocument
-                                                                  ?.color1,
-                                                          size: 35.0,
-                                                        ),
-                                                      ),
-                                                    ),
                                                     if (valueOrDefault<bool>(
                                                             currentUserDocument
                                                                 ?.helpNav,
@@ -4179,28 +4164,37 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                                               MainAxisAlignment
                                                                   .end,
                                                           children: [
-                                                            Text(
-                                                              'Voir le sport\n',
-                                                              textAlign:
-                                                                  TextAlign
-                                                                      .center,
-                                                              maxLines: 2,
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .bodyMedium
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        'Poppins',
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primaryText,
-                                                                    fontSize:
-                                                                        10.0,
-                                                                    letterSpacing:
-                                                                        0.0,
-                                                                    lineHeight:
-                                                                        1.0,
-                                                                  ),
+                                                            Padding(
+                                                              padding:
+                                                                  const EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          8.0,
+                                                                          0.0),
+                                                              child: Text(
+                                                                'S\'informer, discuter entre fans',
+                                                                textAlign:
+                                                                    TextAlign
+                                                                        .center,
+                                                                maxLines: 2,
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'Poppins',
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primaryText,
+                                                                      fontSize:
+                                                                          10.0,
+                                                                      letterSpacing:
+                                                                          0.0,
+                                                                      lineHeight:
+                                                                          1.0,
+                                                                    ),
+                                                              ),
                                                             ),
                                                           ],
                                                         ),
@@ -4215,7 +4209,11 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                     ),
                                   Divider(
                                     thickness: 1.0,
-                                    color: currentUserDocument?.color2,
+                                    color: valueOrDefault<Color>(
+                                      currentUserDocument?.color2,
+                                      FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
+                                    ),
                                   ),
                                   Padding(
                                     padding: const EdgeInsetsDirectional.fromSTEB(
@@ -4310,10 +4308,14 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                                       width: 35.0,
                                                       height: 50.0,
                                                       decoration: BoxDecoration(
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primary,
+                                                        color: valueOrDefault<
+                                                            Color>(
+                                                          currentUserDocument
+                                                              ?.color1,
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primary,
+                                                        ),
                                                         borderRadius:
                                                             BorderRadius
                                                                 .circular(6.0),
@@ -4387,6 +4389,378 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                       ],
                                     ),
                                   ),
+                                  Divider(
+                                    thickness: 1.0,
+                                    color: valueOrDefault<Color>(
+                                      currentUserDocument?.color2,
+                                      FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
+                                    ),
+                                  ),
+                                  if ((valueOrDefault<bool>(
+                                              currentUserDocument?.esport,
+                                              false) ==
+                                          false) &&
+                                      (valueOrDefault<bool>(
+                                              currentUserDocument?.player,
+                                              false) ==
+                                          true))
+                                    Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        if (valueOrDefault<bool>(
+                                                currentUserDocument?.helpNav,
+                                                false) ==
+                                            true)
+                                          Align(
+                                            alignment:
+                                                const AlignmentDirectional(0.0, 0.0),
+                                            child: Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: [
+                                                Text(
+                                                  'Dans la partie ci-dessous vous pouvez rejoindre l\'univers E Sport.\nCréer ou rejoindre une E Team, affrontements classés, etc...',
+                                                  textAlign: TextAlign.center,
+                                                  maxLines: 3,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primaryText,
+                                                        fontSize: 10.0,
+                                                        letterSpacing: 0.0,
+                                                        lineHeight: 1.0,
+                                                      ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        Padding(
+                                          padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  10.0, 5.0, 10.0, 10.0),
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceBetween,
+                                            children: [
+                                              Padding(
+                                                padding: const EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        12.0, 0.0, 0.0, 0.0),
+                                                child: InkWell(
+                                                  splashColor:
+                                                      Colors.transparent,
+                                                  focusColor:
+                                                      Colors.transparent,
+                                                  hoverColor:
+                                                      Colors.transparent,
+                                                  highlightColor:
+                                                      Colors.transparent,
+                                                  onTap: () async {
+                                                    await currentUserReference!
+                                                        .update(
+                                                            createUsersRecordData(
+                                                      esport: true,
+                                                    ));
+                                                  },
+                                                  child: Text(
+                                                    'E Sport',
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .headlineSmall
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryText,
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                  ),
+                                                ),
+                                              ),
+                                              Column(
+                                                mainAxisSize: MainAxisSize.max,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  Padding(
+                                                    padding:
+                                                        const EdgeInsetsDirectional
+                                                            .fromSTEB(0.0, 0.0,
+                                                                67.0, 0.0),
+                                                    child: InkWell(
+                                                      splashColor:
+                                                          Colors.transparent,
+                                                      focusColor:
+                                                          Colors.transparent,
+                                                      hoverColor:
+                                                          Colors.transparent,
+                                                      highlightColor:
+                                                          Colors.transparent,
+                                                      onTap: () async {
+                                                        await currentUserReference!
+                                                            .update(
+                                                                createUsersRecordData(
+                                                          esport: true,
+                                                        ));
+                                                      },
+                                                      child: Icon(
+                                                        Icons
+                                                            .sports_esports_outlined,
+                                                        color: valueOrDefault<
+                                                            Color>(
+                                                          currentUserDocument
+                                                              ?.color1,
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryText,
+                                                        ),
+                                                        size: 35.0,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                  if (valueOrDefault<bool>(
+                                                          currentUserDocument
+                                                              ?.helpNav,
+                                                          false) ==
+                                                      true)
+                                                    Align(
+                                                      alignment:
+                                                          const AlignmentDirectional(
+                                                              0.0, 0.0),
+                                                      child: Row(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .end,
+                                                        children: [
+                                                          Text(
+                                                            'Voir e sport',
+                                                            textAlign: TextAlign
+                                                                .center,
+                                                            maxLines: 2,
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Poppins',
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primaryText,
+                                                                  fontSize:
+                                                                      10.0,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  lineHeight:
+                                                                      1.0,
+                                                                ),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                    ),
+                                                ],
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        Divider(
+                                          thickness: 1.0,
+                                          color: valueOrDefault<Color>(
+                                            currentUserDocument?.color2,
+                                            FlutterFlowTheme.of(context)
+                                                .secondaryBackground,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  if (valueOrDefault<bool>(
+                                          currentUserDocument?.esport, false) ==
+                                      true)
+                                    Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        if (valueOrDefault<bool>(
+                                                currentUserDocument?.helpNav,
+                                                false) ==
+                                            true)
+                                          Align(
+                                            alignment:
+                                                const AlignmentDirectional(0.0, 0.0),
+                                            child: Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: [
+                                                Text(
+                                                  'Dans la partie ci-dessous vous pouvez rejoindre l\'univers du Sport.\nActualités, Rencontres, classement des équipes et des parieurs, etc...',
+                                                  textAlign: TextAlign.center,
+                                                  maxLines: 3,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primaryText,
+                                                        fontSize: 10.0,
+                                                        letterSpacing: 0.0,
+                                                        lineHeight: 1.0,
+                                                      ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        Padding(
+                                          padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  10.0, 5.0, 10.0, 10.0),
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceBetween,
+                                            children: [
+                                              Padding(
+                                                padding: const EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        12.0, 0.0, 0.0, 0.0),
+                                                child: InkWell(
+                                                  splashColor:
+                                                      Colors.transparent,
+                                                  focusColor:
+                                                      Colors.transparent,
+                                                  hoverColor:
+                                                      Colors.transparent,
+                                                  highlightColor:
+                                                      Colors.transparent,
+                                                  onTap: () async {
+                                                    await currentUserReference!
+                                                        .update(
+                                                            createUsersRecordData(
+                                                      esport: false,
+                                                    ));
+                                                  },
+                                                  child: Text(
+                                                    'Sport',
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .headlineSmall
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryText,
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                  ),
+                                                ),
+                                              ),
+                                              Column(
+                                                mainAxisSize: MainAxisSize.max,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  Padding(
+                                                    padding:
+                                                        const EdgeInsetsDirectional
+                                                            .fromSTEB(0.0, 0.0,
+                                                                67.0, 0.0),
+                                                    child: InkWell(
+                                                      splashColor:
+                                                          Colors.transparent,
+                                                      focusColor:
+                                                          Colors.transparent,
+                                                      hoverColor:
+                                                          Colors.transparent,
+                                                      highlightColor:
+                                                          Colors.transparent,
+                                                      onTap: () async {
+                                                        await currentUserReference!
+                                                            .update(
+                                                                createUsersRecordData(
+                                                          esport: false,
+                                                        ));
+                                                      },
+                                                      child: Icon(
+                                                        Icons.home_rounded,
+                                                        color: valueOrDefault<
+                                                            Color>(
+                                                          currentUserDocument
+                                                              ?.color1,
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryText,
+                                                        ),
+                                                        size: 35.0,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                  if (valueOrDefault<bool>(
+                                                          currentUserDocument
+                                                              ?.helpNav,
+                                                          false) ==
+                                                      true)
+                                                    Align(
+                                                      alignment:
+                                                          const AlignmentDirectional(
+                                                              0.0, 0.0),
+                                                      child: Row(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .end,
+                                                        children: [
+                                                          Text(
+                                                            'Voir le sport\n',
+                                                            textAlign: TextAlign
+                                                                .center,
+                                                            maxLines: 2,
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Poppins',
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primaryText,
+                                                                  fontSize:
+                                                                      10.0,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  lineHeight:
+                                                                      1.0,
+                                                                ),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                    ),
+                                                ],
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        Divider(
+                                          thickness: 1.0,
+                                          color: valueOrDefault<Color>(
+                                            currentUserDocument?.color2,
+                                            FlutterFlowTheme.of(context)
+                                                .secondaryBackground,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
                                 ],
                               ),
                             ),

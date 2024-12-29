@@ -63,7 +63,10 @@ class _ETeamEventsListWidgetState extends State<ETeamEventsListWidget> {
         final eTeamEventsListTeamsRecord = snapshot.data!;
 
         return GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -115,7 +118,11 @@ class _ETeamEventsListWidgetState extends State<ETeamEventsListWidget> {
                                     },
                                     child: Icon(
                                       Icons.menu_rounded,
-                                      color: eTeamEventsListTeamsRecord.color1,
+                                      color: valueOrDefault<Color>(
+                                        eTeamEventsListTeamsRecord.color1,
+                                        FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                      ),
                                       size: 30.0,
                                     ),
                                   ),
@@ -132,8 +139,11 @@ class _ETeamEventsListWidgetState extends State<ETeamEventsListWidget> {
                                       },
                                       child: Icon(
                                         Icons.arrow_back_ios_new_rounded,
-                                        color:
-                                            eTeamEventsListTeamsRecord.color1,
+                                        color: valueOrDefault<Color>(
+                                          eTeamEventsListTeamsRecord.color1,
+                                          FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                        ),
                                         size: 30.0,
                                       ),
                                     ),
@@ -260,8 +270,11 @@ class _ETeamEventsListWidgetState extends State<ETeamEventsListWidget> {
                                         },
                                         child: Icon(
                                           Icons.newspaper_rounded,
-                                          color:
-                                              eTeamEventsListTeamsRecord.color1,
+                                          color: valueOrDefault<Color>(
+                                            eTeamEventsListTeamsRecord.color1,
+                                            FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                          ),
                                           size: 30.0,
                                         ),
                                       ),
@@ -583,6 +596,60 @@ class _ETeamEventsListWidgetState extends State<ETeamEventsListWidget> {
                                                   mainAxisSize:
                                                       MainAxisSize.max,
                                                   children: [
+                                                    Padding(
+                                                      padding:
+                                                          const EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  20.0,
+                                                                  0.0,
+                                                                  10.0,
+                                                                  0.0),
+                                                      child: Row(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        children: [
+                                                          if (columnTeamEventsEventsRecord
+                                                                  .statut ==
+                                                              true)
+                                                            Container(
+                                                              width: 20.0,
+                                                              height: 20.0,
+                                                              decoration:
+                                                                  BoxDecoration(
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .success,
+                                                                shape: BoxShape
+                                                                    .circle,
+                                                              ),
+                                                            ),
+                                                          if (columnTeamEventsEventsRecord
+                                                                  .statut ==
+                                                              false)
+                                                            Padding(
+                                                              padding:
+                                                                  const EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          5.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                              child: Container(
+                                                                width: 20.0,
+                                                                height: 20.0,
+                                                                decoration:
+                                                                    BoxDecoration(
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .error,
+                                                                  shape: BoxShape
+                                                                      .circle,
+                                                                ),
+                                                              ),
+                                                            ),
+                                                        ],
+                                                      ),
+                                                    ),
                                                     Text(
                                                       dateTimeFormat(
                                                           "d/M/y",
@@ -675,51 +742,34 @@ class _ETeamEventsListWidgetState extends State<ETeamEventsListWidget> {
                                                     ),
                                                   ],
                                                 ),
-                                                Row(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  children: [
-                                                    if (columnTeamEventsEventsRecord
-                                                            .statut ==
-                                                        true)
-                                                      Container(
-                                                        width: 25.0,
-                                                        height: 25.0,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .success,
-                                                          shape:
-                                                              BoxShape.circle,
-                                                        ),
-                                                      ),
-                                                    if (columnTeamEventsEventsRecord
-                                                            .statut ==
-                                                        false)
-                                                      Padding(
-                                                        padding:
-                                                            const EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    5.0,
-                                                                    0.0,
-                                                                    0.0,
-                                                                    0.0),
-                                                        child: Container(
-                                                          width: 25.0,
-                                                          height: 25.0,
-                                                          decoration:
-                                                              BoxDecoration(
+                                                if (columnTeamEventsEventsRecord
+                                                        .statut ==
+                                                    false)
+                                                  Row(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    children: [
+                                                      if ((valueOrDefault(
+                                                                  currentUserDocument
+                                                                      ?.stsocialapp,
+                                                                  '') ==
+                                                              'administrateur') ||
+                                                          (eTeamEventsListTeamsRecord
+                                                                  .boss ==
+                                                              currentUserReference))
+                                                        AuthUserStreamWidget(
+                                                          builder: (context) =>
+                                                              Icon(
+                                                            Icons
+                                                                .delete_forever,
                                                             color: FlutterFlowTheme
                                                                     .of(context)
                                                                 .error,
-                                                            shape:
-                                                                BoxShape.circle,
+                                                            size: 25.0,
                                                           ),
                                                         ),
-                                                      ),
-                                                  ],
-                                                ),
+                                                    ],
+                                                  ),
                                               ],
                                             ),
                                             Padding(
@@ -847,7 +897,7 @@ class _ETeamEventsListWidgetState extends State<ETeamEventsListWidget> {
                                                                         .name,
                                                                     textAlign:
                                                                         TextAlign
-                                                                            .start,
+                                                                            .center,
                                                                     maxLines: 2,
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
@@ -937,8 +987,14 @@ class _ETeamEventsListWidgetState extends State<ETeamEventsListWidget> {
                                                                   Icons
                                                                       .comment_rounded,
                                                                   color:
-                                                                      eTeamEventsListTeamsRecord
-                                                                          .color1,
+                                                                      valueOrDefault<
+                                                                          Color>(
+                                                                    eTeamEventsListTeamsRecord
+                                                                        .color1,
+                                                                    FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primaryText,
+                                                                  ),
                                                                   size: 30.0,
                                                                 ),
                                                               ),
@@ -997,7 +1053,10 @@ class _ETeamEventsListWidgetState extends State<ETeamEventsListWidget> {
                                                                               Icon(
                                                                             Icons.settings_rounded,
                                                                             color:
-                                                                                eTeamEventsListTeamsRecord.color1,
+                                                                                valueOrDefault<Color>(
+                                                                              eTeamEventsListTeamsRecord.color1,
+                                                                              FlutterFlowTheme.of(context).primaryText,
+                                                                            ),
                                                                             size:
                                                                                 30.0,
                                                                           ),
@@ -1050,7 +1109,10 @@ class _ETeamEventsListWidgetState extends State<ETeamEventsListWidget> {
                                                                               Icon(
                                                                             Icons.settings_rounded,
                                                                             color:
-                                                                                eTeamEventsListTeamsRecord.color1,
+                                                                                valueOrDefault<Color>(
+                                                                              eTeamEventsListTeamsRecord.color1,
+                                                                              FlutterFlowTheme.of(context).primaryText,
+                                                                            ),
                                                                             size:
                                                                                 30.0,
                                                                           ),
@@ -1100,9 +1162,14 @@ class _ETeamEventsListWidgetState extends State<ETeamEventsListWidget> {
                                                         },
                                                         child: Icon(
                                                           Icons.stadium_rounded,
-                                                          color:
-                                                              eTeamEventsListTeamsRecord
-                                                                  .color1,
+                                                          color: valueOrDefault<
+                                                              Color>(
+                                                            eTeamEventsListTeamsRecord
+                                                                .color1,
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primaryText,
+                                                          ),
                                                           size: 30.0,
                                                         ),
                                                       ),
@@ -1224,7 +1291,7 @@ class _ETeamEventsListWidgetState extends State<ETeamEventsListWidget> {
                                                                         .name,
                                                                     textAlign:
                                                                         TextAlign
-                                                                            .start,
+                                                                            .center,
                                                                     maxLines: 2,
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
@@ -1263,7 +1330,7 @@ class _ETeamEventsListWidgetState extends State<ETeamEventsListWidget> {
                                                           .toString(),
                                                       '0',
                                                     ),
-                                                    textAlign: TextAlign.end,
+                                                    textAlign: TextAlign.center,
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .labelMedium
@@ -1279,7 +1346,7 @@ class _ETeamEventsListWidgetState extends State<ETeamEventsListWidget> {
                                                           .toString(),
                                                       '0',
                                                     ),
-                                                    textAlign: TextAlign.start,
+                                                    textAlign: TextAlign.center,
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .labelMedium

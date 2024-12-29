@@ -69,7 +69,10 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
         final modifEventPageEventsRecord = snapshot.data!;
 
         return GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -181,6 +184,44 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                               Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
+                                  Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        20.0, 0.0, 10.0, 0.0),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        if (modifEventPageEventsRecord.statut ==
+                                            true)
+                                          Container(
+                                            width: 20.0,
+                                            height: 20.0,
+                                            decoration: BoxDecoration(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .success,
+                                              shape: BoxShape.circle,
+                                            ),
+                                          ),
+                                        if (modifEventPageEventsRecord.statut ==
+                                            false)
+                                          Padding(
+                                            padding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    5.0, 0.0, 0.0, 0.0),
+                                            child: Container(
+                                              width: 20.0,
+                                              height: 20.0,
+                                              decoration: BoxDecoration(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .error,
+                                                shape: BoxShape.circle,
+                                              ),
+                                            ),
+                                          ),
+                                      ],
+                                    ),
+                                  ),
                                   Text(
                                     dateTimeFormat("d/M/y",
                                         modifEventPageEventsRecord.date!),
@@ -243,36 +284,6 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                           letterSpacing: 0.0,
                                         ),
                                   ),
-                                ],
-                              ),
-                              Row(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  if (modifEventPageEventsRecord.statut == true)
-                                    Container(
-                                      width: 25.0,
-                                      height: 25.0,
-                                      decoration: BoxDecoration(
-                                        color: FlutterFlowTheme.of(context)
-                                            .success,
-                                        shape: BoxShape.circle,
-                                      ),
-                                    ),
-                                  if (modifEventPageEventsRecord.statut ==
-                                      false)
-                                    Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          5.0, 0.0, 0.0, 0.0),
-                                      child: Container(
-                                        width: 25.0,
-                                        height: 25.0,
-                                        decoration: BoxDecoration(
-                                          color: FlutterFlowTheme.of(context)
-                                              .error,
-                                          shape: BoxShape.circle,
-                                        ),
-                                      ),
-                                    ),
                                 ],
                               ),
                             ],
@@ -409,6 +420,23 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                                 letterSpacing: 0.0,
                                               ),
                                         ),
+                                        if ((columnBetsBetsRecord.choice ==
+                                                'plus') ||
+                                            (columnBetsBetsRecord.choice ==
+                                                'moins'))
+                                          Text(
+                                            valueOrDefault<String>(
+                                              modifEventPageEventsRecord.points,
+                                              '00.0',
+                                            ),
+                                            maxLines: 2,
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Poppins',
+                                                  letterSpacing: 0.0,
+                                                ),
+                                          ),
                                         Padding(
                                           padding:
                                               const EdgeInsetsDirectional.fromSTEB(
@@ -556,6 +584,25 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                                   letterSpacing: 0.0,
                                                 ),
                                           ),
+                                          if ((columnBetsBetsRecord.choice ==
+                                                  'plus') ||
+                                              (columnBetsBetsRecord.choice ==
+                                                  'moins'))
+                                            Text(
+                                              valueOrDefault<String>(
+                                                modifEventPageEventsRecord
+                                                    .points,
+                                                '00.0',
+                                              ),
+                                              maxLines: 2,
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                            ),
                                           Row(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
@@ -661,6 +708,34 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                                     ),
                                                   ),
                                                 ),
+                                              Padding(
+                                                padding: const EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 0.0, 10.0, 0.0),
+                                                child: InkWell(
+                                                  splashColor:
+                                                      Colors.transparent,
+                                                  focusColor:
+                                                      Colors.transparent,
+                                                  hoverColor:
+                                                      Colors.transparent,
+                                                  highlightColor:
+                                                      Colors.transparent,
+                                                  onTap: () async {
+                                                    await columnBetsBetsRecord
+                                                        .reference
+                                                        .delete();
+                                                  },
+                                                  child: Icon(
+                                                    Icons
+                                                        .delete_forever_rounded,
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .error,
+                                                    size: 24.0,
+                                                  ),
+                                                ),
+                                              ),
                                             ],
                                           ),
                                         ],
@@ -1096,347 +1171,622 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                   ),
                                 ),
                               ),
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 10.0, 0.0, 0.0),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Align(
-                                      alignment:
-                                          const AlignmentDirectional(-1.0, 0.0),
-                                      child: FFButtonWidget(
-                                        onPressed: () async {
-                                          await modifEventPageEventsRecord
-                                              .reference
-                                              .update(createEventsRecordData(
-                                            seenScore: true,
-                                            scoreDom: int.tryParse(_model
-                                                .scoreDomFieldTextController
-                                                .text),
-                                            scoreExt: int.tryParse(_model
-                                                .scoreExtFieldTextController
-                                                .text),
-                                          ));
-
-                                          await modifEventPageEventsRecord
-                                              .teamdomRef!
-                                              .update({
-                                            ...mapToFirestore(
-                                              {
-                                                'wins': FieldValue.increment(1),
-                                                'total_games':
-                                                    FieldValue.increment(1),
-                                                'goals_points_in': FieldValue
-                                                    .increment(int.parse(_model
-                                                        .scoreDomFieldTextController
-                                                        .text)),
-                                                'goals_points_out': FieldValue
-                                                    .increment(int.parse(_model
-                                                        .scoreExtFieldTextController
-                                                        .text)),
-                                                'points':
-                                                    FieldValue.increment(3),
-                                              },
-                                            ),
-                                          });
-
-                                          await modifEventPageEventsRecord
-                                              .teamextRef!
-                                              .update({
-                                            ...mapToFirestore(
-                                              {
-                                                'total_games':
-                                                    FieldValue.increment(1),
-                                                'goals_points_in': FieldValue
-                                                    .increment(int.parse(_model
-                                                        .scoreExtFieldTextController
-                                                        .text)),
-                                                'goals_points_out': FieldValue
-                                                    .increment(int.parse(_model
-                                                        .scoreDomFieldTextController
-                                                        .text)),
-                                                'points':
-                                                    FieldValue.increment(0),
-                                                'looses':
-                                                    FieldValue.increment(1),
-                                              },
-                                            ),
-                                          });
-
-                                          await widget.eventRef!
-                                              .update(createEventsRecordData(
-                                            statut: false,
-                                          ));
-
-                                          context.pushNamed('ListEventsAdmin');
-                                        },
-                                        text: 'Victoire Dom',
-                                        options: FFButtonOptions(
-                                          width: 130.0,
-                                          height: 40.0,
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 0.0, 0.0),
-                                          iconPadding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 0.0, 0.0),
-                                          color: FlutterFlowTheme.of(context)
-                                              .secondaryBackground,
-                                          textStyle: FlutterFlowTheme.of(
-                                                  context)
-                                              .titleSmall
-                                              .override(
-                                                fontFamily: 'Poppins',
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryText,
-                                                letterSpacing: 0.0,
-                                              ),
-                                          elevation: 3.0,
-                                          borderSide: const BorderSide(
-                                            color: Colors.transparent,
-                                            width: 1.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(40.0),
-                                          hoverColor:
-                                              FlutterFlowTheme.of(context)
-                                                  .success,
-                                          hoverTextColor:
-                                              FlutterFlowTheme.of(context)
-                                                  .primaryBackground,
+                              Align(
+                                alignment: const AlignmentDirectional(0.0, 0.0),
+                                child: Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 10.0, 0.0, 0.0),
+                                  child: Text(
+                                    modifEventPageEventsRecord.sportValue,
+                                    maxLines: 1,
+                                    style: FlutterFlowTheme.of(context)
+                                        .headlineSmall
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          letterSpacing: 0.0,
                                         ),
-                                      ),
-                                    ),
-                                    Align(
-                                      alignment:
-                                          const AlignmentDirectional(-1.0, 0.0),
-                                      child: FFButtonWidget(
-                                        onPressed: () async {
-                                          await modifEventPageEventsRecord
-                                              .reference
-                                              .update(createEventsRecordData(
-                                            seenScore: true,
-                                            scoreDom: int.tryParse(_model
-                                                .scoreDomFieldTextController
-                                                .text),
-                                            scoreExt: int.tryParse(_model
-                                                .scoreExtFieldTextController
-                                                .text),
-                                          ));
-
-                                          await modifEventPageEventsRecord
-                                              .teamdomRef!
-                                              .update({
-                                            ...mapToFirestore(
-                                              {
-                                                'total_games':
-                                                    FieldValue.increment(1),
-                                                'goals_points_in': FieldValue
-                                                    .increment(int.parse(_model
-                                                        .scoreDomFieldTextController
-                                                        .text)),
-                                                'goals_points_out': FieldValue
-                                                    .increment(int.parse(_model
-                                                        .scoreExtFieldTextController
-                                                        .text)),
-                                                'points':
-                                                    FieldValue.increment(1),
-                                                'draws':
-                                                    FieldValue.increment(1),
-                                              },
-                                            ),
-                                          });
-
-                                          await modifEventPageEventsRecord
-                                              .teamextRef!
-                                              .update({
-                                            ...mapToFirestore(
-                                              {
-                                                'total_games':
-                                                    FieldValue.increment(1),
-                                                'goals_points_in': FieldValue
-                                                    .increment(int.parse(_model
-                                                        .scoreExtFieldTextController
-                                                        .text)),
-                                                'goals_points_out': FieldValue
-                                                    .increment(int.parse(_model
-                                                        .scoreDomFieldTextController
-                                                        .text)),
-                                                'points':
-                                                    FieldValue.increment(1),
-                                                'draws':
-                                                    FieldValue.increment(1),
-                                              },
-                                            ),
-                                          });
-
-                                          await widget.eventRef!
-                                              .update(createEventsRecordData(
-                                            statut: false,
-                                          ));
-
-                                          context.pushNamed('ListEventsAdmin');
-                                        },
-                                        text: 'Nul',
-                                        options: FFButtonOptions(
-                                          width: 60.0,
-                                          height: 40.0,
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 0.0, 0.0),
-                                          iconPadding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 0.0, 0.0),
-                                          color: FlutterFlowTheme.of(context)
-                                              .secondaryBackground,
-                                          textStyle: FlutterFlowTheme.of(
-                                                  context)
-                                              .titleSmall
-                                              .override(
-                                                fontFamily: 'Poppins',
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryText,
-                                                letterSpacing: 0.0,
-                                              ),
-                                          elevation: 3.0,
-                                          borderSide: const BorderSide(
-                                            color: Colors.transparent,
-                                            width: 1.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(40.0),
-                                          hoverColor:
-                                              FlutterFlowTheme.of(context)
-                                                  .success,
-                                          hoverTextColor:
-                                              FlutterFlowTheme.of(context)
-                                                  .primaryBackground,
-                                        ),
-                                      ),
-                                    ),
-                                    Align(
-                                      alignment:
-                                          const AlignmentDirectional(-1.0, 0.0),
-                                      child: FFButtonWidget(
-                                        onPressed: () async {
-                                          await modifEventPageEventsRecord
-                                              .reference
-                                              .update(createEventsRecordData(
-                                            seenScore: true,
-                                            scoreDom: int.tryParse(_model
-                                                .scoreDomFieldTextController
-                                                .text),
-                                            scoreExt: int.tryParse(_model
-                                                .scoreExtFieldTextController
-                                                .text),
-                                          ));
-
-                                          await modifEventPageEventsRecord
-                                              .teamdomRef!
-                                              .update({
-                                            ...mapToFirestore(
-                                              {
-                                                'total_games':
-                                                    FieldValue.increment(1),
-                                                'goals_points_in': FieldValue
-                                                    .increment(int.parse(_model
-                                                        .scoreDomFieldTextController
-                                                        .text)),
-                                                'goals_points_out': FieldValue
-                                                    .increment(int.parse(_model
-                                                        .scoreExtFieldTextController
-                                                        .text)),
-                                                'points':
-                                                    FieldValue.increment(0),
-                                                'looses':
-                                                    FieldValue.increment(1),
-                                              },
-                                            ),
-                                          });
-
-                                          await modifEventPageEventsRecord
-                                              .teamextRef!
-                                              .update({
-                                            ...mapToFirestore(
-                                              {
-                                                'total_games':
-                                                    FieldValue.increment(1),
-                                                'goals_points_in': FieldValue
-                                                    .increment(int.parse(_model
-                                                        .scoreExtFieldTextController
-                                                        .text)),
-                                                'goals_points_out': FieldValue
-                                                    .increment(int.parse(_model
-                                                        .scoreDomFieldTextController
-                                                        .text)),
-                                                'points':
-                                                    FieldValue.increment(3),
-                                                'wins': FieldValue.increment(1),
-                                              },
-                                            ),
-                                          });
-
-                                          await widget.eventRef!
-                                              .update(createEventsRecordData(
-                                            statut: false,
-                                          ));
-
-                                          context.pushNamed('ListEventsAdmin');
-                                        },
-                                        text: 'Victoire Ext',
-                                        options: FFButtonOptions(
-                                          width: 130.0,
-                                          height: 40.0,
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 0.0, 0.0),
-                                          iconPadding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 0.0, 0.0),
-                                          color: FlutterFlowTheme.of(context)
-                                              .secondaryBackground,
-                                          textStyle: FlutterFlowTheme.of(
-                                                  context)
-                                              .titleSmall
-                                              .override(
-                                                fontFamily: 'Poppins',
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryText,
-                                                letterSpacing: 0.0,
-                                              ),
-                                          elevation: 3.0,
-                                          borderSide: const BorderSide(
-                                            color: Colors.transparent,
-                                            width: 1.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(40.0),
-                                          hoverColor:
-                                              FlutterFlowTheme.of(context)
-                                                  .success,
-                                          hoverTextColor:
-                                              FlutterFlowTheme.of(context)
-                                                  .primaryBackground,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
+                                  ),
                                 ),
                               ),
+                              if ((modifEventPageEventsRecord.sportValue ==
+                                      'football') ||
+                                  (modifEventPageEventsRecord.sportValue ==
+                                      'hockey'))
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 10.0, 0.0, 0.0),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Align(
+                                        alignment:
+                                            const AlignmentDirectional(-1.0, 0.0),
+                                        child: FFButtonWidget(
+                                          onPressed: () async {
+                                            await modifEventPageEventsRecord
+                                                .reference
+                                                .update(createEventsRecordData(
+                                              seenScore: true,
+                                              scoreDom: int.tryParse(_model
+                                                  .scoreDomFieldTextController
+                                                  .text),
+                                              scoreExt: int.tryParse(_model
+                                                  .scoreExtFieldTextController
+                                                  .text),
+                                            ));
+
+                                            await modifEventPageEventsRecord
+                                                .teamdomRef!
+                                                .update({
+                                              ...mapToFirestore(
+                                                {
+                                                  'wins':
+                                                      FieldValue.increment(1),
+                                                  'total_games':
+                                                      FieldValue.increment(1),
+                                                  'goals_points_in': FieldValue
+                                                      .increment(int.parse(_model
+                                                          .scoreDomFieldTextController
+                                                          .text)),
+                                                  'goals_points_out': FieldValue
+                                                      .increment(int.parse(_model
+                                                          .scoreExtFieldTextController
+                                                          .text)),
+                                                  'points':
+                                                      FieldValue.increment(3),
+                                                },
+                                              ),
+                                            });
+
+                                            await modifEventPageEventsRecord
+                                                .teamextRef!
+                                                .update({
+                                              ...mapToFirestore(
+                                                {
+                                                  'total_games':
+                                                      FieldValue.increment(1),
+                                                  'goals_points_in': FieldValue
+                                                      .increment(int.parse(_model
+                                                          .scoreExtFieldTextController
+                                                          .text)),
+                                                  'goals_points_out': FieldValue
+                                                      .increment(int.parse(_model
+                                                          .scoreDomFieldTextController
+                                                          .text)),
+                                                  'points':
+                                                      FieldValue.increment(0),
+                                                  'looses':
+                                                      FieldValue.increment(1),
+                                                },
+                                              ),
+                                            });
+
+                                            await widget.eventRef!
+                                                .update(createEventsRecordData(
+                                              statut: false,
+                                            ));
+
+                                            context
+                                                .pushNamed('ListEventsAdmin');
+                                          },
+                                          text: 'Victoire Dom',
+                                          options: FFButtonOptions(
+                                            width: 130.0,
+                                            height: 40.0,
+                                            padding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 0.0, 0.0),
+                                            iconPadding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 0.0, 0.0),
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondaryBackground,
+                                            textStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmall
+                                                    .override(
+                                                      fontFamily: 'Poppins',
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryText,
+                                                      letterSpacing: 0.0,
+                                                    ),
+                                            elevation: 3.0,
+                                            borderSide: const BorderSide(
+                                              color: Colors.transparent,
+                                              width: 1.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(40.0),
+                                            hoverColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .success,
+                                            hoverTextColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .primaryBackground,
+                                          ),
+                                        ),
+                                      ),
+                                      Align(
+                                        alignment:
+                                            const AlignmentDirectional(-1.0, 0.0),
+                                        child: FFButtonWidget(
+                                          onPressed: () async {
+                                            await modifEventPageEventsRecord
+                                                .reference
+                                                .update(createEventsRecordData(
+                                              seenScore: true,
+                                              scoreDom: int.tryParse(_model
+                                                  .scoreDomFieldTextController
+                                                  .text),
+                                              scoreExt: int.tryParse(_model
+                                                  .scoreExtFieldTextController
+                                                  .text),
+                                            ));
+
+                                            await modifEventPageEventsRecord
+                                                .teamdomRef!
+                                                .update({
+                                              ...mapToFirestore(
+                                                {
+                                                  'total_games':
+                                                      FieldValue.increment(1),
+                                                  'goals_points_in': FieldValue
+                                                      .increment(int.parse(_model
+                                                          .scoreDomFieldTextController
+                                                          .text)),
+                                                  'goals_points_out': FieldValue
+                                                      .increment(int.parse(_model
+                                                          .scoreExtFieldTextController
+                                                          .text)),
+                                                  'points':
+                                                      FieldValue.increment(1),
+                                                  'draws':
+                                                      FieldValue.increment(1),
+                                                },
+                                              ),
+                                            });
+
+                                            await modifEventPageEventsRecord
+                                                .teamextRef!
+                                                .update({
+                                              ...mapToFirestore(
+                                                {
+                                                  'total_games':
+                                                      FieldValue.increment(1),
+                                                  'goals_points_in': FieldValue
+                                                      .increment(int.parse(_model
+                                                          .scoreExtFieldTextController
+                                                          .text)),
+                                                  'goals_points_out': FieldValue
+                                                      .increment(int.parse(_model
+                                                          .scoreDomFieldTextController
+                                                          .text)),
+                                                  'points':
+                                                      FieldValue.increment(1),
+                                                  'draws':
+                                                      FieldValue.increment(1),
+                                                },
+                                              ),
+                                            });
+
+                                            await widget.eventRef!
+                                                .update(createEventsRecordData(
+                                              statut: false,
+                                            ));
+
+                                            context
+                                                .pushNamed('ListEventsAdmin');
+                                          },
+                                          text: 'Nul',
+                                          options: FFButtonOptions(
+                                            width: 60.0,
+                                            height: 40.0,
+                                            padding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 0.0, 0.0),
+                                            iconPadding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 0.0, 0.0),
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondaryBackground,
+                                            textStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmall
+                                                    .override(
+                                                      fontFamily: 'Poppins',
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryText,
+                                                      letterSpacing: 0.0,
+                                                    ),
+                                            elevation: 3.0,
+                                            borderSide: const BorderSide(
+                                              color: Colors.transparent,
+                                              width: 1.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(40.0),
+                                            hoverColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .success,
+                                            hoverTextColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .primaryBackground,
+                                          ),
+                                        ),
+                                      ),
+                                      Align(
+                                        alignment:
+                                            const AlignmentDirectional(-1.0, 0.0),
+                                        child: FFButtonWidget(
+                                          onPressed: () async {
+                                            await modifEventPageEventsRecord
+                                                .reference
+                                                .update(createEventsRecordData(
+                                              seenScore: true,
+                                              scoreDom: int.tryParse(_model
+                                                  .scoreDomFieldTextController
+                                                  .text),
+                                              scoreExt: int.tryParse(_model
+                                                  .scoreExtFieldTextController
+                                                  .text),
+                                            ));
+
+                                            await modifEventPageEventsRecord
+                                                .teamdomRef!
+                                                .update({
+                                              ...mapToFirestore(
+                                                {
+                                                  'total_games':
+                                                      FieldValue.increment(1),
+                                                  'goals_points_in': FieldValue
+                                                      .increment(int.parse(_model
+                                                          .scoreDomFieldTextController
+                                                          .text)),
+                                                  'goals_points_out': FieldValue
+                                                      .increment(int.parse(_model
+                                                          .scoreExtFieldTextController
+                                                          .text)),
+                                                  'points':
+                                                      FieldValue.increment(0),
+                                                  'looses':
+                                                      FieldValue.increment(1),
+                                                },
+                                              ),
+                                            });
+
+                                            await modifEventPageEventsRecord
+                                                .teamextRef!
+                                                .update({
+                                              ...mapToFirestore(
+                                                {
+                                                  'total_games':
+                                                      FieldValue.increment(1),
+                                                  'goals_points_in': FieldValue
+                                                      .increment(int.parse(_model
+                                                          .scoreExtFieldTextController
+                                                          .text)),
+                                                  'goals_points_out': FieldValue
+                                                      .increment(int.parse(_model
+                                                          .scoreDomFieldTextController
+                                                          .text)),
+                                                  'points':
+                                                      FieldValue.increment(3),
+                                                  'wins':
+                                                      FieldValue.increment(1),
+                                                },
+                                              ),
+                                            });
+
+                                            await widget.eventRef!
+                                                .update(createEventsRecordData(
+                                              statut: false,
+                                            ));
+
+                                            context
+                                                .pushNamed('ListEventsAdmin');
+                                          },
+                                          text: 'Victoire Ext',
+                                          options: FFButtonOptions(
+                                            width: 130.0,
+                                            height: 40.0,
+                                            padding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 0.0, 0.0),
+                                            iconPadding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 0.0, 0.0),
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondaryBackground,
+                                            textStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmall
+                                                    .override(
+                                                      fontFamily: 'Poppins',
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryText,
+                                                      letterSpacing: 0.0,
+                                                    ),
+                                            elevation: 3.0,
+                                            borderSide: const BorderSide(
+                                              color: Colors.transparent,
+                                              width: 1.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(40.0),
+                                            hoverColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .success,
+                                            hoverTextColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .primaryBackground,
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
                             ],
                           ),
                         ),
+                        if ((modifEventPageEventsRecord.sportValue == 'mma') ||
+                            (modifEventPageEventsRecord.sportValue ==
+                                'basketball') ||
+                            (modifEventPageEventsRecord.sportValue == 'tennis'))
+                          Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                0.0, 10.0, 0.0, 0.0),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Align(
+                                  alignment: const AlignmentDirectional(-1.0, 0.0),
+                                  child: FFButtonWidget(
+                                    onPressed: () async {
+                                      await modifEventPageEventsRecord.reference
+                                          .update(createEventsRecordData(
+                                        seenScore: true,
+                                        scoreDom: int.tryParse(_model
+                                            .scoreDomFieldTextController.text),
+                                        scoreExt: int.tryParse(_model
+                                            .scoreExtFieldTextController.text),
+                                      ));
+
+                                      await modifEventPageEventsRecord
+                                          .teamdomRef!
+                                          .update({
+                                        ...mapToFirestore(
+                                          {
+                                            'wins': FieldValue.increment(1),
+                                            'total_games':
+                                                FieldValue.increment(1),
+                                          },
+                                        ),
+                                      });
+
+                                      await modifEventPageEventsRecord
+                                          .teamextRef!
+                                          .update({
+                                        ...mapToFirestore(
+                                          {
+                                            'total_games':
+                                                FieldValue.increment(1),
+                                            'looses': FieldValue.increment(1),
+                                          },
+                                        ),
+                                      });
+
+                                      await widget.eventRef!
+                                          .update(createEventsRecordData(
+                                        statut: false,
+                                      ));
+
+                                      context.pushNamed('ListEventsAdmin');
+                                    },
+                                    text: 'Victoire Dom',
+                                    options: FFButtonOptions(
+                                      width: 130.0,
+                                      height: 40.0,
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 0.0, 0.0, 0.0),
+                                      iconPadding:
+                                          const EdgeInsetsDirectional.fromSTEB(
+                                              0.0, 0.0, 0.0, 0.0),
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
+                                      textStyle: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                            letterSpacing: 0.0,
+                                          ),
+                                      elevation: 3.0,
+                                      borderSide: const BorderSide(
+                                        color: Colors.transparent,
+                                        width: 1.0,
+                                      ),
+                                      borderRadius: BorderRadius.circular(40.0),
+                                      hoverColor:
+                                          FlutterFlowTheme.of(context).success,
+                                      hoverTextColor:
+                                          FlutterFlowTheme.of(context)
+                                              .primaryBackground,
+                                    ),
+                                  ),
+                                ),
+                                Align(
+                                  alignment: const AlignmentDirectional(-1.0, 0.0),
+                                  child: FFButtonWidget(
+                                    onPressed: () async {
+                                      await modifEventPageEventsRecord.reference
+                                          .update(createEventsRecordData(
+                                        seenScore: true,
+                                        scoreDom: int.tryParse(_model
+                                            .scoreDomFieldTextController.text),
+                                        scoreExt: int.tryParse(_model
+                                            .scoreExtFieldTextController.text),
+                                      ));
+
+                                      await modifEventPageEventsRecord
+                                          .teamdomRef!
+                                          .update({
+                                        ...mapToFirestore(
+                                          {
+                                            'total_games':
+                                                FieldValue.increment(1),
+                                            'draws': FieldValue.increment(1),
+                                          },
+                                        ),
+                                      });
+
+                                      await modifEventPageEventsRecord
+                                          .teamextRef!
+                                          .update({
+                                        ...mapToFirestore(
+                                          {
+                                            'total_games':
+                                                FieldValue.increment(1),
+                                            'draws': FieldValue.increment(1),
+                                          },
+                                        ),
+                                      });
+
+                                      await widget.eventRef!
+                                          .update(createEventsRecordData(
+                                        statut: false,
+                                      ));
+
+                                      context.pushNamed('ListEventsAdmin');
+                                    },
+                                    text: 'Nul',
+                                    options: FFButtonOptions(
+                                      width: 60.0,
+                                      height: 40.0,
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 0.0, 0.0, 0.0),
+                                      iconPadding:
+                                          const EdgeInsetsDirectional.fromSTEB(
+                                              0.0, 0.0, 0.0, 0.0),
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
+                                      textStyle: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                            letterSpacing: 0.0,
+                                          ),
+                                      elevation: 3.0,
+                                      borderSide: const BorderSide(
+                                        color: Colors.transparent,
+                                        width: 1.0,
+                                      ),
+                                      borderRadius: BorderRadius.circular(40.0),
+                                      hoverColor:
+                                          FlutterFlowTheme.of(context).success,
+                                      hoverTextColor:
+                                          FlutterFlowTheme.of(context)
+                                              .primaryBackground,
+                                    ),
+                                  ),
+                                ),
+                                Align(
+                                  alignment: const AlignmentDirectional(-1.0, 0.0),
+                                  child: FFButtonWidget(
+                                    onPressed: () async {
+                                      await modifEventPageEventsRecord.reference
+                                          .update(createEventsRecordData(
+                                        seenScore: true,
+                                        scoreDom: int.tryParse(_model
+                                            .scoreDomFieldTextController.text),
+                                        scoreExt: int.tryParse(_model
+                                            .scoreExtFieldTextController.text),
+                                      ));
+
+                                      await modifEventPageEventsRecord
+                                          .teamdomRef!
+                                          .update({
+                                        ...mapToFirestore(
+                                          {
+                                            'total_games':
+                                                FieldValue.increment(1),
+                                            'looses': FieldValue.increment(1),
+                                          },
+                                        ),
+                                      });
+
+                                      await modifEventPageEventsRecord
+                                          .teamextRef!
+                                          .update({
+                                        ...mapToFirestore(
+                                          {
+                                            'total_games':
+                                                FieldValue.increment(1),
+                                            'wins': FieldValue.increment(1),
+                                          },
+                                        ),
+                                      });
+
+                                      await widget.eventRef!
+                                          .update(createEventsRecordData(
+                                        statut: false,
+                                      ));
+
+                                      context.pushNamed('ListEventsAdmin');
+                                    },
+                                    text: 'Victoire Ext',
+                                    options: FFButtonOptions(
+                                      width: 130.0,
+                                      height: 40.0,
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 0.0, 0.0, 0.0),
+                                      iconPadding:
+                                          const EdgeInsetsDirectional.fromSTEB(
+                                              0.0, 0.0, 0.0, 0.0),
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
+                                      textStyle: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                            letterSpacing: 0.0,
+                                          ),
+                                      elevation: 3.0,
+                                      borderSide: const BorderSide(
+                                        color: Colors.transparent,
+                                        width: 1.0,
+                                      ),
+                                      borderRadius: BorderRadius.circular(40.0),
+                                      hoverColor:
+                                          FlutterFlowTheme.of(context).success,
+                                      hoverTextColor:
+                                          FlutterFlowTheme.of(context)
+                                              .primaryBackground,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
                         Align(
                           alignment: const AlignmentDirectional(0.0, 0.0),
                           child: Text(
-                            'Finaliser résultat si Coupe',
-                            maxLines: 1,
+                            'Finaliser résultat si Coupe\nou LiveScore',
+                            textAlign: TextAlign.center,
+                            maxLines: 2,
                             style: FlutterFlowTheme.of(context)
                                 .headlineSmall
                                 .override(
@@ -1450,7 +1800,7 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                           alignment: const AlignmentDirectional(0.0, 0.0),
                           child: Padding(
                             padding: const EdgeInsetsDirectional.fromSTEB(
-                                0.0, 20.0, 0.0, 16.0),
+                                0.0, 10.0, 0.0, 16.0),
                             child: FFButtonWidget(
                               onPressed: () async {
                                 await modifEventPageEventsRecord.reference
@@ -1493,6 +1843,21 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                     .primaryBackground,
                               ),
                             ),
+                          ),
+                        ),
+                        Align(
+                          alignment: const AlignmentDirectional(0.0, 0.0),
+                          child: Text(
+                            'Les stats ne seront pas prisent en compte\npour les équipes, \npermet l\'affichage du score',
+                            textAlign: TextAlign.center,
+                            maxLines: 3,
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Poppins',
+                                  letterSpacing: 0.0,
+                                  lineHeight: 0.0,
+                                ),
                           ),
                         ),
                         Padding(

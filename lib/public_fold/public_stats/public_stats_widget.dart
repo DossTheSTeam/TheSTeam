@@ -64,7 +64,10 @@ class _PublicStatsWidgetState extends State<PublicStatsWidget>
         final publicStatsUsersRecord = snapshot.data!;
 
         return GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -78,7 +81,7 @@ class _PublicStatsWidgetState extends State<PublicStatsWidget>
                     children: [
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 5.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -110,7 +113,11 @@ class _PublicStatsWidgetState extends State<PublicStatsWidget>
                                       },
                                       child: Icon(
                                         Icons.menu_rounded,
-                                        color: publicStatsUsersRecord.color1,
+                                        color: valueOrDefault<Color>(
+                                          publicStatsUsersRecord.color1,
+                                          FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                        ),
                                         size: 30.0,
                                       ),
                                     ),
@@ -127,7 +134,11 @@ class _PublicStatsWidgetState extends State<PublicStatsWidget>
                                         },
                                         child: Icon(
                                           Icons.arrow_back_ios_new_rounded,
-                                          color: publicStatsUsersRecord.color1,
+                                          color: valueOrDefault<Color>(
+                                            publicStatsUsersRecord.color1,
+                                            FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                          ),
                                           size: 30.0,
                                         ),
                                       ),
@@ -197,32 +208,38 @@ class _PublicStatsWidgetState extends State<PublicStatsWidget>
                                       Padding(
                                         padding: const EdgeInsetsDirectional.fromSTEB(
                                             10.0, 0.0, 10.0, 0.0),
-                                        child: InkWell(
-                                          splashColor: Colors.transparent,
-                                          focusColor: Colors.transparent,
-                                          hoverColor: Colors.transparent,
-                                          highlightColor: Colors.transparent,
-                                          onTap: () async {
-                                            context.pushNamed(
-                                              'MyNotifsList',
-                                              extra: <String, dynamic>{
-                                                kTransitionInfoKey:
-                                                    const TransitionInfo(
-                                                  hasTransition: true,
-                                                  transitionType:
-                                                      PageTransitionType
-                                                          .rightToLeft,
-                                                  duration: Duration(
-                                                      milliseconds: 400),
-                                                ),
-                                              },
-                                            );
-                                          },
-                                          child: Icon(
-                                            Icons.notifications_active_outlined,
-                                            color: FlutterFlowTheme.of(context)
-                                                .accent1,
-                                            size: 40.0,
+                                        child: AuthUserStreamWidget(
+                                          builder: (context) => InkWell(
+                                            splashColor: Colors.transparent,
+                                            focusColor: Colors.transparent,
+                                            hoverColor: Colors.transparent,
+                                            highlightColor: Colors.transparent,
+                                            onTap: () async {
+                                              context.pushNamed(
+                                                'MyNotifsList',
+                                                extra: <String, dynamic>{
+                                                  kTransitionInfoKey:
+                                                      const TransitionInfo(
+                                                    hasTransition: true,
+                                                    transitionType:
+                                                        PageTransitionType
+                                                            .rightToLeft,
+                                                    duration: Duration(
+                                                        milliseconds: 400),
+                                                  ),
+                                                },
+                                              );
+                                            },
+                                            child: Icon(
+                                              Icons
+                                                  .notifications_active_outlined,
+                                              color: valueOrDefault<Color>(
+                                                currentUserDocument?.color1,
+                                                FlutterFlowTheme.of(context)
+                                                    .accent1,
+                                              ),
+                                              size: 40.0,
+                                            ),
                                           ),
                                         ),
                                       ),
@@ -233,12 +250,79 @@ class _PublicStatsWidgetState extends State<PublicStatsWidget>
                           ],
                         ),
                       ),
+                      Divider(
+                        thickness: 1.0,
+                        color: valueOrDefault<Color>(
+                          publicStatsUsersRecord.color2,
+                          FlutterFlowTheme.of(context).secondaryBackground,
+                        ),
+                      ),
                       Align(
                         alignment: const AlignmentDirectional(0.0, -1.0),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
+                            Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  3.0, 0.0, 0.0, 0.0),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Text(
+                                    'Comparer nos statististiques',
+                                    style: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          letterSpacing: 0.0,
+                                        ),
+                                  ),
+                                  Expanded(
+                                    child: Align(
+                                      alignment: const AlignmentDirectional(1.0, 0.0),
+                                      child: InkWell(
+                                        splashColor: Colors.transparent,
+                                        focusColor: Colors.transparent,
+                                        hoverColor: Colors.transparent,
+                                        highlightColor: Colors.transparent,
+                                        onTap: () async {
+                                          context.pushNamed(
+                                            'PublicStatsCompare',
+                                            queryParameters: {
+                                              'userRef': serializeParam(
+                                                widget.userRef,
+                                                ParamType.DocumentReference,
+                                              ),
+                                            }.withoutNulls,
+                                            extra: <String, dynamic>{
+                                              kTransitionInfoKey:
+                                                  const TransitionInfo(
+                                                hasTransition: true,
+                                                transitionType:
+                                                    PageTransitionType
+                                                        .rightToLeft,
+                                                duration:
+                                                    Duration(milliseconds: 400),
+                                              ),
+                                            },
+                                          );
+                                        },
+                                        child: Icon(
+                                          Icons.ssid_chart_rounded,
+                                          color: valueOrDefault<Color>(
+                                            publicStatsUsersRecord.color1,
+                                            FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                          ),
+                                          size: 30.0,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
                             if (valueOrDefault<bool>(
                                     currentUserDocument?.esport, false) ==
                                 false)
@@ -356,9 +440,14 @@ class _PublicStatsWidgetState extends State<PublicStatsWidget>
                                                       child: Icon(
                                                         Icons
                                                             .attach_money_rounded,
-                                                        color:
-                                                            publicStatsUsersRecord
-                                                                .color1,
+                                                        color: valueOrDefault<
+                                                            Color>(
+                                                          publicStatsUsersRecord
+                                                              .color1,
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryText,
+                                                        ),
                                                         size: 30.0,
                                                       ),
                                                     ),
@@ -425,7 +514,7 @@ class _PublicStatsWidgetState extends State<PublicStatsWidget>
                                                         children: [
                                                           Icon(
                                                             Icons
-                                                                .flash_on_rounded,
+                                                                .auto_awesome_rounded,
                                                             color: FlutterFlowTheme
                                                                     .of(context)
                                                                 .accent1,
@@ -541,7 +630,7 @@ class _PublicStatsWidgetState extends State<PublicStatsWidget>
                                                                     Border.all(
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .primaryText,
+                                                                      .secondary,
                                                                 ),
                                                               ),
                                                               child: Padding(

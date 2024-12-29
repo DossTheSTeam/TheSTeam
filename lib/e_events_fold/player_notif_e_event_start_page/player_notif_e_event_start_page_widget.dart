@@ -67,7 +67,10 @@ class _PlayerNotifEEventStartPageWidgetState
         final playerNotifEEventStartPageMyNotificationsRecord = snapshot.data!;
 
         return GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -107,7 +110,10 @@ class _PlayerNotifEEventStartPageWidgetState
                                   },
                                   child: Icon(
                                     Icons.menu_rounded,
-                                    color: currentUserDocument?.color1,
+                                    color: valueOrDefault<Color>(
+                                      currentUserDocument?.color1,
+                                      FlutterFlowTheme.of(context).primaryText,
+                                    ),
                                     size: 30.0,
                                   ),
                                 ),
@@ -126,7 +132,11 @@ class _PlayerNotifEEventStartPageWidgetState
                                     },
                                     child: Icon(
                                       Icons.arrow_back_ios_new_rounded,
-                                      color: currentUserDocument?.color1,
+                                      color: valueOrDefault<Color>(
+                                        currentUserDocument?.color1,
+                                        FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                      ),
                                       size: 30.0,
                                     ),
                                   ),
@@ -407,7 +417,7 @@ class _PlayerNotifEEventStartPageWidgetState
                                                     child: Text(
                                                       contDomTeamsRecord.name,
                                                       textAlign:
-                                                          TextAlign.start,
+                                                          TextAlign.center,
                                                       maxLines: 2,
                                                       style: FlutterFlowTheme
                                                               .of(context)
@@ -526,7 +536,7 @@ class _PlayerNotifEEventStartPageWidgetState
                                                     child: Text(
                                                       contExtTeamsRecord.name,
                                                       textAlign:
-                                                          TextAlign.start,
+                                                          TextAlign.center,
                                                       maxLines: 2,
                                                       style: FlutterFlowTheme
                                                               .of(context)
@@ -574,7 +584,7 @@ class _PlayerNotifEEventStartPageWidgetState
                                       padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 20.0, 0.0, 10.0),
                                       child: Text(
-                                        'En acceptant l\'invitation vous serez placés sur la feuille de match, discuter avec vos co-équipés pour connaitre la date de la rencontre à venir.',
+                                        'En acceptant l\'invitation vous serez placés sur la feuille de match, discuter avec vos co-équipiers pour connaitre la date de la rencontre à venir.',
                                         textAlign: TextAlign.center,
                                         style: FlutterFlowTheme.of(context)
                                             .labelMedium

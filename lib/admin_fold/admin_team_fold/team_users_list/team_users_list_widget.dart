@@ -61,7 +61,10 @@ class _TeamUsersListWidgetState extends State<TeamUsersListWidget> {
         final teamUsersListTeamsRecord = snapshot.data!;
 
         return GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -320,7 +323,7 @@ class _TeamUsersListWidgetState extends State<TeamUsersListWidget> {
                                                                     height:
                                                                         200.0,
                                                                     fit: BoxFit
-                                                                        .cover,
+                                                                        .fitHeight,
                                                                   ),
                                                                 ),
                                                               ),
@@ -660,7 +663,7 @@ class _TeamUsersListWidgetState extends State<TeamUsersListWidget> {
                                                                     height:
                                                                         200.0,
                                                                     fit: BoxFit
-                                                                        .cover,
+                                                                        .fitHeight,
                                                                   ),
                                                                 ),
                                                               ),
@@ -1021,7 +1024,7 @@ class _TeamUsersListWidgetState extends State<TeamUsersListWidget> {
                                                                     height:
                                                                         200.0,
                                                                     fit: BoxFit
-                                                                        .cover,
+                                                                        .fitHeight,
                                                                   ),
                                                                 ),
                                                               ),

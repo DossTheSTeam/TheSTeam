@@ -62,7 +62,10 @@ class _ETeamUsersListWidgetState extends State<ETeamUsersListWidget> {
         final eTeamUsersListTeamsRecord = snapshot.data!;
 
         return GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -74,180 +77,224 @@ class _ETeamUsersListWidgetState extends State<ETeamUsersListWidget> {
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     children: [
-                      Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Row(
+                      Align(
+                        alignment: const AlignmentDirectional(-1.0, 0.0),
+                        child: Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              0.0, 30.0, 0.0, 10.0),
+                          child: SingleChildScrollView(
+                            scrollDirection: Axis.horizontal,
+                            child: Row(
                               mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.start,
                               children: [
-                                InkWell(
-                                  splashColor: Colors.transparent,
-                                  focusColor: Colors.transparent,
-                                  hoverColor: Colors.transparent,
-                                  highlightColor: Colors.transparent,
-                                  onTap: () async {
-                                    context.pushNamed(
-                                      'ModifETeamPage',
-                                      queryParameters: {
-                                        'teamRef': serializeParam(
-                                          widget.teamRef,
-                                          ParamType.DocumentReference,
-                                        ),
-                                      }.withoutNulls,
-                                      extra: <String, dynamic>{
-                                        kTransitionInfoKey: const TransitionInfo(
-                                          hasTransition: true,
-                                          transitionType:
-                                              PageTransitionType.leftToRight,
-                                          duration: Duration(milliseconds: 400),
-                                        ),
+                                Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    InkWell(
+                                      splashColor: Colors.transparent,
+                                      focusColor: Colors.transparent,
+                                      hoverColor: Colors.transparent,
+                                      highlightColor: Colors.transparent,
+                                      onTap: () async {
+                                        context.pushNamed(
+                                          'ModifETeamPage',
+                                          queryParameters: {
+                                            'teamRef': serializeParam(
+                                              widget.teamRef,
+                                              ParamType.DocumentReference,
+                                            ),
+                                          }.withoutNulls,
+                                          extra: <String, dynamic>{
+                                            kTransitionInfoKey: const TransitionInfo(
+                                              hasTransition: true,
+                                              transitionType: PageTransitionType
+                                                  .leftToRight,
+                                              duration:
+                                                  Duration(milliseconds: 400),
+                                            ),
+                                          },
+                                        );
                                       },
-                                    );
-                                  },
-                                  child: Icon(
-                                    Icons.menu_rounded,
-                                    color: eTeamUsersListTeamsRecord.color1,
-                                    size: 30.0,
-                                  ),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      10.0, 0.0, 0.0, 0.0),
-                                  child: InkWell(
-                                    splashColor: Colors.transparent,
-                                    focusColor: Colors.transparent,
-                                    hoverColor: Colors.transparent,
-                                    highlightColor: Colors.transparent,
-                                    onTap: () async {
-                                      context.safePop();
-                                    },
-                                    child: Icon(
-                                      Icons.arrow_back_ios_new_rounded,
-                                      color: eTeamUsersListTeamsRecord.color1,
-                                      size: 30.0,
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                            Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  10.0, 0.0, 10.0, 10.0),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: [
-                                  Container(
-                                    width: 55.0,
-                                    height: 40.0,
-                                    decoration: BoxDecoration(
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryBackground,
-                                    ),
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(0.0),
-                                      child: Image.network(
-                                        eTeamUsersListTeamsRecord.logo,
-                                        width: 300.0,
-                                        height: 200.0,
-                                        fit: BoxFit.scaleDown,
+                                      child: Icon(
+                                        Icons.menu_rounded,
+                                        color: valueOrDefault<Color>(
+                                          eTeamUsersListTeamsRecord.color1,
+                                          FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                        ),
+                                        size: 30.0,
                                       ),
                                     ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        10.0, 0.0, 0.0, 0.0),
-                                    child: Text(
-                                      eTeamUsersListTeamsRecord.name,
-                                      style: FlutterFlowTheme.of(context)
-                                          .labelMedium
-                                          .override(
-                                            fontFamily: 'Poppins',
-                                            letterSpacing: 0.0,
+                                    Padding(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          10.0, 0.0, 0.0, 0.0),
+                                      child: InkWell(
+                                        splashColor: Colors.transparent,
+                                        focusColor: Colors.transparent,
+                                        hoverColor: Colors.transparent,
+                                        highlightColor: Colors.transparent,
+                                        onTap: () async {
+                                          context.safePop();
+                                        },
+                                        child: Icon(
+                                          Icons.arrow_back_ios_new_rounded,
+                                          color: valueOrDefault<Color>(
+                                            eTeamUsersListTeamsRecord.color1,
+                                            FlutterFlowTheme.of(context)
+                                                .primaryText,
                                           ),
+                                          size: 30.0,
+                                        ),
+                                      ),
                                     ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      if (true /* Warning: Trying to access variable not yet defined. */)
-                        FutureBuilder<List<MyNotificationsRecord>>(
-                          future: queryMyNotificationsRecordOnce(
-                            parent: currentUserReference,
-                            singleRecord: true,
-                          ),
-                          builder: (context, snapshot) {
-                            // Customize what your widget looks like when it's loading.
-                            if (!snapshot.hasData) {
-                              return Center(
-                                child: SizedBox(
-                                  width: 50.0,
-                                  height: 50.0,
-                                  child: CircularProgressIndicator(
-                                    valueColor: AlwaysStoppedAnimation<Color>(
-                                      FlutterFlowTheme.of(context).accent4,
-                                    ),
-                                  ),
+                                  ],
                                 ),
-                              );
-                            }
-                            List<MyNotificationsRecord>
-                                rowNotifsMyNotificationsRecordList =
-                                snapshot.data!;
-                            // Return an empty Container when the item does not exist.
-                            if (snapshot.data!.isEmpty) {
-                              return Container();
-                            }
-                            final rowNotifsMyNotificationsRecord =
-                                rowNotifsMyNotificationsRecordList.isNotEmpty
-                                    ? rowNotifsMyNotificationsRecordList.first
-                                    : null;
-
-                            return Row(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: [
                                 Padding(
                                   padding: const EdgeInsetsDirectional.fromSTEB(
-                                      10.0, 0.0, 10.0, 0.0),
-                                  child: InkWell(
-                                    splashColor: Colors.transparent,
-                                    focusColor: Colors.transparent,
-                                    hoverColor: Colors.transparent,
-                                    highlightColor: Colors.transparent,
-                                    onTap: () async {
-                                      context.pushNamed(
-                                        'MyNotifsList',
-                                        extra: <String, dynamic>{
-                                          kTransitionInfoKey: const TransitionInfo(
-                                            hasTransition: true,
-                                            transitionType:
-                                                PageTransitionType.rightToLeft,
-                                            duration:
-                                                Duration(milliseconds: 400),
+                                      10.0, 0.0, 10.0, 10.0),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      Container(
+                                        width: 55.0,
+                                        height: 40.0,
+                                        decoration: BoxDecoration(
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryBackground,
+                                        ),
+                                        child: ClipRRect(
+                                          borderRadius:
+                                              BorderRadius.circular(0.0),
+                                          child: Image.network(
+                                            eTeamUsersListTeamsRecord.logo,
+                                            width: 300.0,
+                                            height: 200.0,
+                                            fit: BoxFit.fitHeight,
                                           ),
-                                        },
-                                      );
-                                    },
-                                    child: Icon(
-                                      Icons.notifications_active_outlined,
-                                      color:
-                                          FlutterFlowTheme.of(context).accent1,
-                                      size: 40.0,
-                                    ),
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            10.0, 0.0, 0.0, 0.0),
+                                        child: Text(
+                                          eTeamUsersListTeamsRecord.name,
+                                          style: FlutterFlowTheme.of(context)
+                                              .labelMedium
+                                              .override(
+                                                fontFamily: 'Poppins',
+                                                color: valueOrDefault<Color>(
+                                                  eTeamUsersListTeamsRecord
+                                                      .color1,
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryText,
+                                                ),
+                                                letterSpacing: 0.0,
+                                              ),
+                                        ),
+                                      ),
+                                    ],
                                   ),
                                 ),
+                                if (true /* Warning: Trying to access variable not yet defined. */)
+                                  FutureBuilder<List<MyNotificationsRecord>>(
+                                    future: queryMyNotificationsRecordOnce(
+                                      parent: currentUserReference,
+                                      singleRecord: true,
+                                    ),
+                                    builder: (context, snapshot) {
+                                      // Customize what your widget looks like when it's loading.
+                                      if (!snapshot.hasData) {
+                                        return Center(
+                                          child: SizedBox(
+                                            width: 50.0,
+                                            height: 50.0,
+                                            child: CircularProgressIndicator(
+                                              valueColor:
+                                                  AlwaysStoppedAnimation<Color>(
+                                                FlutterFlowTheme.of(context)
+                                                    .accent4,
+                                              ),
+                                            ),
+                                          ),
+                                        );
+                                      }
+                                      List<MyNotificationsRecord>
+                                          rowNotifsMyNotificationsRecordList =
+                                          snapshot.data!;
+                                      // Return an empty Container when the item does not exist.
+                                      if (snapshot.data!.isEmpty) {
+                                        return Container();
+                                      }
+                                      final rowNotifsMyNotificationsRecord =
+                                          rowNotifsMyNotificationsRecordList
+                                                  .isNotEmpty
+                                              ? rowNotifsMyNotificationsRecordList
+                                                  .first
+                                              : null;
+
+                                      return Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.end,
+                                        children: [
+                                          Padding(
+                                            padding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    10.0, 0.0, 10.0, 0.0),
+                                            child: AuthUserStreamWidget(
+                                              builder: (context) => InkWell(
+                                                splashColor: Colors.transparent,
+                                                focusColor: Colors.transparent,
+                                                hoverColor: Colors.transparent,
+                                                highlightColor:
+                                                    Colors.transparent,
+                                                onTap: () async {
+                                                  context.pushNamed(
+                                                    'MyNotifsList',
+                                                    extra: <String, dynamic>{
+                                                      kTransitionInfoKey:
+                                                          const TransitionInfo(
+                                                        hasTransition: true,
+                                                        transitionType:
+                                                            PageTransitionType
+                                                                .rightToLeft,
+                                                        duration: Duration(
+                                                            milliseconds: 400),
+                                                      ),
+                                                    },
+                                                  );
+                                                },
+                                                child: Icon(
+                                                  Icons
+                                                      .notifications_active_outlined,
+                                                  color: valueOrDefault<Color>(
+                                                    currentUserDocument?.color1,
+                                                    FlutterFlowTheme.of(context)
+                                                        .accent1,
+                                                  ),
+                                                  size: 40.0,
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      );
+                                    },
+                                  ),
                               ],
-                            );
-                          },
+                            ),
+                          ),
                         ),
+                      ),
+                      Divider(
+                        thickness: 1.0,
+                        color: valueOrDefault<Color>(
+                          eTeamUsersListTeamsRecord.color2,
+                          FlutterFlowTheme.of(context).secondaryBackground,
+                        ),
+                      ),
                       Column(
                         mainAxisSize: MainAxisSize.max,
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -281,8 +328,10 @@ class _ETeamUsersListWidgetState extends State<ETeamUsersListWidget> {
                                           7.0, 0.0, 0.0, 0.0),
                                       child: Icon(
                                         Icons.star_rounded,
-                                        color: FlutterFlowTheme.of(context)
-                                            .accent1,
+                                        color: valueOrDefault<Color>(
+                                          eTeamUsersListTeamsRecord.color2,
+                                          FlutterFlowTheme.of(context).accent1,
+                                        ),
                                         size: 33.0,
                                       ),
                                     ),
@@ -399,7 +448,7 @@ class _ETeamUsersListWidgetState extends State<ETeamUsersListWidget> {
                                                                       height:
                                                                           200.0,
                                                                       fit: BoxFit
-                                                                          .cover,
+                                                                          .fitHeight,
                                                                     ),
                                                                   ),
                                                                 ),
@@ -465,7 +514,10 @@ class _ETeamUsersListWidgetState extends State<ETeamUsersListWidget> {
                                                                                 1,
                                                                             style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                   fontFamily: 'Poppins',
-                                                                                  color: columnUsersRecord.color1,
+                                                                                  color: valueOrDefault<Color>(
+                                                                                    columnUsersRecord.color1,
+                                                                                    FlutterFlowTheme.of(context).primaryText,
+                                                                                  ),
                                                                                   letterSpacing: 0.0,
                                                                                 ),
                                                                           ),
@@ -618,7 +670,10 @@ class _ETeamUsersListWidgetState extends State<ETeamUsersListWidget> {
                           ),
                           Divider(
                             thickness: 1.0,
-                            color: eTeamUsersListTeamsRecord.color2,
+                            color: valueOrDefault<Color>(
+                              eTeamUsersListTeamsRecord.color2,
+                              FlutterFlowTheme.of(context).secondaryBackground,
+                            ),
                           ),
                           Padding(
                             padding: const EdgeInsetsDirectional.fromSTEB(
@@ -649,8 +704,10 @@ class _ETeamUsersListWidgetState extends State<ETeamUsersListWidget> {
                                           10.0, 0.0, 0.0, 0.0),
                                       child: Icon(
                                         Icons.group_rounded,
-                                        color: FlutterFlowTheme.of(context)
-                                            .success,
+                                        color: valueOrDefault<Color>(
+                                          eTeamUsersListTeamsRecord.color2,
+                                          FlutterFlowTheme.of(context).success,
+                                        ),
                                         size: 30.0,
                                       ),
                                     ),
@@ -761,7 +818,7 @@ class _ETeamUsersListWidgetState extends State<ETeamUsersListWidget> {
                                                                       height:
                                                                           200.0,
                                                                       fit: BoxFit
-                                                                          .cover,
+                                                                          .fitHeight,
                                                                     ),
                                                                   ),
                                                                 ),
@@ -973,7 +1030,10 @@ class _ETeamUsersListWidgetState extends State<ETeamUsersListWidget> {
                           ),
                           Divider(
                             thickness: 1.0,
-                            color: eTeamUsersListTeamsRecord.color2,
+                            color: valueOrDefault<Color>(
+                              eTeamUsersListTeamsRecord.color2,
+                              FlutterFlowTheme.of(context).secondaryBackground,
+                            ),
                           ),
                           Padding(
                             padding: const EdgeInsetsDirectional.fromSTEB(
@@ -1004,8 +1064,10 @@ class _ETeamUsersListWidgetState extends State<ETeamUsersListWidget> {
                                           10.0, 0.0, 0.0, 0.0),
                                       child: Icon(
                                         Icons.group_off_outlined,
-                                        color:
-                                            FlutterFlowTheme.of(context).error,
+                                        color: valueOrDefault<Color>(
+                                          eTeamUsersListTeamsRecord.color2,
+                                          FlutterFlowTheme.of(context).error,
+                                        ),
                                         size: 30.0,
                                       ),
                                     ),
@@ -1111,7 +1173,7 @@ class _ETeamUsersListWidgetState extends State<ETeamUsersListWidget> {
                                                                     height:
                                                                         200.0,
                                                                     fit: BoxFit
-                                                                        .cover,
+                                                                        .fitHeight,
                                                                   ),
                                                                 ),
                                                               ),

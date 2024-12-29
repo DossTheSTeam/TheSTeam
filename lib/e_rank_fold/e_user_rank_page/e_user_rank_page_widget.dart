@@ -38,7 +38,10 @@ class _EUserRankPageWidgetState extends State<EUserRankPageWidget> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -87,7 +90,11 @@ class _EUserRankPageWidgetState extends State<EUserRankPageWidget> {
                                     },
                                     child: Icon(
                                       Icons.menu_rounded,
-                                      color: currentUserDocument?.color1,
+                                      color: valueOrDefault<Color>(
+                                        currentUserDocument?.color1,
+                                        FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                      ),
                                       size: 30.0,
                                     ),
                                   ),
@@ -104,7 +111,11 @@ class _EUserRankPageWidgetState extends State<EUserRankPageWidget> {
                                       },
                                       child: Icon(
                                         Icons.arrow_back_ios_new_rounded,
-                                        color: currentUserDocument?.color1,
+                                        color: valueOrDefault<Color>(
+                                          currentUserDocument?.color1,
+                                          FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                        ),
                                         size: 30.0,
                                       ),
                                     ),
@@ -150,7 +161,11 @@ class _EUserRankPageWidgetState extends State<EUserRankPageWidget> {
                                       },
                                       child: FaIcon(
                                         FontAwesomeIcons.userCircle,
-                                        color: currentUserDocument?.color1,
+                                        color: valueOrDefault<Color>(
+                                          currentUserDocument?.color1,
+                                          FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                        ),
                                         size: 30.0,
                                       ),
                                     ),
@@ -214,8 +229,13 @@ class _EUserRankPageWidgetState extends State<EUserRankPageWidget> {
                                     'E Sport Basketball',
                                     'E Sport War'
                                   ],
-                                  onChanged: (val) => safeSetState(
-                                      () => _model.dropESportValue = val),
+                                  onChanged: (val) async {
+                                    safeSetState(
+                                        () => _model.dropESportValue = val);
+                                    _model.showESportFilter =
+                                        _model.dropESportValue;
+                                    safeSetState(() {});
+                                  },
                                   width: 180.0,
                                   height: 40.0,
                                   textStyle: FlutterFlowTheme.of(context)
@@ -314,9 +334,11 @@ class _EUserRankPageWidgetState extends State<EUserRankPageWidget> {
                                             child: Icon(
                                               Icons
                                                   .notifications_active_outlined,
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .accent1,
+                                              color: valueOrDefault<Color>(
+                                                currentUserDocument?.color1,
+                                                FlutterFlowTheme.of(context)
+                                                    .accent1,
+                                              ),
                                               size: 40.0,
                                             ),
                                           ),
@@ -347,8 +369,13 @@ class _EUserRankPageWidgetState extends State<EUserRankPageWidget> {
                                   'Pro',
                                   'Amateur'
                                 ],
-                                onChanged: (val) => safeSetState(
-                                    () => _model.dropELigueValue = val),
+                                onChanged: (val) async {
+                                  safeSetState(
+                                      () => _model.dropELigueValue = val);
+                                  _model.showELigueFilter =
+                                      _model.dropELigueValue;
+                                  safeSetState(() {});
+                                },
                                 width: 150.0,
                                 height: 56.0,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -390,8 +417,13 @@ class _EUserRankPageWidgetState extends State<EUserRankPageWidget> {
                                   'Division 2',
                                   'Division 3'
                                 ],
-                                onChanged: (val) => safeSetState(
-                                    () => _model.dropEDivisionValue = val),
+                                onChanged: (val) async {
+                                  safeSetState(
+                                      () => _model.dropEDivisionValue = val);
+                                  _model.showEDivFilter =
+                                      _model.dropEDivisionValue;
+                                  safeSetState(() {});
+                                },
                                 width: 150.0,
                                 height: 56.0,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -476,8 +508,11 @@ class _EUserRankPageWidgetState extends State<EUserRankPageWidget> {
                                             children: [
                                               Icon(
                                                 Icons.groups_rounded,
-                                                color:
-                                                    currentUserDocument?.color2,
+                                                color: valueOrDefault<Color>(
+                                                  currentUserDocument?.color2,
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryText,
+                                                ),
                                                 size: 30.0,
                                               ),
                                               Padding(
@@ -574,8 +609,11 @@ class _EUserRankPageWidgetState extends State<EUserRankPageWidget> {
                                               ),
                                               Icon(
                                                 Icons.groups_rounded,
-                                                color:
-                                                    currentUserDocument?.color2,
+                                                color: valueOrDefault<Color>(
+                                                  currentUserDocument?.color2,
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryText,
+                                                ),
                                                 size: 30.0,
                                               ),
                                             ],
@@ -608,8 +646,44 @@ class _EUserRankPageWidgetState extends State<EUserRankPageWidget> {
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
+                                            Padding(
+                                              padding: const EdgeInsetsDirectional
+                                                  .fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                              child: Container(
+                                                width: 130.0,
+                                                height: 30.0,
+                                                decoration: BoxDecoration(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryBackground,
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          25.0),
+                                                  border: Border.all(
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryBackground,
+                                                  ),
+                                                ),
+                                                child: Align(
+                                                  alignment:
+                                                      const AlignmentDirectional(
+                                                          -1.0, 0.0),
+                                                  child: Text(
+                                                    'Pseudo',
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .labelSmall
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
                                             Container(
-                                              width: 45.0,
+                                              width: 55.0,
                                               height: 30.0,
                                               decoration: BoxDecoration(
                                                 color:
@@ -625,7 +699,7 @@ class _EUserRankPageWidgetState extends State<EUserRankPageWidget> {
                                               ),
                                             ),
                                             Container(
-                                              width: 150.0,
+                                              width: 30.0,
                                               height: 30.0,
                                               decoration: BoxDecoration(
                                                 color:
@@ -637,20 +711,6 @@ class _EUserRankPageWidgetState extends State<EUserRankPageWidget> {
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primaryBackground,
-                                                ),
-                                              ),
-                                              child: Align(
-                                                alignment: const AlignmentDirectional(
-                                                    1.0, 0.0),
-                                                child: Text(
-                                                  'Pseudo',
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .labelSmall
-                                                      .override(
-                                                        fontFamily: 'Poppins',
-                                                        letterSpacing: 0.0,
-                                                      ),
                                                 ),
                                               ),
                                             ),
@@ -680,6 +740,10 @@ class _EUserRankPageWidgetState extends State<EUserRankPageWidget> {
                                                       .bodyMedium
                                                       .override(
                                                         fontFamily: 'Poppins',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .secondaryText,
                                                         letterSpacing: 0.0,
                                                       ),
                                                 ),
@@ -711,6 +775,10 @@ class _EUserRankPageWidgetState extends State<EUserRankPageWidget> {
                                                       .bodyMedium
                                                       .override(
                                                         fontFamily: 'Poppins',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .secondaryText,
                                                         letterSpacing: 0.0,
                                                       ),
                                                 ),
@@ -742,6 +810,10 @@ class _EUserRankPageWidgetState extends State<EUserRankPageWidget> {
                                                       .bodyMedium
                                                       .override(
                                                         fontFamily: 'Poppins',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .secondaryText,
                                                         letterSpacing: 0.0,
                                                       ),
                                                 ),
@@ -773,6 +845,10 @@ class _EUserRankPageWidgetState extends State<EUserRankPageWidget> {
                                                       .bodyMedium
                                                       .override(
                                                         fontFamily: 'Poppins',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .secondaryText,
                                                         letterSpacing: 0.0,
                                                       ),
                                                 ),
@@ -803,6 +879,10 @@ class _EUserRankPageWidgetState extends State<EUserRankPageWidget> {
                                                       .bodyMedium
                                                       .override(
                                                         fontFamily: 'Poppins',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .secondaryText,
                                                         letterSpacing: 0.0,
                                                       ),
                                                 ),
@@ -818,17 +898,17 @@ class _EUserRankPageWidgetState extends State<EUserRankPageWidget> {
                                                   .where(
                                                     'erank_value',
                                                     isEqualTo:
-                                                        _model.dropELigueValue,
+                                                        _model.showELigueFilter,
                                                   )
                                                   .where(
                                                     'edivision_value',
-                                                    isEqualTo: _model
-                                                        .dropEDivisionValue,
+                                                    isEqualTo:
+                                                        _model.showEDivFilter,
                                                   )
                                                   .where(
                                                     'esport_value',
                                                     isEqualTo:
-                                                        _model.dropESportValue,
+                                                        _model.showESportFilter,
                                                   )
                                                   .orderBy('topsflops',
                                                       descending: true),
@@ -875,49 +955,88 @@ class _EUserRankPageWidgetState extends State<EUserRankPageWidget> {
                                                   mainAxisSize:
                                                       MainAxisSize.max,
                                                   children: [
-                                                    Container(
-                                                      width: 45.0,
-                                                      height: 30.0,
-                                                      decoration: BoxDecoration(
-                                                        color: FlutterFlowTheme
-                                                                .of(context)
-                                                            .primaryBackground,
-                                                        border: Border.all(
+                                                    Padding(
+                                                      padding:
+                                                          const EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  0.0,
+                                                                  0.0,
+                                                                  5.0,
+                                                                  0.0),
+                                                      child: Container(
+                                                        width: 125.0,
+                                                        height: 30.0,
+                                                        decoration:
+                                                            BoxDecoration(
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primaryBackground,
-                                                        ),
-                                                      ),
-                                                      child: Align(
-                                                        alignment:
-                                                            const AlignmentDirectional(
-                                                                0.0, 0.0),
-                                                        child: Text(
-                                                          valueOrDefault<
-                                                              String>(
-                                                            functions
-                                                                .zeroTo1(
-                                                                    columnUsersEarningsScrollIndex)
-                                                                .toString(),
-                                                            '1',
+                                                          border: Border.all(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryBackground,
                                                           ),
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Poppins',
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .primaryText,
-                                                                letterSpacing:
-                                                                    0.0,
+                                                        ),
+                                                        child: Align(
+                                                          alignment:
+                                                              const AlignmentDirectional(
+                                                                  -1.0, 0.0),
+                                                          child: InkWell(
+                                                            splashColor: Colors
+                                                                .transparent,
+                                                            focusColor: Colors
+                                                                .transparent,
+                                                            hoverColor: Colors
+                                                                .transparent,
+                                                            highlightColor:
+                                                                Colors
+                                                                    .transparent,
+                                                            onTap: () async {
+                                                              context.pushNamed(
+                                                                'PublicProfilPage',
+                                                                queryParameters:
+                                                                    {
+                                                                  'userRef':
+                                                                      serializeParam(
+                                                                    columnUsersEarningsScrollUsersRecord
+                                                                        .reference,
+                                                                    ParamType
+                                                                        .DocumentReference,
+                                                                  ),
+                                                                }.withoutNulls,
+                                                              );
+                                                            },
+                                                            child: Text(
+                                                              valueOrDefault<
+                                                                  String>(
+                                                                columnUsersEarningsScrollUsersRecord
+                                                                    .displayName,
+                                                                'NewUser',
                                                               ),
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Poppins',
+                                                                    color: valueOrDefault<
+                                                                        Color>(
+                                                                      columnUsersEarningsScrollUsersRecord
+                                                                          .color1,
+                                                                      FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primaryText,
+                                                                    ),
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                  ),
+                                                            ),
+                                                          ),
                                                         ),
                                                       ),
                                                     ),
                                                     Container(
-                                                      width: 130.0,
+                                                      width: 55.0,
                                                       height: 30.0,
                                                       decoration: BoxDecoration(
                                                         color: FlutterFlowTheme
@@ -933,35 +1052,22 @@ class _EUserRankPageWidgetState extends State<EUserRankPageWidget> {
                                                         alignment:
                                                             const AlignmentDirectional(
                                                                 1.0, 0.0),
-                                                        child: InkWell(
-                                                          splashColor: Colors
-                                                              .transparent,
-                                                          focusColor: Colors
-                                                              .transparent,
-                                                          hoverColor: Colors
-                                                              .transparent,
-                                                          highlightColor: Colors
-                                                              .transparent,
-                                                          onTap: () async {
-                                                            context.pushNamed(
-                                                              'PublicProfilPage',
-                                                              queryParameters: {
-                                                                'userRef':
-                                                                    serializeParam(
-                                                                  columnUsersEarningsScrollUsersRecord
-                                                                      .reference,
-                                                                  ParamType
-                                                                      .DocumentReference,
-                                                                ),
-                                                              }.withoutNulls,
-                                                            );
-                                                          },
+                                                        child: Padding(
+                                                          padding:
+                                                              const EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      0.0,
+                                                                      3.0,
+                                                                      0.0),
                                                           child: Text(
                                                             valueOrDefault<
                                                                 String>(
-                                                              columnUsersEarningsScrollUsersRecord
-                                                                  .displayName,
-                                                              'NewUser',
+                                                              functions
+                                                                  .zeroTo1(
+                                                                      columnUsersEarningsScrollIndex)
+                                                                  .toString(),
+                                                              '1',
                                                             ),
                                                             style: FlutterFlowTheme
                                                                     .of(context)
@@ -969,13 +1075,39 @@ class _EUserRankPageWidgetState extends State<EUserRankPageWidget> {
                                                                 .override(
                                                                   fontFamily:
                                                                       'Poppins',
-                                                                  color:
-                                                                      columnUsersEarningsScrollUsersRecord
-                                                                          .color1,
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primaryText,
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),
                                                           ),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                    Container(
+                                                      width: 30.0,
+                                                      height: 30.0,
+                                                      decoration: BoxDecoration(
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .primaryBackground,
+                                                        border: Border.all(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primaryBackground,
+                                                        ),
+                                                      ),
+                                                      child: ClipRRect(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(25.0),
+                                                        child: Image.network(
+                                                          columnUsersEarningsScrollUsersRecord
+                                                              .photoUrl,
+                                                          width: 200.0,
+                                                          height: 200.0,
+                                                          fit: BoxFit.fitHeight,
                                                         ),
                                                       ),
                                                     ),

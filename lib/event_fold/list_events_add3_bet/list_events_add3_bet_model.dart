@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 class ListEventsAdd3BetModel extends FlutterFlowModel<ListEventsAdd3BetWidget> {
   ///  Local state fields for this page.
 
-  String? showLigueFilter;
+  String? showSportFilter;
 
   ///  State fields for stateful widgets in this page.
 
@@ -16,21 +16,6 @@ class ListEventsAdd3BetModel extends FlutterFlowModel<ListEventsAdd3BetWidget> {
   // State field(s) for DropSport widget.
   String? dropSportValue;
   FormFieldController<String>? dropSportValueController;
-  // State field(s) for DropLigueFoot widget.
-  String? dropLigueFootValue;
-  FormFieldController<String>? dropLigueFootValueController;
-  // State field(s) for DropLigueBasket widget.
-  String? dropLigueBasketValue;
-  FormFieldController<String>? dropLigueBasketValueController;
-  // State field(s) for DropLigueTennis widget.
-  String? dropLigueTennisValue;
-  FormFieldController<String>? dropLigueTennisValueController;
-  // State field(s) for DropLigueFight widget.
-  String? dropLigueFightValue;
-  FormFieldController<String>? dropLigueFightValueController;
-  // State field(s) for DropLigueHockey widget.
-  String? dropLigueHockeyValue;
-  FormFieldController<String>? dropLigueHockeyValueController;
 
   @override
   void initState(BuildContext context) {

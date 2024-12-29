@@ -41,6 +41,11 @@ class BetsRecord extends FirestoreRecord {
   bool get statut => _statut ?? false;
   bool hasStatut() => _statut != null;
 
+  // "points" field.
+  String? _points;
+  String get points => _points ?? '';
+  bool hasPoints() => _points != null;
+
   DocumentReference get parentReference => reference.parent.parent!;
 
   void _initializeFields() {
@@ -49,6 +54,7 @@ class BetsRecord extends FirestoreRecord {
     _bettors = getDataList(snapshotData['bettors']);
     _odd = castToType<double>(snapshotData['odd']);
     _statut = snapshotData['statut'] as bool?;
+    _points = snapshotData['points'] as String?;
   }
 
   static Query<Map<String, dynamic>> collection([DocumentReference? parent]) =>
@@ -94,6 +100,7 @@ Map<String, dynamic> createBetsRecordData({
   DateTime? createdTime,
   double? odd,
   bool? statut,
+  String? points,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -101,6 +108,7 @@ Map<String, dynamic> createBetsRecordData({
       'created_time': createdTime,
       'odd': odd,
       'statut': statut,
+      'points': points,
     }.withoutNulls,
   );
 
@@ -117,12 +125,13 @@ class BetsRecordDocumentEquality implements Equality<BetsRecord> {
         e1?.createdTime == e2?.createdTime &&
         listEquality.equals(e1?.bettors, e2?.bettors) &&
         e1?.odd == e2?.odd &&
-        e1?.statut == e2?.statut;
+        e1?.statut == e2?.statut &&
+        e1?.points == e2?.points;
   }
 
   @override
-  int hash(BetsRecord? e) => const ListEquality()
-      .hash([e?.choice, e?.createdTime, e?.bettors, e?.odd, e?.statut]);
+  int hash(BetsRecord? e) => const ListEquality().hash(
+      [e?.choice, e?.createdTime, e?.bettors, e?.odd, e?.statut, e?.points]);
 
   @override
   bool isValidKey(Object? o) => o is BetsRecord;

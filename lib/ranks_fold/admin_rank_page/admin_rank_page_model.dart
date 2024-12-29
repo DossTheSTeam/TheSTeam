@@ -5,6 +5,10 @@ import 'admin_rank_page_widget.dart' show AdminRankPageWidget;
 import 'package:flutter/material.dart';
 
 class AdminRankPageModel extends FlutterFlowModel<AdminRankPageWidget> {
+  ///  Local state fields for this page.
+
+  String? showPenalitiesFilter;
+
   ///  State fields for stateful widgets in this page.
 
   // State field(s) for Calendar widget.

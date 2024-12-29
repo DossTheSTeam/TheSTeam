@@ -33,7 +33,7 @@ target 'Runner' do
   use_modular_headers!
 
   flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
-  pod 'FirebaseFirestore', :git => 'https://github.com/invertase/firestore-ios-sdk-frameworks.git', :tag => '11.2.0'
+  pod 'FirebaseFirestore', :git => 'https://github.com/invertase/firestore-ios-sdk-frameworks.git', :tag => '11.4.0'
 end
 
 post_install do |installer|
@@ -52,6 +52,9 @@ post_install do |installer|
 
         # dart: PermissionGroup.notification
         'PERMISSION_NOTIFICATIONS=1',
+
+        # dart: PermissionGroup.microphone
+        'PERMISSION_MICROPHONE=1',
       ]
     end
   end

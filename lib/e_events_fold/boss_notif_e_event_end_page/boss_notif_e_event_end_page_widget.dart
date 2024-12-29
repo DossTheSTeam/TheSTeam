@@ -72,7 +72,10 @@ class _BossNotifEEventEndPageWidgetState
         final bossNotifEEventEndPageMyNotificationsRecord = snapshot.data!;
 
         return GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -112,7 +115,10 @@ class _BossNotifEEventEndPageWidgetState
                                   },
                                   child: Icon(
                                     Icons.menu_rounded,
-                                    color: currentUserDocument?.color1,
+                                    color: valueOrDefault<Color>(
+                                      currentUserDocument?.color1,
+                                      FlutterFlowTheme.of(context).primaryText,
+                                    ),
                                     size: 30.0,
                                   ),
                                 ),
@@ -131,7 +137,11 @@ class _BossNotifEEventEndPageWidgetState
                                     },
                                     child: Icon(
                                       Icons.arrow_back_ios_new_rounded,
-                                      color: currentUserDocument?.color1,
+                                      color: valueOrDefault<Color>(
+                                        currentUserDocument?.color1,
+                                        FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                      ),
                                       size: 30.0,
                                     ),
                                   ),
@@ -404,7 +414,7 @@ class _BossNotifEEventEndPageWidgetState
                                                     child: Text(
                                                       contDomTeamsRecord.name,
                                                       textAlign:
-                                                          TextAlign.start,
+                                                          TextAlign.center,
                                                       maxLines: 2,
                                                       style: FlutterFlowTheme
                                                               .of(context)
@@ -523,7 +533,7 @@ class _BossNotifEEventEndPageWidgetState
                                                     child: Text(
                                                       contExtTeamsRecord.name,
                                                       textAlign:
-                                                          TextAlign.start,
+                                                          TextAlign.center,
                                                       maxLines: 2,
                                                       style: FlutterFlowTheme
                                                               .of(context)
@@ -663,7 +673,7 @@ class _BossNotifEEventEndPageWidgetState
                                                       .toString(),
                                                   '0',
                                                 ),
-                                                textAlign: TextAlign.end,
+                                                textAlign: TextAlign.center,
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .labelMedium
@@ -695,7 +705,7 @@ class _BossNotifEEventEndPageWidgetState
                                                       .toString(),
                                                   '0',
                                                 ),
-                                                textAlign: TextAlign.end,
+                                                textAlign: TextAlign.center,
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .labelMedium

@@ -36,7 +36,10 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -83,7 +86,11 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                     },
                                     child: Icon(
                                       Icons.menu_rounded,
-                                      color: currentUserDocument?.color1,
+                                      color: valueOrDefault<Color>(
+                                        currentUserDocument?.color1,
+                                        FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                      ),
                                       size: 30.0,
                                     ),
                                   ),
@@ -142,7 +149,10 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                   },
                                   child: Icon(
                                     Icons.arrow_back_ios_new_rounded,
-                                    color: currentUserDocument?.color1,
+                                    color: valueOrDefault<Color>(
+                                      currentUserDocument?.color1,
+                                      FlutterFlowTheme.of(context).primaryText,
+                                    ),
                                     size: 30.0,
                                   ),
                                 ),
@@ -206,30 +216,37 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                   Padding(
                                     padding: const EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 10.0, 0.0),
-                                    child: InkWell(
-                                      splashColor: Colors.transparent,
-                                      focusColor: Colors.transparent,
-                                      hoverColor: Colors.transparent,
-                                      highlightColor: Colors.transparent,
-                                      onTap: () async {
-                                        context.pushNamed(
-                                          'MyNotifsList',
-                                          extra: <String, dynamic>{
-                                            kTransitionInfoKey: const TransitionInfo(
-                                              hasTransition: true,
-                                              transitionType: PageTransitionType
-                                                  .rightToLeft,
-                                              duration:
-                                                  Duration(milliseconds: 400),
-                                            ),
-                                          },
-                                        );
-                                      },
-                                      child: Icon(
-                                        Icons.notifications_active_outlined,
-                                        color: FlutterFlowTheme.of(context)
-                                            .accent1,
-                                        size: 40.0,
+                                    child: AuthUserStreamWidget(
+                                      builder: (context) => InkWell(
+                                        splashColor: Colors.transparent,
+                                        focusColor: Colors.transparent,
+                                        hoverColor: Colors.transparent,
+                                        highlightColor: Colors.transparent,
+                                        onTap: () async {
+                                          context.pushNamed(
+                                            'MyNotifsList',
+                                            extra: <String, dynamic>{
+                                              kTransitionInfoKey:
+                                                  const TransitionInfo(
+                                                hasTransition: true,
+                                                transitionType:
+                                                    PageTransitionType
+                                                        .rightToLeft,
+                                                duration:
+                                                    Duration(milliseconds: 400),
+                                              ),
+                                            },
+                                          );
+                                        },
+                                        child: Icon(
+                                          Icons.notifications_active_outlined,
+                                          color: valueOrDefault<Color>(
+                                            currentUserDocument?.color1,
+                                            FlutterFlowTheme.of(context)
+                                                .accent1,
+                                          ),
+                                          size: 40.0,
+                                        ),
                                       ),
                                     ),
                                   ),
@@ -238,6 +255,15 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                             },
                           ),
                       ],
+                    ),
+                  ),
+                  AuthUserStreamWidget(
+                    builder: (context) => Divider(
+                      thickness: 1.0,
+                      color: valueOrDefault<Color>(
+                        currentUserDocument?.color2,
+                        FlutterFlowTheme.of(context).secondaryBackground,
+                      ),
                     ),
                   ),
                   Column(
@@ -261,7 +287,7 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                       alignment: const AlignmentDirectional(0.0, 0.0),
                                       child: Padding(
                                         padding: const EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 10.0, 0.0, 0.0),
+                                            0.0, 5.0, 0.0, 0.0),
                                         child: Wrap(
                                           spacing: 16.0,
                                           runSpacing: 16.0,
@@ -448,9 +474,15 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                             child: Icon(
                                                               Icons
                                                                   .admin_panel_settings_rounded,
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .accent1,
+                                                              color:
+                                                                  valueOrDefault<
+                                                                      Color>(
+                                                                currentUserDocument
+                                                                    ?.color1,
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .accent1,
+                                                              ),
                                                               size: 44.0,
                                                             ),
                                                           ),
@@ -661,9 +693,15 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                             child: Icon(
                                                               Icons
                                                                   .favorite_rounded,
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .error,
+                                                              color:
+                                                                  valueOrDefault<
+                                                                      Color>(
+                                                                currentUserDocument
+                                                                    ?.color1,
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .error,
+                                                              ),
                                                               size: 44.0,
                                                             ),
                                                           ),
@@ -755,7 +793,7 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                             child: StreamBuilder<TeamsRecord>(
                                               stream: TeamsRecord.getDocument(
                                                   columnMyTeamsMyTeamsRecord
-                                                      .teams.first),
+                                                      .teams.firstOrNull!),
                                               builder: (context, snapshot) {
                                                 // Customize what your widget looks like when it's loading.
                                                 if (!snapshot.hasData) {
@@ -1108,7 +1146,7 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                           child: StreamBuilder<TeamsRecord>(
                                             stream: TeamsRecord.getDocument(
                                                 columnTeamsLikesMyTeamslikeRecord
-                                                    .teams.first),
+                                                    .teams.firstOrNull!),
                                             builder: (context, snapshot) {
                                               // Customize what your widget looks like when it's loading.
                                               if (!snapshot.hasData) {
@@ -1412,7 +1450,7 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                       alignment: const AlignmentDirectional(0.0, 0.0),
                                       child: Padding(
                                         padding: const EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 10.0, 0.0, 0.0),
+                                            0.0, 5.0, 0.0, 0.0),
                                         child: Wrap(
                                           spacing: 16.0,
                                           runSpacing: 16.0,
@@ -1599,9 +1637,15 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                             child: Icon(
                                                               Icons
                                                                   .admin_panel_settings_rounded,
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .accent1,
+                                                              color:
+                                                                  valueOrDefault<
+                                                                      Color>(
+                                                                currentUserDocument
+                                                                    ?.color1,
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .accent1,
+                                                              ),
                                                               size: 44.0,
                                                             ),
                                                           ),
@@ -1812,9 +1856,15 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                             child: Icon(
                                                               Icons
                                                                   .favorite_rounded,
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .error,
+                                                              color:
+                                                                  valueOrDefault<
+                                                                      Color>(
+                                                                currentUserDocument
+                                                                    ?.color1,
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .error,
+                                                              ),
                                                               size: 44.0,
                                                             ),
                                                           ),
@@ -2771,7 +2821,7 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                           child: StreamBuilder<TeamsRecord>(
                                             stream: TeamsRecord.getDocument(
                                                 columnTeamsLikesMyTeamslikeRecord
-                                                    .teams.first),
+                                                    .teams.firstOrNull!),
                                             builder: (context, snapshot) {
                                               // Customize what your widget looks like when it's loading.
                                               if (!snapshot.hasData) {

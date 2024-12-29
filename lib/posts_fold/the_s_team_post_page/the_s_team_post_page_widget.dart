@@ -68,7 +68,10 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
         final theSTeamPostPagePostsRecord = snapshot.data!;
 
         return GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -173,157 +176,112 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                           .displaySmall
                                           .override(
                                             fontFamily: 'Montserrat',
+                                            fontSize: 24.0,
                                             letterSpacing: 0.0,
                                           ),
                                     ),
-                                    StreamBuilder<List<MyPostsRecord>>(
-                                      stream: queryMyPostsRecord(
-                                        parent:
-                                            theSTeamPostPagePostsRecord.member,
-                                        queryBuilder: (myPostsRecord) =>
-                                            myPostsRecord.where(
-                                          'posts',
-                                          isEqualTo: widget.postRef,
-                                        ),
-                                        singleRecord: true,
-                                      ),
-                                      builder: (context, snapshot) {
-                                        // Customize what your widget looks like when it's loading.
-                                        if (!snapshot.hasData) {
-                                          return Center(
-                                            child: SizedBox(
-                                              width: 50.0,
-                                              height: 50.0,
-                                              child: CircularProgressIndicator(
-                                                valueColor:
-                                                    AlwaysStoppedAnimation<
-                                                        Color>(
-                                                  FlutterFlowTheme.of(context)
-                                                      .accent4,
-                                                ),
-                                              ),
+                                    Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        StreamBuilder<List<TeamPostsRecord>>(
+                                          stream: queryTeamPostsRecord(
+                                            parent: theSTeamPostPagePostsRecord
+                                                .teamRef,
+                                            queryBuilder: (teamPostsRecord) =>
+                                                teamPostsRecord.where(
+                                              'posts',
+                                              isEqualTo: widget.postRef,
                                             ),
-                                          );
-                                        }
-                                        List<MyPostsRecord>
-                                            rowMyPostsRecordList =
-                                            snapshot.data!;
-                                        // Return an empty Container when the item does not exist.
-                                        if (snapshot.data!.isEmpty) {
-                                          return Container();
-                                        }
-                                        final rowMyPostsRecord =
-                                            rowMyPostsRecordList.isNotEmpty
-                                                ? rowMyPostsRecordList.first
-                                                : null;
-
-                                        return Row(
-                                          mainAxisSize: MainAxisSize.max,
-                                          children: [
-                                            StreamBuilder<
-                                                List<TeamPostsRecord>>(
-                                              stream: queryTeamPostsRecord(
-                                                parent:
-                                                    theSTeamPostPagePostsRecord
-                                                        .teamRef,
-                                                queryBuilder:
-                                                    (teamPostsRecord) =>
-                                                        teamPostsRecord.where(
-                                                  'posts',
-                                                  isEqualTo: widget.postRef,
+                                            singleRecord: true,
+                                          ),
+                                          builder: (context, snapshot) {
+                                            // Customize what your widget looks like when it's loading.
+                                            if (!snapshot.hasData) {
+                                              return Center(
+                                                child: SizedBox(
+                                                  width: 50.0,
+                                                  height: 50.0,
+                                                  child:
+                                                      CircularProgressIndicator(
+                                                    valueColor:
+                                                        AlwaysStoppedAnimation<
+                                                            Color>(
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .accent4,
+                                                    ),
+                                                  ),
                                                 ),
-                                                singleRecord: true,
-                                              ),
-                                              builder: (context, snapshot) {
-                                                // Customize what your widget looks like when it's loading.
-                                                if (!snapshot.hasData) {
-                                                  return Center(
-                                                    child: SizedBox(
-                                                      width: 50.0,
-                                                      height: 50.0,
-                                                      child:
-                                                          CircularProgressIndicator(
-                                                        valueColor:
-                                                            AlwaysStoppedAnimation<
-                                                                Color>(
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .accent4,
-                                                        ),
+                                              );
+                                            }
+                                            List<TeamPostsRecord>
+                                                rowTeamPostsRecordList =
+                                                snapshot.data!;
+                                            // Return an empty Container when the item does not exist.
+                                            if (snapshot.data!.isEmpty) {
+                                              return Container();
+                                            }
+                                            final rowTeamPostsRecord =
+                                                rowTeamPostsRecordList
+                                                        .isNotEmpty
+                                                    ? rowTeamPostsRecordList
+                                                        .first
+                                                    : null;
+
+                                            return Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              children: [
+                                                if ((valueOrDefault(
+                                                            currentUserDocument
+                                                                ?.stsocialapp,
+                                                            '') ==
+                                                        'administrateur') ||
+                                                    (theSTeamPostPagePostsRecord
+                                                            .member ==
+                                                        currentUserReference))
+                                                  AuthUserStreamWidget(
+                                                    builder: (context) =>
+                                                        InkWell(
+                                                      splashColor:
+                                                          Colors.transparent,
+                                                      focusColor:
+                                                          Colors.transparent,
+                                                      hoverColor:
+                                                          Colors.transparent,
+                                                      highlightColor:
+                                                          Colors.transparent,
+                                                      onTap: () async {
+                                                        await widget.postRef!
+                                                            .delete();
+                                                        await rowTeamPostsRecord!
+                                                            .reference
+                                                            .delete();
+
+                                                        context.pushNamed(
+                                                            'MenuPage');
+                                                      },
+                                                      child: Icon(
+                                                        Icons.delete_forever,
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .error,
+                                                        size: 25.0,
                                                       ),
                                                     ),
-                                                  );
-                                                }
-                                                List<TeamPostsRecord>
-                                                    rowTeamPostsRecordList =
-                                                    snapshot.data!;
-                                                // Return an empty Container when the item does not exist.
-                                                if (snapshot.data!.isEmpty) {
-                                                  return Container();
-                                                }
-                                                final rowTeamPostsRecord =
-                                                    rowTeamPostsRecordList
-                                                            .isNotEmpty
-                                                        ? rowTeamPostsRecordList
-                                                            .first
-                                                        : null;
-
-                                                return Row(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  children: [
-                                                    if ((valueOrDefault(
-                                                                currentUserDocument
-                                                                    ?.stsocialapp,
-                                                                '') ==
-                                                            'administrateur') &&
-                                                        (theSTeamPostPagePostsRecord
-                                                                .member ==
-                                                            currentUserReference))
-                                                      AuthUserStreamWidget(
-                                                        builder: (context) =>
-                                                            InkWell(
-                                                          splashColor: Colors
-                                                              .transparent,
-                                                          focusColor: Colors
-                                                              .transparent,
-                                                          hoverColor: Colors
-                                                              .transparent,
-                                                          highlightColor: Colors
-                                                              .transparent,
-                                                          onTap: () async {
-                                                            await widget
-                                                                .postRef!
-                                                                .delete();
-                                                            await rowTeamPostsRecord!
-                                                                .reference
-                                                                .delete();
-                                                            await rowMyPostsRecord!
-                                                                .reference
-                                                                .delete();
-
-                                                            context.pushNamed(
-                                                                'MenuPage');
-                                                          },
-                                                          child: Icon(
-                                                            Icons
-                                                                .delete_forever,
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .error,
-                                                            size: 25.0,
-                                                          ),
-                                                        ),
-                                                      ),
-                                                  ],
-                                                );
-                                              },
-                                            ),
-                                          ],
-                                        );
-                                      },
+                                                  ),
+                                              ],
+                                            );
+                                          },
+                                        ),
+                                      ],
                                     ),
                                   ],
+                                ),
+                                Divider(
+                                  thickness: 1.0,
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryBackground,
                                 ),
                                 if (valueOrDefault(
                                         currentUserDocument?.stsocialapp, '') ==
@@ -368,20 +326,43 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                       height: 200.0,
                                       decoration: BoxDecoration(
                                         color: FlutterFlowTheme.of(context)
-                                            .secondaryBackground,
+                                            .primaryBackground,
                                         borderRadius:
                                             BorderRadius.circular(18.0),
                                       ),
                                       child: Padding(
                                         padding: const EdgeInsets.all(3.0),
-                                        child: ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(15.0),
-                                          child: Image.network(
-                                            theSTeamPostPagePostsRecord.image,
-                                            width: 300.0,
-                                            height: 200.0,
-                                            fit: BoxFit.cover,
+                                        child: InkWell(
+                                          splashColor: Colors.transparent,
+                                          focusColor: Colors.transparent,
+                                          hoverColor: Colors.transparent,
+                                          highlightColor: Colors.transparent,
+                                          onTap: () async {
+                                            context.pushNamed(
+                                              'FullImagePage',
+                                              queryParameters: {
+                                                'imageRef': serializeParam(
+                                                  theSTeamPostPagePostsRecord
+                                                      .image,
+                                                  ParamType.String,
+                                                ),
+                                                'userRef': serializeParam(
+                                                  theSTeamPostPagePostsRecord
+                                                      .member,
+                                                  ParamType.DocumentReference,
+                                                ),
+                                              }.withoutNulls,
+                                            );
+                                          },
+                                          child: ClipRRect(
+                                            borderRadius:
+                                                BorderRadius.circular(15.0),
+                                            child: Image.network(
+                                              theSTeamPostPagePostsRecord.image,
+                                              width: 300.0,
+                                              height: 200.0,
+                                              fit: BoxFit.cover,
+                                            ),
                                           ),
                                         ),
                                       ),
@@ -963,7 +944,7 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                                           .photoUrl,
                                                       width: 300.0,
                                                       height: 200.0,
-                                                      fit: BoxFit.cover,
+                                                      fit: BoxFit.fitHeight,
                                                     ),
                                                   ),
                                                 ),
@@ -1395,18 +1376,6 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                       Row(
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
-                                          Padding(
-                                            padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 5.0, 0.0),
-                                            child: Icon(
-                                              Icons.mic_rounded,
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .error,
-                                              size: 30.0,
-                                            ),
-                                          ),
                                           Padding(
                                             padding:
                                                 const EdgeInsetsDirectional.fromSTEB(

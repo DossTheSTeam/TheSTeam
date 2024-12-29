@@ -69,7 +69,10 @@ class _RedCardPostPageWidgetState extends State<RedCardPostPageWidget> {
         final redCardPostPagePostsRecord = snapshot.data!;
 
         return GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -152,6 +155,11 @@ class _RedCardPostPageWidgetState extends State<RedCardPostPageWidget> {
                             ),
                           ],
                         ),
+                        Divider(
+                          thickness: 1.0,
+                          color:
+                              FlutterFlowTheme.of(context).secondaryBackground,
+                        ),
                         Align(
                           alignment: const AlignmentDirectional(-1.0, 0.0),
                           child: Padding(
@@ -228,7 +236,7 @@ class _RedCardPostPageWidgetState extends State<RedCardPostPageWidget> {
                                         rowMemberUsersRecord.photoUrl,
                                         width: 300.0,
                                         height: 200.0,
-                                        fit: BoxFit.cover,
+                                        fit: BoxFit.fitHeight,
                                       ),
                                     ),
                                   ),

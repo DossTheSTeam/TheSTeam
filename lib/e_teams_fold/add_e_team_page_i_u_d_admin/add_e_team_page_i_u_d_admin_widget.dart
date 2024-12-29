@@ -44,7 +44,10 @@ class _AddETeamPageIUDAdminWidgetState
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -56,79 +59,81 @@ class _AddETeamPageIUDAdminWidgetState
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
-                  Padding(
-                    padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Row(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            AuthUserStreamWidget(
+                  Row(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Row(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          AuthUserStreamWidget(
+                            builder: (context) => InkWell(
+                              splashColor: Colors.transparent,
+                              focusColor: Colors.transparent,
+                              hoverColor: Colors.transparent,
+                              highlightColor: Colors.transparent,
+                              onTap: () async {
+                                context.pushNamed(
+                                  'MenuPage',
+                                  extra: <String, dynamic>{
+                                    kTransitionInfoKey: const TransitionInfo(
+                                      hasTransition: true,
+                                      transitionType:
+                                          PageTransitionType.leftToRight,
+                                      duration: Duration(milliseconds: 400),
+                                    ),
+                                  },
+                                );
+                              },
+                              child: Icon(
+                                Icons.menu_rounded,
+                                color: currentUserDocument?.color1,
+                                size: 30.0,
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                10.0, 0.0, 0.0, 0.0),
+                            child: AuthUserStreamWidget(
                               builder: (context) => InkWell(
                                 splashColor: Colors.transparent,
                                 focusColor: Colors.transparent,
                                 hoverColor: Colors.transparent,
                                 highlightColor: Colors.transparent,
                                 onTap: () async {
-                                  context.pushNamed(
-                                    'MenuPage',
-                                    extra: <String, dynamic>{
-                                      kTransitionInfoKey: const TransitionInfo(
-                                        hasTransition: true,
-                                        transitionType:
-                                            PageTransitionType.leftToRight,
-                                        duration: Duration(milliseconds: 400),
-                                      ),
-                                    },
-                                  );
+                                  context.safePop();
                                 },
                                 child: Icon(
-                                  Icons.menu_rounded,
+                                  Icons.arrow_back_ios_new_rounded,
                                   color: currentUserDocument?.color1,
                                   size: 30.0,
                                 ),
                               ),
                             ),
-                            Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  10.0, 0.0, 0.0, 0.0),
-                              child: AuthUserStreamWidget(
-                                builder: (context) => InkWell(
-                                  splashColor: Colors.transparent,
-                                  focusColor: Colors.transparent,
-                                  hoverColor: Colors.transparent,
-                                  highlightColor: Colors.transparent,
-                                  onTap: () async {
-                                    context.safePop();
-                                  },
-                                  child: Icon(
-                                    Icons.arrow_back_ios_new_rounded,
-                                    color: currentUserDocument?.color1,
-                                    size: 30.0,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                        Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
-                              20.0, 0.0, 0.0, 0.0),
-                          child: Text(
-                            'Céer une E Team',
-                            maxLines: 1,
-                            style: FlutterFlowTheme.of(context)
-                                .headlineSmall
-                                .override(
-                                  fontFamily: 'Poppins',
-                                  letterSpacing: 0.0,
-                                ),
                           ),
+                        ],
+                      ),
+                      Padding(
+                        padding:
+                            const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
+                        child: Text(
+                          'Céer une E Team',
+                          maxLines: 1,
+                          style: FlutterFlowTheme.of(context)
+                              .headlineSmall
+                              .override(
+                                fontFamily: 'Poppins',
+                                letterSpacing: 0.0,
+                              ),
                         ),
-                      ],
+                      ),
+                    ],
+                  ),
+                  AuthUserStreamWidget(
+                    builder: (context) => Divider(
+                      thickness: 1.0,
+                      color: currentUserDocument?.color2,
                     ),
                   ),
                   Align(
@@ -490,59 +495,81 @@ class _AddETeamPageIUDAdminWidgetState
                       ),
                     ),
                   ),
+                  Align(
+                    alignment: const AlignmentDirectional(0.0, 0.0),
+                    child: Text(
+                      'Couleur principale',
+                      textAlign: TextAlign.center,
+                      maxLines: 6,
+                      style: FlutterFlowTheme.of(context).labelMedium.override(
+                            fontFamily: 'Poppins',
+                            color: FlutterFlowTheme.of(context).primaryText,
+                            letterSpacing: 0.0,
+                          ),
+                    ),
+                  ),
                   Padding(
                     padding:
                         const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Align(
-                          alignment: const AlignmentDirectional(0.0, 0.0),
-                          child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                10.0, 0.0, 0.0, 0.0),
-                            child: Text(
-                              'Couleur 1...',
-                              textAlign: TextAlign.center,
-                              maxLines: 6,
-                              style: FlutterFlowTheme.of(context)
-                                  .labelMedium
-                                  .override(
-                                    fontFamily: 'Poppins',
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryText,
-                                    letterSpacing: 0.0,
-                                  ),
-                            ),
-                          ),
-                        ),
                         Padding(
                           padding: const EdgeInsetsDirectional.fromSTEB(
-                              13.0, 0.0, 20.0, 0.0),
+                              0.0, 0.0, 20.0, 0.0),
                           child: FlutterFlowDropDown<String>(
                             controller: _model.dropColor1ValueController ??=
                                 FormFieldController<String>(
                               _model.dropColor1Value ??= '',
                             ),
                             options: List<String>.from([
-                              '#2c37aa',
-                              '#d1851e',
-                              '#cd3640',
-                              '#249644',
+                              '#FFFF00',
+                              '#00FF00',
+                              '#FFB6C1',
+                              '#00FFFF',
                               '#6CABDD',
-                              '#c9b80e',
-                              '#801e64',
-                              '#451509'
+                              '#FF00FF',
+                              '#FF8C00',
+                              '#FF0000',
+                              '#9370DB',
+                              '#0000FF',
+                              '#3CB371',
+                              '#008B8B',
+                              '#008000',
+                              '#0000CD',
+                              '#8B008B',
+                              '#DC143C',
+                              '#A0522D',
+                              '#808080',
+                              '#C0C0C0',
+                              '#FFD700',
+                              '#B22222',
+                              '#860038'
                             ]),
                             optionLabels: const [
-                              'Bleu',
-                              'Orange',
-                              'Rouge',
-                              'Vert',
-                              'Cyan',
                               'Jaune',
+                              'Vert 1',
+                              'Rose',
+                              'Cyan 1',
+                              'Ciel',
                               'Magenta',
-                              'Marron'
+                              'Orange',
+                              'Rouge 1',
+                              'Violet',
+                              'Bleu 1',
+                              'Vert 2',
+                              'Cyan 2',
+                              'Vert 3',
+                              'Bleu 2',
+                              'Magenta 2',
+                              'Rouge 2',
+                              'Marron',
+                              'Gris 2',
+                              'Gris 1',
+                              'Gold',
+                              'Rouge 3',
+                              'Bordeaux'
                             ],
                             onChanged: (val) => safeSetState(
                                 () => _model.dropColor1Value = val),
@@ -576,7 +603,7 @@ class _AddETeamPageIUDAdminWidgetState
                         ),
                         Padding(
                           padding: const EdgeInsetsDirectional.fromSTEB(
-                              10.0, 0.0, 10.0, 0.0),
+                              10.0, 0.0, 0.0, 0.0),
                           child: Icon(
                             Icons.circle_rounded,
                             color: colorFromCssString(
@@ -590,59 +617,87 @@ class _AddETeamPageIUDAdminWidgetState
                       ],
                     ),
                   ),
+                  Align(
+                    alignment: const AlignmentDirectional(0.0, 0.0),
+                    child: Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                      child: Text(
+                        'Couleur secondaire',
+                        textAlign: TextAlign.center,
+                        maxLines: 6,
+                        style: FlutterFlowTheme.of(context)
+                            .labelMedium
+                            .override(
+                              fontFamily: 'Poppins',
+                              color: FlutterFlowTheme.of(context).primaryText,
+                              letterSpacing: 0.0,
+                            ),
+                      ),
+                    ),
+                  ),
                   Padding(
                     padding:
                         const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Align(
-                          alignment: const AlignmentDirectional(0.0, 0.0),
-                          child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                10.0, 0.0, 0.0, 0.0),
-                            child: Text(
-                              'Couleur 2...',
-                              textAlign: TextAlign.center,
-                              maxLines: 6,
-                              style: FlutterFlowTheme.of(context)
-                                  .labelMedium
-                                  .override(
-                                    fontFamily: 'Poppins',
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryText,
-                                    letterSpacing: 0.0,
-                                  ),
-                            ),
-                          ),
-                        ),
                         Padding(
                           padding: const EdgeInsetsDirectional.fromSTEB(
-                              10.0, 0.0, 20.0, 0.0),
+                              0.0, 0.0, 20.0, 0.0),
                           child: FlutterFlowDropDown<String>(
                             controller: _model.dropColor2ValueController ??=
                                 FormFieldController<String>(
                               _model.dropColor2Value ??= '',
                             ),
                             options: List<String>.from([
-                              '#2c37aa',
-                              '#d1851e',
-                              '#cd3640',
-                              '#249644',
+                              '#FFFF00',
+                              '#00FF00',
+                              '#FFB6C1',
+                              '#00FFFF',
                               '#6CABDD',
-                              '#c9b80e',
-                              '#801e64',
-                              '#451509'
+                              '#FF00FF',
+                              '#FF8C00',
+                              '#FF0000',
+                              '#9370DB',
+                              '#0000FF',
+                              '#3CB371',
+                              '#008B8B',
+                              '#008000',
+                              '#0000CD',
+                              '#8B008B',
+                              '#DC143C',
+                              '#A0522D',
+                              '#808080',
+                              '#C0C0C0',
+                              '#FFD700',
+                              '#B22222',
+                              '#860038'
                             ]),
                             optionLabels: const [
-                              'Bleu',
-                              'Orange',
-                              'Rouge',
-                              'Vert',
-                              'Cyan',
                               'Jaune',
+                              'Vert 1',
+                              'Rose',
+                              'Cyan 1',
+                              'Ciel',
                               'Magenta',
-                              'Marron'
+                              'Orange',
+                              'Rouge 1',
+                              'Violet',
+                              'Bleu 1',
+                              'Vert 2',
+                              'Cyan 2',
+                              'Vert 3',
+                              'Bleu 2',
+                              'Magenta 2',
+                              'Rouge 2',
+                              'Marron',
+                              'Gris 2',
+                              'Gris 1',
+                              'Gold',
+                              'Rouge 3',
+                              'Bordeaux'
                             ],
                             onChanged: (val) => safeSetState(
                                 () => _model.dropColor2Value = val),
@@ -676,7 +731,7 @@ class _AddETeamPageIUDAdminWidgetState
                         ),
                         Padding(
                           padding: const EdgeInsetsDirectional.fromSTEB(
-                              10.0, 0.0, 10.0, 0.0),
+                              10.0, 0.0, 0.0, 0.0),
                           child: Icon(
                             Icons.circle_outlined,
                             color: colorFromCssString(
@@ -789,6 +844,7 @@ class _AddETeamPageIUDAdminWidgetState
                                                                     context)
                                                                 .primaryText,
                                                       ),
+                                                      points: 0,
                                                     ),
                                                     ...mapToFirestore(
                                                       {
@@ -840,6 +896,7 @@ class _AddETeamPageIUDAdminWidgetState
                                                                     context)
                                                                 .primaryText,
                                                       ),
+                                                      points: 0,
                                                     ),
                                                     ...mapToFirestore(
                                                       {
@@ -1005,6 +1062,7 @@ class _AddETeamPageIUDAdminWidgetState
                                                                   context)
                                                               .primaryText,
                                                     ),
+                                                    points: 0,
                                                   ),
                                                   ...mapToFirestore(
                                                     {
@@ -1052,6 +1110,7 @@ class _AddETeamPageIUDAdminWidgetState
                                                                   context)
                                                               .primaryText,
                                                     ),
+                                                    points: 0,
                                                   ),
                                                   ...mapToFirestore(
                                                     {
@@ -1212,6 +1271,7 @@ class _AddETeamPageIUDAdminWidgetState
                                                                   context)
                                                               .primaryText,
                                                     ),
+                                                    points: 0,
                                                   ),
                                                   ...mapToFirestore(
                                                     {
@@ -1257,6 +1317,7 @@ class _AddETeamPageIUDAdminWidgetState
                                                                   context)
                                                               .primaryText,
                                                     ),
+                                                    points: 0,
                                                   ),
                                                   ...mapToFirestore(
                                                     {

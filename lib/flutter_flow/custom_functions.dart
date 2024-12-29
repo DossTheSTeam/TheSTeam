@@ -83,6 +83,13 @@ int zeroTo1(int originalIndex) {
   return originalIndex + 1;
 }
 
+double? pourcentToValue(
+  double stock,
+  double pourcent,
+) {
+  return stock * pourcent;
+}
+
 String zeroTo00(int zero) {
   return zero.toString().padLeft(2, '0');
 }

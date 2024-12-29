@@ -62,7 +62,10 @@ class _TeamEventsListWidgetState extends State<TeamEventsListWidget> {
         final teamEventsListTeamsRecord = snapshot.data!;
 
         return GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -104,7 +107,10 @@ class _TeamEventsListWidgetState extends State<TeamEventsListWidget> {
                                   },
                                   child: Icon(
                                     Icons.menu_rounded,
-                                    color: teamEventsListTeamsRecord.color1,
+                                    color: valueOrDefault<Color>(
+                                      teamEventsListTeamsRecord.color1,
+                                      FlutterFlowTheme.of(context).primaryText,
+                                    ),
                                     size: 30.0,
                                   ),
                                 ),
@@ -121,7 +127,11 @@ class _TeamEventsListWidgetState extends State<TeamEventsListWidget> {
                                     },
                                     child: Icon(
                                       Icons.arrow_back_ios_new_rounded,
-                                      color: teamEventsListTeamsRecord.color1,
+                                      color: valueOrDefault<Color>(
+                                        teamEventsListTeamsRecord.color1,
+                                        FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                      ),
                                       size: 30.0,
                                     ),
                                   ),
@@ -174,6 +184,13 @@ class _TeamEventsListWidgetState extends State<TeamEventsListWidget> {
                               ),
                             ),
                           ],
+                        ),
+                      ),
+                      Divider(
+                        thickness: 1.0,
+                        color: valueOrDefault<Color>(
+                          teamEventsListTeamsRecord.color2,
+                          FlutterFlowTheme.of(context).secondaryBackground,
                         ),
                       ),
                       Padding(
@@ -229,14 +246,25 @@ class _TeamEventsListWidgetState extends State<TeamEventsListWidget> {
                                         },
                                         child: Icon(
                                           Icons.newspaper_rounded,
-                                          color:
-                                              teamEventsListTeamsRecord.color1,
+                                          color: valueOrDefault<Color>(
+                                            teamEventsListTeamsRecord.color1,
+                                            FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                          ),
                                           size: 30.0,
                                         ),
                                       ),
                                     ),
                                   ),
                                 ],
+                              ),
+                            ),
+                            Divider(
+                              thickness: 1.0,
+                              color: valueOrDefault<Color>(
+                                teamEventsListTeamsRecord.color2,
+                                FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
                               ),
                             ),
                           ],
@@ -267,6 +295,7 @@ class _TeamEventsListWidgetState extends State<TeamEventsListWidget> {
                               queryBuilder: (teamEventsRecord) =>
                                   teamEventsRecord.orderBy('started_time',
                                       descending: true),
+                              limit: 10,
                             ),
                             builder: (context, snapshot) {
                               // Customize what your widget looks like when it's loading.
@@ -337,11 +366,69 @@ class _TeamEventsListWidgetState extends State<TeamEventsListWidget> {
                                                     mainAxisSize:
                                                         MainAxisSize.max,
                                                     children: [
+                                                      Padding(
+                                                        padding:
+                                                            const EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    20.0,
+                                                                    0.0,
+                                                                    10.0,
+                                                                    0.0),
+                                                        child: Row(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          children: [
+                                                            if (columnEventEventsRecord
+                                                                    .statut ==
+                                                                true)
+                                                              Container(
+                                                                width: 20.0,
+                                                                height: 20.0,
+                                                                decoration:
+                                                                    BoxDecoration(
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .success,
+                                                                  shape: BoxShape
+                                                                      .circle,
+                                                                ),
+                                                              ),
+                                                            if (columnEventEventsRecord
+                                                                    .statut ==
+                                                                false)
+                                                              Padding(
+                                                                padding:
+                                                                    const EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            5.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                child:
+                                                                    Container(
+                                                                  width: 20.0,
+                                                                  height: 20.0,
+                                                                  decoration:
+                                                                      BoxDecoration(
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .error,
+                                                                    shape: BoxShape
+                                                                        .circle,
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                          ],
+                                                        ),
+                                                      ),
                                                       Text(
-                                                        dateTimeFormat(
-                                                            "d/M/y",
-                                                            columnEventEventsRecord
-                                                                .date!),
+                                                        valueOrDefault<String>(
+                                                          dateTimeFormat(
+                                                              "d/M/y",
+                                                              columnEventEventsRecord
+                                                                  .date),
+                                                          '00/00/0000',
+                                                        ),
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -431,51 +518,6 @@ class _TeamEventsListWidgetState extends State<TeamEventsListWidget> {
                                                                       0.0,
                                                                 ),
                                                       ),
-                                                    ],
-                                                  ),
-                                                  Row(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
-                                                    children: [
-                                                      if (columnEventEventsRecord
-                                                              .statut ==
-                                                          true)
-                                                        Container(
-                                                          width: 25.0,
-                                                          height: 25.0,
-                                                          decoration:
-                                                              BoxDecoration(
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .success,
-                                                            shape:
-                                                                BoxShape.circle,
-                                                          ),
-                                                        ),
-                                                      if (columnEventEventsRecord
-                                                              .statut ==
-                                                          false)
-                                                        Padding(
-                                                          padding:
-                                                              const EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      5.0,
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0),
-                                                          child: Container(
-                                                            width: 25.0,
-                                                            height: 25.0,
-                                                            decoration:
-                                                                BoxDecoration(
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .error,
-                                                              shape: BoxShape
-                                                                  .circle,
-                                                            ),
-                                                          ),
-                                                        ),
                                                     ],
                                                   ),
                                                 ],
@@ -685,8 +727,14 @@ class _TeamEventsListWidgetState extends State<TeamEventsListWidget> {
                                                               Icons
                                                                   .stadium_rounded,
                                                               color:
-                                                                  teamEventsListTeamsRecord
-                                                                      .color1,
+                                                                  valueOrDefault<
+                                                                      Color>(
+                                                                teamEventsListTeamsRecord
+                                                                    .color1,
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primaryText,
+                                                              ),
                                                               size: 30.0,
                                                             ),
                                                           ),
@@ -916,8 +964,12 @@ class _TeamEventsListWidgetState extends State<TeamEventsListWidget> {
                                               ),
                                             Divider(
                                               thickness: 1.0,
-                                              color: teamEventsListTeamsRecord
-                                                  .color2,
+                                              color: valueOrDefault<Color>(
+                                                teamEventsListTeamsRecord
+                                                    .color2,
+                                                FlutterFlowTheme.of(context)
+                                                    .secondaryBackground,
+                                              ),
                                             ),
                                           ],
                                         );
