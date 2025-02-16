@@ -1,3 +1,4 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_count_controller.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
@@ -5,9 +6,12 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
+import '/team_fold/audio_fan_conference/audio_fan_conference_widget.dart';
+import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'profil_public_admin_model.dart';
 export 'profil_public_admin_model.dart';
 
@@ -72,649 +76,881 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
             FocusScope.of(context).unfocus();
             FocusManager.instance.primaryFocus?.unfocus();
           },
-          child: Scaffold(
-            key: scaffoldKey,
-            backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-            body: Align(
-              alignment: const AlignmentDirectional(0.0, -1.0),
-              child: SingleChildScrollView(
-                child: Column(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    SizedBox(
-                      height: 250.0,
-                      child: Stack(
-                        children: [
-                          Container(
-                            width: double.infinity,
-                            height: 200.0,
-                            decoration: BoxDecoration(
-                              color: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
-                              image: DecorationImage(
-                                fit: BoxFit.cover,
-                                image: CachedNetworkImageProvider(
-                                  profilPublicAdminUsersRecord.imageFond,
-                                ),
-                              ),
-                            ),
-                            child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  20.0, 20.0, 20.0, 0.0),
-                              child: Column(
-                                mainAxisSize: MainAxisSize.max,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 10.0, 0.0, 0.0),
-                                    child: FlutterFlowIconButton(
-                                      borderColor:
-                                          FlutterFlowTheme.of(context).primary,
-                                      borderRadius: 50.0,
-                                      borderWidth: 1.0,
-                                      buttonSize: 50.0,
-                                      fillColor:
-                                          FlutterFlowTheme.of(context).tertiary,
-                                      icon: Icon(
-                                        Icons.menu_rounded,
-                                        color: FlutterFlowTheme.of(context)
-                                            .primary,
-                                        size: 30.0,
-                                      ),
-                                      onPressed: () async {
-                                        context.pushNamed(
-                                          'MenuPage',
-                                          extra: <String, dynamic>{
-                                            kTransitionInfoKey: const TransitionInfo(
-                                              hasTransition: true,
-                                              transitionType: PageTransitionType
-                                                  .leftToRight,
-                                              duration:
-                                                  Duration(milliseconds: 400),
-                                            ),
-                                          },
-                                        );
-                                      },
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 10.0, 0.0, 0.0),
-                                    child: FlutterFlowIconButton(
-                                      borderColor:
-                                          FlutterFlowTheme.of(context).primary,
-                                      borderRadius: 50.0,
-                                      borderWidth: 1.0,
-                                      buttonSize: 50.0,
-                                      fillColor:
-                                          FlutterFlowTheme.of(context).tertiary,
-                                      icon: Icon(
-                                        Icons.arrow_back_ios_new_rounded,
-                                        color: FlutterFlowTheme.of(context)
-                                            .primary,
-                                        size: 30.0,
-                                      ),
-                                      onPressed: () async {
-                                        context.safePop();
-                                      },
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                          Align(
-                            alignment: const AlignmentDirectional(-1.0, 1.0),
-                            child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  24.0, 0.0, 0.0, 0.0),
-                              child: Container(
-                                width: 90.0,
-                                height: 90.0,
-                                decoration: BoxDecoration(
-                                  color: FlutterFlowTheme.of(context)
-                                      .primaryBackground,
-                                  shape: BoxShape.circle,
-                                  border: Border.all(
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryText,
-                                    width: 2.0,
-                                  ),
-                                ),
-                                child: Padding(
-                                  padding: const EdgeInsets.all(4.0),
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(50.0),
-                                    child: CachedNetworkImage(
-                                      fadeInDuration:
-                                          const Duration(milliseconds: 500),
-                                      fadeOutDuration:
-                                          const Duration(milliseconds: 500),
-                                      imageUrl:
-                                          profilPublicAdminUsersRecord.photoUrl,
-                                      width: 100.0,
-                                      height: 100.0,
-                                      fit: BoxFit.fitHeight,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                          Align(
-                            alignment: const AlignmentDirectional(0.0, 1.0),
-                            child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  125.0, 20.0, 20.0, 0.0),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                crossAxisAlignment: CrossAxisAlignment.end,
-                                children: [
-                                  Align(
-                                    alignment: const AlignmentDirectional(0.0, 1.0),
-                                    child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 0.0, 0.0, 5.0),
-                                      child: Text(
-                                        valueOrDefault<String>(
-                                          profilPublicAdminUsersRecord
-                                              .displayName,
-                                          'NewUser',
-                                        ),
-                                        style: FlutterFlowTheme.of(context)
-                                            .headlineSmall
-                                            .override(
-                                              fontFamily: 'Poppins',
-                                              color: valueOrDefault<Color>(
-                                                profilPublicAdminUsersRecord
-                                                    .color1,
-                                                FlutterFlowTheme.of(context)
-                                                    .primaryText,
-                                              ),
-                                              letterSpacing: 0.0,
-                                            ),
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 30.0),
-                      child: Text(
-                        profilPublicAdminUsersRecord.uid,
-                        style: FlutterFlowTheme.of(context).bodyLarge.override(
-                              fontFamily: 'Poppins',
-                              color: FlutterFlowTheme.of(context).warning,
-                              letterSpacing: 0.0,
-                            ),
-                      ),
-                    ),
-                    Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 5.0),
-                      child: SingleChildScrollView(
-                        scrollDirection: Axis.horizontal,
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          crossAxisAlignment: CrossAxisAlignment.start,
+          child: WillPopScope(
+            onWillPop: () async => false,
+            child: Scaffold(
+              key: scaffoldKey,
+              backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+              body: Align(
+                alignment: AlignmentDirectional(0.0, -1.0),
+                child: SingleChildScrollView(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Container(
+                        height: 250.0,
+                        child: Stack(
                           children: [
-                            Column(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Text(
-                                  'Notifications',
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyLarge
-                                      .override(
-                                        fontFamily: 'Poppins',
-                                        letterSpacing: 0.0,
+                            Container(
+                              width: double.infinity,
+                              height: 200.0,
+                              decoration: BoxDecoration(
+                                color: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
+                                image: DecorationImage(
+                                  fit: BoxFit.cover,
+                                  image: CachedNetworkImageProvider(
+                                    profilPublicAdminUsersRecord.imageFond,
+                                  ),
+                                ),
+                              ),
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    20.0, 20.0, 20.0, 0.0),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 10.0, 0.0, 0.0),
+                                      child: FlutterFlowIconButton(
+                                        borderColor:
+                                            FlutterFlowTheme.of(context)
+                                                .primary,
+                                        borderRadius: 50.0,
+                                        borderWidth: 1.0,
+                                        buttonSize: 50.0,
+                                        fillColor: FlutterFlowTheme.of(context)
+                                            .tertiary,
+                                        icon: Icon(
+                                          Icons.menu_rounded,
+                                          color: FlutterFlowTheme.of(context)
+                                              .primary,
+                                          size: 30.0,
+                                        ),
+                                        onPressed: () async {
+                                          context.pushNamed(
+                                            'MenuPage',
+                                            extra: <String, dynamic>{
+                                              kTransitionInfoKey:
+                                                  TransitionInfo(
+                                                hasTransition: true,
+                                                transitionType:
+                                                    PageTransitionType
+                                                        .leftToRight,
+                                                duration:
+                                                    Duration(milliseconds: 400),
+                                              ),
+                                            },
+                                          );
+                                        },
                                       ),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 10.0, 0.0, 0.0),
+                                      child: FlutterFlowIconButton(
+                                        borderColor:
+                                            FlutterFlowTheme.of(context)
+                                                .primary,
+                                        borderRadius: 50.0,
+                                        borderWidth: 1.0,
+                                        buttonSize: 50.0,
+                                        fillColor: FlutterFlowTheme.of(context)
+                                            .tertiary,
+                                        icon: Icon(
+                                          Icons.arrow_back_ios_new_rounded,
+                                          color: FlutterFlowTheme.of(context)
+                                              .primary,
+                                          size: 30.0,
+                                        ),
+                                        onPressed: () async {
+                                          context.safePop();
+                                        },
+                                      ),
+                                    ),
+                                    if (currentUserDocument?.audioTeam != null)
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            20.0, 0.0, 0.0, 5.0),
+                                        child: AuthUserStreamWidget(
+                                          builder: (context) =>
+                                              StreamBuilder<TeamsRecord>(
+                                            stream: TeamsRecord.getDocument(
+                                                currentUserDocument!
+                                                    .audioTeam!),
+                                            builder: (context, snapshot) {
+                                              // Customize what your widget looks like when it's loading.
+                                              if (!snapshot.hasData) {
+                                                return Center(
+                                                  child: SizedBox(
+                                                    width: 50.0,
+                                                    height: 50.0,
+                                                    child:
+                                                        CircularProgressIndicator(
+                                                      valueColor:
+                                                          AlwaysStoppedAnimation<
+                                                              Color>(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .accent4,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                );
+                                              }
+
+                                              final rowTeamsRecord =
+                                                  snapshot.data!;
+
+                                              return Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  Padding(
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(0.0, 0.0,
+                                                                5.0, 0.0),
+                                                    child: InkWell(
+                                                      splashColor:
+                                                          Colors.transparent,
+                                                      focusColor:
+                                                          Colors.transparent,
+                                                      hoverColor:
+                                                          Colors.transparent,
+                                                      highlightColor:
+                                                          Colors.transparent,
+                                                      onTap: () async {
+                                                        context.pushNamed(
+                                                          'TeamPage',
+                                                          queryParameters: {
+                                                            'teamRef':
+                                                                serializeParam(
+                                                              currentUserDocument
+                                                                  ?.audioTeam,
+                                                              ParamType
+                                                                  .DocumentReference,
+                                                            ),
+                                                          }.withoutNulls,
+                                                          extra: <String,
+                                                              dynamic>{
+                                                            kTransitionInfoKey:
+                                                                TransitionInfo(
+                                                              hasTransition:
+                                                                  true,
+                                                              transitionType:
+                                                                  PageTransitionType
+                                                                      .bottomToTop,
+                                                              duration: Duration(
+                                                                  milliseconds:
+                                                                      400),
+                                                            ),
+                                                          },
+                                                        );
+                                                      },
+                                                      child: Container(
+                                                        width: 65.0,
+                                                        height: 50.0,
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .alternate,
+                                                        ),
+                                                        child: ClipRRect(
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      0.0),
+                                                          child: Image.network(
+                                                            rowTeamsRecord.logo,
+                                                            width: 300.0,
+                                                            height: 200.0,
+                                                            fit: BoxFit
+                                                                .fitHeight,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                  Padding(
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(5.0, 0.0,
+                                                                0.0, 0.0),
+                                                    child: StreamBuilder<
+                                                        TeamConferenceRecord>(
+                                                      stream: TeamConferenceRecord
+                                                          .getDocument(
+                                                              rowTeamsRecord
+                                                                  .conference!),
+                                                      builder:
+                                                          (context, snapshot) {
+                                                        // Customize what your widget looks like when it's loading.
+                                                        if (!snapshot.hasData) {
+                                                          return Center(
+                                                            child: SizedBox(
+                                                              width: 50.0,
+                                                              height: 50.0,
+                                                              child:
+                                                                  CircularProgressIndicator(
+                                                                valueColor:
+                                                                    AlwaysStoppedAnimation<
+                                                                        Color>(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .accent4,
+                                                                ),
+                                                              ),
+                                                            ),
+                                                          );
+                                                        }
+
+                                                        final rowTeamConferenceRecord =
+                                                            snapshot.data!;
+
+                                                        return Row(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          crossAxisAlignment:
+                                                              CrossAxisAlignment
+                                                                  .start,
+                                                          children: [
+                                                            if (rowTeamConferenceRecord
+                                                                .members
+                                                                .contains(
+                                                                    currentUserReference))
+                                                              Align(
+                                                                alignment:
+                                                                    AlignmentDirectional(
+                                                                        0.0,
+                                                                        -1.0),
+                                                                child: Padding(
+                                                                  padding: EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          20.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                                  child:
+                                                                      FlutterFlowIconButton(
+                                                                    borderColor:
+                                                                        valueOrDefault<
+                                                                            Color>(
+                                                                      rowTeamsRecord
+                                                                          .color2,
+                                                                      FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .secondaryText,
+                                                                    ),
+                                                                    borderRadius:
+                                                                        50.0,
+                                                                    borderWidth:
+                                                                        1.0,
+                                                                    buttonSize:
+                                                                        50.0,
+                                                                    fillColor: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .tertiary,
+                                                                    icon:
+                                                                        FaIcon(
+                                                                      FontAwesomeIcons
+                                                                          .microphoneAlt,
+                                                                      color: valueOrDefault<
+                                                                          Color>(
+                                                                        rowTeamsRecord
+                                                                            .color1,
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .primaryText,
+                                                                      ),
+                                                                      size:
+                                                                          31.0,
+                                                                    ),
+                                                                    onPressed:
+                                                                        () async {
+                                                                      await showModalBottomSheet(
+                                                                        isScrollControlled:
+                                                                            true,
+                                                                        backgroundColor:
+                                                                            Colors.transparent,
+                                                                        enableDrag:
+                                                                            false,
+                                                                        context:
+                                                                            context,
+                                                                        builder:
+                                                                            (context) {
+                                                                          return GestureDetector(
+                                                                            onTap:
+                                                                                () {
+                                                                              FocusScope.of(context).unfocus();
+                                                                              FocusManager.instance.primaryFocus?.unfocus();
+                                                                            },
+                                                                            child:
+                                                                                Padding(
+                                                                              padding: MediaQuery.viewInsetsOf(context),
+                                                                              child: AudioMemberConferenceWidget(
+                                                                                teamRef: currentUserDocument!.audioTeam!,
+                                                                              ),
+                                                                            ),
+                                                                          );
+                                                                        },
+                                                                      ).then((value) =>
+                                                                          safeSetState(
+                                                                              () {}));
+                                                                    },
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                            if (rowTeamConferenceRecord
+                                                                .fans
+                                                                .contains(
+                                                                    currentUserReference))
+                                                              Align(
+                                                                alignment:
+                                                                    AlignmentDirectional(
+                                                                        0.0,
+                                                                        -1.0),
+                                                                child: Padding(
+                                                                  padding: EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          20.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                                  child:
+                                                                      FlutterFlowIconButton(
+                                                                    borderColor:
+                                                                        valueOrDefault<
+                                                                            Color>(
+                                                                      rowTeamsRecord
+                                                                          .color2,
+                                                                      FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .secondaryText,
+                                                                    ),
+                                                                    borderRadius:
+                                                                        50.0,
+                                                                    borderWidth:
+                                                                        1.0,
+                                                                    buttonSize:
+                                                                        50.0,
+                                                                    fillColor: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .tertiary,
+                                                                    icon:
+                                                                        FaIcon(
+                                                                      FontAwesomeIcons
+                                                                          .headphonesAlt,
+                                                                      color: valueOrDefault<
+                                                                          Color>(
+                                                                        rowTeamsRecord
+                                                                            .color1,
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .primaryText,
+                                                                      ),
+                                                                      size:
+                                                                          31.0,
+                                                                    ),
+                                                                    onPressed:
+                                                                        () async {
+                                                                      await showModalBottomSheet(
+                                                                        isScrollControlled:
+                                                                            true,
+                                                                        backgroundColor:
+                                                                            Colors.transparent,
+                                                                        enableDrag:
+                                                                            false,
+                                                                        context:
+                                                                            context,
+                                                                        builder:
+                                                                            (context) {
+                                                                          return GestureDetector(
+                                                                            onTap:
+                                                                                () {
+                                                                              FocusScope.of(context).unfocus();
+                                                                              FocusManager.instance.primaryFocus?.unfocus();
+                                                                            },
+                                                                            child:
+                                                                                Padding(
+                                                                              padding: MediaQuery.viewInsetsOf(context),
+                                                                              child: AudioFanConferenceWidget(
+                                                                                teamRef: currentUserDocument!.audioTeam!,
+                                                                              ),
+                                                                            ),
+                                                                          );
+                                                                        },
+                                                                      ).then((value) =>
+                                                                          safeSetState(
+                                                                              () {}));
+                                                                    },
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                          ],
+                                                        );
+                                                      },
+                                                    ),
+                                                  ),
+                                                ],
+                                              );
+                                            },
+                                          ),
+                                        ),
+                                      ),
+                                  ],
                                 ),
-                                FlutterFlowIconButton(
-                                  borderColor:
-                                      FlutterFlowTheme.of(context).alternate,
-                                  borderRadius: 50.0,
-                                  borderWidth: 1.0,
-                                  buttonSize: 50.0,
-                                  fillColor:
-                                      FlutterFlowTheme.of(context).alternate,
-                                  icon: Icon(
-                                    Icons.notifications_none_rounded,
-                                    color: FlutterFlowTheme.of(context).error,
-                                    size: 30.0,
-                                  ),
-                                  onPressed: () {
-                                    print('IconButton pressed ...');
-                                  },
-                                ),
-                              ],
+                              ),
                             ),
-                            if (profilPublicAdminUsersRecord.stsocialapp ==
-                                'suspendu')
-                              Column(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Text(
-                                    dateTimeFormat(
-                                        "d/M/y",
-                                        profilPublicAdminUsersRecord
-                                            .updateTime!),
-                                    textAlign: TextAlign.center,
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyLarge
-                                        .override(
-                                          fontFamily: 'Poppins',
-                                          letterSpacing: 0.0,
-                                          lineHeight: 1.1,
-                                        ),
-                                  ),
-                                  Text(
-                                    'fin de\nsuspension',
-                                    textAlign: TextAlign.center,
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyLarge
-                                        .override(
-                                          fontFamily: 'Poppins',
-                                          letterSpacing: 0.0,
-                                          lineHeight: 1.1,
-                                        ),
-                                  ),
-                                  InkWell(
-                                    splashColor: Colors.transparent,
-                                    focusColor: Colors.transparent,
-                                    hoverColor: Colors.transparent,
-                                    highlightColor: Colors.transparent,
-                                    onTap: () async {
-                                      await widget.userRef!.update({
-                                        ...mapToFirestore(
-                                          {
-                                            'stsocialapp': FieldValue.delete(),
-                                            'suspension_days':
-                                                FieldValue.delete(),
-                                          },
-                                        ),
-                                      });
-                                    },
-                                    child: Icon(
-                                      Icons.person_off_rounded,
-                                      color: FlutterFlowTheme.of(context).error,
-                                      size: 30.0,
+                            Align(
+                              alignment: AlignmentDirectional(-1.0, 1.0),
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    24.0, 0.0, 0.0, 0.0),
+                                child: Container(
+                                  width: 90.0,
+                                  height: 90.0,
+                                  decoration: BoxDecoration(
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryBackground,
+                                    shape: BoxShape.circle,
+                                    border: Border.all(
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryText,
+                                      width: 2.0,
                                     ),
                                   ),
-                                ],
-                              ),
-                            if (profilPublicAdminUsersRecord.stsocialapp ==
-                                'moderateur')
-                              Column(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Text(
-                                    'Arreter mod',
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyLarge
-                                        .override(
-                                          fontFamily: 'Poppins',
-                                          letterSpacing: 0.0,
-                                        ),
-                                  ),
-                                  FlutterFlowIconButton(
-                                    borderColor:
-                                        FlutterFlowTheme.of(context).alternate,
-                                    borderRadius: 50.0,
-                                    borderWidth: 1.0,
-                                    buttonSize: 50.0,
-                                    fillColor:
-                                        FlutterFlowTheme.of(context).alternate,
-                                    icon: Icon(
-                                      Icons.key_off_rounded,
-                                      color: FlutterFlowTheme.of(context).error,
-                                      size: 30.0,
+                                  child: Padding(
+                                    padding: EdgeInsets.all(4.0),
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(50.0),
+                                      child: CachedNetworkImage(
+                                        fadeInDuration:
+                                            Duration(milliseconds: 500),
+                                        fadeOutDuration:
+                                            Duration(milliseconds: 500),
+                                        imageUrl: profilPublicAdminUsersRecord
+                                            .photoUrl,
+                                        width: 100.0,
+                                        height: 100.0,
+                                        fit: BoxFit.fitHeight,
+                                      ),
                                     ),
-                                    onPressed: () async {
-                                      await widget.userRef!.update({
-                                        ...mapToFirestore(
-                                          {
-                                            'stsocialapp': FieldValue.delete(),
-                                          },
-                                        ),
-                                      });
-                                    },
                                   ),
-                                ],
+                                ),
                               ),
-                            if (profilPublicAdminUsersRecord.stsocialapp ==
-                                'typster')
-                              Column(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Text(
-                                    'Arreter Typster',
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyLarge
-                                        .override(
-                                          fontFamily: 'Poppins',
-                                          letterSpacing: 0.0,
+                            ),
+                            Align(
+                              alignment: AlignmentDirectional(0.0, 1.0),
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    125.0, 20.0, 20.0, 0.0),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.end,
+                                  children: [
+                                    Align(
+                                      alignment: AlignmentDirectional(0.0, 1.0),
+                                      child: Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 0.0, 0.0, 5.0),
+                                        child: Text(
+                                          valueOrDefault<String>(
+                                            profilPublicAdminUsersRecord
+                                                .displayName,
+                                            'NewUser',
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .headlineSmall
+                                              .override(
+                                                fontFamily: 'Poppins',
+                                                color: valueOrDefault<Color>(
+                                                  profilPublicAdminUsersRecord
+                                                      .color1,
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryText,
+                                                ),
+                                                letterSpacing: 0.0,
+                                              ),
                                         ),
-                                  ),
-                                  FlutterFlowIconButton(
-                                    borderColor:
-                                        FlutterFlowTheme.of(context).alternate,
-                                    borderRadius: 50.0,
-                                    borderWidth: 1.0,
-                                    buttonSize: 50.0,
-                                    fillColor:
-                                        FlutterFlowTheme.of(context).alternate,
-                                    icon: Icon(
-                                      Icons.money_off_rounded,
-                                      color: FlutterFlowTheme.of(context).error,
-                                      size: 30.0,
+                                      ),
                                     ),
-                                    onPressed: () async {
-                                      await widget.userRef!.update({
-                                        ...mapToFirestore(
-                                          {
-                                            'stsocialapp': FieldValue.delete(),
-                                          },
-                                        ),
-                                      });
-                                    },
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
+                            ),
                           ],
                         ),
                       ),
-                    ),
-                    Align(
-                      alignment: const AlignmentDirectional(-1.0, 0.0),
-                      child: Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
-                            20.0, 20.0, 0.0, 0.0),
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            0.0, 10.0, 0.0, 30.0),
                         child: Text(
-                          'Ligue - Sport',
+                          profilPublicAdminUsersRecord.uid,
                           style:
-                              FlutterFlowTheme.of(context).titleLarge.override(
-                                    fontFamily: 'Montserrat',
-                                    letterSpacing: 0.0,
-                                  ),
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(20.0, 5.0, 20.0, 0.0),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            profilPublicAdminUsersRecord.rankValue,
-                            style: FlutterFlowTheme.of(context)
-                                .titleLarge
-                                .override(
-                                  fontFamily: 'Montserrat',
-                                  letterSpacing: 0.0,
-                                ),
-                          ),
-                          Row(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Text(
-                                profilPublicAdminUsersRecord.divisionValue,
-                                style: FlutterFlowTheme.of(context)
-                                    .labelLarge
-                                    .override(
-                                      fontFamily: 'Montserrat',
-                                      letterSpacing: 0.0,
-                                    ),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 30.0, 0.0),
-                      child: StreamBuilder<List<MyBetsRecord>>(
-                        stream: queryMyBetsRecord(
-                          parent: widget.userRef,
-                          singleRecord: true,
-                        ),
-                        builder: (context, snapshot) {
-                          // Customize what your widget looks like when it's loading.
-                          if (!snapshot.hasData) {
-                            return Center(
-                              child: SizedBox(
-                                width: 50.0,
-                                height: 50.0,
-                                child: CircularProgressIndicator(
-                                  valueColor: AlwaysStoppedAnimation<Color>(
-                                    FlutterFlowTheme.of(context).accent4,
-                                  ),
-                                ),
-                              ),
-                            );
-                          }
-                          List<MyBetsRecord> rowMyBetsMyBetsRecordList =
-                              snapshot.data!;
-                          // Return an empty Container when the item does not exist.
-                          if (snapshot.data!.isEmpty) {
-                            return Container();
-                          }
-                          final rowMyBetsMyBetsRecord =
-                              rowMyBetsMyBetsRecordList.isNotEmpty
-                                  ? rowMyBetsMyBetsRecordList.first
-                                  : null;
-
-                          return Row(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                'Paris sportifs',
-                                style: FlutterFlowTheme.of(context)
-                                    .titleLarge
-                                    .override(
-                                      fontFamily: 'Montserrat',
-                                      letterSpacing: 0.0,
-                                    ),
-                              ),
-                              InkWell(
-                                splashColor: Colors.transparent,
-                                focusColor: Colors.transparent,
-                                hoverColor: Colors.transparent,
-                                highlightColor: Colors.transparent,
-                                onTap: () async {
-                                  context.pushNamed(
-                                    'PublicBetsList',
-                                    queryParameters: {
-                                      'userBetRef': serializeParam(
-                                        rowMyBetsMyBetsRecord?.reference,
-                                        ParamType.DocumentReference,
-                                      ),
-                                      'userRef': serializeParam(
-                                        widget.userRef,
-                                        ParamType.DocumentReference,
-                                      ),
-                                    }.withoutNulls,
-                                    extra: <String, dynamic>{
-                                      kTransitionInfoKey: const TransitionInfo(
-                                        hasTransition: true,
-                                        transitionType:
-                                            PageTransitionType.rightToLeft,
-                                        duration: Duration(milliseconds: 400),
-                                      ),
-                                    },
-                                  );
-                                },
-                                child: Icon(
-                                  Icons.attach_money_rounded,
-                                  color: valueOrDefault<Color>(
-                                    profilPublicAdminUsersRecord.color1,
-                                    FlutterFlowTheme.of(context).primaryText,
-                                  ),
-                                  size: 30.0,
-                                ),
-                              ),
-                            ],
-                          );
-                        },
-                      ),
-                    ),
-                    Divider(
-                      thickness: 1.0,
-                      color: FlutterFlowTheme.of(context).secondaryBackground,
-                    ),
-                    Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 30.0, 5.0),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'Bénéfices',
-                            style: FlutterFlowTheme.of(context)
-                                .titleLarge
-                                .override(
-                                  fontFamily: 'Montserrat',
-                                  letterSpacing: 0.0,
-                                ),
-                          ),
-                          Align(
-                            alignment: const AlignmentDirectional(0.0, 0.0),
-                            child: Text(
-                              valueOrDefault<String>(
-                                functions
-                                    .limitOf2Decimal(
-                                        profilPublicAdminUsersRecord
-                                            .earningsTotal)
-                                    .toString(),
-                                '00.00',
-                              ),
-                              textAlign: TextAlign.center,
-                              style: FlutterFlowTheme.of(context)
-                                  .labelMedium
-                                  .override(
+                              FlutterFlowTheme.of(context).bodyLarge.override(
                                     fontFamily: 'Poppins',
+                                    color: FlutterFlowTheme.of(context).warning,
                                     letterSpacing: 0.0,
                                   ),
-                            ),
-                          ),
-                        ],
+                        ),
                       ),
-                    ),
-                    Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(20.0, 5.0, 30.0, 5.0),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'Gagnants',
-                            style: FlutterFlowTheme.of(context)
-                                .labelLarge
-                                .override(
-                                  fontFamily: 'Montserrat',
-                                  color: FlutterFlowTheme.of(context).success,
-                                  letterSpacing: 0.0,
-                                ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                3.0, 0.0, 0.0, 0.0),
-                            child: Text(
-                              valueOrDefault<String>(
-                                profilPublicAdminUsersRecord.betWin.toString(),
-                                '0',
-                              ),
-                              style: FlutterFlowTheme.of(context)
-                                  .titleLarge
-                                  .override(
-                                    fontFamily: 'Montserrat',
-                                    letterSpacing: 0.0,
-                                  ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(20.0, 5.0, 30.0, 5.0),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'Perdants',
-                            style: FlutterFlowTheme.of(context)
-                                .labelLarge
-                                .override(
-                                  fontFamily: 'Montserrat',
-                                  color: FlutterFlowTheme.of(context).error,
-                                  letterSpacing: 0.0,
-                                ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                3.0, 0.0, 0.0, 0.0),
-                            child: Text(
-                              valueOrDefault<String>(
-                                profilPublicAdminUsersRecord.betLoose
-                                    .toString(),
-                                '0',
-                              ),
-                              style: FlutterFlowTheme.of(context)
-                                  .titleLarge
-                                  .override(
-                                    fontFamily: 'Montserrat',
-                                    letterSpacing: 0.0,
-                                  ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(20.0, 10.0, 30.0, 0.0),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'Stock',
-                            style: FlutterFlowTheme.of(context)
-                                .labelLarge
-                                .override(
-                                  fontFamily: 'Montserrat',
-                                  letterSpacing: 0.0,
-                                ),
-                          ),
-                          Row(
+                      Padding(
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 5.0),
+                        child: SingleChildScrollView(
+                          scrollDirection: Axis.horizontal,
+                          child: Row(
                             mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(
+                              Column(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Text(
+                                    'Notifications',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyLarge
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          letterSpacing: 0.0,
+                                        ),
+                                  ),
+                                  FlutterFlowIconButton(
+                                    borderColor:
+                                        FlutterFlowTheme.of(context).alternate,
+                                    borderRadius: 50.0,
+                                    borderWidth: 1.0,
+                                    buttonSize: 50.0,
+                                    fillColor:
+                                        FlutterFlowTheme.of(context).alternate,
+                                    icon: Icon(
+                                      Icons.notifications_none_rounded,
+                                      color: FlutterFlowTheme.of(context).error,
+                                      size: 30.0,
+                                    ),
+                                    onPressed: () {
+                                      print('IconButton pressed ...');
+                                    },
+                                  ),
+                                ],
+                              ),
+                              if (profilPublicAdminUsersRecord.stsocialapp ==
+                                  'suspendu')
+                                Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Text(
+                                      dateTimeFormat(
+                                          "d/M/y",
+                                          profilPublicAdminUsersRecord
+                                              .updateTime!),
+                                      textAlign: TextAlign.center,
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyLarge
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            letterSpacing: 0.0,
+                                            lineHeight: 1.1,
+                                          ),
+                                    ),
+                                    Text(
+                                      'fin de\nsuspension',
+                                      textAlign: TextAlign.center,
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyLarge
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            letterSpacing: 0.0,
+                                            lineHeight: 1.1,
+                                          ),
+                                    ),
+                                    InkWell(
+                                      splashColor: Colors.transparent,
+                                      focusColor: Colors.transparent,
+                                      hoverColor: Colors.transparent,
+                                      highlightColor: Colors.transparent,
+                                      onTap: () async {
+                                        await widget.userRef!.update({
+                                          ...mapToFirestore(
+                                            {
+                                              'stsocialapp':
+                                                  FieldValue.delete(),
+                                              'suspension_days':
+                                                  FieldValue.delete(),
+                                            },
+                                          ),
+                                        });
+                                      },
+                                      child: Icon(
+                                        Icons.person_off_rounded,
+                                        color:
+                                            FlutterFlowTheme.of(context).error,
+                                        size: 30.0,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              if (profilPublicAdminUsersRecord.stsocialapp ==
+                                  'moderateur')
+                                Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Text(
+                                      'Arreter mod',
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyLarge
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            letterSpacing: 0.0,
+                                          ),
+                                    ),
+                                    FlutterFlowIconButton(
+                                      borderColor: FlutterFlowTheme.of(context)
+                                          .alternate,
+                                      borderRadius: 50.0,
+                                      borderWidth: 1.0,
+                                      buttonSize: 50.0,
+                                      fillColor: FlutterFlowTheme.of(context)
+                                          .alternate,
+                                      icon: Icon(
+                                        Icons.key_off_rounded,
+                                        color:
+                                            FlutterFlowTheme.of(context).error,
+                                        size: 30.0,
+                                      ),
+                                      onPressed: () async {
+                                        await widget.userRef!.update({
+                                          ...mapToFirestore(
+                                            {
+                                              'stsocialapp':
+                                                  FieldValue.delete(),
+                                            },
+                                          ),
+                                        });
+                                      },
+                                    ),
+                                  ],
+                                ),
+                              if (profilPublicAdminUsersRecord.stsocialapp ==
+                                  'typster')
+                                Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Text(
+                                      'Arreter Typster',
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyLarge
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            letterSpacing: 0.0,
+                                          ),
+                                    ),
+                                    FlutterFlowIconButton(
+                                      borderColor: FlutterFlowTheme.of(context)
+                                          .alternate,
+                                      borderRadius: 50.0,
+                                      borderWidth: 1.0,
+                                      buttonSize: 50.0,
+                                      fillColor: FlutterFlowTheme.of(context)
+                                          .alternate,
+                                      icon: Icon(
+                                        Icons.money_off_rounded,
+                                        color:
+                                            FlutterFlowTheme.of(context).error,
+                                        size: 30.0,
+                                      ),
+                                      onPressed: () async {
+                                        await widget.userRef!.update({
+                                          ...mapToFirestore(
+                                            {
+                                              'stsocialapp':
+                                                  FieldValue.delete(),
+                                            },
+                                          ),
+                                        });
+                                      },
+                                    ),
+                                  ],
+                                ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      Align(
+                        alignment: AlignmentDirectional(-1.0, 0.0),
+                        child: Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              20.0, 20.0, 0.0, 0.0),
+                          child: Text(
+                            'Ligue - Sport',
+                            style: FlutterFlowTheme.of(context)
+                                .titleLarge
+                                .override(
+                                  fontFamily: 'Montserrat',
+                                  letterSpacing: 0.0,
+                                ),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            20.0, 5.0, 20.0, 0.0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              profilPublicAdminUsersRecord.rankValue,
+                              style: FlutterFlowTheme.of(context)
+                                  .titleLarge
+                                  .override(
+                                    fontFamily: 'Montserrat',
+                                    letterSpacing: 0.0,
+                                  ),
+                            ),
+                            Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Text(
+                                  profilPublicAdminUsersRecord.divisionValue,
+                                  style: FlutterFlowTheme.of(context)
+                                      .labelLarge
+                                      .override(
+                                        fontFamily: 'Montserrat',
+                                        letterSpacing: 0.0,
+                                      ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            20.0, 0.0, 30.0, 0.0),
+                        child: StreamBuilder<List<MyBetsRecord>>(
+                          stream: queryMyBetsRecord(
+                            parent: widget.userRef,
+                            singleRecord: true,
+                          ),
+                          builder: (context, snapshot) {
+                            // Customize what your widget looks like when it's loading.
+                            if (!snapshot.hasData) {
+                              return Center(
+                                child: SizedBox(
+                                  width: 50.0,
+                                  height: 50.0,
+                                  child: CircularProgressIndicator(
+                                    valueColor: AlwaysStoppedAnimation<Color>(
+                                      FlutterFlowTheme.of(context).accent4,
+                                    ),
+                                  ),
+                                ),
+                              );
+                            }
+                            List<MyBetsRecord> rowMyBetsMyBetsRecordList =
+                                snapshot.data!;
+                            // Return an empty Container when the item does not exist.
+                            if (snapshot.data!.isEmpty) {
+                              return Container();
+                            }
+                            final rowMyBetsMyBetsRecord =
+                                rowMyBetsMyBetsRecordList.isNotEmpty
+                                    ? rowMyBetsMyBetsRecordList.first
+                                    : null;
+
+                            return Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  'Paris sportifs',
+                                  style: FlutterFlowTheme.of(context)
+                                      .titleLarge
+                                      .override(
+                                        fontFamily: 'Montserrat',
+                                        letterSpacing: 0.0,
+                                      ),
+                                ),
+                                InkWell(
+                                  splashColor: Colors.transparent,
+                                  focusColor: Colors.transparent,
+                                  hoverColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
+                                  onTap: () async {
+                                    context.pushNamed(
+                                      'PublicBetsList',
+                                      queryParameters: {
+                                        'userBetRef': serializeParam(
+                                          rowMyBetsMyBetsRecord?.reference,
+                                          ParamType.DocumentReference,
+                                        ),
+                                        'userRef': serializeParam(
+                                          widget.userRef,
+                                          ParamType.DocumentReference,
+                                        ),
+                                      }.withoutNulls,
+                                      extra: <String, dynamic>{
+                                        kTransitionInfoKey: TransitionInfo(
+                                          hasTransition: true,
+                                          transitionType:
+                                              PageTransitionType.rightToLeft,
+                                          duration: Duration(milliseconds: 400),
+                                        ),
+                                      },
+                                    );
+                                  },
+                                  child: Icon(
+                                    Icons.attach_money_rounded,
+                                    color: valueOrDefault<Color>(
+                                      profilPublicAdminUsersRecord.color1,
+                                      FlutterFlowTheme.of(context).primaryText,
+                                    ),
+                                    size: 30.0,
+                                  ),
+                                ),
+                              ],
+                            );
+                          },
+                        ),
+                      ),
+                      Divider(
+                        thickness: 1.0,
+                        color: FlutterFlowTheme.of(context).secondaryBackground,
+                      ),
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            20.0, 0.0, 30.0, 5.0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Bénéfices',
+                              style: FlutterFlowTheme.of(context)
+                                  .titleLarge
+                                  .override(
+                                    fontFamily: 'Montserrat',
+                                    letterSpacing: 0.0,
+                                  ),
+                            ),
+                            Align(
+                              alignment: AlignmentDirectional(0.0, 0.0),
+                              child: Text(
                                 valueOrDefault<String>(
                                   functions
                                       .limitOf2Decimal(
-                                          profilPublicAdminUsersRecord.stock)
+                                          profilPublicAdminUsersRecord
+                                              .earningsTotal)
                                       .toString(),
-                                  '900.00',
+                                  '00.00',
                                 ),
-                                maxLines: 1,
+                                textAlign: TextAlign.center,
                                 style: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
@@ -722,362 +958,36 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                                       letterSpacing: 0.0,
                                     ),
                               ),
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    5.0, 0.0, 0.0, 0.0),
-                                child: Container(
-                                  width: 30.0,
-                                  height: 30.0,
-                                  decoration: BoxDecoration(
-                                    color: FlutterFlowTheme.of(context).primary,
-                                    shape: BoxShape.circle,
-                                    border: Border.all(
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
-                                    ),
-                                  ),
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(2.0),
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(24.0),
-                                      child: Image.asset(
-                                        'assets/images/logo_monnaiel.jpg',
-                                        width: 50.0,
-                                        height: 50.0,
-                                        fit: BoxFit.cover,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                    Divider(
-                      thickness: 1.0,
-                      color: FlutterFlowTheme.of(context).secondaryBackground,
-                    ),
-                    Align(
-                      alignment: const AlignmentDirectional(-1.0, 0.0),
-                      child: Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
-                        child: Text(
-                          'Ligue - E Sport',
-                          style:
-                              FlutterFlowTheme.of(context).titleLarge.override(
-                                    fontFamily: 'Montserrat',
-                                    letterSpacing: 0.0,
-                                  ),
+                            ),
+                          ],
                         ),
                       ),
-                    ),
-                    Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(20.0, 5.0, 20.0, 0.0),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            profilPublicAdminUsersRecord.erankValue,
-                            style: FlutterFlowTheme.of(context)
-                                .titleLarge
-                                .override(
-                                  fontFamily: 'Montserrat',
-                                  letterSpacing: 0.0,
-                                ),
-                          ),
-                          Row(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Text(
-                                profilPublicAdminUsersRecord.edivisionValue,
-                                style: FlutterFlowTheme.of(context)
-                                    .labelLarge
-                                    .override(
-                                      fontFamily: 'Montserrat',
-                                      letterSpacing: 0.0,
-                                    ),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(20.0, 5.0, 30.0, 5.0),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'Total Rencontres',
-                            style: FlutterFlowTheme.of(context)
-                                .labelLarge
-                                .override(
-                                  fontFamily: 'Montserrat',
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryText,
-                                  letterSpacing: 0.0,
-                                ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                3.0, 0.0, 0.0, 0.0),
-                            child: Text(
-                              valueOrDefault<String>(
-                                profilPublicAdminUsersRecord.totalGames
-                                    .toString(),
-                                '0',
-                              ),
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            20.0, 5.0, 30.0, 5.0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Gagnants',
                               style: FlutterFlowTheme.of(context)
-                                  .titleLarge
+                                  .labelLarge
                                   .override(
                                     fontFamily: 'Montserrat',
+                                    color: FlutterFlowTheme.of(context).success,
                                     letterSpacing: 0.0,
                                   ),
                             ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(20.0, 5.0, 30.0, 5.0),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'Tops/Flops',
-                            style: FlutterFlowTheme.of(context)
-                                .labelLarge
-                                .override(
-                                  fontFamily: 'Montserrat',
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryText,
-                                  letterSpacing: 0.0,
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  3.0, 0.0, 0.0, 0.0),
+                              child: Text(
+                                valueOrDefault<String>(
+                                  profilPublicAdminUsersRecord.betWin
+                                      .toString(),
+                                  '0',
                                 ),
-                          ),
-                          Align(
-                            alignment: const AlignmentDirectional(0.0, 0.0),
-                            child: Text(
-                              valueOrDefault<String>(
-                                profilPublicAdminUsersRecord.topsflops
-                                    .toString(),
-                                '0',
-                              ),
-                              textAlign: TextAlign.center,
-                              style: FlutterFlowTheme.of(context)
-                                  .titleLarge
-                                  .override(
-                                    fontFamily: 'Montserrat',
-                                    letterSpacing: 0.0,
-                                  ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(20.0, 5.0, 30.0, 5.0),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'Tops',
-                            style: FlutterFlowTheme.of(context)
-                                .labelLarge
-                                .override(
-                                  fontFamily: 'Montserrat',
-                                  color: FlutterFlowTheme.of(context).success,
-                                  letterSpacing: 0.0,
-                                ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                3.0, 0.0, 0.0, 0.0),
-                            child: Text(
-                              valueOrDefault<String>(
-                                profilPublicAdminUsersRecord.tops.toString(),
-                                '0',
-                              ),
-                              style: FlutterFlowTheme.of(context)
-                                  .titleLarge
-                                  .override(
-                                    fontFamily: 'Montserrat',
-                                    letterSpacing: 0.0,
-                                  ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(20.0, 5.0, 30.0, 5.0),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'Flops',
-                            style: FlutterFlowTheme.of(context)
-                                .labelLarge
-                                .override(
-                                  fontFamily: 'Montserrat',
-                                  color: FlutterFlowTheme.of(context).error,
-                                  letterSpacing: 0.0,
-                                ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                3.0, 0.0, 0.0, 0.0),
-                            child: Text(
-                              valueOrDefault<String>(
-                                profilPublicAdminUsersRecord.flops.toString(),
-                                '0',
-                              ),
-                              style: FlutterFlowTheme.of(context)
-                                  .titleLarge
-                                  .override(
-                                    fontFamily: 'Montserrat',
-                                    letterSpacing: 0.0,
-                                  ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Divider(
-                      thickness: 1.0,
-                      color: FlutterFlowTheme.of(context).secondaryBackground,
-                    ),
-                    Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(20.0, 5.0, 30.0, 5.0),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'Cartons',
-                            style: FlutterFlowTheme.of(context)
-                                .labelLarge
-                                .override(
-                                  fontFamily: 'Montserrat',
-                                  color: FlutterFlowTheme.of(context).error,
-                                  letterSpacing: 0.0,
-                                ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                3.0, 0.0, 0.0, 0.0),
-                            child: Text(
-                              valueOrDefault<String>(
-                                profilPublicAdminUsersRecord.numPenalities
-                                    .toString(),
-                                '0',
-                              ),
-                              style: FlutterFlowTheme.of(context)
-                                  .titleLarge
-                                  .override(
-                                    fontFamily: 'Montserrat',
-                                    letterSpacing: 0.0,
-                                  ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(20.0, 5.0, 30.0, 5.0),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'Suspensions',
-                            style: FlutterFlowTheme.of(context)
-                                .labelLarge
-                                .override(
-                                  fontFamily: 'Montserrat',
-                                  color: FlutterFlowTheme.of(context).error,
-                                  letterSpacing: 0.0,
-                                ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                3.0, 0.0, 0.0, 0.0),
-                            child: Text(
-                              valueOrDefault<String>(
-                                profilPublicAdminUsersRecord.suspensionTimes
-                                    .toString(),
-                                '0',
-                              ),
-                              style: FlutterFlowTheme.of(context)
-                                  .titleLarge
-                                  .override(
-                                    fontFamily: 'Montserrat',
-                                    letterSpacing: 0.0,
-                                  ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Divider(
-                      thickness: 1.0,
-                      color: FlutterFlowTheme.of(context).secondaryBackground,
-                    ),
-                    Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 30.0, 0.0),
-                      child: StreamBuilder<List<MyPostsRecord>>(
-                        stream: queryMyPostsRecord(
-                          parent: widget.userRef,
-                          singleRecord: true,
-                        ),
-                        builder: (context, snapshot) {
-                          // Customize what your widget looks like when it's loading.
-                          if (!snapshot.hasData) {
-                            return Center(
-                              child: SizedBox(
-                                width: 50.0,
-                                height: 50.0,
-                                child: CircularProgressIndicator(
-                                  valueColor: AlwaysStoppedAnimation<Color>(
-                                    FlutterFlowTheme.of(context).accent4,
-                                  ),
-                                ),
-                              ),
-                            );
-                          }
-                          List<MyPostsRecord> rowMyPostsMyPostsRecordList =
-                              snapshot.data!;
-                          // Return an empty Container when the item does not exist.
-                          if (snapshot.data!.isEmpty) {
-                            return Container();
-                          }
-                          final rowMyPostsMyPostsRecord =
-                              rowMyPostsMyPostsRecordList.isNotEmpty
-                                  ? rowMyPostsMyPostsRecordList.first
-                                  : null;
-
-                          return Row(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                'Actualités',
                                 style: FlutterFlowTheme.of(context)
                                     .titleLarge
                                     .override(
@@ -1085,774 +995,1026 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                                       letterSpacing: 0.0,
                                     ),
                               ),
-                              Column(
-                                mainAxisSize: MainAxisSize.max,
-                                crossAxisAlignment: CrossAxisAlignment.end,
-                                children: [
-                                  InkWell(
-                                    splashColor: Colors.transparent,
-                                    focusColor: Colors.transparent,
-                                    hoverColor: Colors.transparent,
-                                    highlightColor: Colors.transparent,
-                                    onTap: () async {
-                                      context.pushNamed(
-                                        'PublicPostsList',
-                                        queryParameters: {
-                                          'userPostRef': serializeParam(
-                                            rowMyPostsMyPostsRecord?.reference,
-                                            ParamType.DocumentReference,
-                                          ),
-                                        }.withoutNulls,
-                                      );
-                                    },
-                                    child: Icon(
-                                      Icons.newspaper_rounded,
-                                      color: valueOrDefault<Color>(
-                                        profilPublicAdminUsersRecord.color1,
-                                        FlutterFlowTheme.of(context)
-                                            .primaryText,
-                                      ),
-                                      size: 30.0,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ],
-                          );
-                        },
+                            ),
+                          ],
+                        ),
                       ),
-                    ),
-                    Divider(
-                      thickness: 1.0,
-                      color: FlutterFlowTheme.of(context).secondaryBackground,
-                    ),
-                    Align(
-                      alignment: const AlignmentDirectional(-1.0, 0.0),
-                      child: Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
-                        child: Text(
-                          'Réseaux',
-                          style:
-                              FlutterFlowTheme.of(context).titleLarge.override(
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            20.0, 5.0, 30.0, 5.0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Perdants',
+                              style: FlutterFlowTheme.of(context)
+                                  .labelLarge
+                                  .override(
+                                    fontFamily: 'Montserrat',
+                                    color: FlutterFlowTheme.of(context).error,
+                                    letterSpacing: 0.0,
+                                  ),
+                            ),
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  3.0, 0.0, 0.0, 0.0),
+                              child: Text(
+                                valueOrDefault<String>(
+                                  profilPublicAdminUsersRecord.betLoose
+                                      .toString(),
+                                  '0',
+                                ),
+                                style: FlutterFlowTheme.of(context)
+                                    .titleLarge
+                                    .override(
+                                      fontFamily: 'Montserrat',
+                                      letterSpacing: 0.0,
+                                    ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            20.0, 10.0, 30.0, 0.0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Stock',
+                              style: FlutterFlowTheme.of(context)
+                                  .labelLarge
+                                  .override(
                                     fontFamily: 'Montserrat',
                                     letterSpacing: 0.0,
                                   ),
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(20.0, 5.0, 30.0, 5.0),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                          Row(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 10.0, 0.0),
-                                child: Text(
-                                  valueOrDefault<String>(
-                                    profilPublicAdminUsersRecord.fans.length
-                                        .toString(),
-                                    '0',
-                                  ),
-                                  style: FlutterFlowTheme.of(context)
-                                      .titleLarge
-                                      .override(
-                                        fontFamily: 'Montserrat',
-                                        letterSpacing: 0.0,
-                                      ),
-                                ),
-                              ),
-                              Icon(
-                                Icons.supervisor_account_rounded,
-                                color: FlutterFlowTheme.of(context).success,
-                                size: 30.0,
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(20.0, 5.0, 30.0, 5.0),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                          Row(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 10.0, 0.0),
-                                child: Text(
-                                  valueOrDefault<String>(
-                                    profilPublicAdminUsersRecord.bests.length
-                                        .toString(),
-                                    '0',
-                                  ),
-                                  style: FlutterFlowTheme.of(context)
-                                      .titleLarge
-                                      .override(
-                                        fontFamily: 'Montserrat',
-                                        letterSpacing: 0.0,
-                                      ),
-                                ),
-                              ),
-                              Icon(
-                                Icons.star_rate_rounded,
-                                color: FlutterFlowTheme.of(context).accent1,
-                                size: 30.0,
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(20.0, 5.0, 30.0, 0.0),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                          Row(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 10.0, 0.0),
-                                child: Text(
-                                  valueOrDefault<String>(
-                                    profilPublicAdminUsersRecord.blocks.length
-                                        .toString(),
-                                    '0',
-                                  ),
-                                  style: FlutterFlowTheme.of(context)
-                                      .titleLarge
-                                      .override(
-                                        fontFamily: 'Montserrat',
-                                        letterSpacing: 0.0,
-                                      ),
-                                ),
-                              ),
-                              Icon(
-                                Icons.person_off_rounded,
-                                color: FlutterFlowTheme.of(context).error,
-                                size: 30.0,
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                    Divider(
-                      thickness: 1.0,
-                      color: FlutterFlowTheme.of(context).secondaryBackground,
-                    ),
-                    Align(
-                      alignment: const AlignmentDirectional(-1.0, 0.0),
-                      child: Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
-                        child: Text(
-                          'Changer le classement parieur',
-                          style:
-                              FlutterFlowTheme.of(context).labelMedium.override(
-                                    fontFamily: 'Poppins',
-                                    letterSpacing: 0.0,
-                                  ),
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 5.0),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          FlutterFlowDropDown<String>(
-                            controller: _model.dropLigueValueController ??=
-                                FormFieldController<String>(
-                              _model.dropLigueValue ??= '',
                             ),
-                            options: List<String>.from(
-                                ['amateur', 'pro', 'champion', 'legende']),
-                            optionLabels: const [
-                              'Amateur',
-                              'Pro',
-                              'Champion',
-                              'Légende'
-                            ],
-                            onChanged: (val) =>
-                                safeSetState(() => _model.dropLigueValue = val),
-                            width: 200.0,
-                            height: 56.0,
-                            textStyle: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  fontFamily: 'Poppins',
-                                  letterSpacing: 0.0,
-                                ),
-                            hintText: 'Ligue',
-                            icon: Icon(
-                              Icons.keyboard_arrow_down_rounded,
-                              color: FlutterFlowTheme.of(context).secondaryText,
-                              size: 24.0,
-                            ),
-                            fillColor:
-                                FlutterFlowTheme.of(context).primaryBackground,
-                            elevation: 2.0,
-                            borderColor: FlutterFlowTheme.of(context).alternate,
-                            borderWidth: 2.0,
-                            borderRadius: 8.0,
-                            margin: const EdgeInsetsDirectional.fromSTEB(
-                                16.0, 4.0, 16.0, 4.0),
-                            hidesUnderline: true,
-                            isOverButton: true,
-                            isSearchable: false,
-                            isMultiSelect: false,
-                          ),
-                          Column(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              if (_model.dropLigueValue == 'amateur')
-                                Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Text(
-                                      'Pro vers Amateur',
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily: 'Poppins',
-                                            letterSpacing: 0.0,
-                                          ),
-                                    ),
-                                    InkWell(
-                                      splashColor: Colors.transparent,
-                                      focusColor: Colors.transparent,
-                                      hoverColor: Colors.transparent,
-                                      highlightColor: Colors.transparent,
-                                      onTap: () async {
-                                        await widget.userRef!.update({
-                                          ...createUsersRecordData(
-                                            rankValue: 'amateur',
-                                            divisionValue: '1',
-                                          ),
-                                          ...mapToFirestore(
-                                            {
-                                              'update_time':
-                                                  FieldValue.serverTimestamp(),
-                                            },
-                                          ),
-                                        });
-                                      },
-                                      child: Icon(
-                                        Icons.send_rounded,
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondaryText,
-                                        size: 24.0,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              if (_model.dropLigueValue == 'pro')
-                                Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    if (profilPublicAdminUsersRecord
-                                            .rankValue ==
-                                        'amateur')
-                                      Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        children: [
-                                          Text(
-                                            'Amateur vers Pro',
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyMedium
-                                                .override(
-                                                  fontFamily: 'Poppins',
-                                                  letterSpacing: 0.0,
-                                                ),
-                                          ),
-                                          InkWell(
-                                            splashColor: Colors.transparent,
-                                            focusColor: Colors.transparent,
-                                            hoverColor: Colors.transparent,
-                                            highlightColor: Colors.transparent,
-                                            onTap: () async {
-                                              await widget.userRef!.update({
-                                                ...createUsersRecordData(
-                                                  rankValue: 'pro',
-                                                  divisionValue: '3',
-                                                ),
-                                                ...mapToFirestore(
-                                                  {
-                                                    'update_time': FieldValue
-                                                        .serverTimestamp(),
-                                                  },
-                                                ),
-                                              });
-                                            },
-                                            child: Icon(
-                                              Icons.send_rounded,
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondaryText,
-                                              size: 24.0,
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    if (profilPublicAdminUsersRecord
-                                            .rankValue ==
-                                        'champion')
-                                      Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        children: [
-                                          Text(
-                                            'Champion vers Pro',
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyMedium
-                                                .override(
-                                                  fontFamily: 'Poppins',
-                                                  letterSpacing: 0.0,
-                                                ),
-                                          ),
-                                          InkWell(
-                                            splashColor: Colors.transparent,
-                                            focusColor: Colors.transparent,
-                                            hoverColor: Colors.transparent,
-                                            highlightColor: Colors.transparent,
-                                            onTap: () async {
-                                              await widget.userRef!.update({
-                                                ...createUsersRecordData(
-                                                  rankValue: 'pro',
-                                                  divisionValue: '1',
-                                                ),
-                                                ...mapToFirestore(
-                                                  {
-                                                    'update_time': FieldValue
-                                                        .serverTimestamp(),
-                                                  },
-                                                ),
-                                              });
-                                            },
-                                            child: Icon(
-                                              Icons.send_rounded,
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondaryText,
-                                              size: 24.0,
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                  ],
-                                ),
-                              if (_model.dropLigueValue == 'champion')
-                                Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    if (profilPublicAdminUsersRecord
-                                            .rankValue ==
-                                        'pro')
-                                      Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        children: [
-                                          Text(
-                                            'Pro vers Champion',
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyMedium
-                                                .override(
-                                                  fontFamily: 'Poppins',
-                                                  letterSpacing: 0.0,
-                                                ),
-                                          ),
-                                          InkWell(
-                                            splashColor: Colors.transparent,
-                                            focusColor: Colors.transparent,
-                                            hoverColor: Colors.transparent,
-                                            highlightColor: Colors.transparent,
-                                            onTap: () async {
-                                              await widget.userRef!.update({
-                                                ...createUsersRecordData(
-                                                  rankValue: 'champion',
-                                                  divisionValue: '3',
-                                                ),
-                                                ...mapToFirestore(
-                                                  {
-                                                    'update_time': FieldValue
-                                                        .serverTimestamp(),
-                                                  },
-                                                ),
-                                              });
-                                            },
-                                            child: Icon(
-                                              Icons.send_rounded,
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondaryText,
-                                              size: 24.0,
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    if (profilPublicAdminUsersRecord
-                                            .rankValue ==
-                                        'legende')
-                                      Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        children: [
-                                          Text(
-                                            ' Legende vers Champion',
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyMedium
-                                                .override(
-                                                  fontFamily: 'Poppins',
-                                                  letterSpacing: 0.0,
-                                                ),
-                                          ),
-                                          InkWell(
-                                            splashColor: Colors.transparent,
-                                            focusColor: Colors.transparent,
-                                            hoverColor: Colors.transparent,
-                                            highlightColor: Colors.transparent,
-                                            onTap: () async {
-                                              await widget.userRef!.update({
-                                                ...createUsersRecordData(
-                                                  rankValue: 'champion',
-                                                  divisionValue: '1',
-                                                ),
-                                                ...mapToFirestore(
-                                                  {
-                                                    'update_time': FieldValue
-                                                        .serverTimestamp(),
-                                                  },
-                                                ),
-                                              });
-                                            },
-                                            child: Icon(
-                                              Icons.send_rounded,
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondaryText,
-                                              size: 24.0,
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                  ],
-                                ),
-                              if (_model.dropLigueValue == 'legende')
-                                Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Text(
-                                      'Champion vers Legende',
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily: 'Poppins',
-                                            letterSpacing: 0.0,
-                                          ),
-                                    ),
-                                    InkWell(
-                                      splashColor: Colors.transparent,
-                                      focusColor: Colors.transparent,
-                                      hoverColor: Colors.transparent,
-                                      highlightColor: Colors.transparent,
-                                      onTap: () async {
-                                        await widget.userRef!.update({
-                                          ...createUsersRecordData(
-                                            rankValue: 'legende',
-                                            divisionValue: '3',
-                                          ),
-                                          ...mapToFirestore(
-                                            {
-                                              'update_time':
-                                                  FieldValue.serverTimestamp(),
-                                            },
-                                          ),
-                                        });
-                                      },
-                                      child: Icon(
-                                        Icons.send_rounded,
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondaryText,
-                                        size: 24.0,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 5.0),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          FlutterFlowDropDown<String>(
-                            controller: _model.dropDivisionValueController ??=
-                                FormFieldController<String>(
-                              _model.dropDivisionValue ??= '',
-                            ),
-                            options: List<String>.from(['1', '2', '3']),
-                            optionLabels: const [
-                              'Division 1',
-                              'Division 2',
-                              'Division 3'
-                            ],
-                            onChanged: (val) => safeSetState(
-                                () => _model.dropDivisionValue = val),
-                            width: 250.0,
-                            height: 56.0,
-                            textStyle: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  fontFamily: 'Poppins',
-                                  letterSpacing: 0.0,
-                                ),
-                            hintText: 'Divisions',
-                            icon: Icon(
-                              Icons.keyboard_arrow_down_rounded,
-                              color: FlutterFlowTheme.of(context).secondaryText,
-                              size: 24.0,
-                            ),
-                            fillColor:
-                                FlutterFlowTheme.of(context).primaryBackground,
-                            elevation: 2.0,
-                            borderColor: FlutterFlowTheme.of(context).alternate,
-                            borderWidth: 2.0,
-                            borderRadius: 8.0,
-                            margin: const EdgeInsetsDirectional.fromSTEB(
-                                16.0, 4.0, 16.0, 4.0),
-                            hidesUnderline: true,
-                            isOverButton: true,
-                            isSearchable: false,
-                            isMultiSelect: false,
-                          ),
-                          Row(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              InkWell(
-                                splashColor: Colors.transparent,
-                                focusColor: Colors.transparent,
-                                hoverColor: Colors.transparent,
-                                highlightColor: Colors.transparent,
-                                onTap: () async {
-                                  await widget.userRef!.update({
-                                    ...createUsersRecordData(
-                                      divisionValue: _model.dropDivisionValue,
-                                    ),
-                                    ...mapToFirestore(
-                                      {
-                                        'update_time':
-                                            FieldValue.serverTimestamp(),
-                                      },
-                                    ),
-                                  });
-                                },
-                                child: Icon(
-                                  Icons.send_rounded,
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryText,
-                                  size: 24.0,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                    Align(
-                      alignment: const AlignmentDirectional(-1.0, 0.0),
-                      child: Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
-                        child: Text(
-                          'Changer le StatutApp',
-                          style:
-                              FlutterFlowTheme.of(context).labelMedium.override(
-                                    fontFamily: 'Poppins',
-                                    letterSpacing: 0.0,
-                                  ),
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 10.0),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          FlutterFlowDropDown<String>(
-                            controller: _model.dropStatutValueController ??=
-                                FormFieldController<String>(
-                              _model.dropStatutValue ??= '',
-                            ),
-                            options: List<String>.from([
-                              'suspendu',
-                              'moderateur',
-                              'administrateur',
-                              'typster'
-                            ]),
-                            optionLabels: const [
-                              'Suspendu',
-                              'Modérateur',
-                              'Administrateur',
-                              'Typster'
-                            ],
-                            onChanged: (val) => safeSetState(
-                                () => _model.dropStatutValue = val),
-                            width: 250.0,
-                            height: 56.0,
-                            textStyle: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  fontFamily: 'Poppins',
-                                  letterSpacing: 0.0,
-                                ),
-                            hintText: 'Statuts App',
-                            icon: Icon(
-                              Icons.keyboard_arrow_down_rounded,
-                              color: FlutterFlowTheme.of(context).secondaryText,
-                              size: 24.0,
-                            ),
-                            fillColor:
-                                FlutterFlowTheme.of(context).primaryBackground,
-                            elevation: 2.0,
-                            borderColor: FlutterFlowTheme.of(context).alternate,
-                            borderWidth: 2.0,
-                            borderRadius: 8.0,
-                            margin: const EdgeInsetsDirectional.fromSTEB(
-                                16.0, 4.0, 16.0, 4.0),
-                            hidesUnderline: true,
-                            isOverButton: true,
-                            isSearchable: false,
-                            isMultiSelect: false,
-                          ),
-                          Row(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              InkWell(
-                                splashColor: Colors.transparent,
-                                focusColor: Colors.transparent,
-                                hoverColor: Colors.transparent,
-                                highlightColor: Colors.transparent,
-                                onTap: () async {
-                                  await widget.userRef!.update({
-                                    ...createUsersRecordData(
-                                      stsocialapp: _model.dropStatutValue,
-                                    ),
-                                    ...mapToFirestore(
-                                      {
-                                        'update_time':
-                                            FieldValue.serverTimestamp(),
-                                      },
-                                    ),
-                                  });
-                                },
-                                child: Icon(
-                                  Icons.send_rounded,
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryText,
-                                  size: 24.0,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                    if (profilPublicAdminUsersRecord.stsocialapp == 'suspendu')
-                      Column(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 0.0, 5.0),
-                            child: Row(
+                            Row(
                               mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
-                                Align(
-                                  alignment: const AlignmentDirectional(-1.0, 0.0),
-                                  child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        20.0, 0.0, 0.0, 0.0),
-                                    child: Text(
-                                      'Sport',
-                                      style: FlutterFlowTheme.of(context)
-                                          .labelMedium
-                                          .override(
-                                            fontFamily: 'Poppins',
-                                            letterSpacing: 0.0,
-                                          ),
+                                Text(
+                                  valueOrDefault<String>(
+                                    functions
+                                        .limitOf2Decimal(
+                                            profilPublicAdminUsersRecord.stock)
+                                        .toString(),
+                                    '900.00',
+                                  ),
+                                  maxLines: 1,
+                                  style: FlutterFlowTheme.of(context)
+                                      .labelMedium
+                                      .override(
+                                        fontFamily: 'Poppins',
+                                        letterSpacing: 0.0,
+                                      ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      5.0, 0.0, 0.0, 0.0),
+                                  child: Container(
+                                    width: 30.0,
+                                    height: 30.0,
+                                    decoration: BoxDecoration(
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
+                                      shape: BoxShape.circle,
+                                      border: Border.all(
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                      ),
+                                    ),
+                                    child: Padding(
+                                      padding: EdgeInsets.all(2.0),
+                                      child: ClipRRect(
+                                        borderRadius:
+                                            BorderRadius.circular(24.0),
+                                        child: Image.asset(
+                                          'assets/images/logo_monnaiel.jpg',
+                                          width: 50.0,
+                                          height: 50.0,
+                                          fit: BoxFit.cover,
+                                        ),
+                                      ),
                                     ),
                                   ),
                                 ),
-                                Container(
-                                  width: 120.0,
-                                  height: 40.0,
-                                  decoration: BoxDecoration(
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                      Divider(
+                        thickness: 1.0,
+                        color: FlutterFlowTheme.of(context).secondaryBackground,
+                      ),
+                      Align(
+                        alignment: AlignmentDirectional(-1.0, 0.0),
+                        child: Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              20.0, 0.0, 0.0, 0.0),
+                          child: Text(
+                            'Ligue - E Sport',
+                            style: FlutterFlowTheme.of(context)
+                                .titleLarge
+                                .override(
+                                  fontFamily: 'Montserrat',
+                                  letterSpacing: 0.0,
+                                ),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            20.0, 5.0, 20.0, 0.0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              profilPublicAdminUsersRecord.erankValue,
+                              style: FlutterFlowTheme.of(context)
+                                  .titleLarge
+                                  .override(
+                                    fontFamily: 'Montserrat',
+                                    letterSpacing: 0.0,
+                                  ),
+                            ),
+                            Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Text(
+                                  profilPublicAdminUsersRecord.edivisionValue,
+                                  style: FlutterFlowTheme.of(context)
+                                      .labelLarge
+                                      .override(
+                                        fontFamily: 'Montserrat',
+                                        letterSpacing: 0.0,
+                                      ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            20.0, 5.0, 30.0, 5.0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Total Rencontres',
+                              style: FlutterFlowTheme.of(context)
+                                  .labelLarge
+                                  .override(
+                                    fontFamily: 'Montserrat',
                                     color: FlutterFlowTheme.of(context)
-                                        .secondaryBackground,
-                                    borderRadius: BorderRadius.circular(8.0),
-                                    shape: BoxShape.rectangle,
+                                        .secondaryText,
+                                    letterSpacing: 0.0,
                                   ),
-                                  child: FlutterFlowCountController(
-                                    decrementIconBuilder: (enabled) => Icon(
-                                      Icons.remove_rounded,
-                                      color: enabled
-                                          ? FlutterFlowTheme.of(context)
-                                              .secondaryText
-                                          : FlutterFlowTheme.of(context)
-                                              .alternate,
-                                      size: 24.0,
+                            ),
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  3.0, 0.0, 0.0, 0.0),
+                              child: Text(
+                                valueOrDefault<String>(
+                                  profilPublicAdminUsersRecord.totalGames
+                                      .toString(),
+                                  '0',
+                                ),
+                                style: FlutterFlowTheme.of(context)
+                                    .titleLarge
+                                    .override(
+                                      fontFamily: 'Montserrat',
+                                      letterSpacing: 0.0,
                                     ),
-                                    incrementIconBuilder: (enabled) => Icon(
-                                      Icons.add_rounded,
-                                      color: enabled
-                                          ? FlutterFlowTheme.of(context).primary
-                                          : FlutterFlowTheme.of(context)
-                                              .alternate,
-                                      size: 24.0,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            20.0, 5.0, 30.0, 5.0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Tops/Flops',
+                              style: FlutterFlowTheme.of(context)
+                                  .labelLarge
+                                  .override(
+                                    fontFamily: 'Montserrat',
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryText,
+                                    letterSpacing: 0.0,
+                                  ),
+                            ),
+                            Align(
+                              alignment: AlignmentDirectional(0.0, 0.0),
+                              child: Text(
+                                valueOrDefault<String>(
+                                  profilPublicAdminUsersRecord.topsflops
+                                      .toString(),
+                                  '0',
+                                ),
+                                textAlign: TextAlign.center,
+                                style: FlutterFlowTheme.of(context)
+                                    .titleLarge
+                                    .override(
+                                      fontFamily: 'Montserrat',
+                                      letterSpacing: 0.0,
                                     ),
-                                    countBuilder: (count) => Text(
-                                      count.toString(),
-                                      style: FlutterFlowTheme.of(context)
-                                          .titleLarge
-                                          .override(
-                                            fontFamily: 'Montserrat',
-                                            letterSpacing: 0.0,
-                                          ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            20.0, 5.0, 30.0, 5.0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Tops',
+                              style: FlutterFlowTheme.of(context)
+                                  .labelLarge
+                                  .override(
+                                    fontFamily: 'Montserrat',
+                                    color: FlutterFlowTheme.of(context).success,
+                                    letterSpacing: 0.0,
+                                  ),
+                            ),
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  3.0, 0.0, 0.0, 0.0),
+                              child: Text(
+                                valueOrDefault<String>(
+                                  profilPublicAdminUsersRecord.tops.toString(),
+                                  '0',
+                                ),
+                                style: FlutterFlowTheme.of(context)
+                                    .titleLarge
+                                    .override(
+                                      fontFamily: 'Montserrat',
+                                      letterSpacing: 0.0,
                                     ),
-                                    count: _model.countControllerValue1 ??= 1,
-                                    updateCount: (count) => safeSetState(() =>
-                                        _model.countControllerValue1 = count),
-                                    stepSize: 1,
-                                    minimum: 1,
-                                    maximum: 60,
-                                    contentPadding:
-                                        const EdgeInsetsDirectional.fromSTEB(
-                                            12.0, 0.0, 12.0, 0.0),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            20.0, 5.0, 30.0, 5.0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Flops',
+                              style: FlutterFlowTheme.of(context)
+                                  .labelLarge
+                                  .override(
+                                    fontFamily: 'Montserrat',
+                                    color: FlutterFlowTheme.of(context).error,
+                                    letterSpacing: 0.0,
+                                  ),
+                            ),
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  3.0, 0.0, 0.0, 0.0),
+                              child: Text(
+                                valueOrDefault<String>(
+                                  profilPublicAdminUsersRecord.flops.toString(),
+                                  '0',
+                                ),
+                                style: FlutterFlowTheme.of(context)
+                                    .titleLarge
+                                    .override(
+                                      fontFamily: 'Montserrat',
+                                      letterSpacing: 0.0,
+                                    ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Divider(
+                        thickness: 1.0,
+                        color: FlutterFlowTheme.of(context).secondaryBackground,
+                      ),
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            20.0, 5.0, 30.0, 5.0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Cartons',
+                              style: FlutterFlowTheme.of(context)
+                                  .labelLarge
+                                  .override(
+                                    fontFamily: 'Montserrat',
+                                    color: FlutterFlowTheme.of(context).error,
+                                    letterSpacing: 0.0,
+                                  ),
+                            ),
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  3.0, 0.0, 0.0, 0.0),
+                              child: Text(
+                                valueOrDefault<String>(
+                                  profilPublicAdminUsersRecord.numPenalities
+                                      .toString(),
+                                  '0',
+                                ),
+                                style: FlutterFlowTheme.of(context)
+                                    .titleLarge
+                                    .override(
+                                      fontFamily: 'Montserrat',
+                                      letterSpacing: 0.0,
+                                    ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            20.0, 5.0, 30.0, 5.0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Suspensions',
+                              style: FlutterFlowTheme.of(context)
+                                  .labelLarge
+                                  .override(
+                                    fontFamily: 'Montserrat',
+                                    color: FlutterFlowTheme.of(context).error,
+                                    letterSpacing: 0.0,
+                                  ),
+                            ),
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  3.0, 0.0, 0.0, 0.0),
+                              child: Text(
+                                valueOrDefault<String>(
+                                  profilPublicAdminUsersRecord.suspensionTimes
+                                      .toString(),
+                                  '0',
+                                ),
+                                style: FlutterFlowTheme.of(context)
+                                    .titleLarge
+                                    .override(
+                                      fontFamily: 'Montserrat',
+                                      letterSpacing: 0.0,
+                                    ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Divider(
+                        thickness: 1.0,
+                        color: FlutterFlowTheme.of(context).secondaryBackground,
+                      ),
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            20.0, 0.0, 30.0, 0.0),
+                        child: StreamBuilder<List<MyPostsRecord>>(
+                          stream: queryMyPostsRecord(
+                            parent: widget.userRef,
+                            singleRecord: true,
+                          ),
+                          builder: (context, snapshot) {
+                            // Customize what your widget looks like when it's loading.
+                            if (!snapshot.hasData) {
+                              return Center(
+                                child: SizedBox(
+                                  width: 50.0,
+                                  height: 50.0,
+                                  child: CircularProgressIndicator(
+                                    valueColor: AlwaysStoppedAnimation<Color>(
+                                      FlutterFlowTheme.of(context).accent4,
+                                    ),
                                   ),
                                 ),
+                              );
+                            }
+                            List<MyPostsRecord> rowMyPostsMyPostsRecordList =
+                                snapshot.data!;
+                            // Return an empty Container when the item does not exist.
+                            if (snapshot.data!.isEmpty) {
+                              return Container();
+                            }
+                            final rowMyPostsMyPostsRecord =
+                                rowMyPostsMyPostsRecordList.isNotEmpty
+                                    ? rowMyPostsMyPostsRecordList.first
+                                    : null;
+
+                            return Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Actualités',
+                                  style: FlutterFlowTheme.of(context)
+                                      .titleLarge
+                                      .override(
+                                        fontFamily: 'Montserrat',
+                                        letterSpacing: 0.0,
+                                      ),
+                                ),
+                                Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  crossAxisAlignment: CrossAxisAlignment.end,
+                                  children: [
+                                    InkWell(
+                                      splashColor: Colors.transparent,
+                                      focusColor: Colors.transparent,
+                                      hoverColor: Colors.transparent,
+                                      highlightColor: Colors.transparent,
+                                      onTap: () async {
+                                        context.pushNamed(
+                                          'PublicPostsList',
+                                          queryParameters: {
+                                            'userPostRef': serializeParam(
+                                              rowMyPostsMyPostsRecord
+                                                  ?.reference,
+                                              ParamType.DocumentReference,
+                                            ),
+                                          }.withoutNulls,
+                                        );
+                                      },
+                                      child: Icon(
+                                        Icons.newspaper_rounded,
+                                        color: valueOrDefault<Color>(
+                                          profilPublicAdminUsersRecord.color1,
+                                          FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                        ),
+                                        size: 30.0,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            );
+                          },
+                        ),
+                      ),
+                      Divider(
+                        thickness: 1.0,
+                        color: FlutterFlowTheme.of(context).secondaryBackground,
+                      ),
+                      Align(
+                        alignment: AlignmentDirectional(-1.0, 0.0),
+                        child: Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              20.0, 0.0, 0.0, 0.0),
+                          child: Text(
+                            'Réseaux',
+                            style: FlutterFlowTheme.of(context)
+                                .titleLarge
+                                .override(
+                                  fontFamily: 'Montserrat',
+                                  letterSpacing: 0.0,
+                                ),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            20.0, 5.0, 30.0, 5.0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 10.0, 0.0),
+                                  child: Text(
+                                    valueOrDefault<String>(
+                                      profilPublicAdminUsersRecord.fans.length
+                                          .toString(),
+                                      '0',
+                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .titleLarge
+                                        .override(
+                                          fontFamily: 'Montserrat',
+                                          letterSpacing: 0.0,
+                                        ),
+                                  ),
+                                ),
+                                Icon(
+                                  Icons.supervisor_account_rounded,
+                                  color: FlutterFlowTheme.of(context).success,
+                                  size: 30.0,
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            20.0, 5.0, 30.0, 5.0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 10.0, 0.0),
+                                  child: Text(
+                                    valueOrDefault<String>(
+                                      profilPublicAdminUsersRecord.bests.length
+                                          .toString(),
+                                      '0',
+                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .titleLarge
+                                        .override(
+                                          fontFamily: 'Montserrat',
+                                          letterSpacing: 0.0,
+                                        ),
+                                  ),
+                                ),
+                                Icon(
+                                  Icons.star_rate_rounded,
+                                  color: FlutterFlowTheme.of(context).accent1,
+                                  size: 30.0,
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            20.0, 5.0, 30.0, 0.0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 10.0, 0.0),
+                                  child: Text(
+                                    valueOrDefault<String>(
+                                      profilPublicAdminUsersRecord.blocks.length
+                                          .toString(),
+                                      '0',
+                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .titleLarge
+                                        .override(
+                                          fontFamily: 'Montserrat',
+                                          letterSpacing: 0.0,
+                                        ),
+                                  ),
+                                ),
+                                Icon(
+                                  Icons.person_off_rounded,
+                                  color: FlutterFlowTheme.of(context).error,
+                                  size: 30.0,
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                      Divider(
+                        thickness: 1.0,
+                        color: FlutterFlowTheme.of(context).secondaryBackground,
+                      ),
+                      Align(
+                        alignment: AlignmentDirectional(-1.0, 0.0),
+                        child: Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              20.0, 0.0, 0.0, 0.0),
+                          child: Text(
+                            'Changer le classement parieur',
+                            style: FlutterFlowTheme.of(context)
+                                .labelMedium
+                                .override(
+                                  fontFamily: 'Poppins',
+                                  letterSpacing: 0.0,
+                                ),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 5.0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            FlutterFlowDropDown<String>(
+                              controller: _model.dropLigueValueController ??=
+                                  FormFieldController<String>(
+                                _model.dropLigueValue ??= '',
+                              ),
+                              options: List<String>.from(
+                                  ['amateur', 'pro', 'champion', 'legende']),
+                              optionLabels: [
+                                'Amateur',
+                                'Pro',
+                                'Champion',
+                                'Légende'
+                              ],
+                              onChanged: (val) => safeSetState(
+                                  () => _model.dropLigueValue = val),
+                              width: 200.0,
+                              height: 56.0,
+                              textStyle: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    letterSpacing: 0.0,
+                                  ),
+                              hintText: 'Ligue',
+                              icon: Icon(
+                                Icons.keyboard_arrow_down_rounded,
+                                color:
+                                    FlutterFlowTheme.of(context).secondaryText,
+                                size: 24.0,
+                              ),
+                              fillColor: FlutterFlowTheme.of(context)
+                                  .primaryBackground,
+                              elevation: 2.0,
+                              borderColor:
+                                  FlutterFlowTheme.of(context).alternate,
+                              borderWidth: 2.0,
+                              borderRadius: 8.0,
+                              margin: EdgeInsetsDirectional.fromSTEB(
+                                  16.0, 4.0, 16.0, 4.0),
+                              hidesUnderline: true,
+                              isOverButton: true,
+                              isSearchable: false,
+                              isMultiSelect: false,
+                            ),
+                            Column(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                if (_model.dropLigueValue == 'amateur')
+                                  Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Text(
+                                        'Pro vers Amateur',
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Poppins',
+                                              letterSpacing: 0.0,
+                                            ),
+                                      ),
+                                      InkWell(
+                                        splashColor: Colors.transparent,
+                                        focusColor: Colors.transparent,
+                                        hoverColor: Colors.transparent,
+                                        highlightColor: Colors.transparent,
+                                        onTap: () async {
+                                          await widget.userRef!.update({
+                                            ...createUsersRecordData(
+                                              rankValue: 'amateur',
+                                              divisionValue: '1',
+                                            ),
+                                            ...mapToFirestore(
+                                              {
+                                                'update_time': FieldValue
+                                                    .serverTimestamp(),
+                                              },
+                                            ),
+                                          });
+                                        },
+                                        child: Icon(
+                                          Icons.send_rounded,
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryText,
+                                          size: 24.0,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                if (_model.dropLigueValue == 'pro')
+                                  Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      if (profilPublicAdminUsersRecord
+                                              .rankValue ==
+                                          'amateur')
+                                        Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          children: [
+                                            Text(
+                                              'Amateur vers Pro',
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                            ),
+                                            InkWell(
+                                              splashColor: Colors.transparent,
+                                              focusColor: Colors.transparent,
+                                              hoverColor: Colors.transparent,
+                                              highlightColor:
+                                                  Colors.transparent,
+                                              onTap: () async {
+                                                await widget.userRef!.update({
+                                                  ...createUsersRecordData(
+                                                    rankValue: 'pro',
+                                                    divisionValue: '3',
+                                                  ),
+                                                  ...mapToFirestore(
+                                                    {
+                                                      'update_time': FieldValue
+                                                          .serverTimestamp(),
+                                                    },
+                                                  ),
+                                                });
+                                              },
+                                              child: Icon(
+                                                Icons.send_rounded,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryText,
+                                                size: 24.0,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      if (profilPublicAdminUsersRecord
+                                              .rankValue ==
+                                          'champion')
+                                        Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          children: [
+                                            Text(
+                                              'Champion vers Pro',
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                            ),
+                                            InkWell(
+                                              splashColor: Colors.transparent,
+                                              focusColor: Colors.transparent,
+                                              hoverColor: Colors.transparent,
+                                              highlightColor:
+                                                  Colors.transparent,
+                                              onTap: () async {
+                                                await widget.userRef!.update({
+                                                  ...createUsersRecordData(
+                                                    rankValue: 'pro',
+                                                    divisionValue: '1',
+                                                  ),
+                                                  ...mapToFirestore(
+                                                    {
+                                                      'update_time': FieldValue
+                                                          .serverTimestamp(),
+                                                    },
+                                                  ),
+                                                });
+                                              },
+                                              child: Icon(
+                                                Icons.send_rounded,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryText,
+                                                size: 24.0,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                    ],
+                                  ),
+                                if (_model.dropLigueValue == 'champion')
+                                  Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      if (profilPublicAdminUsersRecord
+                                              .rankValue ==
+                                          'pro')
+                                        Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          children: [
+                                            Text(
+                                              'Pro vers Champion',
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                            ),
+                                            InkWell(
+                                              splashColor: Colors.transparent,
+                                              focusColor: Colors.transparent,
+                                              hoverColor: Colors.transparent,
+                                              highlightColor:
+                                                  Colors.transparent,
+                                              onTap: () async {
+                                                await widget.userRef!.update({
+                                                  ...createUsersRecordData(
+                                                    rankValue: 'champion',
+                                                    divisionValue: '3',
+                                                  ),
+                                                  ...mapToFirestore(
+                                                    {
+                                                      'update_time': FieldValue
+                                                          .serverTimestamp(),
+                                                    },
+                                                  ),
+                                                });
+                                              },
+                                              child: Icon(
+                                                Icons.send_rounded,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryText,
+                                                size: 24.0,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      if (profilPublicAdminUsersRecord
+                                              .rankValue ==
+                                          'legende')
+                                        Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          children: [
+                                            Text(
+                                              ' Legende vers Champion',
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                            ),
+                                            InkWell(
+                                              splashColor: Colors.transparent,
+                                              focusColor: Colors.transparent,
+                                              hoverColor: Colors.transparent,
+                                              highlightColor:
+                                                  Colors.transparent,
+                                              onTap: () async {
+                                                await widget.userRef!.update({
+                                                  ...createUsersRecordData(
+                                                    rankValue: 'champion',
+                                                    divisionValue: '1',
+                                                  ),
+                                                  ...mapToFirestore(
+                                                    {
+                                                      'update_time': FieldValue
+                                                          .serverTimestamp(),
+                                                    },
+                                                  ),
+                                                });
+                                              },
+                                              child: Icon(
+                                                Icons.send_rounded,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryText,
+                                                size: 24.0,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                    ],
+                                  ),
+                                if (_model.dropLigueValue == 'legende')
+                                  Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Text(
+                                        'Champion vers Legende',
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Poppins',
+                                              letterSpacing: 0.0,
+                                            ),
+                                      ),
+                                      InkWell(
+                                        splashColor: Colors.transparent,
+                                        focusColor: Colors.transparent,
+                                        hoverColor: Colors.transparent,
+                                        highlightColor: Colors.transparent,
+                                        onTap: () async {
+                                          await widget.userRef!.update({
+                                            ...createUsersRecordData(
+                                              rankValue: 'legende',
+                                              divisionValue: '3',
+                                            ),
+                                            ...mapToFirestore(
+                                              {
+                                                'update_time': FieldValue
+                                                    .serverTimestamp(),
+                                              },
+                                            ),
+                                          });
+                                        },
+                                        child: Icon(
+                                          Icons.send_rounded,
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryText,
+                                          size: 24.0,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 5.0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            FlutterFlowDropDown<String>(
+                              controller: _model.dropDivisionValueController ??=
+                                  FormFieldController<String>(
+                                _model.dropDivisionValue ??= '',
+                              ),
+                              options: List<String>.from(['1', '2', '3']),
+                              optionLabels: [
+                                'Division 1',
+                                'Division 2',
+                                'Division 3'
+                              ],
+                              onChanged: (val) => safeSetState(
+                                  () => _model.dropDivisionValue = val),
+                              width: 250.0,
+                              height: 56.0,
+                              textStyle: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    letterSpacing: 0.0,
+                                  ),
+                              hintText: 'Divisions',
+                              icon: Icon(
+                                Icons.keyboard_arrow_down_rounded,
+                                color:
+                                    FlutterFlowTheme.of(context).secondaryText,
+                                size: 24.0,
+                              ),
+                              fillColor: FlutterFlowTheme.of(context)
+                                  .primaryBackground,
+                              elevation: 2.0,
+                              borderColor:
+                                  FlutterFlowTheme.of(context).alternate,
+                              borderWidth: 2.0,
+                              borderRadius: 8.0,
+                              margin: EdgeInsetsDirectional.fromSTEB(
+                                  16.0, 4.0, 16.0, 4.0),
+                              hidesUnderline: true,
+                              isOverButton: true,
+                              isSearchable: false,
+                              isMultiSelect: false,
+                            ),
+                            Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
                                 InkWell(
                                   splashColor: Colors.transparent,
                                   focusColor: Colors.transparent,
@@ -1861,17 +2023,12 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                                   onTap: () async {
                                     await widget.userRef!.update({
                                       ...createUsersRecordData(
-                                        suspensionDays:
-                                            _model.countControllerValue1,
+                                        divisionValue: _model.dropDivisionValue,
                                       ),
                                       ...mapToFirestore(
                                         {
                                           'update_time':
                                               FieldValue.serverTimestamp(),
-                                          'suspension_times':
-                                              FieldValue.increment(1),
-                                          'num_penalities':
-                                              FieldValue.increment(2),
                                         },
                                       ),
                                     });
@@ -1885,81 +2042,191 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                                 ),
                               ],
                             ),
+                          ],
+                        ),
+                      ),
+                      Align(
+                        alignment: AlignmentDirectional(-1.0, 0.0),
+                        child: Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              20.0, 0.0, 0.0, 0.0),
+                          child: Text(
+                            'Changer le StatutApp',
+                            style: FlutterFlowTheme.of(context)
+                                .labelMedium
+                                .override(
+                                  fontFamily: 'Poppins',
+                                  letterSpacing: 0.0,
+                                ),
                           ),
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                0.0, 20.0, 0.0, 0.0),
-                            child: Row(
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            0.0, 20.0, 0.0, 10.0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            FlutterFlowDropDown<String>(
+                              controller: _model.dropStatutValueController ??=
+                                  FormFieldController<String>(
+                                _model.dropStatutValue ??= '',
+                              ),
+                              options: List<String>.from([
+                                'suspendu',
+                                'moderateur',
+                                'administrateur',
+                                'typster'
+                              ]),
+                              optionLabels: [
+                                'Suspendu',
+                                'Modérateur',
+                                'Administrateur',
+                                'Typster'
+                              ],
+                              onChanged: (val) => safeSetState(
+                                  () => _model.dropStatutValue = val),
+                              width: 250.0,
+                              height: 56.0,
+                              textStyle: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    letterSpacing: 0.0,
+                                  ),
+                              hintText: 'Statuts App',
+                              icon: Icon(
+                                Icons.keyboard_arrow_down_rounded,
+                                color:
+                                    FlutterFlowTheme.of(context).secondaryText,
+                                size: 24.0,
+                              ),
+                              fillColor: FlutterFlowTheme.of(context)
+                                  .primaryBackground,
+                              elevation: 2.0,
+                              borderColor:
+                                  FlutterFlowTheme.of(context).alternate,
+                              borderWidth: 2.0,
+                              borderRadius: 8.0,
+                              margin: EdgeInsetsDirectional.fromSTEB(
+                                  16.0, 4.0, 16.0, 4.0),
+                              hidesUnderline: true,
+                              isOverButton: true,
+                              isSearchable: false,
+                              isMultiSelect: false,
+                            ),
+                            Row(
                               mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
-                                Align(
-                                  alignment: const AlignmentDirectional(-1.0, 0.0),
-                                  child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        15.0, 0.0, 0.0, 0.0),
-                                    child: Text(
-                                      'E Sport',
-                                      style: FlutterFlowTheme.of(context)
-                                          .labelMedium
-                                          .override(
-                                            fontFamily: 'Poppins',
-                                            letterSpacing: 0.0,
-                                          ),
-                                    ),
-                                  ),
-                                ),
-                                Container(
-                                  width: 120.0,
-                                  height: 40.0,
-                                  decoration: BoxDecoration(
+                                InkWell(
+                                  splashColor: Colors.transparent,
+                                  focusColor: Colors.transparent,
+                                  hoverColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
+                                  onTap: () async {
+                                    await widget.userRef!.update({
+                                      ...createUsersRecordData(
+                                        stsocialapp: _model.dropStatutValue,
+                                      ),
+                                      ...mapToFirestore(
+                                        {
+                                          'update_time':
+                                              FieldValue.serverTimestamp(),
+                                        },
+                                      ),
+                                    });
+                                  },
+                                  child: Icon(
+                                    Icons.send_rounded,
                                     color: FlutterFlowTheme.of(context)
-                                        .secondaryBackground,
-                                    borderRadius: BorderRadius.circular(8.0),
-                                    shape: BoxShape.rectangle,
-                                  ),
-                                  child: FlutterFlowCountController(
-                                    decrementIconBuilder: (enabled) => Icon(
-                                      Icons.remove_rounded,
-                                      color: enabled
-                                          ? FlutterFlowTheme.of(context)
-                                              .secondaryText
-                                          : FlutterFlowTheme.of(context)
-                                              .alternate,
-                                      size: 24.0,
-                                    ),
-                                    incrementIconBuilder: (enabled) => Icon(
-                                      Icons.add_rounded,
-                                      color: enabled
-                                          ? FlutterFlowTheme.of(context).primary
-                                          : FlutterFlowTheme.of(context)
-                                              .alternate,
-                                      size: 24.0,
-                                    ),
-                                    countBuilder: (count) => Text(
-                                      count.toString(),
-                                      style: FlutterFlowTheme.of(context)
-                                          .titleLarge
-                                          .override(
-                                            fontFamily: 'Montserrat',
-                                            letterSpacing: 0.0,
-                                          ),
-                                    ),
-                                    count: _model.countControllerValue2 ??= 1,
-                                    updateCount: (count) => safeSetState(() =>
-                                        _model.countControllerValue2 = count),
-                                    stepSize: 1,
-                                    minimum: 1,
-                                    maximum: 60,
-                                    contentPadding:
-                                        const EdgeInsetsDirectional.fromSTEB(
-                                            12.0, 0.0, 12.0, 0.0),
+                                        .secondaryText,
+                                    size: 24.0,
                                   ),
                                 ),
-                                Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 4.0, 0.0),
-                                  child: InkWell(
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                      if (profilPublicAdminUsersRecord.stsocialapp ==
+                          'suspendu')
+                        Column(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 5.0),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  Align(
+                                    alignment: AlignmentDirectional(-1.0, 0.0),
+                                    child: Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          20.0, 0.0, 0.0, 0.0),
+                                      child: Text(
+                                        'Sport',
+                                        style: FlutterFlowTheme.of(context)
+                                            .labelMedium
+                                            .override(
+                                              fontFamily: 'Poppins',
+                                              letterSpacing: 0.0,
+                                            ),
+                                      ),
+                                    ),
+                                  ),
+                                  Container(
+                                    width: 120.0,
+                                    height: 40.0,
+                                    decoration: BoxDecoration(
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
+                                      borderRadius: BorderRadius.circular(8.0),
+                                      shape: BoxShape.rectangle,
+                                    ),
+                                    child: FlutterFlowCountController(
+                                      decrementIconBuilder: (enabled) => Icon(
+                                        Icons.remove_rounded,
+                                        color: enabled
+                                            ? FlutterFlowTheme.of(context)
+                                                .secondaryText
+                                            : FlutterFlowTheme.of(context)
+                                                .alternate,
+                                        size: 24.0,
+                                      ),
+                                      incrementIconBuilder: (enabled) => Icon(
+                                        Icons.add_rounded,
+                                        color: enabled
+                                            ? FlutterFlowTheme.of(context)
+                                                .primary
+                                            : FlutterFlowTheme.of(context)
+                                                .alternate,
+                                        size: 24.0,
+                                      ),
+                                      countBuilder: (count) => Text(
+                                        count.toString(),
+                                        style: FlutterFlowTheme.of(context)
+                                            .titleLarge
+                                            .override(
+                                              fontFamily: 'Montserrat',
+                                              letterSpacing: 0.0,
+                                            ),
+                                      ),
+                                      count: _model.countControllerValue1 ??= 1,
+                                      updateCount: (count) => safeSetState(() =>
+                                          _model.countControllerValue1 = count),
+                                      stepSize: 1,
+                                      minimum: 1,
+                                      maximum: 60,
+                                      contentPadding:
+                                          EdgeInsetsDirectional.fromSTEB(
+                                              12.0, 0.0, 12.0, 0.0),
+                                    ),
+                                  ),
+                                  InkWell(
                                     splashColor: Colors.transparent,
                                     focusColor: Colors.transparent,
                                     hoverColor: Colors.transparent,
@@ -1968,11 +2235,11 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                                       await widget.userRef!.update({
                                         ...createUsersRecordData(
                                           suspensionDays:
-                                              _model.countControllerValue2,
+                                              _model.countControllerValue1,
                                         ),
                                         ...mapToFirestore(
                                           {
-                                            'e_update_time':
+                                            'update_time':
                                                 FieldValue.serverTimestamp(),
                                             'suspension_times':
                                                 FieldValue.increment(1),
@@ -1989,105 +2256,286 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                                       size: 24.0,
                                     ),
                                   ),
+                                ],
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 20.0, 0.0, 0.0),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  Align(
+                                    alignment: AlignmentDirectional(-1.0, 0.0),
+                                    child: Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          15.0, 0.0, 0.0, 0.0),
+                                      child: Text(
+                                        'E Sport',
+                                        style: FlutterFlowTheme.of(context)
+                                            .labelMedium
+                                            .override(
+                                              fontFamily: 'Poppins',
+                                              letterSpacing: 0.0,
+                                            ),
+                                      ),
+                                    ),
+                                  ),
+                                  Container(
+                                    width: 120.0,
+                                    height: 40.0,
+                                    decoration: BoxDecoration(
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
+                                      borderRadius: BorderRadius.circular(8.0),
+                                      shape: BoxShape.rectangle,
+                                    ),
+                                    child: FlutterFlowCountController(
+                                      decrementIconBuilder: (enabled) => Icon(
+                                        Icons.remove_rounded,
+                                        color: enabled
+                                            ? FlutterFlowTheme.of(context)
+                                                .secondaryText
+                                            : FlutterFlowTheme.of(context)
+                                                .alternate,
+                                        size: 24.0,
+                                      ),
+                                      incrementIconBuilder: (enabled) => Icon(
+                                        Icons.add_rounded,
+                                        color: enabled
+                                            ? FlutterFlowTheme.of(context)
+                                                .primary
+                                            : FlutterFlowTheme.of(context)
+                                                .alternate,
+                                        size: 24.0,
+                                      ),
+                                      countBuilder: (count) => Text(
+                                        count.toString(),
+                                        style: FlutterFlowTheme.of(context)
+                                            .titleLarge
+                                            .override(
+                                              fontFamily: 'Montserrat',
+                                              letterSpacing: 0.0,
+                                            ),
+                                      ),
+                                      count: _model.countControllerValue2 ??= 1,
+                                      updateCount: (count) => safeSetState(() =>
+                                          _model.countControllerValue2 = count),
+                                      stepSize: 1,
+                                      minimum: 1,
+                                      maximum: 60,
+                                      contentPadding:
+                                          EdgeInsetsDirectional.fromSTEB(
+                                              12.0, 0.0, 12.0, 0.0),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 4.0, 0.0),
+                                    child: InkWell(
+                                      splashColor: Colors.transparent,
+                                      focusColor: Colors.transparent,
+                                      hoverColor: Colors.transparent,
+                                      highlightColor: Colors.transparent,
+                                      onTap: () async {
+                                        await widget.userRef!.update({
+                                          ...createUsersRecordData(
+                                            suspensionDays:
+                                                _model.countControllerValue2,
+                                          ),
+                                          ...mapToFirestore(
+                                            {
+                                              'e_update_time':
+                                                  FieldValue.serverTimestamp(),
+                                              'suspension_times':
+                                                  FieldValue.increment(1),
+                                              'num_penalities':
+                                                  FieldValue.increment(2),
+                                            },
+                                          ),
+                                        });
+                                      },
+                                      child: Icon(
+                                        Icons.send_rounded,
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryText,
+                                        size: 24.0,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      Align(
+                        alignment: AlignmentDirectional(-1.0, 0.0),
+                        child: Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              20.0, 0.0, 0.0, 0.0),
+                          child: Text(
+                            'Changer le Statut Admin Sport',
+                            style: FlutterFlowTheme.of(context)
+                                .labelMedium
+                                .override(
+                                  fontFamily: 'Poppins',
+                                  letterSpacing: 0.0,
                                 ),
-                              ],
+                          ),
+                        ),
+                      ),
+                      Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          FlutterFlowDropDown<String>(
+                            controller: _model.dropSportValueController ??=
+                                FormFieldController<String>(
+                              _model.dropSportValue ??= '',
+                            ),
+                            options: List<String>.from([
+                              'football',
+                              'basketball',
+                              'tennis',
+                              'hockey',
+                              'mma'
+                            ]),
+                            optionLabels: [
+                              'Football',
+                              'Basketball',
+                              'Tennis',
+                              'Hockey',
+                              'MMA'
+                            ],
+                            onChanged: (val) =>
+                                safeSetState(() => _model.dropSportValue = val),
+                            width: 180.0,
+                            height: 40.0,
+                            textStyle: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Poppins',
+                                  letterSpacing: 0.0,
+                                ),
+                            hintText: 'Sports',
+                            icon: Icon(
+                              Icons.keyboard_arrow_down_rounded,
+                              color: FlutterFlowTheme.of(context).secondaryText,
+                              size: 24.0,
+                            ),
+                            fillColor:
+                                FlutterFlowTheme.of(context).primaryBackground,
+                            elevation: 2.0,
+                            borderColor: Colors.transparent,
+                            borderWidth: 0.0,
+                            borderRadius: 8.0,
+                            margin: EdgeInsetsDirectional.fromSTEB(
+                                12.0, 0.0, 12.0, 0.0),
+                            hidesUnderline: true,
+                            isOverButton: false,
+                            isSearchable: false,
+                            isMultiSelect: false,
+                          ),
+                          InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              await widget.userRef!
+                                  .update(createUsersRecordData(
+                                adminSport: true,
+                                adminSportvalue: _model.dropSportValue,
+                              ));
+                            },
+                            child: Icon(
+                              Icons.send_rounded,
+                              color: FlutterFlowTheme.of(context).secondaryText,
+                              size: 24.0,
                             ),
                           ),
                         ],
                       ),
-                    Align(
-                      alignment: const AlignmentDirectional(-1.0, 0.0),
-                      child: Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
-                        child: Text(
-                          'Changer le Statut Admin Sport',
-                          style:
-                              FlutterFlowTheme.of(context).labelMedium.override(
-                                    fontFamily: 'Poppins',
-                                    letterSpacing: 0.0,
-                                  ),
+                      if (profilPublicAdminUsersRecord.adminSport == true)
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 10.0),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              FlutterFlowIconButton(
+                                borderColor:
+                                    FlutterFlowTheme.of(context).alternate,
+                                borderRadius: 50.0,
+                                borderWidth: 1.0,
+                                buttonSize: 50.0,
+                                fillColor:
+                                    FlutterFlowTheme.of(context).alternate,
+                                icon: Icon(
+                                  Icons.person_off,
+                                  color: FlutterFlowTheme.of(context).error,
+                                  size: 35.0,
+                                ),
+                                onPressed: () async {
+                                  await widget.userRef!.update({
+                                    ...createUsersRecordData(
+                                      adminSport: false,
+                                    ),
+                                    ...mapToFirestore(
+                                      {
+                                        'admin_sportvalue': FieldValue.delete(),
+                                      },
+                                    ),
+                                  });
+                                },
+                              ),
+                              Text(
+                                profilPublicAdminUsersRecord.adminSportvalue,
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Poppins',
+                                      letterSpacing: 0.0,
+                                    ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      Align(
+                        alignment: AlignmentDirectional(-1.0, 0.0),
+                        child: Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              20.0, 0.0, 0.0, 0.0),
+                          child: Text(
+                            'Changer le Statut Testeur',
+                            style: FlutterFlowTheme.of(context)
+                                .labelMedium
+                                .override(
+                                  fontFamily: 'Poppins',
+                                  letterSpacing: 0.0,
+                                ),
+                          ),
                         ),
                       ),
-                    ),
-                    Row(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        FlutterFlowDropDown<String>(
-                          controller: _model.dropSportValueController ??=
-                              FormFieldController<String>(
-                            _model.dropSportValue ??= '',
-                          ),
-                          options: List<String>.from([
-                            'football',
-                            'basketball',
-                            'tennis',
-                            'hockey',
-                            'mma'
-                          ]),
-                          optionLabels: const [
-                            'Football',
-                            'Basketball',
-                            'Tennis',
-                            'Hockey',
-                            'MMA'
-                          ],
-                          onChanged: (val) =>
-                              safeSetState(() => _model.dropSportValue = val),
-                          width: 180.0,
-                          height: 40.0,
-                          textStyle:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
+                      Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          if (profilPublicAdminUsersRecord.testor == true)
+                            Text(
+                              'Oui',
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
                                     fontFamily: 'Poppins',
+                                    color: FlutterFlowTheme.of(context).success,
                                     letterSpacing: 0.0,
                                   ),
-                          hintText: 'Sports',
-                          icon: Icon(
-                            Icons.keyboard_arrow_down_rounded,
-                            color: FlutterFlowTheme.of(context).secondaryText,
-                            size: 24.0,
-                          ),
-                          fillColor:
-                              FlutterFlowTheme.of(context).primaryBackground,
-                          elevation: 2.0,
-                          borderColor: Colors.transparent,
-                          borderWidth: 0.0,
-                          borderRadius: 8.0,
-                          margin: const EdgeInsetsDirectional.fromSTEB(
-                              12.0, 0.0, 12.0, 0.0),
-                          hidesUnderline: true,
-                          isOverButton: false,
-                          isSearchable: false,
-                          isMultiSelect: false,
-                        ),
-                        InkWell(
-                          splashColor: Colors.transparent,
-                          focusColor: Colors.transparent,
-                          hoverColor: Colors.transparent,
-                          highlightColor: Colors.transparent,
-                          onTap: () async {
-                            await widget.userRef!.update(createUsersRecordData(
-                              adminSport: true,
-                              adminSportvalue: _model.dropSportValue,
-                            ));
-                          },
-                          child: Icon(
-                            Icons.send_rounded,
-                            color: FlutterFlowTheme.of(context).secondaryText,
-                            size: 24.0,
-                          ),
-                        ),
-                      ],
-                    ),
-                    if (profilPublicAdminUsersRecord.adminSport == true)
-                      Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
+                            ),
+                          if (profilPublicAdminUsersRecord.testor == true)
                             FlutterFlowIconButton(
                               borderColor:
                                   FlutterFlowTheme.of(context).alternate,
@@ -2101,391 +2549,316 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                                 size: 35.0,
                               ),
                               onPressed: () async {
-                                await widget.userRef!.update({
-                                  ...createUsersRecordData(
-                                    adminSport: false,
-                                  ),
-                                  ...mapToFirestore(
-                                    {
-                                      'admin_sportvalue': FieldValue.delete(),
-                                    },
-                                  ),
-                                });
+                                await widget.userRef!
+                                    .update(createUsersRecordData(
+                                  testor: false,
+                                ));
                               },
                             ),
+                          if (profilPublicAdminUsersRecord.testor != true)
                             Text(
-                              profilPublicAdminUsersRecord.adminSportvalue,
+                              'Non',
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
                                     fontFamily: 'Poppins',
+                                    color: FlutterFlowTheme.of(context).error,
                                     letterSpacing: 0.0,
                                   ),
                             ),
-                          ],
-                        ),
+                          if (profilPublicAdminUsersRecord.testor != true)
+                            FlutterFlowIconButton(
+                              borderColor:
+                                  FlutterFlowTheme.of(context).alternate,
+                              borderRadius: 50.0,
+                              borderWidth: 1.0,
+                              buttonSize: 50.0,
+                              fillColor: FlutterFlowTheme.of(context).alternate,
+                              icon: Icon(
+                                Icons.person_add,
+                                color: FlutterFlowTheme.of(context).success,
+                                size: 35.0,
+                              ),
+                              onPressed: () async {
+                                await widget.userRef!
+                                    .update(createUsersRecordData(
+                                  testor: true,
+                                ));
+                              },
+                            ),
+                        ],
                       ),
-                    Align(
-                      alignment: const AlignmentDirectional(-1.0, 0.0),
-                      child: Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
-                        child: Text(
-                          'Changer le Statut Testeur',
-                          style:
-                              FlutterFlowTheme.of(context).labelMedium.override(
-                                    fontFamily: 'Poppins',
-                                    letterSpacing: 0.0,
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            10.0, 0.0, 10.0, 0.0),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Align(
+                              alignment: AlignmentDirectional(0.0, 1.0),
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 5.0),
+                                child: Text(
+                                  valueOrDefault<String>(
+                                    profilPublicAdminUsersRecord.displayName,
+                                    'NewUser',
                                   ),
-                        ),
-                      ),
-                    ),
-                    Row(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        if (profilPublicAdminUsersRecord.testor == true)
-                          Text(
-                            'Oui',
-                            style: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  fontFamily: 'Poppins',
-                                  color: FlutterFlowTheme.of(context).success,
-                                  letterSpacing: 0.0,
-                                ),
-                          ),
-                        if (profilPublicAdminUsersRecord.testor == true)
-                          FlutterFlowIconButton(
-                            borderColor: FlutterFlowTheme.of(context).alternate,
-                            borderRadius: 50.0,
-                            borderWidth: 1.0,
-                            buttonSize: 50.0,
-                            fillColor: FlutterFlowTheme.of(context).alternate,
-                            icon: Icon(
-                              Icons.person_off,
-                              color: FlutterFlowTheme.of(context).error,
-                              size: 35.0,
-                            ),
-                            onPressed: () async {
-                              await widget.userRef!
-                                  .update(createUsersRecordData(
-                                testor: false,
-                              ));
-                            },
-                          ),
-                        if (profilPublicAdminUsersRecord.testor != true)
-                          Text(
-                            'Non',
-                            style: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  fontFamily: 'Poppins',
-                                  color: FlutterFlowTheme.of(context).error,
-                                  letterSpacing: 0.0,
-                                ),
-                          ),
-                        if (profilPublicAdminUsersRecord.testor != true)
-                          FlutterFlowIconButton(
-                            borderColor: FlutterFlowTheme.of(context).alternate,
-                            borderRadius: 50.0,
-                            borderWidth: 1.0,
-                            buttonSize: 50.0,
-                            fillColor: FlutterFlowTheme.of(context).alternate,
-                            icon: Icon(
-                              Icons.person_add,
-                              color: FlutterFlowTheme.of(context).success,
-                              size: 35.0,
-                            ),
-                            onPressed: () async {
-                              await widget.userRef!
-                                  .update(createUsersRecordData(
-                                testor: true,
-                              ));
-                            },
-                          ),
-                      ],
-                    ),
-                    Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          Align(
-                            alignment: const AlignmentDirectional(0.0, 1.0),
-                            child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 0.0, 5.0),
-                              child: Text(
-                                valueOrDefault<String>(
-                                  profilPublicAdminUsersRecord.displayName,
-                                  'NewUser',
-                                ),
-                                style: FlutterFlowTheme.of(context)
-                                    .headlineSmall
-                                    .override(
-                                      fontFamily: 'Poppins',
-                                      color: valueOrDefault<Color>(
-                                        profilPublicAdminUsersRecord.color1,
-                                        FlutterFlowTheme.of(context)
-                                            .primaryText,
-                                      ),
-                                      letterSpacing: 0.0,
-                                    ),
-                              ),
-                            ),
-                          ),
-                          Align(
-                            alignment: const AlignmentDirectional(-1.0, 0.0),
-                            child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 5.0, 0.0, 5.0),
-                              child: Text(
-                                profilPublicAdminUsersRecord.familyName,
-                                style: FlutterFlowTheme.of(context)
-                                    .labelMedium
-                                    .override(
-                                      fontFamily: 'Poppins',
-                                      letterSpacing: 0.0,
-                                    ),
-                              ),
-                            ),
-                          ),
-                          Align(
-                            alignment: const AlignmentDirectional(-1.0, 0.0),
-                            child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 5.0, 0.0, 5.0),
-                              child: Text(
-                                profilPublicAdminUsersRecord.firstName,
-                                style: FlutterFlowTheme.of(context)
-                                    .labelMedium
-                                    .override(
-                                      fontFamily: 'Poppins',
-                                      letterSpacing: 0.0,
-                                    ),
-                              ),
-                            ),
-                          ),
-                          Align(
-                            alignment: const AlignmentDirectional(-1.0, 0.0),
-                            child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 5.0, 0.0, 5.0),
-                              child: Text(
-                                profilPublicAdminUsersRecord.email,
-                                style: FlutterFlowTheme.of(context)
-                                    .labelMedium
-                                    .override(
-                                      fontFamily: 'Poppins',
-                                      letterSpacing: 0.0,
-                                    ),
-                              ),
-                            ),
-                          ),
-                          Align(
-                            alignment: const AlignmentDirectional(-1.0, 0.0),
-                            child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 5.0, 0.0, 5.0),
-                              child: Text(
-                                profilPublicAdminUsersRecord.phoneNumber,
-                                style: FlutterFlowTheme.of(context)
-                                    .labelMedium
-                                    .override(
-                                      fontFamily: 'Poppins',
-                                      letterSpacing: 0.0,
-                                    ),
-                              ),
-                            ),
-                          ),
-                          Row(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Row(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Align(
-                                    alignment: const AlignmentDirectional(-1.0, 0.0),
-                                    child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 5.0, 0.0, 5.0),
-                                      child: Text(
-                                        'Date de naissance :',
-                                        style: FlutterFlowTheme.of(context)
-                                            .labelMedium
-                                            .override(
-                                              fontFamily: 'Poppins',
-                                              letterSpacing: 0.0,
-                                            ),
-                                      ),
-                                    ),
-                                  ),
-                                  Align(
-                                    alignment: const AlignmentDirectional(-1.0, 0.0),
-                                    child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          5.0, 5.0, 0.0, 5.0),
-                                      child: Text(
-                                        '00/00/0000',
-                                        style: FlutterFlowTheme.of(context)
-                                            .labelMedium
-                                            .override(
-                                              fontFamily: 'Poppins',
-                                              letterSpacing: 0.0,
-                                            ),
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    5.0, 0.0, 0.0, 0.0),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    if (profilPublicAdminUsersRecord.adult ==
-                                        true)
-                                      Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            5.0, 0.0, 0.0, 0.0),
-                                        child: InkWell(
-                                          splashColor: Colors.transparent,
-                                          focusColor: Colors.transparent,
-                                          hoverColor: Colors.transparent,
-                                          highlightColor: Colors.transparent,
-                                          onTap: () async {
-                                            await profilPublicAdminUsersRecord
-                                                .reference
-                                                .update(createUsersRecordData(
-                                              adult: false,
-                                            ));
-                                          },
-                                          child: Container(
-                                            width: 30.0,
-                                            height: 30.0,
-                                            decoration: BoxDecoration(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primaryBackground,
-                                              shape: BoxShape.circle,
-                                              border: Border.all(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .success,
-                                                width: 2.0,
-                                              ),
-                                            ),
-                                            child: Align(
-                                              alignment: const AlignmentDirectional(
-                                                  0.0, 0.0),
-                                              child: Text(
-                                                '+18',
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .success,
-                                                          fontSize: 13.0,
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ),
+                                  style: FlutterFlowTheme.of(context)
+                                      .headlineSmall
+                                      .override(
+                                        fontFamily: 'Poppins',
+                                        color: valueOrDefault<Color>(
+                                          profilPublicAdminUsersRecord.color1,
+                                          FlutterFlowTheme.of(context)
+                                              .primaryText,
                                         ),
+                                        letterSpacing: 0.0,
                                       ),
-                                    if (profilPublicAdminUsersRecord.adult ==
-                                        false)
-                                      Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            5.0, 0.0, 0.0, 0.0),
-                                        child: InkWell(
-                                          splashColor: Colors.transparent,
-                                          focusColor: Colors.transparent,
-                                          hoverColor: Colors.transparent,
-                                          highlightColor: Colors.transparent,
-                                          onTap: () async {
-                                            await profilPublicAdminUsersRecord
-                                                .reference
-                                                .update(createUsersRecordData(
-                                              adult: true,
-                                            ));
-                                          },
-                                          child: Container(
-                                            width: 30.0,
-                                            height: 30.0,
-                                            decoration: BoxDecoration(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primaryBackground,
-                                              shape: BoxShape.circle,
-                                              border: Border.all(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .error,
-                                                width: 2.0,
-                                              ),
-                                            ),
-                                            child: Align(
-                                              alignment: const AlignmentDirectional(
-                                                  0.0, 0.0),
-                                              child: Text(
-                                                '-18',
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .error,
-                                                          fontSize: 13.0,
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                  ],
                                 ),
                               ),
-                            ],
-                          ),
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                10.0, 0.0, 10.0, 0.0),
-                            child: Row(
+                            ),
+                            Align(
+                              alignment: AlignmentDirectional(-1.0, 0.0),
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 5.0, 0.0, 5.0),
+                                child: Text(
+                                  profilPublicAdminUsersRecord.familyName,
+                                  style: FlutterFlowTheme.of(context)
+                                      .labelMedium
+                                      .override(
+                                        fontFamily: 'Poppins',
+                                        letterSpacing: 0.0,
+                                      ),
+                                ),
+                              ),
+                            ),
+                            Align(
+                              alignment: AlignmentDirectional(-1.0, 0.0),
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 5.0, 0.0, 5.0),
+                                child: Text(
+                                  profilPublicAdminUsersRecord.firstName,
+                                  style: FlutterFlowTheme.of(context)
+                                      .labelMedium
+                                      .override(
+                                        fontFamily: 'Poppins',
+                                        letterSpacing: 0.0,
+                                      ),
+                                ),
+                              ),
+                            ),
+                            Align(
+                              alignment: AlignmentDirectional(-1.0, 0.0),
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 5.0, 0.0, 5.0),
+                                child: Text(
+                                  profilPublicAdminUsersRecord.email,
+                                  style: FlutterFlowTheme.of(context)
+                                      .labelMedium
+                                      .override(
+                                        fontFamily: 'Poppins',
+                                        letterSpacing: 0.0,
+                                      ),
+                                ),
+                              ),
+                            ),
+                            Align(
+                              alignment: AlignmentDirectional(-1.0, 0.0),
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 5.0, 0.0, 5.0),
+                                child: Text(
+                                  profilPublicAdminUsersRecord.phoneNumber,
+                                  style: FlutterFlowTheme.of(context)
+                                      .labelMedium
+                                      .override(
+                                        fontFamily: 'Poppins',
+                                        letterSpacing: 0.0,
+                                      ),
+                                ),
+                              ),
+                            ),
+                            Row(
                               mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.center,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Row(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
-                                    Text(
-                                      'Membre depuis le',
-                                      style: FlutterFlowTheme.of(context)
-                                          .labelMedium
-                                          .override(
-                                            fontFamily: 'Poppins',
-                                            letterSpacing: 0.0,
-                                          ),
+                                    Align(
+                                      alignment:
+                                          AlignmentDirectional(-1.0, 0.0),
+                                      child: Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 5.0, 0.0, 5.0),
+                                        child: Text(
+                                          'Date de naissance :',
+                                          style: FlutterFlowTheme.of(context)
+                                              .labelMedium
+                                              .override(
+                                                fontFamily: 'Poppins',
+                                                letterSpacing: 0.0,
+                                              ),
+                                        ),
+                                      ),
                                     ),
-                                    Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          2.0, 0.0, 0.0, 0.0),
-                                      child: Text(
-                                        dateTimeFormat(
-                                            "d/M/y",
-                                            profilPublicAdminUsersRecord
-                                                .createdTime!),
+                                    Align(
+                                      alignment:
+                                          AlignmentDirectional(-1.0, 0.0),
+                                      child: Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            5.0, 5.0, 0.0, 5.0),
+                                        child: Text(
+                                          '00/00/0000',
+                                          style: FlutterFlowTheme.of(context)
+                                              .labelMedium
+                                              .override(
+                                                fontFamily: 'Poppins',
+                                                letterSpacing: 0.0,
+                                              ),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      5.0, 0.0, 0.0, 0.0),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      if (profilPublicAdminUsersRecord.adult ==
+                                          true)
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  5.0, 0.0, 0.0, 0.0),
+                                          child: InkWell(
+                                            splashColor: Colors.transparent,
+                                            focusColor: Colors.transparent,
+                                            hoverColor: Colors.transparent,
+                                            highlightColor: Colors.transparent,
+                                            onTap: () async {
+                                              await profilPublicAdminUsersRecord
+                                                  .reference
+                                                  .update(createUsersRecordData(
+                                                adult: false,
+                                              ));
+                                            },
+                                            child: Container(
+                                              width: 30.0,
+                                              height: 30.0,
+                                              decoration: BoxDecoration(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryBackground,
+                                                shape: BoxShape.circle,
+                                                border: Border.all(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .success,
+                                                  width: 2.0,
+                                                ),
+                                              ),
+                                              child: Align(
+                                                alignment: AlignmentDirectional(
+                                                    0.0, 0.0),
+                                                child: Text(
+                                                  '+18',
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .labelMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .success,
+                                                        fontSize: 13.0,
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      if (profilPublicAdminUsersRecord.adult ==
+                                          false)
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  5.0, 0.0, 0.0, 0.0),
+                                          child: InkWell(
+                                            splashColor: Colors.transparent,
+                                            focusColor: Colors.transparent,
+                                            hoverColor: Colors.transparent,
+                                            highlightColor: Colors.transparent,
+                                            onTap: () async {
+                                              await profilPublicAdminUsersRecord
+                                                  .reference
+                                                  .update(createUsersRecordData(
+                                                adult: true,
+                                              ));
+                                            },
+                                            child: Container(
+                                              width: 30.0,
+                                              height: 30.0,
+                                              decoration: BoxDecoration(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryBackground,
+                                                shape: BoxShape.circle,
+                                                border: Border.all(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .error,
+                                                  width: 2.0,
+                                                ),
+                                              ),
+                                              child: Align(
+                                                alignment: AlignmentDirectional(
+                                                    0.0, 0.0),
+                                                child: Text(
+                                                  '-18',
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .labelMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .error,
+                                                        fontSize: 13.0,
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  10.0, 0.0, 10.0, 0.0),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Text(
+                                        'Membre depuis le',
                                         style: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
@@ -2493,72 +2866,90 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                                               letterSpacing: 0.0,
                                             ),
                                       ),
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                0.0, 10.0, 0.0, 30.0),
-                            child: Text(
-                              profilPublicAdminUsersRecord.uid,
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyLarge
-                                  .override(
-                                    fontFamily: 'Poppins',
-                                    color: FlutterFlowTheme.of(context).warning,
-                                    letterSpacing: 0.0,
-                                  ),
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                10.0, 0.0, 10.0, 20.0),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.spaceAround,
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      2.0, 0.0, 0.0, 0.0),
-                                  child: Text(
-                                    'Supprimer',
-                                    style: FlutterFlowTheme.of(context)
-                                        .labelMedium
-                                        .override(
-                                          fontFamily: 'Poppins',
-                                          color: FlutterFlowTheme.of(context)
-                                              .error,
-                                          letterSpacing: 0.0,
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            2.0, 0.0, 0.0, 0.0),
+                                        child: Text(
+                                          dateTimeFormat(
+                                              "d/M/y",
+                                              profilPublicAdminUsersRecord
+                                                  .createdTime!),
+                                          style: FlutterFlowTheme.of(context)
+                                              .labelMedium
+                                              .override(
+                                                fontFamily: 'Poppins',
+                                                letterSpacing: 0.0,
+                                              ),
                                         ),
+                                      ),
+                                    ],
                                   ),
-                                ),
-                                FlutterFlowIconButton(
-                                  borderColor:
-                                      FlutterFlowTheme.of(context).alternate,
-                                  borderRadius: 50.0,
-                                  borderWidth: 1.0,
-                                  buttonSize: 50.0,
-                                  fillColor:
-                                      FlutterFlowTheme.of(context).alternate,
-                                  icon: Icon(
-                                    Icons.delete_forever_rounded,
-                                    color: FlutterFlowTheme.of(context).error,
-                                    size: 35.0,
-                                  ),
-                                  onPressed: () async {
-                                    await widget.userRef!.delete();
-                                  },
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
-                          ),
-                        ],
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 10.0, 0.0, 30.0),
+                              child: Text(
+                                profilPublicAdminUsersRecord.uid,
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyLarge
+                                    .override(
+                                      fontFamily: 'Poppins',
+                                      color:
+                                          FlutterFlowTheme.of(context).warning,
+                                      letterSpacing: 0.0,
+                                    ),
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  10.0, 0.0, 10.0, 20.0),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceAround,
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        2.0, 0.0, 0.0, 0.0),
+                                    child: Text(
+                                      'Supprimer',
+                                      style: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            color: FlutterFlowTheme.of(context)
+                                                .error,
+                                            letterSpacing: 0.0,
+                                          ),
+                                    ),
+                                  ),
+                                  FlutterFlowIconButton(
+                                    borderColor:
+                                        FlutterFlowTheme.of(context).alternate,
+                                    borderRadius: 50.0,
+                                    borderWidth: 1.0,
+                                    buttonSize: 50.0,
+                                    fillColor:
+                                        FlutterFlowTheme.of(context).alternate,
+                                    icon: Icon(
+                                      Icons.delete_forever_rounded,
+                                      color: FlutterFlowTheme.of(context).error,
+                                      size: 35.0,
+                                    ),
+                                    onPressed: () async {
+                                      await widget.userRef!.delete();
+                                    },
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ),

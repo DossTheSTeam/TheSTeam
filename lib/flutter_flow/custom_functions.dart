@@ -53,9 +53,8 @@ double? totalEarningsPerBet(
 double? averageOdd(
   double? totalgains,
   double? totalmises,
-  int? totalbet,
 ) {
-  double result = (totalgains! / totalmises!) / totalbet!;
+  double result = totalgains! / totalmises!;
   return double.parse(result.toStringAsFixed(2));
 }
 

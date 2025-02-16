@@ -2,6 +2,7 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'list_messages_boss_event_widget.dart' show ListMessagesBossEventWidget;
 import 'package:flutter/material.dart';
+import 'package:record/record.dart';
 
 class ListMessagesBossEventModel
     extends FlutterFlowModel<ListMessagesBossEventWidget> {
@@ -12,6 +13,10 @@ class ListMessagesBossEventModel
       FFUploadedFile(bytes: Uint8List.fromList([]));
   String uploadedFileUrl = '';
 
+  AudioRecorder? audioRecorder;
+  String? audioBossMessage;
+  FFUploadedFile recordedFileBytes =
+      FFUploadedFile(bytes: Uint8List.fromList([]));
   // State field(s) for CommField widget.
   FocusNode? commFieldFocusNode;
   TextEditingController? commFieldTextController;

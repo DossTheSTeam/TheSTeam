@@ -2,6 +2,7 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'post_message_page_widget.dart' show PostMessagePageWidget;
 import 'package:flutter/material.dart';
+import 'package:record/record.dart';
 
 class PostMessagePageModel extends FlutterFlowModel<PostMessagePageWidget> {
   ///  State fields for stateful widgets in this page.
@@ -11,6 +12,10 @@ class PostMessagePageModel extends FlutterFlowModel<PostMessagePageWidget> {
       FFUploadedFile(bytes: Uint8List.fromList([]));
   String uploadedFileUrl1 = '';
 
+  AudioRecorder? audioRecorder1;
+  String? audioSport;
+  FFUploadedFile recordedFileBytes1 =
+      FFUploadedFile(bytes: Uint8List.fromList([]));
   // State field(s) for CommField widget.
   FocusNode? commFieldFocusNode1;
   TextEditingController? commFieldTextController1;
@@ -22,6 +27,10 @@ class PostMessagePageModel extends FlutterFlowModel<PostMessagePageWidget> {
       FFUploadedFile(bytes: Uint8List.fromList([]));
   String uploadedFileUrl2 = '';
 
+  AudioRecorder? audioRecorder2;
+  String? audioESport;
+  FFUploadedFile recordedFileBytes2 =
+      FFUploadedFile(bytes: Uint8List.fromList([]));
   // State field(s) for CommField widget.
   FocusNode? commFieldFocusNode2;
   TextEditingController? commFieldTextController2;

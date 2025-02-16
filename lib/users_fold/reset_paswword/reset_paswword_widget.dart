@@ -53,7 +53,7 @@ class _ResetPaswwordWidgetState extends State<ResetPaswwordWidget> {
           decoration: BoxDecoration(
             color: FlutterFlowTheme.of(context).alternate,
           ),
-          alignment: const AlignmentDirectional(0.0, 1.0),
+          alignment: AlignmentDirectional(0.0, 1.0),
           child: Column(
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.end,
@@ -62,7 +62,7 @@ class _ResetPaswwordWidgetState extends State<ResetPaswwordWidget> {
                 width: double.infinity,
                 decoration: BoxDecoration(
                   color: FlutterFlowTheme.of(context).primaryBackground,
-                  boxShadow: const [
+                  boxShadow: [
                     BoxShadow(
                       blurRadius: 7.0,
                       color: Color(0x33000000),
@@ -72,7 +72,7 @@ class _ResetPaswwordWidgetState extends State<ResetPaswwordWidget> {
                       ),
                     )
                   ],
-                  borderRadius: const BorderRadius.only(
+                  borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(0.0),
                     bottomRight: Radius.circular(0.0),
                     topLeft: Radius.circular(16.0),
@@ -80,7 +80,7 @@ class _ResetPaswwordWidgetState extends State<ResetPaswwordWidget> {
                   ),
                 ),
                 child: Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -100,16 +100,16 @@ class _ResetPaswwordWidgetState extends State<ResetPaswwordWidget> {
                         ],
                       ),
                       Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             15.0, 0.0, 10.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Align(
-                              alignment: const AlignmentDirectional(0.0, 0.0),
+                              alignment: AlignmentDirectional(0.0, 0.0),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 16.0, 0.0, 0.0),
                                 child: Text(
                                   'Mot de passe oublié',
@@ -123,7 +123,7 @@ class _ResetPaswwordWidgetState extends State<ResetPaswwordWidget> {
                               ),
                             ),
                             Align(
-                              alignment: const AlignmentDirectional(1.0, 0.0),
+                              alignment: AlignmentDirectional(1.0, 0.0),
                               child: InkWell(
                                 splashColor: Colors.transparent,
                                 focusColor: Colors.transparent,
@@ -143,7 +143,7 @@ class _ResetPaswwordWidgetState extends State<ResetPaswwordWidget> {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             16.0, 15.0, 0.0, 0.0),
                         child: Text(
                           'Indiquez votre adresse email',
@@ -155,7 +155,7 @@ class _ResetPaswwordWidgetState extends State<ResetPaswwordWidget> {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             16.0, 6.0, 16.0, 0.0),
                         child: TextFormField(
                           controller: _model.emailAddressTextController,
@@ -207,7 +207,7 @@ class _ResetPaswwordWidgetState extends State<ResetPaswwordWidget> {
                             filled: true,
                             fillColor:
                                 FlutterFlowTheme.of(context).primaryBackground,
-                            contentPadding: const EdgeInsetsDirectional.fromSTEB(
+                            contentPadding: EdgeInsetsDirectional.fromSTEB(
                                 24.0, 24.0, 20.0, 24.0),
                           ),
                           style:
@@ -222,14 +222,14 @@ class _ResetPaswwordWidgetState extends State<ResetPaswwordWidget> {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             16.0, 16.0, 16.0, 44.0),
                         child: FFButtonWidget(
                           onPressed: () async {
                             if (_model
                                 .emailAddressTextController.text.isEmpty) {
                               ScaffoldMessenger.of(context).showSnackBar(
-                                const SnackBar(
+                                SnackBar(
                                   content: Text(
                                     'Email required!',
                                   ),
@@ -247,9 +247,9 @@ class _ResetPaswwordWidgetState extends State<ResetPaswwordWidget> {
                           options: FFButtonOptions(
                             width: double.infinity,
                             height: 50.0,
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
-                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                            iconPadding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
                             color: FlutterFlowTheme.of(context)
                                 .secondaryBackground,
@@ -261,7 +261,7 @@ class _ResetPaswwordWidgetState extends State<ResetPaswwordWidget> {
                                   letterSpacing: 0.0,
                                 ),
                             elevation: 2.0,
-                            borderSide: const BorderSide(
+                            borderSide: BorderSide(
                               color: Colors.transparent,
                               width: 1.0,
                             ),

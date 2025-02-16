@@ -2,6 +2,7 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'event_message_page_widget.dart' show EventMessagePageWidget;
 import 'package:flutter/material.dart';
+import 'package:record/record.dart';
 
 class EventMessagePageModel extends FlutterFlowModel<EventMessagePageWidget> {
   ///  State fields for stateful widgets in this page.
@@ -11,6 +12,10 @@ class EventMessagePageModel extends FlutterFlowModel<EventMessagePageWidget> {
       FFUploadedFile(bytes: Uint8List.fromList([]));
   String uploadedFileUrl1 = '';
 
+  AudioRecorder? audioRecorder1;
+  String? audioSport;
+  FFUploadedFile recordedFileBytes1 =
+      FFUploadedFile(bytes: Uint8List.fromList([]));
   // State field(s) for CommField widget.
   FocusNode? commFieldFocusNode1;
   TextEditingController? commFieldTextController1;
@@ -22,6 +27,10 @@ class EventMessagePageModel extends FlutterFlowModel<EventMessagePageWidget> {
       FFUploadedFile(bytes: Uint8List.fromList([]));
   String uploadedFileUrl2 = '';
 
+  AudioRecorder? audioRecorder2;
+  String? audioEsport;
+  FFUploadedFile recordedFileBytes2 =
+      FFUploadedFile(bytes: Uint8List.fromList([]));
   // State field(s) for CommField widget.
   FocusNode? commFieldFocusNode2;
   TextEditingController? commFieldTextController2;

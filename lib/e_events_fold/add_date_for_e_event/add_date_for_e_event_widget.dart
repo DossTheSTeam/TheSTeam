@@ -3,9 +3,12 @@ import '/backend/backend.dart';
 import '/backend/push_notifications/push_notifications_util.dart';
 import '/flutter_flow/flutter_flow_calendar.dart';
 import '/flutter_flow/flutter_flow_count_controller.dart';
+import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/team_fold/audio_fan_conference/audio_fan_conference_widget.dart';
+import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'add_date_for_e_event_model.dart';
@@ -73,799 +76,1158 @@ class _AddDateForEEventWidgetState extends State<AddDateForEEventWidget> {
             FocusScope.of(context).unfocus();
             FocusManager.instance.primaryFocus?.unfocus();
           },
-          child: Scaffold(
-            key: scaffoldKey,
-            backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-            body: SafeArea(
-              top: true,
-              child: Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: SingleChildScrollView(
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Column(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 0.0, 10.0),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          10.0, 0.0, 0.0, 0.0),
-                                      child: AuthUserStreamWidget(
-                                        builder: (context) => InkWell(
-                                          splashColor: Colors.transparent,
-                                          focusColor: Colors.transparent,
-                                          hoverColor: Colors.transparent,
-                                          highlightColor: Colors.transparent,
-                                          onTap: () async {
-                                            context.safePop();
-                                          },
-                                          child: Icon(
-                                            Icons.arrow_back_ios_new_rounded,
-                                            color: valueOrDefault<Color>(
-                                              currentUserDocument?.color1,
-                                              FlutterFlowTheme.of(context)
-                                                  .primaryText,
+          child: WillPopScope(
+            onWillPop: () async => false,
+            child: Scaffold(
+              key: scaffoldKey,
+              backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+              body: SafeArea(
+                top: true,
+                child: Padding(
+                  padding: EdgeInsets.all(10.0),
+                  child: SingleChildScrollView(
+                    child: Column(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Column(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 10.0),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            10.0, 0.0, 0.0, 0.0),
+                                        child: AuthUserStreamWidget(
+                                          builder: (context) => InkWell(
+                                            splashColor: Colors.transparent,
+                                            focusColor: Colors.transparent,
+                                            hoverColor: Colors.transparent,
+                                            highlightColor: Colors.transparent,
+                                            onTap: () async {
+                                              context.safePop();
+                                            },
+                                            child: Icon(
+                                              Icons.arrow_back_ios_new_rounded,
+                                              color: valueOrDefault<Color>(
+                                                currentUserDocument?.color1,
+                                                FlutterFlowTheme.of(context)
+                                                    .primaryText,
+                                              ),
+                                              size: 30.0,
                                             ),
-                                            size: 30.0,
                                           ),
                                         ),
                                       ),
-                                    ),
-                                  ],
+                                    ],
+                                  ),
+                                  Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      if (currentUserDocument?.audioTeam !=
+                                          null)
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 0.0, 5.0),
+                                          child: AuthUserStreamWidget(
+                                            builder: (context) =>
+                                                StreamBuilder<TeamsRecord>(
+                                              stream: TeamsRecord.getDocument(
+                                                  currentUserDocument!
+                                                      .audioTeam!),
+                                              builder: (context, snapshot) {
+                                                // Customize what your widget looks like when it's loading.
+                                                if (!snapshot.hasData) {
+                                                  return Center(
+                                                    child: SizedBox(
+                                                      width: 50.0,
+                                                      height: 50.0,
+                                                      child:
+                                                          CircularProgressIndicator(
+                                                        valueColor:
+                                                            AlwaysStoppedAnimation<
+                                                                Color>(
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .accent4,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  );
+                                                }
+
+                                                final rowTeamsRecord =
+                                                    snapshot.data!;
+
+                                                return Row(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  children: [
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  0.0,
+                                                                  0.0,
+                                                                  5.0,
+                                                                  0.0),
+                                                      child: InkWell(
+                                                        splashColor:
+                                                            Colors.transparent,
+                                                        focusColor:
+                                                            Colors.transparent,
+                                                        hoverColor:
+                                                            Colors.transparent,
+                                                        highlightColor:
+                                                            Colors.transparent,
+                                                        onTap: () async {
+                                                          context.pushNamed(
+                                                            'TeamPage',
+                                                            queryParameters: {
+                                                              'teamRef':
+                                                                  serializeParam(
+                                                                currentUserDocument
+                                                                    ?.audioTeam,
+                                                                ParamType
+                                                                    .DocumentReference,
+                                                              ),
+                                                            }.withoutNulls,
+                                                            extra: <String,
+                                                                dynamic>{
+                                                              kTransitionInfoKey:
+                                                                  TransitionInfo(
+                                                                hasTransition:
+                                                                    true,
+                                                                transitionType:
+                                                                    PageTransitionType
+                                                                        .bottomToTop,
+                                                                duration: Duration(
+                                                                    milliseconds:
+                                                                        400),
+                                                              ),
+                                                            },
+                                                          );
+                                                        },
+                                                        child: Container(
+                                                          width: 65.0,
+                                                          height: 50.0,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryBackground,
+                                                          ),
+                                                          child: ClipRRect(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        0.0),
+                                                            child:
+                                                                Image.network(
+                                                              rowTeamsRecord
+                                                                  .logo,
+                                                              width: 300.0,
+                                                              height: 200.0,
+                                                              fit: BoxFit
+                                                                  .fitHeight,
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  5.0,
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0),
+                                                      child: StreamBuilder<
+                                                          TeamConferenceRecord>(
+                                                        stream: TeamConferenceRecord
+                                                            .getDocument(
+                                                                rowTeamsRecord
+                                                                    .conference!),
+                                                        builder: (context,
+                                                            snapshot) {
+                                                          // Customize what your widget looks like when it's loading.
+                                                          if (!snapshot
+                                                              .hasData) {
+                                                            return Center(
+                                                              child: SizedBox(
+                                                                width: 50.0,
+                                                                height: 50.0,
+                                                                child:
+                                                                    CircularProgressIndicator(
+                                                                  valueColor:
+                                                                      AlwaysStoppedAnimation<
+                                                                          Color>(
+                                                                    FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .accent4,
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                            );
+                                                          }
+
+                                                          final rowTeamConferenceRecord =
+                                                              snapshot.data!;
+
+                                                          return Row(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            children: [
+                                                              if (rowTeamConferenceRecord
+                                                                  .members
+                                                                  .contains(
+                                                                      currentUserReference))
+                                                                Align(
+                                                                  alignment:
+                                                                      AlignmentDirectional(
+                                                                          0.0,
+                                                                          0.0),
+                                                                  child:
+                                                                      Padding(
+                                                                    padding: EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            20.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                    child:
+                                                                        FlutterFlowIconButton(
+                                                                      borderColor:
+                                                                          valueOrDefault<
+                                                                              Color>(
+                                                                        rowTeamsRecord
+                                                                            .color2,
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .secondaryText,
+                                                                      ),
+                                                                      borderRadius:
+                                                                          50.0,
+                                                                      borderWidth:
+                                                                          1.0,
+                                                                      buttonSize:
+                                                                          50.0,
+                                                                      fillColor:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .tertiary,
+                                                                      icon:
+                                                                          FaIcon(
+                                                                        FontAwesomeIcons
+                                                                            .microphoneAlt,
+                                                                        color: valueOrDefault<
+                                                                            Color>(
+                                                                          rowTeamsRecord
+                                                                              .color1,
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .primaryText,
+                                                                        ),
+                                                                        size:
+                                                                            31.0,
+                                                                      ),
+                                                                      onPressed:
+                                                                          () async {
+                                                                        await showModalBottomSheet(
+                                                                          isScrollControlled:
+                                                                              true,
+                                                                          backgroundColor:
+                                                                              Colors.transparent,
+                                                                          enableDrag:
+                                                                              false,
+                                                                          context:
+                                                                              context,
+                                                                          builder:
+                                                                              (context) {
+                                                                            return GestureDetector(
+                                                                              onTap: () {
+                                                                                FocusScope.of(context).unfocus();
+                                                                                FocusManager.instance.primaryFocus?.unfocus();
+                                                                              },
+                                                                              child: Padding(
+                                                                                padding: MediaQuery.viewInsetsOf(context),
+                                                                                child: AudioMemberConferenceWidget(
+                                                                                  teamRef: currentUserDocument!.audioTeam!,
+                                                                                ),
+                                                                              ),
+                                                                            );
+                                                                          },
+                                                                        ).then((value) =>
+                                                                            safeSetState(() {}));
+                                                                      },
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                              if (rowTeamConferenceRecord
+                                                                  .fans
+                                                                  .contains(
+                                                                      currentUserReference))
+                                                                Align(
+                                                                  alignment:
+                                                                      AlignmentDirectional(
+                                                                          0.0,
+                                                                          0.0),
+                                                                  child:
+                                                                      Padding(
+                                                                    padding: EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            20.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                    child:
+                                                                        FlutterFlowIconButton(
+                                                                      borderColor:
+                                                                          valueOrDefault<
+                                                                              Color>(
+                                                                        rowTeamsRecord
+                                                                            .color2,
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .secondaryText,
+                                                                      ),
+                                                                      borderRadius:
+                                                                          50.0,
+                                                                      borderWidth:
+                                                                          1.0,
+                                                                      buttonSize:
+                                                                          50.0,
+                                                                      fillColor:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .tertiary,
+                                                                      icon:
+                                                                          FaIcon(
+                                                                        FontAwesomeIcons
+                                                                            .headphonesAlt,
+                                                                        color: valueOrDefault<
+                                                                            Color>(
+                                                                          rowTeamsRecord
+                                                                              .color1,
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .primaryText,
+                                                                        ),
+                                                                        size:
+                                                                            31.0,
+                                                                      ),
+                                                                      onPressed:
+                                                                          () async {
+                                                                        await showModalBottomSheet(
+                                                                          isScrollControlled:
+                                                                              true,
+                                                                          backgroundColor:
+                                                                              Colors.transparent,
+                                                                          enableDrag:
+                                                                              false,
+                                                                          context:
+                                                                              context,
+                                                                          builder:
+                                                                              (context) {
+                                                                            return GestureDetector(
+                                                                              onTap: () {
+                                                                                FocusScope.of(context).unfocus();
+                                                                                FocusManager.instance.primaryFocus?.unfocus();
+                                                                              },
+                                                                              child: Padding(
+                                                                                padding: MediaQuery.viewInsetsOf(context),
+                                                                                child: AudioFanConferenceWidget(
+                                                                                  teamRef: currentUserDocument!.audioTeam!,
+                                                                                ),
+                                                                              ),
+                                                                            );
+                                                                          },
+                                                                        ).then((value) =>
+                                                                            safeSetState(() {}));
+                                                                      },
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                            ],
+                                                          );
+                                                        },
+                                                      ),
+                                                    ),
+                                                  ],
+                                                );
+                                              },
+                                            ),
+                                          ),
+                                        ),
+                                      Text(
+                                        'Configurer le jour et l\'heure',
+                                        textAlign: TextAlign.center,
+                                        maxLines: 2,
+                                        style: FlutterFlowTheme.of(context)
+                                            .headlineSmall
+                                            .override(
+                                              fontFamily: 'Poppins',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryText,
+                                              letterSpacing: 0.0,
+                                            ),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 5.0, 0.0, 0.0),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  StreamBuilder<TeamsRecord>(
+                                    stream: TeamsRecord.getDocument(
+                                        addDateForEEventEventsRecord
+                                            .teamdomRef!),
+                                    builder: (context, snapshot) {
+                                      // Customize what your widget looks like when it's loading.
+                                      if (!snapshot.hasData) {
+                                        return Center(
+                                          child: SizedBox(
+                                            width: 50.0,
+                                            height: 50.0,
+                                            child: CircularProgressIndicator(
+                                              valueColor:
+                                                  AlwaysStoppedAnimation<Color>(
+                                                FlutterFlowTheme.of(context)
+                                                    .accent4,
+                                              ),
+                                            ),
+                                          ),
+                                        );
+                                      }
+
+                                      final containerTeamsRecord =
+                                          snapshot.data!;
+
+                                      return Container(
+                                        width: 160.0,
+                                        height: 30.0,
+                                        decoration: BoxDecoration(
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryBackground,
+                                        ),
+                                        child: Align(
+                                          alignment:
+                                              AlignmentDirectional(0.0, 0.0),
+                                          child: Text(
+                                            valueOrDefault<String>(
+                                              containerTeamsRecord.name,
+                                              'NewTeam',
+                                            ),
+                                            textAlign: TextAlign.center,
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Poppins',
+                                                  letterSpacing: 0.0,
+                                                ),
+                                          ),
+                                        ),
+                                      );
+                                    },
+                                  ),
+                                  Text(
+                                    '-',
+                                    style: FlutterFlowTheme.of(context)
+                                        .headlineSmall
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          letterSpacing: 0.0,
+                                        ),
+                                  ),
+                                  StreamBuilder<TeamsRecord>(
+                                    stream: TeamsRecord.getDocument(
+                                        addDateForEEventEventsRecord
+                                            .teamextRef!),
+                                    builder: (context, snapshot) {
+                                      // Customize what your widget looks like when it's loading.
+                                      if (!snapshot.hasData) {
+                                        return Center(
+                                          child: SizedBox(
+                                            width: 50.0,
+                                            height: 50.0,
+                                            child: CircularProgressIndicator(
+                                              valueColor:
+                                                  AlwaysStoppedAnimation<Color>(
+                                                FlutterFlowTheme.of(context)
+                                                    .accent4,
+                                              ),
+                                            ),
+                                          ),
+                                        );
+                                      }
+
+                                      final containerTeamsRecord =
+                                          snapshot.data!;
+
+                                      return Container(
+                                        width: 160.0,
+                                        height: 30.0,
+                                        decoration: BoxDecoration(
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryBackground,
+                                        ),
+                                        child: Align(
+                                          alignment:
+                                              AlignmentDirectional(0.0, 0.0),
+                                          child: Text(
+                                            valueOrDefault<String>(
+                                              containerTeamsRecord.name,
+                                              'NewTeam',
+                                            ),
+                                            textAlign: TextAlign.center,
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Poppins',
+                                                  letterSpacing: 0.0,
+                                                ),
+                                          ),
+                                        ),
+                                      );
+                                    },
+                                  ),
+                                ],
+                              ),
+                            ),
+                            FlutterFlowCalendar(
+                              color: FlutterFlowTheme.of(context)
+                                  .secondaryBackground,
+                              iconColor: FlutterFlowTheme.of(context)
+                                  .primaryBackground,
+                              weekFormat: true,
+                              weekStartsMonday: true,
+                              rowHeight: 40.0,
+                              onChange: (DateTimeRange? newSelectedDate) {
+                                safeSetState(() => _model.calendarSelectedDay =
+                                    newSelectedDate);
+                              },
+                              titleStyle: FlutterFlowTheme.of(context)
+                                  .labelSmall
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    letterSpacing: 0.0,
+                                  ),
+                              dayOfWeekStyle: FlutterFlowTheme.of(context)
+                                  .labelSmall
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    letterSpacing: 0.0,
+                                  ),
+                              dateStyle: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    letterSpacing: 0.0,
+                                  ),
+                              selectedDateStyle: FlutterFlowTheme.of(context)
+                                  .titleSmall
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    color: FlutterFlowTheme.of(context).success,
+                                    letterSpacing: 0.0,
+                                  ),
+                              inactiveDateStyle: FlutterFlowTheme.of(context)
+                                  .labelSmall
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    letterSpacing: 0.0,
+                                  ),
+                            ),
+                            Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                Text(
+                                  'Heure',
+                                  style: FlutterFlowTheme.of(context)
+                                      .labelLarge
+                                      .override(
+                                        fontFamily: 'Montserrat',
+                                        letterSpacing: 0.0,
+                                      ),
                                 ),
                                 Text(
-                                  'Configurer le jour et l\'heure',
-                                  textAlign: TextAlign.center,
-                                  maxLines: 2,
+                                  'Minute',
                                   style: FlutterFlowTheme.of(context)
-                                      .headlineSmall
+                                      .labelLarge
                                       .override(
-                                        fontFamily: 'Poppins',
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondaryText,
+                                        fontFamily: 'Montserrat',
                                         letterSpacing: 0.0,
                                       ),
                                 ),
                               ],
                             ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                0.0, 5.0, 0.0, 0.0),
-                            child: Row(
+                            Row(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                StreamBuilder<TeamsRecord>(
-                                  stream: TeamsRecord.getDocument(
-                                      addDateForEEventEventsRecord.teamdomRef!),
-                                  builder: (context, snapshot) {
-                                    // Customize what your widget looks like when it's loading.
-                                    if (!snapshot.hasData) {
-                                      return Center(
-                                        child: SizedBox(
-                                          width: 50.0,
-                                          height: 50.0,
-                                          child: CircularProgressIndicator(
-                                            valueColor:
-                                                AlwaysStoppedAnimation<Color>(
-                                              FlutterFlowTheme.of(context)
-                                                  .accent4,
-                                            ),
+                                Container(
+                                  width: 160.0,
+                                  height: 50.0,
+                                  decoration: BoxDecoration(
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryBackground,
+                                    borderRadius: BorderRadius.circular(8.0),
+                                    shape: BoxShape.rectangle,
+                                    border: Border.all(
+                                      color: FlutterFlowTheme.of(context)
+                                          .alternate,
+                                      width: 2.0,
+                                    ),
+                                  ),
+                                  child: FlutterFlowCountController(
+                                    decrementIconBuilder: (enabled) => FaIcon(
+                                      FontAwesomeIcons.minus,
+                                      color: enabled
+                                          ? FlutterFlowTheme.of(context)
+                                              .secondaryText
+                                          : FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                      size: 20.0,
+                                    ),
+                                    incrementIconBuilder: (enabled) => FaIcon(
+                                      FontAwesomeIcons.plus,
+                                      color: enabled
+                                          ? FlutterFlowTheme.of(context)
+                                              .primaryText
+                                          : FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                      size: 20.0,
+                                    ),
+                                    countBuilder: (count) => Text(
+                                      count.toString(),
+                                      style: FlutterFlowTheme.of(context)
+                                          .titleLarge
+                                          .override(
+                                            fontFamily: 'Montserrat',
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                            letterSpacing: 0.0,
                                           ),
-                                        ),
-                                      );
-                                    }
-
-                                    final containerTeamsRecord = snapshot.data!;
-
-                                    return Container(
-                                      width: 160.0,
-                                      height: 30.0,
-                                      decoration: BoxDecoration(
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryBackground,
-                                      ),
-                                      child: Align(
-                                        alignment:
-                                            const AlignmentDirectional(0.0, 0.0),
-                                        child: Text(
-                                          valueOrDefault<String>(
-                                            containerTeamsRecord.name,
-                                            'NewTeam',
-                                          ),
-                                          textAlign: TextAlign.center,
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                fontFamily: 'Poppins',
-                                                letterSpacing: 0.0,
-                                              ),
-                                        ),
-                                      ),
-                                    );
-                                  },
+                                    ),
+                                    count: _model.countHourValue ??= 19,
+                                    updateCount: (count) => safeSetState(
+                                        () => _model.countHourValue = count),
+                                    stepSize: 1,
+                                    minimum: 0,
+                                    maximum: 23,
+                                  ),
                                 ),
                                 Text(
-                                  '-',
+                                  'H',
                                   style: FlutterFlowTheme.of(context)
-                                      .headlineSmall
+                                      .labelLarge
                                       .override(
-                                        fontFamily: 'Poppins',
+                                        fontFamily: 'Montserrat',
                                         letterSpacing: 0.0,
                                       ),
                                 ),
-                                StreamBuilder<TeamsRecord>(
-                                  stream: TeamsRecord.getDocument(
-                                      addDateForEEventEventsRecord.teamextRef!),
-                                  builder: (context, snapshot) {
-                                    // Customize what your widget looks like when it's loading.
-                                    if (!snapshot.hasData) {
-                                      return Center(
-                                        child: SizedBox(
-                                          width: 50.0,
-                                          height: 50.0,
-                                          child: CircularProgressIndicator(
-                                            valueColor:
-                                                AlwaysStoppedAnimation<Color>(
-                                              FlutterFlowTheme.of(context)
-                                                  .accent4,
-                                            ),
+                                Container(
+                                  width: 160.0,
+                                  height: 50.0,
+                                  decoration: BoxDecoration(
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryBackground,
+                                    borderRadius: BorderRadius.circular(8.0),
+                                    shape: BoxShape.rectangle,
+                                    border: Border.all(
+                                      color: FlutterFlowTheme.of(context)
+                                          .alternate,
+                                      width: 2.0,
+                                    ),
+                                  ),
+                                  child: FlutterFlowCountController(
+                                    decrementIconBuilder: (enabled) => FaIcon(
+                                      FontAwesomeIcons.minus,
+                                      color: enabled
+                                          ? FlutterFlowTheme.of(context)
+                                              .secondaryText
+                                          : FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                      size: 20.0,
+                                    ),
+                                    incrementIconBuilder: (enabled) => FaIcon(
+                                      FontAwesomeIcons.plus,
+                                      color: enabled
+                                          ? FlutterFlowTheme.of(context)
+                                              .primaryText
+                                          : FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                      size: 20.0,
+                                    ),
+                                    countBuilder: (count) => Text(
+                                      count.toString(),
+                                      style: FlutterFlowTheme.of(context)
+                                          .titleLarge
+                                          .override(
+                                            fontFamily: 'Montserrat',
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                            letterSpacing: 0.0,
                                           ),
-                                        ),
-                                      );
-                                    }
-
-                                    final containerTeamsRecord = snapshot.data!;
-
-                                    return Container(
-                                      width: 160.0,
-                                      height: 30.0,
-                                      decoration: BoxDecoration(
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryBackground,
-                                      ),
-                                      child: Align(
-                                        alignment:
-                                            const AlignmentDirectional(0.0, 0.0),
-                                        child: Text(
-                                          valueOrDefault<String>(
-                                            containerTeamsRecord.name,
-                                            'NewTeam',
-                                          ),
-                                          textAlign: TextAlign.center,
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                fontFamily: 'Poppins',
-                                                letterSpacing: 0.0,
-                                              ),
-                                        ),
-                                      ),
-                                    );
-                                  },
+                                    ),
+                                    count: _model.countMinuteValue ??= 0,
+                                    updateCount: (count) => safeSetState(
+                                        () => _model.countMinuteValue = count),
+                                    stepSize: 5,
+                                    minimum: 0,
+                                    maximum: 55,
+                                  ),
                                 ),
                               ],
                             ),
-                          ),
-                          FlutterFlowCalendar(
-                            color: FlutterFlowTheme.of(context)
-                                .secondaryBackground,
-                            iconColor:
-                                FlutterFlowTheme.of(context).primaryBackground,
-                            weekFormat: true,
-                            weekStartsMonday: true,
-                            rowHeight: 40.0,
-                            onChange: (DateTimeRange? newSelectedDate) {
-                              safeSetState(() =>
-                                  _model.calendarSelectedDay = newSelectedDate);
-                            },
-                            titleStyle: FlutterFlowTheme.of(context)
-                                .labelSmall
-                                .override(
-                                  fontFamily: 'Poppins',
-                                  letterSpacing: 0.0,
-                                ),
-                            dayOfWeekStyle: FlutterFlowTheme.of(context)
-                                .labelSmall
-                                .override(
-                                  fontFamily: 'Poppins',
-                                  letterSpacing: 0.0,
-                                ),
-                            dateStyle: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  fontFamily: 'Poppins',
-                                  letterSpacing: 0.0,
-                                ),
-                            selectedDateStyle: FlutterFlowTheme.of(context)
-                                .titleSmall
-                                .override(
-                                  fontFamily: 'Poppins',
-                                  color: FlutterFlowTheme.of(context).success,
-                                  letterSpacing: 0.0,
-                                ),
-                            inactiveDateStyle: FlutterFlowTheme.of(context)
-                                .labelSmall
-                                .override(
-                                  fontFamily: 'Poppins',
-                                  letterSpacing: 0.0,
-                                ),
-                          ),
-                          Row(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children: [
-                              Text(
-                                'Heure',
-                                style: FlutterFlowTheme.of(context)
-                                    .labelLarge
-                                    .override(
-                                      fontFamily: 'Montserrat',
-                                      letterSpacing: 0.0,
-                                    ),
-                              ),
-                              Text(
-                                'Minute',
-                                style: FlutterFlowTheme.of(context)
-                                    .labelLarge
-                                    .override(
-                                      fontFamily: 'Montserrat',
-                                      letterSpacing: 0.0,
-                                    ),
-                              ),
-                            ],
-                          ),
-                          Row(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Container(
-                                width: 160.0,
-                                height: 50.0,
-                                decoration: BoxDecoration(
-                                  color: FlutterFlowTheme.of(context)
-                                      .primaryBackground,
-                                  borderRadius: BorderRadius.circular(8.0),
-                                  shape: BoxShape.rectangle,
-                                  border: Border.all(
-                                    color:
-                                        FlutterFlowTheme.of(context).alternate,
-                                    width: 2.0,
-                                  ),
-                                ),
-                                child: FlutterFlowCountController(
-                                  decrementIconBuilder: (enabled) => FaIcon(
-                                    FontAwesomeIcons.minus,
-                                    color: enabled
-                                        ? FlutterFlowTheme.of(context)
-                                            .secondaryText
-                                        : FlutterFlowTheme.of(context)
-                                            .primaryText,
-                                    size: 20.0,
-                                  ),
-                                  incrementIconBuilder: (enabled) => FaIcon(
-                                    FontAwesomeIcons.plus,
-                                    color: enabled
-                                        ? FlutterFlowTheme.of(context)
-                                            .primaryText
-                                        : FlutterFlowTheme.of(context)
-                                            .primaryText,
-                                    size: 20.0,
-                                  ),
-                                  countBuilder: (count) => Text(
-                                    count.toString(),
-                                    style: FlutterFlowTheme.of(context)
-                                        .titleLarge
-                                        .override(
-                                          fontFamily: 'Montserrat',
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryText,
-                                          letterSpacing: 0.0,
-                                        ),
-                                  ),
-                                  count: _model.countHourValue ??= 19,
-                                  updateCount: (count) => safeSetState(
-                                      () => _model.countHourValue = count),
-                                  stepSize: 1,
-                                  minimum: 0,
-                                  maximum: 23,
-                                ),
-                              ),
-                              Text(
-                                'H',
-                                style: FlutterFlowTheme.of(context)
-                                    .labelLarge
-                                    .override(
-                                      fontFamily: 'Montserrat',
-                                      letterSpacing: 0.0,
-                                    ),
-                              ),
-                              Container(
-                                width: 160.0,
-                                height: 50.0,
-                                decoration: BoxDecoration(
-                                  color: FlutterFlowTheme.of(context)
-                                      .primaryBackground,
-                                  borderRadius: BorderRadius.circular(8.0),
-                                  shape: BoxShape.rectangle,
-                                  border: Border.all(
-                                    color:
-                                        FlutterFlowTheme.of(context).alternate,
-                                    width: 2.0,
-                                  ),
-                                ),
-                                child: FlutterFlowCountController(
-                                  decrementIconBuilder: (enabled) => FaIcon(
-                                    FontAwesomeIcons.minus,
-                                    color: enabled
-                                        ? FlutterFlowTheme.of(context)
-                                            .secondaryText
-                                        : FlutterFlowTheme.of(context)
-                                            .primaryText,
-                                    size: 20.0,
-                                  ),
-                                  incrementIconBuilder: (enabled) => FaIcon(
-                                    FontAwesomeIcons.plus,
-                                    color: enabled
-                                        ? FlutterFlowTheme.of(context)
-                                            .primaryText
-                                        : FlutterFlowTheme.of(context)
-                                            .primaryText,
-                                    size: 20.0,
-                                  ),
-                                  countBuilder: (count) => Text(
-                                    count.toString(),
-                                    style: FlutterFlowTheme.of(context)
-                                        .titleLarge
-                                        .override(
-                                          fontFamily: 'Montserrat',
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryText,
-                                          letterSpacing: 0.0,
-                                        ),
-                                  ),
-                                  count: _model.countMinuteValue ??= 0,
-                                  updateCount: (count) => safeSetState(
-                                      () => _model.countMinuteValue = count),
-                                  stepSize: 5,
-                                  minimum: 0,
-                                  maximum: 55,
-                                ),
-                              ),
-                            ],
-                          ),
-                          if ((addDateForEEventEventsRecord.domReady ==
-                                  false) &&
-                              (currentUserDocument?.eteamRef ==
-                                  addDateForEEventEventsRecord.teamdomRef))
-                            AuthUserStreamWidget(
-                              builder: (context) => Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: [
-                                      Align(
-                                        alignment:
-                                            const AlignmentDirectional(-1.0, 0.0),
-                                        child: Text(
-                                          'Validez votre composition d\'équipe\navant de proposer la date de la confrontation.',
-                                          textAlign: TextAlign.start,
-                                          style: FlutterFlowTheme.of(context)
-                                              .labelSmall
-                                              .override(
-                                                fontFamily: 'Poppins',
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .error,
-                                                letterSpacing: 0.0,
-                                              ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                  Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: [
-                                      Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 0.0, 10.0, 0.0),
-                                        child: InkWell(
-                                          splashColor: Colors.transparent,
-                                          focusColor: Colors.transparent,
-                                          hoverColor: Colors.transparent,
-                                          highlightColor: Colors.transparent,
-                                          onTap: () async {
-                                            context.pushNamed(
-                                              'AddPlayersEventPage',
-                                              queryParameters: {
-                                                'eventRef': serializeParam(
-                                                  widget.eventRef,
-                                                  ParamType.DocumentReference,
+                            if ((addDateForEEventEventsRecord.domReady ==
+                                    false) &&
+                                (currentUserDocument?.eteamRef ==
+                                    addDateForEEventEventsRecord.teamdomRef))
+                              AuthUserStreamWidget(
+                                builder: (context) => Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Align(
+                                          alignment:
+                                              AlignmentDirectional(-1.0, 0.0),
+                                          child: Text(
+                                            'Validez votre composition d\'équipe\navant de proposer la date de la confrontation.',
+                                            textAlign: TextAlign.start,
+                                            style: FlutterFlowTheme.of(context)
+                                                .labelSmall
+                                                .override(
+                                                  fontFamily: 'Poppins',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .error,
+                                                  letterSpacing: 0.0,
                                                 ),
-                                                'myETeamRef': serializeParam(
-                                                  addDateForEEventEventsRecord
-                                                      .teamdomRef,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 10.0, 0.0),
+                                          child: InkWell(
+                                            splashColor: Colors.transparent,
+                                            focusColor: Colors.transparent,
+                                            hoverColor: Colors.transparent,
+                                            highlightColor: Colors.transparent,
+                                            onTap: () async {
+                                              context.pushNamed(
+                                                'AddPlayersEventPage',
+                                                queryParameters: {
+                                                  'eventRef': serializeParam(
+                                                    widget.eventRef,
+                                                    ParamType.DocumentReference,
+                                                  ),
+                                                  'myETeamRef': serializeParam(
+                                                    addDateForEEventEventsRecord
+                                                        .teamdomRef,
+                                                    ParamType.DocumentReference,
+                                                  ),
+                                                }.withoutNulls,
+                                                extra: <String, dynamic>{
+                                                  kTransitionInfoKey:
+                                                      TransitionInfo(
+                                                    hasTransition: true,
+                                                    transitionType:
+                                                        PageTransitionType
+                                                            .bottomToTop,
+                                                    duration: Duration(
+                                                        milliseconds: 400),
+                                                  ),
+                                                },
+                                              );
+                                            },
+                                            child: Icon(
+                                              Icons.location_history_outlined,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .error,
+                                              size: 30.0,
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            if ((addDateForEEventEventsRecord.extReady ==
+                                    false) &&
+                                (currentUserDocument?.eteamRef ==
+                                    addDateForEEventEventsRecord.teamextRef))
+                              AuthUserStreamWidget(
+                                builder: (context) => Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Align(
+                                          alignment:
+                                              AlignmentDirectional(-1.0, 0.0),
+                                          child: Text(
+                                            'Validez votre composition d\'équipe\navant de proposer la date de la confrontation.',
+                                            textAlign: TextAlign.start,
+                                            style: FlutterFlowTheme.of(context)
+                                                .labelSmall
+                                                .override(
+                                                  fontFamily: 'Poppins',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .error,
+                                                  fontSize: 14.0,
+                                                  letterSpacing: 0.0,
+                                                ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 10.0, 0.0),
+                                          child: InkWell(
+                                            splashColor: Colors.transparent,
+                                            focusColor: Colors.transparent,
+                                            hoverColor: Colors.transparent,
+                                            highlightColor: Colors.transparent,
+                                            onTap: () async {
+                                              context.pushNamed(
+                                                'AddPlayersEventPage',
+                                                queryParameters: {
+                                                  'eventRef': serializeParam(
+                                                    widget.eventRef,
+                                                    ParamType.DocumentReference,
+                                                  ),
+                                                  'myETeamRef': serializeParam(
+                                                    addDateForEEventEventsRecord
+                                                        .teamextRef,
+                                                    ParamType.DocumentReference,
+                                                  ),
+                                                }.withoutNulls,
+                                                extra: <String, dynamic>{
+                                                  kTransitionInfoKey:
+                                                      TransitionInfo(
+                                                    hasTransition: true,
+                                                    transitionType:
+                                                        PageTransitionType
+                                                            .bottomToTop,
+                                                    duration: Duration(
+                                                        milliseconds: 400),
+                                                  ),
+                                                },
+                                              );
+                                            },
+                                            child: Icon(
+                                              Icons.location_history_outlined,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .error,
+                                              size: 30.0,
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            if ((addDateForEEventEventsRecord.teamdomRef ==
+                                    currentUserDocument?.eteamRef) &&
+                                (addDateForEEventEventsRecord.domReady == true))
+                              Align(
+                                alignment: AlignmentDirectional(0.0, 0.0),
+                                child: Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 20.0, 0.0, 0.0),
+                                  child: AuthUserStreamWidget(
+                                    builder: (context) =>
+                                        StreamBuilder<List<TeamEventsRecord>>(
+                                      stream: queryTeamEventsRecord(
+                                        parent: currentUserDocument?.eteamRef,
+                                        queryBuilder: (teamEventsRecord) =>
+                                            teamEventsRecord.where(
+                                          'events',
+                                          isEqualTo: widget.eventRef,
+                                        ),
+                                        singleRecord: true,
+                                      ),
+                                      builder: (context, snapshot) {
+                                        // Customize what your widget looks like when it's loading.
+                                        if (!snapshot.hasData) {
+                                          return Center(
+                                            child: SizedBox(
+                                              width: 50.0,
+                                              height: 50.0,
+                                              child: CircularProgressIndicator(
+                                                valueColor:
+                                                    AlwaysStoppedAnimation<
+                                                        Color>(
+                                                  FlutterFlowTheme.of(context)
+                                                      .accent4,
+                                                ),
+                                              ),
+                                            ),
+                                          );
+                                        }
+                                        List<TeamEventsRecord>
+                                            buttonTeamEventsRecordList =
+                                            snapshot.data!;
+                                        // Return an empty Container when the item does not exist.
+                                        if (snapshot.data!.isEmpty) {
+                                          return Container();
+                                        }
+                                        final buttonTeamEventsRecord =
+                                            buttonTeamEventsRecordList
+                                                    .isNotEmpty
+                                                ? buttonTeamEventsRecordList
+                                                    .first
+                                                : null;
+
+                                        return FFButtonWidget(
+                                          onPressed: () async {
+                                            await widget.eventRef!
+                                                .update(createEventsRecordData(
+                                              date: _model
+                                                  .calendarSelectedDay?.start,
+                                              hour: _model.countHourValue,
+                                              minute: _model.countMinuteValue,
+                                              dateDom: true,
+                                            ));
+                                            triggerPushNotification(
+                                              notificationTitle:
+                                                  currentUserDisplayName,
+                                              notificationText:
+                                                  'Date et horaire de la rencontre configurés.',
+                                              notificationImageUrl:
+                                                  currentUserPhoto,
+                                              notificationSound: 'default',
+                                              userRefs: [
+                                                addDateForEEventEventsRecord
+                                                    .bossExt!
+                                              ],
+                                              initialPageName:
+                                                  'ListMessagesBossEvent',
+                                              parameterData: {
+                                                'eventRef': widget.eventRef,
+                                                'eTeamRef':
+                                                    addDateForEEventEventsRecord
+                                                        .teamextRef,
+                                              },
+                                            );
+                                            await buttonTeamEventsRecord!
+                                                .reference
+                                                .delete();
+
+                                            context.goNamed(
+                                              'ModifETeamPage',
+                                              queryParameters: {
+                                                'teamRef': serializeParam(
+                                                  currentUserDocument?.eteamRef,
                                                   ParamType.DocumentReference,
                                                 ),
                                               }.withoutNulls,
-                                              extra: <String, dynamic>{
-                                                kTransitionInfoKey:
-                                                    const TransitionInfo(
-                                                  hasTransition: true,
-                                                  transitionType:
-                                                      PageTransitionType
-                                                          .bottomToTop,
-                                                  duration: Duration(
-                                                      milliseconds: 400),
-                                                ),
-                                              },
                                             );
                                           },
-                                          child: Icon(
-                                            Icons.location_history_outlined,
+                                          text: 'Proposer cette date',
+                                          options: FFButtonOptions(
+                                            height: 30.0,
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    16.0, 0.0, 16.0, 0.0),
+                                            iconPadding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 0.0, 0.0),
                                             color: FlutterFlowTheme.of(context)
-                                                .error,
-                                            size: 30.0,
+                                                .secondaryBackground,
+                                            textStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmall
+                                                    .override(
+                                                      fontFamily: 'Poppins',
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryText,
+                                                      letterSpacing: 0.0,
+                                                    ),
+                                            elevation: 0.0,
+                                            borderRadius:
+                                                BorderRadius.circular(25.0),
                                           ),
-                                        ),
-                                      ),
-                                    ],
+                                        );
+                                      },
+                                    ),
                                   ),
-                                ],
+                                ),
                               ),
-                            ),
-                          if ((addDateForEEventEventsRecord.extReady ==
-                                  false) &&
-                              (currentUserDocument?.eteamRef ==
-                                  addDateForEEventEventsRecord.teamextRef))
-                            AuthUserStreamWidget(
-                              builder: (context) => Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: [
-                                      Align(
-                                        alignment:
-                                            const AlignmentDirectional(-1.0, 0.0),
-                                        child: Text(
-                                          'Validez votre composition d\'équipe\navant de proposer la date de la confrontation.',
-                                          textAlign: TextAlign.start,
-                                          style: FlutterFlowTheme.of(context)
-                                              .labelSmall
-                                              .override(
-                                                fontFamily: 'Poppins',
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .error,
-                                                fontSize: 14.0,
-                                                letterSpacing: 0.0,
-                                              ),
+                            if ((addDateForEEventEventsRecord.teamextRef ==
+                                    currentUserDocument?.eteamRef) &&
+                                (addDateForEEventEventsRecord.extReady == true))
+                              Align(
+                                alignment: AlignmentDirectional(0.0, 0.0),
+                                child: Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 20.0, 0.0, 0.0),
+                                  child: AuthUserStreamWidget(
+                                    builder: (context) =>
+                                        StreamBuilder<List<TeamEventsRecord>>(
+                                      stream: queryTeamEventsRecord(
+                                        parent: currentUserDocument?.eteamRef,
+                                        queryBuilder: (teamEventsRecord) =>
+                                            teamEventsRecord.where(
+                                          'events',
+                                          isEqualTo: widget.eventRef,
                                         ),
+                                        singleRecord: true,
                                       ),
-                                    ],
-                                  ),
-                                  Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: [
-                                      Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 0.0, 10.0, 0.0),
-                                        child: InkWell(
-                                          splashColor: Colors.transparent,
-                                          focusColor: Colors.transparent,
-                                          hoverColor: Colors.transparent,
-                                          highlightColor: Colors.transparent,
-                                          onTap: () async {
-                                            context.pushNamed(
-                                              'AddPlayersEventPage',
-                                              queryParameters: {
-                                                'eventRef': serializeParam(
-                                                  widget.eventRef,
-                                                  ParamType.DocumentReference,
+                                      builder: (context, snapshot) {
+                                        // Customize what your widget looks like when it's loading.
+                                        if (!snapshot.hasData) {
+                                          return Center(
+                                            child: SizedBox(
+                                              width: 50.0,
+                                              height: 50.0,
+                                              child: CircularProgressIndicator(
+                                                valueColor:
+                                                    AlwaysStoppedAnimation<
+                                                        Color>(
+                                                  FlutterFlowTheme.of(context)
+                                                      .accent4,
                                                 ),
-                                                'myETeamRef': serializeParam(
-                                                  addDateForEEventEventsRecord
-                                                      .teamextRef,
+                                              ),
+                                            ),
+                                          );
+                                        }
+                                        List<TeamEventsRecord>
+                                            buttonTeamEventsRecordList =
+                                            snapshot.data!;
+                                        // Return an empty Container when the item does not exist.
+                                        if (snapshot.data!.isEmpty) {
+                                          return Container();
+                                        }
+                                        final buttonTeamEventsRecord =
+                                            buttonTeamEventsRecordList
+                                                    .isNotEmpty
+                                                ? buttonTeamEventsRecordList
+                                                    .first
+                                                : null;
+
+                                        return FFButtonWidget(
+                                          onPressed: () async {
+                                            await widget.eventRef!
+                                                .update(createEventsRecordData(
+                                              date: _model
+                                                  .calendarSelectedDay?.start,
+                                              hour: _model.countHourValue,
+                                              minute: _model.countMinuteValue,
+                                              dateExt: true,
+                                            ));
+                                            triggerPushNotification(
+                                              notificationTitle:
+                                                  currentUserDisplayName,
+                                              notificationText:
+                                                  'Date et horaire de la rencontre configurés.',
+                                              notificationImageUrl:
+                                                  currentUserPhoto,
+                                              notificationSound: 'default',
+                                              userRefs: [
+                                                addDateForEEventEventsRecord
+                                                    .bossDom!
+                                              ],
+                                              initialPageName:
+                                                  'ListMessagesBossEvent',
+                                              parameterData: {
+                                                'eventRef': widget.eventRef,
+                                                'eTeamRef':
+                                                    addDateForEEventEventsRecord
+                                                        .teamdomRef,
+                                              },
+                                            );
+                                            await buttonTeamEventsRecord!
+                                                .reference
+                                                .delete();
+
+                                            context.goNamed(
+                                              'ModifETeamPage',
+                                              queryParameters: {
+                                                'teamRef': serializeParam(
+                                                  currentUserDocument?.eteamRef,
                                                   ParamType.DocumentReference,
                                                 ),
                                               }.withoutNulls,
-                                              extra: <String, dynamic>{
-                                                kTransitionInfoKey:
-                                                    const TransitionInfo(
-                                                  hasTransition: true,
-                                                  transitionType:
-                                                      PageTransitionType
-                                                          .bottomToTop,
-                                                  duration: Duration(
-                                                      milliseconds: 400),
-                                                ),
-                                              },
                                             );
                                           },
-                                          child: Icon(
-                                            Icons.location_history_outlined,
+                                          text: 'Proposer cette date',
+                                          options: FFButtonOptions(
+                                            height: 30.0,
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    16.0, 0.0, 16.0, 0.0),
+                                            iconPadding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 0.0, 0.0),
                                             color: FlutterFlowTheme.of(context)
-                                                .error,
-                                            size: 30.0,
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                            ),
-                          if ((addDateForEEventEventsRecord.teamdomRef ==
-                                  currentUserDocument?.eteamRef) &&
-                              (addDateForEEventEventsRecord.domReady == true))
-                            Align(
-                              alignment: const AlignmentDirectional(0.0, 0.0),
-                              child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 20.0, 0.0, 0.0),
-                                child: AuthUserStreamWidget(
-                                  builder: (context) =>
-                                      StreamBuilder<List<TeamEventsRecord>>(
-                                    stream: queryTeamEventsRecord(
-                                      parent: currentUserDocument?.eteamRef,
-                                      queryBuilder: (teamEventsRecord) =>
-                                          teamEventsRecord.where(
-                                        'events',
-                                        isEqualTo: widget.eventRef,
-                                      ),
-                                      singleRecord: true,
-                                    ),
-                                    builder: (context, snapshot) {
-                                      // Customize what your widget looks like when it's loading.
-                                      if (!snapshot.hasData) {
-                                        return Center(
-                                          child: SizedBox(
-                                            width: 50.0,
-                                            height: 50.0,
-                                            child: CircularProgressIndicator(
-                                              valueColor:
-                                                  AlwaysStoppedAnimation<Color>(
+                                                .secondaryBackground,
+                                            textStyle:
                                                 FlutterFlowTheme.of(context)
-                                                    .accent4,
-                                              ),
-                                            ),
+                                                    .titleSmall
+                                                    .override(
+                                                      fontFamily: 'Poppins',
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryText,
+                                                      letterSpacing: 0.0,
+                                                    ),
+                                            elevation: 0.0,
+                                            borderRadius:
+                                                BorderRadius.circular(25.0),
                                           ),
                                         );
-                                      }
-                                      List<TeamEventsRecord>
-                                          buttonTeamEventsRecordList =
-                                          snapshot.data!;
-                                      // Return an empty Container when the item does not exist.
-                                      if (snapshot.data!.isEmpty) {
-                                        return Container();
-                                      }
-                                      final buttonTeamEventsRecord =
-                                          buttonTeamEventsRecordList.isNotEmpty
-                                              ? buttonTeamEventsRecordList.first
-                                              : null;
-
-                                      return FFButtonWidget(
-                                        onPressed: () async {
-                                          await widget.eventRef!
-                                              .update(createEventsRecordData(
-                                            date: _model
-                                                .calendarSelectedDay?.start,
-                                            hour: _model.countHourValue,
-                                            minute: _model.countMinuteValue,
-                                            dateDom: true,
-                                          ));
-                                          triggerPushNotification(
-                                            notificationTitle:
-                                                currentUserDisplayName,
-                                            notificationText:
-                                                'Date et horaire de la rencontre configurés.',
-                                            notificationImageUrl:
-                                                currentUserPhoto,
-                                            notificationSound: 'default',
-                                            userRefs: [
-                                              addDateForEEventEventsRecord
-                                                  .bossExt!
-                                            ],
-                                            initialPageName:
-                                                'ListMessagesBossEvent',
-                                            parameterData: {
-                                              'eventRef': widget.eventRef,
-                                              'eTeamRef':
-                                                  addDateForEEventEventsRecord
-                                                      .teamextRef,
-                                            },
-                                          );
-                                          await buttonTeamEventsRecord!
-                                              .reference
-                                              .delete();
-
-                                          context.goNamed(
-                                            'ModifETeamPage',
-                                            queryParameters: {
-                                              'teamRef': serializeParam(
-                                                currentUserDocument?.eteamRef,
-                                                ParamType.DocumentReference,
-                                              ),
-                                            }.withoutNulls,
-                                          );
-                                        },
-                                        text: 'Proposer cette date',
-                                        options: FFButtonOptions(
-                                          height: 30.0,
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  16.0, 0.0, 16.0, 0.0),
-                                          iconPadding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 0.0, 0.0),
-                                          color: FlutterFlowTheme.of(context)
-                                              .secondaryBackground,
-                                          textStyle: FlutterFlowTheme.of(
-                                                  context)
-                                              .titleSmall
-                                              .override(
-                                                fontFamily: 'Poppins',
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryText,
-                                                letterSpacing: 0.0,
-                                              ),
-                                          elevation: 0.0,
-                                          borderRadius:
-                                              BorderRadius.circular(25.0),
-                                        ),
-                                      );
-                                    },
+                                      },
+                                    ),
                                   ),
                                 ),
                               ),
-                            ),
-                          if ((addDateForEEventEventsRecord.teamextRef ==
-                                  currentUserDocument?.eteamRef) &&
-                              (addDateForEEventEventsRecord.extReady == true))
-                            Align(
-                              alignment: const AlignmentDirectional(0.0, 0.0),
-                              child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 20.0, 0.0, 0.0),
-                                child: AuthUserStreamWidget(
-                                  builder: (context) =>
-                                      StreamBuilder<List<TeamEventsRecord>>(
-                                    stream: queryTeamEventsRecord(
-                                      parent: currentUserDocument?.eteamRef,
-                                      queryBuilder: (teamEventsRecord) =>
-                                          teamEventsRecord.where(
-                                        'events',
-                                        isEqualTo: widget.eventRef,
-                                      ),
-                                      singleRecord: true,
-                                    ),
-                                    builder: (context, snapshot) {
-                                      // Customize what your widget looks like when it's loading.
-                                      if (!snapshot.hasData) {
-                                        return Center(
-                                          child: SizedBox(
-                                            width: 50.0,
-                                            height: 50.0,
-                                            child: CircularProgressIndicator(
-                                              valueColor:
-                                                  AlwaysStoppedAnimation<Color>(
-                                                FlutterFlowTheme.of(context)
-                                                    .accent4,
-                                              ),
-                                            ),
-                                          ),
-                                        );
-                                      }
-                                      List<TeamEventsRecord>
-                                          buttonTeamEventsRecordList =
-                                          snapshot.data!;
-                                      // Return an empty Container when the item does not exist.
-                                      if (snapshot.data!.isEmpty) {
-                                        return Container();
-                                      }
-                                      final buttonTeamEventsRecord =
-                                          buttonTeamEventsRecordList.isNotEmpty
-                                              ? buttonTeamEventsRecordList.first
-                                              : null;
-
-                                      return FFButtonWidget(
-                                        onPressed: () async {
-                                          await widget.eventRef!
-                                              .update(createEventsRecordData(
-                                            date: _model
-                                                .calendarSelectedDay?.start,
-                                            hour: _model.countHourValue,
-                                            minute: _model.countMinuteValue,
-                                            dateExt: true,
-                                          ));
-                                          triggerPushNotification(
-                                            notificationTitle:
-                                                currentUserDisplayName,
-                                            notificationText:
-                                                'Date et horaire de la rencontre configurés.',
-                                            notificationImageUrl:
-                                                currentUserPhoto,
-                                            notificationSound: 'default',
-                                            userRefs: [
-                                              addDateForEEventEventsRecord
-                                                  .bossDom!
-                                            ],
-                                            initialPageName:
-                                                'ListMessagesBossEvent',
-                                            parameterData: {
-                                              'eventRef': widget.eventRef,
-                                              'eTeamRef':
-                                                  addDateForEEventEventsRecord
-                                                      .teamdomRef,
-                                            },
-                                          );
-                                          await buttonTeamEventsRecord!
-                                              .reference
-                                              .delete();
-
-                                          context.goNamed(
-                                            'ModifETeamPage',
-                                            queryParameters: {
-                                              'teamRef': serializeParam(
-                                                currentUserDocument?.eteamRef,
-                                                ParamType.DocumentReference,
-                                              ),
-                                            }.withoutNulls,
-                                          );
-                                        },
-                                        text: 'Proposer cette date',
-                                        options: FFButtonOptions(
-                                          height: 30.0,
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  16.0, 0.0, 16.0, 0.0),
-                                          iconPadding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 0.0, 0.0),
-                                          color: FlutterFlowTheme.of(context)
-                                              .secondaryBackground,
-                                          textStyle: FlutterFlowTheme.of(
-                                                  context)
-                                              .titleSmall
-                                              .override(
-                                                fontFamily: 'Poppins',
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryText,
-                                                letterSpacing: 0.0,
-                                              ),
-                                          elevation: 0.0,
-                                          borderRadius:
-                                              BorderRadius.circular(25.0),
-                                        ),
-                                      );
-                                    },
-                                  ),
-                                ),
-                              ),
-                            ),
-                        ],
-                      ),
-                    ],
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),

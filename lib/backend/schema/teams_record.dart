@@ -10,9 +10,9 @@ import '/flutter_flow/flutter_flow_util.dart';
 
 class TeamsRecord extends FirestoreRecord {
   TeamsRecord._(
-    super.reference,
-    super.data,
-  ) {
+    DocumentReference reference,
+    Map<String, dynamic> data,
+  ) : super(reference, data) {
     _initializeFields();
   }
 
@@ -151,6 +151,11 @@ class TeamsRecord extends FirestoreRecord {
   Color? get color2 => _color2;
   bool hasColor2() => _color2 != null;
 
+  // "conference" field.
+  DocumentReference? _conference;
+  DocumentReference? get conference => _conference;
+  bool hasConference() => _conference != null;
+
   void _initializeFields() {
     _name = snapshotData['name'] as String?;
     _value = snapshotData['value'] as String?;
@@ -179,6 +184,7 @@ class TeamsRecord extends FirestoreRecord {
     _bio = snapshotData['bio'] as String?;
     _color1 = getSchemaColor(snapshotData['color1']);
     _color2 = getSchemaColor(snapshotData['color2']);
+    _conference = snapshotData['conference'] as DocumentReference?;
   }
 
   static CollectionReference get collection =>
@@ -239,6 +245,7 @@ Map<String, dynamic> createTeamsRecordData({
   String? bio,
   Color? color1,
   Color? color2,
+  DocumentReference? conference,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -266,6 +273,7 @@ Map<String, dynamic> createTeamsRecordData({
       'bio': bio,
       'color1': color1,
       'color2': color2,
+      'conference': conference,
     }.withoutNulls,
   );
 
@@ -304,7 +312,8 @@ class TeamsRecordDocumentEquality implements Equality<TeamsRecord> {
         e1?.additionalLeague == e2?.additionalLeague &&
         e1?.bio == e2?.bio &&
         e1?.color1 == e2?.color1 &&
-        e1?.color2 == e2?.color2;
+        e1?.color2 == e2?.color2 &&
+        e1?.conference == e2?.conference;
   }
 
   @override
@@ -335,7 +344,8 @@ class TeamsRecordDocumentEquality implements Equality<TeamsRecord> {
         e?.additionalLeague,
         e?.bio,
         e?.color1,
-        e?.color2
+        e?.color2,
+        e?.conference
       ]);
 
   @override

@@ -57,10 +57,10 @@
     <string>In order to take a picture or video, this app requires permission to access the camera.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
     <string>In order to upload data, this app requires permission to access the photo library.</string>
+	<key>NSMicrophoneUsageDescription</key>
+    <string>This app requires permissions to record audio.</string>
 	<key>PermissionGroupNotification</key>
     <string>Recevez des notifications</string>
-	<key>NSMicrophoneUsageDescription</key>
-    <string>Permission d'utiliser le micro de votre téléphone</string>
     <key>UIBackgroundModes</key>
     <array>
         <string>fetch</string>

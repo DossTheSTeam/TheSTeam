@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 class ListPostsModel extends FlutterFlowModel<ListPostsWidget> {
   ///  Local state fields for this page.
 
-  String? showLigueFilter;
+  String? showLigueFilter = '';
 
   String? showSportFilter = '';
 

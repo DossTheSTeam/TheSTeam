@@ -9,6 +9,8 @@ class ShoppingPageModel extends FlutterFlowModel<ShoppingPageWidget> {
   // State field(s) for DropPrice widget.
   double? dropPriceValue;
   FormFieldController<double>? dropPriceValueController;
+  // Stores action output result for [RevenueCat - Purchase] action in Button widget.
+  bool? purchaseFiveEuros;
 
   @override
   void initState(BuildContext context) {}

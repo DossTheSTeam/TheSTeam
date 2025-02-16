@@ -15,7 +15,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 # In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
 # Read more about iOS versioning at
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
-version: 1.0.0+13
+version: 1.0.0+14
 
 environment:
   sdk: ">=3.0.0 <4.0.0"
@@ -27,8 +27,12 @@ dependencies:
     sdk: flutter
   flutter_web_plugins:
     sdk: flutter
-  assets_audio_player: 3.1.1
+  assets_audio_player: 
+    git:
+      url: https://github.com/florent37/Flutter-AssetsAudioPlayer
+      ref: 28a7f52db65fd8b8ac0bdc39013d3de978c8a375
   assets_audio_player_web: 3.1.1
+  audio_session: 0.1.23
   auto_size_text: 3.0.0
   cached_network_image: 3.4.1
   cached_network_image_platform_interface: 4.1.1
@@ -40,7 +44,8 @@ dependencies:
   cloud_functions: 5.1.5
   cloud_functions_platform_interface: 5.5.39
   cloud_functions_web: 4.10.4
-  collection: 1.18.0
+  collection: 1.19.0
+  cross_file: 0.3.4+2
   csslib: 0.17.3
   device_info_plus: 10.1.2
   device_info_plus_platform_interface: 7.0.1
@@ -85,6 +90,9 @@ dependencies:
   image_picker_windows: 0.2.1+1
   intl: 0.19.0
   json_path: 0.7.2
+  just_audio: 0.9.42
+  just_audio_platform_interface: 4.3.0
+  just_audio_web: 0.4.13
   mime_type: 1.0.0
   page_transition: 2.1.0
   path_provider: 2.1.4
@@ -101,6 +109,14 @@ dependencies:
   permission_handler_windows: 0.2.1
   plugin_platform_interface: 2.1.8
   provider: 6.1.2
+  purchases_flutter: 8.1.2
+  record: 5.1.2
+  record_android: 1.2.6
+  record_darwin: 1.1.2
+  record_linux: 0.7.2
+  record_platform_interface: 1.2.0
+  record_web: 1.1.4
+  record_windows: 1.0.3
   rxdart: 0.27.7
   shared_preferences: 2.3.2
   shared_preferences_android: 2.3.2

@@ -2,11 +2,15 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/push_notifications/push_notifications_util.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
+import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
+import '/team_fold/audio_fan_conference/audio_fan_conference_widget.dart';
+import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'boss_notif_e_event_page_i_u_d_admin_model.dart';
 export 'boss_notif_e_event_page_i_u_d_admin_model.dart';
 
@@ -74,99 +78,82 @@ class _BossNotifEEventPageIUDAdminWidgetState
             FocusScope.of(context).unfocus();
             FocusManager.instance.primaryFocus?.unfocus();
           },
-          child: Scaffold(
-            key: scaffoldKey,
-            backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-            body: SafeArea(
-              top: true,
-              child: SingleChildScrollView(
-                child: Column(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    if (bossNotifEEventPageIUDAdminMyNotificationsRecord
-                            .eEvent ==
-                        null)
-                      Padding(
-                        padding: const EdgeInsets.all(10.0),
-                        child: AuthUserStreamWidget(
-                          builder: (context) => StreamBuilder<TeamsRecord>(
-                            stream: TeamsRecord.getDocument(
-                                currentUserDocument!.eteamRef!),
-                            builder: (context, snapshot) {
-                              // Customize what your widget looks like when it's loading.
-                              if (!snapshot.hasData) {
-                                return Center(
-                                  child: SizedBox(
-                                    width: 50.0,
-                                    height: 50.0,
-                                    child: CircularProgressIndicator(
-                                      valueColor: AlwaysStoppedAnimation<Color>(
-                                        FlutterFlowTheme.of(context).accent4,
+          child: WillPopScope(
+            onWillPop: () async => false,
+            child: Scaffold(
+              key: scaffoldKey,
+              backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+              body: SafeArea(
+                top: true,
+                child: SingleChildScrollView(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      if (bossNotifEEventPageIUDAdminMyNotificationsRecord
+                              .eEvent ==
+                          null)
+                        Padding(
+                          padding: EdgeInsets.all(10.0),
+                          child: AuthUserStreamWidget(
+                            builder: (context) => StreamBuilder<TeamsRecord>(
+                              stream: TeamsRecord.getDocument(
+                                  currentUserDocument!.eteamRef!),
+                              builder: (context, snapshot) {
+                                // Customize what your widget looks like when it's loading.
+                                if (!snapshot.hasData) {
+                                  return Center(
+                                    child: SizedBox(
+                                      width: 50.0,
+                                      height: 50.0,
+                                      child: CircularProgressIndicator(
+                                        valueColor:
+                                            AlwaysStoppedAnimation<Color>(
+                                          FlutterFlowTheme.of(context).accent4,
+                                        ),
                                       ),
                                     ),
-                                  ),
-                                );
-                              }
+                                  );
+                                }
 
-                              final columnTeamsRecord = snapshot.data!;
+                                final columnTeamsRecord = snapshot.data!;
 
-                              return Column(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    children: [
-                                      Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        children: [
-                                          InkWell(
-                                            splashColor: Colors.transparent,
-                                            focusColor: Colors.transparent,
-                                            hoverColor: Colors.transparent,
-                                            highlightColor: Colors.transparent,
-                                            onTap: () async {
-                                              context.pushNamed(
-                                                'MenuPage',
-                                                extra: <String, dynamic>{
-                                                  kTransitionInfoKey:
-                                                      const TransitionInfo(
-                                                    hasTransition: true,
-                                                    transitionType:
-                                                        PageTransitionType
-                                                            .leftToRight,
-                                                    duration: Duration(
-                                                        milliseconds: 400),
-                                                  ),
-                                                },
-                                              );
-                                            },
-                                            child: Icon(
-                                              Icons.menu_rounded,
-                                              color: valueOrDefault<Color>(
-                                                currentUserDocument?.color1,
-                                                FlutterFlowTheme.of(context)
-                                                    .primaryText,
-                                              ),
-                                              size: 30.0,
-                                            ),
-                                          ),
-                                          Padding(
-                                            padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
-                                                    10.0, 0.0, 0.0, 0.0),
-                                            child: InkWell(
+                                return Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          children: [
+                                            InkWell(
                                               splashColor: Colors.transparent,
                                               focusColor: Colors.transparent,
                                               hoverColor: Colors.transparent,
                                               highlightColor:
                                                   Colors.transparent,
                                               onTap: () async {
-                                                context.safePop();
+                                                context.pushNamed(
+                                                  'MenuPage',
+                                                  extra: <String, dynamic>{
+                                                    kTransitionInfoKey:
+                                                        TransitionInfo(
+                                                      hasTransition: true,
+                                                      transitionType:
+                                                          PageTransitionType
+                                                              .leftToRight,
+                                                      duration: Duration(
+                                                          milliseconds: 400),
+                                                    ),
+                                                  },
+                                                );
                                               },
                                               child: Icon(
-                                                Icons
-                                                    .arrow_back_ios_new_rounded,
+                                                Icons.menu_rounded,
                                                 color: valueOrDefault<Color>(
                                                   currentUserDocument?.color1,
                                                   FlutterFlowTheme.of(context)
@@ -175,384 +162,929 @@ class _BossNotifEEventPageIUDAdminWidgetState
                                                 size: 30.0,
                                               ),
                                             ),
-                                          ),
-                                        ],
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            20.0, 0.0, 0.0, 0.0),
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      10.0, 0.0, 0.0, 0.0),
+                                              child: InkWell(
+                                                splashColor: Colors.transparent,
+                                                focusColor: Colors.transparent,
+                                                hoverColor: Colors.transparent,
+                                                highlightColor:
+                                                    Colors.transparent,
+                                                onTap: () async {
+                                                  context.safePop();
+                                                },
+                                                child: Icon(
+                                                  Icons
+                                                      .arrow_back_ios_new_rounded,
+                                                  color: valueOrDefault<Color>(
+                                                    currentUserDocument?.color1,
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryText,
+                                                  ),
+                                                  size: 30.0,
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                        Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          children: [
+                                            if (currentUserDocument
+                                                    ?.audioTeam !=
+                                                null)
+                                              Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 0.0, 0.0, 5.0),
+                                                child:
+                                                    StreamBuilder<TeamsRecord>(
+                                                  stream:
+                                                      TeamsRecord.getDocument(
+                                                          currentUserDocument!
+                                                              .audioTeam!),
+                                                  builder: (context, snapshot) {
+                                                    // Customize what your widget looks like when it's loading.
+                                                    if (!snapshot.hasData) {
+                                                      return Center(
+                                                        child: SizedBox(
+                                                          width: 50.0,
+                                                          height: 50.0,
+                                                          child:
+                                                              CircularProgressIndicator(
+                                                            valueColor:
+                                                                AlwaysStoppedAnimation<
+                                                                    Color>(
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .accent4,
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      );
+                                                    }
+
+                                                    final rowTeamsRecord =
+                                                        snapshot.data!;
+
+                                                    return Row(
+                                                      mainAxisSize:
+                                                          MainAxisSize.max,
+                                                      children: [
+                                                        Padding(
+                                                          padding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      0.0,
+                                                                      5.0,
+                                                                      0.0),
+                                                          child: InkWell(
+                                                            splashColor: Colors
+                                                                .transparent,
+                                                            focusColor: Colors
+                                                                .transparent,
+                                                            hoverColor: Colors
+                                                                .transparent,
+                                                            highlightColor:
+                                                                Colors
+                                                                    .transparent,
+                                                            onTap: () async {
+                                                              context.pushNamed(
+                                                                'TeamPage',
+                                                                queryParameters:
+                                                                    {
+                                                                  'teamRef':
+                                                                      serializeParam(
+                                                                    currentUserDocument
+                                                                        ?.audioTeam,
+                                                                    ParamType
+                                                                        .DocumentReference,
+                                                                  ),
+                                                                }.withoutNulls,
+                                                                extra: <String,
+                                                                    dynamic>{
+                                                                  kTransitionInfoKey:
+                                                                      TransitionInfo(
+                                                                    hasTransition:
+                                                                        true,
+                                                                    transitionType:
+                                                                        PageTransitionType
+                                                                            .bottomToTop,
+                                                                    duration: Duration(
+                                                                        milliseconds:
+                                                                            400),
+                                                                  ),
+                                                                },
+                                                              );
+                                                            },
+                                                            child: Container(
+                                                              width: 65.0,
+                                                              height: 50.0,
+                                                              decoration:
+                                                                  BoxDecoration(
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primaryBackground,
+                                                              ),
+                                                              child: ClipRRect(
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            0.0),
+                                                                child: Image
+                                                                    .network(
+                                                                  rowTeamsRecord
+                                                                      .logo,
+                                                                  width: 300.0,
+                                                                  height: 200.0,
+                                                                  fit: BoxFit
+                                                                      .fitHeight,
+                                                                ),
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                        Padding(
+                                                          padding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      5.0,
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0),
+                                                          child: StreamBuilder<
+                                                              TeamConferenceRecord>(
+                                                            stream: TeamConferenceRecord
+                                                                .getDocument(
+                                                                    rowTeamsRecord
+                                                                        .conference!),
+                                                            builder: (context,
+                                                                snapshot) {
+                                                              // Customize what your widget looks like when it's loading.
+                                                              if (!snapshot
+                                                                  .hasData) {
+                                                                return Center(
+                                                                  child:
+                                                                      SizedBox(
+                                                                    width: 50.0,
+                                                                    height:
+                                                                        50.0,
+                                                                    child:
+                                                                        CircularProgressIndicator(
+                                                                      valueColor:
+                                                                          AlwaysStoppedAnimation<
+                                                                              Color>(
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .accent4,
+                                                                      ),
+                                                                    ),
+                                                                  ),
+                                                                );
+                                                              }
+
+                                                              final rowTeamConferenceRecord =
+                                                                  snapshot
+                                                                      .data!;
+
+                                                              return Row(
+                                                                mainAxisSize:
+                                                                    MainAxisSize
+                                                                        .max,
+                                                                children: [
+                                                                  if (rowTeamConferenceRecord
+                                                                      .members
+                                                                      .contains(
+                                                                          currentUserReference))
+                                                                    Align(
+                                                                      alignment:
+                                                                          AlignmentDirectional(
+                                                                              0.0,
+                                                                              0.0),
+                                                                      child:
+                                                                          Padding(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            20.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                        child:
+                                                                            FlutterFlowIconButton(
+                                                                          borderColor:
+                                                                              valueOrDefault<Color>(
+                                                                            rowTeamsRecord.color2,
+                                                                            FlutterFlowTheme.of(context).secondaryText,
+                                                                          ),
+                                                                          borderRadius:
+                                                                              50.0,
+                                                                          borderWidth:
+                                                                              1.0,
+                                                                          buttonSize:
+                                                                              50.0,
+                                                                          fillColor:
+                                                                              FlutterFlowTheme.of(context).tertiary,
+                                                                          icon:
+                                                                              FaIcon(
+                                                                            FontAwesomeIcons.microphoneAlt,
+                                                                            color:
+                                                                                valueOrDefault<Color>(
+                                                                              rowTeamsRecord.color1,
+                                                                              FlutterFlowTheme.of(context).primaryText,
+                                                                            ),
+                                                                            size:
+                                                                                31.0,
+                                                                          ),
+                                                                          onPressed:
+                                                                              () async {
+                                                                            await showModalBottomSheet(
+                                                                              isScrollControlled: true,
+                                                                              backgroundColor: Colors.transparent,
+                                                                              enableDrag: false,
+                                                                              context: context,
+                                                                              builder: (context) {
+                                                                                return GestureDetector(
+                                                                                  onTap: () {
+                                                                                    FocusScope.of(context).unfocus();
+                                                                                    FocusManager.instance.primaryFocus?.unfocus();
+                                                                                  },
+                                                                                  child: Padding(
+                                                                                    padding: MediaQuery.viewInsetsOf(context),
+                                                                                    child: AudioMemberConferenceWidget(
+                                                                                      teamRef: currentUserDocument!.audioTeam!,
+                                                                                    ),
+                                                                                  ),
+                                                                                );
+                                                                              },
+                                                                            ).then((value) =>
+                                                                                safeSetState(() {}));
+                                                                          },
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                  if (rowTeamConferenceRecord
+                                                                      .fans
+                                                                      .contains(
+                                                                          currentUserReference))
+                                                                    Align(
+                                                                      alignment:
+                                                                          AlignmentDirectional(
+                                                                              0.0,
+                                                                              0.0),
+                                                                      child:
+                                                                          Padding(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            20.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                        child:
+                                                                            FlutterFlowIconButton(
+                                                                          borderColor:
+                                                                              valueOrDefault<Color>(
+                                                                            rowTeamsRecord.color2,
+                                                                            FlutterFlowTheme.of(context).secondaryText,
+                                                                          ),
+                                                                          borderRadius:
+                                                                              50.0,
+                                                                          borderWidth:
+                                                                              1.0,
+                                                                          buttonSize:
+                                                                              50.0,
+                                                                          fillColor:
+                                                                              FlutterFlowTheme.of(context).tertiary,
+                                                                          icon:
+                                                                              FaIcon(
+                                                                            FontAwesomeIcons.headphonesAlt,
+                                                                            color:
+                                                                                valueOrDefault<Color>(
+                                                                              rowTeamsRecord.color1,
+                                                                              FlutterFlowTheme.of(context).primaryText,
+                                                                            ),
+                                                                            size:
+                                                                                31.0,
+                                                                          ),
+                                                                          onPressed:
+                                                                              () async {
+                                                                            await showModalBottomSheet(
+                                                                              isScrollControlled: true,
+                                                                              backgroundColor: Colors.transparent,
+                                                                              enableDrag: false,
+                                                                              context: context,
+                                                                              builder: (context) {
+                                                                                return GestureDetector(
+                                                                                  onTap: () {
+                                                                                    FocusScope.of(context).unfocus();
+                                                                                    FocusManager.instance.primaryFocus?.unfocus();
+                                                                                  },
+                                                                                  child: Padding(
+                                                                                    padding: MediaQuery.viewInsetsOf(context),
+                                                                                    child: AudioFanConferenceWidget(
+                                                                                      teamRef: currentUserDocument!.audioTeam!,
+                                                                                    ),
+                                                                                  ),
+                                                                                );
+                                                                              },
+                                                                            ).then((value) =>
+                                                                                safeSetState(() {}));
+                                                                          },
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                ],
+                                                              );
+                                                            },
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    );
+                                                  },
+                                                ),
+                                              ),
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      20.0, 0.0, 0.0, 0.0),
+                                              child: Text(
+                                                'Détails invitation',
+                                                maxLines: 1,
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .displaySmall
+                                                        .override(
+                                                          fontFamily:
+                                                              'Montserrat',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                    Divider(
+                                      thickness: 1.0,
+                                      color: currentUserDocument?.color2,
+                                    ),
+                                    StreamBuilder<TeamsRecord>(
+                                      stream: TeamsRecord.getDocument(
+                                          bossNotifEEventPageIUDAdminMyNotificationsRecord
+                                              .eteamDom!),
+                                      builder: (context, snapshot) {
+                                        // Customize what your widget looks like when it's loading.
+                                        if (!snapshot.hasData) {
+                                          return Center(
+                                            child: SizedBox(
+                                              width: 50.0,
+                                              height: 50.0,
+                                              child: CircularProgressIndicator(
+                                                valueColor:
+                                                    AlwaysStoppedAnimation<
+                                                        Color>(
+                                                  FlutterFlowTheme.of(context)
+                                                      .accent4,
+                                                ),
+                                              ),
+                                            ),
+                                          );
+                                        }
+
+                                        final columnTeamsRecord =
+                                            snapshot.data!;
+
+                                        return Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          children: [
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(0.0, 0.0, 0.0, 5.0),
+                                              child: Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.start,
+                                                children: [
+                                                  Padding(
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(5.0, 0.0,
+                                                                6.0, 0.0),
+                                                    child: Container(
+                                                      width: 65.0,
+                                                      height: 50.0,
+                                                      decoration: BoxDecoration(
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .primaryBackground,
+                                                        shape:
+                                                            BoxShape.rectangle,
+                                                      ),
+                                                      child: ClipRRect(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(0.0),
+                                                        child: Image.network(
+                                                          columnTeamsRecord
+                                                              .logo,
+                                                          width: 300.0,
+                                                          height: 200.0,
+                                                          fit: BoxFit.fitHeight,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                  InkWell(
+                                                    splashColor:
+                                                        Colors.transparent,
+                                                    focusColor:
+                                                        Colors.transparent,
+                                                    hoverColor:
+                                                        Colors.transparent,
+                                                    highlightColor:
+                                                        Colors.transparent,
+                                                    onTap: () async {
+                                                      context.pushNamed(
+                                                        'TeamPage',
+                                                        queryParameters: {
+                                                          'teamRef':
+                                                              serializeParam(
+                                                            columnTeamsRecord
+                                                                .reference,
+                                                            ParamType
+                                                                .DocumentReference,
+                                                          ),
+                                                        }.withoutNulls,
+                                                      );
+                                                    },
+                                                    child: Text(
+                                                      columnTeamsRecord.name,
+                                                      maxLines: 1,
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .titleSmall
+                                                          .override(
+                                                            fontFamily:
+                                                                'Poppins',
+                                                            letterSpacing: 0.0,
+                                                          ),
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          ],
+                                        );
+                                      },
+                                    ),
+                                    Align(
+                                      alignment:
+                                          AlignmentDirectional(-1.0, 0.0),
+                                      child: Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            10.0, 20.0, 0.0, 10.0),
                                         child: Text(
-                                          'Détails invitation',
-                                          maxLines: 1,
+                                          'Vous invite à jouer contre votre équipe.',
+                                          textAlign: TextAlign.start,
                                           style: FlutterFlowTheme.of(context)
-                                              .displaySmall
+                                              .titleMedium
                                               .override(
-                                                fontFamily: 'Montserrat',
+                                                fontFamily: 'Poppins',
                                                 letterSpacing: 0.0,
                                               ),
                                         ),
                                       ),
-                                    ],
-                                  ),
-                                  Divider(
-                                    thickness: 1.0,
-                                    color: currentUserDocument?.color2,
-                                  ),
-                                  StreamBuilder<TeamsRecord>(
-                                    stream: TeamsRecord.getDocument(
-                                        bossNotifEEventPageIUDAdminMyNotificationsRecord
-                                            .eteamDom!),
-                                    builder: (context, snapshot) {
-                                      // Customize what your widget looks like when it's loading.
-                                      if (!snapshot.hasData) {
-                                        return Center(
-                                          child: SizedBox(
-                                            width: 50.0,
-                                            height: 50.0,
-                                            child: CircularProgressIndicator(
-                                              valueColor:
-                                                  AlwaysStoppedAnimation<Color>(
-                                                FlutterFlowTheme.of(context)
-                                                    .accent4,
-                                              ),
-                                            ),
-                                          ),
-                                        );
-                                      }
-
-                                      final columnTeamsRecord = snapshot.data!;
-
-                                      return Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        children: [
-                                          Padding(
-                                            padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 0.0, 5.0),
-                                            child: Row(
-                                              mainAxisSize: MainAxisSize.max,
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.start,
-                                              children: [
-                                                Padding(
-                                                  padding: const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          5.0, 0.0, 6.0, 0.0),
-                                                  child: Container(
-                                                    width: 65.0,
-                                                    height: 50.0,
-                                                    decoration: BoxDecoration(
-                                                      color: FlutterFlowTheme
-                                                              .of(context)
-                                                          .primaryBackground,
-                                                      shape: BoxShape.rectangle,
-                                                    ),
-                                                    child: ClipRRect(
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              0.0),
-                                                      child: Image.network(
-                                                        columnTeamsRecord.logo,
-                                                        width: 300.0,
-                                                        height: 200.0,
-                                                        fit: BoxFit.fitHeight,
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
-                                                InkWell(
-                                                  splashColor:
-                                                      Colors.transparent,
-                                                  focusColor:
-                                                      Colors.transparent,
-                                                  hoverColor:
-                                                      Colors.transparent,
-                                                  highlightColor:
-                                                      Colors.transparent,
-                                                  onTap: () async {
-                                                    context.pushNamed(
-                                                      'TeamPage',
-                                                      queryParameters: {
-                                                        'teamRef':
-                                                            serializeParam(
-                                                          columnTeamsRecord
-                                                              .reference,
-                                                          ParamType
-                                                              .DocumentReference,
-                                                        ),
-                                                      }.withoutNulls,
-                                                    );
-                                                  },
-                                                  child: Text(
-                                                    columnTeamsRecord.name,
-                                                    maxLines: 1,
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .titleSmall
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                        ],
-                                      );
-                                    },
-                                  ),
-                                  Align(
-                                    alignment: const AlignmentDirectional(-1.0, 0.0),
-                                    child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          10.0, 20.0, 0.0, 10.0),
+                                    ),
+                                    Align(
+                                      alignment:
+                                          AlignmentDirectional(-1.0, 0.0),
                                       child: Text(
-                                        'Vous invite à jouer contre votre équipe.',
-                                        textAlign: TextAlign.start,
+                                        dateTimeFormat(
+                                            "d/M H:mm",
+                                            bossNotifEEventPageIUDAdminMyNotificationsRecord
+                                                .dateTime!),
                                         style: FlutterFlowTheme.of(context)
-                                            .titleMedium
+                                            .bodyLarge
                                             .override(
                                               fontFamily: 'Poppins',
                                               letterSpacing: 0.0,
                                             ),
                                       ),
                                     ),
-                                  ),
-                                  Align(
-                                    alignment: const AlignmentDirectional(-1.0, 0.0),
-                                    child: Text(
-                                      dateTimeFormat(
-                                          "d/M H:mm",
-                                          bossNotifEEventPageIUDAdminMyNotificationsRecord
-                                              .dateTime!),
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyLarge
+                                    StreamBuilder<List<UsersRecord>>(
+                                      stream: queryUsersRecord(
+                                        queryBuilder: (usersRecord) =>
+                                            usersRecord.where(
+                                          'uid',
+                                          isEqualTo:
+                                              '4g21LNGnfSN2dnX37zah532h2vq2',
+                                        ),
+                                        singleRecord: true,
+                                      ),
+                                      builder: (context, snapshot) {
+                                        // Customize what your widget looks like when it's loading.
+                                        if (!snapshot.hasData) {
+                                          return Center(
+                                            child: SizedBox(
+                                              width: 50.0,
+                                              height: 50.0,
+                                              child: CircularProgressIndicator(
+                                                valueColor:
+                                                    AlwaysStoppedAnimation<
+                                                        Color>(
+                                                  FlutterFlowTheme.of(context)
+                                                      .accent4,
+                                                ),
+                                              ),
+                                            ),
+                                          );
+                                        }
+                                        List<UsersRecord>
+                                            columnUsersRecordList =
+                                            snapshot.data!;
+                                        // Return an empty Container when the item does not exist.
+                                        if (snapshot.data!.isEmpty) {
+                                          return Container();
+                                        }
+                                        final columnUsersRecord =
+                                            columnUsersRecordList.isNotEmpty
+                                                ? columnUsersRecordList.first
+                                                : null;
+
+                                        return Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          children: [
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  -1.0, 0.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        10.0, 20.0, 0.0, 10.0),
+                                                child: Text(
+                                                  'En acceptant l\'invitation vous allez créer la rencontre, discuter avec le manager adverse, afin de préparer la confrontation dans les meilleures conditions possibles.',
+                                                  textAlign: TextAlign.start,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .labelMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  0.0, -1.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 20.0, 0.0, 20.0),
+                                                child: FFButtonWidget(
+                                                  onPressed: () async {
+                                                    var eventsRecordReference =
+                                                        EventsRecord.collection
+                                                            .doc();
+                                                    await eventsRecordReference
+                                                        .set(
+                                                            createEventsRecordData(
+                                                      teamdomRef:
+                                                          bossNotifEEventPageIUDAdminMyNotificationsRecord
+                                                              .eteamDom,
+                                                      teamextRef:
+                                                          bossNotifEEventPageIUDAdminMyNotificationsRecord
+                                                              .eteamExt,
+                                                      adminUser:
+                                                          columnUsersRecord
+                                                              ?.reference,
+                                                      esport: true,
+                                                      seenScore: false,
+                                                      sportValue:
+                                                          columnTeamsRecord
+                                                              .sportValue,
+                                                      leagueValue:
+                                                          columnTeamsRecord
+                                                              .leagueValue,
+                                                      divisionValue:
+                                                          columnTeamsRecord
+                                                              .divisionValue,
+                                                    ));
+                                                    _model.eEventRef = EventsRecord
+                                                        .getDocumentFromData(
+                                                            createEventsRecordData(
+                                                              teamdomRef:
+                                                                  bossNotifEEventPageIUDAdminMyNotificationsRecord
+                                                                      .eteamDom,
+                                                              teamextRef:
+                                                                  bossNotifEEventPageIUDAdminMyNotificationsRecord
+                                                                      .eteamExt,
+                                                              adminUser:
+                                                                  columnUsersRecord
+                                                                      ?.reference,
+                                                              esport: true,
+                                                              seenScore: false,
+                                                              sportValue:
+                                                                  columnTeamsRecord
+                                                                      .sportValue,
+                                                              leagueValue:
+                                                                  columnTeamsRecord
+                                                                      .leagueValue,
+                                                              divisionValue:
+                                                                  columnTeamsRecord
+                                                                      .divisionValue,
+                                                            ),
+                                                            eventsRecordReference);
+
+                                                    await MyNotificationsRecord
+                                                            .createDoc(
+                                                                bossNotifEEventPageIUDAdminMyNotificationsRecord
+                                                                    .userRef!)
+                                                        .set({
+                                                      ...createMyNotificationsRecordData(
+                                                        text:
+                                                            'Ok pour la confrontation. ',
+                                                        eteamExt:
+                                                            bossNotifEEventPageIUDAdminMyNotificationsRecord
+                                                                .eteamExt,
+                                                        seen: false,
+                                                        userRef:
+                                                            currentUserReference,
+                                                      ),
+                                                      ...mapToFirestore(
+                                                        {
+                                                          'date_time': FieldValue
+                                                              .serverTimestamp(),
+                                                        },
+                                                      ),
+                                                    });
+                                                    triggerPushNotification(
+                                                      notificationTitle:
+                                                          currentUserDisplayName,
+                                                      notificationText:
+                                                          'Ok pour la confrontation. ',
+                                                      notificationImageUrl:
+                                                          currentUserPhoto,
+                                                      notificationSound:
+                                                          'default',
+                                                      userRefs: [
+                                                        bossNotifEEventPageIUDAdminMyNotificationsRecord
+                                                            .userRef!
+                                                      ],
+                                                      initialPageName:
+                                                          'MyNotifsList',
+                                                      parameterData: {},
+                                                    );
+
+                                                    await TeamEventsRecord
+                                                            .createDoc(
+                                                                bossNotifEEventPageIUDAdminMyNotificationsRecord
+                                                                    .eteamDom!)
+                                                        .set(
+                                                            createTeamEventsRecordData(
+                                                      events: _model
+                                                          .eEventRef?.reference,
+                                                      startedTime: _model
+                                                          .eEventRef?.date,
+                                                    ));
+
+                                                    await TeamEventsRecord
+                                                            .createDoc(
+                                                                bossNotifEEventPageIUDAdminMyNotificationsRecord
+                                                                    .eteamExt!)
+                                                        .set(
+                                                            createTeamEventsRecordData(
+                                                      events: _model
+                                                          .eEventRef?.reference,
+                                                      startedTime: _model
+                                                          .eEventRef?.date,
+                                                    ));
+
+                                                    await widget.notifRef!.update(
+                                                        createMyNotificationsRecordData(
+                                                      seen: true,
+                                                    ));
+
+                                                    await currentUserDocument!
+                                                        .eteamRef!
+                                                        .update({
+                                                      ...mapToFirestore(
+                                                        {
+                                                          'guest': FieldValue
+                                                              .delete(),
+                                                        },
+                                                      ),
+                                                    });
+                                                    await widget.notifRef!
+                                                        .delete();
+                                                    context.safePop();
+
+                                                    safeSetState(() {});
+                                                  },
+                                                  text: 'Accepter',
+                                                  options: FFButtonOptions(
+                                                    width: 350.0,
+                                                    height: 50.0,
+                                                    padding:
+                                                        EdgeInsets.all(0.0),
+                                                    iconPadding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(0.0, 0.0,
+                                                                0.0, 0.0),
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .secondaryText,
+                                                    textStyle: FlutterFlowTheme
+                                                            .of(context)
+                                                        .titleSmall
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryBackground,
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                    elevation: 3.0,
+                                                    borderSide: BorderSide(
+                                                      color: Colors.transparent,
+                                                      width: 1.0,
+                                                    ),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            40.0),
+                                                    hoverColor:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .success,
+                                                    hoverTextColor:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .primaryBackground,
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        );
+                                      },
+                                    ),
+                                    Align(
+                                      alignment: AlignmentDirectional(0.0, 0.0),
+                                      child: Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 20.0, 0.0, 0.0),
+                                        child: Text(
+                                          'Ou refuser',
+                                          textAlign: TextAlign.center,
+                                          style: FlutterFlowTheme.of(context)
+                                              .titleMedium
+                                              .override(
+                                                fontFamily: 'Poppins',
+                                                letterSpacing: 0.0,
+                                              ),
+                                        ),
+                                      ),
+                                    ),
+                                    Align(
+                                      alignment: AlignmentDirectional(0.0, 0.0),
+                                      child: Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 10.0, 0.0, 10.0),
+                                        child: Text(
+                                          'Pour la raison suivante',
+                                          textAlign: TextAlign.center,
+                                          style: FlutterFlowTheme.of(context)
+                                              .titleMedium
+                                              .override(
+                                                fontFamily: 'Poppins',
+                                                letterSpacing: 0.0,
+                                              ),
+                                        ),
+                                      ),
+                                    ),
+                                    FlutterFlowDropDown<String>(
+                                      controller:
+                                          _model.dropReasonsValueController ??=
+                                              FormFieldController<String>(
+                                        _model.dropReasonsValue ??= '',
+                                      ),
+                                      options: List<String>.from([
+                                        'pas.de.membres',
+                                        'pas.disponible',
+                                        'trop.decarts.points'
+                                      ]),
+                                      optionLabels: [
+                                        'Vous n\'avez pas assez de membres',
+                                        'Vous n\'êtes pas disponible',
+                                        'Trop d\'ecarts de points'
+                                      ],
+                                      onChanged: (val) => safeSetState(
+                                          () => _model.dropReasonsValue = val),
+                                      width: 300.0,
+                                      height: 55.0,
+                                      textStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
                                           .override(
                                             fontFamily: 'Poppins',
                                             letterSpacing: 0.0,
                                           ),
-                                    ),
-                                  ),
-                                  StreamBuilder<List<UsersRecord>>(
-                                    stream: queryUsersRecord(
-                                      queryBuilder: (usersRecord) =>
-                                          usersRecord.where(
-                                        'uid',
-                                        isEqualTo:
-                                            '4g21LNGnfSN2dnX37zah532h2vq2',
+                                      hintText: 'Raisons',
+                                      icon: Icon(
+                                        Icons.keyboard_arrow_down_rounded,
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryText,
+                                        size: 24.0,
                                       ),
-                                      singleRecord: true,
+                                      fillColor: FlutterFlowTheme.of(context)
+                                          .primaryBackground,
+                                      elevation: 2.0,
+                                      borderColor: Colors.transparent,
+                                      borderWidth: 0.0,
+                                      borderRadius: 8.0,
+                                      margin: EdgeInsetsDirectional.fromSTEB(
+                                          12.0, 0.0, 12.0, 0.0),
+                                      hidesUnderline: true,
+                                      isOverButton: false,
+                                      isSearchable: false,
+                                      isMultiSelect: false,
                                     ),
-                                    builder: (context, snapshot) {
-                                      // Customize what your widget looks like when it's loading.
-                                      if (!snapshot.hasData) {
-                                        return Center(
-                                          child: SizedBox(
-                                            width: 50.0,
-                                            height: 50.0,
-                                            child: CircularProgressIndicator(
-                                              valueColor:
-                                                  AlwaysStoppedAnimation<Color>(
-                                                FlutterFlowTheme.of(context)
-                                                    .accent4,
-                                              ),
-                                            ),
-                                          ),
-                                        );
-                                      }
-                                      List<UsersRecord> columnUsersRecordList =
-                                          snapshot.data!;
-                                      // Return an empty Container when the item does not exist.
-                                      if (snapshot.data!.isEmpty) {
-                                        return Container();
-                                      }
-                                      final columnUsersRecord =
-                                          columnUsersRecordList.isNotEmpty
-                                              ? columnUsersRecordList.first
-                                              : null;
-
-                                      return Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        children: [
-                                          Align(
-                                            alignment:
-                                                const AlignmentDirectional(-1.0, 0.0),
-                                            child: Padding(
-                                              padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      10.0, 20.0, 0.0, 10.0),
-                                              child: Text(
-                                                'En acceptant l\'invitation vous allez créer la rencontre, discuter avec le manager adverse, afin de préparer la confrontation dans les meilleures conditions possibles.',
-                                                textAlign: TextAlign.start,
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ),
-                                          Align(
-                                            alignment:
-                                                const AlignmentDirectional(0.0, -1.0),
-                                            child: Padding(
-                                              padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      0.0, 20.0, 0.0, 20.0),
-                                              child: FFButtonWidget(
-                                                onPressed: () async {
-                                                  var eventsRecordReference =
-                                                      EventsRecord.collection
-                                                          .doc();
-                                                  await eventsRecordReference
-                                                      .set(
-                                                          createEventsRecordData(
-                                                    teamdomRef:
-                                                        bossNotifEEventPageIUDAdminMyNotificationsRecord
-                                                            .eteamDom,
-                                                    teamextRef:
-                                                        bossNotifEEventPageIUDAdminMyNotificationsRecord
-                                                            .eteamExt,
-                                                    adminUser: columnUsersRecord
-                                                        ?.reference,
-                                                    esport: true,
-                                                    seenScore: false,
-                                                    sportValue:
-                                                        columnTeamsRecord
-                                                            .sportValue,
-                                                    leagueValue:
-                                                        columnTeamsRecord
-                                                            .leagueValue,
-                                                    divisionValue:
-                                                        columnTeamsRecord
-                                                            .divisionValue,
-                                                  ));
-                                                  _model.eEventRef = EventsRecord
-                                                      .getDocumentFromData(
-                                                          createEventsRecordData(
-                                                            teamdomRef:
-                                                                bossNotifEEventPageIUDAdminMyNotificationsRecord
-                                                                    .eteamDom,
-                                                            teamextRef:
-                                                                bossNotifEEventPageIUDAdminMyNotificationsRecord
-                                                                    .eteamExt,
-                                                            adminUser:
-                                                                columnUsersRecord
-                                                                    ?.reference,
-                                                            esport: true,
-                                                            seenScore: false,
-                                                            sportValue:
-                                                                columnTeamsRecord
-                                                                    .sportValue,
-                                                            leagueValue:
-                                                                columnTeamsRecord
-                                                                    .leagueValue,
-                                                            divisionValue:
-                                                                columnTeamsRecord
-                                                                    .divisionValue,
-                                                          ),
-                                                          eventsRecordReference);
-
-                                                  await MyNotificationsRecord
-                                                          .createDoc(
-                                                              bossNotifEEventPageIUDAdminMyNotificationsRecord
-                                                                  .userRef!)
-                                                      .set({
-                                                    ...createMyNotificationsRecordData(
-                                                      text:
-                                                          'Ok pour la confrontation. ',
-                                                      eteamExt:
-                                                          bossNotifEEventPageIUDAdminMyNotificationsRecord
-                                                              .eteamExt,
-                                                      seen: false,
-                                                      userRef:
-                                                          currentUserReference,
-                                                    ),
-                                                    ...mapToFirestore(
-                                                      {
-                                                        'date_time': FieldValue
-                                                            .serverTimestamp(),
-                                                      },
-                                                    ),
-                                                  });
-                                                  triggerPushNotification(
-                                                    notificationTitle:
-                                                        currentUserDisplayName,
-                                                    notificationText:
-                                                        'Ok pour la confrontation. ',
-                                                    notificationImageUrl:
-                                                        currentUserPhoto,
-                                                    notificationSound:
-                                                        'default',
-                                                    userRefs: [
+                                    if (_model.dropReasonsValue != null &&
+                                        _model.dropReasonsValue != '')
+                                      Align(
+                                        alignment:
+                                            AlignmentDirectional(0.0, -1.0),
+                                        child: Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 40.0, 0.0, 20.0),
+                                          child: FFButtonWidget(
+                                            onPressed: () async {
+                                              await MyNotificationsRecord.createDoc(
                                                       bossNotifEEventPageIUDAdminMyNotificationsRecord
-                                                          .userRef!
-                                                    ],
-                                                    initialPageName:
-                                                        'MyNotifsList',
-                                                    parameterData: {},
-                                                  );
+                                                          .userRef!)
+                                                  .set({
+                                                ...createMyNotificationsRecordData(
+                                                  text:
+                                                      'A refusé votre invitation à jouer contre votre équipe, pour la raison suivante,',
+                                                  seen: false,
+                                                  textReasons:
+                                                      _model.dropReasonsValue,
+                                                  eteamExt:
+                                                      bossNotifEEventPageIUDAdminMyNotificationsRecord
+                                                          .eteamExt,
+                                                  userRef: currentUserReference,
+                                                ),
+                                                ...mapToFirestore(
+                                                  {
+                                                    'date_time': FieldValue
+                                                        .serverTimestamp(),
+                                                  },
+                                                ),
+                                              });
+                                              triggerPushNotification(
+                                                notificationTitle:
+                                                    currentUserDisplayName,
+                                                notificationText:
+                                                    'A refusé votre invitation à jouer contre votre équipe.',
+                                                notificationImageUrl:
+                                                    currentUserPhoto,
+                                                userRefs: [
+                                                  bossNotifEEventPageIUDAdminMyNotificationsRecord
+                                                      .userRef!
+                                                ],
+                                                initialPageName: 'MyNotifsList',
+                                                parameterData: {},
+                                              );
 
-                                                  await TeamEventsRecord.createDoc(
-                                                          bossNotifEEventPageIUDAdminMyNotificationsRecord
-                                                              .eteamDom!)
-                                                      .set(
-                                                          createTeamEventsRecordData(
-                                                    events: _model
-                                                        .eEventRef?.reference,
-                                                    startedTime:
-                                                        _model.eEventRef?.date,
-                                                  ));
+                                              await currentUserDocument!
+                                                  .eteamRef!
+                                                  .update({
+                                                ...mapToFirestore(
+                                                  {
+                                                    'guest':
+                                                        FieldValue.delete(),
+                                                  },
+                                                ),
+                                              });
 
-                                                  await TeamEventsRecord.createDoc(
-                                                          bossNotifEEventPageIUDAdminMyNotificationsRecord
-                                                              .eteamExt!)
-                                                      .set(
-                                                          createTeamEventsRecordData(
-                                                    events: _model
-                                                        .eEventRef?.reference,
-                                                    startedTime:
-                                                        _model.eEventRef?.date,
-                                                  ));
-
-                                                  await widget.notifRef!.update(
-                                                      createMyNotificationsRecordData(
-                                                    seen: true,
-                                                  ));
-
-                                                  await currentUserDocument!
-                                                      .eteamRef!
-                                                      .update({
-                                                    ...mapToFirestore(
-                                                      {
-                                                        'guest':
-                                                            FieldValue.delete(),
-                                                      },
-                                                    ),
-                                                  });
-                                                  await widget.notifRef!
-                                                      .delete();
-                                                  context.safePop();
-
-                                                  safeSetState(() {});
-                                                },
-                                                text: 'Accepter',
-                                                options: FFButtonOptions(
-                                                  width: 350.0,
-                                                  height: 50.0,
-                                                  padding: const EdgeInsets.all(0.0),
-                                                  iconPadding:
-                                                      const EdgeInsetsDirectional
-                                                          .fromSTEB(0.0, 0.0,
-                                                              0.0, 0.0),
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .secondaryText,
-                                                  textStyle: FlutterFlowTheme
-                                                          .of(context)
+                                              await widget.notifRef!.update(
+                                                  createMyNotificationsRecordData(
+                                                seen: true,
+                                              ));
+                                              await widget.notifRef!.delete();
+                                              context.safePop();
+                                            },
+                                            text: 'Refuser',
+                                            options: FFButtonOptions(
+                                              width: 350.0,
+                                              height: 50.0,
+                                              padding: EdgeInsets.all(0.0),
+                                              iconPadding: EdgeInsetsDirectional
+                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .error,
+                                              textStyle:
+                                                  FlutterFlowTheme.of(context)
                                                       .titleSmall
                                                       .override(
                                                         fontFamily: 'Poppins',
@@ -561,217 +1093,31 @@ class _BossNotifEEventPageIUDAdminWidgetState
                                                             .secondaryBackground,
                                                         letterSpacing: 0.0,
                                                       ),
-                                                  elevation: 3.0,
-                                                  borderSide: const BorderSide(
-                                                    color: Colors.transparent,
-                                                    width: 1.0,
-                                                  ),
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          40.0),
-                                                  hoverColor:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .success,
-                                                  hoverTextColor:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .primaryBackground,
-                                                ),
+                                              elevation: 3.0,
+                                              borderSide: BorderSide(
+                                                color: Colors.transparent,
+                                                width: 1.0,
                                               ),
+                                              borderRadius:
+                                                  BorderRadius.circular(40.0),
+                                              hoverColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .error,
+                                              hoverTextColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryBackground,
                                             ),
-                                          ),
-                                        ],
-                                      );
-                                    },
-                                  ),
-                                  Align(
-                                    alignment: const AlignmentDirectional(0.0, 0.0),
-                                    child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 20.0, 0.0, 0.0),
-                                      child: Text(
-                                        'Ou refuser',
-                                        textAlign: TextAlign.center,
-                                        style: FlutterFlowTheme.of(context)
-                                            .titleMedium
-                                            .override(
-                                              fontFamily: 'Poppins',
-                                              letterSpacing: 0.0,
-                                            ),
-                                      ),
-                                    ),
-                                  ),
-                                  Align(
-                                    alignment: const AlignmentDirectional(0.0, 0.0),
-                                    child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 10.0, 0.0, 10.0),
-                                      child: Text(
-                                        'Pour la raison suivante',
-                                        textAlign: TextAlign.center,
-                                        style: FlutterFlowTheme.of(context)
-                                            .titleMedium
-                                            .override(
-                                              fontFamily: 'Poppins',
-                                              letterSpacing: 0.0,
-                                            ),
-                                      ),
-                                    ),
-                                  ),
-                                  FlutterFlowDropDown<String>(
-                                    controller:
-                                        _model.dropReasonsValueController ??=
-                                            FormFieldController<String>(
-                                      _model.dropReasonsValue ??= '',
-                                    ),
-                                    options: List<String>.from([
-                                      'pas.de.membres',
-                                      'pas.disponible',
-                                      'trop.decarts.points'
-                                    ]),
-                                    optionLabels: const [
-                                      'Vous n\'avez pas assez de membres',
-                                      'Vous n\'êtes pas disponible',
-                                      'Trop d\'ecarts de points'
-                                    ],
-                                    onChanged: (val) => safeSetState(
-                                        () => _model.dropReasonsValue = val),
-                                    width: 300.0,
-                                    height: 55.0,
-                                    textStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Poppins',
-                                          letterSpacing: 0.0,
-                                        ),
-                                    hintText: 'Raisons',
-                                    icon: Icon(
-                                      Icons.keyboard_arrow_down_rounded,
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryText,
-                                      size: 24.0,
-                                    ),
-                                    fillColor: FlutterFlowTheme.of(context)
-                                        .primaryBackground,
-                                    elevation: 2.0,
-                                    borderColor: Colors.transparent,
-                                    borderWidth: 0.0,
-                                    borderRadius: 8.0,
-                                    margin: const EdgeInsetsDirectional.fromSTEB(
-                                        12.0, 0.0, 12.0, 0.0),
-                                    hidesUnderline: true,
-                                    isOverButton: false,
-                                    isSearchable: false,
-                                    isMultiSelect: false,
-                                  ),
-                                  if (_model.dropReasonsValue != null &&
-                                      _model.dropReasonsValue != '')
-                                    Align(
-                                      alignment:
-                                          const AlignmentDirectional(0.0, -1.0),
-                                      child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 40.0, 0.0, 20.0),
-                                        child: FFButtonWidget(
-                                          onPressed: () async {
-                                            await MyNotificationsRecord.createDoc(
-                                                    bossNotifEEventPageIUDAdminMyNotificationsRecord
-                                                        .userRef!)
-                                                .set({
-                                              ...createMyNotificationsRecordData(
-                                                text:
-                                                    'A refusé votre invitation à jouer contre votre équipe, pour la raison suivante,',
-                                                seen: false,
-                                                textReasons:
-                                                    _model.dropReasonsValue,
-                                                eteamExt:
-                                                    bossNotifEEventPageIUDAdminMyNotificationsRecord
-                                                        .eteamExt,
-                                                userRef: currentUserReference,
-                                              ),
-                                              ...mapToFirestore(
-                                                {
-                                                  'date_time': FieldValue
-                                                      .serverTimestamp(),
-                                                },
-                                              ),
-                                            });
-                                            triggerPushNotification(
-                                              notificationTitle:
-                                                  currentUserDisplayName,
-                                              notificationText:
-                                                  'A refusé votre invitation à jouer contre votre équipe.',
-                                              notificationImageUrl:
-                                                  currentUserPhoto,
-                                              userRefs: [
-                                                bossNotifEEventPageIUDAdminMyNotificationsRecord
-                                                    .userRef!
-                                              ],
-                                              initialPageName: 'MyNotifsList',
-                                              parameterData: {},
-                                            );
-
-                                            await currentUserDocument!.eteamRef!
-                                                .update({
-                                              ...mapToFirestore(
-                                                {
-                                                  'guest': FieldValue.delete(),
-                                                },
-                                              ),
-                                            });
-
-                                            await widget.notifRef!.update(
-                                                createMyNotificationsRecordData(
-                                              seen: true,
-                                            ));
-                                            await widget.notifRef!.delete();
-                                            context.safePop();
-                                          },
-                                          text: 'Refuser',
-                                          options: FFButtonOptions(
-                                            width: 350.0,
-                                            height: 50.0,
-                                            padding: const EdgeInsets.all(0.0),
-                                            iconPadding:
-                                                const EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 0.0, 0.0),
-                                            color: FlutterFlowTheme.of(context)
-                                                .error,
-                                            textStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleSmall
-                                                    .override(
-                                                      fontFamily: 'Poppins',
-                                                      color: FlutterFlowTheme
-                                                              .of(context)
-                                                          .secondaryBackground,
-                                                      letterSpacing: 0.0,
-                                                    ),
-                                            elevation: 3.0,
-                                            borderSide: const BorderSide(
-                                              color: Colors.transparent,
-                                              width: 1.0,
-                                            ),
-                                            borderRadius:
-                                                BorderRadius.circular(40.0),
-                                            hoverColor:
-                                                FlutterFlowTheme.of(context)
-                                                    .error,
-                                            hoverTextColor:
-                                                FlutterFlowTheme.of(context)
-                                                    .primaryBackground,
                                           ),
                                         ),
                                       ),
-                                    ),
-                                ],
-                              );
-                            },
+                                  ],
+                                );
+                              },
+                            ),
                           ),
                         ),
-                      ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ),

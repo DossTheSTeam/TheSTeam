@@ -212,3 +212,7 @@ export '/public_fold/public_stats_compare/public_stats_compare_widget.dart'
     show PublicStatsCompareWidget;
 export '/public_fold/full_image_page/full_image_page_widget.dart'
     show FullImagePageWidget;
+export '/admin_fold/admin_event_fold/refund_page/refund_page_widget.dart'
+    show RefundPageWidget;
+export '/admin_fold/admin_users_fold/menu_page_pub/menu_page_pub_widget.dart'
+    show MenuPagePubWidget;

@@ -23,6 +23,7 @@ import 'schema/team_posts_record.dart';
 import 'schema/team_events_record.dart';
 import 'schema/team_messages_record.dart';
 import 'schema/rates_record.dart';
+import 'schema/team_conference_record.dart';
 
 export 'dart:async' show StreamSubscription;
 export 'package:cloud_firestore/cloud_firestore.dart' hide Order;
@@ -49,6 +50,7 @@ export 'schema/team_posts_record.dart';
 export 'schema/team_events_record.dart';
 export 'schema/team_messages_record.dart';
 export 'schema/rates_record.dart';
+export 'schema/team_conference_record.dart';
 
 /// Functions to query UsersRecords (as a Stream and as a Future).
 Future<int> queryUsersRecordCount({
@@ -758,6 +760,46 @@ Future<List<RatesRecord>> queryRatesRecordOnce({
       singleRecord: singleRecord,
     );
 
+/// Functions to query TeamConferenceRecords (as a Stream and as a Future).
+Future<int> queryTeamConferenceRecordCount({
+  DocumentReference? parent,
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      TeamConferenceRecord.collection(parent),
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<TeamConferenceRecord>> queryTeamConferenceRecord({
+  DocumentReference? parent,
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      TeamConferenceRecord.collection(parent),
+      TeamConferenceRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<TeamConferenceRecord>> queryTeamConferenceRecordOnce({
+  DocumentReference? parent,
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      TeamConferenceRecord.collection(parent),
+      TeamConferenceRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
 Future<int> queryCollectionCount(
   Query collection, {
   Query Function(Query)? queryBuilder,
@@ -877,7 +919,7 @@ Future<FFFirestorePage<T>> queryCollectionPage<T>(
   } else {
     docSnapshot = await query.get();
   }
-  getDocs(QuerySnapshot s) => s.docs
+  final getDocs = (QuerySnapshot s) => s.docs
       .map(
         (d) => safeGet(
           () => recordBuilder(d),

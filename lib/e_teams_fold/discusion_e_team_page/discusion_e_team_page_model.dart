@@ -2,6 +2,7 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'discusion_e_team_page_widget.dart' show DiscusionETeamPageWidget;
 import 'package:flutter/material.dart';
+import 'package:record/record.dart';
 
 class DiscusionETeamPageModel
     extends FlutterFlowModel<DiscusionETeamPageWidget> {
@@ -12,6 +13,10 @@ class DiscusionETeamPageModel
       FFUploadedFile(bytes: Uint8List.fromList([]));
   String uploadedFileUrl = '';
 
+  AudioRecorder? audioRecorder;
+  String? audioTeam;
+  FFUploadedFile recordedFileBytes =
+      FFUploadedFile(bytes: Uint8List.fromList([]));
   // State field(s) for CommField widget.
   FocusNode? commFieldFocusNode;
   TextEditingController? commFieldTextController;

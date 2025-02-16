@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'add_advice_page_widget.dart' show AddAdvicePageWidget;
 import 'package:flutter/material.dart';
+import 'package:record/record.dart';
 
 class AddAdvicePageModel extends FlutterFlowModel<AddAdvicePageWidget> {
   ///  State fields for stateful widgets in this page.
@@ -28,6 +29,10 @@ class AddAdvicePageModel extends FlutterFlowModel<AddAdvicePageWidget> {
   FocusNode? textFieldFocusNode;
   TextEditingController? textController3;
   String? Function(BuildContext, String?)? textController3Validator;
+  AudioRecorder? audioRecorder;
+  String? audioAdvice;
+  FFUploadedFile recordedFileBytes =
+      FFUploadedFile(bytes: Uint8List.fromList([]));
   // Stores action output result for [Backend Call - Create Document] action in Button widget.
   PostsRecord? postRef;
 

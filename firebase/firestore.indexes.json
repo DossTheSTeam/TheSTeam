@@ -10,7 +10,7 @@
         },
         {
           "fieldPath": "created_time",
-          "order": "ASCENDING"
+          "order": "DESCENDING"
         }
       ]
     },
@@ -39,20 +39,6 @@
         {
           "fieldPath": "created_time",
           "order": "ASCENDING"
-        }
-      ]
-    },
-    {
-      "collectionGroup": "my_bets",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "statut",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "created_time",
-          "order": "DESCENDING"
         }
       ]
     },
@@ -243,32 +229,6 @@
       ]
     },
     {
-      "collectionGroup": "events",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "date",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "league_value",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "sport_value",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "statut",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "hour",
-          "order": "ASCENDING"
-        }
-      ]
-    },
-    {
       "collectionGroup": "my_notifications",
       "queryScope": "COLLECTION_GROUP",
       "fields": [
@@ -318,6 +278,32 @@
         },
         {
           "fieldPath": "topsflops",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "teams",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "sport_value",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "division_value",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "league_value",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "esport",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "points",
           "order": "DESCENDING"
         }
       ]
@@ -481,8 +467,8 @@
       ]
     },
     {
-      "collectionGroup": "my_notifications",
-      "fieldPath": "team_ref",
+      "collectionGroup": "my_posts",
+      "fieldPath": "posts",
       "indexes": [
         {
           "order": "ASCENDING",
@@ -501,18 +487,8 @@
       ]
     },
     {
-      "collectionGroup": "my_notifications",
-      "fieldPath": "team_ref",
-      "indexes": [
-        {
-          "order": "ASCENDING",
-          "queryScope": "COLLECTION_GROUP"
-        }
-      ]
-    },
-    {
-      "collectionGroup": "my_notifications",
-      "fieldPath": "team_ref",
+      "collectionGroup": "team_posts",
+      "fieldPath": "posts",
       "indexes": [
         {
           "order": "ASCENDING",
