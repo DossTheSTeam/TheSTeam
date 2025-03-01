@@ -1,4 +1,5 @@
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'my_profil_stats_widget.dart' show MyProfilStatsWidget;
 import 'package:flutter/material.dart';
 

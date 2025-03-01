@@ -11,6 +11,7 @@ import '/flutter_flow/upload_data.dart';
 import '/team_fold/audio_fan_conference/audio_fan_conference_widget.dart';
 import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
 import '/users_fold/delete_my_post/delete_my_post_widget.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'post_page_model.dart';
@@ -23,6 +24,9 @@ class PostPageWidget extends StatefulWidget {
   });
 
   final DocumentReference? postRef;
+
+  static String routeName = 'PostPage';
+  static String routePath = '/postPage';
 
   @override
   State<PostPageWidget> createState() => _PostPageWidgetState();
@@ -140,7 +144,7 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                                     Colors.transparent,
                                                 onTap: () async {
                                                   context.pushNamed(
-                                                    'MenuPage',
+                                                    MenuPageWidget.routeName,
                                                     extra: <String, dynamic>{
                                                       kTransitionInfoKey:
                                                           TransitionInfo(
@@ -303,7 +307,8 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                                                     .transparent,
                                                             onTap: () async {
                                                               context.pushNamed(
-                                                                'TeamPage',
+                                                                TeamPageWidget
+                                                                    .routeName,
                                                                 queryParameters:
                                                                     {
                                                                   'teamRef':
@@ -759,7 +764,7 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                             highlightColor: Colors.transparent,
                                             onTap: () async {
                                               context.pushNamed(
-                                                'FullImagePage',
+                                                FullImagePageWidget.routeName,
                                                 queryParameters: {
                                                   'imageRef': serializeParam(
                                                     postPagePostsRecord.image,
@@ -983,7 +988,8 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                                         Colors.transparent,
                                                     onTap: () async {
                                                       context.pushNamed(
-                                                        'PublicProfilPage',
+                                                        PublicProfilPageWidget
+                                                            .routeName,
                                                         queryParameters: {
                                                           'userRef':
                                                               serializeParam(
@@ -1075,7 +1081,8 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                                             Colors.transparent,
                                                         onTap: () async {
                                                           context.pushNamed(
-                                                            'ListPostMessages',
+                                                            ListPostMessagesWidget
+                                                                .routeName,
                                                             queryParameters: {
                                                               'postRef':
                                                                   serializeParam(
@@ -1525,7 +1532,8 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                                             Colors.transparent,
                                                         onTap: () async {
                                                           context.pushNamed(
-                                                            'RedCardPostPage',
+                                                            RedCardPostPageWidget
+                                                                .routeName,
                                                             queryParameters: {
                                                               'postRef':
                                                                   serializeParam(
@@ -1977,7 +1985,8 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                                   });
 
                                                   context.pushNamed(
-                                                    'ListPostMessages',
+                                                    ListPostMessagesWidget
+                                                        .routeName,
                                                     queryParameters: {
                                                       'postRef': serializeParam(
                                                         widget.postRef,

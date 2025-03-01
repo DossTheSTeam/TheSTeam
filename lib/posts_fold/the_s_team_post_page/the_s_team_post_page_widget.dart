@@ -7,6 +7,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/upload_data.dart';
 import '/team_fold/audio_fan_conference/audio_fan_conference_widget.dart';
 import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'the_s_team_post_page_model.dart';
@@ -19,6 +20,9 @@ class TheSTeamPostPageWidget extends StatefulWidget {
   });
 
   final DocumentReference? postRef;
+
+  static String routeName = 'TheSTeamPostPage';
+  static String routePath = '/theSTeamPostPage';
 
   @override
   State<TheSTeamPostPageWidget> createState() => _TheSTeamPostPageWidgetState();
@@ -132,7 +136,7 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                             highlightColor: Colors.transparent,
                                             onTap: () async {
                                               context.pushNamed(
-                                                'MenuPage',
+                                                MenuPageWidget.routeName,
                                                 extra: <String, dynamic>{
                                                   kTransitionInfoKey:
                                                       TransitionInfo(
@@ -242,7 +246,8 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                                                     .transparent,
                                                             onTap: () async {
                                                               context.pushNamed(
-                                                                'TeamPage',
+                                                                TeamPageWidget
+                                                                    .routeName,
                                                                 queryParameters:
                                                                     {
                                                                   'teamRef':
@@ -679,7 +684,7 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                             highlightColor: Colors.transparent,
                                             onTap: () async {
                                               context.pushNamed(
-                                                'FullImagePage',
+                                                FullImagePageWidget.routeName,
                                                 queryParameters: {
                                                   'imageRef': serializeParam(
                                                     theSTeamPostPagePostsRecord
@@ -1378,7 +1383,8 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                                         Colors.transparent,
                                                     onTap: () async {
                                                       context.pushNamed(
-                                                        'ListPostMessages',
+                                                        ListPostMessagesWidget
+                                                            .routeName,
                                                         queryParameters: {
                                                           'postRef':
                                                               serializeParam(
@@ -2020,7 +2026,8 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                               });
 
                                               context.pushNamed(
-                                                'ListPostMessages',
+                                                ListPostMessagesWidget
+                                                    .routeName,
                                                 queryParameters: {
                                                   'postRef': serializeParam(
                                                     widget.postRef,

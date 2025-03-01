@@ -9,6 +9,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/team_fold/audio_fan_conference/audio_fan_conference_widget.dart';
 import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'boss_notif_e_event_page_i_u_d_admin_model.dart';
@@ -23,6 +24,9 @@ class BossNotifEEventPageIUDAdminWidget extends StatefulWidget {
 
   final DocumentReference? notifRef;
   final DocumentReference? eTeamRef;
+
+  static String routeName = 'BossNotifEEventPageIUDAdmin';
+  static String routePath = '/bossNotifEEventPageIUDAdmin';
 
   @override
   State<BossNotifEEventPageIUDAdminWidget> createState() =>
@@ -138,7 +142,7 @@ class _BossNotifEEventPageIUDAdminWidgetState
                                                   Colors.transparent,
                                               onTap: () async {
                                                 context.pushNamed(
-                                                  'MenuPage',
+                                                  MenuPageWidget.routeName,
                                                   extra: <String, dynamic>{
                                                     kTransitionInfoKey:
                                                         TransitionInfo(
@@ -253,7 +257,8 @@ class _BossNotifEEventPageIUDAdminWidgetState
                                                                     .transparent,
                                                             onTap: () async {
                                                               context.pushNamed(
-                                                                'TeamPage',
+                                                                TeamPageWidget
+                                                                    .routeName,
                                                                 queryParameters:
                                                                     {
                                                                   'teamRef':
@@ -604,7 +609,8 @@ class _BossNotifEEventPageIUDAdminWidgetState
                                                         Colors.transparent,
                                                     onTap: () async {
                                                       context.pushNamed(
-                                                        'TeamPage',
+                                                        TeamPageWidget
+                                                            .routeName,
                                                         queryParameters: {
                                                           'teamRef':
                                                               serializeParam(

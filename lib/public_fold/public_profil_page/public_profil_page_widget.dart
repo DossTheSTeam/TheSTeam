@@ -8,6 +8,7 @@ import '/public_fold/block_user/block_user_widget.dart';
 import '/team_fold/audio_fan_conference/audio_fan_conference_widget.dart';
 import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -22,6 +23,9 @@ class PublicProfilPageWidget extends StatefulWidget {
   });
 
   final DocumentReference? userRef;
+
+  static String routeName = 'PublicProfilPage';
+  static String routePath = '/publicProfilPage';
 
   @override
   State<PublicProfilPageWidget> createState() => _PublicProfilPageWidgetState();
@@ -281,7 +285,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                                       Colors.transparent,
                                                   onTap: () async {
                                                     context.pushNamed(
-                                                      'TeamPage',
+                                                      TeamPageWidget.routeName,
                                                       queryParameters: {
                                                         'teamRef':
                                                             serializeParam(
@@ -615,7 +619,8 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                                     Colors.transparent,
                                                 onTap: () async {
                                                   context.pushNamed(
-                                                    'MyNotifsList',
+                                                    MyNotifsListWidget
+                                                        .routeName,
                                                     extra: <String, dynamic>{
                                                       kTransitionInfoKey:
                                                           TransitionInfo(
@@ -884,7 +889,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                                     Colors.transparent,
                                                 onTap: () async {
                                                   context.pushNamed(
-                                                    'TeamPage',
+                                                    TeamPageWidget.routeName,
                                                     queryParameters: {
                                                       'teamRef': serializeParam(
                                                         containerTeamsRecord
@@ -1379,7 +1384,8 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                                       Colors.transparent,
                                                   onTap: () async {
                                                     context.pushNamed(
-                                                      'PublicBetsList',
+                                                      PublicBetsListWidget
+                                                          .routeName,
                                                       queryParameters: {
                                                         'userBetRef':
                                                             serializeParam(
@@ -1450,7 +1456,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                                   Colors.transparent,
                                               onTap: () async {
                                                 context.pushNamed(
-                                                  'PublicStats',
+                                                  PublicStatsWidget.routeName,
                                                   queryParameters: {
                                                     'userRef': serializeParam(
                                                       widget.userRef,
@@ -1972,7 +1978,8 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                                             Colors.transparent,
                                                         onTap: () async {
                                                           context.pushNamed(
-                                                            'TeamPage',
+                                                            TeamPageWidget
+                                                                .routeName,
                                                             queryParameters: {
                                                               'teamRef':
                                                                   serializeParam(
@@ -2054,7 +2061,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                                   Colors.transparent,
                                               onTap: () async {
                                                 context.pushNamed(
-                                                  'PublicStats',
+                                                  PublicStatsWidget.routeName,
                                                   queryParameters: {
                                                     'userRef': serializeParam(
                                                       widget.userRef,
@@ -2291,7 +2298,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                           highlightColor: Colors.transparent,
                                           onTap: () async {
                                             context.pushNamed(
-                                              'PublicPostsList',
+                                              PublicPostsListWidget.routeName,
                                               queryParameters: {
                                                 'userPostRef': serializeParam(
                                                   rowMyPostsMyPostsRecord

@@ -9,6 +9,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/team_fold/audio_fan_conference/audio_fan_conference_widget.dart';
 import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'red_card_post_page_model.dart';
@@ -21,6 +22,9 @@ class RedCardPostPageWidget extends StatefulWidget {
   });
 
   final DocumentReference? postRef;
+
+  static String routeName = 'RedCardPostPage';
+  static String routePath = '/redCardPostPage';
 
   @override
   State<RedCardPostPageWidget> createState() => _RedCardPostPageWidgetState();
@@ -107,7 +111,7 @@ class _RedCardPostPageWidgetState extends State<RedCardPostPageWidget> {
                                     highlightColor: Colors.transparent,
                                     onTap: () async {
                                       context.pushNamed(
-                                        'MenuPage',
+                                        MenuPageWidget.routeName,
                                         extra: <String, dynamic>{
                                           kTransitionInfoKey: TransitionInfo(
                                             hasTransition: true,
@@ -201,7 +205,8 @@ class _RedCardPostPageWidgetState extends State<RedCardPostPageWidget> {
                                                         Colors.transparent,
                                                     onTap: () async {
                                                       context.pushNamed(
-                                                        'TeamPage',
+                                                        TeamPageWidget
+                                                            .routeName,
                                                         queryParameters: {
                                                           'teamRef':
                                                               serializeParam(

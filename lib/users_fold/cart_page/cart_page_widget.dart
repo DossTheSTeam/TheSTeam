@@ -9,6 +9,7 @@ import '/flutter_flow/form_field_controller.dart';
 import '/team_fold/audio_fan_conference/audio_fan_conference_widget.dart';
 import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'cart_page_model.dart';
@@ -23,6 +24,9 @@ class CartPageWidget extends StatefulWidget {
 
   final DocumentReference? cartRef;
   final DocumentReference? eventRef;
+
+  static String routeName = 'CartPage';
+  static String routePath = '/cartPage';
 
   @override
   State<CartPageWidget> createState() => _CartPageWidgetState();
@@ -182,7 +186,7 @@ class _CartPageWidgetState extends State<CartPageWidget> {
                                                       Colors.transparent,
                                                   onTap: () async {
                                                     context.pushNamed(
-                                                      'TeamPage',
+                                                      TeamPageWidget.routeName,
                                                       queryParameters: {
                                                         'teamRef':
                                                             serializeParam(
@@ -1321,7 +1325,7 @@ class _CartPageWidgetState extends State<CartPageWidget> {
                                                 });
 
                                                 context.goNamed(
-                                                  'MyProfilPage',
+                                                  MyProfilPageWidget.routeName,
                                                   extra: <String, dynamic>{
                                                     kTransitionInfoKey:
                                                         TransitionInfo(
@@ -1516,7 +1520,7 @@ class _CartPageWidgetState extends State<CartPageWidget> {
                                             });
 
                                             context.goNamed(
-                                              'ListEventsAdd2Bet',
+                                              ListEventsAdd2BetWidget.routeName,
                                               queryParameters: {
                                                 'myBetRef': serializeParam(
                                                   _model.myBet100Ref?.reference,

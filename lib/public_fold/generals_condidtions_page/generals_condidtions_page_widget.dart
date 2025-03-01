@@ -2,12 +2,16 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'generals_condidtions_page_model.dart';
 export 'generals_condidtions_page_model.dart';
 
 class GeneralsCondidtionsPageWidget extends StatefulWidget {
   const GeneralsCondidtionsPageWidget({super.key});
+
+  static String routeName = 'GeneralsCondidtionsPage';
+  static String routePath = '/generalsCondidtionsPage';
 
   @override
   State<GeneralsCondidtionsPageWidget> createState() =>
@@ -67,7 +71,7 @@ class _GeneralsCondidtionsPageWidgetState
                               highlightColor: Colors.transparent,
                               onTap: () async {
                                 context.pushNamed(
-                                  'MenuPage',
+                                  MenuPageWidget.routeName,
                                   extra: <String, dynamic>{
                                     kTransitionInfoKey: TransitionInfo(
                                       hasTransition: true,
@@ -163,7 +167,7 @@ class _GeneralsCondidtionsPageWidgetState
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
                                         context.pushNamed(
-                                          'MyNotifsList',
+                                          MyNotifsListWidget.routeName,
                                           extra: <String, dynamic>{
                                             kTransitionInfoKey: TransitionInfo(
                                               hasTransition: true,
@@ -389,7 +393,7 @@ class _GeneralsCondidtionsPageWidgetState
                           highlightColor: Colors.transparent,
                           onTap: () async {
                             context.pushNamed(
-                              'InfosRankPage',
+                              InfosRankPageWidget.routeName,
                               extra: <String, dynamic>{
                                 kTransitionInfoKey: TransitionInfo(
                                   hasTransition: true,
@@ -497,7 +501,7 @@ class _GeneralsCondidtionsPageWidgetState
                           highlightColor: Colors.transparent,
                           onTap: () async {
                             context.pushNamed(
-                              'ConfidentialityPage',
+                              ConfidentialityPageWidget.routeName,
                               extra: <String, dynamic>{
                                 kTransitionInfoKey: TransitionInfo(
                                   hasTransition: true,

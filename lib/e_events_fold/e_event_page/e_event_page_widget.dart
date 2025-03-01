@@ -8,6 +8,7 @@ import '/flutter_flow/upload_data.dart';
 import '/team_fold/audio_fan_conference/audio_fan_conference_widget.dart';
 import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'e_event_page_model.dart';
@@ -20,6 +21,9 @@ class EEventPageWidget extends StatefulWidget {
   });
 
   final DocumentReference? eventRef;
+
+  static String routeName = 'EEventPage';
+  static String routePath = '/eEventPage';
 
   @override
   State<EEventPageWidget> createState() => _EEventPageWidgetState();
@@ -112,7 +116,7 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                                         highlightColor: Colors.transparent,
                                         onTap: () async {
                                           context.pushNamed(
-                                            'MenuPage',
+                                            MenuPageWidget.routeName,
                                             extra: <String, dynamic>{
                                               kTransitionInfoKey:
                                                   TransitionInfo(
@@ -223,7 +227,8 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                                                               .transparent,
                                                           onTap: () async {
                                                             context.pushNamed(
-                                                              'TeamPage',
+                                                              TeamPageWidget
+                                                                  .routeName,
                                                               queryParameters: {
                                                                 'teamRef':
                                                                     serializeParam(
@@ -561,7 +566,8 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                                                     Colors.transparent,
                                                 onTap: () async {
                                                   context.pushNamed(
-                                                    'MyNotifsList',
+                                                    MyNotifsListWidget
+                                                        .routeName,
                                                     extra: <String, dynamic>{
                                                       kTransitionInfoKey:
                                                           TransitionInfo(
@@ -799,7 +805,7 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                                                     Colors.transparent,
                                                 onTap: () async {
                                                   context.pushNamed(
-                                                    'TeamPage',
+                                                    TeamPageWidget.routeName,
                                                     queryParameters: {
                                                       'teamRef': serializeParam(
                                                         contDomTeamsRecord
@@ -1001,7 +1007,7 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                                                     Colors.transparent,
                                                 onTap: () async {
                                                   context.pushNamed(
-                                                    'TeamPage',
+                                                    TeamPageWidget.routeName,
                                                     queryParameters: {
                                                       'teamRef': serializeParam(
                                                         contExtTeamsRecord
@@ -1737,7 +1743,8 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                                                   Colors.transparent,
                                               onTap: () async {
                                                 context.pushNamed(
-                                                  'ListEventMessages',
+                                                  ListEventMessagesWidget
+                                                      .routeName,
                                                   queryParameters: {
                                                     'eventRef': serializeParam(
                                                       widget.eventRef,
@@ -2160,7 +2167,8 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                                                                     () async {
                                                                   context
                                                                       .pushNamed(
-                                                                    'PublicProfilPage',
+                                                                    PublicProfilPageWidget
+                                                                        .routeName,
                                                                     queryParameters:
                                                                         {
                                                                       'userRef':
@@ -2279,7 +2287,8 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                                                                       () async {
                                                                     context
                                                                         .pushNamed(
-                                                                      'EventMessagePage',
+                                                                      EventMessagePageWidget
+                                                                          .routeName,
                                                                       queryParameters:
                                                                           {
                                                                         'startedCommRef':
@@ -2885,7 +2894,7 @@ class _EEventPageWidgetState extends State<EEventPageWidget> {
                                         });
 
                                         context.pushNamed(
-                                          'ListEventMessages',
+                                          ListEventMessagesWidget.routeName,
                                           queryParameters: {
                                             'eventRef': serializeParam(
                                               widget.eventRef,

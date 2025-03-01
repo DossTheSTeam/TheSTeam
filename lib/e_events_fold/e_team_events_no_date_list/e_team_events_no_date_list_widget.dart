@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/team_fold/audio_fan_conference/audio_fan_conference_widget.dart';
 import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'e_team_events_no_date_list_model.dart';
@@ -17,6 +18,9 @@ class ETeamEventsNoDateListWidget extends StatefulWidget {
   });
 
   final DocumentReference? teamRef;
+
+  static String routeName = 'ETeamEventsNoDateList';
+  static String routePath = '/eTeamEventsNoDateList';
 
   @override
   State<ETeamEventsNoDateListWidget> createState() =>
@@ -106,7 +110,7 @@ class _ETeamEventsNoDateListWidgetState
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
                                         context.pushNamed(
-                                          'ModifETeamPage',
+                                          ModifETeamPageWidget.routeName,
                                           queryParameters: {
                                             'teamRef': serializeParam(
                                               widget.teamRef,
@@ -216,7 +220,8 @@ class _ETeamEventsNoDateListWidgetState
                                                           Colors.transparent,
                                                       onTap: () async {
                                                         context.pushNamed(
-                                                          'TeamPage',
+                                                          TeamPageWidget
+                                                              .routeName,
                                                           queryParameters: {
                                                             'teamRef':
                                                                 serializeParam(
@@ -633,7 +638,7 @@ class _ETeamEventsNoDateListWidgetState
                                     highlightColor: Colors.transparent,
                                     onTap: () async {
                                       context.pushNamed(
-                                        'ETeamEventsList',
+                                        ETeamEventsListWidget.routeName,
                                         queryParameters: {
                                           'teamRef': serializeParam(
                                             widget.teamRef,
@@ -673,7 +678,7 @@ class _ETeamEventsNoDateListWidgetState
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
                                     context.pushNamed(
-                                      'ETeamEventsList',
+                                      ETeamEventsListWidget.routeName,
                                       queryParameters: {
                                         'teamRef': serializeParam(
                                           widget.teamRef,
@@ -1013,7 +1018,8 @@ class _ETeamEventsNoDateListWidgetState
                                                                           () async {
                                                                         context
                                                                             .pushNamed(
-                                                                          'ListMessagesBossEvent',
+                                                                          ListMessagesBossEventWidget
+                                                                              .routeName,
                                                                           queryParameters:
                                                                               {
                                                                             'eventRef':
@@ -1076,7 +1082,7 @@ class _ETeamEventsNoDateListWidgetState
                                                                           onTap:
                                                                               () async {
                                                                             context.pushNamed(
-                                                                              'AddPlayersEventPage',
+                                                                              AddPlayersEventPageWidget.routeName,
                                                                               queryParameters: {
                                                                                 'eventRef': serializeParam(
                                                                                   columnEventEventsRecord.reference,
@@ -1132,7 +1138,7 @@ class _ETeamEventsNoDateListWidgetState
                                                                           onTap:
                                                                               () async {
                                                                             context.pushNamed(
-                                                                              'AddPlayersEventPage',
+                                                                              AddPlayersEventPageWidget.routeName,
                                                                               queryParameters: {
                                                                                 'eventRef': serializeParam(
                                                                                   columnEventEventsRecord.reference,

@@ -1,4 +1,5 @@
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'public_posts_list_widget.dart' show PublicPostsListWidget;
 import 'package:flutter/material.dart';
 

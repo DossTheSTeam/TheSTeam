@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/team_fold/audio_fan_conference/audio_fan_conference_widget.dart';
 import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'rating_players_page_model.dart';
@@ -20,6 +21,9 @@ class RatingPlayersPageWidget extends StatefulWidget {
 
   final DocumentReference? eventRef;
   final DocumentReference? notifRef;
+
+  static String routeName = 'RatingPlayersPage';
+  static String routePath = '/ratingPlayersPage';
 
   @override
   State<RatingPlayersPageWidget> createState() =>
@@ -106,7 +110,7 @@ class _RatingPlayersPageWidgetState extends State<RatingPlayersPageWidget> {
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
                                         context.pushNamed(
-                                          'MenuPage',
+                                          MenuPageWidget.routeName,
                                           extra: <String, dynamic>{
                                             kTransitionInfoKey: TransitionInfo(
                                               hasTransition: true,
@@ -209,7 +213,8 @@ class _RatingPlayersPageWidgetState extends State<RatingPlayersPageWidget> {
                                                         Colors.transparent,
                                                     onTap: () async {
                                                       context.pushNamed(
-                                                        'TeamPage',
+                                                        TeamPageWidget
+                                                            .routeName,
                                                         queryParameters: {
                                                           'teamRef':
                                                               serializeParam(
@@ -1714,7 +1719,7 @@ class _RatingPlayersPageWidgetState extends State<RatingPlayersPageWidget> {
                                         await widget.notifRef!.delete();
 
                                         context.goNamed(
-                                          'MyProfilPage',
+                                          MyProfilPageWidget.routeName,
                                           extra: <String, dynamic>{
                                             kTransitionInfoKey: TransitionInfo(
                                               hasTransition: true,

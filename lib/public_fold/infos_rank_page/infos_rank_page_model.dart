@@ -1,4 +1,5 @@
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'infos_rank_page_widget.dart' show InfosRankPageWidget;
 import 'package:flutter/material.dart';
 

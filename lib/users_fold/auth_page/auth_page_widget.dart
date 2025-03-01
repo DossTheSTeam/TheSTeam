@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/users_fold/reset_paswword/reset_paswword_widget.dart';
 import '/flutter_flow/permissions_util.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -14,6 +15,9 @@ export 'auth_page_model.dart';
 
 class AuthPageWidget extends StatefulWidget {
   const AuthPageWidget({super.key});
+
+  static String routeName = 'AuthPage';
+  static String routePath = '/authPage';
 
   @override
   State<AuthPageWidget> createState() => _AuthPageWidgetState();
@@ -809,7 +813,8 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                                                     }
 
                                                                     context.goNamedAuth(
-                                                                        'MyProfilPage',
+                                                                        MyProfilPageWidget
+                                                                            .routeName,
                                                                         context
                                                                             .mounted);
                                                                   },
@@ -914,7 +919,7 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                                                         }
 
                                                                         context.goNamedAuth(
-                                                                            'MyProfilPage',
+                                                                            MyProfilPageWidget.routeName,
                                                                             context.mounted);
                                                                       },
                                                                       text:
@@ -980,7 +985,7 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                                                               return;
                                                                             }
 
-                                                                            context.goNamedAuth('MyProfilPage',
+                                                                            context.goNamedAuth(MyProfilPageWidget.routeName,
                                                                                 context.mounted);
                                                                           },
                                                                           text:
@@ -1388,7 +1393,8 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                                           }
 
                                                           context.goNamedAuth(
-                                                              'MyProfilPage',
+                                                              MyProfilPageWidget
+                                                                  .routeName,
                                                               context.mounted);
                                                         },
                                                         text: 'Connexion',
@@ -1518,7 +1524,8 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                                                     }
 
                                                                     context.goNamedAuth(
-                                                                        'MyProfilPage',
+                                                                        MyProfilPageWidget
+                                                                            .routeName,
                                                                         context
                                                                             .mounted);
                                                                   },
@@ -1602,7 +1609,7 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                                                           }
 
                                                                           context.goNamedAuth(
-                                                                              'MyProfilPage',
+                                                                              MyProfilPageWidget.routeName,
                                                                               context.mounted);
                                                                         },
                                                                         text:

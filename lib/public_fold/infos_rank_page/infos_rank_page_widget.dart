@@ -2,12 +2,16 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'infos_rank_page_model.dart';
 export 'infos_rank_page_model.dart';
 
 class InfosRankPageWidget extends StatefulWidget {
   const InfosRankPageWidget({super.key});
+
+  static String routeName = 'InfosRankPage';
+  static String routePath = '/infosRankPage';
 
   @override
   State<InfosRankPageWidget> createState() => _InfosRankPageWidgetState();
@@ -65,7 +69,7 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                               highlightColor: Colors.transparent,
                               onTap: () async {
                                 context.pushNamed(
-                                  'MenuPage',
+                                  MenuPageWidget.routeName,
                                   extra: <String, dynamic>{
                                     kTransitionInfoKey: TransitionInfo(
                                       hasTransition: true,
@@ -161,7 +165,7 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
                                         context.pushNamed(
-                                          'MyNotifsList',
+                                          MyNotifsListWidget.routeName,
                                           extra: <String, dynamic>{
                                             kTransitionInfoKey: TransitionInfo(
                                               hasTransition: true,
@@ -804,7 +808,7 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                           highlightColor: Colors.transparent,
                           onTap: () async {
                             context.pushNamed(
-                              'GeneralsCondidtionsPage',
+                              GeneralsCondidtionsPageWidget.routeName,
                               extra: <String, dynamic>{
                                 kTransitionInfoKey: TransitionInfo(
                                   hasTransition: true,

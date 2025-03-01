@@ -2,12 +2,16 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'confidentiality_page_model.dart';
 export 'confidentiality_page_model.dart';
 
 class ConfidentialityPageWidget extends StatefulWidget {
   const ConfidentialityPageWidget({super.key});
+
+  static String routeName = 'ConfidentialityPage';
+  static String routePath = '/confidentialityPage';
 
   @override
   State<ConfidentialityPageWidget> createState() =>
@@ -66,7 +70,7 @@ class _ConfidentialityPageWidgetState extends State<ConfidentialityPageWidget> {
                               highlightColor: Colors.transparent,
                               onTap: () async {
                                 context.pushNamed(
-                                  'MenuPage',
+                                  MenuPageWidget.routeName,
                                   extra: <String, dynamic>{
                                     kTransitionInfoKey: TransitionInfo(
                                       hasTransition: true,
@@ -162,7 +166,7 @@ class _ConfidentialityPageWidgetState extends State<ConfidentialityPageWidget> {
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
                                         context.pushNamed(
-                                          'MyNotifsList',
+                                          MyNotifsListWidget.routeName,
                                           extra: <String, dynamic>{
                                             kTransitionInfoKey: TransitionInfo(
                                               hasTransition: true,

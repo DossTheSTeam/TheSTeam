@@ -9,6 +9,7 @@ import '/flutter_flow/form_field_controller.dart';
 import '/team_fold/audio_fan_conference/audio_fan_conference_widget.dart';
 import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'list_events_model.dart';
@@ -16,6 +17,9 @@ export 'list_events_model.dart';
 
 class ListEventsWidget extends StatefulWidget {
   const ListEventsWidget({super.key});
+
+  static String routeName = 'ListEvents';
+  static String routePath = '/listEvents';
 
   @override
   State<ListEventsWidget> createState() => _ListEventsWidgetState();
@@ -81,7 +85,7 @@ class _ListEventsWidgetState extends State<ListEventsWidget> {
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
                                         context.pushNamed(
-                                          'MenuPage',
+                                          MenuPageWidget.routeName,
                                           extra: <String, dynamic>{
                                             kTransitionInfoKey: TransitionInfo(
                                               hasTransition: true,
@@ -216,7 +220,7 @@ class _ListEventsWidgetState extends State<ListEventsWidget> {
                                                     Colors.transparent,
                                                 onTap: () async {
                                                   context.pushNamed(
-                                                    'TeamPage',
+                                                    TeamPageWidget.routeName,
                                                     queryParameters: {
                                                       'teamRef': serializeParam(
                                                         currentUserDocument
@@ -522,7 +526,7 @@ class _ListEventsWidgetState extends State<ListEventsWidget> {
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
                                         context.pushNamed(
-                                          'MyTeamsListEvents',
+                                          MyTeamsListEventsWidget.routeName,
                                           extra: <String, dynamic>{
                                             kTransitionInfoKey: TransitionInfo(
                                               hasTransition: true,
@@ -1438,7 +1442,8 @@ class _ListEventsWidgetState extends State<ListEventsWidget> {
                                                                     () async {
                                                                   context
                                                                       .pushNamed(
-                                                                    'TeamPage',
+                                                                    TeamPageWidget
+                                                                        .routeName,
                                                                     queryParameters:
                                                                         {
                                                                       'teamRef':
@@ -1497,7 +1502,8 @@ class _ListEventsWidgetState extends State<ListEventsWidget> {
                                                             Colors.transparent,
                                                         onTap: () async {
                                                           context.pushNamed(
-                                                            'EventPage',
+                                                            EventPageWidget
+                                                                .routeName,
                                                             queryParameters: {
                                                               'eventRef':
                                                                   serializeParam(
@@ -1629,7 +1635,8 @@ class _ListEventsWidgetState extends State<ListEventsWidget> {
                                                                     () async {
                                                                   context
                                                                       .pushNamed(
-                                                                    'TeamPage',
+                                                                    TeamPageWidget
+                                                                        .routeName,
                                                                     queryParameters:
                                                                         {
                                                                       'teamRef':

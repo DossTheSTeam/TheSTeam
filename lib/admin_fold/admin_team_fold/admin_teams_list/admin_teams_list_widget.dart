@@ -5,12 +5,16 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'admin_teams_list_model.dart';
 export 'admin_teams_list_model.dart';
 
 class AdminTeamsListWidget extends StatefulWidget {
   const AdminTeamsListWidget({super.key});
+
+  static String routeName = 'AdminTeamsList';
+  static String routePath = '/adminTeamsList';
 
   @override
   State<AdminTeamsListWidget> createState() => _AdminTeamsListWidgetState();
@@ -73,7 +77,7 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
                                     context.pushNamed(
-                                      'MenuPage',
+                                      MenuPageWidget.routeName,
                                       extra: <String, dynamic>{
                                         kTransitionInfoKey: TransitionInfo(
                                           hasTransition: true,
@@ -1852,7 +1856,8 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                                               onTap: () async {
                                                                 context
                                                                     .pushNamed(
-                                                                  'ModTeamNotifsList',
+                                                                  ModTeamNotifsListWidget
+                                                                      .routeName,
                                                                   queryParameters:
                                                                       {
                                                                     'teamRef':
@@ -1894,7 +1899,8 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                                         Colors.transparent,
                                                     onTap: () async {
                                                       context.pushNamed(
-                                                        'TeamUsersList',
+                                                        TeamUsersListWidget
+                                                            .routeName,
                                                         queryParameters: {
                                                           'teamRef':
                                                               serializeParam(
@@ -1932,7 +1938,8 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                                         Colors.transparent,
                                                     onTap: () async {
                                                       context.pushNamed(
-                                                        'ModifTeamPage',
+                                                        ModifTeamPageWidget
+                                                            .routeName,
                                                         queryParameters: {
                                                           'teamRef':
                                                               serializeParam(
@@ -2384,7 +2391,8 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                                                     .transparent,
                                                             onTap: () async {
                                                               context.pushNamed(
-                                                                'ModTeamNotifsList',
+                                                                ModTeamNotifsListWidget
+                                                                    .routeName,
                                                                 queryParameters:
                                                                     {
                                                                   'teamRef':
@@ -2426,7 +2434,8 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                                       Colors.transparent,
                                                   onTap: () async {
                                                     context.pushNamed(
-                                                      'TeamUsersList',
+                                                      TeamUsersListWidget
+                                                          .routeName,
                                                       queryParameters: {
                                                         'teamRef':
                                                             serializeParam(
@@ -2463,7 +2472,8 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                                       Colors.transparent,
                                                   onTap: () async {
                                                     context.pushNamed(
-                                                      'ModifTeamPage',
+                                                      ModifTeamPageWidget
+                                                          .routeName,
                                                       queryParameters: {
                                                         'teamRef':
                                                             serializeParam(
@@ -2937,7 +2947,8 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                                                     .transparent,
                                                             onTap: () async {
                                                               context.pushNamed(
-                                                                'ModTeamNotifsList',
+                                                                ModTeamNotifsListWidget
+                                                                    .routeName,
                                                                 queryParameters:
                                                                     {
                                                                   'teamRef':
@@ -2979,7 +2990,8 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                                       Colors.transparent,
                                                   onTap: () async {
                                                     context.pushNamed(
-                                                      'TeamUsersList',
+                                                      TeamUsersListWidget
+                                                          .routeName,
                                                       queryParameters: {
                                                         'teamRef':
                                                             serializeParam(
@@ -3016,7 +3028,8 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                                       Colors.transparent,
                                                   onTap: () async {
                                                     context.pushNamed(
-                                                      'ModifTeamPage',
+                                                      ModifTeamPageWidget
+                                                          .routeName,
                                                       queryParameters: {
                                                         'teamRef':
                                                             serializeParam(

@@ -10,6 +10,7 @@ import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/upload_data.dart';
 import '/team_fold/audio_fan_conference/audio_fan_conference_widget.dart';
 import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'modif_e_team_page_model.dart';
@@ -22,6 +23,9 @@ class ModifETeamPageWidget extends StatefulWidget {
   });
 
   final DocumentReference? teamRef;
+
+  static String routeName = 'ModifETeamPage';
+  static String routePath = '/modifETeamPage';
 
   @override
   State<ModifETeamPageWidget> createState() => _ModifETeamPageWidgetState();
@@ -110,7 +114,7 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                                     highlightColor: Colors.transparent,
                                     onTap: () async {
                                       context.pushNamed(
-                                        'MenuPage',
+                                        MenuPageWidget.routeName,
                                         extra: <String, dynamic>{
                                           kTransitionInfoKey: TransitionInfo(
                                             hasTransition: true,
@@ -194,7 +198,8 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                                                             Colors.transparent,
                                                         onTap: () async {
                                                           context.pushNamed(
-                                                            'TeamPage',
+                                                            TeamPageWidget
+                                                                .routeName,
                                                             queryParameters: {
                                                               'teamRef':
                                                                   serializeParam(
@@ -541,7 +546,7 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                                                   Colors.transparent,
                                               onTap: () async {
                                                 context.pushNamed(
-                                                  'MyNotifsList',
+                                                  MyNotifsListWidget.routeName,
                                                   extra: <String, dynamic>{
                                                     kTransitionInfoKey:
                                                         TransitionInfo(
@@ -707,7 +712,7 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                                 highlightColor: Colors.transparent,
                                 onTap: () async {
                                   context.pushNamed(
-                                    'TeamPage',
+                                    TeamPageWidget.routeName,
                                     queryParameters: {
                                       'teamRef': serializeParam(
                                         widget.teamRef,
@@ -766,7 +771,7 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                                           highlightColor: Colors.transparent,
                                           onTap: () async {
                                             context.pushNamed(
-                                              'TeamListForEvents',
+                                              TeamListForEventsWidget.routeName,
                                               queryParameters: {
                                                 'eTeamRef': serializeParam(
                                                   widget.teamRef,
@@ -833,7 +838,8 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                                           highlightColor: Colors.transparent,
                                           onTap: () async {
                                             context.pushNamed(
-                                              'ETeamEventsNoDateList',
+                                              ETeamEventsNoDateListWidget
+                                                  .routeName,
                                               queryParameters: {
                                                 'teamRef': serializeParam(
                                                   widget.teamRef,
@@ -900,7 +906,7 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                                           highlightColor: Colors.transparent,
                                           onTap: () async {
                                             context.pushNamed(
-                                              'ETeamEventsList',
+                                              ETeamEventsListWidget.routeName,
                                               queryParameters: {
                                                 'teamRef': serializeParam(
                                                   widget.teamRef,
@@ -951,7 +957,7 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                                           highlightColor: Colors.transparent,
                                           onTap: () async {
                                             context.pushNamed(
-                                              'AddPostPage',
+                                              AddPostPageWidget.routeName,
                                               queryParameters: {
                                                 'teamRef': serializeParam(
                                                   widget.teamRef,
@@ -1013,7 +1019,8 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                                           highlightColor: Colors.transparent,
                                           onTap: () async {
                                             context.pushNamed(
-                                              'DiscusionETeamPage',
+                                              DiscusionETeamPageWidget
+                                                  .routeName,
                                               queryParameters: {
                                                 'eTeamRef': serializeParam(
                                                   widget.teamRef,
@@ -1064,7 +1071,7 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                                           highlightColor: Colors.transparent,
                                           onTap: () async {
                                             context.pushNamed(
-                                              'ETeamUsersList',
+                                              ETeamUsersListWidget.routeName,
                                               queryParameters: {
                                                 'teamRef': serializeParam(
                                                   widget.teamRef,
@@ -1126,7 +1133,8 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                                           highlightColor: Colors.transparent,
                                           onTap: () async {
                                             context.pushNamed(
-                                              'MyBestsETeamRankPage',
+                                              MyBestsETeamRankPageWidget
+                                                  .routeName,
                                               extra: <String, dynamic>{
                                                 kTransitionInfoKey:
                                                     TransitionInfo(
@@ -1307,7 +1315,7 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                                             });
 
                                             context.pushNamed(
-                                              'TeamPage',
+                                              TeamPageWidget.routeName,
                                               queryParameters: {
                                                 'teamRef': serializeParam(
                                                   widget.teamRef,
@@ -2036,7 +2044,8 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                                                           });
 
                                                           context.pushNamed(
-                                                              'MyProfilPage');
+                                                              MyProfilPageWidget
+                                                                  .routeName);
                                                         },
                                                         text: 'Supprimer',
                                                         options:

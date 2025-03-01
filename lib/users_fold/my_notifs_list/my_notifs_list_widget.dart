@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/team_fold/audio_fan_conference/audio_fan_conference_widget.dart';
 import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'my_notifs_list_model.dart';
@@ -12,6 +13,9 @@ export 'my_notifs_list_model.dart';
 
 class MyNotifsListWidget extends StatefulWidget {
   const MyNotifsListWidget({super.key});
+
+  static String routeName = 'MyNotifsList';
+  static String routePath = '/myNotifsList';
 
   @override
   State<MyNotifsListWidget> createState() => _MyNotifsListWidgetState();
@@ -72,7 +76,7 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
                                     context.pushNamed(
-                                      'MenuPage',
+                                      MenuPageWidget.routeName,
                                       extra: <String, dynamic>{
                                         kTransitionInfoKey: TransitionInfo(
                                           hasTransition: true,
@@ -159,7 +163,7 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                     Colors.transparent,
                                                 onTap: () async {
                                                   context.pushNamed(
-                                                    'TeamPage',
+                                                    TeamPageWidget.routeName,
                                                     queryParameters: {
                                                       'teamRef': serializeParam(
                                                         currentUserDocument
@@ -641,7 +645,8 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                               onTap: () async {
                                                                 context
                                                                     .pushNamed(
-                                                                  'PublicProfilPage',
+                                                                  PublicProfilPageWidget
+                                                                      .routeName,
                                                                   queryParameters:
                                                                       {
                                                                     'userRef':
@@ -927,7 +932,8 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                                         () async {
                                                                       context
                                                                           .pushNamed(
-                                                                        'PostPage',
+                                                                        PostPageWidget
+                                                                            .routeName,
                                                                         queryParameters:
                                                                             {
                                                                           'postRef':
@@ -1050,7 +1056,8 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                                     () async {
                                                                   context
                                                                       .pushNamed(
-                                                                    'PostMessagePage',
+                                                                    PostMessagePageWidget
+                                                                        .routeName,
                                                                     queryParameters:
                                                                         {
                                                                       'startedCommRef':
@@ -1172,7 +1179,8 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                                     () async {
                                                                   context
                                                                       .pushNamed(
-                                                                    'EventMessagePage',
+                                                                    EventMessagePageWidget
+                                                                        .routeName,
                                                                     queryParameters:
                                                                         {
                                                                       'startedCommRef':
@@ -1373,7 +1381,7 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                                               highlightColor: Colors.transparent,
                                                                               onTap: () async {
                                                                                 context.pushNamed(
-                                                                                  'BossEMemberEntryPage',
+                                                                                  BossEMemberEntryPageWidget.routeName,
                                                                                   queryParameters: {
                                                                                     'notifRef': serializeParam(
                                                                                       columnNotifsMyNotificationsRecord.reference,
@@ -1619,7 +1627,8 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                                     .transparent,
                                                             onTap: () async {
                                                               context.pushNamed(
-                                                                'BossNotifEEventPageIUDAdmin',
+                                                                BossNotifEEventPageIUDAdminWidget
+                                                                    .routeName,
                                                                 queryParameters:
                                                                     {
                                                                   'notifRef':
@@ -1871,7 +1880,7 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                                           onTap:
                                                                               () async {
                                                                             context.pushNamed(
-                                                                              'PlayerNotifEEventStartPage',
+                                                                              PlayerNotifEEventStartPageWidget.routeName,
                                                                               queryParameters: {
                                                                                 'notifRef': serializeParam(
                                                                                   columnNotifsMyNotificationsRecord.reference,
@@ -1918,7 +1927,7 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                                           onTap:
                                                                               () async {
                                                                             context.pushNamed(
-                                                                              'BossNotifEEventEndPage',
+                                                                              BossNotifEEventEndPageWidget.routeName,
                                                                               queryParameters: {
                                                                                 'notifRef': serializeParam(
                                                                                   columnNotifsMyNotificationsRecord.reference,
@@ -1964,7 +1973,7 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                                           onTap:
                                                                               () async {
                                                                             context.pushNamed(
-                                                                              'RatingPlayersPage',
+                                                                              RatingPlayersPageWidget.routeName,
                                                                               queryParameters: {
                                                                                 'eventRef': serializeParam(
                                                                                   columnEEventEventsRecord.reference,
@@ -2387,7 +2396,8 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                                       () async {
                                                                     context
                                                                         .pushNamed(
-                                                                      'TeamPage',
+                                                                      TeamPageWidget
+                                                                          .routeName,
                                                                       queryParameters:
                                                                           {
                                                                         'teamRef':
@@ -2557,7 +2567,7 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                                             onTap:
                                                                                 () async {
                                                                               context.pushNamed(
-                                                                                'PostPage',
+                                                                                PostPageWidget.routeName,
                                                                                 queryParameters: {
                                                                                   'postRef': serializeParam(
                                                                                     columnPostPostsRecord.reference,
@@ -2746,7 +2756,8 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                                           () async {
                                                                         context
                                                                             .pushNamed(
-                                                                          'PostMessagePage',
+                                                                          PostMessagePageWidget
+                                                                              .routeName,
                                                                           queryParameters:
                                                                               {
                                                                             'startedCommRef':
@@ -2947,7 +2958,8 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                                           () async {
                                                                         context
                                                                             .pushNamed(
-                                                                          'EventMessagePage',
+                                                                          EventMessagePageWidget
+                                                                              .routeName,
                                                                           queryParameters:
                                                                               {
                                                                             'startedCommRef':

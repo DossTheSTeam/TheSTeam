@@ -10,6 +10,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/team_fold/audio_fan_conference/audio_fan_conference_widget.dart';
 import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'add_event_page_model.dart';
@@ -17,6 +18,9 @@ export 'add_event_page_model.dart';
 
 class AddEventPageWidget extends StatefulWidget {
   const AddEventPageWidget({super.key});
+
+  static String routeName = 'AddEventPage';
+  static String routePath = '/addEventPage';
 
   @override
   State<AddEventPageWidget> createState() => _AddEventPageWidgetState();
@@ -79,7 +83,7 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                 highlightColor: Colors.transparent,
                                 onTap: () async {
                                   context.pushNamed(
-                                    'MenuPage',
+                                    MenuPageWidget.routeName,
                                     extra: <String, dynamic>{
                                       kTransitionInfoKey: TransitionInfo(
                                         hasTransition: true,
@@ -165,7 +169,7 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                     Colors.transparent,
                                                 onTap: () async {
                                                   context.pushNamed(
-                                                    'TeamPage',
+                                                    TeamPageWidget.routeName,
                                                     queryParameters: {
                                                       'teamRef': serializeParam(
                                                         currentUserDocument
@@ -1476,7 +1480,8 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                     ));
 
                                                     context.pushNamed(
-                                                      'AddBetPage',
+                                                      AddBetPageWidget
+                                                          .routeName,
                                                       queryParameters: {
                                                         'eventRef':
                                                             serializeParam(
@@ -4014,7 +4019,8 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
 
                                                                   context
                                                                       .pushNamed(
-                                                                    'AddBetPage',
+                                                                    AddBetPageWidget
+                                                                        .routeName,
                                                                     queryParameters:
                                                                         {
                                                                       'eventRef':
@@ -4315,7 +4321,8 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
 
                                                                   context
                                                                       .pushNamed(
-                                                                    'AddBetPage',
+                                                                    AddBetPageWidget
+                                                                        .routeName,
                                                                     queryParameters:
                                                                         {
                                                                       'eventRef':
@@ -4616,7 +4623,8 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
 
                                                                   context
                                                                       .pushNamed(
-                                                                    'AddBetPage',
+                                                                    AddBetPageWidget
+                                                                        .routeName,
                                                                     queryParameters:
                                                                         {
                                                                       'eventRef':
@@ -4917,7 +4925,8 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
 
                                                                   context
                                                                       .pushNamed(
-                                                                    'AddBetPage',
+                                                                    AddBetPageWidget
+                                                                        .routeName,
                                                                     queryParameters:
                                                                         {
                                                                       'eventRef':
@@ -5218,7 +5227,8 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
 
                                                                   context
                                                                       .pushNamed(
-                                                                    'AddBetPage',
+                                                                    AddBetPageWidget
+                                                                        .routeName,
                                                                     queryParameters:
                                                                         {
                                                                       'eventRef':

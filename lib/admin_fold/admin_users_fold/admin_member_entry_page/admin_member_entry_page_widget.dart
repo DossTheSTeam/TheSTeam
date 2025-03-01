@@ -9,6 +9,7 @@ import '/flutter_flow/form_field_controller.dart';
 import '/team_fold/audio_fan_conference/audio_fan_conference_widget.dart';
 import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'admin_member_entry_page_model.dart';
@@ -21,6 +22,9 @@ class AdminMemberEntryPageWidget extends StatefulWidget {
   });
 
   final DocumentReference? notifRef;
+
+  static String routeName = 'AdminMemberEntryPage';
+  static String routePath = '/adminMemberEntryPage';
 
   @override
   State<AdminMemberEntryPageWidget> createState() =>
@@ -106,7 +110,7 @@ class _AdminMemberEntryPageWidgetState
                                     highlightColor: Colors.transparent,
                                     onTap: () async {
                                       context.pushNamed(
-                                        'MenuPage',
+                                        MenuPageWidget.routeName,
                                         extra: <String, dynamic>{
                                           kTransitionInfoKey: TransitionInfo(
                                             hasTransition: true,
@@ -200,7 +204,8 @@ class _AdminMemberEntryPageWidgetState
                                                         Colors.transparent,
                                                     onTap: () async {
                                                       context.pushNamed(
-                                                        'TeamPage',
+                                                        TeamPageWidget
+                                                            .routeName,
                                                         queryParameters: {
                                                           'teamRef':
                                                               serializeParam(
@@ -559,7 +564,8 @@ class _AdminMemberEntryPageWidgetState
                                             highlightColor: Colors.transparent,
                                             onTap: () async {
                                               context.pushNamed(
-                                                'PublicProfilPage',
+                                                PublicProfilPageWidget
+                                                    .routeName,
                                                 queryParameters: {
                                                   'userRef': serializeParam(
                                                     columnUsersRecord.reference,
@@ -883,7 +889,7 @@ class _AdminMemberEntryPageWidgetState
                                           highlightColor: Colors.transparent,
                                           onTap: () async {
                                             context.pushNamed(
-                                              'TeamPage',
+                                              TeamPageWidget.routeName,
                                               queryParameters: {
                                                 'teamRef': serializeParam(
                                                   columnTeamsRecord.reference,

@@ -7,6 +7,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/team_fold/audio_fan_conference/audio_fan_conference_widget.dart';
 import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'cart_page_add2_bet_model.dart';
@@ -21,6 +22,9 @@ class CartPageAdd2BetWidget extends StatefulWidget {
 
   final DocumentReference? cartRef;
   final DocumentReference? myBetRef;
+
+  static String routeName = 'CartPageAdd2Bet';
+  static String routePath = '/cartPageAdd2Bet';
 
   @override
   State<CartPageAdd2BetWidget> createState() => _CartPageAdd2BetWidgetState();
@@ -221,7 +225,8 @@ class _CartPageAdd2BetWidgetState extends State<CartPageAdd2BetWidget> {
                                                                     .transparent,
                                                             onTap: () async {
                                                               context.pushNamed(
-                                                                'TeamPage',
+                                                                TeamPageWidget
+                                                                    .routeName,
                                                                 queryParameters:
                                                                     {
                                                                   'teamRef':
@@ -1477,7 +1482,7 @@ class _CartPageAdd2BetWidgetState extends State<CartPageAdd2BetWidget> {
                                                 });
 
                                                 context.goNamed(
-                                                  'MyProfilPage',
+                                                  MyProfilPageWidget.routeName,
                                                   extra: <String, dynamic>{
                                                     kTransitionInfoKey:
                                                         TransitionInfo(
@@ -1596,7 +1601,7 @@ class _CartPageAdd2BetWidgetState extends State<CartPageAdd2BetWidget> {
                                             });
 
                                             context.goNamed(
-                                              'ListEventsAdd3Bet',
+                                              ListEventsAdd3BetWidget.routeName,
                                               queryParameters: {
                                                 'myBetRef': serializeParam(
                                                   widget.myBetRef,

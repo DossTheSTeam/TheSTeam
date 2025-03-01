@@ -9,6 +9,7 @@ import '/flutter_flow/form_field_controller.dart';
 import '/team_fold/audio_fan_conference/audio_fan_conference_widget.dart';
 import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'list_events_add2_bet_model.dart';
@@ -21,6 +22,9 @@ class ListEventsAdd2BetWidget extends StatefulWidget {
   });
 
   final DocumentReference? myBetRef;
+
+  static String routeName = 'ListEventsAdd2Bet';
+  static String routePath = '/listEventsAdd2Bet';
 
   @override
   State<ListEventsAdd2BetWidget> createState() =>
@@ -148,7 +152,7 @@ class _ListEventsAdd2BetWidgetState extends State<ListEventsAdd2BetWidget> {
                                                     Colors.transparent,
                                                 onTap: () async {
                                                   context.pushNamed(
-                                                    'TeamPage',
+                                                    TeamPageWidget.routeName,
                                                     queryParameters: {
                                                       'teamRef': serializeParam(
                                                         currentUserDocument
@@ -1082,7 +1086,8 @@ class _ListEventsAdd2BetWidgetState extends State<ListEventsAdd2BetWidget> {
                                                         Colors.transparent,
                                                     onTap: () async {
                                                       context.pushNamed(
-                                                        'EventPageAdd2Bet',
+                                                        EventPageAdd2BetWidget
+                                                            .routeName,
                                                         queryParameters: {
                                                           'eventRef':
                                                               serializeParam(

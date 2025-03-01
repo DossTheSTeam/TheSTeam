@@ -8,6 +8,7 @@ import '/team_fold/audio_fan_conference/audio_fan_conference_widget.dart';
 import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'my_bet_page_model.dart';
@@ -20,6 +21,9 @@ class MyBetPageWidget extends StatefulWidget {
   });
 
   final DocumentReference? myBetRef;
+
+  static String routeName = 'MyBetPage';
+  static String routePath = '/myBetPage';
 
   @override
   State<MyBetPageWidget> createState() => _MyBetPageWidgetState();
@@ -114,7 +118,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                     Colors.transparent,
                                                 onTap: () async {
                                                   context.pushNamed(
-                                                    'MenuPage',
+                                                    MenuPageWidget.routeName,
                                                     extra: <String, dynamic>{
                                                       kTransitionInfoKey:
                                                           TransitionInfo(
@@ -236,7 +240,8 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                             Colors.transparent,
                                                         onTap: () async {
                                                           context.pushNamed(
-                                                            'TeamPage',
+                                                            TeamPageWidget
+                                                                .routeName,
                                                             queryParameters: {
                                                               'teamRef':
                                                                   serializeParam(
@@ -599,7 +604,8 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                             Colors.transparent,
                                                         onTap: () async {
                                                           context.pushNamed(
-                                                            'MyNotifsList',
+                                                            MyNotifsListWidget
+                                                                .routeName,
                                                             extra: <String,
                                                                 dynamic>{
                                                               kTransitionInfoKey:
@@ -1074,7 +1080,8 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                                     () async {
                                                                   context
                                                                       .pushNamed(
-                                                                    'EventPage',
+                                                                    EventPageWidget
+                                                                        .routeName,
                                                                     queryParameters:
                                                                         {
                                                                       'eventRef':
@@ -1786,7 +1793,8 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                                     () async {
                                                                   context
                                                                       .pushNamed(
-                                                                    'EventPage',
+                                                                    EventPageWidget
+                                                                        .routeName,
                                                                     queryParameters:
                                                                         {
                                                                       'eventRef':
@@ -2335,7 +2343,8 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                                       () async {
                                                                     context
                                                                         .pushNamed(
-                                                                      'EventPage',
+                                                                      EventPageWidget
+                                                                          .routeName,
                                                                       queryParameters:
                                                                           {
                                                                         'eventRef':
@@ -3298,7 +3307,8 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                             child: FFButtonWidget(
                                               onPressed: () async {
                                                 context.pushNamed(
-                                                  'ListEventsAdd2Bet',
+                                                  ListEventsAdd2BetWidget
+                                                      .routeName,
                                                   queryParameters: {
                                                     'myBetRef': serializeParam(
                                                       widget.myBetRef,
@@ -3357,7 +3367,8 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                             child: FFButtonWidget(
                                               onPressed: () async {
                                                 context.pushNamed(
-                                                  'ListEventsAdd3Bet',
+                                                  ListEventsAdd3BetWidget
+                                                      .routeName,
                                                   queryParameters: {
                                                     'myBetRef': serializeParam(
                                                       widget.myBetRef,

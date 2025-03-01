@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/team_fold/audio_fan_conference/audio_fan_conference_widget.dart';
 import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'my_profil_stats_model.dart';
@@ -13,6 +14,9 @@ export 'my_profil_stats_model.dart';
 
 class MyProfilStatsWidget extends StatefulWidget {
   const MyProfilStatsWidget({super.key});
+
+  static String routeName = 'MyProfilStats';
+  static String routePath = '/myProfilStats';
 
   @override
   State<MyProfilStatsWidget> createState() => _MyProfilStatsWidgetState();
@@ -78,7 +82,7 @@ class _MyProfilStatsWidgetState extends State<MyProfilStatsWidget>
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
                                         context.pushNamed(
-                                          'MenuPage',
+                                          MenuPageWidget.routeName,
                                           extra: <String, dynamic>{
                                             kTransitionInfoKey: TransitionInfo(
                                               hasTransition: true,
@@ -176,7 +180,7 @@ class _MyProfilStatsWidgetState extends State<MyProfilStatsWidget>
                                                     Colors.transparent,
                                                 onTap: () async {
                                                   context.pushNamed(
-                                                    'TeamPage',
+                                                    TeamPageWidget.routeName,
                                                     queryParameters: {
                                                       'teamRef': serializeParam(
                                                         currentUserDocument
@@ -523,7 +527,7 @@ class _MyProfilStatsWidgetState extends State<MyProfilStatsWidget>
                                           highlightColor: Colors.transparent,
                                           onTap: () async {
                                             context.pushNamed(
-                                              'MyNotifsList',
+                                              MyNotifsListWidget.routeName,
                                               extra: <String, dynamic>{
                                                 kTransitionInfoKey:
                                                     TransitionInfo(
@@ -609,7 +613,7 @@ class _MyProfilStatsWidgetState extends State<MyProfilStatsWidget>
                                                     Colors.transparent,
                                                 onTap: () async {
                                                   context.pushNamed(
-                                                    'MyBetsList',
+                                                    MyBetsListWidget.routeName,
                                                     extra: <String, dynamic>{
                                                       kTransitionInfoKey:
                                                           TransitionInfo(

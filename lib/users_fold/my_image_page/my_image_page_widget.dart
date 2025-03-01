@@ -4,12 +4,16 @@ import '/backend/firebase_storage/storage.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/upload_data.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'my_image_page_model.dart';
 export 'my_image_page_model.dart';
 
 class MyImagePageWidget extends StatefulWidget {
   const MyImagePageWidget({super.key});
+
+  static String routeName = 'MyImagePage';
+  static String routePath = '/myImagePage';
 
   @override
   State<MyImagePageWidget> createState() => _MyImagePageWidgetState();
@@ -557,7 +561,8 @@ class _MyImagePageWidgetState extends State<MyImagePageWidget> {
                                                             ));
 
                                                             context.pushNamed(
-                                                              'MyProfilPage',
+                                                              MyProfilPageWidget
+                                                                  .routeName,
                                                               extra: <String,
                                                                   dynamic>{
                                                                 kTransitionInfoKey:
@@ -639,7 +644,8 @@ class _MyImagePageWidgetState extends State<MyImagePageWidget> {
                                                             ));
 
                                                             context.pushNamed(
-                                                              'MyProfilPage',
+                                                              MyProfilPageWidget
+                                                                  .routeName,
                                                               extra: <String,
                                                                   dynamic>{
                                                                 kTransitionInfoKey:

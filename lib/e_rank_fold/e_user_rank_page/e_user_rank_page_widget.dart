@@ -8,6 +8,7 @@ import '/flutter_flow/form_field_controller.dart';
 import '/team_fold/audio_fan_conference/audio_fan_conference_widget.dart';
 import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'e_user_rank_page_model.dart';
@@ -15,6 +16,9 @@ export 'e_user_rank_page_model.dart';
 
 class EUserRankPageWidget extends StatefulWidget {
   const EUserRankPageWidget({super.key});
+
+  static String routeName = 'EUserRankPage';
+  static String routePath = '/eUserRankPage';
 
   @override
   State<EUserRankPageWidget> createState() => _EUserRankPageWidgetState();
@@ -82,7 +86,7 @@ class _EUserRankPageWidgetState extends State<EUserRankPageWidget> {
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
                                         context.pushNamed(
-                                          'MenuPage',
+                                          MenuPageWidget.routeName,
                                           extra: <String, dynamic>{
                                             kTransitionInfoKey: TransitionInfo(
                                               hasTransition: true,
@@ -180,7 +184,8 @@ class _EUserRankPageWidgetState extends State<EUserRankPageWidget> {
                                                         Colors.transparent,
                                                     onTap: () async {
                                                       context.pushNamed(
-                                                        'TeamPage',
+                                                        TeamPageWidget
+                                                            .routeName,
                                                         queryParameters: {
                                                           'teamRef':
                                                               serializeParam(
@@ -477,7 +482,8 @@ class _EUserRankPageWidgetState extends State<EUserRankPageWidget> {
                                         highlightColor: Colors.transparent,
                                         onTap: () async {
                                           context.pushNamed(
-                                            'MyBestsEUserRankPage',
+                                            MyBestsEUserRankPageWidget
+                                                .routeName,
                                             extra: <String, dynamic>{
                                               kTransitionInfoKey:
                                                   TransitionInfo(
@@ -652,7 +658,7 @@ class _EUserRankPageWidgetState extends State<EUserRankPageWidget> {
                                                   Colors.transparent,
                                               onTap: () async {
                                                 context.pushNamed(
-                                                  'MyNotifsList',
+                                                  MyNotifsListWidget.routeName,
                                                   extra: <String, dynamic>{
                                                     kTransitionInfoKey:
                                                         TransitionInfo(
@@ -1348,7 +1354,8 @@ class _EUserRankPageWidgetState extends State<EUserRankPageWidget> {
                                                               onTap: () async {
                                                                 context
                                                                     .pushNamed(
-                                                                  'PublicProfilPage',
+                                                                  PublicProfilPageWidget
+                                                                      .routeName,
                                                                   queryParameters:
                                                                       {
                                                                     'userRef':
@@ -1430,9 +1437,14 @@ class _EUserRankPageWidgetState extends State<EUserRankPageWidget> {
                                                                   .override(
                                                                     fontFamily:
                                                                         'Poppins',
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primaryText,
+                                                                    color: valueOrDefault<
+                                                                        Color>(
+                                                                      columnUsersEarningsScrollUsersRecord
+                                                                          .color1,
+                                                                      FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primaryText,
+                                                                    ),
                                                                     letterSpacing:
                                                                         0.0,
                                                                   ),
@@ -1503,6 +1515,15 @@ class _EUserRankPageWidgetState extends State<EUserRankPageWidget> {
                                                                 .override(
                                                                   fontFamily:
                                                                       'Poppins',
+                                                                  color:
+                                                                      valueOrDefault<
+                                                                          Color>(
+                                                                    columnUsersEarningsScrollUsersRecord
+                                                                        .color1,
+                                                                    FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primaryText,
+                                                                  ),
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),
@@ -1543,6 +1564,15 @@ class _EUserRankPageWidgetState extends State<EUserRankPageWidget> {
                                                                 .override(
                                                                   fontFamily:
                                                                       'Poppins',
+                                                                  color:
+                                                                      valueOrDefault<
+                                                                          Color>(
+                                                                    columnUsersEarningsScrollUsersRecord
+                                                                        .color1,
+                                                                    FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primaryText,
+                                                                  ),
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),
@@ -1581,6 +1611,15 @@ class _EUserRankPageWidgetState extends State<EUserRankPageWidget> {
                                                                 .override(
                                                                   fontFamily:
                                                                       'Poppins',
+                                                                  color:
+                                                                      valueOrDefault<
+                                                                          Color>(
+                                                                    columnUsersEarningsScrollUsersRecord
+                                                                        .color1,
+                                                                    FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primaryText,
+                                                                  ),
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),
@@ -1619,6 +1658,15 @@ class _EUserRankPageWidgetState extends State<EUserRankPageWidget> {
                                                                 .override(
                                                                   fontFamily:
                                                                       'Poppins',
+                                                                  color:
+                                                                      valueOrDefault<
+                                                                          Color>(
+                                                                    columnUsersEarningsScrollUsersRecord
+                                                                        .color1,
+                                                                    FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primaryText,
+                                                                  ),
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),

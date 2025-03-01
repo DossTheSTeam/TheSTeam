@@ -1,5 +1,6 @@
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'discusion_e_team_page_widget.dart' show DiscusionETeamPageWidget;
 import 'package:flutter/material.dart';
 import 'package:record/record.dart';

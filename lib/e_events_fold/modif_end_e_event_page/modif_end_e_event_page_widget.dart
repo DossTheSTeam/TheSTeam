@@ -8,6 +8,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/team_fold/audio_fan_conference/audio_fan_conference_widget.dart';
 import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'modif_end_e_event_page_model.dart';
@@ -22,6 +23,9 @@ class ModifEndEEventPageWidget extends StatefulWidget {
 
   final DocumentReference? eventRef;
   final DocumentReference? myETeamRef;
+
+  static String routeName = 'ModifEndEEventPage';
+  static String routePath = '/modifEndEEventPage';
 
   @override
   State<ModifEndEEventPageWidget> createState() =>
@@ -117,7 +121,7 @@ class _ModifEndEEventPageWidgetState extends State<ModifEndEEventPageWidget> {
                                         highlightColor: Colors.transparent,
                                         onTap: () async {
                                           context.pushNamed(
-                                            'ModifETeamPage',
+                                            ModifETeamPageWidget.routeName,
                                             queryParameters: {
                                               'teamRef': serializeParam(
                                                 widget.myETeamRef,
@@ -229,7 +233,8 @@ class _ModifEndEEventPageWidgetState extends State<ModifEndEEventPageWidget> {
                                                         Colors.transparent,
                                                     onTap: () async {
                                                       context.pushNamed(
-                                                        'TeamPage',
+                                                        TeamPageWidget
+                                                            .routeName,
                                                         queryParameters: {
                                                           'teamRef':
                                                               serializeParam(
@@ -716,7 +721,7 @@ class _ModifEndEEventPageWidgetState extends State<ModifEndEEventPageWidget> {
                                                   Colors.transparent,
                                               onTap: () async {
                                                 context.pushNamed(
-                                                  'TeamPage',
+                                                  TeamPageWidget.routeName,
                                                   queryParameters: {
                                                     'teamRef': serializeParam(
                                                       contDomTeamsRecord
@@ -823,7 +828,7 @@ class _ModifEndEEventPageWidgetState extends State<ModifEndEEventPageWidget> {
                                                   Colors.transparent,
                                               onTap: () async {
                                                 context.pushNamed(
-                                                  'TeamPage',
+                                                  TeamPageWidget.routeName,
                                                   queryParameters: {
                                                     'teamRef': serializeParam(
                                                       contExtTeamsRecord
@@ -2103,7 +2108,8 @@ class _ModifEndEEventPageWidgetState extends State<ModifEndEEventPageWidget> {
                                                       ));
 
                                                       context.pushNamed(
-                                                        'AddRatingPlayersPage',
+                                                        AddRatingPlayersPageWidget
+                                                            .routeName,
                                                         queryParameters: {
                                                           'eventRef':
                                                               serializeParam(
@@ -2232,7 +2238,8 @@ class _ModifEndEEventPageWidgetState extends State<ModifEndEEventPageWidget> {
                                                       ));
 
                                                       context.pushNamed(
-                                                        'AddRatingPlayersPage',
+                                                        AddRatingPlayersPageWidget
+                                                            .routeName,
                                                         queryParameters: {
                                                           'eventRef':
                                                               serializeParam(
@@ -2402,7 +2409,8 @@ class _ModifEndEEventPageWidgetState extends State<ModifEndEEventPageWidget> {
                                                       ));
 
                                                       context.pushNamed(
-                                                        'AddRatingPlayersPage',
+                                                        AddRatingPlayersPageWidget
+                                                            .routeName,
                                                         queryParameters: {
                                                           'eventRef':
                                                               serializeParam(
@@ -2528,7 +2536,8 @@ class _ModifEndEEventPageWidgetState extends State<ModifEndEEventPageWidget> {
                                                     ));
 
                                                     context.pushNamed(
-                                                      'AddRatingPlayersPage',
+                                                      AddRatingPlayersPageWidget
+                                                          .routeName,
                                                       queryParameters: {
                                                         'eventRef':
                                                             serializeParam(

@@ -1,5 +1,6 @@
 import '/flutter_flow/flutter_flow_calendar.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'list_events_admin_widget.dart' show ListEventsAdminWidget;
 import 'package:flutter/material.dart';
 

@@ -11,6 +11,7 @@ import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/upload_data.dart';
 import '/team_fold/audio_fan_conference/audio_fan_conference_widget.dart';
 import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'boss_notif_e_event_end_page_model.dart';
@@ -25,6 +26,9 @@ class BossNotifEEventEndPageWidget extends StatefulWidget {
 
   final DocumentReference? notifRef;
   final DocumentReference? eEventRef;
+
+  static String routeName = 'BossNotifEEventEndPage';
+  static String routePath = '/bossNotifEEventEndPage';
 
   @override
   State<BossNotifEEventEndPageWidget> createState() =>
@@ -109,7 +113,7 @@ class _BossNotifEEventEndPageWidgetState
                                     highlightColor: Colors.transparent,
                                     onTap: () async {
                                       context.pushNamed(
-                                        'MenuPage',
+                                        MenuPageWidget.routeName,
                                         extra: <String, dynamic>{
                                           kTransitionInfoKey: TransitionInfo(
                                             hasTransition: true,
@@ -210,7 +214,7 @@ class _BossNotifEEventEndPageWidgetState
                                                       Colors.transparent,
                                                   onTap: () async {
                                                     context.pushNamed(
-                                                      'TeamPage',
+                                                      TeamPageWidget.routeName,
                                                       queryParameters: {
                                                         'teamRef':
                                                             serializeParam(
@@ -601,7 +605,7 @@ class _BossNotifEEventEndPageWidgetState
                                         highlightColor: Colors.transparent,
                                         onTap: () async {
                                           context.pushNamed(
-                                            'TeamPage',
+                                            TeamPageWidget.routeName,
                                             queryParameters: {
                                               'teamRef': serializeParam(
                                                 columnTeamTeamsRecord.reference,
@@ -750,7 +754,8 @@ class _BossNotifEEventEndPageWidgetState
                                                           Colors.transparent,
                                                       onTap: () async {
                                                         context.pushNamed(
-                                                          'TeamPage',
+                                                          TeamPageWidget
+                                                              .routeName,
                                                           queryParameters: {
                                                             'teamRef':
                                                                 serializeParam(
@@ -874,7 +879,8 @@ class _BossNotifEEventEndPageWidgetState
                                                           Colors.transparent,
                                                       onTap: () async {
                                                         context.pushNamed(
-                                                          'TeamPage',
+                                                          TeamPageWidget
+                                                              .routeName,
                                                           queryParameters: {
                                                             'teamRef':
                                                                 serializeParam(
@@ -1211,7 +1217,8 @@ class _BossNotifEEventEndPageWidgetState
                                           ));
 
                                           context.goNamed(
-                                            'AddRatingPlayersPage',
+                                            AddRatingPlayersPageWidget
+                                                .routeName,
                                             queryParameters: {
                                               'eventRef': serializeParam(
                                                 widget.eEventRef,
@@ -1369,7 +1376,8 @@ class _BossNotifEEventEndPageWidgetState
                                           ));
 
                                           context.goNamed(
-                                            'AddRatingPlayersPage',
+                                            AddRatingPlayersPageWidget
+                                                .routeName,
                                             queryParameters: {
                                               'eventRef': serializeParam(
                                                 widget.eEventRef,
@@ -1526,7 +1534,8 @@ class _BossNotifEEventEndPageWidgetState
                                           ));
 
                                           context.goNamed(
-                                            'AddRatingPlayersPage',
+                                            AddRatingPlayersPageWidget
+                                                .routeName,
                                             queryParameters: {
                                               'eventRef': serializeParam(
                                                 widget.eEventRef,
@@ -1921,7 +1930,8 @@ class _BossNotifEEventEndPageWidgetState
                                           await widget.notifRef!.delete();
 
                                           context.goNamed(
-                                            'AddRatingPlayersPage',
+                                            AddRatingPlayersPageWidget
+                                                .routeName,
                                             queryParameters: {
                                               'eventRef': serializeParam(
                                                 widget.eEventRef,

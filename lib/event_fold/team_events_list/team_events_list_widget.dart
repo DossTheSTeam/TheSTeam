@@ -2,6 +2,7 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'team_events_list_model.dart';
 export 'team_events_list_model.dart';
@@ -13,6 +14,9 @@ class TeamEventsListWidget extends StatefulWidget {
   });
 
   final DocumentReference? teamRef;
+
+  static String routeName = 'TeamEventsList';
+  static String routePath = '/teamEventsList';
 
   @override
   State<TeamEventsListWidget> createState() => _TeamEventsListWidgetState();
@@ -95,7 +99,7 @@ class _TeamEventsListWidgetState extends State<TeamEventsListWidget> {
                                     highlightColor: Colors.transparent,
                                     onTap: () async {
                                       context.pushNamed(
-                                        'MenuPage',
+                                        MenuPageWidget.routeName,
                                         extra: <String, dynamic>{
                                           kTransitionInfoKey: TransitionInfo(
                                             hasTransition: true,
@@ -227,7 +231,7 @@ class _TeamEventsListWidgetState extends State<TeamEventsListWidget> {
                                             highlightColor: Colors.transparent,
                                             onTap: () async {
                                               context.pushNamed(
-                                                'ListPostsTeam',
+                                                ListPostsTeamWidget.routeName,
                                                 queryParameters: {
                                                   'teamRef': serializeParam(
                                                     widget.teamRef,
@@ -652,7 +656,8 @@ class _TeamEventsListWidgetState extends State<TeamEventsListWidget> {
                                                                           () async {
                                                                         context
                                                                             .pushNamed(
-                                                                          'TeamPage',
+                                                                          TeamPageWidget
+                                                                              .routeName,
                                                                           queryParameters:
                                                                               {
                                                                             'teamRef':
@@ -715,7 +720,8 @@ class _TeamEventsListWidgetState extends State<TeamEventsListWidget> {
                                                                     () async {
                                                                   context
                                                                       .pushNamed(
-                                                                    'EventPage',
+                                                                    EventPageWidget
+                                                                        .routeName,
                                                                     queryParameters:
                                                                         {
                                                                       'eventRef':
@@ -862,7 +868,8 @@ class _TeamEventsListWidgetState extends State<TeamEventsListWidget> {
                                                                           () async {
                                                                         context
                                                                             .pushNamed(
-                                                                          'TeamPage',
+                                                                          TeamPageWidget
+                                                                              .routeName,
                                                                           queryParameters:
                                                                               {
                                                                             'teamRef':

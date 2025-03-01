@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/team_fold/audio_fan_conference/audio_fan_conference_widget.dart';
 import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -13,6 +14,9 @@ export 'the_s_team_page_model.dart';
 
 class TheSTeamPageWidget extends StatefulWidget {
   const TheSTeamPageWidget({super.key});
+
+  static String routeName = 'TheSTeamPage';
+  static String routePath = '/theSTeamPage';
 
   @override
   State<TheSTeamPageWidget> createState() => _TheSTeamPageWidgetState();
@@ -72,7 +76,7 @@ class _TheSTeamPageWidgetState extends State<TheSTeamPageWidget> {
                                 highlightColor: Colors.transparent,
                                 onTap: () async {
                                   context.pushNamed(
-                                    'MenuPage',
+                                    MenuPageWidget.routeName,
                                     extra: <String, dynamic>{
                                       kTransitionInfoKey: TransitionInfo(
                                         hasTransition: true,
@@ -139,7 +143,7 @@ class _TheSTeamPageWidgetState extends State<TheSTeamPageWidget> {
                                                     Colors.transparent,
                                                 onTap: () async {
                                                   context.pushNamed(
-                                                    'TeamPage',
+                                                    TeamPageWidget.routeName,
                                                     queryParameters: {
                                                       'teamRef': serializeParam(
                                                         currentUserDocument
@@ -464,7 +468,8 @@ class _TheSTeamPageWidgetState extends State<TheSTeamPageWidget> {
                                 hoverColor: Colors.transparent,
                                 highlightColor: Colors.transparent,
                                 onTap: () async {
-                                  context.pushNamed('ShoppingPage');
+                                  context
+                                      .pushNamed(ShoppingPageWidget.routeName);
                                 },
                                 child: Container(
                                   width: 50.0,
@@ -572,7 +577,7 @@ class _TheSTeamPageWidgetState extends State<TheSTeamPageWidget> {
                                         highlightColor: Colors.transparent,
                                         onTap: () async {
                                           context.pushNamed(
-                                            'ListSurveys',
+                                            ListSurveysWidget.routeName,
                                             queryParameters: {
                                               'teamRef': serializeParam(
                                                 columnTeamsRecord?.reference,
@@ -622,7 +627,7 @@ class _TheSTeamPageWidgetState extends State<TheSTeamPageWidget> {
                                         highlightColor: Colors.transparent,
                                         onTap: () async {
                                           context.pushNamed(
-                                            'ListAdvices',
+                                            ListAdvicesWidget.routeName,
                                             queryParameters: {
                                               'teamRef': serializeParam(
                                                 columnTeamsRecord?.reference,
@@ -674,7 +679,8 @@ class _TheSTeamPageWidgetState extends State<TheSTeamPageWidget> {
                                 hoverColor: Colors.transparent,
                                 highlightColor: Colors.transparent,
                                 onTap: () async {
-                                  context.pushNamed('InfosRankPage');
+                                  context
+                                      .pushNamed(InfosRankPageWidget.routeName);
                                 },
                                 child: Icon(
                                   Icons.bar_chart,
@@ -719,7 +725,8 @@ class _TheSTeamPageWidgetState extends State<TheSTeamPageWidget> {
                                     hoverColor: Colors.transparent,
                                     highlightColor: Colors.transparent,
                                     onTap: () async {
-                                      context.pushNamed('ModeratorPage');
+                                      context.pushNamed(
+                                          ModeratorPageWidget.routeName);
                                     },
                                     child: Icon(
                                       Icons.local_police_outlined,
@@ -769,7 +776,8 @@ class _TheSTeamPageWidgetState extends State<TheSTeamPageWidget> {
                                         hoverColor: Colors.transparent,
                                         highlightColor: Colors.transparent,
                                         onTap: () async {
-                                          context.pushNamed('ModeratorPage');
+                                          context.pushNamed(
+                                              ModeratorPageWidget.routeName);
                                         },
                                         child: Icon(
                                           Icons.local_police_outlined,
@@ -811,7 +819,8 @@ class _TheSTeamPageWidgetState extends State<TheSTeamPageWidget> {
                                         hoverColor: Colors.transparent,
                                         highlightColor: Colors.transparent,
                                         onTap: () async {
-                                          context.pushNamed('AdminPage');
+                                          context.pushNamed(
+                                              AdminPageWidget.routeName);
                                         },
                                         child: Icon(
                                           Icons.admin_panel_settings_rounded,
@@ -855,7 +864,8 @@ class _TheSTeamPageWidgetState extends State<TheSTeamPageWidget> {
                                 hoverColor: Colors.transparent,
                                 highlightColor: Colors.transparent,
                                 onTap: () async {
-                                  context.pushNamed('ConfidentialityPage');
+                                  context.pushNamed(
+                                      ConfidentialityPageWidget.routeName);
                                 },
                                 child: Icon(
                                   Icons.list_alt_rounded,
@@ -896,7 +906,8 @@ class _TheSTeamPageWidgetState extends State<TheSTeamPageWidget> {
                                 hoverColor: Colors.transparent,
                                 highlightColor: Colors.transparent,
                                 onTap: () async {
-                                  context.pushNamed('GeneralsCondidtionsPage');
+                                  context.pushNamed(
+                                      GeneralsCondidtionsPageWidget.routeName);
                                 },
                                 child: Icon(
                                   Icons.list_alt_rounded,

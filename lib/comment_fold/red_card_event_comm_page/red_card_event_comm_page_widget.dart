@@ -9,6 +9,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/team_fold/audio_fan_conference/audio_fan_conference_widget.dart';
 import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'red_card_event_comm_page_model.dart';
@@ -21,6 +22,9 @@ class RedCardEventCommPageWidget extends StatefulWidget {
   });
 
   final DocumentReference? commRef;
+
+  static String routeName = 'RedCardEventCommPage';
+  static String routePath = '/redCardEventCommPage';
 
   @override
   State<RedCardEventCommPageWidget> createState() =>
@@ -108,7 +112,7 @@ class _RedCardEventCommPageWidgetState
                                     highlightColor: Colors.transparent,
                                     onTap: () async {
                                       context.pushNamed(
-                                        'MenuPage',
+                                        MenuPageWidget.routeName,
                                         extra: <String, dynamic>{
                                           kTransitionInfoKey: TransitionInfo(
                                             hasTransition: true,
@@ -202,7 +206,8 @@ class _RedCardEventCommPageWidgetState
                                                         Colors.transparent,
                                                     onTap: () async {
                                                       context.pushNamed(
-                                                        'TeamPage',
+                                                        TeamPageWidget
+                                                            .routeName,
                                                         queryParameters: {
                                                           'teamRef':
                                                               serializeParam(

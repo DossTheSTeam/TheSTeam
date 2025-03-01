@@ -15,6 +15,7 @@ import 'package:cross_file/cross_file.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:record/record.dart';
 import 'uploaded_file.dart';
+import 'platform_utils/platform_util.dart';
 
 import '../main.dart';
 
@@ -379,7 +380,14 @@ Future<void> startAudioRecording(
     final AudioEncoder encoder;
     if (kIsWeb) {
       path = '';
-      encoder = AudioEncoder.wav;
+      final userAgent = getUserAgent();
+      // Safari browsers don't support opus encoding, so we fall back to wav.
+      // All other browsers use opus for smaller file sizes.
+      if (userAgent.contains('safari') && !userAgent.contains('chrome')) {
+        encoder = AudioEncoder.wav;
+      } else {
+        encoder = AudioEncoder.opus;
+      }
     } else {
       final dir = await getApplicationDocumentsDirectory();
       path = '${dir.path}/audio_${DateTime.now().millisecondsSinceEpoch}.m4a';
@@ -445,17 +453,8 @@ void fixStatusBarOniOS16AndBelow(BuildContext context) {
   }
 }
 
-extension ListUniqueExt<T> on Iterable<T> {
-  List<T> unique(dynamic Function(T) getKey) {
-    var distinctSet = <dynamic>{};
-    var distinctList = <T>[];
-    for (var item in this) {
-      if (distinctSet.add(getKey(item))) {
-        distinctList.add(item);
-      }
-    }
-    return distinctList;
-  }
+extension ColorOpacityExt on Color {
+  Color applyAlpha(double val) => withValues(alpha: val);
 }
 
 String roundTo(double value, int decimalPoints) {
@@ -495,5 +494,20 @@ double computeGradientAlignmentY(double evaluatedAngle) {
   return double.parse(roundTo(y, 2));
 }
 
+extension ListUniqueExt<T> on Iterable<T> {
+  List<T> unique(dynamic Function(T) getKey) {
+    var distinctSet = <dynamic>{};
+    var distinctList = <T>[];
+    for (var item in this) {
+      if (distinctSet.add(getKey(item))) {
+        distinctList.add(item);
+      }
+    }
+    return distinctList;
+  }
+}
+
 String getCurrentRoute(BuildContext context) =>
     context.mounted ? MyApp.of(context).getRoute() : '';
+List<String> getCurrentRouteStack(BuildContext context) =>
+    context.mounted ? MyApp.of(context).getRouteStack() : [];

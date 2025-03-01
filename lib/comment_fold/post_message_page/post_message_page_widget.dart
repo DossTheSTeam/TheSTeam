@@ -10,6 +10,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/upload_data.dart';
 import '/team_fold/audio_fan_conference/audio_fan_conference_widget.dart';
 import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:record/record.dart';
@@ -23,6 +24,9 @@ class PostMessagePageWidget extends StatefulWidget {
   });
 
   final DocumentReference? startedCommRef;
+
+  static String routeName = 'PostMessagePage';
+  static String routePath = '/postMessagePage';
 
   @override
   State<PostMessagePageWidget> createState() => _PostMessagePageWidgetState();
@@ -140,7 +144,7 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
                                                   Colors.transparent,
                                               onTap: () async {
                                                 context.pushNamed(
-                                                  'MenuPage',
+                                                  MenuPageWidget.routeName,
                                                   extra: <String, dynamic>{
                                                     kTransitionInfoKey:
                                                         TransitionInfo(
@@ -259,7 +263,8 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
                                                               onTap: () async {
                                                                 context
                                                                     .pushNamed(
-                                                                  'TeamPage',
+                                                                  TeamPageWidget
+                                                                      .routeName,
                                                                   queryParameters:
                                                                       {
                                                                     'teamRef':
@@ -564,7 +569,8 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
                                                             Colors.transparent,
                                                         onTap: () async {
                                                           context.pushNamed(
-                                                            'PublicProfilPage',
+                                                            PublicProfilPageWidget
+                                                                .routeName,
                                                             queryParameters: {
                                                               'userRef':
                                                                   serializeParam(
@@ -732,7 +738,7 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
                                                   Colors.transparent,
                                               onTap: () async {
                                                 context.pushNamed(
-                                                  'FullImagePage',
+                                                  FullImagePageWidget.routeName,
                                                   queryParameters: {
                                                     'imageRef': serializeParam(
                                                       postMessagePagePostMessagesRecord
@@ -912,7 +918,8 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
                                                           Colors.transparent,
                                                       onTap: () async {
                                                         context.pushNamed(
-                                                          'ListCommsPostComPage',
+                                                          ListCommsPostComPageWidget
+                                                              .routeName,
                                                           queryParameters: {
                                                             'startedCommRef':
                                                                 serializeParam(
@@ -1363,7 +1370,8 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
                                                             Colors.transparent,
                                                         onTap: () async {
                                                           context.pushNamed(
-                                                            'RedCardPostCommPage',
+                                                            RedCardPostCommPageWidget
+                                                                .routeName,
                                                             queryParameters: {
                                                               'commRef':
                                                                   serializeParam(
@@ -1961,7 +1969,8 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
                                                     });
 
                                                     context.pushNamed(
-                                                      'ListCommsPostComPage',
+                                                      ListCommsPostComPageWidget
+                                                          .routeName,
                                                       queryParameters: {
                                                         'startedCommRef':
                                                             serializeParam(
@@ -2529,7 +2538,8 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
                                                     });
 
                                                     context.pushNamed(
-                                                      'ListCommsPostComPage',
+                                                      ListCommsPostComPageWidget
+                                                          .routeName,
                                                       queryParameters: {
                                                         'startedCommRef':
                                                             serializeParam(

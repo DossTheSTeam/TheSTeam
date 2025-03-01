@@ -7,6 +7,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/team_fold/audio_fan_conference/audio_fan_conference_widget.dart';
 import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'team_list_cup_model.dart';
@@ -14,6 +15,9 @@ export 'team_list_cup_model.dart';
 
 class TeamListCupWidget extends StatefulWidget {
   const TeamListCupWidget({super.key});
+
+  static String routeName = 'TeamListCup';
+  static String routePath = '/teamListCup';
 
   @override
   State<TeamListCupWidget> createState() => _TeamListCupWidgetState();
@@ -75,7 +79,7 @@ class _TeamListCupWidgetState extends State<TeamListCupWidget> {
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
                                     context.pushNamed(
-                                      'MenuPage',
+                                      MenuPageWidget.routeName,
                                       extra: <String, dynamic>{
                                         kTransitionInfoKey: TransitionInfo(
                                           hasTransition: true,
@@ -169,7 +173,7 @@ class _TeamListCupWidgetState extends State<TeamListCupWidget> {
                                                     Colors.transparent,
                                                 onTap: () async {
                                                   context.pushNamed(
-                                                    'TeamPage',
+                                                    TeamPageWidget.routeName,
                                                     queryParameters: {
                                                       'teamRef': serializeParam(
                                                         currentUserDocument
@@ -464,7 +468,7 @@ class _TeamListCupWidgetState extends State<TeamListCupWidget> {
                               highlightColor: Colors.transparent,
                               onTap: () async {
                                 context.pushNamed(
-                                  'MyTeamList',
+                                  MyTeamListWidget.routeName,
                                   extra: <String, dynamic>{
                                     kTransitionInfoKey: TransitionInfo(
                                       hasTransition: true,
@@ -689,7 +693,8 @@ class _TeamListCupWidgetState extends State<TeamListCupWidget> {
                                                               .transparent,
                                                           onTap: () async {
                                                             context.pushNamed(
-                                                              'TeamPage',
+                                                              TeamPageWidget
+                                                                  .routeName,
                                                               queryParameters: {
                                                                 'teamRef':
                                                                     serializeParam(

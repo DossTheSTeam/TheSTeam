@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'admin_rank_page_model.dart';
@@ -13,6 +14,9 @@ export 'admin_rank_page_model.dart';
 
 class AdminRankPageWidget extends StatefulWidget {
   const AdminRankPageWidget({super.key});
+
+  static String routeName = 'AdminRankPage';
+  static String routePath = '/adminRankPage';
 
   @override
   State<AdminRankPageWidget> createState() => _AdminRankPageWidgetState();
@@ -77,7 +81,7 @@ class _AdminRankPageWidgetState extends State<AdminRankPageWidget> {
                                     highlightColor: Colors.transparent,
                                     onTap: () async {
                                       context.pushNamed(
-                                        'MenuPage',
+                                        MenuPageWidget.routeName,
                                         extra: <String, dynamic>{
                                           kTransitionInfoKey: TransitionInfo(
                                             hasTransition: true,
@@ -468,7 +472,7 @@ class _AdminRankPageWidgetState extends State<AdminRankPageWidget> {
                                                 ),
                                               ),
                                               Container(
-                                                width: 125.0,
+                                                width: 120.0,
                                                 height: 30.0,
                                                 decoration: BoxDecoration(
                                                   color: FlutterFlowTheme.of(
@@ -1143,7 +1147,7 @@ class _AdminRankPageWidgetState extends State<AdminRankPageWidget> {
                                                           ),
                                                         ),
                                                         Container(
-                                                          width: 125.0,
+                                                          width: 120.0,
                                                           height: 30.0,
                                                           decoration:
                                                               BoxDecoration(
@@ -1173,7 +1177,8 @@ class _AdminRankPageWidgetState extends State<AdminRankPageWidget> {
                                                               onTap: () async {
                                                                 context
                                                                     .pushNamed(
-                                                                  'PublicProfilPage',
+                                                                  PublicProfilPageWidget
+                                                                      .routeName,
                                                                   queryParameters:
                                                                       {
                                                                     'userRef':
@@ -3366,7 +3371,7 @@ class _AdminRankPageWidgetState extends State<AdminRankPageWidget> {
                                                           ),
                                                         ),
                                                         Container(
-                                                          width: 125.0,
+                                                          width: 120.0,
                                                           height: 30.0,
                                                           decoration:
                                                               BoxDecoration(
@@ -3396,7 +3401,8 @@ class _AdminRankPageWidgetState extends State<AdminRankPageWidget> {
                                                               onTap: () async {
                                                                 context
                                                                     .pushNamed(
-                                                                  'PublicProfilPage',
+                                                                  PublicProfilPageWidget
+                                                                      .routeName,
                                                                   queryParameters:
                                                                       {
                                                                     'userRef':

@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/team_fold/audio_fan_conference/audio_fan_conference_widget.dart';
 import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'my_bests_rank_page_model.dart';
@@ -13,6 +14,9 @@ export 'my_bests_rank_page_model.dart';
 
 class MyBestsRankPageWidget extends StatefulWidget {
   const MyBestsRankPageWidget({super.key});
+
+  static String routeName = 'MyBestsRankPage';
+  static String routePath = '/myBestsRankPage';
 
   @override
   State<MyBestsRankPageWidget> createState() => _MyBestsRankPageWidgetState();
@@ -129,7 +133,8 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                                           Colors.transparent,
                                                       onTap: () async {
                                                         context.pushNamed(
-                                                          'TeamPage',
+                                                          TeamPageWidget
+                                                              .routeName,
                                                           queryParameters: {
                                                             'teamRef':
                                                                 serializeParam(
@@ -416,7 +421,7 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                                     Colors.transparent,
                                                 onTap: () async {
                                                   context.pushNamed(
-                                                    'MenuPage',
+                                                    MenuPageWidget.routeName,
                                                     extra: <String, dynamic>{
                                                       kTransitionInfoKey:
                                                           TransitionInfo(
@@ -506,7 +511,7 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                                       Colors.transparent,
                                                   onTap: () async {
                                                     context.pushNamed(
-                                                      'RankPage',
+                                                      RankPageWidget.routeName,
                                                       extra: <String, dynamic>{
                                                         kTransitionInfoKey:
                                                             TransitionInfo(
@@ -550,7 +555,8 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                                       Colors.transparent,
                                                   onTap: () async {
                                                     context.pushNamed(
-                                                      'RankTypstersPage',
+                                                      RankTypstersPageWidget
+                                                          .routeName,
                                                       extra: <String, dynamic>{
                                                         kTransitionInfoKey:
                                                             TransitionInfo(
@@ -654,7 +660,8 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                                           Colors.transparent,
                                                       onTap: () async {
                                                         context.pushNamed(
-                                                          'MyProfilSocial',
+                                                          MyProfilSocialWidget
+                                                              .routeName,
                                                           extra: <String,
                                                               dynamic>{
                                                             kTransitionInfoKey:
@@ -796,7 +803,8 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                                       Colors.transparent,
                                                   onTap: () async {
                                                     context.pushNamed(
-                                                      'MyProfilSocial',
+                                                      MyProfilSocialWidget
+                                                          .routeName,
                                                       extra: <String, dynamic>{
                                                         kTransitionInfoKey:
                                                             TransitionInfo(
@@ -916,7 +924,8 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                                               .transparent,
                                                           onTap: () async {
                                                             context.pushNamed(
-                                                              'MyNotifsList',
+                                                              MyNotifsListWidget
+                                                                  .routeName,
                                                               extra: <String,
                                                                   dynamic>{
                                                                 kTransitionInfoKey:
@@ -972,7 +981,8 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                                   Colors.transparent,
                                               onTap: () async {
                                                 context.pushNamed(
-                                                  'MyProfilSocial',
+                                                  MyProfilSocialWidget
+                                                      .routeName,
                                                   extra: <String, dynamic>{
                                                     kTransitionInfoKey:
                                                         TransitionInfo(
@@ -1065,7 +1075,7 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                                 ),
                                               ),
                                               Container(
-                                                width: 125.0,
+                                                width: 120.0,
                                                 height: 30.0,
                                                 decoration: BoxDecoration(
                                                   color: FlutterFlowTheme.of(
@@ -1595,7 +1605,7 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                                                   ),
                                                                 ),
                                                                 Container(
-                                                                  width: 125.0,
+                                                                  width: 120.0,
                                                                   height: 30.0,
                                                                   decoration:
                                                                       BoxDecoration(
@@ -1636,7 +1646,7 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                                                             () async {
                                                                           context
                                                                               .pushNamed(
-                                                                            'PublicProfilPage',
+                                                                            PublicProfilPageWidget.routeName,
                                                                             queryParameters:
                                                                                 {
                                                                               'userRef': serializeParam(
@@ -1713,7 +1723,10 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                                                             .bodyMedium
                                                                             .override(
                                                                               fontFamily: 'Poppins',
-                                                                              color: FlutterFlowTheme.of(context).primaryText,
+                                                                              color: valueOrDefault<Color>(
+                                                                                columnUsersEarningsScrollUsersRecord.color1,
+                                                                                FlutterFlowTheme.of(context).primaryText,
+                                                                              ),
                                                                               letterSpacing: 0.0,
                                                                             ),
                                                                       ),
@@ -1792,6 +1805,11 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                                                           .override(
                                                                             fontFamily:
                                                                                 'Poppins',
+                                                                            color:
+                                                                                valueOrDefault<Color>(
+                                                                              columnUsersEarningsScrollUsersRecord.color1,
+                                                                              FlutterFlowTheme.of(context).primaryText,
+                                                                            ),
                                                                             letterSpacing:
                                                                                 0.0,
                                                                           ),
@@ -1833,6 +1851,11 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                                                           .override(
                                                                             fontFamily:
                                                                                 'Poppins',
+                                                                            color:
+                                                                                valueOrDefault<Color>(
+                                                                              columnUsersEarningsScrollUsersRecord.color1,
+                                                                              FlutterFlowTheme.of(context).primaryText,
+                                                                            ),
                                                                             letterSpacing:
                                                                                 0.0,
                                                                           ),
@@ -1874,6 +1897,11 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                                                           .override(
                                                                             fontFamily:
                                                                                 'Poppins',
+                                                                            color:
+                                                                                valueOrDefault<Color>(
+                                                                              columnUsersEarningsScrollUsersRecord.color1,
+                                                                              FlutterFlowTheme.of(context).primaryText,
+                                                                            ),
                                                                             letterSpacing:
                                                                                 0.0,
                                                                           ),
@@ -1919,6 +1947,11 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                                                           .override(
                                                                             fontFamily:
                                                                                 'Poppins',
+                                                                            color:
+                                                                                valueOrDefault<Color>(
+                                                                              columnUsersEarningsScrollUsersRecord.color1,
+                                                                              FlutterFlowTheme.of(context).primaryText,
+                                                                            ),
                                                                             letterSpacing:
                                                                                 0.0,
                                                                           ),
@@ -1968,6 +2001,10 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                                                             .bodyMedium
                                                                             .override(
                                                                               fontFamily: 'Poppins',
+                                                                              color: valueOrDefault<Color>(
+                                                                                columnUsersEarningsScrollUsersRecord.color1,
+                                                                                FlutterFlowTheme.of(context).primaryText,
+                                                                              ),
                                                                               letterSpacing: 0.0,
                                                                             ),
                                                                       ),

@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/team_fold/audio_fan_conference/audio_fan_conference_widget.dart';
 import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'list_surveys_model.dart';
@@ -17,6 +18,9 @@ class ListSurveysWidget extends StatefulWidget {
   });
 
   final DocumentReference? teamRef;
+
+  static String routeName = 'ListSurveys';
+  static String routePath = '/listSurveys';
 
   @override
   State<ListSurveysWidget> createState() => _ListSurveysWidgetState();
@@ -77,7 +81,7 @@ class _ListSurveysWidgetState extends State<ListSurveysWidget> {
                                 highlightColor: Colors.transparent,
                                 onTap: () async {
                                   context.pushNamed(
-                                    'MenuPage',
+                                    MenuPageWidget.routeName,
                                     extra: <String, dynamic>{
                                       kTransitionInfoKey: TransitionInfo(
                                         hasTransition: true,
@@ -163,7 +167,7 @@ class _ListSurveysWidgetState extends State<ListSurveysWidget> {
                                                     Colors.transparent,
                                                 onTap: () async {
                                                   context.pushNamed(
-                                                    'TeamPage',
+                                                    TeamPageWidget.routeName,
                                                     queryParameters: {
                                                       'teamRef': serializeParam(
                                                         currentUserDocument
@@ -504,7 +508,7 @@ class _ListSurveysWidgetState extends State<ListSurveysWidget> {
                                           highlightColor: Colors.transparent,
                                           onTap: () async {
                                             context.pushNamed(
-                                              'MyNotifsList',
+                                              MyNotifsListWidget.routeName,
                                               extra: <String, dynamic>{
                                                 kTransitionInfoKey:
                                                     TransitionInfo(
@@ -709,7 +713,8 @@ class _ListSurveysWidgetState extends State<ListSurveysWidget> {
                                                                     .transparent,
                                                             onTap: () async {
                                                               context.pushNamed(
-                                                                'TheSTeamPostPage',
+                                                                TheSTeamPostPageWidget
+                                                                    .routeName,
                                                                 queryParameters:
                                                                     {
                                                                   'postRef':

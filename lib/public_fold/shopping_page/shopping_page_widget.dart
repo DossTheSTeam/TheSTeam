@@ -7,12 +7,16 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import '/flutter_flow/revenue_cat_util.dart' as revenue_cat;
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'shopping_page_model.dart';
 export 'shopping_page_model.dart';
 
 class ShoppingPageWidget extends StatefulWidget {
   const ShoppingPageWidget({super.key});
+
+  static String routeName = 'ShoppingPage';
+  static String routePath = '/shoppingPage';
 
   @override
   State<ShoppingPageWidget> createState() => _ShoppingPageWidgetState();
@@ -72,7 +76,7 @@ class _ShoppingPageWidgetState extends State<ShoppingPageWidget> {
                                 highlightColor: Colors.transparent,
                                 onTap: () async {
                                   context.pushNamed(
-                                    'MenuPage',
+                                    MenuPageWidget.routeName,
                                     extra: <String, dynamic>{
                                       kTransitionInfoKey: TransitionInfo(
                                         hasTransition: true,

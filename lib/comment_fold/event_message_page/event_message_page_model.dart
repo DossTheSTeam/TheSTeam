@@ -1,5 +1,6 @@
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'event_message_page_widget.dart' show EventMessagePageWidget;
 import 'package:flutter/material.dart';
 import 'package:record/record.dart';

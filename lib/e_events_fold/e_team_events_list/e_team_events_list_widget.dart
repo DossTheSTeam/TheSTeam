@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/team_fold/audio_fan_conference/audio_fan_conference_widget.dart';
 import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'e_team_events_list_model.dart';
@@ -18,6 +19,9 @@ class ETeamEventsListWidget extends StatefulWidget {
   });
 
   final DocumentReference? teamRef;
+
+  static String routeName = 'ETeamEventsList';
+  static String routePath = '/eTeamEventsList';
 
   @override
   State<ETeamEventsListWidget> createState() => _ETeamEventsListWidgetState();
@@ -105,7 +109,7 @@ class _ETeamEventsListWidgetState extends State<ETeamEventsListWidget> {
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
                                         context.pushNamed(
-                                          'ModifETeamPage',
+                                          ModifETeamPageWidget.routeName,
                                           queryParameters: {
                                             'teamRef': serializeParam(
                                               widget.teamRef,
@@ -213,7 +217,8 @@ class _ETeamEventsListWidgetState extends State<ETeamEventsListWidget> {
                                                           Colors.transparent,
                                                       onTap: () async {
                                                         context.pushNamed(
-                                                          'TeamPage',
+                                                          TeamPageWidget
+                                                              .routeName,
                                                           queryParameters: {
                                                             'teamRef':
                                                                 serializeParam(
@@ -592,7 +597,7 @@ class _ETeamEventsListWidgetState extends State<ETeamEventsListWidget> {
                                           highlightColor: Colors.transparent,
                                           onTap: () async {
                                             context.pushNamed(
-                                              'ListPostsTeam',
+                                              ListPostsTeamWidget.routeName,
                                               queryParameters: {
                                                 'teamRef': serializeParam(
                                                   widget.teamRef,
@@ -701,7 +706,7 @@ class _ETeamEventsListWidgetState extends State<ETeamEventsListWidget> {
                                     highlightColor: Colors.transparent,
                                     onTap: () async {
                                       context.pushNamed(
-                                        'ETeamEventsNoDateList',
+                                        ETeamEventsNoDateListWidget.routeName,
                                         queryParameters: {
                                           'teamRef': serializeParam(
                                             widget.teamRef,
@@ -1243,7 +1248,8 @@ class _ETeamEventsListWidgetState extends State<ETeamEventsListWidget> {
                                                                         () async {
                                                                       context
                                                                           .pushNamed(
-                                                                        'TeamPage',
+                                                                        TeamPageWidget
+                                                                            .routeName,
                                                                         queryParameters:
                                                                             {
                                                                           'teamRef':
@@ -1315,7 +1321,8 @@ class _ETeamEventsListWidgetState extends State<ETeamEventsListWidget> {
                                                                       () async {
                                                                     context
                                                                         .pushNamed(
-                                                                      'ListMessagesBossEvent',
+                                                                      ListMessagesBossEventWidget
+                                                                          .routeName,
                                                                       queryParameters:
                                                                           {
                                                                         'eventRef':
@@ -1392,7 +1399,7 @@ class _ETeamEventsListWidgetState extends State<ETeamEventsListWidget> {
                                                                             onTap:
                                                                                 () async {
                                                                               context.pushNamed(
-                                                                                'ModifEndEEventPage',
+                                                                                ModifEndEEventPageWidget.routeName,
                                                                                 queryParameters: {
                                                                                   'eventRef': serializeParam(
                                                                                     columnTeamEventsEventsRecord.reference,
@@ -1446,7 +1453,7 @@ class _ETeamEventsListWidgetState extends State<ETeamEventsListWidget> {
                                                                             onTap:
                                                                                 () async {
                                                                               context.pushNamed(
-                                                                                'ModifEndEEventPage',
+                                                                                ModifEndEEventPageWidget.routeName,
                                                                                 queryParameters: {
                                                                                   'eventRef': serializeParam(
                                                                                     columnTeamEventsEventsRecord.reference,
@@ -1493,7 +1500,8 @@ class _ETeamEventsListWidgetState extends State<ETeamEventsListWidget> {
                                                               .transparent,
                                                           onTap: () async {
                                                             context.pushNamed(
-                                                              'EEventPage',
+                                                              EEventPageWidget
+                                                                  .routeName,
                                                               queryParameters: {
                                                                 'eventRef':
                                                                     serializeParam(
@@ -1637,7 +1645,8 @@ class _ETeamEventsListWidgetState extends State<ETeamEventsListWidget> {
                                                                         () async {
                                                                       context
                                                                           .pushNamed(
-                                                                        'TeamPage',
+                                                                        TeamPageWidget
+                                                                            .routeName,
                                                                         queryParameters:
                                                                             {
                                                                           'teamRef':

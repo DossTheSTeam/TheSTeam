@@ -9,6 +9,7 @@ import '/flutter_flow/form_field_controller.dart';
 import '/team_fold/audio_fan_conference/audio_fan_conference_widget.dart';
 import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'admin_e_team_rank_page_model.dart';
@@ -16,6 +17,9 @@ export 'admin_e_team_rank_page_model.dart';
 
 class AdminETeamRankPageWidget extends StatefulWidget {
   const AdminETeamRankPageWidget({super.key});
+
+  static String routeName = 'AdminETeamRankPage';
+  static String routePath = '/adminETeamRankPage';
 
   @override
   State<AdminETeamRankPageWidget> createState() =>
@@ -82,7 +86,7 @@ class _AdminETeamRankPageWidgetState extends State<AdminETeamRankPageWidget> {
                                     highlightColor: Colors.transparent,
                                     onTap: () async {
                                       context.pushNamed(
-                                        'MenuPage',
+                                        MenuPageWidget.routeName,
                                         extra: <String, dynamic>{
                                           kTransitionInfoKey: TransitionInfo(
                                             hasTransition: true,
@@ -172,7 +176,7 @@ class _AdminETeamRankPageWidgetState extends State<AdminETeamRankPageWidget> {
                                                       Colors.transparent,
                                                   onTap: () async {
                                                     context.pushNamed(
-                                                      'TeamPage',
+                                                      TeamPageWidget.routeName,
                                                       queryParameters: {
                                                         'teamRef':
                                                             serializeParam(
@@ -1621,7 +1625,8 @@ class _AdminETeamRankPageWidgetState extends State<AdminETeamRankPageWidget> {
                                                               onTap: () async {
                                                                 context
                                                                     .pushNamed(
-                                                                  'TeamPage',
+                                                                  TeamPageWidget
+                                                                      .routeName,
                                                                   queryParameters:
                                                                       {
                                                                     'teamRef':
@@ -3209,7 +3214,8 @@ class _AdminETeamRankPageWidgetState extends State<AdminETeamRankPageWidget> {
                                                               onTap: () async {
                                                                 context
                                                                     .pushNamed(
-                                                                  'TeamPage',
+                                                                  TeamPageWidget
+                                                                      .routeName,
                                                                   queryParameters:
                                                                       {
                                                                     'teamRef':

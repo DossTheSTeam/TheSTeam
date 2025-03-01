@@ -8,6 +8,7 @@ import '/flutter_flow/form_field_controller.dart';
 import '/team_fold/audio_fan_conference/audio_fan_conference_widget.dart';
 import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'admin_st_app_users_list_model.dart';
@@ -15,6 +16,9 @@ export 'admin_st_app_users_list_model.dart';
 
 class AdminStAppUsersListWidget extends StatefulWidget {
   const AdminStAppUsersListWidget({super.key});
+
+  static String routeName = 'AdminStAppUsersList';
+  static String routePath = '/adminStAppUsersList';
 
   @override
   State<AdminStAppUsersListWidget> createState() =>
@@ -76,7 +80,7 @@ class _AdminStAppUsersListWidgetState extends State<AdminStAppUsersListWidget> {
                                 highlightColor: Colors.transparent,
                                 onTap: () async {
                                   context.pushNamed(
-                                    'MenuPage',
+                                    MenuPageWidget.routeName,
                                     extra: <String, dynamic>{
                                       kTransitionInfoKey: TransitionInfo(
                                         hasTransition: true,
@@ -162,7 +166,7 @@ class _AdminStAppUsersListWidgetState extends State<AdminStAppUsersListWidget> {
                                                     Colors.transparent,
                                                 onTap: () async {
                                                   context.pushNamed(
-                                                    'TeamPage',
+                                                    TeamPageWidget.routeName,
                                                     queryParameters: {
                                                       'teamRef': serializeParam(
                                                         currentUserDocument
@@ -687,7 +691,8 @@ class _AdminStAppUsersListWidgetState extends State<AdminStAppUsersListWidget> {
                                                               .transparent,
                                                           onTap: () async {
                                                             context.pushNamed(
-                                                              'ProfilPublicAdmin',
+                                                              ProfilPublicAdminWidget
+                                                                  .routeName,
                                                               queryParameters: {
                                                                 'userRef':
                                                                     serializeParam(

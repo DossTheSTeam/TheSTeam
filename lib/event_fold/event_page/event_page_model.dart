@@ -1,5 +1,6 @@
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'event_page_widget.dart' show EventPageWidget;
 import 'package:flutter/material.dart';
 import 'package:just_audio/just_audio.dart';

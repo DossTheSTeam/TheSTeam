@@ -8,6 +8,7 @@ import '/flutter_flow/form_field_controller.dart';
 import '/team_fold/audio_fan_conference/audio_fan_conference_widget.dart';
 import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'team_list_model.dart';
@@ -15,6 +16,9 @@ export 'team_list_model.dart';
 
 class TeamListWidget extends StatefulWidget {
   const TeamListWidget({super.key});
+
+  static String routeName = 'TeamList';
+  static String routePath = '/teamList';
 
   @override
   State<TeamListWidget> createState() => _TeamListWidgetState();
@@ -79,7 +83,7 @@ class _TeamListWidgetState extends State<TeamListWidget> {
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
                                         context.pushNamed(
-                                          'MenuPage',
+                                          MenuPageWidget.routeName,
                                           extra: <String, dynamic>{
                                             kTransitionInfoKey: TransitionInfo(
                                               hasTransition: true,
@@ -214,7 +218,7 @@ class _TeamListWidgetState extends State<TeamListWidget> {
                                                     Colors.transparent,
                                                 onTap: () async {
                                                   context.pushNamed(
-                                                    'TeamPage',
+                                                    TeamPageWidget.routeName,
                                                     queryParameters: {
                                                       'teamRef': serializeParam(
                                                         currentUserDocument
@@ -509,7 +513,7 @@ class _TeamListWidgetState extends State<TeamListWidget> {
                               highlightColor: Colors.transparent,
                               onTap: () async {
                                 context.pushNamed(
-                                  'MyTeamList',
+                                  MyTeamListWidget.routeName,
                                   extra: <String, dynamic>{
                                     kTransitionInfoKey: TransitionInfo(
                                       hasTransition: true,
@@ -838,7 +842,8 @@ class _TeamListWidgetState extends State<TeamListWidget> {
                                                               .transparent,
                                                           onTap: () async {
                                                             context.pushNamed(
-                                                              'TeamListCup',
+                                                              TeamListCupWidget
+                                                                  .routeName,
                                                               extra: <String,
                                                                   dynamic>{
                                                                 kTransitionInfoKey:
@@ -889,7 +894,8 @@ class _TeamListWidgetState extends State<TeamListWidget> {
                                                                     .transparent,
                                                             onTap: () async {
                                                               context.pushNamed(
-                                                                'TeamListCup',
+                                                                TeamListCupWidget
+                                                                    .routeName,
                                                                 extra: <String,
                                                                     dynamic>{
                                                                   kTransitionInfoKey:
@@ -1787,7 +1793,8 @@ class _TeamListWidgetState extends State<TeamListWidget> {
                                                           Colors.transparent,
                                                       onTap: () async {
                                                         context.pushNamed(
-                                                          'TeamPage',
+                                                          TeamPageWidget
+                                                              .routeName,
                                                           queryParameters: {
                                                             'teamRef':
                                                                 serializeParam(

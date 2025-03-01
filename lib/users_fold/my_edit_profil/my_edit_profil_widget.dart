@@ -12,6 +12,7 @@ import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
 import '/users_fold/adult_confirmation/adult_confirmation_widget.dart';
 import '/users_fold/delete_my_user_ref/delete_my_user_ref_widget.dart';
 import '/users_fold/e_sport_confirmation/e_sport_confirmation_widget.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -20,6 +21,9 @@ export 'my_edit_profil_model.dart';
 
 class MyEditProfilWidget extends StatefulWidget {
   const MyEditProfilWidget({super.key});
+
+  static String routeName = 'MyEditProfil';
+  static String routePath = '/myEditProfil';
 
   @override
   State<MyEditProfilWidget> createState() => _MyEditProfilWidgetState();
@@ -191,7 +195,7 @@ class _MyEditProfilWidgetState extends State<MyEditProfilWidget>
                                                       Colors.transparent,
                                                   onTap: () async {
                                                     context.pushNamed(
-                                                      'TeamPage',
+                                                      TeamPageWidget.routeName,
                                                       queryParameters: {
                                                         'teamRef':
                                                             serializeParam(
@@ -494,7 +498,7 @@ class _MyEditProfilWidgetState extends State<MyEditProfilWidget>
                                 highlightColor: Colors.transparent,
                                 onTap: () async {
                                   context.pushNamed(
-                                    'MyImagePage',
+                                    MyImagePageWidget.routeName,
                                     extra: <String, dynamic>{
                                       kTransitionInfoKey: TransitionInfo(
                                         hasTransition: true,

@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/team_fold/audio_fan_conference/audio_fan_conference_widget.dart';
 import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'admin_page_model.dart';
@@ -12,6 +13,9 @@ export 'admin_page_model.dart';
 
 class AdminPageWidget extends StatefulWidget {
   const AdminPageWidget({super.key});
+
+  static String routeName = 'AdminPage';
+  static String routePath = '/adminPage';
 
   @override
   State<AdminPageWidget> createState() => _AdminPageWidgetState();
@@ -74,7 +78,7 @@ class _AdminPageWidgetState extends State<AdminPageWidget> {
                                   hoverColor: Colors.transparent,
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
-                                    context.pushNamed('MenuPage');
+                                    context.pushNamed(MenuPageWidget.routeName);
                                   },
                                   child: Icon(
                                     Icons.menu_rounded,
@@ -156,7 +160,7 @@ class _AdminPageWidgetState extends State<AdminPageWidget> {
                                                       Colors.transparent,
                                                   onTap: () async {
                                                     context.pushNamed(
-                                                      'TeamPage',
+                                                      TeamPageWidget.routeName,
                                                       queryParameters: {
                                                         'teamRef':
                                                             serializeParam(
@@ -534,7 +538,8 @@ class _AdminPageWidgetState extends State<AdminPageWidget> {
                                   hoverColor: Colors.transparent,
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
-                                    context.pushNamed('AddEventPage');
+                                    context.pushNamed(
+                                        AddEventPageWidget.routeName);
                                   },
                                   child: Icon(
                                     Icons.arrow_forward_ios,
@@ -581,7 +586,8 @@ class _AdminPageWidgetState extends State<AdminPageWidget> {
                                   hoverColor: Colors.transparent,
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
-                                    context.pushNamed('ListEventsAdmin');
+                                    context.pushNamed(
+                                        ListEventsAdminWidget.routeName);
                                   },
                                   child: Icon(
                                     Icons.arrow_forward_ios,
@@ -628,7 +634,8 @@ class _AdminPageWidgetState extends State<AdminPageWidget> {
                                   hoverColor: Colors.transparent,
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
-                                    context.pushNamed('ListEventsAdmin');
+                                    context.pushNamed(
+                                        ListEventsAdminWidget.routeName);
                                   },
                                   child: Icon(
                                     Icons.arrow_forward_ios,
@@ -692,7 +699,8 @@ class _AdminPageWidgetState extends State<AdminPageWidget> {
                                   hoverColor: Colors.transparent,
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
-                                    context.pushNamed('AddTeamPage');
+                                    context
+                                        .pushNamed(AddTeamPageWidget.routeName);
                                   },
                                   child: Icon(
                                     Icons.arrow_forward_ios,
@@ -739,7 +747,8 @@ class _AdminPageWidgetState extends State<AdminPageWidget> {
                                   hoverColor: Colors.transparent,
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
-                                    context.pushNamed('AdminTeamsList');
+                                    context.pushNamed(
+                                        AdminTeamsListWidget.routeName);
                                   },
                                   child: Icon(
                                     Icons.arrow_forward_ios,
@@ -803,7 +812,8 @@ class _AdminPageWidgetState extends State<AdminPageWidget> {
                                   hoverColor: Colors.transparent,
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
-                                    context.pushNamed('AdminRankPage');
+                                    context.pushNamed(
+                                        AdminRankPageWidget.routeName);
                                   },
                                   child: Icon(
                                     Icons.arrow_forward_ios,
@@ -850,7 +860,8 @@ class _AdminPageWidgetState extends State<AdminPageWidget> {
                                   hoverColor: Colors.transparent,
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
-                                    context.pushNamed('AdminUsersList');
+                                    context.pushNamed(
+                                        AdminUsersListWidget.routeName);
                                   },
                                   child: Icon(
                                     Icons.arrow_forward_ios,
@@ -897,7 +908,8 @@ class _AdminPageWidgetState extends State<AdminPageWidget> {
                                   hoverColor: Colors.transparent,
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
-                                    context.pushNamed('AdminStAppUsersList');
+                                    context.pushNamed(
+                                        AdminStAppUsersListWidget.routeName);
                                   },
                                   child: Icon(
                                     Icons.arrow_forward_ios,
@@ -961,7 +973,8 @@ class _AdminPageWidgetState extends State<AdminPageWidget> {
                                   hoverColor: Colors.transparent,
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
-                                    context.pushNamed('AdminEUserRankPage');
+                                    context.pushNamed(
+                                        AdminEUserRankPageWidget.routeName);
                                   },
                                   child: Icon(
                                     Icons.arrow_forward_ios,
@@ -1008,7 +1021,8 @@ class _AdminPageWidgetState extends State<AdminPageWidget> {
                                   hoverColor: Colors.transparent,
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
-                                    context.pushNamed('AdminETeamRankPage');
+                                    context.pushNamed(
+                                        AdminETeamRankPageWidget.routeName);
                                   },
                                   child: Icon(
                                     Icons.arrow_forward_ios,
@@ -1108,7 +1122,7 @@ class _AdminPageWidgetState extends State<AdminPageWidget> {
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
                                         context.pushNamed(
-                                          'AddSurveyPage',
+                                          AddSurveyPageWidget.routeName,
                                           queryParameters: {
                                             'teamRef': serializeParam(
                                               rowCreaTeamTeamsRecord?.reference,
@@ -1164,7 +1178,8 @@ class _AdminPageWidgetState extends State<AdminPageWidget> {
                                   hoverColor: Colors.transparent,
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
-                                    context.pushNamed('MenuPagePub');
+                                    context
+                                        .pushNamed(MenuPagePubWidget.routeName);
                                   },
                                   child: Icon(
                                     Icons.arrow_forward_ios,

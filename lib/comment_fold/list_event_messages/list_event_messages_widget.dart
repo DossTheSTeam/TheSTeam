@@ -8,6 +8,7 @@ import '/flutter_flow/form_field_controller.dart';
 import '/team_fold/audio_fan_conference/audio_fan_conference_widget.dart';
 import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'list_event_messages_model.dart';
@@ -20,6 +21,9 @@ class ListEventMessagesWidget extends StatefulWidget {
   });
 
   final DocumentReference? eventRef;
+
+  static String routeName = 'ListEventMessages';
+  static String routePath = '/listEventMessages';
 
   @override
   State<ListEventMessagesWidget> createState() =>
@@ -109,7 +113,7 @@ class _ListEventMessagesWidgetState extends State<ListEventMessagesWidget> {
                                           highlightColor: Colors.transparent,
                                           onTap: () async {
                                             context.pushNamed(
-                                              'MenuPage',
+                                              MenuPageWidget.routeName,
                                               extra: <String, dynamic>{
                                                 kTransitionInfoKey:
                                                     TransitionInfo(
@@ -222,7 +226,8 @@ class _ListEventMessagesWidgetState extends State<ListEventMessagesWidget> {
                                                             Colors.transparent,
                                                         onTap: () async {
                                                           context.pushNamed(
-                                                            'TeamPage',
+                                                            TeamPageWidget
+                                                                .routeName,
                                                             queryParameters: {
                                                               'teamRef':
                                                                   serializeParam(
@@ -916,7 +921,8 @@ class _ListEventMessagesWidgetState extends State<ListEventMessagesWidget> {
                                                         Colors.transparent,
                                                     onTap: () async {
                                                       context.pushNamed(
-                                                        'MyNotifsList',
+                                                        MyNotifsListWidget
+                                                            .routeName,
                                                         extra: <String,
                                                             dynamic>{
                                                           kTransitionInfoKey:
@@ -1123,7 +1129,7 @@ class _ListEventMessagesWidgetState extends State<ListEventMessagesWidget> {
                                                                               highlightColor: Colors.transparent,
                                                                               onTap: () async {
                                                                                 context.pushNamed(
-                                                                                  'PublicProfilPage',
+                                                                                  PublicProfilPageWidget.routeName,
                                                                                   queryParameters: {
                                                                                     'userRef': serializeParam(
                                                                                       columnUsersRecord.reference,
@@ -1205,7 +1211,7 @@ class _ListEventMessagesWidgetState extends State<ListEventMessagesWidget> {
                                                                                 highlightColor: Colors.transparent,
                                                                                 onTap: () async {
                                                                                   context.pushNamed(
-                                                                                    'EventMessagePage',
+                                                                                    EventMessagePageWidget.routeName,
                                                                                     queryParameters: {
                                                                                       'startedCommRef': serializeParam(
                                                                                         columnCommsSportEventMessagesRecord.reference,
@@ -1578,7 +1584,7 @@ class _ListEventMessagesWidgetState extends State<ListEventMessagesWidget> {
                                                                               highlightColor: Colors.transparent,
                                                                               onTap: () async {
                                                                                 context.pushNamed(
-                                                                                  'PublicProfilPage',
+                                                                                  PublicProfilPageWidget.routeName,
                                                                                   queryParameters: {
                                                                                     'userRef': serializeParam(
                                                                                       columnUsersRecord.reference,
@@ -1660,7 +1666,7 @@ class _ListEventMessagesWidgetState extends State<ListEventMessagesWidget> {
                                                                                 highlightColor: Colors.transparent,
                                                                                 onTap: () async {
                                                                                   context.pushNamed(
-                                                                                    'EventMessagePage',
+                                                                                    EventMessagePageWidget.routeName,
                                                                                     queryParameters: {
                                                                                       'startedCommRef': serializeParam(
                                                                                         columnCommsSportEventMessagesRecord.reference,

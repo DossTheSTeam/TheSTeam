@@ -9,6 +9,7 @@ import '/flutter_flow/form_field_controller.dart';
 import '/team_fold/audio_fan_conference/audio_fan_conference_widget.dart';
 import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'admin_e_user_rank_page_model.dart';
@@ -16,6 +17,9 @@ export 'admin_e_user_rank_page_model.dart';
 
 class AdminEUserRankPageWidget extends StatefulWidget {
   const AdminEUserRankPageWidget({super.key});
+
+  static String routeName = 'AdminEUserRankPage';
+  static String routePath = '/adminEUserRankPage';
 
   @override
   State<AdminEUserRankPageWidget> createState() =>
@@ -82,7 +86,7 @@ class _AdminEUserRankPageWidgetState extends State<AdminEUserRankPageWidget> {
                                     highlightColor: Colors.transparent,
                                     onTap: () async {
                                       context.pushNamed(
-                                        'MenuPage',
+                                        MenuPageWidget.routeName,
                                         extra: <String, dynamic>{
                                           kTransitionInfoKey: TransitionInfo(
                                             hasTransition: true,
@@ -172,7 +176,7 @@ class _AdminEUserRankPageWidgetState extends State<AdminEUserRankPageWidget> {
                                                       Colors.transparent,
                                                   onTap: () async {
                                                     context.pushNamed(
-                                                      'TeamPage',
+                                                      TeamPageWidget.routeName,
                                                       queryParameters: {
                                                         'teamRef':
                                                             serializeParam(
@@ -1409,7 +1413,8 @@ class _AdminEUserRankPageWidgetState extends State<AdminEUserRankPageWidget> {
                                                                     () async {
                                                                   context
                                                                       .pushNamed(
-                                                                    'PublicProfilPage',
+                                                                    PublicProfilPageWidget
+                                                                        .routeName,
                                                                     queryParameters:
                                                                         {
                                                                       'userRef':
@@ -2775,7 +2780,8 @@ class _AdminEUserRankPageWidgetState extends State<AdminEUserRankPageWidget> {
                                                                     () async {
                                                                   context
                                                                       .pushNamed(
-                                                                    'PublicProfilPage',
+                                                                    PublicProfilPageWidget
+                                                                        .routeName,
                                                                     queryParameters:
                                                                         {
                                                                       'userRef':

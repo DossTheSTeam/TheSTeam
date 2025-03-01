@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'signal_post_page_model.dart';
@@ -18,6 +19,9 @@ class SignalPostPageWidget extends StatefulWidget {
   });
 
   final DocumentReference? notifRef;
+
+  static String routeName = 'SignalPostPage';
+  static String routePath = '/signalPostPage';
 
   @override
   State<SignalPostPageWidget> createState() => _SignalPostPageWidgetState();
@@ -121,7 +125,7 @@ class _SignalPostPageWidgetState extends State<SignalPostPageWidget> {
                                         highlightColor: Colors.transparent,
                                         onTap: () async {
                                           context.pushNamed(
-                                            'MenuPage',
+                                            MenuPageWidget.routeName,
                                             extra: <String, dynamic>{
                                               kTransitionInfoKey:
                                                   TransitionInfo(
@@ -255,7 +259,8 @@ class _SignalPostPageWidgetState extends State<SignalPostPageWidget> {
                                                     Colors.transparent,
                                                 onTap: () async {
                                                   context.pushNamed(
-                                                    'PublicProfilPage',
+                                                    PublicProfilPageWidget
+                                                        .routeName,
                                                     queryParameters: {
                                                       'userRef': serializeParam(
                                                         columnNotifUserUsersRecord
@@ -625,7 +630,8 @@ class _SignalPostPageWidgetState extends State<SignalPostPageWidget> {
                                                     Colors.transparent,
                                                 onTap: () async {
                                                   context.pushNamed(
-                                                    'PublicProfilPage',
+                                                    PublicProfilPageWidget
+                                                        .routeName,
                                                     queryParameters: {
                                                       'userRef': serializeParam(
                                                         columnMemberUsersRecord
@@ -1004,7 +1010,7 @@ class _SignalPostPageWidgetState extends State<SignalPostPageWidget> {
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
                                         context.pushNamed(
-                                          'PostPage',
+                                          PostPageWidget.routeName,
                                           queryParameters: {
                                             'postRef': serializeParam(
                                               columnPostPostsRecord.reference,

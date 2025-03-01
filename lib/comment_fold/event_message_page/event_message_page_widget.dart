@@ -10,6 +10,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/upload_data.dart';
 import '/team_fold/audio_fan_conference/audio_fan_conference_widget.dart';
 import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:record/record.dart';
@@ -23,6 +24,9 @@ class EventMessagePageWidget extends StatefulWidget {
   });
 
   final DocumentReference? startedCommRef;
+
+  static String routeName = 'EventMessagePage';
+  static String routePath = '/eventMessagePage';
 
   @override
   State<EventMessagePageWidget> createState() => _EventMessagePageWidgetState();
@@ -142,7 +146,7 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                                   Colors.transparent,
                                               onTap: () async {
                                                 context.pushNamed(
-                                                  'MenuPage',
+                                                  MenuPageWidget.routeName,
                                                   extra: <String, dynamic>{
                                                     kTransitionInfoKey:
                                                         TransitionInfo(
@@ -261,7 +265,8 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                                               onTap: () async {
                                                                 context
                                                                     .pushNamed(
-                                                                  'TeamPage',
+                                                                  TeamPageWidget
+                                                                      .routeName,
                                                                   queryParameters:
                                                                       {
                                                                     'teamRef':
@@ -553,7 +558,8 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                                           Colors.transparent,
                                                       onTap: () async {
                                                         context.pushNamed(
-                                                          'PublicProfilPage',
+                                                          PublicProfilPageWidget
+                                                              .routeName,
                                                           queryParameters: {
                                                             'userRef':
                                                                 serializeParam(
@@ -741,7 +747,7 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                                   Colors.transparent,
                                               onTap: () async {
                                                 context.pushNamed(
-                                                  'FullImagePage',
+                                                  FullImagePageWidget.routeName,
                                                   queryParameters: {
                                                     'imageRef': serializeParam(
                                                       eventMessagePageEventMessagesRecord
@@ -921,7 +927,8 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                                           Colors.transparent,
                                                       onTap: () async {
                                                         context.pushNamed(
-                                                          'ListCommsEventCommPage',
+                                                          ListCommsEventCommPageWidget
+                                                              .routeName,
                                                           queryParameters: {
                                                             'startedCommRef':
                                                                 serializeParam(
@@ -1374,7 +1381,8 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                                             Colors.transparent,
                                                         onTap: () async {
                                                           context.pushNamed(
-                                                            'RedCardEventCommPage',
+                                                            RedCardEventCommPageWidget
+                                                                .routeName,
                                                             queryParameters: {
                                                               'commRef':
                                                                   serializeParam(
@@ -2006,7 +2014,8 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                                         });
 
                                                         context.pushNamed(
-                                                          'ListCommsEventCommPage',
+                                                          ListCommsEventCommPageWidget
+                                                              .routeName,
                                                           queryParameters: {
                                                             'startedCommRef':
                                                                 serializeParam(
@@ -2603,7 +2612,8 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                                     });
 
                                                     context.pushNamed(
-                                                      'ListCommsEventCommPage',
+                                                      ListCommsEventCommPageWidget
+                                                          .routeName,
                                                       queryParameters: {
                                                         'startedCommRef':
                                                             serializeParam(

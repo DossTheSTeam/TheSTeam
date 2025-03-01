@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/team_fold/audio_fan_conference/audio_fan_conference_widget.dart';
 import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'my_team_list_model.dart';
@@ -12,6 +13,9 @@ export 'my_team_list_model.dart';
 
 class MyTeamListWidget extends StatefulWidget {
   const MyTeamListWidget({super.key});
+
+  static String routeName = 'MyTeamList';
+  static String routePath = '/myTeamList';
 
   @override
   State<MyTeamListWidget> createState() => _MyTeamListWidgetState();
@@ -77,7 +81,7 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
                                         context.pushNamed(
-                                          'MenuPage',
+                                          MenuPageWidget.routeName,
                                           extra: <String, dynamic>{
                                             kTransitionInfoKey: TransitionInfo(
                                               hasTransition: true,
@@ -217,7 +221,8 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                         Colors.transparent,
                                                     onTap: () async {
                                                       context.pushNamed(
-                                                        'TeamPage',
+                                                        TeamPageWidget
+                                                            .routeName,
                                                         queryParameters: {
                                                           'teamRef':
                                                               serializeParam(
@@ -559,7 +564,7 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                           highlightColor: Colors.transparent,
                                           onTap: () async {
                                             context.pushNamed(
-                                              'MyNotifsList',
+                                              MyNotifsListWidget.routeName,
                                               extra: <String, dynamic>{
                                                 kTransitionInfoKey:
                                                     TransitionInfo(
@@ -1232,7 +1237,8 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                                         () async {
                                                                       context
                                                                           .pushNamed(
-                                                                        'TeamPage',
+                                                                        TeamPageWidget
+                                                                            .routeName,
                                                                         queryParameters:
                                                                             {
                                                                           'teamRef':
@@ -1310,7 +1316,8 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                                         () async {
                                                                       context
                                                                           .pushNamed(
-                                                                        'AddPostPage',
+                                                                        AddPostPageWidget
+                                                                            .routeName,
                                                                         queryParameters:
                                                                             {
                                                                           'teamRef':
@@ -1656,7 +1663,8 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                               .transparent,
                                                           onTap: () async {
                                                             context.pushNamed(
-                                                              'TeamPage',
+                                                              TeamPageWidget
+                                                                  .routeName,
                                                               queryParameters: {
                                                                 'teamRef':
                                                                     serializeParam(
@@ -2313,7 +2321,8 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                               .transparent,
                                                           onTap: () async {
                                                             context.pushNamed(
-                                                              'TeamList',
+                                                              TeamListWidget
+                                                                  .routeName,
                                                               extra: <String,
                                                                   dynamic>{
                                                                 kTransitionInfoKey:
@@ -2351,7 +2360,8 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                             Colors.transparent,
                                                         onTap: () async {
                                                           context.pushNamed(
-                                                            'AddETeamPageIUDAdmin',
+                                                            AddETeamPageIUDAdminWidget
+                                                                .routeName,
                                                             extra: <String,
                                                                 dynamic>{
                                                               kTransitionInfoKey:
@@ -2604,7 +2614,8 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                                           () async {
                                                                         context
                                                                             .pushNamed(
-                                                                          'ModifETeamPage',
+                                                                          ModifETeamPageWidget
+                                                                              .routeName,
                                                                           queryParameters:
                                                                               {
                                                                             'teamRef':
@@ -2731,7 +2742,7 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                                             () async {
                                                                           context
                                                                               .pushNamed(
-                                                                            'TeamPage',
+                                                                            TeamPageWidget.routeName,
                                                                             queryParameters:
                                                                                 {
                                                                               'teamRef': serializeParam(
@@ -2985,7 +2996,7 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                                             () async {
                                                                           context
                                                                               .pushNamed(
-                                                                            'TeamPage',
+                                                                            TeamPageWidget.routeName,
                                                                             queryParameters:
                                                                                 {
                                                                               'teamRef': serializeParam(
@@ -3325,7 +3336,8 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                               .transparent,
                                                           onTap: () async {
                                                             context.pushNamed(
-                                                              'TeamPage',
+                                                              TeamPageWidget
+                                                                  .routeName,
                                                               queryParameters: {
                                                                 'teamRef':
                                                                     serializeParam(

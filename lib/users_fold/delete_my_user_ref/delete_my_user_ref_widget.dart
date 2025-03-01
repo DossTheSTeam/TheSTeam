@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:ui';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'delete_my_user_ref_model.dart';
 export 'delete_my_user_ref_model.dart';
@@ -151,7 +152,7 @@ class _DeleteMyUserRefWidgetState extends State<DeleteMyUserRefWidget> {
                             Navigator.pop(context);
 
                             context.goNamedAuth(
-                                'MyProfilPage', context.mounted);
+                                MyProfilPageWidget.routeName, context.mounted);
                           },
                           text: 'Supprimer',
                           options: FFButtonOptions(

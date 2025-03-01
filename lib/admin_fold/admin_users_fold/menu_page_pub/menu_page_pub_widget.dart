@@ -3,6 +3,7 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_ad_banner.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'menu_page_pub_model.dart';
@@ -10,6 +11,9 @@ export 'menu_page_pub_model.dart';
 
 class MenuPagePubWidget extends StatefulWidget {
   const MenuPagePubWidget({super.key});
+
+  static String routeName = 'MenuPagePub';
+  static String routePath = '/menuPagePub';
 
   @override
   State<MenuPagePubWidget> createState() => _MenuPagePubWidgetState();
@@ -72,7 +76,7 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
                                     context.pushNamed(
-                                      'MyEditProfil',
+                                      MyEditProfilWidget.routeName,
                                       extra: <String, dynamic>{
                                         kTransitionInfoKey: TransitionInfo(
                                           hasTransition: true,
@@ -116,7 +120,7 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
                                     context.pushNamed(
-                                      'MyProfilPage',
+                                      MyProfilPageWidget.routeName,
                                       extra: <String, dynamic>{
                                         kTransitionInfoKey: TransitionInfo(
                                           hasTransition: true,
@@ -158,7 +162,7 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                 highlightColor: Colors.transparent,
                                 onTap: () async {
                                   context.pushNamed(
-                                    'MyEditProfil',
+                                    MyEditProfilWidget.routeName,
                                     extra: <String, dynamic>{
                                       kTransitionInfoKey: TransitionInfo(
                                         hasTransition: true,
@@ -324,7 +328,7 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                             highlightColor: Colors.transparent,
                                             onTap: () async {
                                               context.pushNamed(
-                                                'MyNotifsList',
+                                                MyNotifsListWidget.routeName,
                                                 extra: <String, dynamic>{
                                                   kTransitionInfoKey:
                                                       TransitionInfo(
@@ -578,7 +582,8 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                           Colors.transparent,
                                                       onTap: () async {
                                                         context.pushNamed(
-                                                          'SearchUsersList',
+                                                          SearchUsersListWidget
+                                                              .routeName,
                                                           queryParameters: {
                                                             'userRef':
                                                                 serializeParam(
@@ -762,7 +767,8 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                           Colors.transparent,
                                                       onTap: () async {
                                                         context.pushNamed(
-                                                          'MyBetsList',
+                                                          MyBetsListWidget
+                                                              .routeName,
                                                           extra: <String,
                                                               dynamic>{
                                                             kTransitionInfoKey:
@@ -828,7 +834,8 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                               onTap: () async {
                                                                 context
                                                                     .pushNamed(
-                                                                  'MyBetsList',
+                                                                  MyBetsListWidget
+                                                                      .routeName,
                                                                   extra: <String,
                                                                       dynamic>{
                                                                     kTransitionInfoKey:
@@ -882,7 +889,8 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                               onTap: () async {
                                                                 context
                                                                     .pushNamed(
-                                                                  'MyProfilStats',
+                                                                  MyProfilStatsWidget
+                                                                      .routeName,
                                                                   extra: <String,
                                                                       dynamic>{
                                                                     kTransitionInfoKey:
@@ -1037,7 +1045,8 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                           Colors.transparent,
                                                       onTap: () async {
                                                         context.pushNamed(
-                                                          'RankPage',
+                                                          RankPageWidget
+                                                              .routeName,
                                                           extra: <String,
                                                               dynamic>{
                                                             kTransitionInfoKey:
@@ -1104,7 +1113,8 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                               onTap: () async {
                                                                 context
                                                                     .pushNamed(
-                                                                  'RankPage',
+                                                                  RankPageWidget
+                                                                      .routeName,
                                                                   extra: <String,
                                                                       dynamic>{
                                                                     kTransitionInfoKey:
@@ -1158,7 +1168,8 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                               onTap: () async {
                                                                 context
                                                                     .pushNamed(
-                                                                  'MyBestsRankPage',
+                                                                  MyBestsRankPageWidget
+                                                                      .routeName,
                                                                   extra: <String,
                                                                       dynamic>{
                                                                     kTransitionInfoKey:
@@ -1359,7 +1370,8 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                           Colors.transparent,
                                                       onTap: () async {
                                                         context.pushNamed(
-                                                          'TeamList',
+                                                          TeamListWidget
+                                                              .routeName,
                                                           extra: <String,
                                                               dynamic>{
                                                             kTransitionInfoKey:
@@ -1425,7 +1437,8 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                               onTap: () async {
                                                                 context
                                                                     .pushNamed(
-                                                                  'TeamList',
+                                                                  TeamListWidget
+                                                                      .routeName,
                                                                   extra: <String,
                                                                       dynamic>{
                                                                     kTransitionInfoKey:
@@ -1482,7 +1495,8 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                               onTap: () async {
                                                                 context
                                                                     .pushNamed(
-                                                                  'MyTeamList',
+                                                                  MyTeamListWidget
+                                                                      .routeName,
                                                                   extra: <String,
                                                                       dynamic>{
                                                                     kTransitionInfoKey:
@@ -1536,7 +1550,8 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                               onTap: () async {
                                                                 context
                                                                     .pushNamed(
-                                                                  'LiguesRankPage',
+                                                                  LiguesRankPageWidget
+                                                                      .routeName,
                                                                   extra: <String,
                                                                       dynamic>{
                                                                     kTransitionInfoKey:
@@ -1712,7 +1727,8 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                           Colors.transparent,
                                                       onTap: () async {
                                                         context.pushNamed(
-                                                          'ListEvents',
+                                                          ListEventsWidget
+                                                              .routeName,
                                                           extra: <String,
                                                               dynamic>{
                                                             kTransitionInfoKey:
@@ -1781,7 +1797,8 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                               onTap: () async {
                                                                 context
                                                                     .pushNamed(
-                                                                  'ListEvents',
+                                                                  ListEventsWidget
+                                                                      .routeName,
                                                                   extra: <String,
                                                                       dynamic>{
                                                                     kTransitionInfoKey:
@@ -1838,7 +1855,8 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                               onTap: () async {
                                                                 context
                                                                     .pushNamed(
-                                                                  'MyTeamsListEvents',
+                                                                  MyTeamsListEventsWidget
+                                                                      .routeName,
                                                                   extra: <String,
                                                                       dynamic>{
                                                                     kTransitionInfoKey:
@@ -2036,7 +2054,8 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                           Colors.transparent,
                                                       onTap: () async {
                                                         context.pushNamed(
-                                                          'ListPosts',
+                                                          ListPostsWidget
+                                                              .routeName,
                                                           extra: <String,
                                                               dynamic>{
                                                             kTransitionInfoKey:
@@ -2102,7 +2121,8 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                               onTap: () async {
                                                                 context
                                                                     .pushNamed(
-                                                                  'ListPosts',
+                                                                  ListPostsWidget
+                                                                      .routeName,
                                                                   extra: <String,
                                                                       dynamic>{
                                                                     kTransitionInfoKey:
@@ -2159,7 +2179,8 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                               onTap: () async {
                                                                 context
                                                                     .pushNamed(
-                                                                  'ListPostsMyTeams',
+                                                                  ListPostsMyTeamsWidget
+                                                                      .routeName,
                                                                   extra: <String,
                                                                       dynamic>{
                                                                     kTransitionInfoKey:
@@ -2213,7 +2234,8 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                               onTap: () async {
                                                                 context
                                                                     .pushNamed(
-                                                                  'MyPostsList',
+                                                                  MyPostsListWidget
+                                                                      .routeName,
                                                                   extra: <String,
                                                                       dynamic>{
                                                                     kTransitionInfoKey:
@@ -2517,7 +2539,8 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                           Colors.transparent,
                                                       onTap: () async {
                                                         context.pushNamed(
-                                                          'MyProfilStats',
+                                                          MyProfilStatsWidget
+                                                              .routeName,
                                                           extra: <String,
                                                               dynamic>{
                                                             kTransitionInfoKey:
@@ -2581,7 +2604,8 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                               onTap: () async {
                                                                 context
                                                                     .pushNamed(
-                                                                  'MyProfilStats',
+                                                                  MyProfilStatsWidget
+                                                                      .routeName,
                                                                   extra: <String,
                                                                       dynamic>{
                                                                     kTransitionInfoKey:
@@ -2706,7 +2730,8 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                           Colors.transparent,
                                                       onTap: () async {
                                                         context.pushNamed(
-                                                          'EUserRankPage',
+                                                          EUserRankPageWidget
+                                                              .routeName,
                                                           extra: <String,
                                                               dynamic>{
                                                             kTransitionInfoKey:
@@ -2773,7 +2798,8 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                               onTap: () async {
                                                                 context
                                                                     .pushNamed(
-                                                                  'EUserRankPage',
+                                                                  EUserRankPageWidget
+                                                                      .routeName,
                                                                   extra: <String,
                                                                       dynamic>{
                                                                     kTransitionInfoKey:
@@ -2827,7 +2853,8 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                               onTap: () async {
                                                                 context
                                                                     .pushNamed(
-                                                                  'MyBestsEUserRankPage',
+                                                                  MyBestsEUserRankPageWidget
+                                                                      .routeName,
                                                                   extra: <String,
                                                                       dynamic>{
                                                                     kTransitionInfoKey:
@@ -3048,7 +3075,8 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                               .transparent,
                                                           onTap: () async {
                                                             context.pushNamed(
-                                                              'TeamPage',
+                                                              TeamPageWidget
+                                                                  .routeName,
                                                               queryParameters: {
                                                                 'teamRef':
                                                                     serializeParam(
@@ -3091,7 +3119,8 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                               onTap: () async {
                                                                 context
                                                                     .pushNamed(
-                                                                  'TeamPage',
+                                                                  TeamPageWidget
+                                                                      .routeName,
                                                                   queryParameters:
                                                                       {
                                                                     'teamRef':
@@ -3217,7 +3246,8 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                           Colors.transparent,
                                                       onTap: () async {
                                                         context.pushNamed(
-                                                          'TeamList',
+                                                          TeamListWidget
+                                                              .routeName,
                                                           extra: <String,
                                                               dynamic>{
                                                             kTransitionInfoKey:
@@ -3283,7 +3313,8 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                               onTap: () async {
                                                                 context
                                                                     .pushNamed(
-                                                                  'TeamList',
+                                                                  TeamListWidget
+                                                                      .routeName,
                                                                   extra: <String,
                                                                       dynamic>{
                                                                     kTransitionInfoKey:
@@ -3340,7 +3371,8 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                               onTap: () async {
                                                                 context
                                                                     .pushNamed(
-                                                                  'MyTeamList',
+                                                                  MyTeamListWidget
+                                                                      .routeName,
                                                                   extra: <String,
                                                                       dynamic>{
                                                                     kTransitionInfoKey:
@@ -3394,7 +3426,8 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                               onTap: () async {
                                                                 context
                                                                     .pushNamed(
-                                                                  'ETeamRankPage',
+                                                                  ETeamRankPageWidget
+                                                                      .routeName,
                                                                   extra: <String,
                                                                       dynamic>{
                                                                     kTransitionInfoKey:
@@ -3571,7 +3604,8 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                           Colors.transparent,
                                                       onTap: () async {
                                                         context.pushNamed(
-                                                          'ETeamRankPage',
+                                                          ETeamRankPageWidget
+                                                              .routeName,
                                                           extra: <String,
                                                               dynamic>{
                                                             kTransitionInfoKey:
@@ -3638,7 +3672,8 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                               onTap: () async {
                                                                 context
                                                                     .pushNamed(
-                                                                  'ListEvents',
+                                                                  ListEventsWidget
+                                                                      .routeName,
                                                                   extra: <String,
                                                                       dynamic>{
                                                                     kTransitionInfoKey:
@@ -3695,7 +3730,8 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                               onTap: () async {
                                                                 context
                                                                     .pushNamed(
-                                                                  'MyTeamsListEvents',
+                                                                  MyTeamsListEventsWidget
+                                                                      .routeName,
                                                                   extra: <String,
                                                                       dynamic>{
                                                                     kTransitionInfoKey:
@@ -3901,7 +3937,8 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                           Colors.transparent,
                                                       onTap: () async {
                                                         context.pushNamed(
-                                                          'ListPosts',
+                                                          ListPostsWidget
+                                                              .routeName,
                                                           extra: <String,
                                                               dynamic>{
                                                             kTransitionInfoKey:
@@ -3967,7 +4004,8 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                               onTap: () async {
                                                                 context
                                                                     .pushNamed(
-                                                                  'ListPosts',
+                                                                  ListPostsWidget
+                                                                      .routeName,
                                                                   extra: <String,
                                                                       dynamic>{
                                                                     kTransitionInfoKey:
@@ -4024,7 +4062,8 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                               onTap: () async {
                                                                 context
                                                                     .pushNamed(
-                                                                  'ListPostsMyTeams',
+                                                                  ListPostsMyTeamsWidget
+                                                                      .routeName,
                                                                   extra: <String,
                                                                       dynamic>{
                                                                     kTransitionInfoKey:
@@ -4078,7 +4117,8 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                               onTap: () async {
                                                                 context
                                                                     .pushNamed(
-                                                                  'MyPostsList',
+                                                                  MyPostsListWidget
+                                                                      .routeName,
                                                                   extra: <String,
                                                                       dynamic>{
                                                                     kTransitionInfoKey:
@@ -4311,7 +4351,7 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                   Colors.transparent,
                                               onTap: () async {
                                                 context.pushNamed(
-                                                  'TheSTeamPage',
+                                                  TheSTeamPageWidget.routeName,
                                                   extra: <String, dynamic>{
                                                     kTransitionInfoKey:
                                                         TransitionInfo(
@@ -4358,7 +4398,8 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                       Colors.transparent,
                                                   onTap: () async {
                                                     context.pushNamed(
-                                                      'TheSTeamPage',
+                                                      TheSTeamPageWidget
+                                                          .routeName,
                                                       extra: <String, dynamic>{
                                                         kTransitionInfoKey:
                                                             TransitionInfo(

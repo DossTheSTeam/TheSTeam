@@ -1,5 +1,6 @@
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'list_messages_boss_event_widget.dart' show ListMessagesBossEventWidget;
 import 'package:flutter/material.dart';
 import 'package:record/record.dart';

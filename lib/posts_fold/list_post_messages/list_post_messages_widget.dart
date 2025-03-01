@@ -7,6 +7,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/team_fold/audio_fan_conference/audio_fan_conference_widget.dart';
 import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'list_post_messages_model.dart';
@@ -19,6 +20,9 @@ class ListPostMessagesWidget extends StatefulWidget {
   });
 
   final DocumentReference? postRef;
+
+  static String routeName = 'ListPostMessages';
+  static String routePath = '/listPostMessages';
 
   @override
   State<ListPostMessagesWidget> createState() => _ListPostMessagesWidgetState();
@@ -111,7 +115,7 @@ class _ListPostMessagesWidgetState extends State<ListPostMessagesWidget> {
                                             highlightColor: Colors.transparent,
                                             onTap: () async {
                                               context.pushNamed(
-                                                'MenuPage',
+                                                MenuPageWidget.routeName,
                                                 extra: <String, dynamic>{
                                                   kTransitionInfoKey:
                                                       TransitionInfo(
@@ -227,7 +231,8 @@ class _ListPostMessagesWidgetState extends State<ListPostMessagesWidget> {
                                                               .transparent,
                                                           onTap: () async {
                                                             context.pushNamed(
-                                                              'TeamPage',
+                                                              TeamPageWidget
+                                                                  .routeName,
                                                               queryParameters: {
                                                                 'teamRef':
                                                                     serializeParam(
@@ -568,7 +573,8 @@ class _ListPostMessagesWidgetState extends State<ListPostMessagesWidget> {
                                                         Colors.transparent,
                                                     onTap: () async {
                                                       context.pushNamed(
-                                                        'MyNotifsList',
+                                                        MyNotifsListWidget
+                                                            .routeName,
                                                         extra: <String,
                                                             dynamic>{
                                                           kTransitionInfoKey:
@@ -907,7 +913,7 @@ class _ListPostMessagesWidgetState extends State<ListPostMessagesWidget> {
                                                                               highlightColor: Colors.transparent,
                                                                               onTap: () async {
                                                                                 context.pushNamed(
-                                                                                  'PublicProfilPage',
+                                                                                  PublicProfilPageWidget.routeName,
                                                                                   queryParameters: {
                                                                                     'userRef': serializeParam(
                                                                                       columnSportUsersRecord.reference,
@@ -989,7 +995,7 @@ class _ListPostMessagesWidgetState extends State<ListPostMessagesWidget> {
                                                                                 highlightColor: Colors.transparent,
                                                                                 onTap: () async {
                                                                                   context.pushNamed(
-                                                                                    'PostMessagePage',
+                                                                                    PostMessagePageWidget.routeName,
                                                                                     queryParameters: {
                                                                                       'startedCommRef': serializeParam(
                                                                                         columnCommsPostMessagesRecord.reference,
@@ -1299,7 +1305,7 @@ class _ListPostMessagesWidgetState extends State<ListPostMessagesWidget> {
                                                                               highlightColor: Colors.transparent,
                                                                               onTap: () async {
                                                                                 context.pushNamed(
-                                                                                  'PublicProfilPage',
+                                                                                  PublicProfilPageWidget.routeName,
                                                                                   queryParameters: {
                                                                                     'userRef': serializeParam(
                                                                                       columnEsportUsersRecord.reference,
@@ -1381,7 +1387,7 @@ class _ListPostMessagesWidgetState extends State<ListPostMessagesWidget> {
                                                                                 highlightColor: Colors.transparent,
                                                                                 onTap: () async {
                                                                                   context.pushNamed(
-                                                                                    'PostMessagePage',
+                                                                                    PostMessagePageWidget.routeName,
                                                                                     queryParameters: {
                                                                                       'startedCommRef': serializeParam(
                                                                                         columnCommsPostMessagesRecord.reference,

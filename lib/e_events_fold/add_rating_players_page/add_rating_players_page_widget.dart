@@ -7,6 +7,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/team_fold/audio_fan_conference/audio_fan_conference_widget.dart';
 import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'add_rating_players_page_model.dart';
@@ -19,6 +20,9 @@ class AddRatingPlayersPageWidget extends StatefulWidget {
   });
 
   final DocumentReference? eventRef;
+
+  static String routeName = 'AddRatingPlayersPage';
+  static String routePath = '/addRatingPlayersPage';
 
   @override
   State<AddRatingPlayersPageWidget> createState() =>
@@ -106,7 +110,7 @@ class _AddRatingPlayersPageWidgetState
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
                                         context.pushNamed(
-                                          'MenuPage',
+                                          MenuPageWidget.routeName,
                                           extra: <String, dynamic>{
                                             kTransitionInfoKey: TransitionInfo(
                                               hasTransition: true,
@@ -209,7 +213,8 @@ class _AddRatingPlayersPageWidgetState
                                                         Colors.transparent,
                                                     onTap: () async {
                                                       context.pushNamed(
-                                                        'TeamPage',
+                                                        TeamPageWidget
+                                                            .routeName,
                                                         queryParameters: {
                                                           'teamRef':
                                                               serializeParam(
@@ -2421,7 +2426,7 @@ class _AddRatingPlayersPageWidgetState
                                     builder: (context) => FFButtonWidget(
                                       onPressed: () async {
                                         context.pushNamed(
-                                          'ModifETeamPage',
+                                          ModifETeamPageWidget.routeName,
                                           queryParameters: {
                                             'teamRef': serializeParam(
                                               currentUserDocument?.eteamRef,
@@ -2439,7 +2444,7 @@ class _AddRatingPlayersPageWidgetState
                                         ));
 
                                         context.goNamed(
-                                          'MyProfilPage',
+                                          MyProfilPageWidget.routeName,
                                           extra: <String, dynamic>{
                                             kTransitionInfoKey: TransitionInfo(
                                               hasTransition: true,

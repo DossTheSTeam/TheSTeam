@@ -7,6 +7,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/team_fold/audio_fan_conference/audio_fan_conference_widget.dart';
 import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'add_bet_page_model.dart';
@@ -19,6 +20,9 @@ class AddBetPageWidget extends StatefulWidget {
   });
 
   final DocumentReference? eventRef;
+
+  static String routeName = 'AddBetPage';
+  static String routePath = '/addBetPage';
 
   @override
   State<AddBetPageWidget> createState() => _AddBetPageWidgetState();
@@ -128,7 +132,7 @@ class _AddBetPageWidgetState extends State<AddBetPageWidget> {
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
                                         context.pushNamed(
-                                          'MenuPage',
+                                          MenuPageWidget.routeName,
                                           extra: <String, dynamic>{
                                             kTransitionInfoKey: TransitionInfo(
                                               hasTransition: true,
@@ -224,7 +228,8 @@ class _AddBetPageWidgetState extends State<AddBetPageWidget> {
                                                           Colors.transparent,
                                                       onTap: () async {
                                                         context.pushNamed(
-                                                          'TeamPage',
+                                                          TeamPageWidget
+                                                              .routeName,
                                                           queryParameters: {
                                                             'teamRef':
                                                                 serializeParam(
@@ -2104,7 +2109,7 @@ class _AddBetPageWidgetState extends State<AddBetPageWidget> {
                                   ));
 
                                   context.pushNamed(
-                                    'ModifEventPage',
+                                    ModifEventPageWidget.routeName,
                                     queryParameters: {
                                       'eventRef': serializeParam(
                                         widget.eventRef,
@@ -2154,7 +2159,7 @@ class _AddBetPageWidgetState extends State<AddBetPageWidget> {
                                 onPressed: () async {
                                   await widget.eventRef!.delete();
 
-                                  context.pushNamed('AdminPage');
+                                  context.pushNamed(AdminPageWidget.routeName);
                                 },
                                 text: 'Supprimer',
                                 options: FFButtonOptions(

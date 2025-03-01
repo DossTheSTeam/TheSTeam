@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/team_fold/audio_fan_conference/audio_fan_conference_widget.dart';
 import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
 import '/users_fold/delete_my_post/delete_my_post_widget.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'my_posts_list_model.dart';
@@ -13,6 +14,9 @@ export 'my_posts_list_model.dart';
 
 class MyPostsListWidget extends StatefulWidget {
   const MyPostsListWidget({super.key});
+
+  static String routeName = 'MyPostsList';
+  static String routePath = '/myPostsList';
 
   @override
   State<MyPostsListWidget> createState() => _MyPostsListWidgetState();
@@ -73,7 +77,7 @@ class _MyPostsListWidgetState extends State<MyPostsListWidget> {
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
                                     context.pushNamed(
-                                      'MenuPage',
+                                      MenuPageWidget.routeName,
                                       extra: <String, dynamic>{
                                         kTransitionInfoKey: TransitionInfo(
                                           hasTransition: true,
@@ -167,7 +171,7 @@ class _MyPostsListWidgetState extends State<MyPostsListWidget> {
                                                     Colors.transparent,
                                                 onTap: () async {
                                                   context.pushNamed(
-                                                    'TeamPage',
+                                                    TeamPageWidget.routeName,
                                                     queryParameters: {
                                                       'teamRef': serializeParam(
                                                         currentUserDocument
@@ -537,7 +541,8 @@ class _MyPostsListWidgetState extends State<MyPostsListWidget> {
                                                             Colors.transparent,
                                                         onTap: () async {
                                                           context.pushNamed(
-                                                            'MyNotifsList',
+                                                            MyNotifsListWidget
+                                                                .routeName,
                                                             extra: <String,
                                                                 dynamic>{
                                                               kTransitionInfoKey:
@@ -587,7 +592,8 @@ class _MyPostsListWidgetState extends State<MyPostsListWidget> {
                                                   Colors.transparent,
                                               onTap: () async {
                                                 context.pushNamed(
-                                                  'ListPostsMyTeams',
+                                                  ListPostsMyTeamsWidget
+                                                      .routeName,
                                                   extra: <String, dynamic>{
                                                     kTransitionInfoKey:
                                                         TransitionInfo(
@@ -891,7 +897,8 @@ class _MyPostsListWidgetState extends State<MyPostsListWidget> {
                                                                           () async {
                                                                         context
                                                                             .pushNamed(
-                                                                          'TeamPage',
+                                                                          TeamPageWidget
+                                                                              .routeName,
                                                                           queryParameters:
                                                                               {
                                                                             'teamRef':
@@ -1041,7 +1048,8 @@ class _MyPostsListWidgetState extends State<MyPostsListWidget> {
                                                                       () async {
                                                                     context
                                                                         .pushNamed(
-                                                                      'PostPage',
+                                                                      PostPageWidget
+                                                                          .routeName,
                                                                       queryParameters:
                                                                           {
                                                                         'postRef':
@@ -1111,7 +1119,8 @@ class _MyPostsListWidgetState extends State<MyPostsListWidget> {
                                                                         () async {
                                                                       context
                                                                           .pushNamed(
-                                                                        'TheSTeamPostPage',
+                                                                        TheSTeamPostPageWidget
+                                                                            .routeName,
                                                                         queryParameters:
                                                                             {
                                                                           'postRef':
@@ -1222,7 +1231,7 @@ class _MyPostsListWidgetState extends State<MyPostsListWidget> {
                                                                             () async {
                                                                           context
                                                                               .pushNamed(
-                                                                            'PublicProfilPage',
+                                                                            PublicProfilPageWidget.routeName,
                                                                             queryParameters:
                                                                                 {
                                                                               'userRef': serializeParam(
@@ -1339,7 +1348,7 @@ class _MyPostsListWidgetState extends State<MyPostsListWidget> {
                                                                             () async {
                                                                           context
                                                                               .pushNamed(
-                                                                            'PublicProfilPage',
+                                                                            PublicProfilPageWidget.routeName,
                                                                             queryParameters:
                                                                                 {
                                                                               'userRef': serializeParam(
@@ -1418,7 +1427,8 @@ class _MyPostsListWidgetState extends State<MyPostsListWidget> {
                                                                           () async {
                                                                         context
                                                                             .pushNamed(
-                                                                          'PublicProfilPage',
+                                                                          PublicProfilPageWidget
+                                                                              .routeName,
                                                                           queryParameters:
                                                                               {
                                                                             'userRef':

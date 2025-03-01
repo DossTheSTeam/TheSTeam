@@ -8,6 +8,7 @@ import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
 import '/users_fold/check_my_bet/check_my_bet_widget.dart';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'my_bets_list_model.dart';
@@ -15,6 +16,9 @@ export 'my_bets_list_model.dart';
 
 class MyBetsListWidget extends StatefulWidget {
   const MyBetsListWidget({super.key});
+
+  static String routeName = 'MyBetsList';
+  static String routePath = '/myBetsList';
 
   @override
   State<MyBetsListWidget> createState() => _MyBetsListWidgetState();
@@ -82,7 +86,7 @@ class _MyBetsListWidgetState extends State<MyBetsListWidget>
                                         highlightColor: Colors.transparent,
                                         onTap: () async {
                                           context.pushNamed(
-                                            'MenuPage',
+                                            MenuPageWidget.routeName,
                                             extra: <String, dynamic>{
                                               kTransitionInfoKey:
                                                   TransitionInfo(
@@ -179,7 +183,7 @@ class _MyBetsListWidgetState extends State<MyBetsListWidget>
                                                     Colors.transparent,
                                                 onTap: () async {
                                                   context.pushNamed(
-                                                    'TeamPage',
+                                                    TeamPageWidget.routeName,
                                                     queryParameters: {
                                                       'teamRef': serializeParam(
                                                         currentUserDocument
@@ -538,7 +542,8 @@ class _MyBetsListWidgetState extends State<MyBetsListWidget>
                                                     Colors.transparent,
                                                 onTap: () async {
                                                   context.pushNamed(
-                                                    'MyNotifsList',
+                                                    MyNotifsListWidget
+                                                        .routeName,
                                                     extra: <String, dynamic>{
                                                       kTransitionInfoKey:
                                                           TransitionInfo(
@@ -907,7 +912,8 @@ class _MyBetsListWidgetState extends State<MyBetsListWidget>
                                                         Colors.transparent,
                                                     onTap: () async {
                                                       context.pushNamed(
-                                                        'MyBetPage',
+                                                        MyBetPageWidget
+                                                            .routeName,
                                                         queryParameters: {
                                                           'myBetRef':
                                                               serializeParam(

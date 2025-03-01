@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/team_fold/audio_fan_conference/audio_fan_conference_widget.dart';
 import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'my_bests_e_team_rank_page_model.dart';
@@ -13,6 +14,9 @@ export 'my_bests_e_team_rank_page_model.dart';
 
 class MyBestsETeamRankPageWidget extends StatefulWidget {
   const MyBestsETeamRankPageWidget({super.key});
+
+  static String routeName = 'MyBestsETeamRankPage';
+  static String routePath = '/myBestsETeamRankPage';
 
   @override
   State<MyBestsETeamRankPageWidget> createState() =>
@@ -79,7 +83,7 @@ class _MyBestsETeamRankPageWidgetState
                                     highlightColor: Colors.transparent,
                                     onTap: () async {
                                       context.pushNamed(
-                                        'MenuPage',
+                                        MenuPageWidget.routeName,
                                         extra: <String, dynamic>{
                                           kTransitionInfoKey: TransitionInfo(
                                             hasTransition: true,
@@ -175,7 +179,7 @@ class _MyBestsETeamRankPageWidgetState
                                                       Colors.transparent,
                                                   onTap: () async {
                                                     context.pushNamed(
-                                                      'TeamPage',
+                                                      TeamPageWidget.routeName,
                                                       queryParameters: {
                                                         'teamRef':
                                                             serializeParam(
@@ -485,7 +489,7 @@ class _MyBestsETeamRankPageWidgetState
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
                                         context.pushNamed(
-                                          'ETeamRankPage',
+                                          ETeamRankPageWidget.routeName,
                                           extra: <String, dynamic>{
                                             kTransitionInfoKey: TransitionInfo(
                                               hasTransition: true,
@@ -576,7 +580,8 @@ class _MyBestsETeamRankPageWidgetState
                                                           Colors.transparent,
                                                       onTap: () async {
                                                         context.pushNamed(
-                                                          'MyTeamList',
+                                                          MyTeamListWidget
+                                                              .routeName,
                                                           extra: <String,
                                                               dynamic>{
                                                             kTransitionInfoKey:
@@ -708,7 +713,8 @@ class _MyBestsETeamRankPageWidgetState
                                                               onTap: () async {
                                                                 context
                                                                     .pushNamed(
-                                                                  'MyNotifsList',
+                                                                  MyNotifsListWidget
+                                                                      .routeName,
                                                                   extra: <String,
                                                                       dynamic>{
                                                                     kTransitionInfoKey:
@@ -1392,7 +1398,8 @@ class _MyBestsETeamRankPageWidgetState
                                                                         () async {
                                                                       context
                                                                           .pushNamed(
-                                                                        'TeamPage',
+                                                                        TeamPageWidget
+                                                                            .routeName,
                                                                         queryParameters:
                                                                             {
                                                                           'teamRef':
@@ -1468,8 +1475,13 @@ class _MyBestsETeamRankPageWidgetState
                                                                       .override(
                                                                         fontFamily:
                                                                             'Poppins',
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .primaryText,
+                                                                        color: valueOrDefault<
+                                                                            Color>(
+                                                                          columnETeamsScrollTeamsRecord
+                                                                              .color1,
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .primaryText,
+                                                                        ),
                                                                         letterSpacing:
                                                                             0.0,
                                                                       ),
@@ -1553,9 +1565,13 @@ class _MyBestsETeamRankPageWidgetState
                                                                     .override(
                                                                       fontFamily:
                                                                           'Poppins',
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .primaryText,
+                                                                      color: valueOrDefault<
+                                                                          Color>(
+                                                                        columnETeamsScrollTeamsRecord
+                                                                            .color1,
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .primaryText,
+                                                                      ),
                                                                       letterSpacing:
                                                                           0.0,
                                                                     ),
@@ -1598,6 +1614,13 @@ class _MyBestsETeamRankPageWidgetState
                                                                     .override(
                                                                       fontFamily:
                                                                           'Poppins',
+                                                                      color: valueOrDefault<
+                                                                          Color>(
+                                                                        columnETeamsScrollTeamsRecord
+                                                                            .color1,
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .primaryText,
+                                                                      ),
                                                                       letterSpacing:
                                                                           0.0,
                                                                     ),
@@ -1637,6 +1660,13 @@ class _MyBestsETeamRankPageWidgetState
                                                                     .override(
                                                                       fontFamily:
                                                                           'Poppins',
+                                                                      color: valueOrDefault<
+                                                                          Color>(
+                                                                        columnETeamsScrollTeamsRecord
+                                                                            .color1,
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .primaryText,
+                                                                      ),
                                                                       letterSpacing:
                                                                           0.0,
                                                                     ),
@@ -1679,6 +1709,13 @@ class _MyBestsETeamRankPageWidgetState
                                                                     .override(
                                                                       fontFamily:
                                                                           'Poppins',
+                                                                      color: valueOrDefault<
+                                                                          Color>(
+                                                                        columnETeamsScrollTeamsRecord
+                                                                            .color1,
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .primaryText,
+                                                                      ),
                                                                       letterSpacing:
                                                                           0.0,
                                                                     ),
@@ -1718,6 +1755,13 @@ class _MyBestsETeamRankPageWidgetState
                                                                     .override(
                                                                       fontFamily:
                                                                           'Poppins',
+                                                                      color: valueOrDefault<
+                                                                          Color>(
+                                                                        columnETeamsScrollTeamsRecord
+                                                                            .color1,
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .primaryText,
+                                                                      ),
                                                                       letterSpacing:
                                                                           0.0,
                                                                     ),
@@ -1777,9 +1821,13 @@ class _MyBestsETeamRankPageWidgetState
                                                                     .override(
                                                                       fontFamily:
                                                                           'Poppins',
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .primaryText,
+                                                                      color: valueOrDefault<
+                                                                          Color>(
+                                                                        columnETeamsScrollTeamsRecord
+                                                                            .color1,
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .primaryText,
+                                                                      ),
                                                                       letterSpacing:
                                                                           0.0,
                                                                     ),
@@ -1836,7 +1884,10 @@ class _MyBestsETeamRankPageWidgetState
                                                                             fontFamily:
                                                                                 'Poppins',
                                                                             color:
-                                                                                FlutterFlowTheme.of(context).primaryText,
+                                                                                valueOrDefault<Color>(
+                                                                              columnETeamsScrollTeamsRecord.color1,
+                                                                              FlutterFlowTheme.of(context).primaryText,
+                                                                            ),
                                                                             letterSpacing:
                                                                                 0.0,
                                                                           ),
@@ -1889,7 +1940,10 @@ class _MyBestsETeamRankPageWidgetState
                                                                             fontFamily:
                                                                                 'Poppins',
                                                                             color:
-                                                                                FlutterFlowTheme.of(context).primaryText,
+                                                                                valueOrDefault<Color>(
+                                                                              columnETeamsScrollTeamsRecord.color1,
+                                                                              FlutterFlowTheme.of(context).primaryText,
+                                                                            ),
                                                                             letterSpacing:
                                                                                 0.0,
                                                                           ),
@@ -1935,6 +1989,13 @@ class _MyBestsETeamRankPageWidgetState
                                                                     .override(
                                                                       fontFamily:
                                                                           'Poppins',
+                                                                      color: valueOrDefault<
+                                                                          Color>(
+                                                                        columnETeamsScrollTeamsRecord
+                                                                            .color1,
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .primaryText,
+                                                                      ),
                                                                       letterSpacing:
                                                                           0.0,
                                                                     ),

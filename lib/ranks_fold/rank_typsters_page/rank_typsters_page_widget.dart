@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/team_fold/audio_fan_conference/audio_fan_conference_widget.dart';
 import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'rank_typsters_page_model.dart';
@@ -13,6 +14,9 @@ export 'rank_typsters_page_model.dart';
 
 class RankTypstersPageWidget extends StatefulWidget {
   const RankTypstersPageWidget({super.key});
+
+  static String routeName = 'RankTypstersPage';
+  static String routePath = '/rankTypstersPage';
 
   @override
   State<RankTypstersPageWidget> createState() => _RankTypstersPageWidgetState();
@@ -78,7 +82,7 @@ class _RankTypstersPageWidgetState extends State<RankTypstersPageWidget> {
                                     highlightColor: Colors.transparent,
                                     onTap: () async {
                                       context.pushNamed(
-                                        'MenuPage',
+                                        MenuPageWidget.routeName,
                                         extra: <String, dynamic>{
                                           kTransitionInfoKey: TransitionInfo(
                                             hasTransition: true,
@@ -174,7 +178,7 @@ class _RankTypstersPageWidgetState extends State<RankTypstersPageWidget> {
                                                       Colors.transparent,
                                                   onTap: () async {
                                                     context.pushNamed(
-                                                      'TeamPage',
+                                                      TeamPageWidget.routeName,
                                                       queryParameters: {
                                                         'teamRef':
                                                             serializeParam(
@@ -489,7 +493,7 @@ class _RankTypstersPageWidgetState extends State<RankTypstersPageWidget> {
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
                                         context.pushNamed(
-                                          'RankPage',
+                                          RankPageWidget.routeName,
                                           extra: <String, dynamic>{
                                             kTransitionInfoKey: TransitionInfo(
                                               hasTransition: true,
@@ -525,7 +529,7 @@ class _RankTypstersPageWidgetState extends State<RankTypstersPageWidget> {
                                           highlightColor: Colors.transparent,
                                           onTap: () async {
                                             context.pushNamed(
-                                              'MyBestsRankPage',
+                                              MyBestsRankPageWidget.routeName,
                                               extra: <String, dynamic>{
                                                 kTransitionInfoKey:
                                                     TransitionInfo(
@@ -617,7 +621,8 @@ class _RankTypstersPageWidgetState extends State<RankTypstersPageWidget> {
                                                           Colors.transparent,
                                                       onTap: () async {
                                                         context.pushNamed(
-                                                          'MyNotifsList',
+                                                          MyNotifsListWidget
+                                                              .routeName,
                                                           extra: <String,
                                                               dynamic>{
                                                             kTransitionInfoKey:
@@ -683,43 +688,36 @@ class _RankTypstersPageWidgetState extends State<RankTypstersPageWidget> {
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
-                                                Padding(
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 0.0, 5.0, 0.0),
-                                                  child: Container(
-                                                    width: 125.0,
-                                                    height: 30.0,
-                                                    decoration: BoxDecoration(
+                                                Container(
+                                                  width: 120.0,
+                                                  height: 30.0,
+                                                  decoration: BoxDecoration(
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryBackground,
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            25.0),
+                                                    border: Border.all(
                                                       color: FlutterFlowTheme
                                                               .of(context)
                                                           .primaryBackground,
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              25.0),
-                                                      border: Border.all(
-                                                        color: FlutterFlowTheme
-                                                                .of(context)
-                                                            .primaryBackground,
-                                                      ),
                                                     ),
-                                                    child: Align(
-                                                      alignment:
-                                                          AlignmentDirectional(
-                                                              -1.0, 0.0),
-                                                      child: Text(
-                                                        'Pseudo',
-                                                        style:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .labelSmall
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                ),
-                                                      ),
+                                                  ),
+                                                  child: Align(
+                                                    alignment:
+                                                        AlignmentDirectional(
+                                                            -1.0, 0.0),
+                                                    child: Text(
+                                                      'Pseudo',
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .labelSmall
+                                                          .override(
+                                                            fontFamily:
+                                                                'Poppins',
+                                                            letterSpacing: 0.0,
+                                                          ),
                                                     ),
                                                   ),
                                                 ),
@@ -1077,7 +1075,7 @@ class _RankTypstersPageWidgetState extends State<RankTypstersPageWidget> {
                                                           MainAxisSize.max,
                                                       children: [
                                                         Container(
-                                                          width: 125.0,
+                                                          width: 120.0,
                                                           height: 30.0,
                                                           decoration:
                                                               BoxDecoration(
@@ -1107,7 +1105,8 @@ class _RankTypstersPageWidgetState extends State<RankTypstersPageWidget> {
                                                               onTap: () async {
                                                                 context
                                                                     .pushNamed(
-                                                                  'PublicProfilPage',
+                                                                  PublicProfilPageWidget
+                                                                      .routeName,
                                                                   queryParameters:
                                                                       {
                                                                     'userRef':
@@ -1188,9 +1187,13 @@ class _RankTypstersPageWidgetState extends State<RankTypstersPageWidget> {
                                                                     .override(
                                                                       fontFamily:
                                                                           'Poppins',
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .primaryText,
+                                                                      color: valueOrDefault<
+                                                                          Color>(
+                                                                        columnUsersEarningsScrollUsersRecord
+                                                                            .color1,
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .primaryText,
+                                                                      ),
                                                                       letterSpacing:
                                                                           0.0,
                                                                     ),
@@ -1265,6 +1268,14 @@ class _RankTypstersPageWidgetState extends State<RankTypstersPageWidget> {
                                                                   .override(
                                                                     fontFamily:
                                                                         'Poppins',
+                                                                    color: valueOrDefault<
+                                                                        Color>(
+                                                                      columnUsersEarningsScrollUsersRecord
+                                                                          .color1,
+                                                                      FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primaryText,
+                                                                    ),
                                                                     letterSpacing:
                                                                         0.0,
                                                                   ),
@@ -1305,6 +1316,14 @@ class _RankTypstersPageWidgetState extends State<RankTypstersPageWidget> {
                                                                   .override(
                                                                     fontFamily:
                                                                         'Poppins',
+                                                                    color: valueOrDefault<
+                                                                        Color>(
+                                                                      columnUsersEarningsScrollUsersRecord
+                                                                          .color1,
+                                                                      FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primaryText,
+                                                                    ),
                                                                     letterSpacing:
                                                                         0.0,
                                                                   ),
@@ -1343,6 +1362,14 @@ class _RankTypstersPageWidgetState extends State<RankTypstersPageWidget> {
                                                                   .override(
                                                                     fontFamily:
                                                                         'Poppins',
+                                                                    color: valueOrDefault<
+                                                                        Color>(
+                                                                      columnUsersEarningsScrollUsersRecord
+                                                                          .color1,
+                                                                      FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primaryText,
+                                                                    ),
                                                                     letterSpacing:
                                                                         0.0,
                                                                   ),
@@ -1388,6 +1415,14 @@ class _RankTypstersPageWidgetState extends State<RankTypstersPageWidget> {
                                                                   .override(
                                                                     fontFamily:
                                                                         'Poppins',
+                                                                    color: valueOrDefault<
+                                                                        Color>(
+                                                                      columnUsersEarningsScrollUsersRecord
+                                                                          .color1,
+                                                                      FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primaryText,
+                                                                    ),
                                                                     letterSpacing:
                                                                         0.0,
                                                                   ),
@@ -1438,6 +1473,13 @@ class _RankTypstersPageWidgetState extends State<RankTypstersPageWidget> {
                                                                     .override(
                                                                       fontFamily:
                                                                           'Poppins',
+                                                                      color: valueOrDefault<
+                                                                          Color>(
+                                                                        columnUsersEarningsScrollUsersRecord
+                                                                            .color1,
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .primaryText,
+                                                                      ),
                                                                       letterSpacing:
                                                                           0.0,
                                                                     ),

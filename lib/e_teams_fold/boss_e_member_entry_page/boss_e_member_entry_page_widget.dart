@@ -9,6 +9,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/team_fold/audio_fan_conference/audio_fan_conference_widget.dart';
 import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'boss_e_member_entry_page_model.dart';
@@ -23,6 +24,9 @@ class BossEMemberEntryPageWidget extends StatefulWidget {
 
   final DocumentReference? notifRef;
   final DocumentReference? eTeamRef;
+
+  static String routeName = 'BossEMemberEntryPage';
+  static String routePath = '/bossEMemberEntryPage';
 
   @override
   State<BossEMemberEntryPageWidget> createState() =>
@@ -109,7 +113,7 @@ class _BossEMemberEntryPageWidgetState
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
                                         context.pushNamed(
-                                          'ModifETeamPage',
+                                          ModifETeamPageWidget.routeName,
                                           queryParameters: {
                                             'teamRef': serializeParam(
                                               bossEMemberEntryPageMyNotificationsRecord
@@ -219,7 +223,8 @@ class _BossEMemberEntryPageWidgetState
                                                         Colors.transparent,
                                                     onTap: () async {
                                                       context.pushNamed(
-                                                        'TeamPage',
+                                                        TeamPageWidget
+                                                            .routeName,
                                                         queryParameters: {
                                                           'teamRef':
                                                               serializeParam(
@@ -583,7 +588,8 @@ class _BossEMemberEntryPageWidgetState
                                             highlightColor: Colors.transparent,
                                             onTap: () async {
                                               context.pushNamed(
-                                                'PublicProfilPage',
+                                                PublicProfilPageWidget
+                                                    .routeName,
                                                 queryParameters: {
                                                   'userRef': serializeParam(
                                                     columnUsersRecord.reference,
@@ -1040,7 +1046,7 @@ class _BossEMemberEntryPageWidgetState
                                           highlightColor: Colors.transparent,
                                           onTap: () async {
                                             context.pushNamed(
-                                              'TeamPage',
+                                              TeamPageWidget.routeName,
                                               queryParameters: {
                                                 'teamRef': serializeParam(
                                                   columnTeamsRecord.reference,

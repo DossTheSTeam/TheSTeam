@@ -9,6 +9,7 @@ import '/flutter_flow/upload_data.dart';
 import '/team_fold/audio_fan_conference/audio_fan_conference_widget.dart';
 import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:just_audio/just_audio.dart';
@@ -23,6 +24,9 @@ class EventPageWidget extends StatefulWidget {
   });
 
   final DocumentReference? eventRef;
+
+  static String routeName = 'EventPage';
+  static String routePath = '/eventPage';
 
   @override
   State<EventPageWidget> createState() => _EventPageWidgetState();
@@ -114,7 +118,7 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                           highlightColor: Colors.transparent,
                                           onTap: () async {
                                             context.pushNamed(
-                                              'MenuPage',
+                                              MenuPageWidget.routeName,
                                               extra: <String, dynamic>{
                                                 kTransitionInfoKey:
                                                     TransitionInfo(
@@ -260,7 +264,8 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                                         Colors.transparent,
                                                     onTap: () async {
                                                       context.pushNamed(
-                                                        'TeamPage',
+                                                        TeamPageWidget
+                                                            .routeName,
                                                         queryParameters: {
                                                           'teamRef':
                                                               serializeParam(
@@ -805,13 +810,18 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                                   MainAxisAlignment
                                                       .spaceBetween,
                                               children: [
-                                                Container(
-                                                  width: 30.0,
-                                                  height: 30.0,
-                                                  decoration: BoxDecoration(
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .primaryBackground,
+                                                Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          10.0, 0.0, 0.0, 0.0),
+                                                  child: Container(
+                                                    width: 30.0,
+                                                    height: 30.0,
+                                                    decoration: BoxDecoration(
+                                                      color: FlutterFlowTheme
+                                                              .of(context)
+                                                          .primaryBackground,
+                                                    ),
                                                   ),
                                                 ),
                                                 Container(
@@ -852,93 +862,104 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                                         (contDomTeamsRecord
                                                                 .leagueValue !=
                                                             'pays.football'),
-                                                    child: FutureBuilder<
-                                                        List<TeamsRecord>>(
-                                                      future:
-                                                          queryTeamsRecordOnce(
-                                                        queryBuilder: (teamsRecord) =>
-                                                            teamsRecord
-                                                                .where(
-                                                                  'league_value',
-                                                                  isEqualTo:
-                                                                      contDomTeamsRecord
-                                                                          .leagueValue,
-                                                                )
-                                                                .orderBy(
-                                                                    'points',
-                                                                    descending:
-                                                                        true),
-                                                        limit: 30,
-                                                      ),
-                                                      builder:
-                                                          (context, snapshot) {
-                                                        // Customize what your widget looks like when it's loading.
-                                                        if (!snapshot.hasData) {
-                                                          return Center(
-                                                            child: SizedBox(
-                                                              width: 50.0,
-                                                              height: 50.0,
-                                                              child:
-                                                                  CircularProgressIndicator(
-                                                                valueColor:
-                                                                    AlwaysStoppedAnimation<
-                                                                        Color>(
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .accent4,
+                                                    child: Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  0.0,
+                                                                  0.0,
+                                                                  10.0,
+                                                                  0.0),
+                                                      child: FutureBuilder<
+                                                          List<TeamsRecord>>(
+                                                        future:
+                                                            queryTeamsRecordOnce(
+                                                          queryBuilder: (teamsRecord) =>
+                                                              teamsRecord
+                                                                  .where(
+                                                                    'league_value',
+                                                                    isEqualTo:
+                                                                        contDomTeamsRecord
+                                                                            .leagueValue,
+                                                                  )
+                                                                  .orderBy(
+                                                                      'points',
+                                                                      descending:
+                                                                          true),
+                                                          limit: 30,
+                                                        ),
+                                                        builder: (context,
+                                                            snapshot) {
+                                                          // Customize what your widget looks like when it's loading.
+                                                          if (!snapshot
+                                                              .hasData) {
+                                                            return Center(
+                                                              child: SizedBox(
+                                                                width: 50.0,
+                                                                height: 50.0,
+                                                                child:
+                                                                    CircularProgressIndicator(
+                                                                  valueColor:
+                                                                      AlwaysStoppedAnimation<
+                                                                          Color>(
+                                                                    FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .accent4,
+                                                                  ),
                                                                 ),
-                                                              ),
-                                                            ),
-                                                          );
-                                                        }
-                                                        List<TeamsRecord>
-                                                            rowTeamsRecordList =
-                                                            snapshot.data!;
-
-                                                        return Row(
-                                                          mainAxisSize:
-                                                              MainAxisSize.max,
-                                                          mainAxisAlignment:
-                                                              MainAxisAlignment
-                                                                  .end,
-                                                          children: List.generate(
-                                                              rowTeamsRecordList
-                                                                  .length,
-                                                              (rowIndex) {
-                                                            final rowTeamsRecord =
-                                                                rowTeamsRecordList[
-                                                                    rowIndex];
-                                                            return Visibility(
-                                                              visible: contDomTeamsRecord
-                                                                      .reference ==
-                                                                  rowTeamsRecord
-                                                                      .reference,
-                                                              child: Text(
-                                                                valueOrDefault<
-                                                                    String>(
-                                                                  functions
-                                                                      .zeroTo1(
-                                                                          rowIndex)
-                                                                      .toString(),
-                                                                  '1',
-                                                                ),
-                                                                textAlign:
-                                                                    TextAlign
-                                                                        .center,
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelMedium
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          'Poppins',
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                    ),
                                                               ),
                                                             );
-                                                          }),
-                                                        );
-                                                      },
+                                                          }
+                                                          List<TeamsRecord>
+                                                              rowTeamsRecordList =
+                                                              snapshot.data!;
+
+                                                          return Row(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            mainAxisAlignment:
+                                                                MainAxisAlignment
+                                                                    .end,
+                                                            children: List.generate(
+                                                                rowTeamsRecordList
+                                                                    .length,
+                                                                (rowIndex) {
+                                                              final rowTeamsRecord =
+                                                                  rowTeamsRecordList[
+                                                                      rowIndex];
+                                                              return Visibility(
+                                                                visible: contDomTeamsRecord
+                                                                        .reference ==
+                                                                    rowTeamsRecord
+                                                                        .reference,
+                                                                child: Text(
+                                                                  valueOrDefault<
+                                                                      String>(
+                                                                    functions
+                                                                        .zeroTo1(
+                                                                            rowIndex)
+                                                                        .toString(),
+                                                                    '1',
+                                                                  ),
+                                                                  textAlign:
+                                                                      TextAlign
+                                                                          .center,
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Poppins',
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                      ),
+                                                                ),
+                                                              );
+                                                            }),
+                                                          );
+                                                        },
+                                                      ),
                                                     ),
                                                   ),
                                                 ),
@@ -962,7 +983,7 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                                       Colors.transparent,
                                                   onTap: () async {
                                                     context.pushNamed(
-                                                      'TeamPage',
+                                                      TeamPageWidget.routeName,
                                                       queryParameters: {
                                                         'teamRef':
                                                             serializeParam(
@@ -1200,93 +1221,104 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                                         (contExtTeamsRecord
                                                                 .leagueValue !=
                                                             'pays.football'),
-                                                    child: FutureBuilder<
-                                                        List<TeamsRecord>>(
-                                                      future:
-                                                          queryTeamsRecordOnce(
-                                                        queryBuilder: (teamsRecord) =>
-                                                            teamsRecord
-                                                                .where(
-                                                                  'league_value',
-                                                                  isEqualTo:
-                                                                      contExtTeamsRecord
-                                                                          .leagueValue,
-                                                                )
-                                                                .orderBy(
-                                                                    'points',
-                                                                    descending:
-                                                                        true),
-                                                        limit: 30,
-                                                      ),
-                                                      builder:
-                                                          (context, snapshot) {
-                                                        // Customize what your widget looks like when it's loading.
-                                                        if (!snapshot.hasData) {
-                                                          return Center(
-                                                            child: SizedBox(
-                                                              width: 50.0,
-                                                              height: 50.0,
-                                                              child:
-                                                                  CircularProgressIndicator(
-                                                                valueColor:
-                                                                    AlwaysStoppedAnimation<
-                                                                        Color>(
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .accent4,
+                                                    child: Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  10.0,
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0),
+                                                      child: FutureBuilder<
+                                                          List<TeamsRecord>>(
+                                                        future:
+                                                            queryTeamsRecordOnce(
+                                                          queryBuilder: (teamsRecord) =>
+                                                              teamsRecord
+                                                                  .where(
+                                                                    'league_value',
+                                                                    isEqualTo:
+                                                                        contExtTeamsRecord
+                                                                            .leagueValue,
+                                                                  )
+                                                                  .orderBy(
+                                                                      'points',
+                                                                      descending:
+                                                                          true),
+                                                          limit: 30,
+                                                        ),
+                                                        builder: (context,
+                                                            snapshot) {
+                                                          // Customize what your widget looks like when it's loading.
+                                                          if (!snapshot
+                                                              .hasData) {
+                                                            return Center(
+                                                              child: SizedBox(
+                                                                width: 50.0,
+                                                                height: 50.0,
+                                                                child:
+                                                                    CircularProgressIndicator(
+                                                                  valueColor:
+                                                                      AlwaysStoppedAnimation<
+                                                                          Color>(
+                                                                    FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .accent4,
+                                                                  ),
                                                                 ),
-                                                              ),
-                                                            ),
-                                                          );
-                                                        }
-                                                        List<TeamsRecord>
-                                                            rowTeamsRecordList =
-                                                            snapshot.data!;
-
-                                                        return Row(
-                                                          mainAxisSize:
-                                                              MainAxisSize.max,
-                                                          mainAxisAlignment:
-                                                              MainAxisAlignment
-                                                                  .start,
-                                                          children: List.generate(
-                                                              rowTeamsRecordList
-                                                                  .length,
-                                                              (rowIndex) {
-                                                            final rowTeamsRecord =
-                                                                rowTeamsRecordList[
-                                                                    rowIndex];
-                                                            return Visibility(
-                                                              visible: contExtTeamsRecord
-                                                                      .reference ==
-                                                                  rowTeamsRecord
-                                                                      .reference,
-                                                              child: Text(
-                                                                valueOrDefault<
-                                                                    String>(
-                                                                  functions
-                                                                      .zeroTo1(
-                                                                          rowIndex)
-                                                                      .toString(),
-                                                                  '1',
-                                                                ),
-                                                                textAlign:
-                                                                    TextAlign
-                                                                        .center,
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelMedium
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          'Poppins',
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                    ),
                                                               ),
                                                             );
-                                                          }),
-                                                        );
-                                                      },
+                                                          }
+                                                          List<TeamsRecord>
+                                                              rowTeamsRecordList =
+                                                              snapshot.data!;
+
+                                                          return Row(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            mainAxisAlignment:
+                                                                MainAxisAlignment
+                                                                    .start,
+                                                            children: List.generate(
+                                                                rowTeamsRecordList
+                                                                    .length,
+                                                                (rowIndex) {
+                                                              final rowTeamsRecord =
+                                                                  rowTeamsRecordList[
+                                                                      rowIndex];
+                                                              return Visibility(
+                                                                visible: contExtTeamsRecord
+                                                                        .reference ==
+                                                                    rowTeamsRecord
+                                                                        .reference,
+                                                                child: Text(
+                                                                  valueOrDefault<
+                                                                      String>(
+                                                                    functions
+                                                                        .zeroTo1(
+                                                                            rowIndex)
+                                                                        .toString(),
+                                                                    '1',
+                                                                  ),
+                                                                  textAlign:
+                                                                      TextAlign
+                                                                          .center,
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Poppins',
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                      ),
+                                                                ),
+                                                              );
+                                                            }),
+                                                          );
+                                                        },
+                                                      ),
                                                     ),
                                                   ),
                                                 ),
@@ -1310,13 +1342,18 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                                     ),
                                                   ),
                                                 ),
-                                                Container(
-                                                  width: 30.0,
-                                                  height: 30.0,
-                                                  decoration: BoxDecoration(
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .primaryBackground,
+                                                Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 0.0, 10.0, 0.0),
+                                                  child: Container(
+                                                    width: 30.0,
+                                                    height: 30.0,
+                                                    decoration: BoxDecoration(
+                                                      color: FlutterFlowTheme
+                                                              .of(context)
+                                                          .primaryBackground,
+                                                    ),
                                                   ),
                                                 ),
                                               ],
@@ -1339,7 +1376,7 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                                       Colors.transparent,
                                                   onTap: () async {
                                                     context.pushNamed(
-                                                      'TeamPage',
+                                                      TeamPageWidget.routeName,
                                                       queryParameters: {
                                                         'teamRef':
                                                             serializeParam(
@@ -1580,7 +1617,7 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                         highlightColor: Colors.transparent,
                                         onTap: () async {
                                           context.pushNamed(
-                                            'MyEditProfil',
+                                            MyEditProfilWidget.routeName,
                                             extra: <String, dynamic>{
                                               kTransitionInfoKey:
                                                   TransitionInfo(
@@ -1620,7 +1657,7 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                           highlightColor: Colors.transparent,
                                           onTap: () async {
                                             context.pushNamed(
-                                              'MyEditProfil',
+                                              MyEditProfilWidget.routeName,
                                               extra: <String, dynamic>{
                                                 kTransitionInfoKey:
                                                     TransitionInfo(
@@ -1811,7 +1848,7 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                                             cartRecordReference);
 
                                                     context.pushNamed(
-                                                      'CartPage',
+                                                      CartPageWidget.routeName,
                                                       queryParameters: {
                                                         'cartRef':
                                                             serializeParam(
@@ -2523,7 +2560,8 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                                   Colors.transparent,
                                               onTap: () async {
                                                 context.pushNamed(
-                                                  'ListEventMessages',
+                                                  ListEventMessagesWidget
+                                                      .routeName,
                                                   queryParameters: {
                                                     'eventRef': serializeParam(
                                                       widget.eventRef,
@@ -2974,7 +3012,8 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                                                         () async {
                                                                       context
                                                                           .pushNamed(
-                                                                        'PublicProfilPage',
+                                                                        PublicProfilPageWidget
+                                                                            .routeName,
                                                                         queryParameters:
                                                                             {
                                                                           'userRef':
@@ -3133,7 +3172,7 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                                                             () async {
                                                                           context
                                                                               .pushNamed(
-                                                                            'EventMessagePage',
+                                                                            EventMessagePageWidget.routeName,
                                                                             queryParameters:
                                                                                 {
                                                                               'startedCommRef': serializeParam(
@@ -3850,7 +3889,7 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                         });
 
                                         context.pushNamed(
-                                          'ListEventMessages',
+                                          ListEventMessagesWidget.routeName,
                                           queryParameters: {
                                             'eventRef': serializeParam(
                                               widget.eventRef,

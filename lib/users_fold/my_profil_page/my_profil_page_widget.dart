@@ -8,6 +8,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/team_fold/audio_fan_conference/audio_fan_conference_widget.dart';
 import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -18,6 +19,9 @@ export 'my_profil_page_model.dart';
 
 class MyProfilPageWidget extends StatefulWidget {
   const MyProfilPageWidget({super.key});
+
+  static String routeName = 'MyProfilPage';
+  static String routePath = '/myProfilPage';
 
   @override
   State<MyProfilPageWidget> createState() => _MyProfilPageWidgetState();
@@ -213,7 +217,7 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                                             ),
                                             onPressed: () async {
                                               context.pushNamed(
-                                                'MenuPage',
+                                                MenuPageWidget.routeName,
                                                 extra: <String, dynamic>{
                                                   kTransitionInfoKey:
                                                       TransitionInfo(
@@ -328,7 +332,7 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                                                       Colors.transparent,
                                                   onTap: () async {
                                                     context.pushNamed(
-                                                      'TeamPage',
+                                                      TeamPageWidget.routeName,
                                                       queryParameters: {
                                                         'teamRef':
                                                             serializeParam(
@@ -738,7 +742,8 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                                                                     .transparent,
                                                             onTap: () async {
                                                               context.pushNamed(
-                                                                'MyNotifsList',
+                                                                MyNotifsListWidget
+                                                                    .routeName,
                                                                 extra: <String,
                                                                     dynamic>{
                                                                   kTransitionInfoKey:
@@ -841,7 +846,7 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                                 highlightColor: Colors.transparent,
                                 onTap: () async {
                                   context.pushNamed(
-                                    'MyImagePage',
+                                    MyImagePageWidget.routeName,
                                     extra: <String, dynamic>{
                                       kTransitionInfoKey: TransitionInfo(
                                         hasTransition: true,
@@ -943,7 +948,8 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                                         size: 30.0,
                                       ),
                                       onPressed: () async {
-                                        context.pushNamed('ModeratorPage');
+                                        context.pushNamed(
+                                            ModeratorPageWidget.routeName);
                                       },
                                     ),
                                   ),
@@ -979,7 +985,8 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                                         size: 30.0,
                                       ),
                                       onPressed: () async {
-                                        context.pushNamed('AdminPage');
+                                        context.pushNamed(
+                                            AdminPageWidget.routeName);
                                       },
                                     ),
                                   ),
@@ -1015,7 +1022,8 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                                         size: 30.0,
                                       ),
                                       onPressed: () async {
-                                        context.pushNamed('ModeratorPage');
+                                        context.pushNamed(
+                                            ModeratorPageWidget.routeName);
                                       },
                                     ),
                                   ),
@@ -1076,7 +1084,8 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                                             highlightColor: Colors.transparent,
                                             onTap: () async {
                                               context.pushNamed(
-                                                'DiscusionETeamPage',
+                                                DiscusionETeamPageWidget
+                                                    .routeName,
                                                 queryParameters: {
                                                   'eTeamRef': serializeParam(
                                                     containerTeamsRecord
@@ -1211,7 +1220,7 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                                         highlightColor: Colors.transparent,
                                         onTap: () async {
                                           context.pushNamed(
-                                            'TeamPage',
+                                            TeamPageWidget.routeName,
                                             queryParameters: {
                                               'teamRef': serializeParam(
                                                 containerTeamsRecord.reference,
@@ -1713,7 +1722,7 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                                         highlightColor: Colors.transparent,
                                         onTap: () async {
                                           context.pushNamed(
-                                            'MyBetsList',
+                                            MyBetsListWidget.routeName,
                                             extra: <String, dynamic>{
                                               kTransitionInfoKey:
                                                   TransitionInfo(
@@ -1768,7 +1777,7 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                                         highlightColor: Colors.transparent,
                                         onTap: () async {
                                           context.pushNamed(
-                                            'MyProfilStats',
+                                            MyProfilStatsWidget.routeName,
                                             extra: <String, dynamic>{
                                               kTransitionInfoKey:
                                                   TransitionInfo(
@@ -1823,7 +1832,7 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                                         highlightColor: Colors.transparent,
                                         onTap: () async {
                                           context.pushNamed(
-                                            'MyBestsRankPage',
+                                            MyBestsRankPageWidget.routeName,
                                             extra: <String, dynamic>{
                                               kTransitionInfoKey:
                                                   TransitionInfo(
@@ -1878,7 +1887,7 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                                         highlightColor: Colors.transparent,
                                         onTap: () async {
                                           context.pushNamed(
-                                            'MyTeamList',
+                                            MyTeamListWidget.routeName,
                                             extra: <String, dynamic>{
                                               kTransitionInfoKey:
                                                   TransitionInfo(
@@ -1968,7 +1977,7 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                                         highlightColor: Colors.transparent,
                                         onTap: () async {
                                           context.pushNamed(
-                                            'MyProfilStats',
+                                            MyProfilStatsWidget.routeName,
                                             extra: <String, dynamic>{
                                               kTransitionInfoKey:
                                                   TransitionInfo(
@@ -2023,7 +2032,8 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                                         highlightColor: Colors.transparent,
                                         onTap: () async {
                                           context.pushNamed(
-                                            'MyBestsEUserRankPage',
+                                            MyBestsEUserRankPageWidget
+                                                .routeName,
                                             extra: <String, dynamic>{
                                               kTransitionInfoKey:
                                                   TransitionInfo(
@@ -2078,7 +2088,7 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                                         highlightColor: Colors.transparent,
                                         onTap: () async {
                                           context.pushNamed(
-                                            'MyTeamList',
+                                            MyTeamListWidget.routeName,
                                             extra: <String, dynamic>{
                                               kTransitionInfoKey:
                                                   TransitionInfo(
@@ -2134,7 +2144,7 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
                                     context.pushNamed(
-                                      'MyPostsList',
+                                      MyPostsListWidget.routeName,
                                       extra: <String, dynamic>{
                                         kTransitionInfoKey: TransitionInfo(
                                           hasTransition: true,
@@ -2184,7 +2194,7 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
                                     context.pushNamed(
-                                      'MyProfilSocial',
+                                      MyProfilSocialWidget.routeName,
                                       extra: <String, dynamic>{
                                         kTransitionInfoKey: TransitionInfo(
                                           hasTransition: true,
@@ -2361,7 +2371,7 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                               highlightColor: Colors.transparent,
                               onTap: () async {
                                 context.pushNamed(
-                                  'MyEditProfil',
+                                  MyEditProfilWidget.routeName,
                                   extra: <String, dynamic>{
                                     kTransitionInfoKey: TransitionInfo(
                                       hasTransition: true,
@@ -2646,7 +2656,8 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                           await authManager.signOut();
                           GoRouter.of(context).clearRedirectLocation();
 
-                          context.goNamedAuth('AuthPage', context.mounted);
+                          context.goNamedAuth(
+                              AuthPageWidget.routeName, context.mounted);
                         },
                         text: 'Déconnexion',
                         options: FFButtonOptions(

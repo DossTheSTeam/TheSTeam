@@ -8,6 +8,7 @@ import '/team_fold/audio_fan_conference/audio_fan_conference_widget.dart';
 import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
 import '/flutter_flow/admob_util.dart' as admob;
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -23,6 +24,9 @@ class PublicBetsListWidget extends StatefulWidget {
 
   final DocumentReference? userBetRef;
   final DocumentReference? userRef;
+
+  static String routeName = 'PublicBetsList';
+  static String routePath = '/publicBetsList';
 
   @override
   State<PublicBetsListWidget> createState() => _PublicBetsListWidgetState();
@@ -143,7 +147,7 @@ class _PublicBetsListWidgetState extends State<PublicBetsListWidget>
                                                   Colors.transparent,
                                               onTap: () async {
                                                 context.pushNamed(
-                                                  'MenuPage',
+                                                  MenuPageWidget.routeName,
                                                   extra: <String, dynamic>{
                                                     kTransitionInfoKey:
                                                         TransitionInfo(
@@ -258,7 +262,8 @@ class _PublicBetsListWidgetState extends State<PublicBetsListWidget>
                                                               .transparent,
                                                           onTap: () async {
                                                             context.pushNamed(
-                                                              'TeamPage',
+                                                              TeamPageWidget
+                                                                  .routeName,
                                                               queryParameters: {
                                                                 'teamRef':
                                                                     serializeParam(
@@ -635,7 +640,8 @@ class _PublicBetsListWidgetState extends State<PublicBetsListWidget>
                                                         Colors.transparent,
                                                     onTap: () async {
                                                       context.pushNamed(
-                                                        'MyNotifsList',
+                                                        MyNotifsListWidget
+                                                            .routeName,
                                                         extra: <String,
                                                             dynamic>{
                                                           kTransitionInfoKey:
@@ -1118,7 +1124,7 @@ class _PublicBetsListWidgetState extends State<PublicBetsListWidget>
                                                                                       );
 
                                                                                       context.pushNamed(
-                                                                                        'PublicBetPage',
+                                                                                        PublicBetPageWidget.routeName,
                                                                                         queryParameters: {
                                                                                           'myBetRef': serializeParam(
                                                                                             columnMyBetsMyBetsRecord.reference,
@@ -1157,7 +1163,7 @@ class _PublicBetsListWidgetState extends State<PublicBetsListWidget>
                                                                                   highlightColor: Colors.transparent,
                                                                                   onTap: () async {
                                                                                     context.pushNamed(
-                                                                                      'PublicBetPage',
+                                                                                      PublicBetPageWidget.routeName,
                                                                                       queryParameters: {
                                                                                         'myBetRef': serializeParam(
                                                                                           columnMyBetsMyBetsRecord.reference,
@@ -1212,7 +1218,8 @@ class _PublicBetsListWidgetState extends State<PublicBetsListWidget>
                                                                         () async {
                                                                       context
                                                                           .pushNamed(
-                                                                        'PublicBetPage',
+                                                                        PublicBetPageWidget
+                                                                            .routeName,
                                                                         queryParameters:
                                                                             {
                                                                           'myBetRef':
@@ -1283,7 +1290,8 @@ class _PublicBetsListWidgetState extends State<PublicBetsListWidget>
                                                                     .transparent,
                                                             onTap: () async {
                                                               context.pushNamed(
-                                                                'PublicBetPage',
+                                                                PublicBetPageWidget
+                                                                    .routeName,
                                                                 queryParameters:
                                                                     {
                                                                   'myBetRef':

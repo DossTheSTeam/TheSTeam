@@ -1,4 +1,5 @@
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'rank_typsters_page_widget.dart' show RankTypstersPageWidget;
 import 'package:flutter/material.dart';
 

@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/team_fold/audio_fan_conference/audio_fan_conference_widget.dart';
 import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'team_users_list_model.dart';
@@ -17,6 +18,9 @@ class TeamUsersListWidget extends StatefulWidget {
   });
 
   final DocumentReference? teamRef;
+
+  static String routeName = 'TeamUsersList';
+  static String routePath = '/teamUsersList';
 
   @override
   State<TeamUsersListWidget> createState() => _TeamUsersListWidgetState();
@@ -100,7 +104,7 @@ class _TeamUsersListWidgetState extends State<TeamUsersListWidget> {
                                     highlightColor: Colors.transparent,
                                     onTap: () async {
                                       context.pushNamed(
-                                        'MenuPage',
+                                        MenuPageWidget.routeName,
                                         extra: <String, dynamic>{
                                           kTransitionInfoKey: TransitionInfo(
                                             hasTransition: true,
@@ -194,7 +198,8 @@ class _TeamUsersListWidgetState extends State<TeamUsersListWidget> {
                                                         Colors.transparent,
                                                     onTap: () async {
                                                       context.pushNamed(
-                                                        'TeamPage',
+                                                        TeamPageWidget
+                                                            .routeName,
                                                         queryParameters: {
                                                           'teamRef':
                                                               serializeParam(
@@ -713,7 +718,8 @@ class _TeamUsersListWidgetState extends State<TeamUsersListWidget> {
                                                                           () async {
                                                                         context
                                                                             .pushNamed(
-                                                                          'PublicProfilPage',
+                                                                          PublicProfilPageWidget
+                                                                              .routeName,
                                                                           queryParameters:
                                                                               {
                                                                             'userRef':
@@ -1063,7 +1069,8 @@ class _TeamUsersListWidgetState extends State<TeamUsersListWidget> {
                                                                           () async {
                                                                         context
                                                                             .pushNamed(
-                                                                          'PublicProfilPage',
+                                                                          PublicProfilPageWidget
+                                                                              .routeName,
                                                                           queryParameters:
                                                                               {
                                                                             'userRef':
@@ -1433,7 +1440,8 @@ class _TeamUsersListWidgetState extends State<TeamUsersListWidget> {
                                                                           () async {
                                                                         context
                                                                             .pushNamed(
-                                                                          'PublicProfilPage',
+                                                                          PublicProfilPageWidget
+                                                                              .routeName,
                                                                           queryParameters:
                                                                               {
                                                                             'userRef':

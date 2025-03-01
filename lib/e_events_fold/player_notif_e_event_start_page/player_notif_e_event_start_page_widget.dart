@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/team_fold/audio_fan_conference/audio_fan_conference_widget.dart';
 import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'player_notif_e_event_start_page_model.dart';
@@ -20,6 +21,9 @@ class PlayerNotifEEventStartPageWidget extends StatefulWidget {
 
   final DocumentReference? notifRef;
   final DocumentReference? eEventRef;
+
+  static String routeName = 'PlayerNotifEEventStartPage';
+  static String routePath = '/playerNotifEEventStartPage';
 
   @override
   State<PlayerNotifEEventStartPageWidget> createState() =>
@@ -104,7 +108,7 @@ class _PlayerNotifEEventStartPageWidgetState
                                     highlightColor: Colors.transparent,
                                     onTap: () async {
                                       context.pushNamed(
-                                        'MenuPage',
+                                        MenuPageWidget.routeName,
                                         extra: <String, dynamic>{
                                           kTransitionInfoKey: TransitionInfo(
                                             hasTransition: true,
@@ -205,7 +209,7 @@ class _PlayerNotifEEventStartPageWidgetState
                                                       Colors.transparent,
                                                   onTap: () async {
                                                     context.pushNamed(
-                                                      'TeamPage',
+                                                      TeamPageWidget.routeName,
                                                       queryParameters: {
                                                         'teamRef':
                                                             serializeParam(
@@ -599,7 +603,7 @@ class _PlayerNotifEEventStartPageWidgetState
                                           highlightColor: Colors.transparent,
                                           onTap: () async {
                                             context.pushNamed(
-                                              'TeamPage',
+                                              TeamPageWidget.routeName,
                                               queryParameters: {
                                                 'teamRef': serializeParam(
                                                   columnTeamTeamsRecord
@@ -756,7 +760,8 @@ class _PlayerNotifEEventStartPageWidgetState
                                                           Colors.transparent,
                                                       onTap: () async {
                                                         context.pushNamed(
-                                                          'TeamPage',
+                                                          TeamPageWidget
+                                                              .routeName,
                                                           queryParameters: {
                                                             'teamRef':
                                                                 serializeParam(
@@ -880,7 +885,8 @@ class _PlayerNotifEEventStartPageWidgetState
                                                           Colors.transparent,
                                                       onTap: () async {
                                                         context.pushNamed(
-                                                          'TeamPage',
+                                                          TeamPageWidget
+                                                              .routeName,
                                                           queryParameters: {
                                                             'teamRef':
                                                                 serializeParam(

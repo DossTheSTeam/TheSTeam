@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/team_fold/audio_fan_conference/audio_fan_conference_widget.dart';
 import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'mod_team_notifs_list_model.dart';
@@ -17,6 +18,9 @@ class ModTeamNotifsListWidget extends StatefulWidget {
   });
 
   final DocumentReference? teamRef;
+
+  static String routeName = 'ModTeamNotifsList';
+  static String routePath = '/modTeamNotifsList';
 
   @override
   State<ModTeamNotifsListWidget> createState() =>
@@ -101,7 +105,7 @@ class _ModTeamNotifsListWidgetState extends State<ModTeamNotifsListWidget> {
                                     highlightColor: Colors.transparent,
                                     onTap: () async {
                                       context.pushNamed(
-                                        'MenuPage',
+                                        MenuPageWidget.routeName,
                                         extra: <String, dynamic>{
                                           kTransitionInfoKey: TransitionInfo(
                                             hasTransition: true,
@@ -195,7 +199,8 @@ class _ModTeamNotifsListWidgetState extends State<ModTeamNotifsListWidget> {
                                                         Colors.transparent,
                                                     onTap: () async {
                                                       context.pushNamed(
-                                                        'TeamPage',
+                                                        TeamPageWidget
+                                                            .routeName,
                                                         queryParameters: {
                                                           'teamRef':
                                                               serializeParam(
@@ -525,7 +530,7 @@ class _ModTeamNotifsListWidgetState extends State<ModTeamNotifsListWidget> {
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
                                     context.pushNamed(
-                                      'TeamPage',
+                                      TeamPageWidget.routeName,
                                       queryParameters: {
                                         'teamRef': serializeParam(
                                           widget.teamRef,
@@ -678,7 +683,8 @@ class _ModTeamNotifsListWidgetState extends State<ModTeamNotifsListWidget> {
                                                         Colors.transparent,
                                                     onTap: () async {
                                                       context.pushNamed(
-                                                        'PublicProfilPage',
+                                                        PublicProfilPageWidget
+                                                            .routeName,
                                                         queryParameters: {
                                                           'userRef':
                                                               serializeParam(
@@ -900,7 +906,8 @@ class _ModTeamNotifsListWidgetState extends State<ModTeamNotifsListWidget> {
                                                                         () async {
                                                                       context
                                                                           .pushNamed(
-                                                                        'PublicProfilPage',
+                                                                        PublicProfilPageWidget
+                                                                            .routeName,
                                                                         queryParameters:
                                                                             {
                                                                           'userRef':
@@ -1005,7 +1012,8 @@ class _ModTeamNotifsListWidgetState extends State<ModTeamNotifsListWidget> {
                                                                     () async {
                                                                   context
                                                                       .pushNamed(
-                                                                    'SignalPostPage',
+                                                                    SignalPostPageWidget
+                                                                        .routeName,
                                                                     queryParameters:
                                                                         {
                                                                       'notifRef':
@@ -1160,7 +1168,8 @@ class _ModTeamNotifsListWidgetState extends State<ModTeamNotifsListWidget> {
                                                             Colors.transparent,
                                                         onTap: () async {
                                                           context.pushNamed(
-                                                            'AdminMemberEntryPage',
+                                                            AdminMemberEntryPageWidget
+                                                                .routeName,
                                                             queryParameters: {
                                                               'notifRef':
                                                                   serializeParam(

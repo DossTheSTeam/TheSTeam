@@ -7,6 +7,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/team_fold/audio_fan_conference/audio_fan_conference_widget.dart';
 import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'mod_teams_list_model.dart';
@@ -14,6 +15,9 @@ export 'mod_teams_list_model.dart';
 
 class ModTeamsListWidget extends StatefulWidget {
   const ModTeamsListWidget({super.key});
+
+  static String routeName = 'ModTeamsList';
+  static String routePath = '/modTeamsList';
 
   @override
   State<ModTeamsListWidget> createState() => _ModTeamsListWidgetState();
@@ -74,7 +78,7 @@ class _ModTeamsListWidgetState extends State<ModTeamsListWidget> {
                                 highlightColor: Colors.transparent,
                                 onTap: () async {
                                   context.pushNamed(
-                                    'MenuPage',
+                                    MenuPageWidget.routeName,
                                     extra: <String, dynamic>{
                                       kTransitionInfoKey: TransitionInfo(
                                         hasTransition: true,
@@ -160,7 +164,7 @@ class _ModTeamsListWidgetState extends State<ModTeamsListWidget> {
                                                     Colors.transparent,
                                                 onTap: () async {
                                                   context.pushNamed(
-                                                    'TeamPage',
+                                                    TeamPageWidget.routeName,
                                                     queryParameters: {
                                                       'teamRef': serializeParam(
                                                         currentUserDocument
@@ -1102,7 +1106,8 @@ class _ModTeamsListWidgetState extends State<ModTeamsListWidget> {
                                                               .transparent,
                                                           onTap: () async {
                                                             context.pushNamed(
-                                                              'ModTeamNotifsList',
+                                                              ModTeamNotifsListWidget
+                                                                  .routeName,
                                                               queryParameters: {
                                                                 'teamRef':
                                                                     serializeParam(
@@ -1136,7 +1141,8 @@ class _ModTeamsListWidgetState extends State<ModTeamsListWidget> {
                                                   Colors.transparent,
                                               onTap: () async {
                                                 context.pushNamed(
-                                                  'DiscusionETeamPage',
+                                                  DiscusionETeamPageWidget
+                                                      .routeName,
                                                   queryParameters: {
                                                     'eTeamRef': serializeParam(
                                                       columnTeamsTeamsRecord
@@ -1177,7 +1183,8 @@ class _ModTeamsListWidgetState extends State<ModTeamsListWidget> {
                                                     Colors.transparent,
                                                 onTap: () async {
                                                   context.pushNamed(
-                                                    'TeamUsersList',
+                                                    TeamUsersListWidget
+                                                        .routeName,
                                                     queryParameters: {
                                                       'teamRef': serializeParam(
                                                         columnTeamsTeamsRecord

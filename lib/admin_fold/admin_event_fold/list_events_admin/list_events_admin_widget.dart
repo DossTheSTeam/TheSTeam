@@ -7,6 +7,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/team_fold/audio_fan_conference/audio_fan_conference_widget.dart';
 import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'list_events_admin_model.dart';
@@ -14,6 +15,9 @@ export 'list_events_admin_model.dart';
 
 class ListEventsAdminWidget extends StatefulWidget {
   const ListEventsAdminWidget({super.key});
+
+  static String routeName = 'ListEventsAdmin';
+  static String routePath = '/listEventsAdmin';
 
   @override
   State<ListEventsAdminWidget> createState() => _ListEventsAdminWidgetState();
@@ -73,7 +77,7 @@ class _ListEventsAdminWidgetState extends State<ListEventsAdminWidget> {
                                 highlightColor: Colors.transparent,
                                 onTap: () async {
                                   context.pushNamed(
-                                    'MenuPage',
+                                    MenuPageWidget.routeName,
                                     extra: <String, dynamic>{
                                       kTransitionInfoKey: TransitionInfo(
                                         hasTransition: true,
@@ -159,7 +163,7 @@ class _ListEventsAdminWidgetState extends State<ListEventsAdminWidget> {
                                                     Colors.transparent,
                                                 onTap: () async {
                                                   context.pushNamed(
-                                                    'TeamPage',
+                                                    TeamPageWidget.routeName,
                                                     queryParameters: {
                                                       'teamRef': serializeParam(
                                                         currentUserDocument
@@ -455,7 +459,7 @@ class _ListEventsAdminWidgetState extends State<ListEventsAdminWidget> {
                               hoverColor: Colors.transparent,
                               highlightColor: Colors.transparent,
                               onTap: () async {
-                                context.pushNamed('AddEventPage');
+                                context.pushNamed(AddEventPageWidget.routeName);
                               },
                               child: Icon(
                                 Icons.add_circle_outline_rounded,
@@ -917,7 +921,8 @@ class _ListEventsAdminWidgetState extends State<ListEventsAdminWidget> {
                                                           Colors.transparent,
                                                       onTap: () async {
                                                         context.pushNamed(
-                                                          'AddBetPage',
+                                                          AddBetPageWidget
+                                                              .routeName,
                                                           queryParameters: {
                                                             'eventRef':
                                                                 serializeParam(
@@ -950,7 +955,8 @@ class _ListEventsAdminWidgetState extends State<ListEventsAdminWidget> {
                                                           Colors.transparent,
                                                       onTap: () async {
                                                         context.pushNamed(
-                                                          'ModifEventPage',
+                                                          ModifEventPageWidget
+                                                              .routeName,
                                                           queryParameters: {
                                                             'eventRef':
                                                                 serializeParam(

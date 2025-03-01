@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/upload_data.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'modif_team_page_model.dart';
 export 'modif_team_page_model.dart';
@@ -17,6 +18,9 @@ class ModifTeamPageWidget extends StatefulWidget {
   });
 
   final DocumentReference? teamRef;
+
+  static String routeName = 'ModifTeamPage';
+  static String routePath = '/modifTeamPage';
 
   @override
   State<ModifTeamPageWidget> createState() => _ModifTeamPageWidgetState();
@@ -126,7 +130,7 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                     highlightColor: Colors.transparent,
                                     onTap: () async {
                                       context.pushNamed(
-                                        'MenuPage',
+                                        MenuPageWidget.routeName,
                                         extra: <String, dynamic>{
                                           kTransitionInfoKey: TransitionInfo(
                                             hasTransition: true,

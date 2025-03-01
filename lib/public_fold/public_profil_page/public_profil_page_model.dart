@@ -1,4 +1,5 @@
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'public_profil_page_widget.dart' show PublicProfilPageWidget;
 import 'package:flutter/material.dart';
 

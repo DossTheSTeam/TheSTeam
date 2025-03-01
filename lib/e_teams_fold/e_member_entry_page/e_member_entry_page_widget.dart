@@ -4,6 +4,7 @@ import '/backend/push_notifications/push_notifications_util.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'e_member_entry_page_model.dart';
 export 'e_member_entry_page_model.dart';
@@ -15,6 +16,9 @@ class EMemberEntryPageWidget extends StatefulWidget {
   });
 
   final DocumentReference? teamRef;
+
+  static String routeName = 'EMemberEntryPage';
+  static String routePath = '/eMemberEntryPage';
 
   @override
   State<EMemberEntryPageWidget> createState() => _EMemberEntryPageWidgetState();
@@ -98,7 +102,7 @@ class _EMemberEntryPageWidgetState extends State<EMemberEntryPageWidget> {
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
                                     context.pushNamed(
-                                      'MenuPage',
+                                      MenuPageWidget.routeName,
                                       extra: <String, dynamic>{
                                         kTransitionInfoKey: TransitionInfo(
                                           hasTransition: true,
@@ -339,7 +343,7 @@ class _EMemberEntryPageWidgetState extends State<EMemberEntryPageWidget> {
                               highlightColor: Colors.transparent,
                               onTap: () async {
                                 context.pushNamed(
-                                  'GeneralsCondidtionsPage',
+                                  GeneralsCondidtionsPageWidget.routeName,
                                   extra: <String, dynamic>{
                                     kTransitionInfoKey: TransitionInfo(
                                       hasTransition: true,

@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/team_fold/audio_fan_conference/audio_fan_conference_widget.dart';
 import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'team_list_for_events_model.dart';
@@ -18,6 +19,9 @@ class TeamListForEventsWidget extends StatefulWidget {
   });
 
   final DocumentReference? eTeamRef;
+
+  static String routeName = 'TeamListForEvents';
+  static String routePath = '/teamListForEvents';
 
   @override
   State<TeamListForEventsWidget> createState() =>
@@ -106,7 +110,7 @@ class _TeamListForEventsWidgetState extends State<TeamListForEventsWidget> {
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
                                         context.pushNamed(
-                                          'ModifETeamPage',
+                                          ModifETeamPageWidget.routeName,
                                           queryParameters: {
                                             'teamRef': serializeParam(
                                               widget.eTeamRef,
@@ -218,7 +222,8 @@ class _TeamListForEventsWidgetState extends State<TeamListForEventsWidget> {
                                                               .transparent,
                                                           onTap: () async {
                                                             context.pushNamed(
-                                                              'TeamPage',
+                                                              TeamPageWidget
+                                                                  .routeName,
                                                               queryParameters: {
                                                                 'teamRef':
                                                                     serializeParam(
@@ -555,7 +560,8 @@ class _TeamListForEventsWidgetState extends State<TeamListForEventsWidget> {
                                                     Colors.transparent,
                                                 onTap: () async {
                                                   context.pushNamed(
-                                                    'MyNotifsList',
+                                                    MyNotifsListWidget
+                                                        .routeName,
                                                     extra: <String, dynamic>{
                                                       kTransitionInfoKey:
                                                           TransitionInfo(

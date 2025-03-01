@@ -200,8 +200,6 @@ export '/admin_fold/admin_users_fold/add_survey_page/add_survey_page_widget.dart
     show AddSurveyPageWidget;
 export '/posts_fold/list_advices/list_advices_widget.dart'
     show ListAdvicesWidget;
-export '/admin_fold/mods_fold/add_advice_page/add_advice_page_widget.dart'
-    show AddAdvicePageWidget;
 export '/e_events_fold/rating_players_page/rating_players_page_widget.dart'
     show RatingPlayersPageWidget;
 export '/e_events_fold/add_rating_players_page/add_rating_players_page_widget.dart'

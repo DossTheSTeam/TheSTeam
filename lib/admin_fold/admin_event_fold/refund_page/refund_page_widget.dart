@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/team_fold/audio_fan_conference/audio_fan_conference_widget.dart';
 import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'refund_page_model.dart';
@@ -18,6 +19,9 @@ class RefundPageWidget extends StatefulWidget {
   });
 
   final DocumentReference? eventRef;
+
+  static String routeName = 'RefundPage';
+  static String routePath = '/refundPage';
 
   @override
   State<RefundPageWidget> createState() => _RefundPageWidgetState();
@@ -105,7 +109,7 @@ class _RefundPageWidgetState extends State<RefundPageWidget> {
                                           highlightColor: Colors.transparent,
                                           onTap: () async {
                                             context.pushNamed(
-                                              'MenuPage',
+                                              MenuPageWidget.routeName,
                                               extra: <String, dynamic>{
                                                 kTransitionInfoKey:
                                                     TransitionInfo(
@@ -251,7 +255,8 @@ class _RefundPageWidgetState extends State<RefundPageWidget> {
                                                         Colors.transparent,
                                                     onTap: () async {
                                                       context.pushNamed(
-                                                        'TeamPage',
+                                                        TeamPageWidget
+                                                            .routeName,
                                                         queryParameters: {
                                                           'teamRef':
                                                               serializeParam(
@@ -656,7 +661,7 @@ class _RefundPageWidgetState extends State<RefundPageWidget> {
                                                       Colors.transparent,
                                                   onTap: () async {
                                                     context.pushNamed(
-                                                      'TeamPage',
+                                                      TeamPageWidget.routeName,
                                                       queryParameters: {
                                                         'teamRef':
                                                             serializeParam(
@@ -900,7 +905,7 @@ class _RefundPageWidgetState extends State<RefundPageWidget> {
                                                       Colors.transparent,
                                                   onTap: () async {
                                                     context.pushNamed(
-                                                      'TeamPage',
+                                                      TeamPageWidget.routeName,
                                                       queryParameters: {
                                                         'teamRef':
                                                             serializeParam(
@@ -1390,7 +1395,7 @@ class _RefundPageWidgetState extends State<RefundPageWidget> {
                                                                               highlightColor: Colors.transparent,
                                                                               onTap: () async {
                                                                                 context.pushNamed(
-                                                                                  'PublicProfilPage',
+                                                                                  PublicProfilPageWidget.routeName,
                                                                                   queryParameters: {
                                                                                     'userRef': serializeParam(
                                                                                       columnUsersRecord.reference,

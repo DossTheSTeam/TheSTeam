@@ -9,6 +9,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/team_fold/audio_fan_conference/audio_fan_conference_widget.dart';
 import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'add_date_for_e_event_model.dart';
@@ -23,6 +24,9 @@ class AddDateForEEventWidget extends StatefulWidget {
 
   final DocumentReference? eventRef;
   final DocumentReference? eTeamRef;
+
+  static String routeName = 'AddDateForEEvent';
+  static String routePath = '/addDateForEEvent';
 
   @override
   State<AddDateForEEventWidget> createState() => _AddDateForEEventWidgetState();
@@ -192,7 +196,8 @@ class _AddDateForEEventWidgetState extends State<AddDateForEEventWidget> {
                                                             Colors.transparent,
                                                         onTap: () async {
                                                           context.pushNamed(
-                                                            'TeamPage',
+                                                            TeamPageWidget
+                                                                .routeName,
                                                             queryParameters: {
                                                               'teamRef':
                                                                   serializeParam(
@@ -841,7 +846,8 @@ class _AddDateForEEventWidgetState extends State<AddDateForEEventWidget> {
                                             highlightColor: Colors.transparent,
                                             onTap: () async {
                                               context.pushNamed(
-                                                'AddPlayersEventPage',
+                                                AddPlayersEventPageWidget
+                                                    .routeName,
                                                 queryParameters: {
                                                   'eventRef': serializeParam(
                                                     widget.eventRef,
@@ -927,7 +933,8 @@ class _AddDateForEEventWidgetState extends State<AddDateForEEventWidget> {
                                             highlightColor: Colors.transparent,
                                             onTap: () async {
                                               context.pushNamed(
-                                                'AddPlayersEventPage',
+                                                AddPlayersEventPageWidget
+                                                    .routeName,
                                                 queryParameters: {
                                                   'eventRef': serializeParam(
                                                     widget.eventRef,
@@ -1054,7 +1061,7 @@ class _AddDateForEEventWidgetState extends State<AddDateForEEventWidget> {
                                                 .delete();
 
                                             context.goNamed(
-                                              'ModifETeamPage',
+                                              ModifETeamPageWidget.routeName,
                                               queryParameters: {
                                                 'teamRef': serializeParam(
                                                   currentUserDocument?.eteamRef,
@@ -1183,7 +1190,7 @@ class _AddDateForEEventWidgetState extends State<AddDateForEEventWidget> {
                                                 .delete();
 
                                             context.goNamed(
-                                              'ModifETeamPage',
+                                              ModifETeamPageWidget.routeName,
                                               queryParameters: {
                                                 'teamRef': serializeParam(
                                                   currentUserDocument?.eteamRef,

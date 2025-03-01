@@ -1,5 +1,6 @@
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'event_page_add2_bet_widget.dart' show EventPageAdd2BetWidget;
 import 'package:flutter/material.dart';
 

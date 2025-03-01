@@ -7,6 +7,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/team_fold/audio_fan_conference/audio_fan_conference_widget.dart';
 import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'add_players_event_page_model.dart';
@@ -21,6 +22,9 @@ class AddPlayersEventPageWidget extends StatefulWidget {
 
   final DocumentReference? eventRef;
   final DocumentReference? myETeamRef;
+
+  static String routeName = 'AddPlayersEventPage';
+  static String routePath = '/addPlayersEventPage';
 
   @override
   State<AddPlayersEventPageWidget> createState() =>
@@ -107,7 +111,7 @@ class _AddPlayersEventPageWidgetState extends State<AddPlayersEventPageWidget> {
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
                                         context.pushNamed(
-                                          'ModifETeamPage',
+                                          ModifETeamPageWidget.routeName,
                                           queryParameters: {
                                             'teamRef': serializeParam(
                                               widget.myETeamRef,
@@ -216,7 +220,8 @@ class _AddPlayersEventPageWidgetState extends State<AddPlayersEventPageWidget> {
                                                         Colors.transparent,
                                                     onTap: () async {
                                                       context.pushNamed(
-                                                        'TeamPage',
+                                                        TeamPageWidget
+                                                            .routeName,
                                                         queryParameters: {
                                                           'teamRef':
                                                               serializeParam(

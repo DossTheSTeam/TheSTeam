@@ -7,12 +7,16 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/upload_data.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'add_team_page_model.dart';
 export 'add_team_page_model.dart';
 
 class AddTeamPageWidget extends StatefulWidget {
   const AddTeamPageWidget({super.key});
+
+  static String routeName = 'AddTeamPage';
+  static String routePath = '/addTeamPage';
 
   @override
   State<AddTeamPageWidget> createState() => _AddTeamPageWidgetState();
@@ -81,7 +85,7 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
                                     context.pushNamed(
-                                      'MenuPage',
+                                      MenuPageWidget.routeName,
                                       extra: <String, dynamic>{
                                         kTransitionInfoKey: TransitionInfo(
                                           hasTransition: true,

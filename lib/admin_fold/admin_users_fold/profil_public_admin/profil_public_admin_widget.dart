@@ -9,6 +9,7 @@ import '/flutter_flow/form_field_controller.dart';
 import '/team_fold/audio_fan_conference/audio_fan_conference_widget.dart';
 import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -22,6 +23,9 @@ class ProfilPublicAdminWidget extends StatefulWidget {
   });
 
   final DocumentReference? userRef;
+
+  static String routeName = 'ProfilPublicAdmin';
+  static String routePath = '/profilPublicAdmin';
 
   @override
   State<ProfilPublicAdminWidget> createState() =>
@@ -131,7 +135,7 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                                         ),
                                         onPressed: () async {
                                           context.pushNamed(
-                                            'MenuPage',
+                                            MenuPageWidget.routeName,
                                             extra: <String, dynamic>{
                                               kTransitionInfoKey:
                                                   TransitionInfo(
@@ -225,7 +229,8 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                                                           Colors.transparent,
                                                       onTap: () async {
                                                         context.pushNamed(
-                                                          'TeamPage',
+                                                          TeamPageWidget
+                                                              .routeName,
                                                           queryParameters: {
                                                             'teamRef':
                                                                 serializeParam(
@@ -884,7 +889,7 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
                                     context.pushNamed(
-                                      'PublicBetsList',
+                                      PublicBetsListWidget.routeName,
                                       queryParameters: {
                                         'userBetRef': serializeParam(
                                           rowMyBetsMyBetsRecord?.reference,
@@ -1448,7 +1453,7 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
                                         context.pushNamed(
-                                          'PublicPostsList',
+                                          PublicPostsListWidget.routeName,
                                           queryParameters: {
                                             'userPostRef': serializeParam(
                                               rowMyPostsMyPostsRecord

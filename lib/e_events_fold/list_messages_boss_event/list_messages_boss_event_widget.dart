@@ -10,6 +10,7 @@ import '/flutter_flow/upload_data.dart';
 import '/team_fold/audio_fan_conference/audio_fan_conference_widget.dart';
 import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:record/record.dart';
@@ -25,6 +26,9 @@ class ListMessagesBossEventWidget extends StatefulWidget {
 
   final DocumentReference? eventRef;
   final DocumentReference? eTeamRef;
+
+  static String routeName = 'ListMessagesBossEvent';
+  static String routePath = '/listMessagesBossEvent';
 
   @override
   State<ListMessagesBossEventWidget> createState() =>
@@ -120,7 +124,7 @@ class _ListMessagesBossEventWidgetState
                                           highlightColor: Colors.transparent,
                                           onTap: () async {
                                             context.pushNamed(
-                                              'ModifETeamPage',
+                                              ModifETeamPageWidget.routeName,
                                               queryParameters: {
                                                 'teamRef': serializeParam(
                                                   widget.eTeamRef,
@@ -239,7 +243,8 @@ class _ListMessagesBossEventWidgetState
                                                             Colors.transparent,
                                                         onTap: () async {
                                                           context.pushNamed(
-                                                            'TeamPage',
+                                                            TeamPageWidget
+                                                                .routeName,
                                                             queryParameters: {
                                                               'teamRef':
                                                                   serializeParam(
@@ -665,7 +670,8 @@ class _ListMessagesBossEventWidgetState
                                                             Colors.transparent,
                                                         onTap: () async {
                                                           context.pushNamed(
-                                                            'MyNotifsList',
+                                                            MyNotifsListWidget
+                                                                .routeName,
                                                             extra: <String,
                                                                 dynamic>{
                                                               kTransitionInfoKey:
@@ -919,7 +925,8 @@ class _ListMessagesBossEventWidgetState
                                               child: FFButtonWidget(
                                                 onPressed: () async {
                                                   context.pushNamed(
-                                                    'AddDateForEEvent',
+                                                    AddDateForEEventWidget
+                                                        .routeName,
                                                     queryParameters: {
                                                       'eventRef':
                                                           serializeParam(
@@ -991,7 +998,8 @@ class _ListMessagesBossEventWidgetState
                                               child: FFButtonWidget(
                                                 onPressed: () async {
                                                   context.pushNamed(
-                                                    'AddDateForEEvent',
+                                                    AddDateForEEventWidget
+                                                        .routeName,
                                                     queryParameters: {
                                                       'eventRef':
                                                           serializeParam(
@@ -1123,7 +1131,8 @@ class _ListMessagesBossEventWidgetState
                                                         .delete();
 
                                                     context.pushNamed(
-                                                      'ETeamEventsList',
+                                                      ETeamEventsListWidget
+                                                          .routeName,
                                                       queryParameters: {
                                                         'teamRef':
                                                             serializeParam(
@@ -1386,7 +1395,8 @@ class _ListMessagesBossEventWidgetState
                                                           .delete();
 
                                                       context.pushNamed(
-                                                        'ETeamEventsList',
+                                                        ETeamEventsListWidget
+                                                            .routeName,
                                                         queryParameters: {
                                                           'teamRef':
                                                               serializeParam(
@@ -1657,7 +1667,8 @@ class _ListMessagesBossEventWidgetState
                                             highlightColor: Colors.transparent,
                                             onTap: () async {
                                               context.pushNamed(
-                                                'AddPlayersEventPage',
+                                                AddPlayersEventPageWidget
+                                                    .routeName,
                                                 queryParameters: {
                                                   'eventRef': serializeParam(
                                                     widget.eventRef,
@@ -1750,7 +1761,8 @@ class _ListMessagesBossEventWidgetState
                                             highlightColor: Colors.transparent,
                                             onTap: () async {
                                               context.pushNamed(
-                                                'AddPlayersEventPage',
+                                                AddPlayersEventPageWidget
+                                                    .routeName,
                                                 queryParameters: {
                                                   'eventRef': serializeParam(
                                                     widget.eventRef,
@@ -2374,7 +2386,8 @@ class _ListMessagesBossEventWidgetState
                                                                         () async {
                                                                       context
                                                                           .pushNamed(
-                                                                        'PublicProfilPage',
+                                                                        PublicProfilPageWidget
+                                                                            .routeName,
                                                                         queryParameters:
                                                                             {
                                                                           'userRef':
@@ -2540,7 +2553,8 @@ class _ListMessagesBossEventWidgetState
                                                                       () async {
                                                                     context
                                                                         .pushNamed(
-                                                                      'FullImagePage',
+                                                                      FullImagePageWidget
+                                                                          .routeName,
                                                                       queryParameters:
                                                                           {
                                                                         'imageRef':
@@ -2910,7 +2924,8 @@ class _ListMessagesBossEventWidgetState
                                                               onTap: () async {
                                                                 context
                                                                     .pushNamed(
-                                                                  'FullImagePage',
+                                                                  FullImagePageWidget
+                                                                      .routeName,
                                                                   queryParameters:
                                                                       {
                                                                     'imageRef':

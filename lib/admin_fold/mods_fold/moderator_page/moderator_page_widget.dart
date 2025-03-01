@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/team_fold/audio_fan_conference/audio_fan_conference_widget.dart';
 import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'moderator_page_model.dart';
@@ -12,6 +13,9 @@ export 'moderator_page_model.dart';
 
 class ModeratorPageWidget extends StatefulWidget {
   const ModeratorPageWidget({super.key});
+
+  static String routeName = 'ModeratorPage';
+  static String routePath = '/moderatorPage';
 
   @override
   State<ModeratorPageWidget> createState() => _ModeratorPageWidgetState();
@@ -71,7 +75,7 @@ class _ModeratorPageWidgetState extends State<ModeratorPageWidget> {
                                 hoverColor: Colors.transparent,
                                 highlightColor: Colors.transparent,
                                 onTap: () async {
-                                  context.pushNamed('MenuPage');
+                                  context.pushNamed(MenuPageWidget.routeName);
                                 },
                                 child: Icon(
                                   Icons.menu_rounded,
@@ -144,7 +148,7 @@ class _ModeratorPageWidgetState extends State<ModeratorPageWidget> {
                                                     Colors.transparent,
                                                 onTap: () async {
                                                   context.pushNamed(
-                                                    'TeamPage',
+                                                    TeamPageWidget.routeName,
                                                     queryParameters: {
                                                       'teamRef': serializeParam(
                                                         currentUserDocument
@@ -492,7 +496,8 @@ class _ModeratorPageWidgetState extends State<ModeratorPageWidget> {
                               hoverColor: Colors.transparent,
                               highlightColor: Colors.transparent,
                               onTap: () async {
-                                context.pushNamed('ModNotifsList');
+                                context
+                                    .pushNamed(ModNotifsListWidget.routeName);
                               },
                               child: Icon(
                                 Icons.notifications_active_outlined,
@@ -550,7 +555,7 @@ class _ModeratorPageWidgetState extends State<ModeratorPageWidget> {
                               hoverColor: Colors.transparent,
                               highlightColor: Colors.transparent,
                               onTap: () async {
-                                context.pushNamed('ModTeamsList');
+                                context.pushNamed(ModTeamsListWidget.routeName);
                               },
                               child: Icon(
                                 Icons.groups_rounded,
@@ -643,7 +648,7 @@ class _ModeratorPageWidgetState extends State<ModeratorPageWidget> {
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
                                     context.pushNamed(
-                                      'DiscusionETeamPage',
+                                      DiscusionETeamPageWidget.routeName,
                                       queryParameters: {
                                         'eTeamRef': serializeParam(
                                           rowStatutsTeamsRecord?.reference,
@@ -745,13 +750,21 @@ class _ModeratorPageWidgetState extends State<ModeratorPageWidget> {
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
                                     context.pushNamed(
-                                      'AddAdvicePage',
+                                      AddPostPageWidget.routeName,
                                       queryParameters: {
                                         'teamRef': serializeParam(
                                           rowStatutsTeamsRecord?.reference,
                                           ParamType.DocumentReference,
                                         ),
                                       }.withoutNulls,
+                                      extra: <String, dynamic>{
+                                        kTransitionInfoKey: TransitionInfo(
+                                          hasTransition: true,
+                                          transitionType:
+                                              PageTransitionType.rightToLeft,
+                                          duration: Duration(milliseconds: 600),
+                                        ),
+                                      },
                                     );
                                   },
                                   child: FaIcon(
@@ -853,7 +866,8 @@ class _ModeratorPageWidgetState extends State<ModeratorPageWidget> {
                                       hoverColor: Colors.transparent,
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
-                                        context.pushNamed('AddEventPage');
+                                        context.pushNamed(
+                                            AddEventPageWidget.routeName);
                                       },
                                       child: Icon(
                                         Icons.add_circle_outline,
@@ -891,7 +905,8 @@ class _ModeratorPageWidgetState extends State<ModeratorPageWidget> {
                                       hoverColor: Colors.transparent,
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
-                                        context.pushNamed('ListEventsAdmin');
+                                        context.pushNamed(
+                                            ListEventsAdminWidget.routeName);
                                       },
                                       child: Icon(
                                         Icons.attach_money_rounded,
@@ -929,7 +944,8 @@ class _ModeratorPageWidgetState extends State<ModeratorPageWidget> {
                                       hoverColor: Colors.transparent,
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
-                                        context.pushNamed('ListEventsAdmin');
+                                        context.pushNamed(
+                                            ListEventsAdminWidget.routeName);
                                       },
                                       child: Icon(
                                         Icons.settings_sharp,
@@ -989,7 +1005,8 @@ class _ModeratorPageWidgetState extends State<ModeratorPageWidget> {
                                       hoverColor: Colors.transparent,
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
-                                        context.pushNamed('AddTeamPage');
+                                        context.pushNamed(
+                                            AddTeamPageWidget.routeName);
                                       },
                                       child: Icon(
                                         Icons.add_circle_outline,
@@ -1027,7 +1044,8 @@ class _ModeratorPageWidgetState extends State<ModeratorPageWidget> {
                                       hoverColor: Colors.transparent,
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
-                                        context.pushNamed('AdminTeamsList');
+                                        context.pushNamed(
+                                            AdminTeamsListWidget.routeName);
                                       },
                                       child: Icon(
                                         Icons.settings_sharp,

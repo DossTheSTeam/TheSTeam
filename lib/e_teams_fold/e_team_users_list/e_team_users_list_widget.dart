@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/team_fold/audio_fan_conference/audio_fan_conference_widget.dart';
 import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'e_team_users_list_model.dart';
@@ -17,6 +18,9 @@ class ETeamUsersListWidget extends StatefulWidget {
   });
 
   final DocumentReference? teamRef;
+
+  static String routeName = 'ETeamUsersList';
+  static String routePath = '/eTeamUsersList';
 
   @override
   State<ETeamUsersListWidget> createState() => _ETeamUsersListWidgetState();
@@ -105,7 +109,7 @@ class _ETeamUsersListWidgetState extends State<ETeamUsersListWidget> {
                                         highlightColor: Colors.transparent,
                                         onTap: () async {
                                           context.pushNamed(
-                                            'ModifETeamPage',
+                                            ModifETeamPageWidget.routeName,
                                             queryParameters: {
                                               'teamRef': serializeParam(
                                                 widget.teamRef,
@@ -221,7 +225,8 @@ class _ETeamUsersListWidgetState extends State<ETeamUsersListWidget> {
                                                             Colors.transparent,
                                                         onTap: () async {
                                                           context.pushNamed(
-                                                            'TeamPage',
+                                                            TeamPageWidget
+                                                                .routeName,
                                                             queryParameters: {
                                                               'teamRef':
                                                                   serializeParam(
@@ -609,7 +614,8 @@ class _ETeamUsersListWidgetState extends State<ETeamUsersListWidget> {
                                                       Colors.transparent,
                                                   onTap: () async {
                                                     context.pushNamed(
-                                                      'MyNotifsList',
+                                                      MyNotifsListWidget
+                                                          .routeName,
                                                       extra: <String, dynamic>{
                                                         kTransitionInfoKey:
                                                             TransitionInfo(
@@ -861,7 +867,7 @@ class _ETeamUsersListWidgetState extends State<ETeamUsersListWidget> {
                                                                             onTap:
                                                                                 () async {
                                                                               context.pushNamed(
-                                                                                'PublicProfilPage',
+                                                                                PublicProfilPageWidget.routeName,
                                                                                 queryParameters: {
                                                                                   'userRef': serializeParam(
                                                                                     columnUsersRecord.reference,
@@ -1236,7 +1242,7 @@ class _ETeamUsersListWidgetState extends State<ETeamUsersListWidget> {
                                                                             onTap:
                                                                                 () async {
                                                                               context.pushNamed(
-                                                                                'PublicProfilPage',
+                                                                                PublicProfilPageWidget.routeName,
                                                                                 queryParameters: {
                                                                                   'userRef': serializeParam(
                                                                                     columnUsersRecord.reference,
@@ -1596,7 +1602,8 @@ class _ETeamUsersListWidgetState extends State<ETeamUsersListWidget> {
                                                                           () async {
                                                                         context
                                                                             .pushNamed(
-                                                                          'PublicProfilPage',
+                                                                          PublicProfilPageWidget
+                                                                              .routeName,
                                                                           queryParameters:
                                                                               {
                                                                             'userRef':

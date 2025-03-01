@@ -7,6 +7,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/team_fold/audio_fan_conference/audio_fan_conference_widget.dart';
 import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'cart_page_add3_bet_model.dart';
@@ -21,6 +22,9 @@ class CartPageAdd3BetWidget extends StatefulWidget {
 
   final DocumentReference? cartRef;
   final DocumentReference? myBetRef;
+
+  static String routeName = 'CartPageAdd3Bet';
+  static String routePath = '/cartPageAdd3Bet';
 
   @override
   State<CartPageAdd3BetWidget> createState() => _CartPageAdd3BetWidgetState();
@@ -235,7 +239,8 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                               onTap: () async {
                                                                 context
                                                                     .pushNamed(
-                                                                  'TeamPage',
+                                                                  TeamPageWidget
+                                                                      .routeName,
                                                                   queryParameters:
                                                                       {
                                                                     'teamRef':
@@ -1757,7 +1762,7 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                               });
 
                                               context.goNamed(
-                                                'MyProfilPage',
+                                                MyProfilPageWidget.routeName,
                                                 extra: <String, dynamic>{
                                                   kTransitionInfoKey:
                                                       TransitionInfo(

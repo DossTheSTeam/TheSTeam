@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/team_fold/audio_fan_conference/audio_fan_conference_widget.dart';
 import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'mod_notifs_list_model.dart';
@@ -12,6 +13,9 @@ export 'mod_notifs_list_model.dart';
 
 class ModNotifsListWidget extends StatefulWidget {
   const ModNotifsListWidget({super.key});
+
+  static String routeName = 'ModNotifsList';
+  static String routePath = '/modNotifsList';
 
   @override
   State<ModNotifsListWidget> createState() => _ModNotifsListWidgetState();
@@ -72,7 +76,7 @@ class _ModNotifsListWidgetState extends State<ModNotifsListWidget> {
                                 highlightColor: Colors.transparent,
                                 onTap: () async {
                                   context.pushNamed(
-                                    'MenuPage',
+                                    MenuPageWidget.routeName,
                                     extra: <String, dynamic>{
                                       kTransitionInfoKey: TransitionInfo(
                                         hasTransition: true,
@@ -158,7 +162,7 @@ class _ModNotifsListWidgetState extends State<ModNotifsListWidget> {
                                                     Colors.transparent,
                                                 onTap: () async {
                                                   context.pushNamed(
-                                                    'TeamPage',
+                                                    TeamPageWidget.routeName,
                                                     queryParameters: {
                                                       'teamRef': serializeParam(
                                                         currentUserDocument
@@ -564,7 +568,8 @@ class _ModNotifsListWidgetState extends State<ModNotifsListWidget> {
                                                     Colors.transparent,
                                                 onTap: () async {
                                                   context.pushNamed(
-                                                    'PublicProfilPage',
+                                                    PublicProfilPageWidget
+                                                        .routeName,
                                                     queryParameters: {
                                                       'userRef': serializeParam(
                                                         rowUsersRecord
@@ -873,7 +878,8 @@ class _ModNotifsListWidgetState extends State<ModNotifsListWidget> {
                                                                     () async {
                                                                   context
                                                                       .pushNamed(
-                                                                    'PublicProfilPage',
+                                                                    PublicProfilPageWidget
+                                                                        .routeName,
                                                                     queryParameters:
                                                                         {
                                                                       'userRef':
@@ -985,7 +991,8 @@ class _ModNotifsListWidgetState extends State<ModNotifsListWidget> {
                                                               onTap: () async {
                                                                 context
                                                                     .pushNamed(
-                                                                  'SignalEventMessagePage',
+                                                                  SignalEventMessagePageWidget
+                                                                      .routeName,
                                                                   queryParameters:
                                                                       {
                                                                     'notifRef':
@@ -1192,7 +1199,8 @@ class _ModNotifsListWidgetState extends State<ModNotifsListWidget> {
                                                                         () async {
                                                                       context
                                                                           .pushNamed(
-                                                                        'PublicProfilPage',
+                                                                        PublicProfilPageWidget
+                                                                            .routeName,
                                                                         queryParameters:
                                                                             {
                                                                           'userRef':
@@ -1295,7 +1303,8 @@ class _ModNotifsListWidgetState extends State<ModNotifsListWidget> {
                                                               onTap: () async {
                                                                 context
                                                                     .pushNamed(
-                                                                  'SignalPostPage',
+                                                                  SignalPostPageWidget
+                                                                      .routeName,
                                                                   queryParameters:
                                                                       {
                                                                     'notifRef':
@@ -1498,7 +1507,8 @@ class _ModNotifsListWidgetState extends State<ModNotifsListWidget> {
                                                                       () async {
                                                                     context
                                                                         .pushNamed(
-                                                                      'PublicProfilPage',
+                                                                      PublicProfilPageWidget
+                                                                          .routeName,
                                                                       queryParameters:
                                                                           {
                                                                         'userRef':
@@ -1602,7 +1612,8 @@ class _ModNotifsListWidgetState extends State<ModNotifsListWidget> {
                                                               onTap: () async {
                                                                 context
                                                                     .pushNamed(
-                                                                  'SignalPostMessagePage',
+                                                                  SignalPostMessagePageWidget
+                                                                      .routeName,
                                                                   queryParameters:
                                                                       {
                                                                     'notifRef':
@@ -1768,7 +1779,8 @@ class _ModNotifsListWidgetState extends State<ModNotifsListWidget> {
                                                               onTap: () async {
                                                                 context
                                                                     .pushNamed(
-                                                                  'TeamPage',
+                                                                  TeamPageWidget
+                                                                      .routeName,
                                                                   queryParameters:
                                                                       {
                                                                     'teamRef':
@@ -1867,7 +1879,8 @@ class _ModNotifsListWidgetState extends State<ModNotifsListWidget> {
                                                               .transparent,
                                                           onTap: () async {
                                                             context.pushNamed(
-                                                              'AdminMemberEntryPage',
+                                                              AdminMemberEntryPageWidget
+                                                                  .routeName,
                                                               queryParameters: {
                                                                 'notifRef':
                                                                     serializeParam(
@@ -2011,7 +2024,8 @@ class _ModNotifsListWidgetState extends State<ModNotifsListWidget> {
                                                         Colors.transparent,
                                                     onTap: () async {
                                                       context.pushNamed(
-                                                        'SignalEEventPage',
+                                                        SignalEEventPageWidget
+                                                            .routeName,
                                                         queryParameters: {
                                                           'notifRef':
                                                               serializeParam(

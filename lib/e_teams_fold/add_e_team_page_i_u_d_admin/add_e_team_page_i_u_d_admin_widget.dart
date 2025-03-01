@@ -7,12 +7,16 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/upload_data.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'add_e_team_page_i_u_d_admin_model.dart';
 export 'add_e_team_page_i_u_d_admin_model.dart';
 
 class AddETeamPageIUDAdminWidget extends StatefulWidget {
   const AddETeamPageIUDAdminWidget({super.key});
+
+  static String routeName = 'AddETeamPageIUDAdmin';
+  static String routePath = '/addETeamPageIUDAdmin';
 
   @override
   State<AddETeamPageIUDAdminWidget> createState() =>
@@ -76,7 +80,7 @@ class _AddETeamPageIUDAdminWidgetState
                                 highlightColor: Colors.transparent,
                                 onTap: () async {
                                   context.pushNamed(
-                                    'MenuPage',
+                                    MenuPageWidget.routeName,
                                     extra: <String, dynamic>{
                                       kTransitionInfoKey: TransitionInfo(
                                         hasTransition: true,
@@ -183,7 +187,7 @@ class _AddETeamPageIUDAdminWidgetState
                           highlightColor: Colors.transparent,
                           onTap: () async {
                             context.pushNamed(
-                              'GeneralsCondidtionsPage',
+                              GeneralsCondidtionsPageWidget.routeName,
                               extra: <String, dynamic>{
                                 kTransitionInfoKey: TransitionInfo(
                                   hasTransition: true,
@@ -981,7 +985,8 @@ class _AddETeamPageIUDAdminWidgetState
                                                     ));
 
                                                     context.pushNamed(
-                                                        'MyProfilPage');
+                                                        MyProfilPageWidget
+                                                            .routeName);
 
                                                     safeSetState(() {});
                                                   },
@@ -1206,7 +1211,8 @@ class _AddETeamPageIUDAdminWidgetState
                                                   ));
 
                                                   context.pushNamed(
-                                                      'MyProfilPage');
+                                                      MyProfilPageWidget
+                                                          .routeName);
 
                                                   safeSetState(() {});
                                                 },
@@ -1425,7 +1431,8 @@ class _AddETeamPageIUDAdminWidgetState
                                                   ));
 
                                                   context.pushNamed(
-                                                      'MyProfilPage');
+                                                      MyProfilPageWidget
+                                                          .routeName);
 
                                                   safeSetState(() {});
                                                 },

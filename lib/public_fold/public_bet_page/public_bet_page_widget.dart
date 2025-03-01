@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/team_fold/audio_fan_conference/audio_fan_conference_widget.dart';
 import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'public_bet_page_model.dart';
@@ -20,6 +21,9 @@ class PublicBetPageWidget extends StatefulWidget {
 
   final DocumentReference? myBetRef;
   final DocumentReference? userRef;
+
+  static String routeName = 'PublicBetPage';
+  static String routePath = '/publicBetPage';
 
   @override
   State<PublicBetPageWidget> createState() => _PublicBetPageWidgetState();
@@ -136,7 +140,7 @@ class _PublicBetPageWidgetState extends State<PublicBetPageWidget> {
                                                       Colors.transparent,
                                                   onTap: () async {
                                                     context.pushNamed(
-                                                      'MenuPage',
+                                                      MenuPageWidget.routeName,
                                                       extra: <String, dynamic>{
                                                         kTransitionInfoKey:
                                                             TransitionInfo(
@@ -266,7 +270,8 @@ class _PublicBetPageWidgetState extends State<PublicBetPageWidget> {
                                                               onTap: () async {
                                                                 context
                                                                     .pushNamed(
-                                                                  'TeamPage',
+                                                                  TeamPageWidget
+                                                                      .routeName,
                                                                   queryParameters:
                                                                       {
                                                                     'teamRef':
@@ -606,7 +611,8 @@ class _PublicBetPageWidgetState extends State<PublicBetPageWidget> {
                                                               .transparent,
                                                           onTap: () async {
                                                             context.pushNamed(
-                                                              'MyNotifsList',
+                                                              MyNotifsListWidget
+                                                                  .routeName,
                                                               extra: <String,
                                                                   dynamic>{
                                                                 kTransitionInfoKey:

@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'signal_event_message_page_model.dart';
@@ -18,6 +19,9 @@ class SignalEventMessagePageWidget extends StatefulWidget {
   });
 
   final DocumentReference? notifRef;
+
+  static String routeName = 'SignalEventMessagePage';
+  static String routePath = '/signalEventMessagePage';
 
   @override
   State<SignalEventMessagePageWidget> createState() =>
@@ -124,7 +128,7 @@ class _SignalEventMessagePageWidgetState
                                         highlightColor: Colors.transparent,
                                         onTap: () async {
                                           context.pushNamed(
-                                            'MenuPage',
+                                            MenuPageWidget.routeName,
                                             extra: <String, dynamic>{
                                               kTransitionInfoKey:
                                                   TransitionInfo(
@@ -257,7 +261,8 @@ class _SignalEventMessagePageWidgetState
                                                     Colors.transparent,
                                                 onTap: () async {
                                                   context.pushNamed(
-                                                    'PublicProfilPage',
+                                                    PublicProfilPageWidget
+                                                        .routeName,
                                                     queryParameters: {
                                                       'userRef': serializeParam(
                                                         columnUsersRecord
@@ -626,7 +631,8 @@ class _SignalEventMessagePageWidgetState
                                                     Colors.transparent,
                                                 onTap: () async {
                                                   context.pushNamed(
-                                                    'PublicProfilPage',
+                                                    PublicProfilPageWidget
+                                                        .routeName,
                                                     queryParameters: {
                                                       'userRef': serializeParam(
                                                         columnUsersRecord

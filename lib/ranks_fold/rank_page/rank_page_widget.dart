@@ -8,6 +8,7 @@ import '/flutter_flow/form_field_controller.dart';
 import '/team_fold/audio_fan_conference/audio_fan_conference_widget.dart';
 import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'rank_page_model.dart';
@@ -15,6 +16,9 @@ export 'rank_page_model.dart';
 
 class RankPageWidget extends StatefulWidget {
   const RankPageWidget({super.key});
+
+  static String routeName = 'RankPage';
+  static String routePath = '/rankPage';
 
   @override
   State<RankPageWidget> createState() => _RankPageWidgetState();
@@ -106,7 +110,7 @@ class _RankPageWidgetState extends State<RankPageWidget> {
                                           highlightColor: Colors.transparent,
                                           onTap: () async {
                                             context.pushNamed(
-                                              'TeamPage',
+                                              TeamPageWidget.routeName,
                                               queryParameters: {
                                                 'teamRef': serializeParam(
                                                   currentUserDocument
@@ -378,7 +382,7 @@ class _RankPageWidgetState extends State<RankPageWidget> {
                                     highlightColor: Colors.transparent,
                                     onTap: () async {
                                       context.pushNamed(
-                                        'MenuPage',
+                                        MenuPageWidget.routeName,
                                         extra: <String, dynamic>{
                                           kTransitionInfoKey: TransitionInfo(
                                             hasTransition: true,
@@ -449,7 +453,7 @@ class _RankPageWidgetState extends State<RankPageWidget> {
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
                                         context.pushNamed(
-                                          'RankTypstersPage',
+                                          RankTypstersPageWidget.routeName,
                                           extra: <String, dynamic>{
                                             kTransitionInfoKey: TransitionInfo(
                                               hasTransition: true,
@@ -482,7 +486,7 @@ class _RankPageWidgetState extends State<RankPageWidget> {
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
                                         context.pushNamed(
-                                          'MyBestsRankPage',
+                                          MyBestsRankPageWidget.routeName,
                                           extra: <String, dynamic>{
                                             kTransitionInfoKey: TransitionInfo(
                                               hasTransition: true,
@@ -780,7 +784,8 @@ class _RankPageWidgetState extends State<RankPageWidget> {
                                                               onTap: () async {
                                                                 context
                                                                     .pushNamed(
-                                                                  'MyNotifsList',
+                                                                  MyNotifsListWidget
+                                                                      .routeName,
                                                                   extra: <String,
                                                                       dynamic>{
                                                                     kTransitionInfoKey:
@@ -929,7 +934,7 @@ class _RankPageWidgetState extends State<RankPageWidget> {
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
                                               Container(
-                                                width: 125.0,
+                                                width: 120.0,
                                                 height: 30.0,
                                                 decoration: BoxDecoration(
                                                   color: FlutterFlowTheme.of(
@@ -1304,7 +1309,7 @@ class _RankPageWidgetState extends State<RankPageWidget> {
                                                         MainAxisSize.max,
                                                     children: [
                                                       Container(
-                                                        width: 125.0,
+                                                        width: 120.0,
                                                         height: 30.0,
                                                         decoration:
                                                             BoxDecoration(
@@ -1333,7 +1338,8 @@ class _RankPageWidgetState extends State<RankPageWidget> {
                                                                     .transparent,
                                                             onTap: () async {
                                                               context.pushNamed(
-                                                                'PublicProfilPage',
+                                                                PublicProfilPageWidget
+                                                                    .routeName,
                                                                 queryParameters:
                                                                     {
                                                                   'userRef':
@@ -1415,9 +1421,14 @@ class _RankPageWidgetState extends State<RankPageWidget> {
                                                                   .override(
                                                                     fontFamily:
                                                                         'Poppins',
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primaryText,
+                                                                    color: valueOrDefault<
+                                                                        Color>(
+                                                                      columnUsersEarningsScrollUsersRecord
+                                                                          .color1,
+                                                                      FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primaryText,
+                                                                    ),
                                                                     letterSpacing:
                                                                         0.0,
                                                                   ),
@@ -1490,6 +1501,15 @@ class _RankPageWidgetState extends State<RankPageWidget> {
                                                                 .override(
                                                                   fontFamily:
                                                                       'Poppins',
+                                                                  color:
+                                                                      valueOrDefault<
+                                                                          Color>(
+                                                                    columnUsersEarningsScrollUsersRecord
+                                                                        .color1,
+                                                                    FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primaryText,
+                                                                  ),
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),
@@ -1530,6 +1550,15 @@ class _RankPageWidgetState extends State<RankPageWidget> {
                                                                 .override(
                                                                   fontFamily:
                                                                       'Poppins',
+                                                                  color:
+                                                                      valueOrDefault<
+                                                                          Color>(
+                                                                    columnUsersEarningsScrollUsersRecord
+                                                                        .color1,
+                                                                    FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primaryText,
+                                                                  ),
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),
@@ -1568,6 +1597,15 @@ class _RankPageWidgetState extends State<RankPageWidget> {
                                                                 .override(
                                                                   fontFamily:
                                                                       'Poppins',
+                                                                  color:
+                                                                      valueOrDefault<
+                                                                          Color>(
+                                                                    columnUsersEarningsScrollUsersRecord
+                                                                        .color1,
+                                                                    FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primaryText,
+                                                                  ),
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),
@@ -1612,6 +1650,15 @@ class _RankPageWidgetState extends State<RankPageWidget> {
                                                                 .override(
                                                                   fontFamily:
                                                                       'Poppins',
+                                                                  color:
+                                                                      valueOrDefault<
+                                                                          Color>(
+                                                                    columnUsersEarningsScrollUsersRecord
+                                                                        .color1,
+                                                                    FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primaryText,
+                                                                  ),
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),
@@ -1661,6 +1708,14 @@ class _RankPageWidgetState extends State<RankPageWidget> {
                                                                   .override(
                                                                     fontFamily:
                                                                         'Poppins',
+                                                                    color: valueOrDefault<
+                                                                        Color>(
+                                                                      columnUsersEarningsScrollUsersRecord
+                                                                          .color1,
+                                                                      FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primaryText,
+                                                                    ),
                                                                     letterSpacing:
                                                                         0.0,
                                                                   ),

@@ -9,6 +9,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/team_fold/audio_fan_conference/audio_fan_conference_widget.dart';
 import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'modif_event_page_model.dart';
@@ -21,6 +22,9 @@ class ModifEventPageWidget extends StatefulWidget {
   });
 
   final DocumentReference? eventRef;
+
+  static String routeName = 'ModifEventPage';
+  static String routePath = '/modifEventPage';
 
   @override
   State<ModifEventPageWidget> createState() => _ModifEventPageWidgetState();
@@ -112,7 +116,7 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
                                         context.pushNamed(
-                                          'MenuPage',
+                                          MenuPageWidget.routeName,
                                           extra: <String, dynamic>{
                                             kTransitionInfoKey: TransitionInfo(
                                               hasTransition: true,
@@ -208,7 +212,8 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                                           Colors.transparent,
                                                       onTap: () async {
                                                         context.pushNamed(
-                                                          'TeamPage',
+                                                          TeamPageWidget
+                                                              .routeName,
                                                           queryParameters: {
                                                             'teamRef':
                                                                 serializeParam(
@@ -961,7 +966,8 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                                         Colors.transparent,
                                                     onTap: () async {
                                                       context.pushNamed(
-                                                        'ModifBetPage',
+                                                        ModifBetPageWidget
+                                                            .routeName,
                                                         queryParameters: {
                                                           'betRef':
                                                               serializeParam(
@@ -1251,7 +1257,8 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                         statut: true,
                                       ));
 
-                                      context.pushNamed('ListEventsAdmin');
+                                      context.pushNamed(
+                                          ListEventsAdminWidget.routeName);
                                     },
                                     text: 'Match à venir',
                                     options: FFButtonOptions(
@@ -1300,7 +1307,8 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                         statut: false,
                                       ));
 
-                                      context.pushNamed('ListEventsAdmin');
+                                      context.pushNamed(
+                                          ListEventsAdminWidget.routeName);
                                     },
                                     text: 'Début du match',
                                     options: FFButtonOptions(
@@ -1769,8 +1777,9 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                                 statut: false,
                                               ));
 
-                                              context
-                                                  .pushNamed('ListEventsAdmin');
+                                              context.pushNamed(
+                                                  ListEventsAdminWidget
+                                                      .routeName);
                                             },
                                             text: 'Victoire Dom',
                                             options: FFButtonOptions(
@@ -1883,8 +1892,9 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                                 statut: false,
                                               ));
 
-                                              context
-                                                  .pushNamed('ListEventsAdmin');
+                                              context.pushNamed(
+                                                  ListEventsAdminWidget
+                                                      .routeName);
                                             },
                                             text: 'Nul',
                                             options: FFButtonOptions(
@@ -1997,8 +2007,9 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                                 statut: false,
                                               ));
 
-                                              context
-                                                  .pushNamed('ListEventsAdmin');
+                                              context.pushNamed(
+                                                  ListEventsAdminWidget
+                                                      .routeName);
                                             },
                                             text: 'Victoire Ext',
                                             options: FFButtonOptions(
@@ -2103,7 +2114,8 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                           statut: false,
                                         ));
 
-                                        context.pushNamed('ListEventsAdmin');
+                                        context.pushNamed(
+                                            ListEventsAdminWidget.routeName);
                                       },
                                       text: 'Victoire Dom',
                                       options: FFButtonOptions(
@@ -2185,7 +2197,8 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                           statut: false,
                                         ));
 
-                                        context.pushNamed('ListEventsAdmin');
+                                        context.pushNamed(
+                                            ListEventsAdminWidget.routeName);
                                       },
                                       text: 'Nul',
                                       options: FFButtonOptions(
@@ -2267,7 +2280,8 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                           statut: false,
                                         ));
 
-                                        context.pushNamed('ListEventsAdmin');
+                                        context.pushNamed(
+                                            ListEventsAdminWidget.routeName);
                                       },
                                       text: 'Victoire Ext',
                                       options: FFButtonOptions(
@@ -2338,7 +2352,8 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                         .scoreExtFieldTextController.text),
                                   ));
 
-                                  context.pushNamed('ListEventsAdmin');
+                                  context.pushNamed(
+                                      ListEventsAdminWidget.routeName);
                                 },
                                 text: 'Terminé',
                                 options: FFButtonOptions(
@@ -2415,7 +2430,7 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                 highlightColor: Colors.transparent,
                                 onTap: () async {
                                   context.pushNamed(
-                                    'RefundPage',
+                                    RefundPageWidget.routeName,
                                     queryParameters: {
                                       'eventRef': serializeParam(
                                         widget.eventRef,
@@ -2690,7 +2705,8 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                 onPressed: () async {
                                   await widget.eventRef!.delete();
 
-                                  context.pushNamed('ListEventsAdmin');
+                                  context.pushNamed(
+                                      ListEventsAdminWidget.routeName);
                                 },
                                 text: 'Supprimer',
                                 options: FFButtonOptions(

@@ -8,6 +8,7 @@ import '/flutter_flow/form_field_controller.dart';
 import '/team_fold/audio_fan_conference/audio_fan_conference_widget.dart';
 import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'ligues_rank_page_model.dart';
@@ -15,6 +16,9 @@ export 'ligues_rank_page_model.dart';
 
 class LiguesRankPageWidget extends StatefulWidget {
   const LiguesRankPageWidget({super.key});
+
+  static String routeName = 'LiguesRankPage';
+  static String routePath = '/liguesRankPage';
 
   @override
   State<LiguesRankPageWidget> createState() => _LiguesRankPageWidgetState();
@@ -80,7 +84,7 @@ class _LiguesRankPageWidgetState extends State<LiguesRankPageWidget> {
                                     highlightColor: Colors.transparent,
                                     onTap: () async {
                                       context.pushNamed(
-                                        'MenuPage',
+                                        MenuPageWidget.routeName,
                                         extra: <String, dynamic>{
                                           kTransitionInfoKey: TransitionInfo(
                                             hasTransition: true,
@@ -176,7 +180,7 @@ class _LiguesRankPageWidgetState extends State<LiguesRankPageWidget> {
                                                       Colors.transparent,
                                                   onTap: () async {
                                                     context.pushNamed(
-                                                      'TeamPage',
+                                                      TeamPageWidget.routeName,
                                                       queryParameters: {
                                                         'teamRef':
                                                             serializeParam(
@@ -525,7 +529,7 @@ class _LiguesRankPageWidgetState extends State<LiguesRankPageWidget> {
                                             highlightColor: Colors.transparent,
                                             onTap: () async {
                                               context.pushNamed(
-                                                'MyNotifsList',
+                                                MyNotifsListWidget.routeName,
                                                 extra: <String, dynamic>{
                                                   kTransitionInfoKey:
                                                       TransitionInfo(
@@ -1072,7 +1076,8 @@ class _LiguesRankPageWidgetState extends State<LiguesRankPageWidget> {
                                                                     .transparent,
                                                             onTap: () async {
                                                               context.pushNamed(
-                                                                'TeamPage',
+                                                                TeamPageWidget
+                                                                    .routeName,
                                                                 queryParameters:
                                                                     {
                                                                   'teamRef':

@@ -417,10 +417,6 @@
       "queryScope": "COLLECTION",
       "fields": [
         {
-          "fieldPath": "survey",
-          "order": "ASCENDING"
-        },
-        {
           "fieldPath": "fold_categorie",
           "order": "ASCENDING"
         },

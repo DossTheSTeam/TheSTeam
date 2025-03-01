@@ -1,4 +1,5 @@
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'modif_bet_page_widget.dart' show ModifBetPageWidget;
 import 'package:flutter/material.dart';
 

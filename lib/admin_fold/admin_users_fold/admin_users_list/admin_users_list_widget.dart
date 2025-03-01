@@ -8,6 +8,7 @@ import '/flutter_flow/form_field_controller.dart';
 import '/team_fold/audio_fan_conference/audio_fan_conference_widget.dart';
 import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'admin_users_list_model.dart';
@@ -15,6 +16,9 @@ export 'admin_users_list_model.dart';
 
 class AdminUsersListWidget extends StatefulWidget {
   const AdminUsersListWidget({super.key});
+
+  static String routeName = 'AdminUsersList';
+  static String routePath = '/adminUsersList';
 
   @override
   State<AdminUsersListWidget> createState() => _AdminUsersListWidgetState();
@@ -78,7 +82,7 @@ class _AdminUsersListWidgetState extends State<AdminUsersListWidget> {
                                 highlightColor: Colors.transparent,
                                 onTap: () async {
                                   context.pushNamed(
-                                    'MenuPage',
+                                    MenuPageWidget.routeName,
                                     extra: <String, dynamic>{
                                       kTransitionInfoKey: TransitionInfo(
                                         hasTransition: true,
@@ -164,7 +168,7 @@ class _AdminUsersListWidgetState extends State<AdminUsersListWidget> {
                                                     Colors.transparent,
                                                 onTap: () async {
                                                   context.pushNamed(
-                                                    'TeamPage',
+                                                    TeamPageWidget.routeName,
                                                     queryParameters: {
                                                       'teamRef': serializeParam(
                                                         currentUserDocument
@@ -591,7 +595,7 @@ class _AdminUsersListWidgetState extends State<AdminUsersListWidget> {
                                         highlightColor: Colors.transparent,
                                         onTap: () async {
                                           context.pushNamed(
-                                            'ProfilPublicAdmin',
+                                            ProfilPublicAdminWidget.routeName,
                                             queryParameters: {
                                               'userRef': serializeParam(
                                                 rowUsersRecord?.reference,
@@ -1056,7 +1060,8 @@ class _AdminUsersListWidgetState extends State<AdminUsersListWidget> {
                                                               .transparent,
                                                           onTap: () async {
                                                             context.pushNamed(
-                                                              'ProfilPublicAdmin',
+                                                              ProfilPublicAdminWidget
+                                                                  .routeName,
                                                               queryParameters: {
                                                                 'userRef':
                                                                     serializeParam(
@@ -1161,7 +1166,8 @@ class _AdminUsersListWidgetState extends State<AdminUsersListWidget> {
                                                     Colors.transparent,
                                                 onTap: () async {
                                                   context.pushNamed(
-                                                    'ProfilPublicAdmin',
+                                                    ProfilPublicAdminWidget
+                                                        .routeName,
                                                     queryParameters: {
                                                       'userRef': serializeParam(
                                                         columnUsersRecord
@@ -1200,7 +1206,8 @@ class _AdminUsersListWidgetState extends State<AdminUsersListWidget> {
                                                     Colors.transparent,
                                                 onTap: () async {
                                                   context.pushNamed(
-                                                    'ProfilPublicAdmin',
+                                                    ProfilPublicAdminWidget
+                                                        .routeName,
                                                     queryParameters: {
                                                       'userRef': serializeParam(
                                                         columnUsersRecord
@@ -1602,7 +1609,8 @@ class _AdminUsersListWidgetState extends State<AdminUsersListWidget> {
                                                               .transparent,
                                                           onTap: () async {
                                                             context.pushNamed(
-                                                              'ProfilPublicAdmin',
+                                                              ProfilPublicAdminWidget
+                                                                  .routeName,
                                                               queryParameters: {
                                                                 'userRef':
                                                                     serializeParam(
@@ -1707,7 +1715,8 @@ class _AdminUsersListWidgetState extends State<AdminUsersListWidget> {
                                                     Colors.transparent,
                                                 onTap: () async {
                                                   context.pushNamed(
-                                                    'ProfilPublicAdmin',
+                                                    ProfilPublicAdminWidget
+                                                        .routeName,
                                                     queryParameters: {
                                                       'userRef': serializeParam(
                                                         columnUsersRecord
@@ -1746,7 +1755,8 @@ class _AdminUsersListWidgetState extends State<AdminUsersListWidget> {
                                                     Colors.transparent,
                                                 onTap: () async {
                                                   context.pushNamed(
-                                                    'ProfilPublicAdmin',
+                                                    ProfilPublicAdminWidget
+                                                        .routeName,
                                                     queryParameters: {
                                                       'userRef': serializeParam(
                                                         columnUsersRecord

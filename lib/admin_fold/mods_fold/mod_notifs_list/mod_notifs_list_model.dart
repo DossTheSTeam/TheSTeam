@@ -1,4 +1,5 @@
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'mod_notifs_list_widget.dart' show ModNotifsListWidget;
 import 'package:flutter/material.dart';
 

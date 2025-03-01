@@ -49,11 +49,19 @@ class _PushNotificationsHandlerState extends State<PushNotificationsHandler> {
       final parametersBuilder = parametersBuilderMap[initialPageName];
       if (parametersBuilder != null) {
         final parameterData = await parametersBuilder(initialParameterData);
-        context.pushNamed(
-          initialPageName,
-          pathParameters: parameterData.pathParameters,
-          extra: parameterData.extra,
-        );
+        if (mounted) {
+          context.pushNamed(
+            initialPageName,
+            pathParameters: parameterData.pathParameters,
+            extra: parameterData.extra,
+          );
+        } else {
+          appNavigatorKey.currentContext?.pushNamed(
+            initialPageName,
+            pathParameters: parameterData.pathParameters,
+            extra: parameterData.extra,
+          );
+        }
       }
     } catch (e) {
       print('Error: $e');
@@ -479,11 +487,6 @@ final parametersBuilderMap =
         },
       ),
   'ListAdvices': (data) async => ParameterData(
-        allParams: {
-          'teamRef': getParameter<DocumentReference>(data, 'teamRef'),
-        },
-      ),
-  'AddAdvicePage': (data) async => ParameterData(
         allParams: {
           'teamRef': getParameter<DocumentReference>(data, 'teamRef'),
         },
