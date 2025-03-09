@@ -156,6 +156,41 @@ class TeamsRecord extends FirestoreRecord {
   DocumentReference? get conference => _conference;
   bool hasConference() => _conference != null;
 
+  // "goals_in_cup" field.
+  int? _goalsInCup;
+  int get goalsInCup => _goalsInCup ?? 0;
+  bool hasGoalsInCup() => _goalsInCup != null;
+
+  // "goals_out_cup" field.
+  int? _goalsOutCup;
+  int get goalsOutCup => _goalsOutCup ?? 0;
+  bool hasGoalsOutCup() => _goalsOutCup != null;
+
+  // "games_cup" field.
+  int? _gamesCup;
+  int get gamesCup => _gamesCup ?? 0;
+  bool hasGamesCup() => _gamesCup != null;
+
+  // "wins_cup" field.
+  int? _winsCup;
+  int get winsCup => _winsCup ?? 0;
+  bool hasWinsCup() => _winsCup != null;
+
+  // "draws_cup" field.
+  int? _drawsCup;
+  int get drawsCup => _drawsCup ?? 0;
+  bool hasDrawsCup() => _drawsCup != null;
+
+  // "looses_cup" field.
+  int? _loosesCup;
+  int get loosesCup => _loosesCup ?? 0;
+  bool hasLoosesCup() => _loosesCup != null;
+
+  // "points_cup" field.
+  int? _pointsCup;
+  int get pointsCup => _pointsCup ?? 0;
+  bool hasPointsCup() => _pointsCup != null;
+
   void _initializeFields() {
     _name = snapshotData['name'] as String?;
     _value = snapshotData['value'] as String?;
@@ -185,6 +220,13 @@ class TeamsRecord extends FirestoreRecord {
     _color1 = getSchemaColor(snapshotData['color1']);
     _color2 = getSchemaColor(snapshotData['color2']);
     _conference = snapshotData['conference'] as DocumentReference?;
+    _goalsInCup = castToType<int>(snapshotData['goals_in_cup']);
+    _goalsOutCup = castToType<int>(snapshotData['goals_out_cup']);
+    _gamesCup = castToType<int>(snapshotData['games_cup']);
+    _winsCup = castToType<int>(snapshotData['wins_cup']);
+    _drawsCup = castToType<int>(snapshotData['draws_cup']);
+    _loosesCup = castToType<int>(snapshotData['looses_cup']);
+    _pointsCup = castToType<int>(snapshotData['points_cup']);
   }
 
   static CollectionReference get collection =>
@@ -246,6 +288,13 @@ Map<String, dynamic> createTeamsRecordData({
   Color? color1,
   Color? color2,
   DocumentReference? conference,
+  int? goalsInCup,
+  int? goalsOutCup,
+  int? gamesCup,
+  int? winsCup,
+  int? drawsCup,
+  int? loosesCup,
+  int? pointsCup,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -274,6 +323,13 @@ Map<String, dynamic> createTeamsRecordData({
       'color1': color1,
       'color2': color2,
       'conference': conference,
+      'goals_in_cup': goalsInCup,
+      'goals_out_cup': goalsOutCup,
+      'games_cup': gamesCup,
+      'wins_cup': winsCup,
+      'draws_cup': drawsCup,
+      'looses_cup': loosesCup,
+      'points_cup': pointsCup,
     }.withoutNulls,
   );
 
@@ -313,7 +369,14 @@ class TeamsRecordDocumentEquality implements Equality<TeamsRecord> {
         e1?.bio == e2?.bio &&
         e1?.color1 == e2?.color1 &&
         e1?.color2 == e2?.color2 &&
-        e1?.conference == e2?.conference;
+        e1?.conference == e2?.conference &&
+        e1?.goalsInCup == e2?.goalsInCup &&
+        e1?.goalsOutCup == e2?.goalsOutCup &&
+        e1?.gamesCup == e2?.gamesCup &&
+        e1?.winsCup == e2?.winsCup &&
+        e1?.drawsCup == e2?.drawsCup &&
+        e1?.loosesCup == e2?.loosesCup &&
+        e1?.pointsCup == e2?.pointsCup;
   }
 
   @override
@@ -345,7 +408,14 @@ class TeamsRecordDocumentEquality implements Equality<TeamsRecord> {
         e?.bio,
         e?.color1,
         e?.color2,
-        e?.conference
+        e?.conference,
+        e?.goalsInCup,
+        e?.goalsOutCup,
+        e?.gamesCup,
+        e?.winsCup,
+        e?.drawsCup,
+        e?.loosesCup,
+        e?.pointsCup
       ]);
 
   @override

@@ -1189,6 +1189,42 @@ class _RefundPageWidgetState extends State<RefundPageWidget> {
                                                           letterSpacing: 0.0,
                                                         ),
                                                   ),
+                                                if (columnStatsBetsBetsRecord
+                                                            .first !=
+                                                        '')
+                                                  Text(
+                                                    valueOrDefault<String>(
+                                                      columnStatsBetsBetsRecord
+                                                          .first,
+                                                      'first',
+                                                    ),
+                                                    maxLines: 2,
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                  ),
+                                                if (columnStatsBetsBetsRecord
+                                                            .podium !=
+                                                        '')
+                                                  Text(
+                                                    valueOrDefault<String>(
+                                                      columnStatsBetsBetsRecord
+                                                          .podium,
+                                                      'podium',
+                                                    ),
+                                                    maxLines: 2,
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                  ),
                                                 Row(
                                                   mainAxisSize:
                                                       MainAxisSize.max,

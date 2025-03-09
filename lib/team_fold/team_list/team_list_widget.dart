@@ -1,3 +1,4 @@
+import '';
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
@@ -642,7 +643,9 @@ class _TeamListWidgetState extends State<TeamListWidget> {
                                               'tennis',
                                               'hockey',
                                               'mma',
-                                              'boxe'
+                                              'boxe',
+                                              'rugby',
+                                              'sports.meca'
                                             ]),
                                             optionLabels: [
                                               'Football',
@@ -650,7 +653,9 @@ class _TeamListWidgetState extends State<TeamListWidget> {
                                               'Tennis',
                                               'Hockey',
                                               'MMA',
-                                              'Boxe'
+                                              'Boxe',
+                                              'Rugby',
+                                              'Sports Méca.'
                                             ],
                                             onChanged: (val) async {
                                               safeSetState(() =>
@@ -1276,6 +1281,127 @@ class _TeamListWidgetState extends State<TeamListWidget> {
                                                   isMultiSelect: false,
                                                 ),
                                               ),
+                                            if (_model.showSportFilter ==
+                                                'rugby')
+                                              FlutterFlowDropDown<String>(
+                                                controller: _model
+                                                        .dropLigueRugbyValueController ??=
+                                                    FormFieldController<String>(
+                                                  _model.dropLigueRugbyValue ??=
+                                                      '',
+                                                ),
+                                                options: List<String>.from([
+                                                  'top.14',
+                                                  'pays.rugby',
+                                                  ''
+                                                ]),
+                                                optionLabels: [
+                                                  'Top 14',
+                                                  'Pays Rugby',
+                                                  'Rugby'
+                                                ],
+                                                onChanged: (val) async {
+                                                  safeSetState(() => _model
+                                                          .dropLigueRugbyValue =
+                                                      val);
+                                                  _model.showLigueFilter =
+                                                      _model
+                                                          .dropLigueRugbyValue;
+                                                  safeSetState(() {});
+                                                },
+                                                width: 180.0,
+                                                height: 50.0,
+                                                textStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                hintText: 'Ligues',
+                                                icon: Icon(
+                                                  Icons
+                                                      .keyboard_arrow_down_rounded,
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryText,
+                                                  size: 24.0,
+                                                ),
+                                                fillColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryBackground,
+                                                elevation: 2.0,
+                                                borderColor: Colors.transparent,
+                                                borderWidth: 0.0,
+                                                borderRadius: 8.0,
+                                                margin: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        12.0, 0.0, 12.0, 0.0),
+                                                hidesUnderline: true,
+                                                isOverButton: false,
+                                                isSearchable: false,
+                                                isMultiSelect: false,
+                                              ),
+                                            if (_model.showSportFilter ==
+                                                'sports.meca')
+                                              FlutterFlowDropDown<String>(
+                                                controller: _model
+                                                        .dropLigueMecaValueController ??=
+                                                    FormFieldController<String>(
+                                                  _model.dropLigueMecaValue ??=
+                                                      '',
+                                                ),
+                                                options: List<String>.from([
+                                                  'formule.1',
+                                                  'moto.gp',
+                                                  ''
+                                                ]),
+                                                optionLabels: [
+                                                  'Formule 1',
+                                                  'Moto GP',
+                                                  'Sports Méca.'
+                                                ],
+                                                onChanged: (val) async {
+                                                  safeSetState(() => _model
+                                                          .dropLigueMecaValue =
+                                                      val);
+                                                  _model.showLigueFilter =
+                                                      _model.dropLigueMecaValue;
+                                                  safeSetState(() {});
+                                                },
+                                                width: 180.0,
+                                                height: 50.0,
+                                                textStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                hintText: 'Ligues',
+                                                icon: Icon(
+                                                  Icons
+                                                      .keyboard_arrow_down_rounded,
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryText,
+                                                  size: 24.0,
+                                                ),
+                                                fillColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryBackground,
+                                                elevation: 2.0,
+                                                borderColor: Colors.transparent,
+                                                borderWidth: 0.0,
+                                                borderRadius: 8.0,
+                                                margin: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        12.0, 0.0, 12.0, 0.0),
+                                                hidesUnderline: true,
+                                                isOverButton: false,
+                                                isSearchable: false,
+                                                isMultiSelect: false,
+                                              ),
                                           ],
                                         ),
                                       ],
@@ -1752,24 +1878,48 @@ class _TeamListWidgetState extends State<TeamListWidget> {
                                                                           ),
                                                                     ),
                                                                   ),
-                                                                  Text(
-                                                                    valueOrDefault<
-                                                                        String>(
-                                                                      columnTeamsTeamsRecord
-                                                                          .looses
-                                                                          .toString(),
-                                                                      '0',
+                                                                  if (columnTeamsTeamsRecord
+                                                                          .sportValue !=
+                                                                      'sports.meca')
+                                                                    Text(
+                                                                      valueOrDefault<
+                                                                          String>(
+                                                                        columnTeamsTeamsRecord
+                                                                            .looses
+                                                                            .toString(),
+                                                                        '0',
+                                                                      ),
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                'Poppins',
+                                                                            letterSpacing:
+                                                                                0.0,
+                                                                          ),
                                                                     ),
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              'Poppins',
-                                                                          letterSpacing:
-                                                                              0.0,
-                                                                        ),
-                                                                  ),
+                                                                  if (columnTeamsTeamsRecord
+                                                                          .sportValue ==
+                                                                      'sports.meca')
+                                                                    Text(
+                                                                      valueOrDefault<
+                                                                          String>(
+                                                                        columnTeamsTeamsRecord
+                                                                            .totalGames
+                                                                            .toString(),
+                                                                        '0',
+                                                                      ),
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                'Poppins',
+                                                                            letterSpacing:
+                                                                                0.0,
+                                                                          ),
+                                                                    ),
                                                                 ],
                                                               ),
                                                             ),

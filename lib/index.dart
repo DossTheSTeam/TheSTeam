@@ -214,3 +214,7 @@ export '/admin_fold/admin_event_fold/refund_page/refund_page_widget.dart'
     show RefundPageWidget;
 export '/admin_fold/admin_users_fold/menu_page_pub/menu_page_pub_widget.dart'
     show MenuPagePubWidget;
+export '/admin_fold/admin_event_fold/add_bet_meca_page/add_bet_meca_page_widget.dart'
+    show AddBetMecaPageWidget;
+export '/admin_fold/admin_event_fold/modif_rank_pilotes/modif_rank_pilotes_widget.dart'
+    show ModifRankPilotesWidget;

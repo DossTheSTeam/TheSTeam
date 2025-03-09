@@ -642,9 +642,9 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                           children: [
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 10.0, 0.0),
+                                  0.0, 11.0, 0.0, 0.0),
                               child: Text(
-                                'Journée',
+                                'Journée ou\nNom Event',
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
@@ -655,19 +655,19 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                             ),
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
-                                  30.0, 0.0, 0.0, 0.0),
+                                  17.0, 0.0, 0.0, 0.0),
                               child: Container(
-                                width: 70.0,
+                                width: 180.0,
                                 height: 35.0,
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context)
                                       .primaryBackground,
                                 ),
                                 child: Align(
-                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  alignment: AlignmentDirectional(-1.0, 0.0),
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        8.0, 0.0, 8.0, 0.0),
+                                        0.0, 0.0, 8.0, 0.0),
                                     child: TextFormField(
                                       controller:
                                           _model.numWeekFieldTextController,
@@ -675,14 +675,11 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                       autofocus: false,
                                       obscureText: false,
                                       decoration: InputDecoration(
-                                        hintText: '#',
+                                        hintText: '#####',
                                         hintStyle: FlutterFlowTheme.of(context)
-                                            .labelMedium
+                                            .bodyLarge
                                             .override(
                                               fontFamily: 'Poppins',
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primaryText,
                                               letterSpacing: 0.0,
                                             ),
                                         enabledBorder: UnderlineInputBorder(
@@ -729,8 +726,7 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                             fontFamily: 'Poppins',
                                             letterSpacing: 0.0,
                                           ),
-                                      textAlign: TextAlign.center,
-                                      keyboardType: TextInputType.number,
+                                      textAlign: TextAlign.start,
                                       validator: _model
                                           .numWeekFieldTextControllerValidator
                                           .asValidator(context),
@@ -786,7 +782,9 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                         'tennis',
                                         'hockey',
                                         'mma',
-                                        'boxe'
+                                        'boxe',
+                                        'rugby',
+                                        'sports.meca'
                                       ]),
                                       optionLabels: [
                                         'Football',
@@ -794,7 +792,9 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                         'Tennis',
                                         'Hockey',
                                         'MMA',
-                                        'Boxe'
+                                        'Boxe',
+                                        'Rugby',
+                                        'Sports Méca.'
                                       ],
                                       onChanged: (val) => safeSetState(
                                           () => _model.dropSportValue = val),
@@ -863,7 +863,11 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                           'mi.lourd',
                                           'lourd',
                                           'autres.france',
-                                          'super.lourd'
+                                          'super.lourd',
+                                          'top.14',
+                                          'pays.rugby',
+                                          'formule.1',
+                                          'moto.gp'
                                         ]),
                                         optionLabels: [
                                           'Premier League',
@@ -893,7 +897,11 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                           'Mi-Lourd',
                                           'Lourd',
                                           'Autres - France',
-                                          'Super Lourd'
+                                          'Super Lourd',
+                                          'Top 14',
+                                          'Pays Rugby',
+                                          'Formule 1',
+                                          'Moto GP'
                                         ],
                                         onChanged: (val) => safeSetState(
                                             () => _model.dropLigueValue = val),
@@ -1456,7 +1464,7 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                 child: FFButtonWidget(
                                                   onPressed: () async {
                                                     await _model
-                                                        .eventRef!.reference
+                                                        .eventAutoRef!.reference
                                                         .update(
                                                             createEventsRecordData(
                                                       teamextRef:
@@ -1476,7 +1484,8 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                           .calendarSelectedDay
                                                           ?.start,
                                                       events: _model
-                                                          .eventRef?.reference,
+                                                          .eventAutoRef
+                                                          ?.reference,
                                                     ));
 
                                                     context.pushNamed(
@@ -1485,7 +1494,7 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                       queryParameters: {
                                                         'eventRef':
                                                             serializeParam(
-                                                          _model.eventRef
+                                                          _model.eventAutoRef
                                                               ?.reference,
                                                           ParamType
                                                               .DocumentReference,
@@ -1544,6 +1553,194 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                       },
                                     ),
                                 ],
+                              ),
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    10.0, 40.0, 0.0, 0.0),
+                                child: StreamBuilder<List<TeamsRecord>>(
+                                  stream: queryTeamsRecord(
+                                    queryBuilder: (teamsRecord) =>
+                                        teamsRecord.where(
+                                      'value',
+                                      isEqualTo: _model.dropTeamDomValue,
+                                    ),
+                                    singleRecord: true,
+                                  ),
+                                  builder: (context, snapshot) {
+                                    // Customize what your widget looks like when it's loading.
+                                    if (!snapshot.hasData) {
+                                      return Center(
+                                        child: SizedBox(
+                                          width: 50.0,
+                                          height: 50.0,
+                                          child: CircularProgressIndicator(
+                                            valueColor:
+                                                AlwaysStoppedAnimation<Color>(
+                                              FlutterFlowTheme.of(context)
+                                                  .accent4,
+                                            ),
+                                          ),
+                                        ),
+                                      );
+                                    }
+                                    List<TeamsRecord>
+                                        columnCourseDomRefTeamsRecordList =
+                                        snapshot.data!;
+                                    // Return an empty Container when the item does not exist.
+                                    if (snapshot.data!.isEmpty) {
+                                      return Container();
+                                    }
+                                    final columnCourseDomRefTeamsRecord =
+                                        columnCourseDomRefTeamsRecordList
+                                                .isNotEmpty
+                                            ? columnCourseDomRefTeamsRecordList
+                                                .first
+                                            : null;
+
+                                    return Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.end,
+                                      children: [
+                                        if (_model.dropSportValue ==
+                                            'sports.meca')
+                                          Text(
+                                            valueOrDefault<String>(
+                                              _model.dropLigueValue,
+                                              'ligue',
+                                            ),
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Poppins',
+                                                  fontSize: 10.0,
+                                                  letterSpacing: 0.0,
+                                                ),
+                                          ),
+                                        if (_model.dropSportValue ==
+                                            'sports.meca')
+                                          Align(
+                                            alignment:
+                                                AlignmentDirectional(1.0, 0.0),
+                                            child: Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(0.0, 5.0, 0.0, 0.0),
+                                              child: FFButtonWidget(
+                                                onPressed: () async {
+                                                  var eventsRecordReference =
+                                                      EventsRecord.collection
+                                                          .doc();
+                                                  await eventsRecordReference
+                                                      .set(
+                                                          createEventsRecordData(
+                                                    date: _model
+                                                        .calendarSelectedDay
+                                                        ?.start,
+                                                    hour: _model.countHourValue,
+                                                    minute:
+                                                        _model.countMinuteValue,
+                                                    adminUser:
+                                                        currentUserReference,
+                                                    statut: false,
+                                                    sportValue:
+                                                        _model.dropSportValue,
+                                                    leagueValue:
+                                                        _model.dropLigueValue,
+                                                    week: _model
+                                                        .numWeekFieldTextController
+                                                        .text,
+                                                    esport: false,
+                                                  ));
+                                                  _model.eventAutoRef = EventsRecord
+                                                      .getDocumentFromData(
+                                                          createEventsRecordData(
+                                                            date: _model
+                                                                .calendarSelectedDay
+                                                                ?.start,
+                                                            hour: _model
+                                                                .countHourValue,
+                                                            minute: _model
+                                                                .countMinuteValue,
+                                                            adminUser:
+                                                                currentUserReference,
+                                                            statut: false,
+                                                            sportValue: _model
+                                                                .dropSportValue,
+                                                            leagueValue: _model
+                                                                .dropLigueValue,
+                                                            week: _model
+                                                                .numWeekFieldTextController
+                                                                .text,
+                                                            esport: false,
+                                                          ),
+                                                          eventsRecordReference);
+
+                                                  context.pushNamed(
+                                                    AddBetMecaPageWidget
+                                                        .routeName,
+                                                    queryParameters: {
+                                                      'eventMecaRef':
+                                                          serializeParam(
+                                                        _model.eventAutoRef
+                                                            ?.reference,
+                                                        ParamType
+                                                            .DocumentReference,
+                                                      ),
+                                                    }.withoutNulls,
+                                                  );
+
+                                                  safeSetState(() {});
+                                                },
+                                                text: 'Ajouter les pilotes',
+                                                options: FFButtonOptions(
+                                                  width: 130.0,
+                                                  height: 40.0,
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 0.0, 0.0, 0.0),
+                                                  iconPadding:
+                                                      EdgeInsetsDirectional
+                                                          .fromSTEB(0.0, 0.0,
+                                                              0.0, 0.0),
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryBackground,
+                                                  textStyle: FlutterFlowTheme
+                                                          .of(context)
+                                                      .titleSmall
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primaryText,
+                                                        fontSize: 16.0,
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                  elevation: 3.0,
+                                                  borderSide: BorderSide(
+                                                    color: Colors.transparent,
+                                                    width: 1.0,
+                                                  ),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          40.0),
+                                                  hoverColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .success,
+                                                  hoverTextColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .primaryBackground,
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                      ],
+                                    );
+                                  },
+                                ),
                               ),
                             ],
                           ),
@@ -1893,8 +2090,7 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                       'moyen',
                                                       'mi.lourd',
                                                       'lourd',
-                                                      'super.lourd',
-                                                      ''
+                                                      'super.lourd'
                                                     ]),
                                                     optionLabels: [
                                                       'Mouche - 52 kg',
@@ -1904,12 +2100,147 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                       'Moyen- 75 kg',
                                                       'Mi-Lourd - 81 kg',
                                                       'Lourd - 91 kg',
-                                                      'Super Lourd + 91 kg',
-                                                      'Ligues'
+                                                      'Super Lourd + 91 kg'
                                                     ],
                                                     onChanged: (val) =>
                                                         safeSetState(() => _model
                                                                 .dropLigueBoxeValue =
+                                                            val),
+                                                    width: 180.0,
+                                                    height: 50.0,
+                                                    textStyle: FlutterFlowTheme
+                                                            .of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                    hintText: 'Ligues',
+                                                    icon: Icon(
+                                                      Icons
+                                                          .keyboard_arrow_down_rounded,
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .secondaryText,
+                                                      size: 24.0,
+                                                    ),
+                                                    fillColor:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .primaryBackground,
+                                                    elevation: 2.0,
+                                                    borderColor:
+                                                        Colors.transparent,
+                                                    borderWidth: 0.0,
+                                                    borderRadius: 8.0,
+                                                    margin:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(12.0, 0.0,
+                                                                12.0, 0.0),
+                                                    hidesUnderline: true,
+                                                    isOverButton: false,
+                                                    isSearchable: false,
+                                                    isMultiSelect: false,
+                                                  ),
+                                                ),
+                                              if (valueOrDefault(
+                                                      currentUserDocument
+                                                          ?.adminSportvalue,
+                                                      '') ==
+                                                  'rugby')
+                                                Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 0.0, 0.0, 5.0),
+                                                  child: FlutterFlowDropDown<
+                                                      String>(
+                                                    controller: _model
+                                                            .dropLigueRugbyValueController ??=
+                                                        FormFieldController<
+                                                            String>(
+                                                      _model.dropLigueRugbyValue ??=
+                                                          '',
+                                                    ),
+                                                    options: List<String>.from([
+                                                      'top.14',
+                                                      'pays.rugby'
+                                                    ]),
+                                                    optionLabels: [
+                                                      'Top 14',
+                                                      'Pays Rugby'
+                                                    ],
+                                                    onChanged: (val) =>
+                                                        safeSetState(() => _model
+                                                                .dropLigueRugbyValue =
+                                                            val),
+                                                    width: 180.0,
+                                                    height: 50.0,
+                                                    textStyle: FlutterFlowTheme
+                                                            .of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                    hintText: 'Ligues',
+                                                    icon: Icon(
+                                                      Icons
+                                                          .keyboard_arrow_down_rounded,
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .secondaryText,
+                                                      size: 24.0,
+                                                    ),
+                                                    fillColor:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .primaryBackground,
+                                                    elevation: 2.0,
+                                                    borderColor:
+                                                        Colors.transparent,
+                                                    borderWidth: 0.0,
+                                                    borderRadius: 8.0,
+                                                    margin:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(12.0, 0.0,
+                                                                12.0, 0.0),
+                                                    hidesUnderline: true,
+                                                    isOverButton: false,
+                                                    isSearchable: false,
+                                                    isMultiSelect: false,
+                                                  ),
+                                                ),
+                                              if (valueOrDefault(
+                                                      currentUserDocument
+                                                          ?.adminSportvalue,
+                                                      '') ==
+                                                  'sports.meca')
+                                                Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 0.0, 0.0, 5.0),
+                                                  child: FlutterFlowDropDown<
+                                                      String>(
+                                                    controller: _model
+                                                            .dropLigueMecaValueController ??=
+                                                        FormFieldController<
+                                                            String>(
+                                                      _model.dropLigueMecaValue ??=
+                                                          '',
+                                                    ),
+                                                    options: List<String>.from([
+                                                      'top.14',
+                                                      'pays.rugby'
+                                                    ]),
+                                                    optionLabels: [
+                                                      'Top 14',
+                                                      'Pays Rugby'
+                                                    ],
+                                                    onChanged: (val) =>
+                                                        safeSetState(() => _model
+                                                                .dropLigueMecaValue =
                                                             val),
                                                     width: 180.0,
                                                     height: 50.0,
@@ -3789,6 +4120,551 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                           ],
                                         ),
                                       ),
+                                    if (_model.dropLigueRugbyValue != null &&
+                                        _model.dropLigueRugbyValue != '')
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 10.0, 0.0, 0.0),
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          children: [
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(0.0, 8.0, 0.0, 8.0),
+                                              child: StreamBuilder<
+                                                  List<TeamsRecord>>(
+                                                stream: queryTeamsRecord(
+                                                  queryBuilder: (teamsRecord) =>
+                                                      teamsRecord.where(
+                                                    'league_value',
+                                                    isEqualTo: _model
+                                                        .dropLigueBoxeValue,
+                                                  ),
+                                                ),
+                                                builder: (context, snapshot) {
+                                                  // Customize what your widget looks like when it's loading.
+                                                  if (!snapshot.hasData) {
+                                                    return Center(
+                                                      child: SizedBox(
+                                                        width: 50.0,
+                                                        height: 50.0,
+                                                        child:
+                                                            CircularProgressIndicator(
+                                                          valueColor:
+                                                              AlwaysStoppedAnimation<
+                                                                  Color>(
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .accent4,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    );
+                                                  }
+                                                  List<TeamsRecord>
+                                                      dropTeamDomRugbyTeamsRecordList =
+                                                      snapshot.data!;
+
+                                                  return FlutterFlowDropDown<
+                                                      String>(
+                                                    controller: _model
+                                                            .dropTeamDomRugbyValueController ??=
+                                                        FormFieldController<
+                                                            String>(
+                                                      _model.dropTeamDomRugbyValue ??=
+                                                          '',
+                                                    ),
+                                                    options: List<String>.from(
+                                                        dropTeamDomRugbyTeamsRecordList
+                                                            .map((e) => e.value)
+                                                            .toList()),
+                                                    optionLabels:
+                                                        dropTeamDomRugbyTeamsRecordList
+                                                            .map((e) => e.name)
+                                                            .toList(),
+                                                    onChanged: (val) =>
+                                                        safeSetState(() => _model
+                                                                .dropTeamDomRugbyValue =
+                                                            val),
+                                                    width: 200.0,
+                                                    height: 40.0,
+                                                    textStyle: FlutterFlowTheme
+                                                            .of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                    hintText: 'Teams',
+                                                    icon: Icon(
+                                                      Icons
+                                                          .keyboard_arrow_down_rounded,
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .secondaryText,
+                                                      size: 24.0,
+                                                    ),
+                                                    fillColor:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .primaryBackground,
+                                                    elevation: 2.0,
+                                                    borderColor:
+                                                        Colors.transparent,
+                                                    borderWidth: 0.0,
+                                                    borderRadius: 8.0,
+                                                    margin:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(12.0, 0.0,
+                                                                12.0, 0.0),
+                                                    hidesUnderline: true,
+                                                    isOverButton: false,
+                                                    isSearchable: false,
+                                                    isMultiSelect: false,
+                                                  );
+                                                },
+                                              ),
+                                            ),
+                                            StreamBuilder<List<TeamsRecord>>(
+                                              stream: queryTeamsRecord(
+                                                queryBuilder: (teamsRecord) =>
+                                                    teamsRecord.where(
+                                                  'value',
+                                                  isEqualTo: _model
+                                                      .dropTeamDomRugbyValue,
+                                                ),
+                                                singleRecord: true,
+                                              ),
+                                              builder: (context, snapshot) {
+                                                // Customize what your widget looks like when it's loading.
+                                                if (!snapshot.hasData) {
+                                                  return Center(
+                                                    child: SizedBox(
+                                                      width: 50.0,
+                                                      height: 50.0,
+                                                      child:
+                                                          CircularProgressIndicator(
+                                                        valueColor:
+                                                            AlwaysStoppedAnimation<
+                                                                Color>(
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .accent4,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  );
+                                                }
+                                                List<TeamsRecord>
+                                                    columnTeamsRecordList =
+                                                    snapshot.data!;
+                                                // Return an empty Container when the item does not exist.
+                                                if (snapshot.data!.isEmpty) {
+                                                  return Container();
+                                                }
+                                                final columnTeamsRecord =
+                                                    columnTeamsRecordList
+                                                            .isNotEmpty
+                                                        ? columnTeamsRecordList
+                                                            .first
+                                                        : null;
+
+                                                return Column(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  children: [
+                                                    Text(
+                                                      valueOrDefault<String>(
+                                                        columnTeamsRecord?.name,
+                                                        'teamdom',
+                                                      ),
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Poppins',
+                                                            fontSize: 10.0,
+                                                            letterSpacing: 0.0,
+                                                          ),
+                                                    ),
+                                                    if (_model.eventRugbyRef
+                                                            ?.reference ==
+                                                        null)
+                                                      Align(
+                                                        alignment:
+                                                            AlignmentDirectional(
+                                                                0.0, 0.0),
+                                                        child: Padding(
+                                                          padding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      5.0,
+                                                                      0.0,
+                                                                      0.0),
+                                                          child: FFButtonWidget(
+                                                            onPressed:
+                                                                () async {
+                                                              var eventsRecordReference =
+                                                                  EventsRecord
+                                                                      .collection
+                                                                      .doc();
+                                                              await eventsRecordReference
+                                                                  .set(
+                                                                      createEventsRecordData(
+                                                                date: _model
+                                                                    .calendarSelectedDay
+                                                                    ?.start,
+                                                                hour: _model
+                                                                    .countHourValue,
+                                                                minute: _model
+                                                                    .countMinuteValue,
+                                                                teamdom:
+                                                                    columnTeamsRecord
+                                                                        ?.value,
+                                                                draw:
+                                                                    valueOrDefault<
+                                                                        String>(
+                                                                  'Match nul',
+                                                                  'draw',
+                                                                ),
+                                                                l2myes:
+                                                                    valueOrDefault<
+                                                                        String>(
+                                                                  'Les 2 équipes marquent - Oui',
+                                                                  'l2myes',
+                                                                ),
+                                                                l2mno:
+                                                                    valueOrDefault<
+                                                                        String>(
+                                                                  'Les 2 équipes marquent - Non',
+                                                                  'l2mno',
+                                                                ),
+                                                                adminUser:
+                                                                    currentUserReference,
+                                                                statut: false,
+                                                                sportValue:
+                                                                    'rugby',
+                                                                teamdomRef:
+                                                                    columnTeamsRecord
+                                                                        ?.reference,
+                                                                leagueValue: _model
+                                                                    .dropLigueRugbyValue,
+                                                                week: _model
+                                                                    .numWeekFieldTextController
+                                                                    .text,
+                                                                esport: false,
+                                                              ));
+                                                              _model.eventRugbyRef =
+                                                                  EventsRecord
+                                                                      .getDocumentFromData(
+                                                                          createEventsRecordData(
+                                                                            date:
+                                                                                _model.calendarSelectedDay?.start,
+                                                                            hour:
+                                                                                _model.countHourValue,
+                                                                            minute:
+                                                                                _model.countMinuteValue,
+                                                                            teamdom:
+                                                                                columnTeamsRecord?.value,
+                                                                            draw:
+                                                                                valueOrDefault<String>(
+                                                                              'Match nul',
+                                                                              'draw',
+                                                                            ),
+                                                                            l2myes:
+                                                                                valueOrDefault<String>(
+                                                                              'Les 2 équipes marquent - Oui',
+                                                                              'l2myes',
+                                                                            ),
+                                                                            l2mno:
+                                                                                valueOrDefault<String>(
+                                                                              'Les 2 équipes marquent - Non',
+                                                                              'l2mno',
+                                                                            ),
+                                                                            adminUser:
+                                                                                currentUserReference,
+                                                                            statut:
+                                                                                false,
+                                                                            sportValue:
+                                                                                'rugby',
+                                                                            teamdomRef:
+                                                                                columnTeamsRecord?.reference,
+                                                                            leagueValue:
+                                                                                _model.dropLigueRugbyValue,
+                                                                            week:
+                                                                                _model.numWeekFieldTextController.text,
+                                                                            esport:
+                                                                                false,
+                                                                          ),
+                                                                          eventsRecordReference);
+
+                                                              await TeamEventsRecord
+                                                                      .createDoc(
+                                                                          columnTeamsRecord!
+                                                                              .reference)
+                                                                  .set(
+                                                                      createTeamEventsRecordData(
+                                                                startedTime: _model
+                                                                    .calendarSelectedDay
+                                                                    ?.start,
+                                                                events: _model
+                                                                    .eventRugbyRef
+                                                                    ?.reference,
+                                                              ));
+
+                                                              safeSetState(
+                                                                  () {});
+                                                            },
+                                                            text:
+                                                                'Valider Domicile',
+                                                            options:
+                                                                FFButtonOptions(
+                                                              width: 130.0,
+                                                              height: 40.0,
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                              iconPadding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .secondaryBackground,
+                                                              textStyle:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmall
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Poppins',
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .primaryText,
+                                                                        fontSize:
+                                                                            16.0,
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                      ),
+                                                              elevation: 3.0,
+                                                              borderSide:
+                                                                  BorderSide(
+                                                                color: Colors
+                                                                    .transparent,
+                                                                width: 1.0,
+                                                              ),
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          40.0),
+                                                              hoverColor:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .success,
+                                                              hoverTextColor:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primaryBackground,
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ),
+                                                  ],
+                                                );
+                                              },
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    if (_model.dropLigueMecaValue != null &&
+                                        _model.dropLigueMecaValue != '')
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 10.0, 0.0, 0.0),
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.end,
+                                          children: [
+                                            Column(
+                                              mainAxisSize: MainAxisSize.max,
+                                              children: [
+                                                Text(
+                                                  valueOrDefault<String>(
+                                                    _model.dropLigueMecaValue,
+                                                    'ligue',
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        fontSize: 10.0,
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                                if (_model.eventMecaRef
+                                                        ?.reference ==
+                                                    null)
+                                                  Align(
+                                                    alignment:
+                                                        AlignmentDirectional(
+                                                            0.0, 0.0),
+                                                    child: Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  0.0,
+                                                                  5.0,
+                                                                  0.0,
+                                                                  0.0),
+                                                      child: FFButtonWidget(
+                                                        onPressed: () async {
+                                                          var eventsRecordReference =
+                                                              EventsRecord
+                                                                  .collection
+                                                                  .doc();
+                                                          await eventsRecordReference
+                                                              .set(
+                                                                  createEventsRecordData(
+                                                            date: _model
+                                                                .calendarSelectedDay
+                                                                ?.start,
+                                                            hour: _model
+                                                                .countHourValue,
+                                                            minute: _model
+                                                                .countMinuteValue,
+                                                            adminUser:
+                                                                currentUserReference,
+                                                            statut: false,
+                                                            sportValue:
+                                                                'sports.meca',
+                                                            leagueValue: _model
+                                                                .dropLigueMecaValue,
+                                                            week: _model
+                                                                .numWeekFieldTextController
+                                                                .text,
+                                                            esport: false,
+                                                          ));
+                                                          _model.eventMecaRef =
+                                                              EventsRecord.getDocumentFromData(
+                                                                  createEventsRecordData(
+                                                                    date: _model
+                                                                        .calendarSelectedDay
+                                                                        ?.start,
+                                                                    hour: _model
+                                                                        .countHourValue,
+                                                                    minute: _model
+                                                                        .countMinuteValue,
+                                                                    adminUser:
+                                                                        currentUserReference,
+                                                                    statut:
+                                                                        false,
+                                                                    sportValue:
+                                                                        'sports.meca',
+                                                                    leagueValue:
+                                                                        _model
+                                                                            .dropLigueMecaValue,
+                                                                    week: _model
+                                                                        .numWeekFieldTextController
+                                                                        .text,
+                                                                    esport:
+                                                                        false,
+                                                                  ),
+                                                                  eventsRecordReference);
+
+                                                          context.pushNamed(
+                                                            AddBetMecaPageWidget
+                                                                .routeName,
+                                                            queryParameters: {
+                                                              'eventMecaRef':
+                                                                  serializeParam(
+                                                                _model
+                                                                    .eventMecaRef
+                                                                    ?.reference,
+                                                                ParamType
+                                                                    .DocumentReference,
+                                                              ),
+                                                            }.withoutNulls,
+                                                          );
+
+                                                          safeSetState(() {});
+                                                        },
+                                                        text:
+                                                            'Ajouter les pilotes',
+                                                        options:
+                                                            FFButtonOptions(
+                                                          width: 130.0,
+                                                          height: 40.0,
+                                                          padding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0),
+                                                          iconPadding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0),
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryBackground,
+                                                          textStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmall
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Poppins',
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primaryText,
+                                                                    fontSize:
+                                                                        16.0,
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                  ),
+                                                          elevation: 3.0,
+                                                          borderSide:
+                                                              BorderSide(
+                                                            color: Colors
+                                                                .transparent,
+                                                            width: 1.0,
+                                                          ),
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      40.0),
+                                                          hoverColor:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .success,
+                                                          hoverTextColor:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .primaryBackground,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                              ],
+                                            ),
+                                          ],
+                                        ),
+                                      ),
                                   ],
                                 ),
                                 Divider(
@@ -5235,6 +6111,308 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                                           serializeParam(
                                                                         _model
                                                                             .eventBoxeRef
+                                                                            ?.reference,
+                                                                        ParamType
+                                                                            .DocumentReference,
+                                                                      ),
+                                                                    }.withoutNulls,
+                                                                  );
+                                                                },
+                                                                text:
+                                                                    'Créer l\'évennement',
+                                                                options:
+                                                                    FFButtonOptions(
+                                                                  width: 130.0,
+                                                                  height: 40.0,
+                                                                  padding: EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                                  iconPadding: EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .secondaryBackground,
+                                                                  textStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmall
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Poppins',
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .primaryText,
+                                                                        fontSize:
+                                                                            16.0,
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                      ),
+                                                                  elevation:
+                                                                      3.0,
+                                                                  borderSide:
+                                                                      BorderSide(
+                                                                    color: Colors
+                                                                        .transparent,
+                                                                    width: 1.0,
+                                                                  ),
+                                                                  borderRadius:
+                                                                      BorderRadius
+                                                                          .circular(
+                                                                              40.0),
+                                                                  hoverColor:
+                                                                      FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .success,
+                                                                  hoverTextColor:
+                                                                      FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primaryBackground,
+                                                                ),
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                    ],
+                                                  );
+                                                },
+                                              ),
+                                          ],
+                                        ),
+                                      ),
+                                    if (_model.dropLigueRugbyValue != null &&
+                                        _model.dropLigueRugbyValue != '')
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 0.0, 0.0, 5.0),
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            StreamBuilder<List<TeamsRecord>>(
+                                              stream: queryTeamsRecord(
+                                                queryBuilder: (teamsRecord) =>
+                                                    teamsRecord.where(
+                                                  'league_value',
+                                                  isEqualTo:
+                                                      _model.dropLigueBoxeValue,
+                                                ),
+                                              ),
+                                              builder: (context, snapshot) {
+                                                // Customize what your widget looks like when it's loading.
+                                                if (!snapshot.hasData) {
+                                                  return Center(
+                                                    child: SizedBox(
+                                                      width: 50.0,
+                                                      height: 50.0,
+                                                      child:
+                                                          CircularProgressIndicator(
+                                                        valueColor:
+                                                            AlwaysStoppedAnimation<
+                                                                Color>(
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .accent4,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  );
+                                                }
+                                                List<TeamsRecord>
+                                                    dropTeamExtRugbyTeamsRecordList =
+                                                    snapshot.data!;
+
+                                                return FlutterFlowDropDown<
+                                                    String>(
+                                                  controller: _model
+                                                          .dropTeamExtRugbyValueController ??=
+                                                      FormFieldController<
+                                                          String>(
+                                                    _model.dropTeamExtRugbyValue ??=
+                                                        '',
+                                                  ),
+                                                  options: List<String>.from(
+                                                      dropTeamExtRugbyTeamsRecordList
+                                                          .map((e) => e.value)
+                                                          .toList()),
+                                                  optionLabels:
+                                                      dropTeamExtRugbyTeamsRecordList
+                                                          .map((e) => e.name)
+                                                          .toList(),
+                                                  onChanged: (val) =>
+                                                      safeSetState(() => _model
+                                                              .dropTeamExtRugbyValue =
+                                                          val),
+                                                  width: 200.0,
+                                                  height: 40.0,
+                                                  textStyle: FlutterFlowTheme
+                                                          .of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                  hintText: 'Teams',
+                                                  icon: Icon(
+                                                    Icons
+                                                        .keyboard_arrow_down_rounded,
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .secondaryText,
+                                                    size: 24.0,
+                                                  ),
+                                                  fillColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .primaryBackground,
+                                                  elevation: 2.0,
+                                                  borderColor:
+                                                      Colors.transparent,
+                                                  borderWidth: 0.0,
+                                                  borderRadius: 8.0,
+                                                  margin: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          12.0, 0.0, 12.0, 0.0),
+                                                  hidesUnderline: true,
+                                                  isOverButton: false,
+                                                  isSearchable: false,
+                                                  isMultiSelect: false,
+                                                );
+                                              },
+                                            ),
+                                            if (_model.dropTeamExtRugbyValue !=
+                                                    null &&
+                                                _model.dropTeamExtRugbyValue !=
+                                                    '')
+                                              StreamBuilder<List<TeamsRecord>>(
+                                                stream: queryTeamsRecord(
+                                                  queryBuilder: (teamsRecord) =>
+                                                      teamsRecord.where(
+                                                    'value',
+                                                    isEqualTo: _model
+                                                        .dropTeamExtRugbyValue,
+                                                  ),
+                                                  singleRecord: true,
+                                                ),
+                                                builder: (context, snapshot) {
+                                                  // Customize what your widget looks like when it's loading.
+                                                  if (!snapshot.hasData) {
+                                                    return Center(
+                                                      child: SizedBox(
+                                                        width: 50.0,
+                                                        height: 50.0,
+                                                        child:
+                                                            CircularProgressIndicator(
+                                                          valueColor:
+                                                              AlwaysStoppedAnimation<
+                                                                  Color>(
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .accent4,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    );
+                                                  }
+                                                  List<TeamsRecord>
+                                                      columnTeamExtRefTeamsRecordList =
+                                                      snapshot.data!;
+                                                  // Return an empty Container when the item does not exist.
+                                                  if (snapshot.data!.isEmpty) {
+                                                    return Container();
+                                                  }
+                                                  final columnTeamExtRefTeamsRecord =
+                                                      columnTeamExtRefTeamsRecordList
+                                                              .isNotEmpty
+                                                          ? columnTeamExtRefTeamsRecordList
+                                                              .first
+                                                          : null;
+
+                                                  return Column(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    children: [
+                                                      Column(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        children: [
+                                                          Text(
+                                                            valueOrDefault<
+                                                                String>(
+                                                              columnTeamExtRefTeamsRecord
+                                                                  ?.name,
+                                                              'teamext',
+                                                            ),
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Poppins',
+                                                                  fontSize:
+                                                                      10.0,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
+                                                          ),
+                                                          Align(
+                                                            alignment:
+                                                                AlignmentDirectional(
+                                                                    0.0, 0.0),
+                                                            child: Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          5.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                              child:
+                                                                  FFButtonWidget(
+                                                                onPressed:
+                                                                    () async {
+                                                                  await _model
+                                                                      .eventRugbyRef!
+                                                                      .reference
+                                                                      .update(
+                                                                          createEventsRecordData(
+                                                                    teamextRef:
+                                                                        columnTeamExtRefTeamsRecord
+                                                                            ?.reference,
+                                                                    teamext:
+                                                                        columnTeamExtRefTeamsRecord
+                                                                            ?.value,
+                                                                  ));
+
+                                                                  await TeamEventsRecord.createDoc(
+                                                                          columnTeamExtRefTeamsRecord!
+                                                                              .reference)
+                                                                      .set(
+                                                                          createTeamEventsRecordData(
+                                                                    startedTime: _model
+                                                                        .calendarSelectedDay
+                                                                        ?.start,
+                                                                    events: _model
+                                                                        .eventBoxeRef
+                                                                        ?.reference,
+                                                                  ));
+
+                                                                  context
+                                                                      .pushNamed(
+                                                                    AddBetPageWidget
+                                                                        .routeName,
+                                                                    queryParameters:
+                                                                        {
+                                                                      'eventRef':
+                                                                          serializeParam(
+                                                                        _model
+                                                                            .eventRugbyRef
                                                                             ?.reference,
                                                                         ParamType
                                                                             .DocumentReference,

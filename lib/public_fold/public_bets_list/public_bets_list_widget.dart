@@ -1,3 +1,4 @@
+import '';
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/push_notifications/push_notifications_util.dart';
@@ -937,6 +938,7 @@ class _PublicBetsListWidgetState extends State<PublicBetsListWidget>
                                         )
                                         .orderBy('created_time',
                                             descending: true),
+                                    limit: 5,
                                   ),
                                   builder: (context, snapshot) {
                                     // Customize what your widget looks like when it's loading.

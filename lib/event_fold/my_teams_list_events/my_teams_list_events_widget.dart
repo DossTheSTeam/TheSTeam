@@ -708,9 +708,12 @@ class _MyTeamsListEventsWidgetState extends State<MyTeamsListEventsWidget> {
                                                         mainAxisSize:
                                                             MainAxisSize.max,
                                                         children: [
-                                                          if (columnEventEventsRecord
-                                                                  .statut ==
-                                                              true)
+                                                          if ((columnEventEventsRecord
+                                                                      .statut ==
+                                                                  true) &&
+                                                              (columnEventEventsRecord
+                                                                      .sportValue !=
+                                                                  'sports.meca'))
                                                             Column(
                                                               mainAxisSize:
                                                                   MainAxisSize

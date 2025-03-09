@@ -1227,6 +1227,30 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: MenuPagePubWidget.routeName,
           path: MenuPagePubWidget.routePath,
           builder: (context, params) => MenuPagePubWidget(),
+        ),
+        FFRoute(
+          name: AddBetMecaPageWidget.routeName,
+          path: AddBetMecaPageWidget.routePath,
+          builder: (context, params) => AddBetMecaPageWidget(
+            eventMecaRef: params.getParam(
+              'eventMecaRef',
+              ParamType.DocumentReference,
+              isList: false,
+              collectionNamePath: ['events'],
+            ),
+          ),
+        ),
+        FFRoute(
+          name: ModifRankPilotesWidget.routeName,
+          path: ModifRankPilotesWidget.routePath,
+          builder: (context, params) => ModifRankPilotesWidget(
+            eventMecaRef: params.getParam(
+              'eventMecaRef',
+              ParamType.DocumentReference,
+              isList: false,
+              collectionNamePath: ['events'],
+            ),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],

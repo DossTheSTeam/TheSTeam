@@ -32,6 +32,12 @@ class ModTeamsListModel extends FlutterFlowModel<ModTeamsListWidget> {
   // State field(s) for DropLigueBoxe widget.
   String? dropLigueBoxeValue;
   FormFieldController<String>? dropLigueBoxeValueController;
+  // State field(s) for DropLigueRugby widget.
+  String? dropLigueRugbyValue;
+  FormFieldController<String>? dropLigueRugbyValueController;
+  // State field(s) for DropLigueMeca widget.
+  String? dropLigueMecaValue;
+  FormFieldController<String>? dropLigueMecaValueController;
 
   @override
   void initState(BuildContext context) {}

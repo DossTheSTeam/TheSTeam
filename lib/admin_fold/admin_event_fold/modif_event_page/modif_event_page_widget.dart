@@ -504,14 +504,14 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                               ],
                             ),
                           ),
-                          if (valueOrDefault(
-                                  currentUserDocument?.stsocialapp, '') ==
-                              'administrateur')
-                            AuthUserStreamWidget(
-                              builder: (context) => Column(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Row(
+                          Column(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              if (valueOrDefault(
+                                      currentUserDocument?.stsocialapp, '') ==
+                                  'administrateur')
+                                AuthUserStreamWidget(
+                                  builder: (context) => Row(
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
@@ -572,74 +572,71 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                       ),
                                     ],
                                   ),
-                                  Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 0.0, 1.0, 0.0),
-                                        child: InkWell(
-                                          splashColor: Colors.transparent,
-                                          focusColor: Colors.transparent,
-                                          hoverColor: Colors.transparent,
-                                          highlightColor: Colors.transparent,
-                                          onTap: () async {
-                                            await showModalBottomSheet(
-                                              isScrollControlled: true,
-                                              backgroundColor:
-                                                  Colors.transparent,
-                                              enableDrag: false,
-                                              context: context,
-                                              builder: (context) {
-                                                return GestureDetector(
-                                                  onTap: () {
-                                                    FocusScope.of(context)
-                                                        .unfocus();
-                                                    FocusManager
-                                                        .instance.primaryFocus
-                                                        ?.unfocus();
-                                                  },
-                                                  child: Padding(
-                                                    padding:
-                                                        MediaQuery.viewInsetsOf(
-                                                            context),
-                                                    child: ModifHourWidget(
-                                                      eventRef:
-                                                          widget.eventRef!,
-                                                    ),
-                                                  ),
-                                                );
+                                ),
+                              Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 1.0, 0.0),
+                                    child: InkWell(
+                                      splashColor: Colors.transparent,
+                                      focusColor: Colors.transparent,
+                                      hoverColor: Colors.transparent,
+                                      highlightColor: Colors.transparent,
+                                      onTap: () async {
+                                        await showModalBottomSheet(
+                                          isScrollControlled: true,
+                                          backgroundColor: Colors.transparent,
+                                          enableDrag: false,
+                                          context: context,
+                                          builder: (context) {
+                                            return GestureDetector(
+                                              onTap: () {
+                                                FocusScope.of(context)
+                                                    .unfocus();
+                                                FocusManager
+                                                    .instance.primaryFocus
+                                                    ?.unfocus();
                                               },
-                                            ).then(
-                                                (value) => safeSetState(() {}));
-                                          },
-                                          child: Icon(
-                                            Icons.access_time,
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryText,
-                                            size: 24.0,
-                                          ),
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            30.0, 0.0, 0.0, 0.0),
-                                        child: Text(
-                                          'Changer l\'heure',
-                                          style: FlutterFlowTheme.of(context)
-                                              .labelLarge
-                                              .override(
-                                                fontFamily: 'Montserrat',
-                                                letterSpacing: 0.0,
+                                              child: Padding(
+                                                padding:
+                                                    MediaQuery.viewInsetsOf(
+                                                        context),
+                                                child: ModifHourWidget(
+                                                  eventRef: widget.eventRef!,
+                                                ),
                                               ),
-                                        ),
+                                            );
+                                          },
+                                        ).then((value) => safeSetState(() {}));
+                                      },
+                                      child: Icon(
+                                        Icons.access_time,
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryText,
+                                        size: 24.0,
                                       ),
-                                    ],
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        30.0, 0.0, 0.0, 0.0),
+                                    child: Text(
+                                      'Changer l\'heure',
+                                      style: FlutterFlowTheme.of(context)
+                                          .labelLarge
+                                          .override(
+                                            fontFamily: 'Montserrat',
+                                            letterSpacing: 0.0,
+                                          ),
+                                    ),
                                   ),
                                 ],
                               ),
-                            ),
+                            ],
+                          ),
                           Text(
                             modifEventPageEventsRecord.reference.id,
                             style: FlutterFlowTheme.of(context)
@@ -771,63 +768,65 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                               ],
                             ),
                           ),
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 5.0, 0.0, 0.0),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 0.0, 5.0, 0.0),
-                                      child: Text(
-                                        modifEventPageEventsRecord.teamdom,
-                                        textAlign: TextAlign.end,
-                                        style: FlutterFlowTheme.of(context)
-                                            .labelSmall
-                                            .override(
-                                              fontFamily: 'Poppins',
-                                              letterSpacing: 0.0,
-                                            ),
+                          if (modifEventPageEventsRecord.sportValue !=
+                              'sports.meca')
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 5.0, 0.0, 0.0),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 0.0, 5.0, 0.0),
+                                        child: Text(
+                                          modifEventPageEventsRecord.teamdom,
+                                          textAlign: TextAlign.end,
+                                          style: FlutterFlowTheme.of(context)
+                                              .labelSmall
+                                              .override(
+                                                fontFamily: 'Poppins',
+                                                letterSpacing: 0.0,
+                                              ),
+                                        ),
                                       ),
-                                    ),
-                                  ],
-                                ),
-                                Text(
-                                  '-',
-                                  style: FlutterFlowTheme.of(context)
-                                      .titleMedium
-                                      .override(
-                                        fontFamily: 'Poppins',
-                                        letterSpacing: 0.0,
+                                    ],
+                                  ),
+                                  Text(
+                                    '-',
+                                    style: FlutterFlowTheme.of(context)
+                                        .titleMedium
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          letterSpacing: 0.0,
+                                        ),
+                                  ),
+                                  Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            5.0, 0.0, 0.0, 0.0),
+                                        child: Text(
+                                          modifEventPageEventsRecord.teamext,
+                                          textAlign: TextAlign.start,
+                                          style: FlutterFlowTheme.of(context)
+                                              .labelSmall
+                                              .override(
+                                                fontFamily: 'Poppins',
+                                                letterSpacing: 0.0,
+                                              ),
+                                        ),
                                       ),
-                                ),
-                                Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          5.0, 0.0, 0.0, 0.0),
-                                      child: Text(
-                                        modifEventPageEventsRecord.teamext,
-                                        textAlign: TextAlign.start,
-                                        style: FlutterFlowTheme.of(context)
-                                            .labelSmall
-                                            .override(
-                                              fontFamily: 'Poppins',
-                                              letterSpacing: 0.0,
-                                            ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ],
+                                    ],
+                                  ),
+                                ],
+                              ),
                             ),
-                          ),
                           Divider(
                             thickness: 1.0,
                             color: FlutterFlowTheme.of(context)
@@ -913,6 +912,38 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                                 modifEventPageEventsRecord
                                                     .points,
                                                 '00.0',
+                                              ),
+                                              maxLines: 2,
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                            ),
+                                          if (columnBetsBetsRecord.first != '')
+                                            Text(
+                                              valueOrDefault<String>(
+                                                modifEventPageEventsRecord
+                                                    .first,
+                                                'first',
+                                              ),
+                                              maxLines: 2,
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                            ),
+                                          if (columnBetsBetsRecord.podium != '')
+                                            Text(
+                                              valueOrDefault<String>(
+                                                modifEventPageEventsRecord
+                                                    .podium,
+                                                'podium',
                                               ),
                                               maxLines: 2,
                                               style:
@@ -1084,6 +1115,40 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                                   modifEventPageEventsRecord
                                                       .points,
                                                   '00.0',
+                                                ),
+                                                maxLines: 2,
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                              ),
+                                            if (columnBetsBetsRecord.first !=
+                                                    '')
+                                              Text(
+                                                valueOrDefault<String>(
+                                                  modifEventPageEventsRecord
+                                                      .first,
+                                                  'first',
+                                                ),
+                                                maxLines: 2,
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                              ),
+                                            if (columnBetsBetsRecord.podium !=
+                                                    '')
+                                              Text(
+                                                valueOrDefault<String>(
+                                                  modifEventPageEventsRecord
+                                                      .podium,
+                                                  'podium',
                                                 ),
                                                 maxLines: 2,
                                                 style:
@@ -1347,355 +1412,1451 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                               ),
                             ],
                           ),
+                          if (modifEventPageEventsRecord.sportValue ==
+                              'sports.meca')
+                            Align(
+                              alignment: AlignmentDirectional(0.0, 0.0),
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 20.0, 0.0, 16.0),
+                                child: FFButtonWidget(
+                                  onPressed: () async {
+                                    await widget.eventRef!
+                                        .update(createEventsRecordData(
+                                      statut: false,
+                                    ));
+
+                                    context.pushNamed(
+                                      ModifRankPilotesWidget.routeName,
+                                      queryParameters: {
+                                        'eventMecaRef': serializeParam(
+                                          widget.eventRef,
+                                          ParamType.DocumentReference,
+                                        ),
+                                      }.withoutNulls,
+                                    );
+                                  },
+                                  text: 'Maj Classement',
+                                  options: FFButtonOptions(
+                                    width: 150.0,
+                                    height: 40.0,
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 0.0),
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 0.0),
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryText,
+                                    textStyle: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryBackground,
+                                          fontSize: 16.0,
+                                          letterSpacing: 0.0,
+                                        ),
+                                    elevation: 3.0,
+                                    borderSide: BorderSide(
+                                      color: Colors.transparent,
+                                      width: 1.0,
+                                    ),
+                                    borderRadius: BorderRadius.circular(40.0),
+                                    hoverColor:
+                                        FlutterFlowTheme.of(context).error,
+                                    hoverTextColor: FlutterFlowTheme.of(context)
+                                        .primaryBackground,
+                                  ),
+                                ),
+                              ),
+                            ),
                           Divider(
                             thickness: 1.0,
                             color: FlutterFlowTheme.of(context)
                                 .secondaryBackground,
                           ),
-                          Align(
-                            alignment: AlignmentDirectional(0.0, 0.0),
-                            child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 10.0, 0.0, 0.0),
-                              child: Text(
-                                'Fin de match',
-                                maxLines: 1,
-                                style: FlutterFlowTheme.of(context)
-                                    .headlineSmall
-                                    .override(
-                                      fontFamily: 'Poppins',
-                                      letterSpacing: 0.0,
-                                    ),
-                              ),
-                            ),
-                          ),
-                          Align(
-                            alignment: AlignmentDirectional(-1.0, 0.0),
-                            child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  20.0, 0.0, 0.0, 0.0),
-                              child: Text(
-                                'Score',
-                                maxLines: 1,
-                                style: FlutterFlowTheme.of(context)
-                                    .headlineSmall
-                                    .override(
-                                      fontFamily: 'Poppins',
-                                      letterSpacing: 0.0,
-                                    ),
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 10.0, 0.0, 10.0),
-                            child: Column(
+                          if (modifEventPageEventsRecord.sportValue !=
+                              'sports.meca')
+                            Column(
                               mainAxisSize: MainAxisSize.max,
                               children: [
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 10.0),
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceAround,
-                                    children: [
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            5.0, 0.0, 0.0, 0.0),
-                                        child: Text(
-                                          modifEventPageEventsRecord.teamdom,
-                                          textAlign: TextAlign.start,
-                                          style: FlutterFlowTheme.of(context)
-                                              .labelMedium
-                                              .override(
-                                                fontFamily: 'Poppins',
-                                                letterSpacing: 0.0,
-                                              ),
-                                        ),
-                                      ),
-                                      Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        children: [
-                                          Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 20.0, 0.0),
-                                            child: Container(
-                                              width: 70.0,
-                                              height: 30.0,
-                                              decoration: BoxDecoration(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryBackground,
-                                                borderRadius:
-                                                    BorderRadius.circular(0.0),
-                                              ),
-                                              child: Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        8.0, 0.0, 8.0, 0.0),
-                                                child: TextFormField(
-                                                  controller: _model
-                                                      .scoreDomFieldTextController,
-                                                  focusNode: _model
-                                                      .scoreDomFieldFocusNode,
-                                                  autofocus: false,
-                                                  obscureText: false,
-                                                  decoration: InputDecoration(
-                                                    hintStyle: FlutterFlowTheme
-                                                            .of(context)
-                                                        .labelMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                    enabledBorder:
-                                                        UnderlineInputBorder(
-                                                      borderSide: BorderSide(
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .secondaryText,
-                                                        width: 2.0,
-                                                      ),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              8.0),
-                                                    ),
-                                                    focusedBorder:
-                                                        UnderlineInputBorder(
-                                                      borderSide: BorderSide(
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primary,
-                                                        width: 2.0,
-                                                      ),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              8.0),
-                                                    ),
-                                                    errorBorder:
-                                                        UnderlineInputBorder(
-                                                      borderSide: BorderSide(
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .error,
-                                                        width: 2.0,
-                                                      ),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              8.0),
-                                                    ),
-                                                    focusedErrorBorder:
-                                                        UnderlineInputBorder(
-                                                      borderSide: BorderSide(
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .error,
-                                                        width: 2.0,
-                                                      ),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              8.0),
-                                                    ),
-                                                  ),
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Poppins',
-                                                        letterSpacing: 0.0,
-                                                      ),
-                                                  textAlign: TextAlign.center,
-                                                  keyboardType:
-                                                      TextInputType.number,
-                                                  validator: _model
-                                                      .scoreDomFieldTextControllerValidator
-                                                      .asValidator(context),
-                                                ),
-                                              ),
-                                            ),
+                                Align(
+                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  child: Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 10.0, 0.0, 0.0),
+                                    child: Text(
+                                      'Fin de match',
+                                      maxLines: 1,
+                                      style: FlutterFlowTheme.of(context)
+                                          .headlineSmall
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            letterSpacing: 0.0,
                                           ),
-                                        ],
-                                      ),
-                                    ],
+                                    ),
+                                  ),
+                                ),
+                                Align(
+                                  alignment: AlignmentDirectional(-1.0, 0.0),
+                                  child: Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        20.0, 0.0, 0.0, 0.0),
+                                    child: Text(
+                                      'Score',
+                                      maxLines: 1,
+                                      style: FlutterFlowTheme.of(context)
+                                          .headlineSmall
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            letterSpacing: 0.0,
+                                          ),
+                                    ),
                                   ),
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 10.0, 0.0, 10.0),
-                                  child: Row(
+                                  child: Column(
                                     mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceAround,
                                     children: [
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            5.0, 0.0, 0.0, 0.0),
-                                        child: Text(
-                                          modifEventPageEventsRecord.teamext,
-                                          textAlign: TextAlign.start,
-                                          style: FlutterFlowTheme.of(context)
-                                              .labelMedium
-                                              .override(
-                                                fontFamily: 'Poppins',
-                                                letterSpacing: 0.0,
-                                              ),
-                                        ),
-                                      ),
-                                      Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        children: [
-                                          Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 20.0, 0.0),
-                                            child: Container(
-                                              width: 70.0,
-                                              height: 30.0,
-                                              decoration: BoxDecoration(
-                                                color:
+                                            0.0, 0.0, 0.0, 10.0),
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceAround,
+                                          children: [
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(5.0, 0.0, 0.0, 0.0),
+                                              child: Text(
+                                                modifEventPageEventsRecord
+                                                    .teamdom,
+                                                textAlign: TextAlign.start,
+                                                style:
                                                     FlutterFlowTheme.of(context)
-                                                        .primaryBackground,
-                                                borderRadius:
-                                                    BorderRadius.circular(0.0),
-                                              ),
-                                              child: Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        8.0, 0.0, 8.0, 0.0),
-                                                child: TextFormField(
-                                                  controller: _model
-                                                      .scoreExtFieldTextController,
-                                                  focusNode: _model
-                                                      .scoreExtFieldFocusNode,
-                                                  autofocus: false,
-                                                  obscureText: false,
-                                                  decoration: InputDecoration(
-                                                    hintStyle: FlutterFlowTheme
-                                                            .of(context)
                                                         .labelMedium
                                                         .override(
                                                           fontFamily: 'Poppins',
                                                           letterSpacing: 0.0,
                                                         ),
-                                                    enabledBorder:
-                                                        UnderlineInputBorder(
-                                                      borderSide: BorderSide(
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .secondaryText,
-                                                        width: 2.0,
-                                                      ),
+                                              ),
+                                            ),
+                                            Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              children: [
+                                                Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 0.0, 20.0, 0.0),
+                                                  child: Container(
+                                                    width: 70.0,
+                                                    height: 30.0,
+                                                    decoration: BoxDecoration(
+                                                      color: FlutterFlowTheme
+                                                              .of(context)
+                                                          .primaryBackground,
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              8.0),
+                                                              0.0),
                                                     ),
-                                                    focusedBorder:
-                                                        UnderlineInputBorder(
-                                                      borderSide: BorderSide(
-                                                        color:
+                                                    child: Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  8.0,
+                                                                  0.0,
+                                                                  8.0,
+                                                                  0.0),
+                                                      child: TextFormField(
+                                                        controller: _model
+                                                            .scoreDomFieldTextController,
+                                                        focusNode: _model
+                                                            .scoreDomFieldFocusNode,
+                                                        autofocus: false,
+                                                        obscureText: false,
+                                                        decoration:
+                                                            InputDecoration(
+                                                          hintStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Poppins',
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                  ),
+                                                          enabledBorder:
+                                                              UnderlineInputBorder(
+                                                            borderSide:
+                                                                BorderSide(
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .secondaryText,
+                                                              width: 2.0,
+                                                            ),
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        8.0),
+                                                          ),
+                                                          focusedBorder:
+                                                              UnderlineInputBorder(
+                                                            borderSide:
+                                                                BorderSide(
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .primary,
+                                                              width: 2.0,
+                                                            ),
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        8.0),
+                                                          ),
+                                                          errorBorder:
+                                                              UnderlineInputBorder(
+                                                            borderSide:
+                                                                BorderSide(
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .error,
+                                                              width: 2.0,
+                                                            ),
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        8.0),
+                                                          ),
+                                                          focusedErrorBorder:
+                                                              UnderlineInputBorder(
+                                                            borderSide:
+                                                                BorderSide(
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .error,
+                                                              width: 2.0,
+                                                            ),
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        8.0),
+                                                          ),
+                                                        ),
+                                                        style:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .primary,
-                                                        width: 2.0,
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Poppins',
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
+                                                        textAlign:
+                                                            TextAlign.center,
+                                                        keyboardType:
+                                                            TextInputType
+                                                                .number,
+                                                        validator: _model
+                                                            .scoreDomFieldTextControllerValidator
+                                                            .asValidator(
+                                                                context),
                                                       ),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              8.0),
-                                                    ),
-                                                    errorBorder:
-                                                        UnderlineInputBorder(
-                                                      borderSide: BorderSide(
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .error,
-                                                        width: 2.0,
-                                                      ),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              8.0),
-                                                    ),
-                                                    focusedErrorBorder:
-                                                        UnderlineInputBorder(
-                                                      borderSide: BorderSide(
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .error,
-                                                        width: 2.0,
-                                                      ),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              8.0),
                                                     ),
                                                   ),
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Poppins',
-                                                        letterSpacing: 0.0,
-                                                      ),
-                                                  textAlign: TextAlign.center,
-                                                  keyboardType:
-                                                      TextInputType.number,
-                                                  validator: _model
-                                                      .scoreExtFieldTextControllerValidator
-                                                      .asValidator(context),
                                                 ),
+                                              ],
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 10.0, 0.0, 10.0),
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceAround,
+                                          children: [
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(5.0, 0.0, 0.0, 0.0),
+                                              child: Text(
+                                                modifEventPageEventsRecord
+                                                    .teamext,
+                                                textAlign: TextAlign.start,
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                              ),
+                                            ),
+                                            Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              children: [
+                                                Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 0.0, 20.0, 0.0),
+                                                  child: Container(
+                                                    width: 70.0,
+                                                    height: 30.0,
+                                                    decoration: BoxDecoration(
+                                                      color: FlutterFlowTheme
+                                                              .of(context)
+                                                          .primaryBackground,
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              0.0),
+                                                    ),
+                                                    child: Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  8.0,
+                                                                  0.0,
+                                                                  8.0,
+                                                                  0.0),
+                                                      child: TextFormField(
+                                                        controller: _model
+                                                            .scoreExtFieldTextController,
+                                                        focusNode: _model
+                                                            .scoreExtFieldFocusNode,
+                                                        autofocus: false,
+                                                        obscureText: false,
+                                                        decoration:
+                                                            InputDecoration(
+                                                          hintStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Poppins',
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                  ),
+                                                          enabledBorder:
+                                                              UnderlineInputBorder(
+                                                            borderSide:
+                                                                BorderSide(
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .secondaryText,
+                                                              width: 2.0,
+                                                            ),
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        8.0),
+                                                          ),
+                                                          focusedBorder:
+                                                              UnderlineInputBorder(
+                                                            borderSide:
+                                                                BorderSide(
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .primary,
+                                                              width: 2.0,
+                                                            ),
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        8.0),
+                                                          ),
+                                                          errorBorder:
+                                                              UnderlineInputBorder(
+                                                            borderSide:
+                                                                BorderSide(
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .error,
+                                                              width: 2.0,
+                                                            ),
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        8.0),
+                                                          ),
+                                                          focusedErrorBorder:
+                                                              UnderlineInputBorder(
+                                                            borderSide:
+                                                                BorderSide(
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .error,
+                                                              width: 2.0,
+                                                            ),
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        8.0),
+                                                          ),
+                                                        ),
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Poppins',
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
+                                                        textAlign:
+                                                            TextAlign.center,
+                                                        keyboardType:
+                                                            TextInputType
+                                                                .number,
+                                                        validator: _model
+                                                            .scoreExtFieldTextControllerValidator
+                                                            .asValidator(
+                                                                context),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      Align(
+                                        alignment:
+                                            AlignmentDirectional(0.0, 0.0),
+                                        child: Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 10.0, 0.0, 0.0),
+                                          child: Text(
+                                            'Finaliser résultat',
+                                            maxLines: 1,
+                                            style: FlutterFlowTheme.of(context)
+                                                .headlineSmall
+                                                .override(
+                                                  fontFamily: 'Poppins',
+                                                  letterSpacing: 0.0,
+                                                ),
+                                          ),
+                                        ),
+                                      ),
+                                      Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Align(
+                                            alignment:
+                                                AlignmentDirectional(0.0, 0.0),
+                                            child: Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      0.0, 10.0, 0.0, 0.0),
+                                              child: Text(
+                                                modifEventPageEventsRecord
+                                                    .sportValue,
+                                                maxLines: 1,
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleSmall
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                              ),
+                                            ),
+                                          ),
+                                          Align(
+                                            alignment:
+                                                AlignmentDirectional(0.0, 0.0),
+                                            child: Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      0.0, 10.0, 0.0, 0.0),
+                                              child: Text(
+                                                modifEventPageEventsRecord
+                                                    .leagueValue,
+                                                maxLines: 1,
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleSmall
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          letterSpacing: 0.0,
+                                                        ),
                                               ),
                                             ),
                                           ),
                                         ],
                                       ),
+                                      if ((modifEventPageEventsRecord
+                                                  .sportValue ==
+                                              'football') ||
+                                          (modifEventPageEventsRecord
+                                                  .sportValue ==
+                                              'hockey'))
+                                        Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          children: [
+                                            if ((modifEventPageEventsRecord
+                                                        .leagueValue !=
+                                                    'champions.league') &&
+                                                (modifEventPageEventsRecord
+                                                        .leagueValue !=
+                                                    'europa.league') &&
+                                                (modifEventPageEventsRecord
+                                                        .leagueValue !=
+                                                    'conference.league'))
+                                              Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 10.0, 0.0, 0.0),
+                                                child: Row(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment
+                                                          .spaceBetween,
+                                                  children: [
+                                                    Text(
+                                                      'Ligue',
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Poppins',
+                                                            letterSpacing: 0.0,
+                                                          ),
+                                                    ),
+                                                    Align(
+                                                      alignment:
+                                                          AlignmentDirectional(
+                                                              -1.0, 0.0),
+                                                      child: FFButtonWidget(
+                                                        onPressed: () async {
+                                                          await modifEventPageEventsRecord
+                                                              .reference
+                                                              .update(
+                                                                  createEventsRecordData(
+                                                            seenScore: true,
+                                                            scoreDom: int
+                                                                .tryParse(_model
+                                                                    .scoreDomFieldTextController
+                                                                    .text),
+                                                            scoreExt: int
+                                                                .tryParse(_model
+                                                                    .scoreExtFieldTextController
+                                                                    .text),
+                                                          ));
+
+                                                          await modifEventPageEventsRecord
+                                                              .teamdomRef!
+                                                              .update({
+                                                            ...mapToFirestore(
+                                                              {
+                                                                'wins': FieldValue
+                                                                    .increment(
+                                                                        1),
+                                                                'total_games':
+                                                                    FieldValue
+                                                                        .increment(
+                                                                            1),
+                                                                'goals_points_in':
+                                                                    FieldValue.increment(int.parse(_model
+                                                                        .scoreDomFieldTextController
+                                                                        .text)),
+                                                                'goals_points_out':
+                                                                    FieldValue.increment(int.parse(_model
+                                                                        .scoreExtFieldTextController
+                                                                        .text)),
+                                                                'points':
+                                                                    FieldValue
+                                                                        .increment(
+                                                                            3),
+                                                              },
+                                                            ),
+                                                          });
+
+                                                          await modifEventPageEventsRecord
+                                                              .teamextRef!
+                                                              .update({
+                                                            ...mapToFirestore(
+                                                              {
+                                                                'total_games':
+                                                                    FieldValue
+                                                                        .increment(
+                                                                            1),
+                                                                'goals_points_in':
+                                                                    FieldValue.increment(int.parse(_model
+                                                                        .scoreExtFieldTextController
+                                                                        .text)),
+                                                                'goals_points_out':
+                                                                    FieldValue.increment(int.parse(_model
+                                                                        .scoreDomFieldTextController
+                                                                        .text)),
+                                                                'points':
+                                                                    FieldValue
+                                                                        .increment(
+                                                                            0),
+                                                                'looses':
+                                                                    FieldValue
+                                                                        .increment(
+                                                                            1),
+                                                              },
+                                                            ),
+                                                          });
+
+                                                          await widget
+                                                              .eventRef!
+                                                              .update(
+                                                                  createEventsRecordData(
+                                                            statut: false,
+                                                          ));
+
+                                                          context.pushNamed(
+                                                              ListEventsAdminWidget
+                                                                  .routeName);
+                                                        },
+                                                        text: 'Victoire Dom',
+                                                        options:
+                                                            FFButtonOptions(
+                                                          width: 130.0,
+                                                          height: 40.0,
+                                                          padding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0),
+                                                          iconPadding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0),
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryBackground,
+                                                          textStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmall
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Poppins',
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primaryText,
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                  ),
+                                                          elevation: 3.0,
+                                                          borderSide:
+                                                              BorderSide(
+                                                            color: Colors
+                                                                .transparent,
+                                                            width: 1.0,
+                                                          ),
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      40.0),
+                                                          hoverColor:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .success,
+                                                          hoverTextColor:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .primaryBackground,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                    Align(
+                                                      alignment:
+                                                          AlignmentDirectional(
+                                                              -1.0, 0.0),
+                                                      child: FFButtonWidget(
+                                                        onPressed: () async {
+                                                          await modifEventPageEventsRecord
+                                                              .reference
+                                                              .update(
+                                                                  createEventsRecordData(
+                                                            seenScore: true,
+                                                            scoreDom: int
+                                                                .tryParse(_model
+                                                                    .scoreDomFieldTextController
+                                                                    .text),
+                                                            scoreExt: int
+                                                                .tryParse(_model
+                                                                    .scoreExtFieldTextController
+                                                                    .text),
+                                                          ));
+
+                                                          await modifEventPageEventsRecord
+                                                              .teamdomRef!
+                                                              .update({
+                                                            ...mapToFirestore(
+                                                              {
+                                                                'total_games':
+                                                                    FieldValue
+                                                                        .increment(
+                                                                            1),
+                                                                'goals_points_in':
+                                                                    FieldValue.increment(int.parse(_model
+                                                                        .scoreDomFieldTextController
+                                                                        .text)),
+                                                                'goals_points_out':
+                                                                    FieldValue.increment(int.parse(_model
+                                                                        .scoreExtFieldTextController
+                                                                        .text)),
+                                                                'points':
+                                                                    FieldValue
+                                                                        .increment(
+                                                                            1),
+                                                                'draws': FieldValue
+                                                                    .increment(
+                                                                        1),
+                                                              },
+                                                            ),
+                                                          });
+
+                                                          await modifEventPageEventsRecord
+                                                              .teamextRef!
+                                                              .update({
+                                                            ...mapToFirestore(
+                                                              {
+                                                                'total_games':
+                                                                    FieldValue
+                                                                        .increment(
+                                                                            1),
+                                                                'goals_points_in':
+                                                                    FieldValue.increment(int.parse(_model
+                                                                        .scoreExtFieldTextController
+                                                                        .text)),
+                                                                'goals_points_out':
+                                                                    FieldValue.increment(int.parse(_model
+                                                                        .scoreDomFieldTextController
+                                                                        .text)),
+                                                                'points':
+                                                                    FieldValue
+                                                                        .increment(
+                                                                            1),
+                                                                'draws': FieldValue
+                                                                    .increment(
+                                                                        1),
+                                                              },
+                                                            ),
+                                                          });
+
+                                                          await widget
+                                                              .eventRef!
+                                                              .update(
+                                                                  createEventsRecordData(
+                                                            statut: false,
+                                                          ));
+
+                                                          context.pushNamed(
+                                                              ListEventsAdminWidget
+                                                                  .routeName);
+                                                        },
+                                                        text: 'Nul',
+                                                        options:
+                                                            FFButtonOptions(
+                                                          width: 60.0,
+                                                          height: 40.0,
+                                                          padding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0),
+                                                          iconPadding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0),
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryBackground,
+                                                          textStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmall
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Poppins',
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primaryText,
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                  ),
+                                                          elevation: 3.0,
+                                                          borderSide:
+                                                              BorderSide(
+                                                            color: Colors
+                                                                .transparent,
+                                                            width: 1.0,
+                                                          ),
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      40.0),
+                                                          hoverColor:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .success,
+                                                          hoverTextColor:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .primaryBackground,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                    Align(
+                                                      alignment:
+                                                          AlignmentDirectional(
+                                                              -1.0, 0.0),
+                                                      child: FFButtonWidget(
+                                                        onPressed: () async {
+                                                          await modifEventPageEventsRecord
+                                                              .reference
+                                                              .update(
+                                                                  createEventsRecordData(
+                                                            seenScore: true,
+                                                            scoreDom: int
+                                                                .tryParse(_model
+                                                                    .scoreDomFieldTextController
+                                                                    .text),
+                                                            scoreExt: int
+                                                                .tryParse(_model
+                                                                    .scoreExtFieldTextController
+                                                                    .text),
+                                                          ));
+
+                                                          await modifEventPageEventsRecord
+                                                              .teamdomRef!
+                                                              .update({
+                                                            ...mapToFirestore(
+                                                              {
+                                                                'total_games':
+                                                                    FieldValue
+                                                                        .increment(
+                                                                            1),
+                                                                'goals_points_in':
+                                                                    FieldValue.increment(int.parse(_model
+                                                                        .scoreDomFieldTextController
+                                                                        .text)),
+                                                                'goals_points_out':
+                                                                    FieldValue.increment(int.parse(_model
+                                                                        .scoreExtFieldTextController
+                                                                        .text)),
+                                                                'points':
+                                                                    FieldValue
+                                                                        .increment(
+                                                                            0),
+                                                                'looses':
+                                                                    FieldValue
+                                                                        .increment(
+                                                                            1),
+                                                              },
+                                                            ),
+                                                          });
+
+                                                          await modifEventPageEventsRecord
+                                                              .teamextRef!
+                                                              .update({
+                                                            ...mapToFirestore(
+                                                              {
+                                                                'total_games':
+                                                                    FieldValue
+                                                                        .increment(
+                                                                            1),
+                                                                'goals_points_in':
+                                                                    FieldValue.increment(int.parse(_model
+                                                                        .scoreExtFieldTextController
+                                                                        .text)),
+                                                                'goals_points_out':
+                                                                    FieldValue.increment(int.parse(_model
+                                                                        .scoreDomFieldTextController
+                                                                        .text)),
+                                                                'points':
+                                                                    FieldValue
+                                                                        .increment(
+                                                                            3),
+                                                                'wins': FieldValue
+                                                                    .increment(
+                                                                        1),
+                                                              },
+                                                            ),
+                                                          });
+
+                                                          await widget
+                                                              .eventRef!
+                                                              .update(
+                                                                  createEventsRecordData(
+                                                            statut: false,
+                                                          ));
+
+                                                          context.pushNamed(
+                                                              ListEventsAdminWidget
+                                                                  .routeName);
+                                                        },
+                                                        text: 'Victoire Ext',
+                                                        options:
+                                                            FFButtonOptions(
+                                                          width: 130.0,
+                                                          height: 40.0,
+                                                          padding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0),
+                                                          iconPadding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0),
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryBackground,
+                                                          textStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmall
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Poppins',
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primaryText,
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                  ),
+                                                          elevation: 3.0,
+                                                          borderSide:
+                                                              BorderSide(
+                                                            color: Colors
+                                                                .transparent,
+                                                            width: 1.0,
+                                                          ),
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      40.0),
+                                                          hoverColor:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .success,
+                                                          hoverTextColor:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .primaryBackground,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                            if ((modifEventPageEventsRecord
+                                                        .leagueValue ==
+                                                    'champions.league') ||
+                                                (modifEventPageEventsRecord
+                                                        .leagueValue ==
+                                                    'europa.league') ||
+                                                (modifEventPageEventsRecord
+                                                        .leagueValue ==
+                                                    'conference.league'))
+                                              Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 10.0, 0.0, 0.0),
+                                                child: Row(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment
+                                                          .spaceBetween,
+                                                  children: [
+                                                    Text(
+                                                      'Cup',
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Poppins',
+                                                            letterSpacing: 0.0,
+                                                          ),
+                                                    ),
+                                                    Align(
+                                                      alignment:
+                                                          AlignmentDirectional(
+                                                              -1.0, 0.0),
+                                                      child: FFButtonWidget(
+                                                        onPressed: () async {
+                                                          await modifEventPageEventsRecord
+                                                              .reference
+                                                              .update(
+                                                                  createEventsRecordData(
+                                                            seenScore: true,
+                                                            scoreDom: int
+                                                                .tryParse(_model
+                                                                    .scoreDomFieldTextController
+                                                                    .text),
+                                                            scoreExt: int
+                                                                .tryParse(_model
+                                                                    .scoreExtFieldTextController
+                                                                    .text),
+                                                          ));
+
+                                                          await modifEventPageEventsRecord
+                                                              .teamdomRef!
+                                                              .update({
+                                                            ...mapToFirestore(
+                                                              {
+                                                                'wins_cup':
+                                                                    FieldValue
+                                                                        .increment(
+                                                                            1),
+                                                                'goals_in_cup': FieldValue.increment(
+                                                                    int.parse(_model
+                                                                        .scoreDomFieldTextController
+                                                                        .text)),
+                                                                'goals_out_cup':
+                                                                    FieldValue.increment(int.parse(_model
+                                                                        .scoreExtFieldTextController
+                                                                        .text)),
+                                                                'points_cup':
+                                                                    FieldValue
+                                                                        .increment(
+                                                                            3),
+                                                                'games_cup':
+                                                                    FieldValue
+                                                                        .increment(
+                                                                            1),
+                                                              },
+                                                            ),
+                                                          });
+
+                                                          await modifEventPageEventsRecord
+                                                              .teamextRef!
+                                                              .update({
+                                                            ...mapToFirestore(
+                                                              {
+                                                                'games_cup':
+                                                                    FieldValue
+                                                                        .increment(
+                                                                            1),
+                                                                'goals_in_cup': FieldValue.increment(
+                                                                    int.parse(_model
+                                                                        .scoreExtFieldTextController
+                                                                        .text)),
+                                                                'looses_cup':
+                                                                    FieldValue
+                                                                        .increment(
+                                                                            1),
+                                                                'points_cup':
+                                                                    FieldValue
+                                                                        .increment(
+                                                                            0),
+                                                                'goals_out_cup':
+                                                                    FieldValue.increment(int.parse(_model
+                                                                        .scoreDomFieldTextController
+                                                                        .text)),
+                                                              },
+                                                            ),
+                                                          });
+
+                                                          await widget
+                                                              .eventRef!
+                                                              .update(
+                                                                  createEventsRecordData(
+                                                            statut: false,
+                                                          ));
+
+                                                          context.pushNamed(
+                                                              ListEventsAdminWidget
+                                                                  .routeName);
+                                                        },
+                                                        text: 'Victoire Dom',
+                                                        options:
+                                                            FFButtonOptions(
+                                                          width: 130.0,
+                                                          height: 40.0,
+                                                          padding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0),
+                                                          iconPadding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0),
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryBackground,
+                                                          textStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmall
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Poppins',
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primaryText,
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                  ),
+                                                          elevation: 3.0,
+                                                          borderSide:
+                                                              BorderSide(
+                                                            color: Colors
+                                                                .transparent,
+                                                            width: 1.0,
+                                                          ),
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      40.0),
+                                                          hoverColor:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .success,
+                                                          hoverTextColor:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .primaryBackground,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                    Align(
+                                                      alignment:
+                                                          AlignmentDirectional(
+                                                              -1.0, 0.0),
+                                                      child: FFButtonWidget(
+                                                        onPressed: () async {
+                                                          await modifEventPageEventsRecord
+                                                              .reference
+                                                              .update(
+                                                                  createEventsRecordData(
+                                                            seenScore: true,
+                                                            scoreDom: int
+                                                                .tryParse(_model
+                                                                    .scoreDomFieldTextController
+                                                                    .text),
+                                                            scoreExt: int
+                                                                .tryParse(_model
+                                                                    .scoreExtFieldTextController
+                                                                    .text),
+                                                          ));
+
+                                                          await modifEventPageEventsRecord
+                                                              .teamdomRef!
+                                                              .update({
+                                                            ...mapToFirestore(
+                                                              {
+                                                                'games_cup':
+                                                                    FieldValue
+                                                                        .increment(
+                                                                            1),
+                                                                'goals_in_cup': FieldValue.increment(
+                                                                    int.parse(_model
+                                                                        .scoreDomFieldTextController
+                                                                        .text)),
+                                                                'goals_out_cup':
+                                                                    FieldValue.increment(int.parse(_model
+                                                                        .scoreExtFieldTextController
+                                                                        .text)),
+                                                                'points_cup':
+                                                                    FieldValue
+                                                                        .increment(
+                                                                            1),
+                                                                'draws_cup':
+                                                                    FieldValue
+                                                                        .increment(
+                                                                            1),
+                                                              },
+                                                            ),
+                                                          });
+
+                                                          await modifEventPageEventsRecord
+                                                              .teamextRef!
+                                                              .update({
+                                                            ...mapToFirestore(
+                                                              {
+                                                                'games_cup':
+                                                                    FieldValue
+                                                                        .increment(
+                                                                            1),
+                                                                'goals_in_cup': FieldValue.increment(
+                                                                    int.parse(_model
+                                                                        .scoreExtFieldTextController
+                                                                        .text)),
+                                                                'draws_cup':
+                                                                    FieldValue
+                                                                        .increment(
+                                                                            1),
+                                                                'points_cup':
+                                                                    FieldValue
+                                                                        .increment(
+                                                                            1),
+                                                                'goals_out_cup':
+                                                                    FieldValue.increment(int.parse(_model
+                                                                        .scoreDomFieldTextController
+                                                                        .text)),
+                                                              },
+                                                            ),
+                                                          });
+
+                                                          await widget
+                                                              .eventRef!
+                                                              .update(
+                                                                  createEventsRecordData(
+                                                            statut: false,
+                                                          ));
+
+                                                          context.pushNamed(
+                                                              ListEventsAdminWidget
+                                                                  .routeName);
+                                                        },
+                                                        text: 'Nul',
+                                                        options:
+                                                            FFButtonOptions(
+                                                          width: 60.0,
+                                                          height: 40.0,
+                                                          padding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0),
+                                                          iconPadding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0),
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryBackground,
+                                                          textStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmall
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Poppins',
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primaryText,
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                  ),
+                                                          elevation: 3.0,
+                                                          borderSide:
+                                                              BorderSide(
+                                                            color: Colors
+                                                                .transparent,
+                                                            width: 1.0,
+                                                          ),
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      40.0),
+                                                          hoverColor:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .success,
+                                                          hoverTextColor:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .primaryBackground,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                    Align(
+                                                      alignment:
+                                                          AlignmentDirectional(
+                                                              -1.0, 0.0),
+                                                      child: FFButtonWidget(
+                                                        onPressed: () async {
+                                                          await modifEventPageEventsRecord
+                                                              .reference
+                                                              .update(
+                                                                  createEventsRecordData(
+                                                            seenScore: true,
+                                                            scoreDom: int
+                                                                .tryParse(_model
+                                                                    .scoreDomFieldTextController
+                                                                    .text),
+                                                            scoreExt: int
+                                                                .tryParse(_model
+                                                                    .scoreExtFieldTextController
+                                                                    .text),
+                                                          ));
+
+                                                          await modifEventPageEventsRecord
+                                                              .teamdomRef!
+                                                              .update({
+                                                            ...mapToFirestore(
+                                                              {
+                                                                'games_cup':
+                                                                    FieldValue
+                                                                        .increment(
+                                                                            1),
+                                                                'points_cup':
+                                                                    FieldValue
+                                                                        .increment(
+                                                                            0),
+                                                                'looses_cup':
+                                                                    FieldValue
+                                                                        .increment(
+                                                                            1),
+                                                                'goals_out_cup':
+                                                                    FieldValue.increment(int.parse(_model
+                                                                        .scoreExtFieldTextController
+                                                                        .text)),
+                                                                'goals_in_cup': FieldValue.increment(
+                                                                    int.parse(_model
+                                                                        .scoreDomFieldTextController
+                                                                        .text)),
+                                                              },
+                                                            ),
+                                                          });
+
+                                                          await modifEventPageEventsRecord
+                                                              .teamextRef!
+                                                              .update({
+                                                            ...mapToFirestore(
+                                                              {
+                                                                'games_cup':
+                                                                    FieldValue
+                                                                        .increment(
+                                                                            1),
+                                                                'points_cup':
+                                                                    FieldValue
+                                                                        .increment(
+                                                                            3),
+                                                                'wins_cup':
+                                                                    FieldValue
+                                                                        .increment(
+                                                                            1),
+                                                                'goals_in_cup': FieldValue.increment(
+                                                                    int.parse(_model
+                                                                        .scoreExtFieldTextController
+                                                                        .text)),
+                                                                'goals_out_cup':
+                                                                    FieldValue.increment(int.parse(_model
+                                                                        .scoreDomFieldTextController
+                                                                        .text)),
+                                                              },
+                                                            ),
+                                                          });
+
+                                                          await widget
+                                                              .eventRef!
+                                                              .update(
+                                                                  createEventsRecordData(
+                                                            statut: false,
+                                                          ));
+
+                                                          context.pushNamed(
+                                                              ListEventsAdminWidget
+                                                                  .routeName);
+                                                        },
+                                                        text: 'Victoire Ext',
+                                                        options:
+                                                            FFButtonOptions(
+                                                          width: 130.0,
+                                                          height: 40.0,
+                                                          padding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0),
+                                                          iconPadding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0),
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryBackground,
+                                                          textStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmall
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Poppins',
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primaryText,
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                  ),
+                                                          elevation: 3.0,
+                                                          borderSide:
+                                                              BorderSide(
+                                                            color: Colors
+                                                                .transparent,
+                                                            width: 1.0,
+                                                          ),
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      40.0),
+                                                          hoverColor:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .success,
+                                                          hoverTextColor:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .primaryBackground,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                          ],
+                                        ),
                                     ],
                                   ),
                                 ),
-                                Align(
-                                  alignment: AlignmentDirectional(0.0, 0.0),
-                                  child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 10.0, 0.0, 0.0),
-                                    child: Text(
-                                      'Finaliser résultat Championnat',
-                                      maxLines: 1,
-                                      style: FlutterFlowTheme.of(context)
-                                          .headlineSmall
-                                          .override(
-                                            fontFamily: 'Poppins',
-                                            letterSpacing: 0.0,
-                                          ),
-                                    ),
-                                  ),
-                                ),
-                                Align(
-                                  alignment: AlignmentDirectional(0.0, 0.0),
-                                  child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 10.0, 0.0, 0.0),
-                                    child: Text(
-                                      modifEventPageEventsRecord.sportValue,
-                                      maxLines: 1,
-                                      style: FlutterFlowTheme.of(context)
-                                          .headlineSmall
-                                          .override(
-                                            fontFamily: 'Poppins',
-                                            letterSpacing: 0.0,
-                                          ),
-                                    ),
-                                  ),
-                                ),
-                                if ((modifEventPageEventsRecord.sportValue ==
-                                        'football') ||
-                                    (modifEventPageEventsRecord.sportValue ==
-                                        'hockey'))
+                                if (modifEventPageEventsRecord.sportValue ==
+                                    'rugby')
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 10.0, 0.0, 0.0),
@@ -1704,6 +2865,15 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceBetween,
                                       children: [
+                                        Text(
+                                          'Ligue',
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Poppins',
+                                                letterSpacing: 0.0,
+                                              ),
+                                        ),
                                         Align(
                                           alignment:
                                               AlignmentDirectional(-1.0, 0.0),
@@ -1742,7 +2912,7 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                                                 .scoreExtFieldTextController
                                                                 .text)),
                                                     'points':
-                                                        FieldValue.increment(3),
+                                                        FieldValue.increment(4),
                                                   },
                                                 ),
                                               });
@@ -1855,7 +3025,7 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                                                 .scoreExtFieldTextController
                                                                 .text)),
                                                     'points':
-                                                        FieldValue.increment(1),
+                                                        FieldValue.increment(2),
                                                     'draws':
                                                         FieldValue.increment(1),
                                                   },
@@ -1880,7 +3050,7 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                                                 .scoreDomFieldTextController
                                                                 .text)),
                                                     'points':
-                                                        FieldValue.increment(1),
+                                                        FieldValue.increment(2),
                                                     'draws':
                                                         FieldValue.increment(1),
                                                   },
@@ -1995,7 +3165,7 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                                                 .scoreDomFieldTextController
                                                                 .text)),
                                                     'points':
-                                                        FieldValue.increment(3),
+                                                        FieldValue.increment(4),
                                                     'wins':
                                                         FieldValue.increment(1),
                                                   },
@@ -2052,355 +3222,389 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                       ],
                                     ),
                                   ),
+                                if ((modifEventPageEventsRecord.sportValue ==
+                                        'mma') ||
+                                    (modifEventPageEventsRecord.sportValue ==
+                                        'basketball') ||
+                                    (modifEventPageEventsRecord.sportValue ==
+                                        'tennis'))
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 10.0, 0.0, 5.0),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Align(
+                                          alignment:
+                                              AlignmentDirectional(-1.0, 0.0),
+                                          child: FFButtonWidget(
+                                            onPressed: () async {
+                                              await modifEventPageEventsRecord
+                                                  .reference
+                                                  .update(
+                                                      createEventsRecordData(
+                                                seenScore: true,
+                                                scoreDom: int.tryParse(_model
+                                                    .scoreDomFieldTextController
+                                                    .text),
+                                                scoreExt: int.tryParse(_model
+                                                    .scoreExtFieldTextController
+                                                    .text),
+                                              ));
+
+                                              await modifEventPageEventsRecord
+                                                  .teamdomRef!
+                                                  .update({
+                                                ...mapToFirestore(
+                                                  {
+                                                    'wins':
+                                                        FieldValue.increment(1),
+                                                    'total_games':
+                                                        FieldValue.increment(1),
+                                                  },
+                                                ),
+                                              });
+
+                                              await modifEventPageEventsRecord
+                                                  .teamextRef!
+                                                  .update({
+                                                ...mapToFirestore(
+                                                  {
+                                                    'total_games':
+                                                        FieldValue.increment(1),
+                                                    'looses':
+                                                        FieldValue.increment(1),
+                                                  },
+                                                ),
+                                              });
+
+                                              await widget.eventRef!.update(
+                                                  createEventsRecordData(
+                                                statut: false,
+                                              ));
+
+                                              context.pushNamed(
+                                                  ListEventsAdminWidget
+                                                      .routeName);
+                                            },
+                                            text: 'Victoire Dom',
+                                            options: FFButtonOptions(
+                                              width: 130.0,
+                                              height: 40.0,
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                              iconPadding: EdgeInsetsDirectional
+                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryBackground,
+                                              textStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleSmall
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primaryText,
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                              elevation: 3.0,
+                                              borderSide: BorderSide(
+                                                color: Colors.transparent,
+                                                width: 1.0,
+                                              ),
+                                              borderRadius:
+                                                  BorderRadius.circular(40.0),
+                                              hoverColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .success,
+                                              hoverTextColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryBackground,
+                                            ),
+                                          ),
+                                        ),
+                                        Align(
+                                          alignment:
+                                              AlignmentDirectional(-1.0, 0.0),
+                                          child: FFButtonWidget(
+                                            onPressed: () async {
+                                              await modifEventPageEventsRecord
+                                                  .reference
+                                                  .update(
+                                                      createEventsRecordData(
+                                                seenScore: true,
+                                                scoreDom: int.tryParse(_model
+                                                    .scoreDomFieldTextController
+                                                    .text),
+                                                scoreExt: int.tryParse(_model
+                                                    .scoreExtFieldTextController
+                                                    .text),
+                                              ));
+
+                                              await modifEventPageEventsRecord
+                                                  .teamdomRef!
+                                                  .update({
+                                                ...mapToFirestore(
+                                                  {
+                                                    'total_games':
+                                                        FieldValue.increment(1),
+                                                    'draws':
+                                                        FieldValue.increment(1),
+                                                  },
+                                                ),
+                                              });
+
+                                              await modifEventPageEventsRecord
+                                                  .teamextRef!
+                                                  .update({
+                                                ...mapToFirestore(
+                                                  {
+                                                    'total_games':
+                                                        FieldValue.increment(1),
+                                                    'draws':
+                                                        FieldValue.increment(1),
+                                                  },
+                                                ),
+                                              });
+
+                                              await widget.eventRef!.update(
+                                                  createEventsRecordData(
+                                                statut: false,
+                                              ));
+
+                                              context.pushNamed(
+                                                  ListEventsAdminWidget
+                                                      .routeName);
+                                            },
+                                            text: 'Nul',
+                                            options: FFButtonOptions(
+                                              width: 60.0,
+                                              height: 40.0,
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                              iconPadding: EdgeInsetsDirectional
+                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryBackground,
+                                              textStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleSmall
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primaryText,
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                              elevation: 3.0,
+                                              borderSide: BorderSide(
+                                                color: Colors.transparent,
+                                                width: 1.0,
+                                              ),
+                                              borderRadius:
+                                                  BorderRadius.circular(40.0),
+                                              hoverColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .success,
+                                              hoverTextColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryBackground,
+                                            ),
+                                          ),
+                                        ),
+                                        Align(
+                                          alignment:
+                                              AlignmentDirectional(-1.0, 0.0),
+                                          child: FFButtonWidget(
+                                            onPressed: () async {
+                                              await modifEventPageEventsRecord
+                                                  .reference
+                                                  .update(
+                                                      createEventsRecordData(
+                                                seenScore: true,
+                                                scoreDom: int.tryParse(_model
+                                                    .scoreDomFieldTextController
+                                                    .text),
+                                                scoreExt: int.tryParse(_model
+                                                    .scoreExtFieldTextController
+                                                    .text),
+                                              ));
+
+                                              await modifEventPageEventsRecord
+                                                  .teamdomRef!
+                                                  .update({
+                                                ...mapToFirestore(
+                                                  {
+                                                    'total_games':
+                                                        FieldValue.increment(1),
+                                                    'looses':
+                                                        FieldValue.increment(1),
+                                                  },
+                                                ),
+                                              });
+
+                                              await modifEventPageEventsRecord
+                                                  .teamextRef!
+                                                  .update({
+                                                ...mapToFirestore(
+                                                  {
+                                                    'total_games':
+                                                        FieldValue.increment(1),
+                                                    'wins':
+                                                        FieldValue.increment(1),
+                                                  },
+                                                ),
+                                              });
+
+                                              await widget.eventRef!.update(
+                                                  createEventsRecordData(
+                                                statut: false,
+                                              ));
+
+                                              context.pushNamed(
+                                                  ListEventsAdminWidget
+                                                      .routeName);
+                                            },
+                                            text: 'Victoire Ext',
+                                            options: FFButtonOptions(
+                                              width: 130.0,
+                                              height: 40.0,
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                              iconPadding: EdgeInsetsDirectional
+                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryBackground,
+                                              textStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleSmall
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primaryText,
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                              elevation: 3.0,
+                                              borderSide: BorderSide(
+                                                color: Colors.transparent,
+                                                width: 1.0,
+                                              ),
+                                              borderRadius:
+                                                  BorderRadius.circular(40.0),
+                                              hoverColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .success,
+                                              hoverTextColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryBackground,
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                Align(
+                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  child: Text(
+                                    'Finaliser résultat si\nCoupe Nationale ou LiveScore',
+                                    textAlign: TextAlign.center,
+                                    maxLines: 2,
+                                    style: FlutterFlowTheme.of(context)
+                                        .headlineSmall
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          color: FlutterFlowTheme.of(context)
+                                              .error,
+                                          letterSpacing: 0.0,
+                                        ),
+                                  ),
+                                ),
+                                Align(
+                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  child: Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 10.0, 0.0, 16.0),
+                                    child: FFButtonWidget(
+                                      onPressed: () async {
+                                        await modifEventPageEventsRecord
+                                            .reference
+                                            .update(createEventsRecordData(
+                                          seenScore: true,
+                                          scoreDom: int.tryParse(_model
+                                              .scoreDomFieldTextController
+                                              .text),
+                                          scoreExt: int.tryParse(_model
+                                              .scoreExtFieldTextController
+                                              .text),
+                                        ));
+
+                                        context.pushNamed(
+                                            ListEventsAdminWidget.routeName);
+                                      },
+                                      text: 'Terminé',
+                                      options: FFButtonOptions(
+                                        width: 130.0,
+                                        height: 40.0,
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 0.0, 0.0, 0.0),
+                                        iconPadding:
+                                            EdgeInsetsDirectional.fromSTEB(
+                                                0.0, 0.0, 0.0, 0.0),
+                                        color:
+                                            FlutterFlowTheme.of(context).error,
+                                        textStyle: FlutterFlowTheme.of(context)
+                                            .titleSmall
+                                            .override(
+                                              fontFamily: 'Poppins',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryBackground,
+                                              letterSpacing: 0.0,
+                                            ),
+                                        elevation: 3.0,
+                                        borderSide: BorderSide(
+                                          color: Colors.transparent,
+                                          width: 1.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(40.0),
+                                        hoverColor: FlutterFlowTheme.of(context)
+                                            .success,
+                                        hoverTextColor:
+                                            FlutterFlowTheme.of(context)
+                                                .primaryBackground,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                Align(
+                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  child: Text(
+                                    'Les stats ne seront pas prisent en compte\npour les équipes, \npermet l\'affichage du score',
+                                    textAlign: TextAlign.center,
+                                    maxLines: 3,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          color: FlutterFlowTheme.of(context)
+                                              .error,
+                                          letterSpacing: 0.0,
+                                          lineHeight: 0.0,
+                                        ),
+                                  ),
+                                ),
                               ],
                             ),
-                          ),
-                          if ((modifEventPageEventsRecord.sportValue ==
-                                  'mma') ||
-                              (modifEventPageEventsRecord.sportValue ==
-                                  'basketball') ||
-                              (modifEventPageEventsRecord.sportValue ==
-                                  'tennis'))
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 10.0, 0.0, 0.0),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Align(
-                                    alignment: AlignmentDirectional(-1.0, 0.0),
-                                    child: FFButtonWidget(
-                                      onPressed: () async {
-                                        await modifEventPageEventsRecord
-                                            .reference
-                                            .update(createEventsRecordData(
-                                          seenScore: true,
-                                          scoreDom: int.tryParse(_model
-                                              .scoreDomFieldTextController
-                                              .text),
-                                          scoreExt: int.tryParse(_model
-                                              .scoreExtFieldTextController
-                                              .text),
-                                        ));
-
-                                        await modifEventPageEventsRecord
-                                            .teamdomRef!
-                                            .update({
-                                          ...mapToFirestore(
-                                            {
-                                              'wins': FieldValue.increment(1),
-                                              'total_games':
-                                                  FieldValue.increment(1),
-                                            },
-                                          ),
-                                        });
-
-                                        await modifEventPageEventsRecord
-                                            .teamextRef!
-                                            .update({
-                                          ...mapToFirestore(
-                                            {
-                                              'total_games':
-                                                  FieldValue.increment(1),
-                                              'looses': FieldValue.increment(1),
-                                            },
-                                          ),
-                                        });
-
-                                        await widget.eventRef!
-                                            .update(createEventsRecordData(
-                                          statut: false,
-                                        ));
-
-                                        context.pushNamed(
-                                            ListEventsAdminWidget.routeName);
-                                      },
-                                      text: 'Victoire Dom',
-                                      options: FFButtonOptions(
-                                        width: 130.0,
-                                        height: 40.0,
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 0.0, 0.0, 0.0),
-                                        iconPadding:
-                                            EdgeInsetsDirectional.fromSTEB(
-                                                0.0, 0.0, 0.0, 0.0),
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondaryBackground,
-                                        textStyle: FlutterFlowTheme.of(context)
-                                            .titleSmall
-                                            .override(
-                                              fontFamily: 'Poppins',
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primaryText,
-                                              letterSpacing: 0.0,
-                                            ),
-                                        elevation: 3.0,
-                                        borderSide: BorderSide(
-                                          color: Colors.transparent,
-                                          width: 1.0,
-                                        ),
-                                        borderRadius:
-                                            BorderRadius.circular(40.0),
-                                        hoverColor: FlutterFlowTheme.of(context)
-                                            .success,
-                                        hoverTextColor:
-                                            FlutterFlowTheme.of(context)
-                                                .primaryBackground,
-                                      ),
-                                    ),
-                                  ),
-                                  Align(
-                                    alignment: AlignmentDirectional(-1.0, 0.0),
-                                    child: FFButtonWidget(
-                                      onPressed: () async {
-                                        await modifEventPageEventsRecord
-                                            .reference
-                                            .update(createEventsRecordData(
-                                          seenScore: true,
-                                          scoreDom: int.tryParse(_model
-                                              .scoreDomFieldTextController
-                                              .text),
-                                          scoreExt: int.tryParse(_model
-                                              .scoreExtFieldTextController
-                                              .text),
-                                        ));
-
-                                        await modifEventPageEventsRecord
-                                            .teamdomRef!
-                                            .update({
-                                          ...mapToFirestore(
-                                            {
-                                              'total_games':
-                                                  FieldValue.increment(1),
-                                              'draws': FieldValue.increment(1),
-                                            },
-                                          ),
-                                        });
-
-                                        await modifEventPageEventsRecord
-                                            .teamextRef!
-                                            .update({
-                                          ...mapToFirestore(
-                                            {
-                                              'total_games':
-                                                  FieldValue.increment(1),
-                                              'draws': FieldValue.increment(1),
-                                            },
-                                          ),
-                                        });
-
-                                        await widget.eventRef!
-                                            .update(createEventsRecordData(
-                                          statut: false,
-                                        ));
-
-                                        context.pushNamed(
-                                            ListEventsAdminWidget.routeName);
-                                      },
-                                      text: 'Nul',
-                                      options: FFButtonOptions(
-                                        width: 60.0,
-                                        height: 40.0,
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 0.0, 0.0, 0.0),
-                                        iconPadding:
-                                            EdgeInsetsDirectional.fromSTEB(
-                                                0.0, 0.0, 0.0, 0.0),
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondaryBackground,
-                                        textStyle: FlutterFlowTheme.of(context)
-                                            .titleSmall
-                                            .override(
-                                              fontFamily: 'Poppins',
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primaryText,
-                                              letterSpacing: 0.0,
-                                            ),
-                                        elevation: 3.0,
-                                        borderSide: BorderSide(
-                                          color: Colors.transparent,
-                                          width: 1.0,
-                                        ),
-                                        borderRadius:
-                                            BorderRadius.circular(40.0),
-                                        hoverColor: FlutterFlowTheme.of(context)
-                                            .success,
-                                        hoverTextColor:
-                                            FlutterFlowTheme.of(context)
-                                                .primaryBackground,
-                                      ),
-                                    ),
-                                  ),
-                                  Align(
-                                    alignment: AlignmentDirectional(-1.0, 0.0),
-                                    child: FFButtonWidget(
-                                      onPressed: () async {
-                                        await modifEventPageEventsRecord
-                                            .reference
-                                            .update(createEventsRecordData(
-                                          seenScore: true,
-                                          scoreDom: int.tryParse(_model
-                                              .scoreDomFieldTextController
-                                              .text),
-                                          scoreExt: int.tryParse(_model
-                                              .scoreExtFieldTextController
-                                              .text),
-                                        ));
-
-                                        await modifEventPageEventsRecord
-                                            .teamdomRef!
-                                            .update({
-                                          ...mapToFirestore(
-                                            {
-                                              'total_games':
-                                                  FieldValue.increment(1),
-                                              'looses': FieldValue.increment(1),
-                                            },
-                                          ),
-                                        });
-
-                                        await modifEventPageEventsRecord
-                                            .teamextRef!
-                                            .update({
-                                          ...mapToFirestore(
-                                            {
-                                              'total_games':
-                                                  FieldValue.increment(1),
-                                              'wins': FieldValue.increment(1),
-                                            },
-                                          ),
-                                        });
-
-                                        await widget.eventRef!
-                                            .update(createEventsRecordData(
-                                          statut: false,
-                                        ));
-
-                                        context.pushNamed(
-                                            ListEventsAdminWidget.routeName);
-                                      },
-                                      text: 'Victoire Ext',
-                                      options: FFButtonOptions(
-                                        width: 130.0,
-                                        height: 40.0,
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 0.0, 0.0, 0.0),
-                                        iconPadding:
-                                            EdgeInsetsDirectional.fromSTEB(
-                                                0.0, 0.0, 0.0, 0.0),
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondaryBackground,
-                                        textStyle: FlutterFlowTheme.of(context)
-                                            .titleSmall
-                                            .override(
-                                              fontFamily: 'Poppins',
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primaryText,
-                                              letterSpacing: 0.0,
-                                            ),
-                                        elevation: 3.0,
-                                        borderSide: BorderSide(
-                                          color: Colors.transparent,
-                                          width: 1.0,
-                                        ),
-                                        borderRadius:
-                                            BorderRadius.circular(40.0),
-                                        hoverColor: FlutterFlowTheme.of(context)
-                                            .success,
-                                        hoverTextColor:
-                                            FlutterFlowTheme.of(context)
-                                                .primaryBackground,
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          Align(
-                            alignment: AlignmentDirectional(0.0, 0.0),
-                            child: Text(
-                              'Finaliser résultat si Coupe\nou LiveScore',
-                              textAlign: TextAlign.center,
-                              maxLines: 2,
-                              style: FlutterFlowTheme.of(context)
-                                  .headlineSmall
-                                  .override(
-                                    fontFamily: 'Poppins',
-                                    color: FlutterFlowTheme.of(context).error,
-                                    letterSpacing: 0.0,
-                                  ),
-                            ),
-                          ),
-                          Align(
-                            alignment: AlignmentDirectional(0.0, 0.0),
-                            child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 10.0, 0.0, 16.0),
-                              child: FFButtonWidget(
-                                onPressed: () async {
-                                  await modifEventPageEventsRecord.reference
-                                      .update(createEventsRecordData(
-                                    seenScore: true,
-                                    scoreDom: int.tryParse(_model
-                                        .scoreDomFieldTextController.text),
-                                    scoreExt: int.tryParse(_model
-                                        .scoreExtFieldTextController.text),
-                                  ));
-
-                                  context.pushNamed(
-                                      ListEventsAdminWidget.routeName);
-                                },
-                                text: 'Terminé',
-                                options: FFButtonOptions(
-                                  width: 130.0,
-                                  height: 40.0,
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 0.0),
-                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 0.0),
-                                  color: FlutterFlowTheme.of(context).error,
-                                  textStyle: FlutterFlowTheme.of(context)
-                                      .titleSmall
-                                      .override(
-                                        fontFamily: 'Poppins',
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryBackground,
-                                        letterSpacing: 0.0,
-                                      ),
-                                  elevation: 3.0,
-                                  borderSide: BorderSide(
-                                    color: Colors.transparent,
-                                    width: 1.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(40.0),
-                                  hoverColor:
-                                      FlutterFlowTheme.of(context).success,
-                                  hoverTextColor: FlutterFlowTheme.of(context)
-                                      .primaryBackground,
-                                ),
-                              ),
-                            ),
-                          ),
-                          Align(
-                            alignment: AlignmentDirectional(0.0, 0.0),
-                            child: Text(
-                              'Les stats ne seront pas prisent en compte\npour les équipes, \npermet l\'affichage du score',
-                              textAlign: TextAlign.center,
-                              maxLines: 3,
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: 'Poppins',
-                                    letterSpacing: 0.0,
-                                    lineHeight: 0.0,
-                                  ),
-                            ),
-                          ),
                           Row(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -2448,19 +3652,145 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                               ),
                             ],
                           ),
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 200.0, 0.0, 20.0),
-                            child: Column(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 10.0),
-                                  child: StreamBuilder<List<TeamEventsRecord>>(
+                          if (modifEventPageEventsRecord.sportValue !=
+                              'sports.meca')
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 200.0, 0.0, 20.0),
+                              child: Column(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 10.0),
+                                    child:
+                                        StreamBuilder<List<TeamEventsRecord>>(
+                                      stream: queryTeamEventsRecord(
+                                        parent: modifEventPageEventsRecord
+                                            .teamdomRef,
+                                        queryBuilder: (teamEventsRecord) =>
+                                            teamEventsRecord.where(
+                                          'events',
+                                          isEqualTo: widget.eventRef,
+                                        ),
+                                        singleRecord: true,
+                                      ),
+                                      builder: (context, snapshot) {
+                                        // Customize what your widget looks like when it's loading.
+                                        if (!snapshot.hasData) {
+                                          return Center(
+                                            child: SizedBox(
+                                              width: 50.0,
+                                              height: 50.0,
+                                              child: CircularProgressIndicator(
+                                                valueColor:
+                                                    AlwaysStoppedAnimation<
+                                                        Color>(
+                                                  FlutterFlowTheme.of(context)
+                                                      .accent4,
+                                                ),
+                                              ),
+                                            ),
+                                          );
+                                        }
+                                        List<TeamEventsRecord>
+                                            rowTeamEventsRecordList =
+                                            snapshot.data!;
+                                        // Return an empty Container when the item does not exist.
+                                        if (snapshot.data!.isEmpty) {
+                                          return Container();
+                                        }
+                                        final rowTeamEventsRecord =
+                                            rowTeamEventsRecordList.isNotEmpty
+                                                ? rowTeamEventsRecordList.first
+                                                : null;
+
+                                        return Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                              child: Text(
+                                                modifEventPageEventsRecord
+                                                    .teamdom,
+                                                textAlign: TextAlign.end,
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelSmall
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                              ),
+                                            ),
+                                            if (rowTeamEventsRecord
+                                                    ?.reference !=
+                                                null)
+                                              Align(
+                                                alignment: AlignmentDirectional(
+                                                    0.0, 0.0),
+                                                child: FFButtonWidget(
+                                                  onPressed: () async {
+                                                    await rowTeamEventsRecord!
+                                                        .reference
+                                                        .delete();
+                                                  },
+                                                  text: 'Supprimer',
+                                                  options: FFButtonOptions(
+                                                    width: 160.0,
+                                                    height: 40.0,
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(0.0, 0.0,
+                                                                0.0, 0.0),
+                                                    iconPadding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(0.0, 0.0,
+                                                                0.0, 0.0),
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .error,
+                                                    textStyle: FlutterFlowTheme
+                                                            .of(context)
+                                                        .titleSmall
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primaryBackground,
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                    elevation: 3.0,
+                                                    borderSide: BorderSide(
+                                                      color: Colors.transparent,
+                                                      width: 1.0,
+                                                    ),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            40.0),
+                                                    hoverColor:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .error,
+                                                    hoverTextColor:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .primary,
+                                                  ),
+                                                ),
+                                              ),
+                                          ],
+                                        );
+                                      },
+                                    ),
+                                  ),
+                                  StreamBuilder<List<TeamEventsRecord>>(
                                     stream: queryTeamEventsRecord(
                                       parent:
-                                          modifEventPageEventsRecord.teamdomRef,
+                                          modifEventPageEventsRecord.teamextRef,
                                       queryBuilder: (teamEventsRecord) =>
                                           teamEventsRecord.where(
                                         'events',
@@ -2505,11 +3835,11 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 5.0, 0.0),
+                                                    5.0, 0.0, 0.0, 0.0),
                                             child: Text(
                                               modifEventPageEventsRecord
-                                                  .teamdom,
-                                              textAlign: TextAlign.end,
+                                                  .teamext,
+                                              textAlign: TextAlign.start,
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .labelSmall
@@ -2577,125 +3907,9 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                       );
                                     },
                                   ),
-                                ),
-                                StreamBuilder<List<TeamEventsRecord>>(
-                                  stream: queryTeamEventsRecord(
-                                    parent:
-                                        modifEventPageEventsRecord.teamextRef,
-                                    queryBuilder: (teamEventsRecord) =>
-                                        teamEventsRecord.where(
-                                      'events',
-                                      isEqualTo: widget.eventRef,
-                                    ),
-                                    singleRecord: true,
-                                  ),
-                                  builder: (context, snapshot) {
-                                    // Customize what your widget looks like when it's loading.
-                                    if (!snapshot.hasData) {
-                                      return Center(
-                                        child: SizedBox(
-                                          width: 50.0,
-                                          height: 50.0,
-                                          child: CircularProgressIndicator(
-                                            valueColor:
-                                                AlwaysStoppedAnimation<Color>(
-                                              FlutterFlowTheme.of(context)
-                                                  .accent4,
-                                            ),
-                                          ),
-                                        ),
-                                      );
-                                    }
-                                    List<TeamEventsRecord>
-                                        rowTeamEventsRecordList =
-                                        snapshot.data!;
-                                    // Return an empty Container when the item does not exist.
-                                    if (snapshot.data!.isEmpty) {
-                                      return Container();
-                                    }
-                                    final rowTeamEventsRecord =
-                                        rowTeamEventsRecordList.isNotEmpty
-                                            ? rowTeamEventsRecordList.first
-                                            : null;
-
-                                    return Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  5.0, 0.0, 0.0, 0.0),
-                                          child: Text(
-                                            modifEventPageEventsRecord.teamext,
-                                            textAlign: TextAlign.start,
-                                            style: FlutterFlowTheme.of(context)
-                                                .labelSmall
-                                                .override(
-                                                  fontFamily: 'Poppins',
-                                                  letterSpacing: 0.0,
-                                                ),
-                                          ),
-                                        ),
-                                        if (rowTeamEventsRecord?.reference !=
-                                            null)
-                                          Align(
-                                            alignment:
-                                                AlignmentDirectional(0.0, 0.0),
-                                            child: FFButtonWidget(
-                                              onPressed: () async {
-                                                await rowTeamEventsRecord!
-                                                    .reference
-                                                    .delete();
-                                              },
-                                              text: 'Supprimer',
-                                              options: FFButtonOptions(
-                                                width: 160.0,
-                                                height: 40.0,
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        0.0, 0.0, 0.0, 0.0),
-                                                iconPadding:
-                                                    EdgeInsetsDirectional
-                                                        .fromSTEB(
-                                                            0.0, 0.0, 0.0, 0.0),
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .error,
-                                                textStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleSmall
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryBackground,
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                elevation: 3.0,
-                                                borderSide: BorderSide(
-                                                  color: Colors.transparent,
-                                                  width: 1.0,
-                                                ),
-                                                borderRadius:
-                                                    BorderRadius.circular(40.0),
-                                                hoverColor:
-                                                    FlutterFlowTheme.of(context)
-                                                        .error,
-                                                hoverTextColor:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primary,
-                                              ),
-                                            ),
-                                          ),
-                                      ],
-                                    );
-                                  },
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
-                          ),
                           Align(
                             alignment: AlignmentDirectional(0.0, 0.0),
                             child: Padding(

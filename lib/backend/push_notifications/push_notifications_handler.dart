@@ -520,6 +520,16 @@ final parametersBuilderMap =
         },
       ),
   'MenuPagePub': ParameterData.none(),
+  'AddBetMecaPage': (data) async => ParameterData(
+        allParams: {
+          'eventMecaRef': getParameter<DocumentReference>(data, 'eventMecaRef'),
+        },
+      ),
+  'modifRankPilotes': (data) async => ParameterData(
+        allParams: {
+          'eventMecaRef': getParameter<DocumentReference>(data, 'eventMecaRef'),
+        },
+      ),
 };
 
 Map<String, dynamic> getInitialParameterData(Map<String, dynamic> data) {

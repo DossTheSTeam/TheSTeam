@@ -45,38 +45,75 @@ class ModifTeamPageModel extends FlutterFlowModel<ModifTeamPageWidget> {
   // State field(s) for DropLigueBoxe widget.
   String? dropLigueBoxeValue;
   FormFieldController<String>? dropLigueBoxeValueController;
+  // State field(s) for DropLigueRugby widget.
+  String? dropLigueRugbyValue;
+  FormFieldController<String>? dropLigueRugbyValueController;
+  // State field(s) for DropLigueMeca widget.
+  String? dropLigueMecaValue;
+  FormFieldController<String>? dropLigueMecaValueController;
   // State field(s) for DropFootCup widget.
   String? dropFootCupValue;
   FormFieldController<String>? dropFootCupValueController;
   // State field(s) for NumEventsField widget.
-  FocusNode? numEventsFieldFocusNode;
-  TextEditingController? numEventsFieldTextController;
+  FocusNode? numEventsFieldFocusNode1;
+  TextEditingController? numEventsFieldTextController1;
   String? Function(BuildContext, String?)?
-      numEventsFieldTextControllerValidator;
+      numEventsFieldTextController1Validator;
   // State field(s) for PointsField widget.
-  FocusNode? pointsFieldFocusNode;
-  TextEditingController? pointsFieldTextController;
-  String? Function(BuildContext, String?)? pointsFieldTextControllerValidator;
+  FocusNode? pointsFieldFocusNode1;
+  TextEditingController? pointsFieldTextController1;
+  String? Function(BuildContext, String?)? pointsFieldTextController1Validator;
   // State field(s) for WinsField widget.
-  FocusNode? winsFieldFocusNode;
-  TextEditingController? winsFieldTextController;
-  String? Function(BuildContext, String?)? winsFieldTextControllerValidator;
+  FocusNode? winsFieldFocusNode1;
+  TextEditingController? winsFieldTextController1;
+  String? Function(BuildContext, String?)? winsFieldTextController1Validator;
   // State field(s) for LoosesField widget.
-  FocusNode? loosesFieldFocusNode;
-  TextEditingController? loosesFieldTextController;
-  String? Function(BuildContext, String?)? loosesFieldTextControllerValidator;
+  FocusNode? loosesFieldFocusNode1;
+  TextEditingController? loosesFieldTextController1;
+  String? Function(BuildContext, String?)? loosesFieldTextController1Validator;
   // State field(s) for DrawsField widget.
-  FocusNode? drawsFieldFocusNode;
-  TextEditingController? drawsFieldTextController;
-  String? Function(BuildContext, String?)? drawsFieldTextControllerValidator;
+  FocusNode? drawsFieldFocusNode1;
+  TextEditingController? drawsFieldTextController1;
+  String? Function(BuildContext, String?)? drawsFieldTextController1Validator;
   // State field(s) for GoalsInField widget.
-  FocusNode? goalsInFieldFocusNode;
-  TextEditingController? goalsInFieldTextController;
-  String? Function(BuildContext, String?)? goalsInFieldTextControllerValidator;
+  FocusNode? goalsInFieldFocusNode1;
+  TextEditingController? goalsInFieldTextController1;
+  String? Function(BuildContext, String?)? goalsInFieldTextController1Validator;
   // State field(s) for GoalsOutField widget.
-  FocusNode? goalsOutFieldFocusNode;
-  TextEditingController? goalsOutFieldTextController;
-  String? Function(BuildContext, String?)? goalsOutFieldTextControllerValidator;
+  FocusNode? goalsOutFieldFocusNode1;
+  TextEditingController? goalsOutFieldTextController1;
+  String? Function(BuildContext, String?)?
+      goalsOutFieldTextController1Validator;
+  // State field(s) for NumEventsField widget.
+  FocusNode? numEventsFieldFocusNode2;
+  TextEditingController? numEventsFieldTextController2;
+  String? Function(BuildContext, String?)?
+      numEventsFieldTextController2Validator;
+  // State field(s) for PointsField widget.
+  FocusNode? pointsFieldFocusNode2;
+  TextEditingController? pointsFieldTextController2;
+  String? Function(BuildContext, String?)? pointsFieldTextController2Validator;
+  // State field(s) for WinsField widget.
+  FocusNode? winsFieldFocusNode2;
+  TextEditingController? winsFieldTextController2;
+  String? Function(BuildContext, String?)? winsFieldTextController2Validator;
+  // State field(s) for LoosesField widget.
+  FocusNode? loosesFieldFocusNode2;
+  TextEditingController? loosesFieldTextController2;
+  String? Function(BuildContext, String?)? loosesFieldTextController2Validator;
+  // State field(s) for DrawsField widget.
+  FocusNode? drawsFieldFocusNode2;
+  TextEditingController? drawsFieldTextController2;
+  String? Function(BuildContext, String?)? drawsFieldTextController2Validator;
+  // State field(s) for GoalsInField widget.
+  FocusNode? goalsInFieldFocusNode2;
+  TextEditingController? goalsInFieldTextController2;
+  String? Function(BuildContext, String?)? goalsInFieldTextController2Validator;
+  // State field(s) for GoalsOutField widget.
+  FocusNode? goalsOutFieldFocusNode2;
+  TextEditingController? goalsOutFieldTextController2;
+  String? Function(BuildContext, String?)?
+      goalsOutFieldTextController2Validator;
 
   @override
   void initState(BuildContext context) {}
@@ -89,25 +126,46 @@ class ModifTeamPageModel extends FlutterFlowModel<ModifTeamPageWidget> {
     teamvalueFieldFocusNode?.dispose();
     teamvalueFieldTextController?.dispose();
 
-    numEventsFieldFocusNode?.dispose();
-    numEventsFieldTextController?.dispose();
+    numEventsFieldFocusNode1?.dispose();
+    numEventsFieldTextController1?.dispose();
 
-    pointsFieldFocusNode?.dispose();
-    pointsFieldTextController?.dispose();
+    pointsFieldFocusNode1?.dispose();
+    pointsFieldTextController1?.dispose();
 
-    winsFieldFocusNode?.dispose();
-    winsFieldTextController?.dispose();
+    winsFieldFocusNode1?.dispose();
+    winsFieldTextController1?.dispose();
 
-    loosesFieldFocusNode?.dispose();
-    loosesFieldTextController?.dispose();
+    loosesFieldFocusNode1?.dispose();
+    loosesFieldTextController1?.dispose();
 
-    drawsFieldFocusNode?.dispose();
-    drawsFieldTextController?.dispose();
+    drawsFieldFocusNode1?.dispose();
+    drawsFieldTextController1?.dispose();
 
-    goalsInFieldFocusNode?.dispose();
-    goalsInFieldTextController?.dispose();
+    goalsInFieldFocusNode1?.dispose();
+    goalsInFieldTextController1?.dispose();
 
-    goalsOutFieldFocusNode?.dispose();
-    goalsOutFieldTextController?.dispose();
+    goalsOutFieldFocusNode1?.dispose();
+    goalsOutFieldTextController1?.dispose();
+
+    numEventsFieldFocusNode2?.dispose();
+    numEventsFieldTextController2?.dispose();
+
+    pointsFieldFocusNode2?.dispose();
+    pointsFieldTextController2?.dispose();
+
+    winsFieldFocusNode2?.dispose();
+    winsFieldTextController2?.dispose();
+
+    loosesFieldFocusNode2?.dispose();
+    loosesFieldTextController2?.dispose();
+
+    drawsFieldFocusNode2?.dispose();
+    drawsFieldTextController2?.dispose();
+
+    goalsInFieldFocusNode2?.dispose();
+    goalsInFieldTextController2?.dispose();
+
+    goalsOutFieldFocusNode2?.dispose();
+    goalsOutFieldTextController2?.dispose();
   }
 }

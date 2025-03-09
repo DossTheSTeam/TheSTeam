@@ -173,7 +173,9 @@ class _ModifSportWidgetState extends State<ModifSportWidget> {
                                     'tennis',
                                     'hockey',
                                     'mma',
-                                    'boxe'
+                                    'boxe',
+                                    'rugby',
+                                    'sports.meca'
                                   ]),
                                   optionLabels: [
                                     'Football',
@@ -181,7 +183,9 @@ class _ModifSportWidgetState extends State<ModifSportWidget> {
                                     'Tennis',
                                     'Hockey',
                                     'MMA',
-                                    'Boxe'
+                                    'Boxe',
+                                    'Rugby',
+                                    'Sports Méca.'
                                   ],
                                   onChanged: (val) => safeSetState(
                                       () => _model.dropSportValue = val),

@@ -25,6 +25,12 @@ class AddTeamPageModel extends FlutterFlowModel<AddTeamPageWidget> {
   // State field(s) for DropLigueBoxe widget.
   String? dropLigueBoxeValue;
   FormFieldController<String>? dropLigueBoxeValueController;
+  // State field(s) for DropLigueRugby widget.
+  String? dropLigueRugbyValue;
+  FormFieldController<String>? dropLigueRugbyValueController;
+  // State field(s) for DropLigueMeca widget.
+  String? dropLigueMecaValue;
+  FormFieldController<String>? dropLigueMecaValueController;
   // State field(s) for TeamNameField widget.
   FocusNode? teamNameFieldFocusNode;
   TextEditingController? teamNameFieldTextController;

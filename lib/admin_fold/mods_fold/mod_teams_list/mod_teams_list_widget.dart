@@ -1,3 +1,4 @@
+import '';
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
@@ -487,7 +488,9 @@ class _ModTeamsListWidgetState extends State<ModTeamsListWidget> {
                                       'tennis',
                                       'hockey',
                                       'mma',
-                                      'boxe'
+                                      'boxe',
+                                      'rugby',
+                                      'sports.meca'
                                     ]),
                                     optionLabels: [
                                       'Football',
@@ -495,7 +498,9 @@ class _ModTeamsListWidgetState extends State<ModTeamsListWidget> {
                                       'Tennis',
                                       'Hockey',
                                       'MMA',
-                                      'Boxe'
+                                      'Boxe',
+                                      'Rugby',
+                                      'Sports Méca.'
                                     ],
                                     onChanged: (val) => safeSetState(
                                         () => _model.dropSportValue = val),
@@ -887,6 +892,104 @@ class _ModTeamsListWidgetState extends State<ModTeamsListWidget> {
                                             _model.dropLigueBoxeValue = val);
                                         _model.showLigueFilter =
                                             _model.dropLigueBoxeValue;
+                                        safeSetState(() {});
+                                      },
+                                      width: 180.0,
+                                      height: 50.0,
+                                      textStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            letterSpacing: 0.0,
+                                          ),
+                                      hintText: 'Ligues',
+                                      icon: Icon(
+                                        Icons.keyboard_arrow_down_rounded,
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryText,
+                                        size: 24.0,
+                                      ),
+                                      fillColor: FlutterFlowTheme.of(context)
+                                          .primaryBackground,
+                                      elevation: 2.0,
+                                      borderColor: Colors.transparent,
+                                      borderWidth: 0.0,
+                                      borderRadius: 8.0,
+                                      margin: EdgeInsetsDirectional.fromSTEB(
+                                          12.0, 0.0, 12.0, 0.0),
+                                      hidesUnderline: true,
+                                      isOverButton: false,
+                                      isSearchable: false,
+                                      isMultiSelect: false,
+                                    ),
+                                  ),
+                                if (_model.dropSportValue == 'rugby')
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 5.0),
+                                    child: FlutterFlowDropDown<String>(
+                                      controller: _model
+                                              .dropLigueRugbyValueController ??=
+                                          FormFieldController<String>(
+                                        _model.dropLigueRugbyValue ??= '',
+                                      ),
+                                      options: List<String>.from(
+                                          ['top14', 'pays.rugby']),
+                                      optionLabels: ['Top 14', 'Pays Rugby'],
+                                      onChanged: (val) async {
+                                        safeSetState(() =>
+                                            _model.dropLigueRugbyValue = val);
+                                        _model.showLigueFilter =
+                                            _model.dropLigueRugbyValue;
+                                        safeSetState(() {});
+                                      },
+                                      width: 180.0,
+                                      height: 50.0,
+                                      textStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            letterSpacing: 0.0,
+                                          ),
+                                      hintText: 'Ligues',
+                                      icon: Icon(
+                                        Icons.keyboard_arrow_down_rounded,
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryText,
+                                        size: 24.0,
+                                      ),
+                                      fillColor: FlutterFlowTheme.of(context)
+                                          .primaryBackground,
+                                      elevation: 2.0,
+                                      borderColor: Colors.transparent,
+                                      borderWidth: 0.0,
+                                      borderRadius: 8.0,
+                                      margin: EdgeInsetsDirectional.fromSTEB(
+                                          12.0, 0.0, 12.0, 0.0),
+                                      hidesUnderline: true,
+                                      isOverButton: false,
+                                      isSearchable: false,
+                                      isMultiSelect: false,
+                                    ),
+                                  ),
+                                if (_model.dropSportValue == 'sports.meca')
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 5.0),
+                                    child: FlutterFlowDropDown<String>(
+                                      controller: _model
+                                              .dropLigueMecaValueController ??=
+                                          FormFieldController<String>(
+                                        _model.dropLigueMecaValue ??= '',
+                                      ),
+                                      options: List<String>.from(
+                                          ['formule.1', 'moto.gp']),
+                                      optionLabels: ['Formule 1', 'Moto GP'],
+                                      onChanged: (val) async {
+                                        safeSetState(() =>
+                                            _model.dropLigueMecaValue = val);
+                                        _model.showLigueFilter =
+                                            _model.dropLigueMecaValue;
                                         safeSetState(() {});
                                       },
                                       width: 180.0,

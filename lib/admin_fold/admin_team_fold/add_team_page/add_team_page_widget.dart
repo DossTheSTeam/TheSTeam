@@ -298,6 +298,54 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                       ),
                                     ),
                                   ),
+                                if ((valueOrDefault(
+                                            currentUserDocument?.stsocialapp,
+                                            '') ==
+                                        'administrateur') ||
+                                    (valueOrDefault(
+                                            currentUserDocument
+                                                ?.adminSportvalue,
+                                            '') ==
+                                        'rugby'))
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 26.0),
+                                    child: AuthUserStreamWidget(
+                                      builder: (context) => Text(
+                                        'Rugby',
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Poppins',
+                                              letterSpacing: 0.0,
+                                            ),
+                                      ),
+                                    ),
+                                  ),
+                                if ((valueOrDefault(
+                                            currentUserDocument?.stsocialapp,
+                                            '') ==
+                                        'administrateur') ||
+                                    (valueOrDefault(
+                                            currentUserDocument
+                                                ?.adminSportvalue,
+                                            '') ==
+                                        'sports.meca'))
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 26.0),
+                                    child: AuthUserStreamWidget(
+                                      builder: (context) => Text(
+                                        'Sports Méca.',
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Poppins',
+                                              letterSpacing: 0.0,
+                                            ),
+                                      ),
+                                    ),
+                                  ),
                               ],
                             ),
                           ),
@@ -668,6 +716,116 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                         ],
                                         onChanged: (val) => safeSetState(() =>
                                             _model.dropLigueBoxeValue = val),
+                                        width: 180.0,
+                                        height: 40.0,
+                                        textStyle: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Poppins',
+                                              letterSpacing: 0.0,
+                                            ),
+                                        hintText: 'Ligues',
+                                        icon: Icon(
+                                          Icons.keyboard_arrow_down_rounded,
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryText,
+                                          size: 24.0,
+                                        ),
+                                        fillColor: FlutterFlowTheme.of(context)
+                                            .secondaryBackground,
+                                        elevation: 2.0,
+                                        borderColor: Colors.transparent,
+                                        borderWidth: 0.0,
+                                        borderRadius: 8.0,
+                                        margin: EdgeInsetsDirectional.fromSTEB(
+                                            12.0, 0.0, 12.0, 0.0),
+                                        hidesUnderline: true,
+                                        isOverButton: false,
+                                        isSearchable: false,
+                                        isMultiSelect: false,
+                                      ),
+                                    ),
+                                  ),
+                                if ((valueOrDefault(
+                                            currentUserDocument?.stsocialapp,
+                                            '') ==
+                                        'administrateur') ||
+                                    (valueOrDefault(
+                                            currentUserDocument
+                                                ?.adminSportvalue,
+                                            '') ==
+                                        'rugby'))
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 5.0),
+                                    child: AuthUserStreamWidget(
+                                      builder: (context) =>
+                                          FlutterFlowDropDown<String>(
+                                        controller: _model
+                                                .dropLigueRugbyValueController ??=
+                                            FormFieldController<String>(
+                                          _model.dropLigueRugbyValue ??= '',
+                                        ),
+                                        options: List<String>.from(
+                                            ['top.14', 'pays.rugby']),
+                                        optionLabels: ['Top 14', 'Pays Rugby'],
+                                        onChanged: (val) => safeSetState(() =>
+                                            _model.dropLigueRugbyValue = val),
+                                        width: 180.0,
+                                        height: 40.0,
+                                        textStyle: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Poppins',
+                                              letterSpacing: 0.0,
+                                            ),
+                                        hintText: 'Ligues',
+                                        icon: Icon(
+                                          Icons.keyboard_arrow_down_rounded,
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryText,
+                                          size: 24.0,
+                                        ),
+                                        fillColor: FlutterFlowTheme.of(context)
+                                            .secondaryBackground,
+                                        elevation: 2.0,
+                                        borderColor: Colors.transparent,
+                                        borderWidth: 0.0,
+                                        borderRadius: 8.0,
+                                        margin: EdgeInsetsDirectional.fromSTEB(
+                                            12.0, 0.0, 12.0, 0.0),
+                                        hidesUnderline: true,
+                                        isOverButton: false,
+                                        isSearchable: false,
+                                        isMultiSelect: false,
+                                      ),
+                                    ),
+                                  ),
+                                if ((valueOrDefault(
+                                            currentUserDocument?.stsocialapp,
+                                            '') ==
+                                        'administrateur') ||
+                                    (valueOrDefault(
+                                            currentUserDocument
+                                                ?.adminSportvalue,
+                                            '') ==
+                                        'sports.meca'))
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 5.0),
+                                    child: AuthUserStreamWidget(
+                                      builder: (context) =>
+                                          FlutterFlowDropDown<String>(
+                                        controller: _model
+                                                .dropLigueMecaValueController ??=
+                                            FormFieldController<String>(
+                                          _model.dropLigueMecaValue ??= '',
+                                        ),
+                                        options: List<String>.from(
+                                            ['formule.1', 'moto.gp']),
+                                        optionLabels: ['Formule 1', 'Moto GP'],
+                                        onChanged: (val) => safeSetState(() =>
+                                            _model.dropLigueMecaValue = val),
                                         width: 180.0,
                                         height: 40.0,
                                         textStyle: FlutterFlowTheme.of(context)
@@ -1411,6 +1569,166 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                                 ));
                                           },
                                           text: 'Valider Boxe',
+                                          options: FFButtonOptions(
+                                            width: 180.0,
+                                            height: 40.0,
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 0.0, 0.0),
+                                            iconPadding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 0.0, 0.0),
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondaryBackground,
+                                            textStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmall
+                                                    .override(
+                                                      fontFamily: 'Poppins',
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .secondaryText,
+                                                      letterSpacing: 0.0,
+                                                    ),
+                                            elevation: 3.0,
+                                            borderSide: BorderSide(
+                                              color: Colors.transparent,
+                                              width: 1.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(40.0),
+                                            hoverColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .success,
+                                            hoverTextColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .primaryBackground,
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ),
+                          if (_model.dropLigueRugbyValue != null &&
+                              _model.dropLigueRugbyValue != '')
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 5.0, 0.0, 5.0),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Align(
+                                        alignment:
+                                            AlignmentDirectional(0.0, 0.0),
+                                        child: FFButtonWidget(
+                                          onPressed: () async {
+                                            await TeamsRecord.collection
+                                                .doc()
+                                                .set(createTeamsRecordData(
+                                                  name: _model
+                                                      .teamNameFieldTextController
+                                                      .text,
+                                                  value: _model
+                                                      .teamvalueFieldTextController
+                                                      .text,
+                                                  adminUser:
+                                                      currentUserReference,
+                                                  logo: _model.uploadedFileUrl,
+                                                  sportValue: 'rugby',
+                                                  leagueValue: _model
+                                                      .dropLigueRugbyValue,
+                                                  esport: false,
+                                                  points: 0,
+                                                ));
+                                          },
+                                          text: 'Valider Rugby',
+                                          options: FFButtonOptions(
+                                            width: 180.0,
+                                            height: 40.0,
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 0.0, 0.0),
+                                            iconPadding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 0.0, 0.0),
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondaryBackground,
+                                            textStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmall
+                                                    .override(
+                                                      fontFamily: 'Poppins',
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .secondaryText,
+                                                      letterSpacing: 0.0,
+                                                    ),
+                                            elevation: 3.0,
+                                            borderSide: BorderSide(
+                                              color: Colors.transparent,
+                                              width: 1.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(40.0),
+                                            hoverColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .success,
+                                            hoverTextColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .primaryBackground,
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ),
+                          if (_model.dropLigueMecaValue != null &&
+                              _model.dropLigueMecaValue != '')
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 5.0, 0.0, 5.0),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Align(
+                                        alignment:
+                                            AlignmentDirectional(0.0, 0.0),
+                                        child: FFButtonWidget(
+                                          onPressed: () async {
+                                            await TeamsRecord.collection
+                                                .doc()
+                                                .set(createTeamsRecordData(
+                                                  name: _model
+                                                      .teamNameFieldTextController
+                                                      .text,
+                                                  value: _model
+                                                      .teamvalueFieldTextController
+                                                      .text,
+                                                  adminUser:
+                                                      currentUserReference,
+                                                  logo: _model.uploadedFileUrl,
+                                                  sportValue: 'sports.meca',
+                                                  leagueValue:
+                                                      _model.dropLigueMecaValue,
+                                                  esport: false,
+                                                  points: 0,
+                                                ));
+                                          },
+                                          text: 'Valider Sport Méca',
                                           options: FFButtonOptions(
                                             width: 180.0,
                                             height: 40.0,

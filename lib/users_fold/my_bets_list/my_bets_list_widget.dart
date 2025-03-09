@@ -1,3 +1,4 @@
+import '';
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -832,6 +833,7 @@ class _MyBetsListWidgetState extends State<MyBetsListWidget>
                                   isEqualTo: _model.statutFilter,
                                 )
                                 .orderBy('created_time', descending: true),
+                            limit: 15,
                           ),
                           builder: (context, snapshot) {
                             // Customize what your widget looks like when it's loading.

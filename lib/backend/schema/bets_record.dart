@@ -46,6 +46,16 @@ class BetsRecord extends FirestoreRecord {
   String get points => _points ?? '';
   bool hasPoints() => _points != null;
 
+  // "first" field.
+  String? _first;
+  String get first => _first ?? '';
+  bool hasFirst() => _first != null;
+
+  // "podium" field.
+  String? _podium;
+  String get podium => _podium ?? '';
+  bool hasPodium() => _podium != null;
+
   DocumentReference get parentReference => reference.parent.parent!;
 
   void _initializeFields() {
@@ -55,6 +65,8 @@ class BetsRecord extends FirestoreRecord {
     _odd = castToType<double>(snapshotData['odd']);
     _statut = snapshotData['statut'] as bool?;
     _points = snapshotData['points'] as String?;
+    _first = snapshotData['first'] as String?;
+    _podium = snapshotData['podium'] as String?;
   }
 
   static Query<Map<String, dynamic>> collection([DocumentReference? parent]) =>
@@ -101,6 +113,8 @@ Map<String, dynamic> createBetsRecordData({
   double? odd,
   bool? statut,
   String? points,
+  String? first,
+  String? podium,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -109,6 +123,8 @@ Map<String, dynamic> createBetsRecordData({
       'odd': odd,
       'statut': statut,
       'points': points,
+      'first': first,
+      'podium': podium,
     }.withoutNulls,
   );
 
@@ -126,12 +142,22 @@ class BetsRecordDocumentEquality implements Equality<BetsRecord> {
         listEquality.equals(e1?.bettors, e2?.bettors) &&
         e1?.odd == e2?.odd &&
         e1?.statut == e2?.statut &&
-        e1?.points == e2?.points;
+        e1?.points == e2?.points &&
+        e1?.first == e2?.first &&
+        e1?.podium == e2?.podium;
   }
 
   @override
-  int hash(BetsRecord? e) => const ListEquality().hash(
-      [e?.choice, e?.createdTime, e?.bettors, e?.odd, e?.statut, e?.points]);
+  int hash(BetsRecord? e) => const ListEquality().hash([
+        e?.choice,
+        e?.createdTime,
+        e?.bettors,
+        e?.odd,
+        e?.statut,
+        e?.points,
+        e?.first,
+        e?.podium
+      ]);
 
   @override
   bool isValidKey(Object? o) => o is BetsRecord;
