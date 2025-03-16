@@ -1380,9 +1380,9 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                                             10.0, 0.0, 20.0, 0.0),
                                         child: FlutterFlowDropDown<String>(
                                           controller: _model
-                                                  .dropColor1ValueController1 ??=
+                                                  .dropColor1ValueController ??=
                                               FormFieldController<String>(
-                                            _model.dropColor1Value1 ??= '',
+                                            _model.dropColor1Value ??= '',
                                           ),
                                           options: List<String>.from([
                                             '#FFFF00',
@@ -1433,7 +1433,7 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                                             'Bordeaux'
                                           ],
                                           onChanged: (val) => safeSetState(() =>
-                                              _model.dropColor1Value1 = val),
+                                              _model.dropColor1Value = val),
                                           width: 150.0,
                                           height: 40.0,
                                           textStyle:
@@ -1466,35 +1466,38 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                                           isMultiSelect: false,
                                         ),
                                       ),
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 0.0, 10.0, 0.0),
-                                        child: InkWell(
-                                          splashColor: Colors.transparent,
-                                          focusColor: Colors.transparent,
-                                          hoverColor: Colors.transparent,
-                                          highlightColor: Colors.transparent,
-                                          onTap: () async {
-                                            await widget.teamRef!
-                                                .update(createTeamsRecordData(
-                                              color1: colorFromCssString(
-                                                _model.dropColor1Value1!,
-                                                defaultColor: Colors.black,
+                                      if (_model.dropColor1Value != null &&
+                                          _model.dropColor1Value != '')
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 10.0, 0.0),
+                                          child: InkWell(
+                                            splashColor: Colors.transparent,
+                                            focusColor: Colors.transparent,
+                                            hoverColor: Colors.transparent,
+                                            highlightColor: Colors.transparent,
+                                            onTap: () async {
+                                              await widget.teamRef!
+                                                  .update(createTeamsRecordData(
+                                                color1: colorFromCssString(
+                                                  _model.dropColor1Value!,
+                                                  defaultColor: Colors.black,
+                                                ),
+                                              ));
+                                            },
+                                            child: Icon(
+                                              Icons.send_rounded,
+                                              color: colorFromCssString(
+                                                _model.dropColor1Value!,
+                                                defaultColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryText,
                                               ),
-                                            ));
-                                          },
-                                          child: Icon(
-                                            Icons.send_rounded,
-                                            color: colorFromCssString(
-                                              _model.dropColor1Value1!,
-                                              defaultColor:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondaryText,
+                                              size: 24.0,
                                             ),
-                                            size: 24.0,
                                           ),
                                         ),
-                                      ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             10.0, 0.0, 0.0, 0.0),
@@ -1555,9 +1558,9 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                                             10.0, 0.0, 20.0, 0.0),
                                         child: FlutterFlowDropDown<String>(
                                           controller: _model
-                                                  .dropColor1ValueController2 ??=
+                                                  .dropColor2ValueController ??=
                                               FormFieldController<String>(
-                                            _model.dropColor1Value2 ??= '',
+                                            _model.dropColor2Value ??= '',
                                           ),
                                           options: List<String>.from([
                                             '#FFFF00',
@@ -1608,7 +1611,7 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                                             'Bordeaux'
                                           ],
                                           onChanged: (val) => safeSetState(() =>
-                                              _model.dropColor1Value2 = val),
+                                              _model.dropColor2Value = val),
                                           width: 150.0,
                                           height: 40.0,
                                           textStyle:
@@ -1641,35 +1644,38 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                                           isMultiSelect: false,
                                         ),
                                       ),
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 0.0, 10.0, 0.0),
-                                        child: InkWell(
-                                          splashColor: Colors.transparent,
-                                          focusColor: Colors.transparent,
-                                          hoverColor: Colors.transparent,
-                                          highlightColor: Colors.transparent,
-                                          onTap: () async {
-                                            await widget.teamRef!
-                                                .update(createTeamsRecordData(
-                                              color2: colorFromCssString(
-                                                _model.dropColor1Value2!,
-                                                defaultColor: Colors.black,
+                                      if (_model.dropColor2Value != null &&
+                                          _model.dropColor2Value != '')
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 10.0, 0.0),
+                                          child: InkWell(
+                                            splashColor: Colors.transparent,
+                                            focusColor: Colors.transparent,
+                                            hoverColor: Colors.transparent,
+                                            highlightColor: Colors.transparent,
+                                            onTap: () async {
+                                              await widget.teamRef!
+                                                  .update(createTeamsRecordData(
+                                                color2: colorFromCssString(
+                                                  _model.dropColor2Value!,
+                                                  defaultColor: Colors.black,
+                                                ),
+                                              ));
+                                            },
+                                            child: Icon(
+                                              Icons.send_rounded,
+                                              color: colorFromCssString(
+                                                _model.dropColor2Value!,
+                                                defaultColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryText,
                                               ),
-                                            ));
-                                          },
-                                          child: Icon(
-                                            Icons.send_rounded,
-                                            color: colorFromCssString(
-                                              _model.dropColor1Value2!,
-                                              defaultColor:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondaryText,
+                                              size: 24.0,
                                             ),
-                                            size: 24.0,
                                           ),
                                         ),
-                                      ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             10.0, 0.0, 0.0, 0.0),

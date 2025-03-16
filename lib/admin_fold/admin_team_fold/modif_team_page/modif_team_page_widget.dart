@@ -57,6 +57,9 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
     _model.drawsFieldTextController1 ??= TextEditingController();
     _model.drawsFieldFocusNode1 ??= FocusNode();
 
+    _model.l2MFieldTextController1 ??= TextEditingController();
+    _model.l2MFieldFocusNode1 ??= FocusNode();
+
     _model.goalsInFieldTextController1 ??= TextEditingController();
     _model.goalsInFieldFocusNode1 ??= FocusNode();
 
@@ -77,6 +80,9 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
 
     _model.drawsFieldTextController2 ??= TextEditingController();
     _model.drawsFieldFocusNode2 ??= FocusNode();
+
+    _model.l2MFieldTextController2 ??= TextEditingController();
+    _model.l2MFieldFocusNode2 ??= FocusNode();
 
     _model.goalsInFieldTextController2 ??= TextEditingController();
     _model.goalsInFieldFocusNode2 ??= FocusNode();
@@ -2616,183 +2622,384 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Align(
-                                  alignment: AlignmentDirectional(-1.0, 0.0),
-                                  child: Text(
-                                    'Total  Matchs Nul',
-                                    maxLines: 1,
-                                    style: FlutterFlowTheme.of(context)
-                                        .headlineSmall
-                                        .override(
-                                          fontFamily: 'Poppins',
-                                          letterSpacing: 0.0,
-                                        ),
-                                  ),
-                                ),
-                                Row(
+                                Column(
                                   mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
                                   children: [
+                                    Align(
+                                      alignment:
+                                          AlignmentDirectional(-1.0, 0.0),
+                                      child: Text(
+                                        'Total  Matchs Nul',
+                                        maxLines: 1,
+                                        style: FlutterFlowTheme.of(context)
+                                            .headlineSmall
+                                            .override(
+                                              fontFamily: 'Poppins',
+                                              letterSpacing: 0.0,
+                                            ),
+                                      ),
+                                    ),
                                     Row(
                                       mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
                                       children: [
-                                        Align(
-                                          alignment:
-                                              AlignmentDirectional(-1.0, 0.0),
-                                          child: Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    5.0, 0.0, 0.0, 0.0),
-                                            child: Text(
-                                              valueOrDefault<String>(
-                                                modifTeamPageTeamsRecord.draws
-                                                    .toString(),
-                                                '0',
-                                              ),
-                                              maxLines: 1,
-                                              style: FlutterFlowTheme.of(
-                                                      context)
-                                                  .labelLarge
-                                                  .override(
-                                                    fontFamily: 'Montserrat',
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .success,
-                                                    letterSpacing: 0.0,
+                                        Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          children: [
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  -1.0, 0.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        5.0, 0.0, 0.0, 0.0),
+                                                child: Text(
+                                                  valueOrDefault<String>(
+                                                    modifTeamPageTeamsRecord
+                                                        .draws
+                                                        .toString(),
+                                                    '0',
                                                   ),
-                                            ),
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  5.0, 0.0, 5.0, 0.0),
-                                          child: Container(
-                                            width: 70.0,
-                                            height: 30.0,
-                                            decoration: BoxDecoration(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primaryBackground,
-                                              borderRadius:
-                                                  BorderRadius.circular(0.0),
-                                            ),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(8.0, 0.0, 8.0, 0.0),
-                                              child: TextFormField(
-                                                controller: _model
-                                                    .drawsFieldTextController1,
-                                                focusNode:
-                                                    _model.drawsFieldFocusNode1,
-                                                autofocus: false,
-                                                obscureText: false,
-                                                decoration: InputDecoration(
-                                                  hintText: '00.00',
-                                                  hintStyle: FlutterFlowTheme
-                                                          .of(context)
-                                                      .labelMedium
+                                                  maxLines: 1,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .labelLarge
                                                       .override(
-                                                        fontFamily: 'Poppins',
+                                                        fontFamily:
+                                                            'Montserrat',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .success,
                                                         letterSpacing: 0.0,
                                                       ),
-                                                  enabledBorder:
-                                                      UnderlineInputBorder(
-                                                    borderSide: BorderSide(
-                                                      color: FlutterFlowTheme
-                                                              .of(context)
-                                                          .secondaryBackground,
-                                                      width: 2.0,
-                                                    ),
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            8.0),
-                                                  ),
-                                                  focusedBorder:
-                                                      UnderlineInputBorder(
-                                                    borderSide: BorderSide(
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .primary,
-                                                      width: 2.0,
-                                                    ),
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            8.0),
-                                                  ),
-                                                  errorBorder:
-                                                      UnderlineInputBorder(
-                                                    borderSide: BorderSide(
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .error,
-                                                      width: 2.0,
-                                                    ),
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            8.0),
-                                                  ),
-                                                  focusedErrorBorder:
-                                                      UnderlineInputBorder(
-                                                    borderSide: BorderSide(
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .error,
-                                                      width: 2.0,
-                                                    ),
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            8.0),
-                                                  ),
                                                 ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
+                                              ),
+                                            ),
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(5.0, 0.0, 5.0, 0.0),
+                                              child: Container(
+                                                width: 70.0,
+                                                height: 30.0,
+                                                decoration: BoxDecoration(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryBackground,
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          0.0),
+                                                ),
+                                                child: Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          8.0, 0.0, 8.0, 0.0),
+                                                  child: TextFormField(
+                                                    controller: _model
+                                                        .drawsFieldTextController1,
+                                                    focusNode: _model
+                                                        .drawsFieldFocusNode1,
+                                                    autofocus: false,
+                                                    obscureText: false,
+                                                    decoration: InputDecoration(
+                                                      hintText: '00.00',
+                                                      hintStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Poppins',
+                                                                letterSpacing:
+                                                                    0.0,
+                                                              ),
+                                                      enabledBorder:
+                                                          UnderlineInputBorder(
+                                                        borderSide: BorderSide(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryBackground,
+                                                          width: 2.0,
+                                                        ),
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(8.0),
+                                                      ),
+                                                      focusedBorder:
+                                                          UnderlineInputBorder(
+                                                        borderSide: BorderSide(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primary,
+                                                          width: 2.0,
+                                                        ),
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(8.0),
+                                                      ),
+                                                      errorBorder:
+                                                          UnderlineInputBorder(
+                                                        borderSide: BorderSide(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .error,
+                                                          width: 2.0,
+                                                        ),
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(8.0),
+                                                      ),
+                                                      focusedErrorBorder:
+                                                          UnderlineInputBorder(
+                                                        borderSide: BorderSide(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .error,
+                                                          width: 2.0,
+                                                        ),
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(8.0),
+                                                      ),
+                                                    ),
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
                                                         .bodyMedium
                                                         .override(
                                                           fontFamily: 'Poppins',
                                                           letterSpacing: 0.0,
                                                         ),
-                                                textAlign: TextAlign.center,
-                                                keyboardType:
-                                                    const TextInputType
-                                                        .numberWithOptions(
-                                                        decimal: true),
-                                                validator: _model
-                                                    .drawsFieldTextController1Validator
-                                                    .asValidator(context),
+                                                    textAlign: TextAlign.center,
+                                                    keyboardType:
+                                                        const TextInputType
+                                                            .numberWithOptions(
+                                                            decimal: true),
+                                                    validator: _model
+                                                        .drawsFieldTextController1Validator
+                                                        .asValidator(context),
+                                                  ),
+                                                ),
                                               ),
                                             ),
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  5.0, 0.0, 0.0, 0.0),
-                                          child: InkWell(
-                                            splashColor: Colors.transparent,
-                                            focusColor: Colors.transparent,
-                                            hoverColor: Colors.transparent,
-                                            highlightColor: Colors.transparent,
-                                            onTap: () async {
-                                              await widget.teamRef!
-                                                  .update(createTeamsRecordData(
-                                                draws: int.tryParse(_model
-                                                    .drawsFieldTextController1
-                                                    .text),
-                                              ));
-                                            },
-                                            child: Icon(
-                                              Icons.send_rounded,
-                                              color:
-                                                  FlutterFlowTheme.of(context)
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(5.0, 0.0, 0.0, 0.0),
+                                              child: InkWell(
+                                                splashColor: Colors.transparent,
+                                                focusColor: Colors.transparent,
+                                                hoverColor: Colors.transparent,
+                                                highlightColor:
+                                                    Colors.transparent,
+                                                onTap: () async {
+                                                  await widget.teamRef!.update(
+                                                      createTeamsRecordData(
+                                                    draws: int.tryParse(_model
+                                                        .drawsFieldTextController1
+                                                        .text),
+                                                  ));
+                                                },
+                                                child: Icon(
+                                                  Icons.send_rounded,
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
                                                       .primaryText,
-                                              size: 30.0,
+                                                  size: 30.0,
+                                                ),
+                                              ),
                                             ),
-                                          ),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                                Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Align(
+                                      alignment:
+                                          AlignmentDirectional(-1.0, 0.0),
+                                      child: Text(
+                                        'Total  L2M',
+                                        maxLines: 1,
+                                        style: FlutterFlowTheme.of(context)
+                                            .headlineSmall
+                                            .override(
+                                              fontFamily: 'Poppins',
+                                              letterSpacing: 0.0,
+                                            ),
+                                      ),
+                                    ),
+                                    Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          children: [
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  -1.0, 0.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        5.0, 0.0, 0.0, 0.0),
+                                                child: Text(
+                                                  valueOrDefault<String>(
+                                                    modifTeamPageTeamsRecord.l2m
+                                                        .toString(),
+                                                    '0',
+                                                  ),
+                                                  maxLines: 1,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .labelLarge
+                                                      .override(
+                                                        fontFamily:
+                                                            'Montserrat',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .success,
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(5.0, 0.0, 5.0, 0.0),
+                                              child: Container(
+                                                width: 70.0,
+                                                height: 30.0,
+                                                decoration: BoxDecoration(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryBackground,
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          0.0),
+                                                ),
+                                                child: Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          8.0, 0.0, 8.0, 0.0),
+                                                  child: TextFormField(
+                                                    controller: _model
+                                                        .l2MFieldTextController1,
+                                                    focusNode: _model
+                                                        .l2MFieldFocusNode1,
+                                                    autofocus: false,
+                                                    obscureText: false,
+                                                    decoration: InputDecoration(
+                                                      hintText: '00.00',
+                                                      hintStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Poppins',
+                                                                letterSpacing:
+                                                                    0.0,
+                                                              ),
+                                                      enabledBorder:
+                                                          UnderlineInputBorder(
+                                                        borderSide: BorderSide(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryBackground,
+                                                          width: 2.0,
+                                                        ),
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(8.0),
+                                                      ),
+                                                      focusedBorder:
+                                                          UnderlineInputBorder(
+                                                        borderSide: BorderSide(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primary,
+                                                          width: 2.0,
+                                                        ),
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(8.0),
+                                                      ),
+                                                      errorBorder:
+                                                          UnderlineInputBorder(
+                                                        borderSide: BorderSide(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .error,
+                                                          width: 2.0,
+                                                        ),
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(8.0),
+                                                      ),
+                                                      focusedErrorBorder:
+                                                          UnderlineInputBorder(
+                                                        borderSide: BorderSide(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .error,
+                                                          width: 2.0,
+                                                        ),
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(8.0),
+                                                      ),
+                                                    ),
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                    textAlign: TextAlign.center,
+                                                    keyboardType:
+                                                        const TextInputType
+                                                            .numberWithOptions(
+                                                            decimal: true),
+                                                    validator: _model
+                                                        .l2MFieldTextController1Validator
+                                                        .asValidator(context),
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(5.0, 0.0, 0.0, 0.0),
+                                              child: InkWell(
+                                                splashColor: Colors.transparent,
+                                                focusColor: Colors.transparent,
+                                                hoverColor: Colors.transparent,
+                                                highlightColor:
+                                                    Colors.transparent,
+                                                onTap: () async {
+                                                  await widget.teamRef!.update(
+                                                      createTeamsRecordData(
+                                                    l2m: int.tryParse(_model
+                                                        .l2MFieldTextController1
+                                                        .text),
+                                                  ));
+                                                },
+                                                child: Icon(
+                                                  Icons.send_rounded,
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryText,
+                                                  size: 30.0,
+                                                ),
+                                              ),
+                                            ),
+                                          ],
                                         ),
                                       ],
                                     ),
@@ -3165,6 +3372,7 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                     points: 0,
                                     goalsPointsIn: 0,
                                     goalsPointsOut: 0,
+                                    l2m: 0,
                                   ));
                                   context.safePop();
                                 },
@@ -3280,7 +3488,7 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                               child: Text(
                                                 valueOrDefault<String>(
                                                   modifTeamPageTeamsRecord
-                                                      .totalGames
+                                                      .gamesCup
                                                       .toString(),
                                                   '0',
                                                 ),
@@ -3445,7 +3653,7 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                               child: Text(
                                                 valueOrDefault<String>(
                                                   modifTeamPageTeamsRecord
-                                                      .points
+                                                      .pointsCup
                                                       .toString(),
                                                   '0',
                                                 ),
@@ -3664,7 +3872,8 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                                   .fromSTEB(5.0, 0.0, 0.0, 0.0),
                                               child: Text(
                                                 valueOrDefault<String>(
-                                                  modifTeamPageTeamsRecord.wins
+                                                  modifTeamPageTeamsRecord
+                                                      .winsCup
                                                       .toString(),
                                                   '0',
                                                 ),
@@ -3829,7 +4038,7 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                               child: Text(
                                                 valueOrDefault<String>(
                                                   modifTeamPageTeamsRecord
-                                                      .looses
+                                                      .loosesCup
                                                       .toString(),
                                                   '0',
                                                 ),
@@ -3998,25 +4207,26 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
                                     children: [
-                                      Align(
-                                        alignment:
-                                            AlignmentDirectional(-1.0, 0.0),
-                                        child: Text(
-                                          'Total  Matchs Nul',
-                                          maxLines: 1,
-                                          style: FlutterFlowTheme.of(context)
-                                              .headlineSmall
-                                              .override(
-                                                fontFamily: 'Poppins',
-                                                letterSpacing: 0.0,
-                                              ),
-                                        ),
-                                      ),
-                                      Row(
+                                      Column(
                                         mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
                                         children: [
+                                          Align(
+                                            alignment:
+                                                AlignmentDirectional(-1.0, 0.0),
+                                            child: Text(
+                                              'Total  Matchs Nul',
+                                              maxLines: 1,
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .headlineSmall
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                            ),
+                                          ),
                                           Row(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
@@ -4030,7 +4240,7 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                                   child: Text(
                                                     valueOrDefault<String>(
                                                       modifTeamPageTeamsRecord
-                                                          .draws
+                                                          .drawsCup
                                                           .toString(),
                                                       '0',
                                                     ),
@@ -4201,6 +4411,208 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                           ),
                                         ],
                                       ),
+                                      Column(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Align(
+                                            alignment:
+                                                AlignmentDirectional(-1.0, 0.0),
+                                            child: Text(
+                                              'Total L2M',
+                                              maxLines: 1,
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .headlineSmall
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                            ),
+                                          ),
+                                          Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              Align(
+                                                alignment: AlignmentDirectional(
+                                                    -1.0, 0.0),
+                                                child: Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          5.0, 0.0, 0.0, 0.0),
+                                                  child: Text(
+                                                    valueOrDefault<String>(
+                                                      modifTeamPageTeamsRecord
+                                                          .l2mCup
+                                                          .toString(),
+                                                      '0',
+                                                    ),
+                                                    maxLines: 1,
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .labelLarge
+                                                        .override(
+                                                          fontFamily:
+                                                              'Montserrat',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .success,
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                  ),
+                                                ),
+                                              ),
+                                              Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        5.0, 0.0, 5.0, 0.0),
+                                                child: Container(
+                                                  width: 70.0,
+                                                  height: 30.0,
+                                                  decoration: BoxDecoration(
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryBackground,
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            0.0),
+                                                  ),
+                                                  child: Padding(
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(8.0, 0.0,
+                                                                8.0, 0.0),
+                                                    child: TextFormField(
+                                                      controller: _model
+                                                          .l2MFieldTextController2,
+                                                      focusNode: _model
+                                                          .l2MFieldFocusNode2,
+                                                      autofocus: false,
+                                                      obscureText: false,
+                                                      decoration:
+                                                          InputDecoration(
+                                                        hintText: '00.00',
+                                                        hintStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Poppins',
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
+                                                        enabledBorder:
+                                                            UnderlineInputBorder(
+                                                          borderSide:
+                                                              BorderSide(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .secondaryBackground,
+                                                            width: 2.0,
+                                                          ),
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      8.0),
+                                                        ),
+                                                        focusedBorder:
+                                                            UnderlineInputBorder(
+                                                          borderSide:
+                                                              BorderSide(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primary,
+                                                            width: 2.0,
+                                                          ),
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      8.0),
+                                                        ),
+                                                        errorBorder:
+                                                            UnderlineInputBorder(
+                                                          borderSide:
+                                                              BorderSide(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .error,
+                                                            width: 2.0,
+                                                          ),
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      8.0),
+                                                        ),
+                                                        focusedErrorBorder:
+                                                            UnderlineInputBorder(
+                                                          borderSide:
+                                                              BorderSide(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .error,
+                                                            width: 2.0,
+                                                          ),
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      8.0),
+                                                        ),
+                                                      ),
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Poppins',
+                                                            letterSpacing: 0.0,
+                                                          ),
+                                                      textAlign:
+                                                          TextAlign.center,
+                                                      keyboardType:
+                                                          const TextInputType
+                                                              .numberWithOptions(
+                                                              decimal: true),
+                                                      validator: _model
+                                                          .l2MFieldTextController2Validator
+                                                          .asValidator(context),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                              Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        5.0, 0.0, 0.0, 0.0),
+                                                child: InkWell(
+                                                  splashColor:
+                                                      Colors.transparent,
+                                                  focusColor:
+                                                      Colors.transparent,
+                                                  hoverColor:
+                                                      Colors.transparent,
+                                                  highlightColor:
+                                                      Colors.transparent,
+                                                  onTap: () async {
+                                                    await widget.teamRef!.update(
+                                                        createTeamsRecordData(
+                                                      l2mCup: int.tryParse(_model
+                                                          .goalsOutFieldTextController2
+                                                          .text),
+                                                    ));
+                                                  },
+                                                  child: Icon(
+                                                    Icons.send_rounded,
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryText,
+                                                    size: 30.0,
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ],
+                                      ),
                                     ],
                                   ),
                                 ),
@@ -4264,7 +4676,7 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                               child: Text(
                                                 valueOrDefault<String>(
                                                   modifTeamPageTeamsRecord
-                                                      .goalsPointsIn
+                                                      .goalsInCup
                                                       .toString(),
                                                   '0',
                                                 ),
@@ -4429,7 +4841,7 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                               child: Text(
                                                 valueOrDefault<String>(
                                                   modifTeamPageTeamsRecord
-                                                      .goalsPointsOut
+                                                      .goalsOutCup
                                                       .toString(),
                                                   '0',
                                                 ),
@@ -4606,6 +5018,7 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                           pointsCup: 0,
                                           goalsInCup: 0,
                                           goalsOutCup: 0,
+                                          l2mCup: 0,
                                         ));
                                         context.safePop();
                                       },

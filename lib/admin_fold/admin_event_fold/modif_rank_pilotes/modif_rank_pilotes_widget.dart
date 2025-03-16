@@ -2263,6 +2263,10 @@ class _ModifRankPilotesWidgetState extends State<ModifRankPilotesWidget> {
                                                                     FieldValue
                                                                         .increment(
                                                                             8),
+                                                                'total_games':
+                                                                    FieldValue
+                                                                        .increment(
+                                                                            1),
                                                               },
                                                             ),
                                                           });
@@ -2307,6 +2311,10 @@ class _ModifRankPilotesWidgetState extends State<ModifRankPilotesWidget> {
                                                                     FieldValue
                                                                         .increment(
                                                                             10),
+                                                                'total_games':
+                                                                    FieldValue
+                                                                        .increment(
+                                                                            1),
                                                               },
                                                             ),
                                                           });
@@ -2546,6 +2554,10 @@ class _ModifRankPilotesWidgetState extends State<ModifRankPilotesWidget> {
                                                                     FieldValue
                                                                         .increment(
                                                                             6),
+                                                                'total_games':
+                                                                    FieldValue
+                                                                        .increment(
+                                                                            1),
                                                               },
                                                             ),
                                                           });
@@ -2590,6 +2602,10 @@ class _ModifRankPilotesWidgetState extends State<ModifRankPilotesWidget> {
                                                                     FieldValue
                                                                         .increment(
                                                                             9),
+                                                                'total_games':
+                                                                    FieldValue
+                                                                        .increment(
+                                                                            1),
                                                               },
                                                             ),
                                                           });

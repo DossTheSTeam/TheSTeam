@@ -556,6 +556,24 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                           ),
                                     ),
                                   ),
+                                  if (valueOrDefault(
+                                          currentUserDocument?.stsocialapp,
+                                          '') ==
+                                      'moderateur')
+                                    AuthUserStreamWidget(
+                                      builder: (context) => Text(
+                                        eventPageEventsRecord.reference.id,
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Poppins',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .warning,
+                                              letterSpacing: 0.0,
+                                            ),
+                                      ),
+                                    ),
                                 ],
                               ),
                               if ((valueOrDefault(
@@ -685,8 +703,129 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                           ),
                           Row(
                             mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.end,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 10.0, 0.0, 0.0),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 10.0, 0.0),
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              if (eventPageEventsRecord
+                                                      .statut ==
+                                                  true)
+                                                Container(
+                                                  width: 20.0,
+                                                  height: 20.0,
+                                                  decoration: BoxDecoration(
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .success,
+                                                    shape: BoxShape.circle,
+                                                  ),
+                                                ),
+                                              if (eventPageEventsRecord
+                                                      .statut ==
+                                                  false)
+                                                Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          5.0, 0.0, 0.0, 0.0),
+                                                  child: Container(
+                                                    width: 20.0,
+                                                    height: 20.0,
+                                                    decoration: BoxDecoration(
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .error,
+                                                      shape: BoxShape.circle,
+                                                    ),
+                                                  ),
+                                                ),
+                                            ],
+                                          ),
+                                        ),
+                                        Text(
+                                          dateTimeFormat("d/M/y",
+                                              eventPageEventsRecord.date!),
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Poppins',
+                                                letterSpacing: 0.0,
+                                              ),
+                                        ),
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  3.0, 0.0, 3.0, 0.0),
+                                          child: Text(
+                                            '-',
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Poppins',
+                                                  letterSpacing: 0.0,
+                                                ),
+                                          ),
+                                        ),
+                                        Text(
+                                          valueOrDefault<String>(
+                                            eventPageEventsRecord.hour
+                                                .toString(),
+                                            '00',
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Poppins',
+                                                letterSpacing: 0.0,
+                                              ),
+                                        ),
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  2.0, 0.0, 2.0, 0.0),
+                                          child: Text(
+                                            ':',
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Poppins',
+                                                  letterSpacing: 0.0,
+                                                ),
+                                          ),
+                                        ),
+                                        Text(
+                                          valueOrDefault<String>(
+                                            functions.zeroTo00(
+                                                eventPageEventsRecord.minute),
+                                            '00',
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Poppins',
+                                                letterSpacing: 0.0,
+                                              ),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ),
                               if (eventPageEventsRecord.week != '')
                                 Align(
                                   alignment: AlignmentDirectional(1.0, 0.0),
@@ -707,135 +846,6 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                   ),
                                 ),
                             ],
-                          ),
-                          if (valueOrDefault(
-                                  currentUserDocument?.stsocialapp, '') ==
-                              'moderateur')
-                            AuthUserStreamWidget(
-                              builder: (context) => Text(
-                                eventPageEventsRecord.reference.id,
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Poppins',
-                                      color:
-                                          FlutterFlowTheme.of(context).warning,
-                                      letterSpacing: 0.0,
-                                    ),
-                              ),
-                            ),
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 10.0, 0.0, 0.0),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 0.0, 10.0, 0.0),
-                                      child: Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        children: [
-                                          if (eventPageEventsRecord.statut ==
-                                              true)
-                                            Container(
-                                              width: 20.0,
-                                              height: 20.0,
-                                              decoration: BoxDecoration(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .success,
-                                                shape: BoxShape.circle,
-                                              ),
-                                            ),
-                                          if (eventPageEventsRecord.statut ==
-                                              false)
-                                            Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(5.0, 0.0, 0.0, 0.0),
-                                              child: Container(
-                                                width: 20.0,
-                                                height: 20.0,
-                                                decoration: BoxDecoration(
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .error,
-                                                  shape: BoxShape.circle,
-                                                ),
-                                              ),
-                                            ),
-                                        ],
-                                      ),
-                                    ),
-                                    Text(
-                                      dateTimeFormat(
-                                          "d/M/y", eventPageEventsRecord.date!),
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily: 'Poppins',
-                                            letterSpacing: 0.0,
-                                          ),
-                                    ),
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          3.0, 0.0, 3.0, 0.0),
-                                      child: Text(
-                                        '-',
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily: 'Poppins',
-                                              letterSpacing: 0.0,
-                                            ),
-                                      ),
-                                    ),
-                                    Text(
-                                      valueOrDefault<String>(
-                                        eventPageEventsRecord.hour.toString(),
-                                        '00',
-                                      ),
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily: 'Poppins',
-                                            letterSpacing: 0.0,
-                                          ),
-                                    ),
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          2.0, 0.0, 2.0, 0.0),
-                                      child: Text(
-                                        ':',
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily: 'Poppins',
-                                              letterSpacing: 0.0,
-                                            ),
-                                      ),
-                                    ),
-                                    Text(
-                                      valueOrDefault<String>(
-                                        functions.zeroTo00(
-                                            eventPageEventsRecord.minute),
-                                        '00',
-                                      ),
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily: 'Poppins',
-                                            letterSpacing: 0.0,
-                                          ),
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
                           ),
                           if (eventPageEventsRecord.sportValue != 'sports.meca')
                             Padding(
@@ -872,7 +882,7 @@ class _EventPageWidgetState extends State<EventPageWidget> {
 
                                       return Container(
                                         width: 160.0,
-                                        height: 80.0,
+                                        height: 110.0,
                                         decoration: BoxDecoration(
                                           color: FlutterFlowTheme.of(context)
                                               .primaryBackground,
@@ -1355,9 +1365,6 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                                   ],
                                                 ),
                                               if ((eventPageEventsRecord
-                                                          .sportValue ==
-                                                      'football') &&
-                                                  (eventPageEventsRecord
                                                           .leagueValue !=
                                                       'autres') &&
                                                   (eventPageEventsRecord
@@ -1497,6 +1504,47 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                                           ),
                                                     ),
                                                   ],
+                                                ),
+                                              if ((eventPageEventsRecord
+                                                          .seenScore ==
+                                                      true) &&
+                                                  (eventPageEventsRecord
+                                                          .sportValue !=
+                                                      'sports.meca'))
+                                                Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 5.0, 0.0, 0.0),
+                                                  child: Row(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .center,
+                                                    children: [
+                                                      Align(
+                                                        alignment:
+                                                            AlignmentDirectional(
+                                                                0.0, 0.0),
+                                                        child: Text(
+                                                          eventPageEventsRecord
+                                                              .scoreDom
+                                                              .toString(),
+                                                          textAlign:
+                                                              TextAlign.end,
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .labelMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Poppins',
+                                                                letterSpacing:
+                                                                    0.0,
+                                                              ),
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ),
                                                 ),
                                             ],
                                           ),
@@ -1855,7 +1903,7 @@ class _EventPageWidgetState extends State<EventPageWidget> {
 
                                       return Container(
                                         width: 160.0,
-                                        height: 80.0,
+                                        height: 110.0,
                                         decoration: BoxDecoration(
                                           color: FlutterFlowTheme.of(context)
                                               .primaryBackground,
@@ -2338,9 +2386,6 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                                   ],
                                                 ),
                                               if ((eventPageEventsRecord
-                                                          .sportValue ==
-                                                      'football') &&
-                                                  (eventPageEventsRecord
                                                           .leagueValue !=
                                                       'autres') &&
                                                   (eventPageEventsRecord
@@ -2481,69 +2526,52 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                                     ),
                                                   ],
                                                 ),
+                                              if ((eventPageEventsRecord
+                                                          .seenScore ==
+                                                      true) &&
+                                                  (eventPageEventsRecord
+                                                          .sportValue !=
+                                                      'sports.meca'))
+                                                Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 5.0, 0.0, 0.0),
+                                                  child: Row(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .center,
+                                                    children: [
+                                                      Align(
+                                                        alignment:
+                                                            AlignmentDirectional(
+                                                                0.0, 0.0),
+                                                        child: Text(
+                                                          eventPageEventsRecord
+                                                              .scoreExt
+                                                              .toString(),
+                                                          textAlign:
+                                                              TextAlign.end,
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .labelMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Poppins',
+                                                                letterSpacing:
+                                                                    0.0,
+                                                              ),
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ),
                                             ],
                                           ),
                                         ),
                                       );
                                     },
-                                  ),
-                                ],
-                              ),
-                            ),
-                          if ((eventPageEventsRecord.seenScore == true) &&
-                              (eventPageEventsRecord.sportValue !=
-                                  'sports.meca'))
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 5.0, 0.0, 0.0),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Container(
-                                    width: 160.0,
-                                    height: 30.0,
-                                    decoration: BoxDecoration(
-                                      color: FlutterFlowTheme.of(context)
-                                          .alternate,
-                                    ),
-                                    child: Align(
-                                      alignment: AlignmentDirectional(0.0, 0.0),
-                                      child: Text(
-                                        eventPageEventsRecord.scoreDom
-                                            .toString(),
-                                        textAlign: TextAlign.end,
-                                        style: FlutterFlowTheme.of(context)
-                                            .labelMedium
-                                            .override(
-                                              fontFamily: 'Poppins',
-                                              letterSpacing: 0.0,
-                                            ),
-                                      ),
-                                    ),
-                                  ),
-                                  Container(
-                                    width: 160.0,
-                                    height: 30.0,
-                                    decoration: BoxDecoration(
-                                      color: FlutterFlowTheme.of(context)
-                                          .alternate,
-                                    ),
-                                    child: Align(
-                                      alignment: AlignmentDirectional(0.0, 0.0),
-                                      child: Text(
-                                        eventPageEventsRecord.scoreExt
-                                            .toString(),
-                                        textAlign: TextAlign.end,
-                                        style: FlutterFlowTheme.of(context)
-                                            .labelMedium
-                                            .override(
-                                              fontFamily: 'Poppins',
-                                              letterSpacing: 0.0,
-                                            ),
-                                      ),
-                                    ),
                                   ),
                                 ],
                               ),
@@ -2561,47 +2589,52 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                           Column(
                             mainAxisSize: MainAxisSize.max,
                             children: [
-                              if (valueOrDefault<bool>(
-                                      currentUserDocument?.adult, false) ==
-                                  false)
-                                Align(
-                                  alignment: AlignmentDirectional(0.0, 0.0),
-                                  child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 3.0, 0.0, 0.0),
-                                    child: AuthUserStreamWidget(
-                                      builder: (context) => Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          InkWell(
-                                            splashColor: Colors.transparent,
-                                            focusColor: Colors.transparent,
-                                            hoverColor: Colors.transparent,
-                                            highlightColor: Colors.transparent,
-                                            onTap: () async {
-                                              context.pushNamed(
-                                                MyEditProfilWidget.routeName,
-                                                extra: <String, dynamic>{
-                                                  kTransitionInfoKey:
-                                                      TransitionInfo(
-                                                    hasTransition: true,
-                                                    transitionType:
-                                                        PageTransitionType
-                                                            .bottomToTop,
-                                                    duration: Duration(
-                                                        milliseconds: 600),
-                                                  ),
+                              Column(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  if (valueOrDefault<bool>(
+                                          currentUserDocument?.adult, false) ==
+                                      false)
+                                    Align(
+                                      alignment: AlignmentDirectional(0.0, 0.0),
+                                      child: Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 3.0, 0.0, 0.0),
+                                        child: AuthUserStreamWidget(
+                                          builder: (context) => Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              InkWell(
+                                                splashColor: Colors.transparent,
+                                                focusColor: Colors.transparent,
+                                                hoverColor: Colors.transparent,
+                                                highlightColor:
+                                                    Colors.transparent,
+                                                onTap: () async {
+                                                  context.pushNamed(
+                                                    MyEditProfilWidget
+                                                        .routeName,
+                                                    extra: <String, dynamic>{
+                                                      kTransitionInfoKey:
+                                                          TransitionInfo(
+                                                        hasTransition: true,
+                                                        transitionType:
+                                                            PageTransitionType
+                                                                .bottomToTop,
+                                                        duration: Duration(
+                                                            milliseconds: 600),
+                                                      ),
+                                                    },
+                                                  );
                                                 },
-                                              );
-                                            },
-                                            child: Text(
-                                              'Vous devez avoir \n+ de 18 ans pour parier.\nAjoutez votre date d\'anniversaire',
-                                              textAlign: TextAlign.center,
-                                              maxLines: 3,
-                                              style:
-                                                  FlutterFlowTheme.of(context)
+                                                child: Text(
+                                                  'Vous devez avoir \n+ de 18 ans pour parier.\nAjoutez votre date d\'anniversaire',
+                                                  textAlign: TextAlign.center,
+                                                  maxLines: 3,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
                                                       .labelSmall
                                                       .override(
                                                         fontFamily: 'Poppins',
@@ -2612,518 +2645,646 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                                         letterSpacing: 0.0,
                                                         lineHeight: 1.0,
                                                       ),
-                                            ),
-                                          ),
-                                          Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    10.0, 0.0, 0.0, 0.0),
-                                            child: InkWell(
-                                              splashColor: Colors.transparent,
-                                              focusColor: Colors.transparent,
-                                              hoverColor: Colors.transparent,
-                                              highlightColor:
-                                                  Colors.transparent,
-                                              onTap: () async {
-                                                context.pushNamed(
-                                                  MyEditProfilWidget.routeName,
-                                                  extra: <String, dynamic>{
-                                                    kTransitionInfoKey:
-                                                        TransitionInfo(
-                                                      hasTransition: true,
-                                                      transitionType:
-                                                          PageTransitionType
-                                                              .bottomToTop,
-                                                      duration: Duration(
-                                                          milliseconds: 600),
-                                                    ),
+                                                ),
+                                              ),
+                                              Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        10.0, 0.0, 0.0, 0.0),
+                                                child: InkWell(
+                                                  splashColor:
+                                                      Colors.transparent,
+                                                  focusColor:
+                                                      Colors.transparent,
+                                                  hoverColor:
+                                                      Colors.transparent,
+                                                  highlightColor:
+                                                      Colors.transparent,
+                                                  onTap: () async {
+                                                    context.pushNamed(
+                                                      MyEditProfilWidget
+                                                          .routeName,
+                                                      extra: <String, dynamic>{
+                                                        kTransitionInfoKey:
+                                                            TransitionInfo(
+                                                          hasTransition: true,
+                                                          transitionType:
+                                                              PageTransitionType
+                                                                  .bottomToTop,
+                                                          duration: Duration(
+                                                              milliseconds:
+                                                                  600),
+                                                        ),
+                                                      },
+                                                    );
                                                   },
-                                                );
-                                              },
-                                              child: Icon(
-                                                Icons.edit_calendar,
-                                                color: valueOrDefault<Color>(
-                                                  currentUserDocument?.color1,
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondaryText,
-                                                ),
-                                                size: 30.0,
-                                              ),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              if ((valueOrDefault<bool>(
-                                          currentUserDocument?.helpNav,
-                                          false) ==
-                                      true) &&
-                                  (eventPageEventsRecord.statut == true))
-                                Align(
-                                  alignment: AlignmentDirectional(0.0, 0.0),
-                                  child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 3.0, 0.0, 0.0),
-                                    child: AuthUserStreamWidget(
-                                      builder: (context) => Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.end,
-                                        children: [
-                                          Text(
-                                            'Cliquez sur le bouton de votre choix\npour configurer votre paris sportif.',
-                                            textAlign: TextAlign.end,
-                                            maxLines: 3,
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyMedium
-                                                .override(
-                                                  fontFamily: 'Poppins',
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primaryText,
-                                                  fontSize: 10.0,
-                                                  letterSpacing: 0.0,
-                                                  lineHeight: 1.0,
-                                                ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              if ((eventPageEventsRecord.statut == true) &&
-                                  (valueOrDefault<bool>(
-                                          currentUserDocument?.adult, false) ==
-                                      true))
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 10.0, 0.0, 0.0),
-                                  child: AuthUserStreamWidget(
-                                    builder: (context) =>
-                                        StreamBuilder<List<BetsRecord>>(
-                                      stream: queryBetsRecord(
-                                        parent: eventPageEventsRecord.reference,
-                                        queryBuilder: (betsRecord) =>
-                                            betsRecord.orderBy('created_time'),
-                                      ),
-                                      builder: (context, snapshot) {
-                                        // Customize what your widget looks like when it's loading.
-                                        if (!snapshot.hasData) {
-                                          return Center(
-                                            child: SizedBox(
-                                              width: 50.0,
-                                              height: 50.0,
-                                              child: CircularProgressIndicator(
-                                                valueColor:
-                                                    AlwaysStoppedAnimation<
-                                                        Color>(
-                                                  FlutterFlowTheme.of(context)
-                                                      .accent4,
+                                                  child: Icon(
+                                                    Icons.edit_calendar,
+                                                    color:
+                                                        valueOrDefault<Color>(
+                                                      currentUserDocument
+                                                          ?.color1,
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .secondaryText,
+                                                    ),
+                                                    size: 30.0,
+                                                  ),
                                                 ),
                                               ),
-                                            ),
-                                          );
-                                        }
-                                        List<BetsRecord>
-                                            columnBetsAVBetsRecordList =
-                                            snapshot.data!;
-
-                                        return Column(
-                                          mainAxisSize: MainAxisSize.max,
-                                          children: List.generate(
-                                              columnBetsAVBetsRecordList.length,
-                                              (columnBetsAVIndex) {
-                                            final columnBetsAVBetsRecord =
-                                                columnBetsAVBetsRecordList[
-                                                    columnBetsAVIndex];
-                                            return Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 5.0, 0.0, 5.0),
-                                              child: Row(
-                                                mainAxisSize: MainAxisSize.max,
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment
-                                                        .spaceBetween,
-                                                children: [
-                                                  Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(20.0, 0.0,
-                                                                0.0, 0.0),
-                                                    child: Text(
-                                                      columnBetsAVBetsRecord
-                                                          .choice,
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyMedium
-                                                          .override(
-                                                            fontFamily:
-                                                                'Poppins',
-                                                            letterSpacing: 0.0,
-                                                          ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  if ((valueOrDefault<bool>(
+                                              currentUserDocument?.helpNav,
+                                              false) ==
+                                          true) &&
+                                      (eventPageEventsRecord.statut == true))
+                                    Align(
+                                      alignment: AlignmentDirectional(0.0, 0.0),
+                                      child: Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 3.0, 0.0, 0.0),
+                                        child: AuthUserStreamWidget(
+                                          builder: (context) => Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.end,
+                                            children: [
+                                              Text(
+                                                'Cliquez sur le bouton de votre choix\npour configurer votre paris sportif.',
+                                                textAlign: TextAlign.end,
+                                                maxLines: 3,
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primaryText,
+                                                          fontSize: 10.0,
+                                                          letterSpacing: 0.0,
+                                                          lineHeight: 1.0,
+                                                        ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  if ((eventPageEventsRecord.statut == true) &&
+                                      (valueOrDefault<bool>(
+                                              currentUserDocument?.adult,
+                                              false) ==
+                                          true))
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 10.0, 0.0, 0.0),
+                                      child: AuthUserStreamWidget(
+                                        builder: (context) =>
+                                            StreamBuilder<List<BetsRecord>>(
+                                          stream: queryBetsRecord(
+                                            parent:
+                                                eventPageEventsRecord.reference,
+                                            queryBuilder: (betsRecord) =>
+                                                betsRecord
+                                                    .orderBy('created_time'),
+                                          ),
+                                          builder: (context, snapshot) {
+                                            // Customize what your widget looks like when it's loading.
+                                            if (!snapshot.hasData) {
+                                              return Center(
+                                                child: SizedBox(
+                                                  width: 50.0,
+                                                  height: 50.0,
+                                                  child:
+                                                      CircularProgressIndicator(
+                                                    valueColor:
+                                                        AlwaysStoppedAnimation<
+                                                            Color>(
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .accent4,
                                                     ),
                                                   ),
-                                                  Column(
+                                                ),
+                                              );
+                                            }
+                                            List<BetsRecord>
+                                                columnBetsAVBetsRecordList =
+                                                snapshot.data!;
+
+                                            return Column(
+                                              mainAxisSize: MainAxisSize.max,
+                                              children: List.generate(
+                                                  columnBetsAVBetsRecordList
+                                                      .length,
+                                                  (columnBetsAVIndex) {
+                                                final columnBetsAVBetsRecord =
+                                                    columnBetsAVBetsRecordList[
+                                                        columnBetsAVIndex];
+                                                return Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 5.0, 0.0, 5.0),
+                                                  child: Row(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .spaceBetween,
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment
+                                                            .start,
                                                     children: [
-                                                      if ((columnBetsAVBetsRecord
-                                                                  .choice ==
-                                                              'plus') ||
-                                                          (columnBetsAVBetsRecord
-                                                                  .choice ==
-                                                              'moins'))
-                                                        Text(
-                                                          valueOrDefault<
-                                                              String>(
-                                                            columnBetsAVBetsRecord
-                                                                .points,
-                                                            '00.0',
-                                                          ),
-                                                          maxLines: 2,
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Poppins',
-                                                                letterSpacing:
-                                                                    0.0,
-                                                              ),
-                                                        ),
-                                                      if (columnBetsAVBetsRecord
-                                                                  .first !=
-                                                              '')
-                                                        Text(
-                                                          valueOrDefault<
-                                                              String>(
-                                                            columnBetsAVBetsRecord
-                                                                .first,
-                                                            'first',
-                                                          ),
-                                                          maxLines: 2,
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Poppins',
-                                                                letterSpacing:
-                                                                    0.0,
-                                                              ),
-                                                        ),
-                                                      if (columnBetsAVBetsRecord
-                                                                  .podium !=
-                                                              '')
-                                                        Text(
-                                                          valueOrDefault<
-                                                              String>(
-                                                            columnBetsAVBetsRecord
-                                                                .podium,
-                                                            'podium',
-                                                          ),
-                                                          maxLines: 2,
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Poppins',
-                                                                letterSpacing:
-                                                                    0.0,
-                                                              ),
-                                                        ),
-                                                    ],
-                                                  ),
-                                                  Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                20.0, 0.0),
-                                                    child: FFButtonWidget(
-                                                      onPressed: () async {
-                                                        var cartRecordReference =
-                                                            CartRecord.createDoc(
-                                                                currentUserReference!);
-                                                        await cartRecordReference
-                                                            .set(
-                                                                createCartRecordData(
-                                                          bet:
+                                                      Column(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        crossAxisAlignment:
+                                                            CrossAxisAlignment
+                                                                .start,
+                                                        children: [
+                                                          Padding(
+                                                            padding:
+                                                                EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        10.0,
+                                                                        5.0,
+                                                                        0.0,
+                                                                        0.0),
+                                                            child: Text(
                                                               columnBetsAVBetsRecord
-                                                                  .reference,
-                                                          totalOdds:
-                                                              columnBetsAVBetsRecord
-                                                                  .odd,
-                                                        ));
-                                                        _model.cartRef = CartRecord
-                                                            .getDocumentFromData(
-                                                                createCartRecordData(
-                                                                  bet: columnBetsAVBetsRecord
-                                                                      .reference,
-                                                                  totalOdds:
-                                                                      columnBetsAVBetsRecord
-                                                                          .odd,
+                                                                  .choice,
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Poppins',
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                  ),
+                                                            ),
+                                                          ),
+                                                          Padding(
+                                                            padding:
+                                                                EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        10.0,
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0),
+                                                            child: Row(
+                                                              mainAxisSize:
+                                                                  MainAxisSize
+                                                                      .max,
+                                                              children: [
+                                                                Padding(
+                                                                  padding: EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          10.0,
+                                                                          0.0),
+                                                                  child: Icon(
+                                                                    Icons
+                                                                        .groups_sharp,
+                                                                    color: valueOrDefault<
+                                                                        Color>(
+                                                                      currentUserDocument
+                                                                          ?.color2,
+                                                                      FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .secondaryText,
+                                                                    ),
+                                                                    size: 24.0,
+                                                                  ),
                                                                 ),
-                                                                cartRecordReference);
-
-                                                        context.pushNamed(
-                                                          CartPageWidget
-                                                              .routeName,
-                                                          queryParameters: {
-                                                            'cartRef':
-                                                                serializeParam(
-                                                              _model.cartRef
-                                                                  ?.reference,
-                                                              ParamType
-                                                                  .DocumentReference,
+                                                                Text(
+                                                                  valueOrDefault<
+                                                                      String>(
+                                                                    columnBetsAVBetsRecord
+                                                                        .bettors
+                                                                        .length
+                                                                        .toString(),
+                                                                    '0',
+                                                                  ),
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Poppins',
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                      ),
+                                                                ),
+                                                              ],
                                                             ),
-                                                            'eventRef':
-                                                                serializeParam(
-                                                              widget.eventRef,
-                                                              ParamType
-                                                                  .DocumentReference,
-                                                            ),
-                                                          }.withoutNulls,
-                                                          extra: <String,
-                                                              dynamic>{
-                                                            kTransitionInfoKey:
-                                                                TransitionInfo(
-                                                              hasTransition:
-                                                                  true,
-                                                              transitionType:
-                                                                  PageTransitionType
-                                                                      .scale,
-                                                              alignment: Alignment
-                                                                  .bottomCenter,
-                                                              duration: Duration(
-                                                                  milliseconds:
-                                                                      600),
-                                                            ),
-                                                          },
-                                                        );
-
-                                                        safeSetState(() {});
-                                                      },
-                                                      text: formatNumber(
-                                                        columnBetsAVBetsRecord
-                                                            .odd,
-                                                        formatType:
-                                                            FormatType.decimal,
-                                                        decimalType: DecimalType
-                                                            .periodDecimal,
+                                                          ),
+                                                        ],
                                                       ),
-                                                      options: FFButtonOptions(
-                                                        height: 30.0,
+                                                      Padding(
                                                         padding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    12.0,
                                                                     0.0,
-                                                                    12.0,
+                                                                    5.0,
+                                                                    0.0,
                                                                     0.0),
-                                                        iconPadding:
+                                                        child: Column(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          children: [
+                                                            if ((columnBetsAVBetsRecord
+                                                                        .choice ==
+                                                                    'plus') ||
+                                                                (columnBetsAVBetsRecord
+                                                                        .choice ==
+                                                                    'moins'))
+                                                              Text(
+                                                                valueOrDefault<
+                                                                    String>(
+                                                                  columnBetsAVBetsRecord
+                                                                      .points,
+                                                                  '00.0',
+                                                                ),
+                                                                maxLines: 2,
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'Poppins',
+                                                                      letterSpacing:
+                                                                          0.0,
+                                                                    ),
+                                                              ),
+                                                            if (columnBetsAVBetsRecord
+                                                                        .first !=
+                                                                    '')
+                                                              Text(
+                                                                valueOrDefault<
+                                                                    String>(
+                                                                  columnBetsAVBetsRecord
+                                                                      .first,
+                                                                  'first',
+                                                                ),
+                                                                maxLines: 2,
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'Poppins',
+                                                                      letterSpacing:
+                                                                          0.0,
+                                                                    ),
+                                                              ),
+                                                            if (columnBetsAVBetsRecord
+                                                                        .podium !=
+                                                                    '')
+                                                              Text(
+                                                                valueOrDefault<
+                                                                    String>(
+                                                                  columnBetsAVBetsRecord
+                                                                      .podium,
+                                                                  'podium',
+                                                                ),
+                                                                maxLines: 2,
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'Poppins',
+                                                                      letterSpacing:
+                                                                          0.0,
+                                                                    ),
+                                                              ),
+                                                          ],
+                                                        ),
+                                                      ),
+                                                      Padding(
+                                                        padding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     0.0,
-                                                                    0.0,
+                                                                    20.0,
                                                                     0.0),
-                                                        color: valueOrDefault<
-                                                            Color>(
-                                                          currentUserDocument
-                                                              ?.color1,
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .secondaryText,
+                                                        child: FFButtonWidget(
+                                                          onPressed: () async {
+                                                            var cartRecordReference =
+                                                                CartRecord
+                                                                    .createDoc(
+                                                                        currentUserReference!);
+                                                            await cartRecordReference
+                                                                .set(
+                                                                    createCartRecordData(
+                                                              bet: columnBetsAVBetsRecord
+                                                                  .reference,
+                                                              totalOdds:
+                                                                  columnBetsAVBetsRecord
+                                                                      .odd,
+                                                            ));
+                                                            _model.cartRef = CartRecord
+                                                                .getDocumentFromData(
+                                                                    createCartRecordData(
+                                                                      bet: columnBetsAVBetsRecord
+                                                                          .reference,
+                                                                      totalOdds:
+                                                                          columnBetsAVBetsRecord
+                                                                              .odd,
+                                                                    ),
+                                                                    cartRecordReference);
+
+                                                            context.pushNamed(
+                                                              CartPageWidget
+                                                                  .routeName,
+                                                              queryParameters: {
+                                                                'cartRef':
+                                                                    serializeParam(
+                                                                  _model.cartRef
+                                                                      ?.reference,
+                                                                  ParamType
+                                                                      .DocumentReference,
+                                                                ),
+                                                                'eventRef':
+                                                                    serializeParam(
+                                                                  widget
+                                                                      .eventRef,
+                                                                  ParamType
+                                                                      .DocumentReference,
+                                                                ),
+                                                              }.withoutNulls,
+                                                              extra: <String,
+                                                                  dynamic>{
+                                                                kTransitionInfoKey:
+                                                                    TransitionInfo(
+                                                                  hasTransition:
+                                                                      true,
+                                                                  transitionType:
+                                                                      PageTransitionType
+                                                                          .scale,
+                                                                  alignment:
+                                                                      Alignment
+                                                                          .bottomCenter,
+                                                                  duration: Duration(
+                                                                      milliseconds:
+                                                                          600),
+                                                                ),
+                                                              },
+                                                            );
+
+                                                            safeSetState(() {});
+                                                          },
+                                                          text: formatNumber(
+                                                            columnBetsAVBetsRecord
+                                                                .odd,
+                                                            formatType:
+                                                                FormatType
+                                                                    .decimal,
+                                                            decimalType:
+                                                                DecimalType
+                                                                    .periodDecimal,
+                                                          ),
+                                                          options:
+                                                              FFButtonOptions(
+                                                            height: 30.0,
+                                                            padding:
+                                                                EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        12.0,
+                                                                        0.0,
+                                                                        12.0,
+                                                                        0.0),
+                                                            iconPadding:
+                                                                EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0),
+                                                            color:
+                                                                valueOrDefault<
+                                                                    Color>(
+                                                              currentUserDocument
+                                                                  ?.color1,
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .secondaryText,
+                                                            ),
+                                                            textStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelMedium
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'Poppins',
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primaryBackground,
+                                                                      letterSpacing:
+                                                                          0.0,
+                                                                    ),
+                                                            elevation: 3.0,
+                                                            borderSide:
+                                                                BorderSide(
+                                                              color: Colors
+                                                                  .transparent,
+                                                              width: 1.0,
+                                                            ),
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        40.0),
+                                                            hoverColor:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .success,
+                                                            hoverTextColor:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primary,
+                                                          ),
                                                         ),
-                                                        textStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .labelMedium
+                                                      ),
+                                                    ],
+                                                  ),
+                                                );
+                                              }),
+                                            );
+                                          },
+                                        ),
+                                      ),
+                                    ),
+                                  if (eventPageEventsRecord.statut == false)
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 10.0, 0.0, 0.0),
+                                      child: StreamBuilder<List<BetsRecord>>(
+                                        stream: queryBetsRecord(
+                                          parent:
+                                              eventPageEventsRecord.reference,
+                                          queryBuilder: (betsRecord) =>
+                                              betsRecord
+                                                  .orderBy('created_time'),
+                                        ),
+                                        builder: (context, snapshot) {
+                                          // Customize what your widget looks like when it's loading.
+                                          if (!snapshot.hasData) {
+                                            return Center(
+                                              child: SizedBox(
+                                                width: 50.0,
+                                                height: 50.0,
+                                                child:
+                                                    CircularProgressIndicator(
+                                                  valueColor:
+                                                      AlwaysStoppedAnimation<
+                                                          Color>(
+                                                    FlutterFlowTheme.of(context)
+                                                        .accent4,
+                                                  ),
+                                                ),
+                                              ),
+                                            );
+                                          }
+                                          List<BetsRecord>
+                                              columnBetsTBetsRecordList =
+                                              snapshot.data!;
+
+                                          return Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: List.generate(
+                                                columnBetsTBetsRecordList
+                                                    .length,
+                                                (columnBetsTIndex) {
+                                              final columnBetsTBetsRecord =
+                                                  columnBetsTBetsRecordList[
+                                                      columnBetsTIndex];
+                                              return Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 5.0, 0.0, 5.0),
+                                                child: Row(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment
+                                                          .spaceBetween,
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.start,
+                                                  children: [
+                                                    Column(
+                                                      mainAxisSize:
+                                                          MainAxisSize.max,
+                                                      crossAxisAlignment:
+                                                          CrossAxisAlignment
+                                                              .start,
+                                                      children: [
+                                                        Padding(
+                                                          padding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      10.0,
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0),
+                                                          child: Text(
+                                                            columnBetsTBetsRecord
+                                                                .choice,
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyMedium
                                                                 .override(
                                                                   fontFamily:
                                                                       'Poppins',
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primaryBackground,
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),
-                                                        elevation: 3.0,
-                                                        borderSide: BorderSide(
-                                                          color: Colors
-                                                              .transparent,
-                                                          width: 1.0,
+                                                          ),
                                                         ),
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(40.0),
-                                                        hoverColor:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .success,
-                                                        hoverTextColor:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primary,
-                                                      ),
+                                                        Padding(
+                                                          padding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      10.0,
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0),
+                                                          child: Row(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            children: [
+                                                              Padding(
+                                                                padding:
+                                                                    EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            10.0,
+                                                                            0.0),
+                                                                child:
+                                                                    AuthUserStreamWidget(
+                                                                  builder:
+                                                                      (context) =>
+                                                                          Icon(
+                                                                    Icons
+                                                                        .groups_sharp,
+                                                                    color: valueOrDefault<
+                                                                        Color>(
+                                                                      currentUserDocument
+                                                                          ?.color2,
+                                                                      FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .secondaryText,
+                                                                    ),
+                                                                    size: 24.0,
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                              Text(
+                                                                valueOrDefault<
+                                                                    String>(
+                                                                  columnBetsTBetsRecord
+                                                                      .bettors
+                                                                      .length
+                                                                      .toString(),
+                                                                  '0',
+                                                                ),
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'Poppins',
+                                                                      letterSpacing:
+                                                                          0.0,
+                                                                    ),
+                                                              ),
+                                                            ],
+                                                          ),
+                                                        ),
+                                                      ],
                                                     ),
-                                                  ),
-                                                ],
-                                              ),
-                                            );
-                                          }),
-                                        );
-                                      },
-                                    ),
-                                  ),
-                                ),
-                              if (eventPageEventsRecord.statut == false)
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 10.0, 0.0, 0.0),
-                                  child: StreamBuilder<List<BetsRecord>>(
-                                    stream: queryBetsRecord(
-                                      parent: eventPageEventsRecord.reference,
-                                      queryBuilder: (betsRecord) =>
-                                          betsRecord.orderBy('created_time'),
-                                    ),
-                                    builder: (context, snapshot) {
-                                      // Customize what your widget looks like when it's loading.
-                                      if (!snapshot.hasData) {
-                                        return Center(
-                                          child: SizedBox(
-                                            width: 50.0,
-                                            height: 50.0,
-                                            child: CircularProgressIndicator(
-                                              valueColor:
-                                                  AlwaysStoppedAnimation<Color>(
-                                                FlutterFlowTheme.of(context)
-                                                    .accent4,
-                                              ),
-                                            ),
-                                          ),
-                                        );
-                                      }
-                                      List<BetsRecord>
-                                          columnBetsTBetsRecordList =
-                                          snapshot.data!;
-
-                                      return Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        children: List.generate(
-                                            columnBetsTBetsRecordList.length,
-                                            (columnBetsTIndex) {
-                                          final columnBetsTBetsRecord =
-                                              columnBetsTBetsRecordList[
-                                                  columnBetsTIndex];
-                                          return Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 5.0, 0.0, 5.0),
-                                            child: Row(
-                                              mainAxisSize: MainAxisSize.max,
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment
-                                                      .spaceBetween,
-                                              children: [
-                                                Padding(
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          20.0, 0.0, 0.0, 0.0),
-                                                  child: Text(
-                                                    columnBetsTBetsRecord
-                                                        .choice,
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                  ),
-                                                ),
-                                                if ((columnBetsTBetsRecord
-                                                            .choice ==
-                                                        'plus') ||
-                                                    (columnBetsTBetsRecord
-                                                            .choice ==
-                                                        'moins'))
-                                                  Text(
-                                                    valueOrDefault<String>(
-                                                      columnBetsTBetsRecord
-                                                          .points,
-                                                      '00.0',
-                                                    ),
-                                                    maxLines: 2,
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                  ),
-                                                if (columnBetsTBetsRecord
-                                                            .first !=
-                                                        '')
-                                                  Text(
-                                                    valueOrDefault<String>(
-                                                      columnBetsTBetsRecord
-                                                          .first,
-                                                      'first',
-                                                    ),
-                                                    maxLines: 2,
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                  ),
-                                                if (columnBetsTBetsRecord
-                                                            .podium !=
-                                                        '')
-                                                  Text(
-                                                    valueOrDefault<String>(
-                                                      columnBetsTBetsRecord
-                                                          .podium,
-                                                      'podium',
-                                                    ),
-                                                    maxLines: 2,
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                  ),
-                                                Row(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  children: [
-                                                    Padding(
-                                                      padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  0.0,
-                                                                  0.0,
-                                                                  20.0,
-                                                                  0.0),
-                                                      child: Text(
-                                                        formatNumber(
+                                                    if ((columnBetsTBetsRecord
+                                                                .choice ==
+                                                            'plus') ||
+                                                        (columnBetsTBetsRecord
+                                                                .choice ==
+                                                            'moins'))
+                                                      Text(
+                                                        valueOrDefault<String>(
                                                           columnBetsTBetsRecord
-                                                              .odd,
-                                                          formatType: FormatType
-                                                              .decimal,
-                                                          decimalType:
-                                                              DecimalType
-                                                                  .automatic,
+                                                              .points,
+                                                          '00.0',
                                                         ),
+                                                        maxLines: 2,
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -3135,533 +3296,373 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                                                       0.0,
                                                                 ),
                                                       ),
-                                                    ),
+                                                    if (columnBetsTBetsRecord
+                                                                .first !=
+                                                            '')
+                                                      Text(
+                                                        valueOrDefault<String>(
+                                                          columnBetsTBetsRecord
+                                                              .first,
+                                                          'first',
+                                                        ),
+                                                        maxLines: 2,
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Poppins',
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
+                                                      ),
+                                                    if (columnBetsTBetsRecord
+                                                                .podium !=
+                                                            '')
+                                                      Text(
+                                                        valueOrDefault<String>(
+                                                          columnBetsTBetsRecord
+                                                              .podium,
+                                                          'podium',
+                                                        ),
+                                                        maxLines: 2,
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Poppins',
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
+                                                      ),
                                                     Row(
                                                       mainAxisSize:
                                                           MainAxisSize.max,
                                                       children: [
-                                                        if (columnBetsTBetsRecord
-                                                                .statut ==
-                                                            true)
-                                                          Padding(
-                                                            padding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        0.0,
-                                                                        0.0,
-                                                                        10.0,
-                                                                        0.0),
-                                                            child: Container(
-                                                              width: 25.0,
-                                                              height: 25.0,
-                                                              decoration:
-                                                                  BoxDecoration(
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .success,
-                                                                shape: BoxShape
-                                                                    .circle,
-                                                              ),
+                                                        Padding(
+                                                          padding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      0.0,
+                                                                      20.0,
+                                                                      0.0),
+                                                          child: Text(
+                                                            formatNumber(
+                                                              columnBetsTBetsRecord
+                                                                  .odd,
+                                                              formatType:
+                                                                  FormatType
+                                                                      .decimal,
+                                                              decimalType:
+                                                                  DecimalType
+                                                                      .automatic,
                                                             ),
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Poppins',
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
                                                           ),
-                                                        if (columnBetsTBetsRecord
-                                                                .statut ==
-                                                            false)
-                                                          Padding(
-                                                            padding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        0.0,
-                                                                        0.0,
-                                                                        10.0,
-                                                                        0.0),
-                                                            child: Container(
-                                                              width: 25.0,
-                                                              height: 25.0,
-                                                              decoration:
-                                                                  BoxDecoration(
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .error,
-                                                                shape: BoxShape
-                                                                    .circle,
+                                                        ),
+                                                        Row(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          children: [
+                                                            if (columnBetsTBetsRecord
+                                                                    .statut ==
+                                                                true)
+                                                              Padding(
+                                                                padding:
+                                                                    EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            10.0,
+                                                                            0.0),
+                                                                child:
+                                                                    Container(
+                                                                  width: 25.0,
+                                                                  height: 25.0,
+                                                                  decoration:
+                                                                      BoxDecoration(
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .success,
+                                                                    shape: BoxShape
+                                                                        .circle,
+                                                                  ),
+                                                                ),
                                                               ),
-                                                            ),
-                                                          ),
+                                                            if (columnBetsTBetsRecord
+                                                                    .statut ==
+                                                                false)
+                                                              Padding(
+                                                                padding:
+                                                                    EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            10.0,
+                                                                            0.0),
+                                                                child:
+                                                                    Container(
+                                                                  width: 25.0,
+                                                                  height: 25.0,
+                                                                  decoration:
+                                                                      BoxDecoration(
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .error,
+                                                                    shape: BoxShape
+                                                                        .circle,
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                          ],
+                                                        ),
                                                       ],
                                                     ),
                                                   ],
                                                 ),
-                                              ],
-                                            ),
+                                              );
+                                            }),
                                           );
-                                        }),
-                                      );
-                                    },
-                                  ),
-                                ),
-                              if ((valueOrDefault<bool>(
-                                          currentUserDocument?.helpNav,
-                                          false) ==
-                                      true) &&
-                                  (eventPageEventsRecord.points != '') &&
-                                  (eventPageEventsRecord.statut == true))
-                                Align(
-                                  alignment: AlignmentDirectional(0.0, 0.0),
-                                  child: AuthUserStreamWidget(
-                                    builder: (context) => Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          'Nombre total de ',
-                                          textAlign: TextAlign.center,
-                                          maxLines: 3,
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                fontFamily: 'Poppins',
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryText,
-                                                fontSize: 9.0,
-                                                letterSpacing: 0.0,
-                                                lineHeight: 1.0,
-                                              ),
-                                        ),
-                                        if (eventPageEventsRecord.sportValue ==
-                                            'football')
-                                          Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    3.0, 0.0, 0.0, 0.0),
-                                            child: Text(
-                                              'buts',
-                                              textAlign: TextAlign.center,
-                                              maxLines: 3,
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Poppins',
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primaryText,
-                                                        fontSize: 9.0,
-                                                        letterSpacing: 0.0,
-                                                        lineHeight: 1.0,
-                                                      ),
-                                            ),
-                                          ),
-                                        if (eventPageEventsRecord.sportValue ==
-                                            'hockey')
-                                          Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    3.0, 0.0, 0.0, 0.0),
-                                            child: Text(
-                                              'buts',
-                                              textAlign: TextAlign.center,
-                                              maxLines: 3,
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Poppins',
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primaryText,
-                                                        fontSize: 9.0,
-                                                        letterSpacing: 0.0,
-                                                        lineHeight: 1.0,
-                                                      ),
-                                            ),
-                                          ),
-                                        if (eventPageEventsRecord.sportValue ==
-                                            'baketball')
-                                          Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    3.0, 0.0, 0.0, 0.0),
-                                            child: Text(
-                                              'points',
-                                              textAlign: TextAlign.center,
-                                              maxLines: 3,
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Poppins',
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primaryText,
-                                                        fontSize: 9.0,
-                                                        letterSpacing: 0.0,
-                                                        lineHeight: 1.0,
-                                                      ),
-                                            ),
-                                          ),
-                                        if (eventPageEventsRecord.sportValue ==
-                                            'tennis')
-                                          Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    3.0, 0.0, 0.0, 0.0),
-                                            child: Text(
-                                              'sets',
-                                              textAlign: TextAlign.center,
-                                              maxLines: 3,
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Poppins',
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primaryText,
-                                                        fontSize: 9.0,
-                                                        letterSpacing: 0.0,
-                                                        lineHeight: 1.0,
-                                                      ),
-                                            ),
-                                          ),
-                                        if (eventPageEventsRecord.sportValue ==
-                                            'mma')
-                                          Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    3.0, 0.0, 0.0, 0.0),
-                                            child: Text(
-                                              'rounds',
-                                              textAlign: TextAlign.center,
-                                              maxLines: 3,
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Poppins',
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primaryText,
-                                                        fontSize: 9.0,
-                                                        letterSpacing: 0.0,
-                                                        lineHeight: 1.0,
-                                                      ),
-                                            ),
-                                          ),
-                                        if (eventPageEventsRecord.sportValue ==
-                                            'boxe')
-                                          Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    3.0, 0.0, 0.0, 0.0),
-                                            child: Text(
-                                              'rounds',
-                                              textAlign: TextAlign.center,
-                                              maxLines: 3,
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Poppins',
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primaryText,
-                                                        fontSize: 9.0,
-                                                        letterSpacing: 0.0,
-                                                        lineHeight: 1.0,
-                                                      ),
-                                            ),
-                                          ),
-                                        Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  3.0, 0.0, 0.0, 0.0),
-                                          child: Text(
-                                            'dans la rencontre.',
-                                            textAlign: TextAlign.center,
-                                            maxLines: 3,
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyMedium
-                                                .override(
-                                                  fontFamily: 'Poppins',
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primaryText,
-                                                  fontSize: 9.0,
-                                                  letterSpacing: 0.0,
-                                                  lineHeight: 1.0,
-                                                ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              AuthUserStreamWidget(
-                                builder: (context) => Divider(
-                                  thickness: 2.0,
-                                  color: valueOrDefault<Color>(
-                                    currentUserDocument?.color2,
-                                    FlutterFlowTheme.of(context)
-                                        .secondaryBackground,
-                                  ),
-                                ),
-                              ),
-                              Align(
-                                alignment: AlignmentDirectional(-1.0, 0.0),
-                                child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      20.0, 10.0, 0.0, 0.0),
-                                  child: Text(
-                                    'Statistiques parieurs',
-                                    maxLines: 1,
-                                    style: FlutterFlowTheme.of(context)
-                                        .headlineLarge
-                                        .override(
-                                          fontFamily: 'Montserrat',
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryText,
-                                          letterSpacing: 0.0,
-                                        ),
-                                  ),
-                                ),
-                              ),
-                              if ((valueOrDefault<bool>(
-                                          currentUserDocument?.helpNav,
-                                          false) ==
-                                      true) &&
-                                  (eventPageEventsRecord.statut == true))
-                                Align(
-                                  alignment: AlignmentDirectional(0.0, 0.0),
-                                  child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 3.0, 0.0, 0.0),
-                                    child: AuthUserStreamWidget(
-                                      builder: (context) => Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.end,
-                                        children: [
-                                          Text(
-                                            'Nombres de parieurs',
-                                            textAlign: TextAlign.center,
-                                            maxLines: 3,
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyMedium
-                                                .override(
-                                                  fontFamily: 'Poppins',
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primaryText,
-                                                  fontSize: 10.0,
-                                                  letterSpacing: 0.0,
-                                                  lineHeight: 1.0,
-                                                ),
-                                          ),
-                                        ],
+                                        },
                                       ),
                                     ),
-                                  ),
-                                ),
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 10.0, 0.0, 0.0),
-                                child: StreamBuilder<List<BetsRecord>>(
-                                  stream: queryBetsRecord(
-                                    parent: eventPageEventsRecord.reference,
-                                    queryBuilder: (betsRecord) =>
-                                        betsRecord.orderBy('created_time'),
-                                  ),
-                                  builder: (context, snapshot) {
-                                    // Customize what your widget looks like when it's loading.
-                                    if (!snapshot.hasData) {
-                                      return Center(
-                                        child: SizedBox(
-                                          width: 50.0,
-                                          height: 50.0,
-                                          child: CircularProgressIndicator(
-                                            valueColor:
-                                                AlwaysStoppedAnimation<Color>(
-                                              FlutterFlowTheme.of(context)
-                                                  .accent4,
+                                  if ((valueOrDefault<bool>(
+                                              currentUserDocument?.helpNav,
+                                              false) ==
+                                          true) &&
+                                      (eventPageEventsRecord.points != '') &&
+                                      (eventPageEventsRecord.statut == true))
+                                    Align(
+                                      alignment: AlignmentDirectional(0.0, 0.0),
+                                      child: AuthUserStreamWidget(
+                                        builder: (context) => Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.start,
+                                          children: [
+                                            Text(
+                                              'Nombre total de ',
+                                              textAlign: TextAlign.center,
+                                              maxLines: 3,
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primaryText,
+                                                        fontSize: 9.0,
+                                                        letterSpacing: 0.0,
+                                                        lineHeight: 1.0,
+                                                      ),
                                             ),
-                                          ),
-                                        ),
-                                      );
-                                    }
-                                    List<BetsRecord>
-                                        columnStatsBetsBetsRecordList =
-                                        snapshot.data!;
-
-                                    return Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: List.generate(
-                                          columnStatsBetsBetsRecordList.length,
-                                          (columnStatsBetsIndex) {
-                                        final columnStatsBetsBetsRecord =
-                                            columnStatsBetsBetsRecordList[
-                                                columnStatsBetsIndex];
-                                        return Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 5.0, 0.0, 5.0),
-                                          child: Row(
-                                            mainAxisSize: MainAxisSize.max,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceBetween,
-                                            children: [
+                                            if (eventPageEventsRecord
+                                                    .sportValue ==
+                                                'football')
                                               Padding(
                                                 padding: EdgeInsetsDirectional
                                                     .fromSTEB(
-                                                        20.0, 0.0, 0.0, 0.0),
+                                                        3.0, 0.0, 0.0, 0.0),
                                                 child: Text(
-                                                  columnStatsBetsBetsRecord
-                                                      .choice,
+                                                  'buts',
+                                                  textAlign: TextAlign.center,
+                                                  maxLines: 3,
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodyMedium
                                                       .override(
                                                         fontFamily: 'Poppins',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primaryText,
+                                                        fontSize: 9.0,
                                                         letterSpacing: 0.0,
+                                                        lineHeight: 1.0,
                                                       ),
                                                 ),
                                               ),
-                                              if ((columnStatsBetsBetsRecord
-                                                          .choice ==
-                                                      'plus') ||
-                                                  (columnStatsBetsBetsRecord
-                                                          .choice ==
-                                                      'moins'))
-                                                Text(
-                                                  valueOrDefault<String>(
-                                                    columnStatsBetsBetsRecord
-                                                        .points,
-                                                    '00.0',
-                                                  ),
-                                                  maxLines: 2,
+                                            if (eventPageEventsRecord
+                                                    .sportValue ==
+                                                'hockey')
+                                              Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        3.0, 0.0, 0.0, 0.0),
+                                                child: Text(
+                                                  'buts',
+                                                  textAlign: TextAlign.center,
+                                                  maxLines: 3,
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodyMedium
                                                       .override(
                                                         fontFamily: 'Poppins',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primaryText,
+                                                        fontSize: 9.0,
                                                         letterSpacing: 0.0,
+                                                        lineHeight: 1.0,
                                                       ),
                                                 ),
-                                              if (columnStatsBetsBetsRecord
-                                                          .first !=
-                                                      '')
-                                                Text(
-                                                  valueOrDefault<String>(
-                                                    columnStatsBetsBetsRecord
-                                                        .first,
-                                                    'first',
-                                                  ),
-                                                  maxLines: 2,
+                                              ),
+                                            if (eventPageEventsRecord
+                                                    .sportValue ==
+                                                'baketball')
+                                              Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        3.0, 0.0, 0.0, 0.0),
+                                                child: Text(
+                                                  'points',
+                                                  textAlign: TextAlign.center,
+                                                  maxLines: 3,
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodyMedium
                                                       .override(
                                                         fontFamily: 'Poppins',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primaryText,
+                                                        fontSize: 9.0,
                                                         letterSpacing: 0.0,
+                                                        lineHeight: 1.0,
                                                       ),
                                                 ),
-                                              if (columnStatsBetsBetsRecord
-                                                          .podium !=
-                                                      '')
-                                                Text(
-                                                  valueOrDefault<String>(
-                                                    columnStatsBetsBetsRecord
-                                                        .podium,
-                                                    'podium',
-                                                  ),
-                                                  maxLines: 2,
+                                              ),
+                                            if (eventPageEventsRecord
+                                                    .sportValue ==
+                                                'tennis')
+                                              Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        3.0, 0.0, 0.0, 0.0),
+                                                child: Text(
+                                                  'sets',
+                                                  textAlign: TextAlign.center,
+                                                  maxLines: 3,
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodyMedium
                                                       .override(
                                                         fontFamily: 'Poppins',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primaryText,
+                                                        fontSize: 9.0,
                                                         letterSpacing: 0.0,
+                                                        lineHeight: 1.0,
                                                       ),
                                                 ),
-                                              Row(
-                                                mainAxisSize: MainAxisSize.max,
-                                                children: [
-                                                  Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                10.0, 0.0),
-                                                    child: Text(
-                                                      valueOrDefault<String>(
-                                                        columnStatsBetsBetsRecord
-                                                            .bettors.length
-                                                            .toString(),
-                                                        '0',
+                                              ),
+                                            if (eventPageEventsRecord
+                                                    .sportValue ==
+                                                'mma')
+                                              Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        3.0, 0.0, 0.0, 0.0),
+                                                child: Text(
+                                                  'rounds',
+                                                  textAlign: TextAlign.center,
+                                                  maxLines: 3,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primaryText,
+                                                        fontSize: 9.0,
+                                                        letterSpacing: 0.0,
+                                                        lineHeight: 1.0,
                                                       ),
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyMedium
-                                                          .override(
-                                                            fontFamily:
-                                                                'Poppins',
-                                                            letterSpacing: 0.0,
-                                                          ),
-                                                    ),
-                                                  ),
-                                                  Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                20.0, 0.0),
-                                                    child: AuthUserStreamWidget(
-                                                      builder: (context) =>
-                                                          Icon(
-                                                        Icons.groups_sharp,
-                                                        color: valueOrDefault<
-                                                            Color>(
-                                                          currentUserDocument
-                                                              ?.color2,
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .secondaryText,
+                                                ),
+                                              ),
+                                            if (eventPageEventsRecord
+                                                    .sportValue ==
+                                                'boxe')
+                                              Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        3.0, 0.0, 0.0, 0.0),
+                                                child: Text(
+                                                  'rounds',
+                                                  textAlign: TextAlign.center,
+                                                  maxLines: 3,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primaryText,
+                                                        fontSize: 9.0,
+                                                        letterSpacing: 0.0,
+                                                        lineHeight: 1.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(3.0, 0.0, 0.0, 0.0),
+                                              child: Text(
+                                                'dans la rencontre.',
+                                                textAlign: TextAlign.center,
+                                                maxLines: 3,
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primaryText,
+                                                          fontSize: 9.0,
+                                                          letterSpacing: 0.0,
+                                                          lineHeight: 1.0,
                                                         ),
-                                                        size: 24.0,
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ],
                                               ),
-                                            ],
-                                          ),
-                                        );
-                                      }),
-                                    );
-                                  },
-                                ),
-                              ),
-                              AuthUserStreamWidget(
-                                builder: (context) => Divider(
-                                  thickness: 2.0,
-                                  color: valueOrDefault<Color>(
-                                    currentUserDocument?.color2,
-                                    FlutterFlowTheme.of(context)
-                                        .secondaryBackground,
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  AuthUserStreamWidget(
+                                    builder: (context) => Divider(
+                                      thickness: 2.0,
+                                      color: valueOrDefault<Color>(
+                                        currentUserDocument?.color2,
+                                        FlutterFlowTheme.of(context)
+                                            .secondaryBackground,
+                                      ),
+                                    ),
                                   ),
-                                ),
+                                ],
                               ),
-                            ],
-                          ),
-                          Column(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
                               Align(
                                 alignment: AlignmentDirectional(-1.0, 0.0),
                                 child: Padding(

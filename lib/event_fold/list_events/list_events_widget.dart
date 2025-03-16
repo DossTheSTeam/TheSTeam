@@ -1214,7 +1214,7 @@ class _ListEventsWidgetState extends State<ListEventsWidget> {
                                                           padding:
                                                               EdgeInsetsDirectional
                                                                   .fromSTEB(
-                                                                      40.0,
+                                                                      10.0,
                                                                       0.0,
                                                                       10.0,
                                                                       0.0),
@@ -1378,30 +1378,6 @@ class _ListEventsWidgetState extends State<ListEventsWidget> {
                                           Column(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
-                                              if (columnEventsEventsRecord
-                                                      .sportValue ==
-                                                  'sports.meca')
-                                                Align(
-                                                  alignment:
-                                                      AlignmentDirectional(
-                                                          0.0, 0.0),
-                                                  child: Text(
-                                                    columnEventsEventsRecord
-                                                        .week,
-                                                    textAlign: TextAlign.start,
-                                                    maxLines: 2,
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .labelSmall
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryText,
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                  ),
-                                                ),
                                               Padding(
                                                 padding: EdgeInsetsDirectional
                                                     .fromSTEB(
@@ -1843,6 +1819,40 @@ class _ListEventsWidgetState extends State<ListEventsWidget> {
                                                       ),
                                                     ),
                                                   ],
+                                                ),
+                                              if (columnEventsEventsRecord
+                                                      .sportValue ==
+                                                  'sports.meca')
+                                                Align(
+                                                  alignment:
+                                                      AlignmentDirectional(
+                                                          0.0, 0.0),
+                                                  child: Padding(
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(0.0, 5.0,
+                                                                0.0, 0.0),
+                                                    child: Text(
+                                                      columnEventsEventsRecord
+                                                          .week,
+                                                      textAlign:
+                                                          TextAlign.start,
+                                                      maxLines: 2,
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelSmall
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Poppins',
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .secondaryText,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                              ),
+                                                    ),
+                                                  ),
                                                 ),
                                               Divider(
                                                 thickness: 1.0,

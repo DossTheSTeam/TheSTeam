@@ -1,5 +1,4 @@
 import '/auth/firebase_auth/auth_util.dart';
-import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'dart:ui';
@@ -83,426 +82,257 @@ class _AudioFanConferenceWidgetState extends State<AudioFanConferenceWidget> {
                     topRight: Radius.circular(16.0),
                   ),
                 ),
-                child: StreamBuilder<List<TeamConferenceRecord>>(
-                  stream: queryTeamConferenceRecord(
-                    parent: widget.teamRef,
-                    singleRecord: true,
-                  ),
-                  builder: (context, snapshot) {
-                    // Customize what your widget looks like when it's loading.
-                    if (!snapshot.hasData) {
-                      return Center(
-                        child: SizedBox(
-                          width: 50.0,
-                          height: 50.0,
-                          child: CircularProgressIndicator(
-                            valueColor: AlwaysStoppedAnimation<Color>(
-                              FlutterFlowTheme.of(context).accent4,
-                            ),
-                          ),
-                        ),
-                      );
-                    }
-                    List<TeamConferenceRecord> columnTeamConferenceRecordList =
-                        snapshot.data!;
-                    // Return an empty Container when the item does not exist.
-                    if (snapshot.data!.isEmpty) {
-                      return Container();
-                    }
-                    final columnTeamConferenceRecord =
-                        columnTeamConferenceRecordList.isNotEmpty
-                            ? columnTeamConferenceRecordList.first
-                            : null;
-
-                    return Column(
+                child: Column(
+                  mainAxisSize: MainAxisSize.max,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
                       mainAxisSize: MainAxisSize.max,
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Container(
-                              width: 60.0,
-                              height: 3.0,
-                              decoration: BoxDecoration(
-                                color: FlutterFlowTheme.of(context).alternate,
-                                borderRadius: BorderRadius.circular(4.0),
-                              ),
-                            ),
-                          ],
-                        ),
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              15.0, 0.0, 10.0, 0.0),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              AuthUserStreamWidget(
-                                builder: (context) => InkWell(
-                                  splashColor: Colors.transparent,
-                                  focusColor: Colors.transparent,
-                                  hoverColor: Colors.transparent,
-                                  highlightColor: Colors.transparent,
-                                  onTap: () async {
-                                    await currentUserReference!
-                                        .update(createUsersRecordData(
-                                      audioTeam: widget.teamRef,
-                                    ));
-
-                                    await columnTeamConferenceRecord!.reference
-                                        .update({
-                                      ...createTeamConferenceRecordData(
-                                        audio:
-                                            columnTeamConferenceRecord.audio,
-                                      ),
-                                      ...mapToFirestore(
-                                        {
-                                          'fans': FieldValue.arrayUnion(
-                                              [currentUserReference]),
-                                        },
-                                      ),
-                                    });
-                                    Navigator.pop(context);
-                                  },
-                                  child: FaIcon(
-                                    FontAwesomeIcons.headphonesAlt,
-                                    color: valueOrDefault<Color>(
-                                      currentUserDocument?.color1,
-                                      FlutterFlowTheme.of(context).primaryText,
-                                    ),
-                                    size: 40.0,
-                                  ),
-                                ),
-                              ),
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    15.0, 0.0, 10.0, 0.0),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      'Team Name',
-                                      style: FlutterFlowTheme.of(context)
-                                          .titleSmall
-                                          .override(
-                                            fontFamily: 'Poppins',
-                                            letterSpacing: 0.0,
-                                          ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              AuthUserStreamWidget(
-                                builder: (context) => InkWell(
-                                  splashColor: Colors.transparent,
-                                  focusColor: Colors.transparent,
-                                  hoverColor: Colors.transparent,
-                                  highlightColor: Colors.transparent,
-                                  onTap: () async {
-                                    Navigator.pop(context);
-                                  },
-                                  child: FaIcon(
-                                    FontAwesomeIcons.minusSquare,
-                                    color: valueOrDefault<Color>(
-                                      currentUserDocument?.color1,
-                                      FlutterFlowTheme.of(context).primaryText,
-                                    ),
-                                    size: 30.0,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              15.0, 0.0, 10.0, 0.0),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    15.0, 10.0, 10.0, 10.0),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  children: [
-                                    InkWell(
-                                      splashColor: Colors.transparent,
-                                      focusColor: Colors.transparent,
-                                      hoverColor: Colors.transparent,
-                                      highlightColor: Colors.transparent,
-                                      onTap: () async {
-                                        Navigator.pop(context);
-                                      },
-                                      child: Icon(
-                                        Icons.groups_rounded,
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondaryText,
-                                        size: 30.0,
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          20.0, 0.0, 5.0, 0.0),
-                                      child: Text(
-                                        valueOrDefault<String>(
-                                          columnTeamConferenceRecord
-                                              ?.members.length
-                                              .toString(),
-                                          '0',
-                                        ),
-                                        style: FlutterFlowTheme.of(context)
-                                            .titleSmall
-                                            .override(
-                                              fontFamily: 'Poppins',
-                                              letterSpacing: 0.0,
-                                            ),
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          5.0, 0.0, 0.0, 0.0),
-                                      child: Text(
-                                        'Membres connectés',
-                                        style: FlutterFlowTheme.of(context)
-                                            .titleSmall
-                                            .override(
-                                              fontFamily: 'Poppins',
-                                              letterSpacing: 0.0,
-                                            ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              15.0, 10.0, 10.0, 10.0),
-                          child: StreamBuilder<List<UsersRecord>>(
-                            stream: queryUsersRecord(
-                              queryBuilder: (usersRecord) => usersRecord.where(
-                                'audio_team',
-                                isEqualTo: widget.teamRef,
-                              ),
-                            ),
-                            builder: (context, snapshot) {
-                              // Customize what your widget looks like when it's loading.
-                              if (!snapshot.hasData) {
-                                return Center(
-                                  child: SizedBox(
-                                    width: 50.0,
-                                    height: 50.0,
-                                    child: CircularProgressIndicator(
-                                      valueColor: AlwaysStoppedAnimation<Color>(
-                                        FlutterFlowTheme.of(context).accent4,
-                                      ),
-                                    ),
-                                  ),
-                                );
-                              }
-                              List<UsersRecord> rowUsersRecordList =
-                                  snapshot.data!;
-
-                              return Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: List.generate(
-                                    rowUsersRecordList.length, (rowIndex) {
-                                  final rowUsersRecord =
-                                      rowUsersRecordList[rowIndex];
-                                  return Visibility(
-                                    visible: columnTeamConferenceRecord?.members
-                                            .contains(
-                                                rowUsersRecord.reference) ??
-                                        true,
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: [
-                                        InkWell(
-                                          splashColor: Colors.transparent,
-                                          focusColor: Colors.transparent,
-                                          hoverColor: Colors.transparent,
-                                          highlightColor: Colors.transparent,
-                                          onTap: () async {
-                                            Navigator.pop(context);
-                                          },
-                                          child: Icon(
-                                            Icons.graphic_eq_rounded,
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryText,
-                                            size: 30.0,
-                                          ),
-                                        ),
-                                        AuthUserStreamWidget(
-                                          builder: (context) => InkWell(
-                                            splashColor: Colors.transparent,
-                                            focusColor: Colors.transparent,
-                                            hoverColor: Colors.transparent,
-                                            highlightColor: Colors.transparent,
-                                            onTap: () async {
-                                              Navigator.pop(context);
-                                            },
-                                            child: Icon(
-                                              Icons.hearing_sharp,
-                                              color: valueOrDefault<Color>(
-                                                currentUserDocument?.color1,
-                                                FlutterFlowTheme.of(context)
-                                                    .primaryText,
-                                              ),
-                                              size: 30.0,
-                                            ),
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  5.0, 0.0, 0.0, 0.0),
-                                          child: Text(
-                                            'UserPseudo',
-                                            style: FlutterFlowTheme.of(context)
-                                                .titleSmall
-                                                .override(
-                                                  fontFamily: 'Poppins',
-                                                  letterSpacing: 0.0,
-                                                ),
-                                          ),
-                                        ),
-                                        InkWell(
-                                          splashColor: Colors.transparent,
-                                          focusColor: Colors.transparent,
-                                          hoverColor: Colors.transparent,
-                                          highlightColor: Colors.transparent,
-                                          onTap: () async {
-                                            Navigator.pop(context);
-                                          },
-                                          child: Icon(
-                                            Icons.hearing_disabled_rounded,
-                                            color: FlutterFlowTheme.of(context)
-                                                .error,
-                                            size: 30.0,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  );
-                                }),
-                              );
-                            },
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              15.0, 0.0, 10.0, 0.0),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              AuthUserStreamWidget(
-                                builder: (context) => InkWell(
-                                  splashColor: Colors.transparent,
-                                  focusColor: Colors.transparent,
-                                  hoverColor: Colors.transparent,
-                                  highlightColor: Colors.transparent,
-                                  onTap: () async {
-                                    await currentUserReference!.update({
-                                      ...mapToFirestore(
-                                        {
-                                          'audio_team': FieldValue.delete(),
-                                        },
-                                      ),
-                                    });
-
-                                    await columnTeamConferenceRecord!.reference
-                                        .update({
-                                      ...mapToFirestore(
-                                        {
-                                          'fans': FieldValue.arrayRemove(
-                                              [currentUserReference]),
-                                        },
-                                      ),
-                                    });
-                                    Navigator.pop(context);
-                                  },
-                                  child: Icon(
-                                    Icons.headset_off,
-                                    color: valueOrDefault<Color>(
-                                      currentUserDocument?.color1,
-                                      FlutterFlowTheme.of(context).primaryText,
-                                    ),
-                                    size: 30.0,
-                                  ),
-                                ),
-                              ),
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    15.0, 10.0, 10.0, 10.0),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  children: [
-                                    InkWell(
-                                      splashColor: Colors.transparent,
-                                      focusColor: Colors.transparent,
-                                      hoverColor: Colors.transparent,
-                                      highlightColor: Colors.transparent,
-                                      onTap: () async {
-                                        Navigator.pop(context);
-                                      },
-                                      child: Icon(
-                                        Icons.groups_rounded,
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondaryText,
-                                        size: 30.0,
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          20.0, 0.0, 5.0, 0.0),
-                                      child: Text(
-                                        valueOrDefault<String>(
-                                          columnTeamConferenceRecord
-                                              ?.fans.length
-                                              .toString(),
-                                          '0',
-                                        ),
-                                        style: FlutterFlowTheme.of(context)
-                                            .titleSmall
-                                            .override(
-                                              fontFamily: 'Poppins',
-                                              letterSpacing: 0.0,
-                                            ),
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          5.0, 0.0, 0.0, 0.0),
-                                      child: Text(
-                                        'Fans connectés',
-                                        style: FlutterFlowTheme.of(context)
-                                            .titleSmall
-                                            .override(
-                                              fontFamily: 'Poppins',
-                                              letterSpacing: 0.0,
-                                            ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ],
+                        Container(
+                          width: 60.0,
+                          height: 3.0,
+                          decoration: BoxDecoration(
+                            color: FlutterFlowTheme.of(context).alternate,
+                            borderRadius: BorderRadius.circular(4.0),
                           ),
                         ),
                       ],
-                    );
-                  },
+                    ),
+                    Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 10.0, 0.0),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          AuthUserStreamWidget(
+                            builder: (context) => FaIcon(
+                              FontAwesomeIcons.headphonesAlt,
+                              color: valueOrDefault<Color>(
+                                currentUserDocument?.color1,
+                                FlutterFlowTheme.of(context).primaryText,
+                              ),
+                              size: 40.0,
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                15.0, 0.0, 10.0, 0.0),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Team Name',
+                                  style: FlutterFlowTheme.of(context)
+                                      .titleSmall
+                                      .override(
+                                        fontFamily: 'Poppins',
+                                        letterSpacing: 0.0,
+                                      ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          AuthUserStreamWidget(
+                            builder: (context) => InkWell(
+                              splashColor: Colors.transparent,
+                              focusColor: Colors.transparent,
+                              hoverColor: Colors.transparent,
+                              highlightColor: Colors.transparent,
+                              onTap: () async {
+                                Navigator.pop(context);
+                              },
+                              child: FaIcon(
+                                FontAwesomeIcons.minusSquare,
+                                color: valueOrDefault<Color>(
+                                  currentUserDocument?.color1,
+                                  FlutterFlowTheme.of(context).primaryText,
+                                ),
+                                size: 30.0,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Align(
+                      alignment: AlignmentDirectional(0.0, 0.0),
+                      child: Text(
+                        'Fonction pas encore disponible',
+                        style: FlutterFlowTheme.of(context).titleSmall.override(
+                              fontFamily: 'Poppins',
+                              color: FlutterFlowTheme.of(context).error,
+                              letterSpacing: 0.0,
+                            ),
+                      ),
+                    ),
+                    Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 10.0, 0.0),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                15.0, 10.0, 10.0, 10.0),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Icon(
+                                  Icons.groups_rounded,
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryText,
+                                  size: 30.0,
+                                ),
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      20.0, 0.0, 5.0, 0.0),
+                                  child: Text(
+                                    '0',
+                                    style: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          letterSpacing: 0.0,
+                                        ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      5.0, 0.0, 0.0, 0.0),
+                                  child: Text(
+                                    'Membres connectés',
+                                    style: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          letterSpacing: 0.0,
+                                        ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(
+                          15.0, 10.0, 10.0, 10.0),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Row(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Icon(
+                                Icons.graphic_eq_rounded,
+                                color:
+                                    FlutterFlowTheme.of(context).secondaryText,
+                                size: 30.0,
+                              ),
+                              AuthUserStreamWidget(
+                                builder: (context) => Icon(
+                                  Icons.hearing_sharp,
+                                  color: valueOrDefault<Color>(
+                                    currentUserDocument?.color1,
+                                    FlutterFlowTheme.of(context).primaryText,
+                                  ),
+                                  size: 30.0,
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    5.0, 0.0, 0.0, 0.0),
+                                child: Text(
+                                  'UserPseudo',
+                                  style: FlutterFlowTheme.of(context)
+                                      .titleSmall
+                                      .override(
+                                        fontFamily: 'Poppins',
+                                        letterSpacing: 0.0,
+                                      ),
+                                ),
+                              ),
+                              Icon(
+                                Icons.hearing_disabled_rounded,
+                                color: FlutterFlowTheme.of(context).error,
+                                size: 30.0,
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 10.0, 0.0),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          AuthUserStreamWidget(
+                            builder: (context) => Icon(
+                              Icons.headset_off,
+                              color: valueOrDefault<Color>(
+                                currentUserDocument?.color1,
+                                FlutterFlowTheme.of(context).primaryText,
+                              ),
+                              size: 30.0,
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                15.0, 10.0, 10.0, 10.0),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Icon(
+                                  Icons.groups_rounded,
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryText,
+                                  size: 30.0,
+                                ),
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      20.0, 0.0, 5.0, 0.0),
+                                  child: Text(
+                                    '0',
+                                    style: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          letterSpacing: 0.0,
+                                        ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      5.0, 0.0, 0.0, 0.0),
+                                  child: Text(
+                                    'Fans connectés',
+                                    style: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          letterSpacing: 0.0,
+                                        ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ],

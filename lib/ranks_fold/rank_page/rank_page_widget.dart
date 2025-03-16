@@ -1,4 +1,3 @@
-import '';
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
@@ -521,7 +520,8 @@ class _RankPageWidgetState extends State<RankPageWidget> {
                               FlutterFlowDropDown<String>(
                                 controller: _model.dropLigueValueController ??=
                                     FormFieldController<String>(
-                                  _model.dropLigueValue ??= '',
+                                  _model.dropLigueValue ??= valueOrDefault(
+                                      currentUserDocument?.rankValue, ''),
                                 ),
                                 options: List<String>.from(
                                     ['legende', 'champion', 'pro', 'amateur']),
@@ -531,13 +531,8 @@ class _RankPageWidgetState extends State<RankPageWidget> {
                                   'Pro',
                                   'Amateur'
                                 ],
-                                onChanged: (val) async {
-                                  safeSetState(
-                                      () => _model.dropLigueValue = val);
-                                  _model.showLigueFilter =
-                                      _model.dropLigueValue;
-                                  safeSetState(() {});
-                                },
+                                onChanged: (val) => safeSetState(
+                                    () => _model.dropLigueValue = val),
                                 width: 150.0,
                                 height: 56.0,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -567,56 +562,50 @@ class _RankPageWidgetState extends State<RankPageWidget> {
                                 isSearchable: false,
                                 isMultiSelect: false,
                               ),
-                              if (_model.showLigueFilter != null &&
-                                  _model.showLigueFilter != '')
-                                FlutterFlowDropDown<String>(
-                                  controller:
-                                      _model.dropDivisionValueController ??=
-                                          FormFieldController<String>(
-                                    _model.dropDivisionValue ??= '',
-                                  ),
-                                  options: List<String>.from(['1', '2', '3']),
-                                  optionLabels: [
-                                    'Division 1',
-                                    'Division 2',
-                                    'Division 3'
-                                  ],
-                                  onChanged: (val) async {
-                                    safeSetState(
-                                        () => _model.dropDivisionValue = val);
-                                    _model.showDivFilter =
-                                        _model.dropDivisionValue;
-                                    safeSetState(() {});
-                                  },
-                                  width: 150.0,
-                                  height: 56.0,
-                                  textStyle: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        fontFamily: 'Poppins',
-                                        letterSpacing: 0.0,
-                                      ),
-                                  hintText: 'Divisions',
-                                  icon: Icon(
-                                    Icons.keyboard_arrow_down_rounded,
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryText,
-                                    size: 24.0,
-                                  ),
-                                  fillColor: FlutterFlowTheme.of(context)
-                                      .primaryBackground,
-                                  elevation: 2.0,
-                                  borderColor:
-                                      FlutterFlowTheme.of(context).alternate,
-                                  borderWidth: 2.0,
-                                  borderRadius: 8.0,
-                                  margin: EdgeInsetsDirectional.fromSTEB(
-                                      16.0, 4.0, 16.0, 4.0),
-                                  hidesUnderline: true,
-                                  isOverButton: true,
-                                  isSearchable: false,
-                                  isMultiSelect: false,
+                              FlutterFlowDropDown<String>(
+                                controller:
+                                    _model.dropDivisionValueController ??=
+                                        FormFieldController<String>(
+                                  _model.dropDivisionValue ??= valueOrDefault(
+                                      currentUserDocument?.divisionValue, ''),
                                 ),
+                                options: List<String>.from(['1', '2', '3']),
+                                optionLabels: [
+                                  'Division 1',
+                                  'Division 2',
+                                  'Division 3'
+                                ],
+                                onChanged: (val) => safeSetState(
+                                    () => _model.dropDivisionValue = val),
+                                width: 150.0,
+                                height: 56.0,
+                                textStyle: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Poppins',
+                                      letterSpacing: 0.0,
+                                    ),
+                                hintText: 'Divisions',
+                                icon: Icon(
+                                  Icons.keyboard_arrow_down_rounded,
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryText,
+                                  size: 24.0,
+                                ),
+                                fillColor: FlutterFlowTheme.of(context)
+                                    .primaryBackground,
+                                elevation: 2.0,
+                                borderColor:
+                                    FlutterFlowTheme.of(context).alternate,
+                                borderWidth: 2.0,
+                                borderRadius: 8.0,
+                                margin: EdgeInsetsDirectional.fromSTEB(
+                                    16.0, 4.0, 16.0, 4.0),
+                                hidesUnderline: true,
+                                isOverButton: true,
+                                isSearchable: false,
+                                isMultiSelect: false,
+                              ),
                             ],
                           ),
                           Column(
@@ -1255,13 +1244,13 @@ class _RankPageWidgetState extends State<RankPageWidget> {
                                                 usersRecord
                                                     .where(
                                                       'rank_value',
-                                                      isEqualTo: _model
-                                                          .showLigueFilter,
+                                                      isEqualTo:
+                                                          _model.dropLigueValue,
                                                     )
                                                     .where(
                                                       'division_value',
-                                                      isEqualTo:
-                                                          _model.showDivFilter,
+                                                      isEqualTo: _model
+                                                          .dropDivisionValue,
                                                     )
                                                     .orderBy('earnings_total',
                                                         descending: true),

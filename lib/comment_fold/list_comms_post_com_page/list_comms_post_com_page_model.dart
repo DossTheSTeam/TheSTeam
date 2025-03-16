@@ -9,8 +9,11 @@ class ListCommsPostComPageModel
   ///  State fields for stateful widgets in this page.
 
   // State field(s) for DropLigue widget.
-  String? dropLigueValue;
-  FormFieldController<String>? dropLigueValueController;
+  String? dropLigueValue1;
+  FormFieldController<String>? dropLigueValueController1;
+  // State field(s) for DropLigue widget.
+  String? dropLigueValue2;
+  FormFieldController<String>? dropLigueValueController2;
 
   @override
   void initState(BuildContext context) {}

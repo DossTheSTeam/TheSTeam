@@ -24,11 +24,11 @@ class MyEditProfilModel extends FlutterFlowModel<MyEditProfilWidget> {
   TextEditingController? dateFieldTextController;
   String? Function(BuildContext, String?)? dateFieldTextControllerValidator;
   // State field(s) for DropColor1 widget.
-  String? dropColor1Value1;
-  FormFieldController<String>? dropColor1ValueController1;
-  // State field(s) for DropColor1 widget.
-  String? dropColor1Value2;
-  FormFieldController<String>? dropColor1ValueController2;
+  String? dropColor1Value;
+  FormFieldController<String>? dropColor1ValueController;
+  // State field(s) for DropColor2 widget.
+  String? dropColor2Value;
+  FormFieldController<String>? dropColor2ValueController;
   // State field(s) for PhoneField widget.
   FocusNode? phoneFieldFocusNode;
   TextEditingController? phoneFieldTextController;

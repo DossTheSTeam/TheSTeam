@@ -3318,7 +3318,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                             CrossAxisAlignment.center,
                                         children: [
                                           Text(
-                                            'Félicitations !!!\nVotre paris vous rapporte',
+                                            'Votre paris vous rapporte',
                                             textAlign: TextAlign.center,
                                             style: FlutterFlowTheme.of(context)
                                                 .labelMedium
@@ -3333,7 +3333,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 10.0, 0.0, 10.0),
+                                                    0.0, 1.0, 0.0, 10.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [

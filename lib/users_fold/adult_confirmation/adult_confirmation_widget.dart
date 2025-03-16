@@ -147,7 +147,7 @@ class _AdultConfirmationWidgetState extends State<AdultConfirmationWidget> {
                       ),
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(
-                            10.0, 10.0, 10.0, 35.0),
+                            10.0, 10.0, 10.0, 45.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.center,

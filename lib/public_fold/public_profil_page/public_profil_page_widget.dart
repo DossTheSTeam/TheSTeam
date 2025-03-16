@@ -714,7 +714,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                             alignment: AlignmentDirectional(0.0, 0.0),
                             child: Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
-                                  50.0, 0.0, 50.0, 10.0),
+                                  48.0, 0.0, 48.0, 10.0),
                               child: SingleChildScrollView(
                                 scrollDirection: Axis.horizontal,
                                 child: Row(

@@ -191,6 +191,16 @@ class TeamsRecord extends FirestoreRecord {
   int get pointsCup => _pointsCup ?? 0;
   bool hasPointsCup() => _pointsCup != null;
 
+  // "l2m" field.
+  int? _l2m;
+  int get l2m => _l2m ?? 0;
+  bool hasL2m() => _l2m != null;
+
+  // "l2m_cup" field.
+  int? _l2mCup;
+  int get l2mCup => _l2mCup ?? 0;
+  bool hasL2mCup() => _l2mCup != null;
+
   void _initializeFields() {
     _name = snapshotData['name'] as String?;
     _value = snapshotData['value'] as String?;
@@ -227,6 +237,8 @@ class TeamsRecord extends FirestoreRecord {
     _drawsCup = castToType<int>(snapshotData['draws_cup']);
     _loosesCup = castToType<int>(snapshotData['looses_cup']);
     _pointsCup = castToType<int>(snapshotData['points_cup']);
+    _l2m = castToType<int>(snapshotData['l2m']);
+    _l2mCup = castToType<int>(snapshotData['l2m_cup']);
   }
 
   static CollectionReference get collection =>
@@ -295,6 +307,8 @@ Map<String, dynamic> createTeamsRecordData({
   int? drawsCup,
   int? loosesCup,
   int? pointsCup,
+  int? l2m,
+  int? l2mCup,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -330,6 +344,8 @@ Map<String, dynamic> createTeamsRecordData({
       'draws_cup': drawsCup,
       'looses_cup': loosesCup,
       'points_cup': pointsCup,
+      'l2m': l2m,
+      'l2m_cup': l2mCup,
     }.withoutNulls,
   );
 
@@ -376,7 +392,9 @@ class TeamsRecordDocumentEquality implements Equality<TeamsRecord> {
         e1?.winsCup == e2?.winsCup &&
         e1?.drawsCup == e2?.drawsCup &&
         e1?.loosesCup == e2?.loosesCup &&
-        e1?.pointsCup == e2?.pointsCup;
+        e1?.pointsCup == e2?.pointsCup &&
+        e1?.l2m == e2?.l2m &&
+        e1?.l2mCup == e2?.l2mCup;
   }
 
   @override
@@ -415,7 +433,9 @@ class TeamsRecordDocumentEquality implements Equality<TeamsRecord> {
         e?.winsCup,
         e?.drawsCup,
         e?.loosesCup,
-        e?.pointsCup
+        e?.pointsCup,
+        e?.l2m,
+        e?.l2mCup
       ]);
 
   @override

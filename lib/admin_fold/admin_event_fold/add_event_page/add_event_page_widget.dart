@@ -1464,7 +1464,7 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                 child: FFButtonWidget(
                                                   onPressed: () async {
                                                     await _model
-                                                        .eventAutoRef!.reference
+                                                        .eventRef!.reference
                                                         .update(
                                                             createEventsRecordData(
                                                       teamextRef:
@@ -1484,8 +1484,7 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                           .calendarSelectedDay
                                                           ?.start,
                                                       events: _model
-                                                          .eventAutoRef
-                                                          ?.reference,
+                                                          .eventRef?.reference,
                                                     ));
 
                                                     context.pushNamed(
@@ -1494,7 +1493,7 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                       queryParameters: {
                                                         'eventRef':
                                                             serializeParam(
-                                                          _model.eventAutoRef
+                                                          _model.eventRef
                                                               ?.reference,
                                                           ParamType
                                                               .DocumentReference,

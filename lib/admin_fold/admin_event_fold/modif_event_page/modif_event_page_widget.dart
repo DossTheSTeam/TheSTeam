@@ -1924,17 +1924,6 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                                       MainAxisAlignment
                                                           .spaceBetween,
                                                   children: [
-                                                    Text(
-                                                      'Ligue',
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyMedium
-                                                          .override(
-                                                            fontFamily:
-                                                                'Poppins',
-                                                            letterSpacing: 0.0,
-                                                          ),
-                                                    ),
                                                     Align(
                                                       alignment:
                                                           AlignmentDirectional(
@@ -2395,17 +2384,6 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                                       MainAxisAlignment
                                                           .spaceBetween,
                                                   children: [
-                                                    Text(
-                                                      'Cup',
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyMedium
-                                                          .override(
-                                                            fontFamily:
-                                                                'Poppins',
-                                                            letterSpacing: 0.0,
-                                                          ),
-                                                    ),
                                                     Align(
                                                       alignment:
                                                           AlignmentDirectional(
@@ -2865,15 +2843,6 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceBetween,
                                       children: [
-                                        Text(
-                                          'Ligue',
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                fontFamily: 'Poppins',
-                                                letterSpacing: 0.0,
-                                              ),
-                                        ),
                                         Align(
                                           alignment:
                                               AlignmentDirectional(-1.0, 0.0),

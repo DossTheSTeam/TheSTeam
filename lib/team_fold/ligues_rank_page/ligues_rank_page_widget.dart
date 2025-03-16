@@ -1672,8 +1672,11 @@ class _LiguesRankPageWidgetState extends State<LiguesRankPageWidget> {
                                               ],
                                             ),
                                           ),
-                                          if (_model.dropSportValue != null &&
-                                              _model.dropSportValue != '')
+                                          if ((_model.dropSportValue != null &&
+                                                  _model.dropSportValue !=
+                                                      '') &&
+                                              (_model.showLigue != null &&
+                                                  _model.showLigue != ''))
                                             StreamBuilder<List<TeamsRecord>>(
                                               stream: queryTeamsRecord(
                                                 queryBuilder: (teamsRecord) =>
@@ -2686,8 +2689,11 @@ class _LiguesRankPageWidgetState extends State<LiguesRankPageWidget> {
                                               ],
                                             ),
                                           ),
-                                          if (_model.dropSportValue != null &&
-                                              _model.dropSportValue != '')
+                                          if ((_model.dropSportValue != null &&
+                                                  _model.dropSportValue !=
+                                                      '') &&
+                                              (_model.showLigue != null &&
+                                                  _model.showLigue != ''))
                                             StreamBuilder<List<TeamsRecord>>(
                                               stream: queryTeamsRecord(
                                                 queryBuilder: (teamsRecord) =>

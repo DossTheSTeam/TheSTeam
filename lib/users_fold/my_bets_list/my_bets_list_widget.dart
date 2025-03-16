@@ -863,387 +863,375 @@ class _MyBetsListWidgetState extends State<MyBetsListWidget>
                                         columnMyBetsIndex];
                                 return Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      3.0, 0.0, 3.0, 10.0),
+                                      3.0, 0.0, 3.0, 0.0),
                                   child: Container(
                                     width:
                                         MediaQuery.sizeOf(context).width * 3.5,
-                                    height: 185.0,
+                                    height: 150.0,
                                     decoration: BoxDecoration(
                                       color: FlutterFlowTheme.of(context)
                                           .primaryBackground,
-                                      boxShadow: [
-                                        BoxShadow(
-                                          blurRadius: 4.0,
-                                          color: FlutterFlowTheme.of(context)
-                                              .accent3,
-                                          offset: Offset(
-                                            0.0,
-                                            2.0,
-                                          ),
-                                        )
-                                      ],
                                       borderRadius: BorderRadius.circular(24.0),
                                     ),
                                     child: Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          12.0, 3.0, 12.0, 12.0),
+                                          12.0, 0.0, 12.0, 0.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
                                             MainAxisAlignment.center,
                                         children: [
-                                          Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 1.0, 0.0, 0.0),
-                                            child: Row(
-                                              mainAxisSize: MainAxisSize.max,
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment
-                                                      .spaceBetween,
-                                              children: [
-                                                AuthUserStreamWidget(
-                                                  builder: (context) => InkWell(
-                                                    splashColor:
-                                                        Colors.transparent,
-                                                    focusColor:
-                                                        Colors.transparent,
-                                                    hoverColor:
-                                                        Colors.transparent,
-                                                    highlightColor:
-                                                        Colors.transparent,
-                                                    onTap: () async {
-                                                      context.pushNamed(
-                                                        MyBetPageWidget
-                                                            .routeName,
-                                                        queryParameters: {
-                                                          'myBetRef':
-                                                              serializeParam(
-                                                            columnMyBetsMyBetsRecord
-                                                                .reference,
-                                                            ParamType
-                                                                .DocumentReference,
-                                                          ),
-                                                        }.withoutNulls,
-                                                        extra: <String,
-                                                            dynamic>{
-                                                          kTransitionInfoKey:
-                                                              TransitionInfo(
-                                                            hasTransition: true,
-                                                            transitionType:
-                                                                PageTransitionType
-                                                                    .scale,
-                                                            alignment: Alignment
-                                                                .bottomCenter,
-                                                            duration: Duration(
-                                                                milliseconds:
-                                                                    600),
-                                                          ),
-                                                        },
-                                                      );
-                                                    },
-                                                    child: Icon(
-                                                      Icons
-                                                          .remove_red_eye_outlined,
-                                                      color:
-                                                          valueOrDefault<Color>(
-                                                        currentUserDocument
-                                                            ?.color1,
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .primaryText,
+                                          Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceBetween,
+                                            children: [
+                                              AuthUserStreamWidget(
+                                                builder: (context) => InkWell(
+                                                  splashColor:
+                                                      Colors.transparent,
+                                                  focusColor:
+                                                      Colors.transparent,
+                                                  hoverColor:
+                                                      Colors.transparent,
+                                                  highlightColor:
+                                                      Colors.transparent,
+                                                  onTap: () async {
+                                                    context.pushNamed(
+                                                      MyBetPageWidget.routeName,
+                                                      queryParameters: {
+                                                        'myBetRef':
+                                                            serializeParam(
+                                                          columnMyBetsMyBetsRecord
+                                                              .reference,
+                                                          ParamType
+                                                              .DocumentReference,
+                                                        ),
+                                                      }.withoutNulls,
+                                                      extra: <String, dynamic>{
+                                                        kTransitionInfoKey:
+                                                            TransitionInfo(
+                                                          hasTransition: true,
+                                                          transitionType:
+                                                              PageTransitionType
+                                                                  .scale,
+                                                          alignment: Alignment
+                                                              .bottomCenter,
+                                                          duration: Duration(
+                                                              milliseconds:
+                                                                  600),
+                                                        ),
+                                                      },
+                                                    );
+                                                  },
+                                                  child: Icon(
+                                                    Icons
+                                                        .remove_red_eye_outlined,
+                                                    color:
+                                                        valueOrDefault<Color>(
+                                                      currentUserDocument
+                                                          ?.color1,
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .primaryText,
+                                                    ),
+                                                    size: 30.0,
+                                                  ),
+                                                ),
+                                              ),
+                                              Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        30.0, 0.0, 0.0, 0.0),
+                                                child: Text(
+                                                  dateTimeFormat(
+                                                      "d/M H:mm",
+                                                      columnMyBetsMyBetsRecord
+                                                          .createdTime!),
+                                                  textAlign: TextAlign.center,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .labelSmall
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
                                                       ),
-                                                      size: 30.0,
-                                                    ),
-                                                  ),
                                                 ),
-                                                Padding(
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          30.0, 0.0, 0.0, 0.0),
-                                                  child: Text(
-                                                    dateTimeFormat(
-                                                        "d/M H:mm",
-                                                        columnMyBetsMyBetsRecord
-                                                            .createdTime!),
-                                                    textAlign: TextAlign.center,
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .labelSmall
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                  ),
-                                                ),
-                                                Row(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  children: [
-                                                    Row(
-                                                      mainAxisSize:
-                                                          MainAxisSize.max,
-                                                      children: [
-                                                        if (columnMyBetsMyBetsRecord
-                                                                .seen !=
-                                                            true)
-                                                          Padding(
-                                                            padding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        5.0,
-                                                                        0.0,
-                                                                        5.0,
-                                                                        0.0),
-                                                            child: Row(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              children: [
-                                                                if (columnMyBetsMyBetsRecord
-                                                                        .bet3 ==
-                                                                    null)
-                                                                  Row(
-                                                                    mainAxisSize:
-                                                                        MainAxisSize
-                                                                            .max,
-                                                                    children: [
-                                                                      if (columnMyBetsMyBetsRecord
-                                                                              .bet2 ==
-                                                                          null)
-                                                                        AuthUserStreamWidget(
-                                                                          builder: (context) =>
-                                                                              FlutterFlowIconButton(
-                                                                            borderColor:
-                                                                                Colors.transparent,
-                                                                            borderRadius:
-                                                                                8.0,
-                                                                            buttonSize:
-                                                                                50.0,
-                                                                            fillColor:
-                                                                                FlutterFlowTheme.of(context).primaryBackground,
-                                                                            icon:
-                                                                                Icon(
-                                                                              Icons.refresh_rounded,
-                                                                              color: valueOrDefault<Color>(
-                                                                                currentUserDocument?.color1,
-                                                                                FlutterFlowTheme.of(context).primaryText,
-                                                                              ),
-                                                                              size: 30.0,
-                                                                            ),
-                                                                            onPressed:
-                                                                                () async {
-                                                                              await actions.getStatutMyBet1(
-                                                                                columnMyBetsMyBetsRecord.reference,
-                                                                              );
-                                                                              await showModalBottomSheet(
-                                                                                isScrollControlled: true,
-                                                                                backgroundColor: Colors.transparent,
-                                                                                enableDrag: false,
-                                                                                context: context,
-                                                                                builder: (context) {
-                                                                                  return GestureDetector(
-                                                                                    onTap: () {
-                                                                                      FocusScope.of(context).unfocus();
-                                                                                      FocusManager.instance.primaryFocus?.unfocus();
-                                                                                    },
-                                                                                    child: Padding(
-                                                                                      padding: MediaQuery.viewInsetsOf(context),
-                                                                                      child: CheckMyBetWidget(
-                                                                                        myBetRef: columnMyBetsMyBetsRecord.reference,
-                                                                                      ),
-                                                                                    ),
-                                                                                  );
-                                                                                },
-                                                                              ).then((value) => safeSetState(() {}));
-                                                                            },
-                                                                          ),
-                                                                        ),
-                                                                      if (columnMyBetsMyBetsRecord
-                                                                              .bet2 !=
-                                                                          null)
-                                                                        AuthUserStreamWidget(
-                                                                          builder: (context) =>
-                                                                              FlutterFlowIconButton(
-                                                                            borderColor:
-                                                                                Colors.transparent,
-                                                                            borderRadius:
-                                                                                8.0,
-                                                                            buttonSize:
-                                                                                50.0,
-                                                                            fillColor:
-                                                                                FlutterFlowTheme.of(context).primaryBackground,
-                                                                            icon:
-                                                                                Icon(
-                                                                              Icons.refresh_rounded,
-                                                                              color: valueOrDefault<Color>(
-                                                                                currentUserDocument?.color1,
-                                                                                FlutterFlowTheme.of(context).primaryText,
-                                                                              ),
-                                                                              size: 30.0,
-                                                                            ),
-                                                                            onPressed:
-                                                                                () async {
-                                                                              await actions.getStatutMyBet2(
-                                                                                columnMyBetsMyBetsRecord.reference,
-                                                                              );
-                                                                              await showModalBottomSheet(
-                                                                                isScrollControlled: true,
-                                                                                backgroundColor: Colors.transparent,
-                                                                                enableDrag: false,
-                                                                                context: context,
-                                                                                builder: (context) {
-                                                                                  return GestureDetector(
-                                                                                    onTap: () {
-                                                                                      FocusScope.of(context).unfocus();
-                                                                                      FocusManager.instance.primaryFocus?.unfocus();
-                                                                                    },
-                                                                                    child: Padding(
-                                                                                      padding: MediaQuery.viewInsetsOf(context),
-                                                                                      child: CheckMyBetWidget(
-                                                                                        myBetRef: columnMyBetsMyBetsRecord.reference,
-                                                                                      ),
-                                                                                    ),
-                                                                                  );
-                                                                                },
-                                                                              ).then((value) => safeSetState(() {}));
-                                                                            },
-                                                                          ),
-                                                                        ),
-                                                                    ],
-                                                                  ),
-                                                                if (columnMyBetsMyBetsRecord
-                                                                        .bet3 !=
-                                                                    null)
-                                                                  AuthUserStreamWidget(
-                                                                    builder:
-                                                                        (context) =>
-                                                                            FlutterFlowIconButton(
-                                                                      borderColor:
-                                                                          Colors
-                                                                              .transparent,
-                                                                      borderRadius:
-                                                                          8.0,
-                                                                      buttonSize:
-                                                                          50.0,
-                                                                      fillColor:
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .primaryBackground,
-                                                                      icon:
-                                                                          Icon(
-                                                                        Icons
-                                                                            .refresh_rounded,
-                                                                        color: valueOrDefault<
-                                                                            Color>(
-                                                                          currentUserDocument
-                                                                              ?.color1,
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .primaryText,
-                                                                        ),
-                                                                        size:
-                                                                            30.0,
-                                                                      ),
-                                                                      onPressed:
-                                                                          () async {
-                                                                        await actions
-                                                                            .getStatutMyBet3(
-                                                                          columnMyBetsMyBetsRecord
-                                                                              .reference,
-                                                                        );
-                                                                        await showModalBottomSheet(
-                                                                          isScrollControlled:
-                                                                              true,
-                                                                          backgroundColor:
+                                              ),
+                                              Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                children: [
+                                                  Row(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    children: [
+                                                      if (columnMyBetsMyBetsRecord
+                                                              .seen !=
+                                                          true)
+                                                        Padding(
+                                                          padding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      5.0,
+                                                                      0.0,
+                                                                      5.0,
+                                                                      0.0),
+                                                          child: Row(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            children: [
+                                                              if (columnMyBetsMyBetsRecord
+                                                                      .bet3 ==
+                                                                  null)
+                                                                Row(
+                                                                  mainAxisSize:
+                                                                      MainAxisSize
+                                                                          .max,
+                                                                  children: [
+                                                                    if (columnMyBetsMyBetsRecord
+                                                                            .bet2 ==
+                                                                        null)
+                                                                      AuthUserStreamWidget(
+                                                                        builder:
+                                                                            (context) =>
+                                                                                FlutterFlowIconButton(
+                                                                          borderColor:
                                                                               Colors.transparent,
-                                                                          enableDrag:
-                                                                              false,
-                                                                          context:
-                                                                              context,
-                                                                          builder:
-                                                                              (context) {
-                                                                            return GestureDetector(
-                                                                              onTap: () {
-                                                                                FocusScope.of(context).unfocus();
-                                                                                FocusManager.instance.primaryFocus?.unfocus();
-                                                                              },
-                                                                              child: Padding(
-                                                                                padding: MediaQuery.viewInsetsOf(context),
-                                                                                child: CheckMyBetWidget(
-                                                                                  myBetRef: columnMyBetsMyBetsRecord.reference,
-                                                                                ),
-                                                                              ),
+                                                                          borderRadius:
+                                                                              8.0,
+                                                                          buttonSize:
+                                                                              50.0,
+                                                                          fillColor:
+                                                                              FlutterFlowTheme.of(context).primaryBackground,
+                                                                          icon:
+                                                                              Icon(
+                                                                            Icons.refresh_rounded,
+                                                                            color:
+                                                                                valueOrDefault<Color>(
+                                                                              currentUserDocument?.color1,
+                                                                              FlutterFlowTheme.of(context).primaryText,
+                                                                            ),
+                                                                            size:
+                                                                                30.0,
+                                                                          ),
+                                                                          onPressed:
+                                                                              () async {
+                                                                            await actions.getStatutMyBet1(
+                                                                              columnMyBetsMyBetsRecord.reference,
                                                                             );
+                                                                            await showModalBottomSheet(
+                                                                              isScrollControlled: true,
+                                                                              backgroundColor: Colors.transparent,
+                                                                              enableDrag: false,
+                                                                              context: context,
+                                                                              builder: (context) {
+                                                                                return GestureDetector(
+                                                                                  onTap: () {
+                                                                                    FocusScope.of(context).unfocus();
+                                                                                    FocusManager.instance.primaryFocus?.unfocus();
+                                                                                  },
+                                                                                  child: Padding(
+                                                                                    padding: MediaQuery.viewInsetsOf(context),
+                                                                                    child: CheckMyBetWidget(
+                                                                                      myBetRef: columnMyBetsMyBetsRecord.reference,
+                                                                                    ),
+                                                                                  ),
+                                                                                );
+                                                                              },
+                                                                            ).then((value) =>
+                                                                                safeSetState(() {}));
                                                                           },
-                                                                        ).then((value) =>
-                                                                            safeSetState(() {}));
-                                                                      },
+                                                                        ),
+                                                                      ),
+                                                                    if (columnMyBetsMyBetsRecord
+                                                                            .bet2 !=
+                                                                        null)
+                                                                      AuthUserStreamWidget(
+                                                                        builder:
+                                                                            (context) =>
+                                                                                FlutterFlowIconButton(
+                                                                          borderColor:
+                                                                              Colors.transparent,
+                                                                          borderRadius:
+                                                                              8.0,
+                                                                          buttonSize:
+                                                                              50.0,
+                                                                          fillColor:
+                                                                              FlutterFlowTheme.of(context).primaryBackground,
+                                                                          icon:
+                                                                              Icon(
+                                                                            Icons.refresh_rounded,
+                                                                            color:
+                                                                                valueOrDefault<Color>(
+                                                                              currentUserDocument?.color1,
+                                                                              FlutterFlowTheme.of(context).primaryText,
+                                                                            ),
+                                                                            size:
+                                                                                30.0,
+                                                                          ),
+                                                                          onPressed:
+                                                                              () async {
+                                                                            await actions.getStatutMyBet2(
+                                                                              columnMyBetsMyBetsRecord.reference,
+                                                                            );
+                                                                            await showModalBottomSheet(
+                                                                              isScrollControlled: true,
+                                                                              backgroundColor: Colors.transparent,
+                                                                              enableDrag: false,
+                                                                              context: context,
+                                                                              builder: (context) {
+                                                                                return GestureDetector(
+                                                                                  onTap: () {
+                                                                                    FocusScope.of(context).unfocus();
+                                                                                    FocusManager.instance.primaryFocus?.unfocus();
+                                                                                  },
+                                                                                  child: Padding(
+                                                                                    padding: MediaQuery.viewInsetsOf(context),
+                                                                                    child: CheckMyBetWidget(
+                                                                                      myBetRef: columnMyBetsMyBetsRecord.reference,
+                                                                                    ),
+                                                                                  ),
+                                                                                );
+                                                                              },
+                                                                            ).then((value) =>
+                                                                                safeSetState(() {}));
+                                                                          },
+                                                                        ),
+                                                                      ),
+                                                                  ],
+                                                                ),
+                                                              if (columnMyBetsMyBetsRecord
+                                                                      .bet3 !=
+                                                                  null)
+                                                                AuthUserStreamWidget(
+                                                                  builder:
+                                                                      (context) =>
+                                                                          FlutterFlowIconButton(
+                                                                    borderColor:
+                                                                        Colors
+                                                                            .transparent,
+                                                                    borderRadius:
+                                                                        8.0,
+                                                                    buttonSize:
+                                                                        50.0,
+                                                                    fillColor: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primaryBackground,
+                                                                    icon: Icon(
+                                                                      Icons
+                                                                          .refresh_rounded,
+                                                                      color: valueOrDefault<
+                                                                          Color>(
+                                                                        currentUserDocument
+                                                                            ?.color1,
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .primaryText,
+                                                                      ),
+                                                                      size:
+                                                                          30.0,
                                                                     ),
+                                                                    onPressed:
+                                                                        () async {
+                                                                      await actions
+                                                                          .getStatutMyBet3(
+                                                                        columnMyBetsMyBetsRecord
+                                                                            .reference,
+                                                                      );
+                                                                      await showModalBottomSheet(
+                                                                        isScrollControlled:
+                                                                            true,
+                                                                        backgroundColor:
+                                                                            Colors.transparent,
+                                                                        enableDrag:
+                                                                            false,
+                                                                        context:
+                                                                            context,
+                                                                        builder:
+                                                                            (context) {
+                                                                          return GestureDetector(
+                                                                            onTap:
+                                                                                () {
+                                                                              FocusScope.of(context).unfocus();
+                                                                              FocusManager.instance.primaryFocus?.unfocus();
+                                                                            },
+                                                                            child:
+                                                                                Padding(
+                                                                              padding: MediaQuery.viewInsetsOf(context),
+                                                                              child: CheckMyBetWidget(
+                                                                                myBetRef: columnMyBetsMyBetsRecord.reference,
+                                                                              ),
+                                                                            ),
+                                                                          );
+                                                                        },
+                                                                      ).then((value) =>
+                                                                          safeSetState(
+                                                                              () {}));
+                                                                    },
                                                                   ),
-                                                              ],
-                                                            ),
+                                                                ),
+                                                            ],
                                                           ),
-                                                        Row(
-                                                          mainAxisSize:
-                                                              MainAxisSize.max,
-                                                          children: [
-                                                            if (columnMyBetsMyBetsRecord
-                                                                    .statut ==
-                                                                false)
-                                                              Padding(
-                                                                padding:
-                                                                    EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            10.0,
-                                                                            0.0),
-                                                                child:
-                                                                    Container(
-                                                                  width: 25.0,
-                                                                  height: 25.0,
-                                                                  decoration:
-                                                                      BoxDecoration(
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .error,
-                                                                    shape: BoxShape
-                                                                        .circle,
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            if (columnMyBetsMyBetsRecord
-                                                                    .statut ==
-                                                                true)
-                                                              Padding(
-                                                                padding:
-                                                                    EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            10.0,
-                                                                            0.0),
-                                                                child:
-                                                                    Container(
-                                                                  width: 25.0,
-                                                                  height: 25.0,
-                                                                  decoration:
-                                                                      BoxDecoration(
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .success,
-                                                                    shape: BoxShape
-                                                                        .circle,
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                          ],
                                                         ),
-                                                      ],
-                                                    ),
-                                                  ],
-                                                ),
-                                              ],
-                                            ),
+                                                      Row(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        children: [
+                                                          if (columnMyBetsMyBetsRecord
+                                                                  .statut ==
+                                                              false)
+                                                            Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          10.0,
+                                                                          0.0),
+                                                              child: Container(
+                                                                width: 25.0,
+                                                                height: 25.0,
+                                                                decoration:
+                                                                    BoxDecoration(
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .error,
+                                                                  shape: BoxShape
+                                                                      .circle,
+                                                                ),
+                                                              ),
+                                                            ),
+                                                          if (columnMyBetsMyBetsRecord
+                                                                  .statut ==
+                                                              true)
+                                                            Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          10.0,
+                                                                          0.0),
+                                                              child: Container(
+                                                                width: 25.0,
+                                                                height: 25.0,
+                                                                decoration:
+                                                                    BoxDecoration(
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .success,
+                                                                  shape: BoxShape
+                                                                      .circle,
+                                                                ),
+                                                              ),
+                                                            ),
+                                                        ],
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ],
+                                              ),
+                                            ],
                                           ),
                                           Align(
                                             alignment:
@@ -1574,248 +1562,50 @@ class _MyBetsListWidgetState extends State<MyBetsListWidget>
                                               ],
                                             ),
                                           ),
-                                          Text(
-                                            'Gain potentiel',
-                                            textAlign: TextAlign.center,
-                                            style: FlutterFlowTheme.of(context)
-                                                .labelSmall
-                                                .override(
-                                                  fontFamily: 'Poppins',
-                                                  letterSpacing: 0.0,
-                                                ),
-                                          ),
-                                          Row(
-                                            mainAxisSize: MainAxisSize.max,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            children: [
-                                              Row(
-                                                mainAxisSize: MainAxisSize.max,
-                                                children: [
-                                                  Text(
-                                                    valueOrDefault<String>(
-                                                      functions
-                                                          .limitOf2Decimal(
-                                                              columnMyBetsMyBetsRecord
-                                                                  .potentialy)
-                                                          .toString(),
-                                                      '00,00',
-                                                    ),
-                                                    textAlign: TextAlign.center,
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .titleLarge
-                                                        .override(
-                                                          fontFamily:
-                                                              'Montserrat',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                  ),
-                                                  Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(5.0, 0.0,
-                                                                0.0, 0.0),
-                                                    child: Container(
-                                                      width: 25.0,
-                                                      height: 25.0,
-                                                      decoration: BoxDecoration(
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primary,
-                                                        boxShadow: [
-                                                          BoxShadow(
-                                                            blurRadius: 4.0,
-                                                            color: Color(
-                                                                0x4C000000),
-                                                            offset: Offset(
-                                                              0.0,
-                                                              2.0,
-                                                            ),
-                                                          )
-                                                        ],
-                                                        shape: BoxShape.circle,
-                                                        border: Border.all(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondary,
-                                                        ),
+                                          Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    20.0, 5.0, 10.0, 5.0),
+                                            child: Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment
+                                                      .spaceBetween,
+                                              children: [
+                                                Text(
+                                                  'Gain potentiel',
+                                                  textAlign: TextAlign.center,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .labelSmall
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
                                                       ),
-                                                      child: Padding(
-                                                        padding:
-                                                            EdgeInsets.all(2.0),
-                                                        child: ClipRRect(
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      24.0),
-                                                          child: Image.asset(
-                                                            'assets/images/logo_monnaiel.jpg',
-                                                            width: 50.0,
-                                                            height: 50.0,
-                                                            fit: BoxFit.cover,
-                                                          ),
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ],
-                                              ),
-                                            ],
-                                          ),
-                                          Text(
-                                            'Gain réel',
-                                            textAlign: TextAlign.center,
-                                            style: FlutterFlowTheme.of(context)
-                                                .labelSmall
-                                                .override(
-                                                  fontFamily: 'Poppins',
-                                                  letterSpacing: 0.0,
                                                 ),
-                                          ),
-                                          Column(
-                                            mainAxisSize: MainAxisSize.max,
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.end,
-                                            children: [
-                                              if (columnMyBetsMyBetsRecord
-                                                      .statut ==
-                                                  true)
-                                                Column(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  crossAxisAlignment:
-                                                      CrossAxisAlignment.end,
-                                                  children: [
-                                                    if (columnMyBetsMyBetsRecord
-                                                            .statut ==
-                                                        true)
-                                                      Row(
-                                                        mainAxisSize:
-                                                            MainAxisSize.max,
-                                                        mainAxisAlignment:
-                                                            MainAxisAlignment
-                                                                .center,
-                                                        children: [
-                                                          if (columnMyBetsMyBetsRecord
-                                                                  .statut ==
-                                                              true)
-                                                            Row(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              children: [
-                                                                Row(
-                                                                  mainAxisSize:
-                                                                      MainAxisSize
-                                                                          .max,
-                                                                  children: [
-                                                                    Text(
-                                                                      valueOrDefault<
-                                                                          String>(
-                                                                        formatNumber(
-                                                                          functions
-                                                                              .limitOf2Decimal(columnMyBetsMyBetsRecord.potentialy),
-                                                                          formatType:
-                                                                              FormatType.decimal,
-                                                                          decimalType:
-                                                                              DecimalType.periodDecimal,
-                                                                        ),
-                                                                        '00.00',
-                                                                      ),
-                                                                      textAlign:
-                                                                          TextAlign
-                                                                              .center,
-                                                                      style: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .titleLarge
-                                                                          .override(
-                                                                            fontFamily:
-                                                                                'Montserrat',
-                                                                            color:
-                                                                                FlutterFlowTheme.of(context).success,
-                                                                            letterSpacing:
-                                                                                0.0,
-                                                                          ),
-                                                                    ),
-                                                                    Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                                                          5.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                                      child:
-                                                                          Container(
-                                                                        width:
-                                                                            25.0,
-                                                                        height:
-                                                                            25.0,
-                                                                        decoration:
-                                                                            BoxDecoration(
-                                                                          color:
-                                                                              FlutterFlowTheme.of(context).primary,
-                                                                          shape:
-                                                                              BoxShape.circle,
-                                                                          border:
-                                                                              Border.all(
-                                                                            color:
-                                                                                FlutterFlowTheme.of(context).secondary,
-                                                                          ),
-                                                                        ),
-                                                                        child:
-                                                                            Padding(
-                                                                          padding:
-                                                                              EdgeInsets.all(2.0),
-                                                                          child:
-                                                                              ClipRRect(
-                                                                            borderRadius:
-                                                                                BorderRadius.circular(24.0),
-                                                                            child:
-                                                                                Image.asset(
-                                                                              'assets/images/logo_monnaiel.jpg',
-                                                                              width: 50.0,
-                                                                              height: 50.0,
-                                                                              fit: BoxFit.cover,
-                                                                            ),
-                                                                          ),
-                                                                        ),
-                                                                      ),
-                                                                    ),
-                                                                  ],
-                                                                ),
-                                                              ],
-                                                            ),
-                                                        ],
-                                                      ),
-                                                  ],
-                                                ),
-                                              if (columnMyBetsMyBetsRecord
-                                                      .statut ==
-                                                  false)
                                                 Row(
                                                   mainAxisSize:
                                                       MainAxisSize.max,
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment.center,
                                                   children: [
                                                     Text(
-                                                      '00.00',
+                                                      valueOrDefault<String>(
+                                                        functions
+                                                            .limitOf2Decimal(
+                                                                columnMyBetsMyBetsRecord
+                                                                    .potentialy)
+                                                            .toString(),
+                                                        '00,00',
+                                                      ),
                                                       textAlign:
                                                           TextAlign.center,
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .titleLarge
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Montserrat',
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .error,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                              ),
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .titleLarge
+                                                          .override(
+                                                            fontFamily:
+                                                                'Montserrat',
+                                                            letterSpacing: 0.0,
+                                                          ),
                                                     ),
                                                     Padding(
                                                       padding:
@@ -1833,6 +1623,17 @@ class _MyBetsListWidgetState extends State<MyBetsListWidget>
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primary,
+                                                          boxShadow: [
+                                                            BoxShadow(
+                                                              blurRadius: 4.0,
+                                                              color: Color(
+                                                                  0x4C000000),
+                                                              offset: Offset(
+                                                                0.0,
+                                                                2.0,
+                                                              ),
+                                                            )
+                                                          ],
                                                           shape:
                                                               BoxShape.circle,
                                                           border: Border.all(
@@ -1862,7 +1663,255 @@ class _MyBetsListWidgetState extends State<MyBetsListWidget>
                                                     ),
                                                   ],
                                                 ),
+                                              ],
+                                            ),
+                                          ),
+                                          Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.end,
+                                            children: [
+                                              if (columnMyBetsMyBetsRecord
+                                                      .statut ==
+                                                  true)
+                                                Column(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.end,
+                                                  children: [
+                                                    if (columnMyBetsMyBetsRecord
+                                                            .statut ==
+                                                        true)
+                                                      Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    20.0,
+                                                                    0.0,
+                                                                    10.0,
+                                                                    0.0),
+                                                        child: Row(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .spaceBetween,
+                                                          children: [
+                                                            Text(
+                                                              'Gain réel',
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .center,
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .labelSmall
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Poppins',
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                  ),
+                                                            ),
+                                                            if (columnMyBetsMyBetsRecord
+                                                                    .statut ==
+                                                                true)
+                                                              Row(
+                                                                mainAxisSize:
+                                                                    MainAxisSize
+                                                                        .max,
+                                                                children: [
+                                                                  Row(
+                                                                    mainAxisSize:
+                                                                        MainAxisSize
+                                                                            .max,
+                                                                    children: [
+                                                                      Text(
+                                                                        valueOrDefault<
+                                                                            String>(
+                                                                          formatNumber(
+                                                                            functions.limitOf2Decimal(columnMyBetsMyBetsRecord.potentialy),
+                                                                            formatType:
+                                                                                FormatType.decimal,
+                                                                            decimalType:
+                                                                                DecimalType.periodDecimal,
+                                                                          ),
+                                                                          '00.00',
+                                                                        ),
+                                                                        textAlign:
+                                                                            TextAlign.center,
+                                                                        style: FlutterFlowTheme.of(context)
+                                                                            .titleLarge
+                                                                            .override(
+                                                                              fontFamily: 'Montserrat',
+                                                                              color: FlutterFlowTheme.of(context).success,
+                                                                              letterSpacing: 0.0,
+                                                                            ),
+                                                                      ),
+                                                                      Padding(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            5.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                        child:
+                                                                            Container(
+                                                                          width:
+                                                                              25.0,
+                                                                          height:
+                                                                              25.0,
+                                                                          decoration:
+                                                                              BoxDecoration(
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).primary,
+                                                                            shape:
+                                                                                BoxShape.circle,
+                                                                            border:
+                                                                                Border.all(
+                                                                              color: FlutterFlowTheme.of(context).secondary,
+                                                                            ),
+                                                                          ),
+                                                                          child:
+                                                                              Padding(
+                                                                            padding:
+                                                                                EdgeInsets.all(2.0),
+                                                                            child:
+                                                                                ClipRRect(
+                                                                              borderRadius: BorderRadius.circular(24.0),
+                                                                              child: Image.asset(
+                                                                                'assets/images/logo_monnaiel.jpg',
+                                                                                width: 50.0,
+                                                                                height: 50.0,
+                                                                                fit: BoxFit.cover,
+                                                                              ),
+                                                                            ),
+                                                                          ),
+                                                                        ),
+                                                                      ),
+                                                                    ],
+                                                                  ),
+                                                                ],
+                                                              ),
+                                                          ],
+                                                        ),
+                                                      ),
+                                                  ],
+                                                ),
+                                              if (columnMyBetsMyBetsRecord
+                                                      .statut ==
+                                                  false)
+                                                Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          20.0, 0.0, 10.0, 0.0),
+                                                  child: Row(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .spaceBetween,
+                                                    children: [
+                                                      Text(
+                                                        'Gain réel',
+                                                        textAlign:
+                                                            TextAlign.center,
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelSmall
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Poppins',
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
+                                                      ),
+                                                      Row(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        children: [
+                                                          Text(
+                                                            '00.00',
+                                                            textAlign: TextAlign
+                                                                .center,
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .titleLarge
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Montserrat',
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .error,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
+                                                          ),
+                                                          Padding(
+                                                            padding:
+                                                                EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        5.0,
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0),
+                                                            child: Container(
+                                                              width: 25.0,
+                                                              height: 25.0,
+                                                              decoration:
+                                                                  BoxDecoration(
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primary,
+                                                                shape: BoxShape
+                                                                    .circle,
+                                                                border:
+                                                                    Border.all(
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .secondary,
+                                                                ),
+                                                              ),
+                                                              child: Padding(
+                                                                padding:
+                                                                    EdgeInsets
+                                                                        .all(
+                                                                            2.0),
+                                                                child:
+                                                                    ClipRRect(
+                                                                  borderRadius:
+                                                                      BorderRadius
+                                                                          .circular(
+                                                                              24.0),
+                                                                  child: Image
+                                                                      .asset(
+                                                                    'assets/images/logo_monnaiel.jpg',
+                                                                    width: 50.0,
+                                                                    height:
+                                                                        50.0,
+                                                                    fit: BoxFit
+                                                                        .cover,
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ),
                                             ],
+                                          ),
+                                          AuthUserStreamWidget(
+                                            builder: (context) => Divider(
+                                              thickness: 2.0,
+                                              color: valueOrDefault<Color>(
+                                                currentUserDocument?.color2,
+                                                FlutterFlowTheme.of(context)
+                                                    .secondaryBackground,
+                                              ),
+                                            ),
                                           ),
                                         ],
                                       ),

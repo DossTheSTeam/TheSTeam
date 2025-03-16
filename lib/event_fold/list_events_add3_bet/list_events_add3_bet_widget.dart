@@ -853,7 +853,7 @@ class _ListEventsAdd3BetWidgetState extends State<ListEventsAdd3BetWidget> {
                                                   Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(40.0, 0.0,
+                                                            .fromSTEB(10.0, 0.0,
                                                                 10.0, 0.0),
                                                     child: Row(
                                                       mainAxisSize:
@@ -997,25 +997,6 @@ class _ListEventsAdd3BetWidgetState extends State<ListEventsAdd3BetWidget> {
                                         Column(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
-                                            if (columnEventsEventsRecord
-                                                    .sportValue ==
-                                                'sports.meca')
-                                              Align(
-                                                alignment: AlignmentDirectional(
-                                                    0.0, 0.0),
-                                                child: Text(
-                                                  columnEventsEventsRecord.week,
-                                                  textAlign: TextAlign.start,
-                                                  maxLines: 2,
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .labelSmall
-                                                      .override(
-                                                        fontFamily: 'Poppins',
-                                                        letterSpacing: 0.0,
-                                                      ),
-                                                ),
-                                              ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 5.0, 0.0, 0.0),
@@ -1313,83 +1294,30 @@ class _ListEventsAdd3BetWidgetState extends State<ListEventsAdd3BetWidget> {
                                                 ],
                                               ),
                                             ),
-                                            if ((columnEventsEventsRecord
-                                                        .seenScore ==
-                                                    true) &&
-                                                (columnEventsEventsRecord
-                                                        .sportValue !=
-                                                    'sports.meca'))
-                                              Row(
-                                                mainAxisSize: MainAxisSize.max,
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment
-                                                        .spaceAround,
-                                                children: [
-                                                  Container(
-                                                    width: 160.0,
-                                                    height: 30.0,
-                                                    decoration: BoxDecoration(
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .alternate,
-                                                    ),
-                                                    child: Align(
-                                                      alignment:
-                                                          AlignmentDirectional(
-                                                              0.0, 0.0),
-                                                      child: Text(
-                                                        columnEventsEventsRecord
-                                                            .scoreDom
-                                                            .toString(),
-                                                        textAlign:
-                                                            TextAlign.end,
-                                                        style:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .labelMedium
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                ),
-                                                      ),
-                                                    ),
+                                            if (columnEventsEventsRecord
+                                                    .sportValue ==
+                                                'sports.meca')
+                                              Align(
+                                                alignment: AlignmentDirectional(
+                                                    0.0, 0.0),
+                                                child: Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 5.0, 0.0, 0.0),
+                                                  child: Text(
+                                                    columnEventsEventsRecord
+                                                        .week,
+                                                    textAlign: TextAlign.start,
+                                                    maxLines: 2,
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .labelSmall
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          letterSpacing: 0.0,
+                                                        ),
                                                   ),
-                                                  Container(
-                                                    width: 160.0,
-                                                    height: 30.0,
-                                                    decoration: BoxDecoration(
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .alternate,
-                                                    ),
-                                                    child: Align(
-                                                      alignment:
-                                                          AlignmentDirectional(
-                                                              0.0, 0.0),
-                                                      child: Text(
-                                                        columnEventsEventsRecord
-                                                            .scoreExt
-                                                            .toString(),
-                                                        textAlign:
-                                                            TextAlign.end,
-                                                        style:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .labelMedium
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                ),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ],
+                                                ),
                                               ),
                                             AuthUserStreamWidget(
                                               builder: (context) => Divider(

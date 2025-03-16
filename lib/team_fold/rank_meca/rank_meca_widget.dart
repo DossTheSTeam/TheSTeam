@@ -102,7 +102,7 @@ class _RankMecaWidgetState extends State<RankMecaWidget> {
                         ),
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
-                              15.0, 0.0, 10.0, 0.0),
+                              15.0, 0.0, 10.0, 5.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -150,7 +150,7 @@ class _RankMecaWidgetState extends State<RankMecaWidget> {
                                 onChanged: (val) => safeSetState(
                                     () => _model.dropLigueMecaValue = val),
                                 width: 180.0,
-                                height: 50.0,
+                                height: 30.0,
                                 textStyle: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
@@ -191,103 +191,46 @@ class _RankMecaWidgetState extends State<RankMecaWidget> {
                                   mainAxisSize: MainAxisSize.max,
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 0.0, 0.0, 9.0),
-                                      child: Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        children: [
-                                          Container(
-                                            width: 25.0,
-                                            height: 30.0,
-                                            decoration: BoxDecoration(
+                                    Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Container(
+                                          width: 25.0,
+                                          height: 20.0,
+                                          decoration: BoxDecoration(
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryBackground,
+                                            borderRadius:
+                                                BorderRadius.circular(25.0),
+                                            border: Border.all(
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryBackground,
-                                              borderRadius:
-                                                  BorderRadius.circular(25.0),
-                                              border: Border.all(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryBackground,
-                                              ),
                                             ),
                                           ),
-                                          Container(
-                                            width: 125.0,
-                                            height: 30.0,
-                                            decoration: BoxDecoration(
+                                        ),
+                                        Container(
+                                          width: 125.0,
+                                          height: 20.0,
+                                          decoration: BoxDecoration(
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryBackground,
+                                            borderRadius:
+                                                BorderRadius.circular(25.0),
+                                            border: Border.all(
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryBackground,
-                                              borderRadius:
-                                                  BorderRadius.circular(25.0),
-                                              border: Border.all(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryBackground,
-                                              ),
                                             ),
                                           ),
-                                          Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    5.0, 0.0, 0.0, 0.0),
-                                            child: Container(
-                                              width: 35.0,
-                                              height: 30.0,
-                                              decoration: BoxDecoration(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryBackground,
-                                                borderRadius:
-                                                    BorderRadius.circular(25.0),
-                                                border: Border.all(
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primaryBackground,
-                                                  width: 2.0,
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                          Container(
-                                            width: 45.0,
-                                            height: 30.0,
-                                            decoration: BoxDecoration(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primaryBackground,
-                                              borderRadius:
-                                                  BorderRadius.circular(25.0),
-                                              border: Border.all(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryBackground,
-                                                width: 2.0,
-                                              ),
-                                            ),
-                                            child: Align(
-                                              alignment: AlignmentDirectional(
-                                                  0.0, 0.0),
-                                              child: Text(
-                                                'Pts',
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryText,
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ),
-                                          Container(
+                                        ),
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  5.0, 0.0, 0.0, 0.0),
+                                          child: Container(
                                             width: 35.0,
-                                            height: 30.0,
+                                            height: 20.0,
                                             decoration: BoxDecoration(
                                               color:
                                                   FlutterFlowTheme.of(context)
@@ -301,13 +244,139 @@ class _RankMecaWidgetState extends State<RankMecaWidget> {
                                                 width: 2.0,
                                               ),
                                             ),
-                                            child: Align(
-                                              alignment: AlignmentDirectional(
-                                                  0.0, 0.0),
-                                              child: Text(
-                                                'V',
-                                                style:
-                                                    FlutterFlowTheme.of(context)
+                                          ),
+                                        ),
+                                        Container(
+                                          width: 45.0,
+                                          height: 20.0,
+                                          decoration: BoxDecoration(
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryBackground,
+                                            borderRadius:
+                                                BorderRadius.circular(25.0),
+                                            border: Border.all(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryBackground,
+                                              width: 2.0,
+                                            ),
+                                          ),
+                                          child: Align(
+                                            alignment:
+                                                AlignmentDirectional(0.0, 0.0),
+                                            child: Text(
+                                              'Pts',
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .secondaryText,
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                            ),
+                                          ),
+                                        ),
+                                        Container(
+                                          width: 35.0,
+                                          height: 20.0,
+                                          decoration: BoxDecoration(
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryBackground,
+                                            borderRadius:
+                                                BorderRadius.circular(25.0),
+                                            border: Border.all(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryBackground,
+                                              width: 2.0,
+                                            ),
+                                          ),
+                                          child: Align(
+                                            alignment:
+                                                AlignmentDirectional(0.0, 0.0),
+                                            child: Text(
+                                              'V',
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .secondaryText,
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                            ),
+                                          ),
+                                        ),
+                                        Container(
+                                          width: 45.0,
+                                          height: 20.0,
+                                          decoration: BoxDecoration(
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryBackground,
+                                            borderRadius:
+                                                BorderRadius.circular(25.0),
+                                            border: Border.all(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryBackground,
+                                              width: 2.0,
+                                            ),
+                                          ),
+                                          child: Align(
+                                            alignment:
+                                                AlignmentDirectional(0.0, 0.0),
+                                            child: Text(
+                                              'Top 3',
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .secondaryText,
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                            ),
+                                          ),
+                                        ),
+                                        Container(
+                                          width: 45.0,
+                                          height: 20.0,
+                                          decoration: BoxDecoration(
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryBackground,
+                                            borderRadius:
+                                                BorderRadius.circular(25.0),
+                                            border: Border.all(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryBackground,
+                                            ),
+                                          ),
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              if (_model.dropLigueMecaValue ==
+                                                  'formule.1')
+                                                Align(
+                                                  alignment:
+                                                      AlignmentDirectional(
+                                                          0.0, 0.0),
+                                                  child: Text(
+                                                    'Top 10',
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
                                                         .bodyMedium
                                                         .override(
                                                           fontFamily: 'Poppins',
@@ -316,32 +385,18 @@ class _RankMecaWidgetState extends State<RankMecaWidget> {
                                                               .secondaryText,
                                                           letterSpacing: 0.0,
                                                         ),
-                                              ),
-                                            ),
-                                          ),
-                                          Container(
-                                            width: 45.0,
-                                            height: 30.0,
-                                            decoration: BoxDecoration(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primaryBackground,
-                                              borderRadius:
-                                                  BorderRadius.circular(25.0),
-                                              border: Border.all(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryBackground,
-                                                width: 2.0,
-                                              ),
-                                            ),
-                                            child: Align(
-                                              alignment: AlignmentDirectional(
-                                                  0.0, 0.0),
-                                              child: Text(
-                                                'Top 3',
-                                                style:
-                                                    FlutterFlowTheme.of(context)
+                                                  ),
+                                                ),
+                                              if (_model.dropLigueMecaValue ==
+                                                  'moto.gp')
+                                                Align(
+                                                  alignment:
+                                                      AlignmentDirectional(
+                                                          0.0, 0.0),
+                                                  child: Text(
+                                                    'Top 15',
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
                                                         .bodyMedium
                                                         .override(
                                                           fontFamily: 'Poppins',
@@ -350,80 +405,12 @@ class _RankMecaWidgetState extends State<RankMecaWidget> {
                                                               .secondaryText,
                                                           letterSpacing: 0.0,
                                                         ),
-                                              ),
-                                            ),
-                                          ),
-                                          Container(
-                                            width: 45.0,
-                                            height: 30.0,
-                                            decoration: BoxDecoration(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primaryBackground,
-                                              borderRadius:
-                                                  BorderRadius.circular(25.0),
-                                              border: Border.all(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryBackground,
-                                              ),
-                                            ),
-                                            child: Row(
-                                              mainAxisSize: MainAxisSize.max,
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
-                                              children: [
-                                                if (_model.dropLigueMecaValue ==
-                                                    'formule.1')
-                                                  Align(
-                                                    alignment:
-                                                        AlignmentDirectional(
-                                                            0.0, 0.0),
-                                                    child: Text(
-                                                      'Top 10',
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Poppins',
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .secondaryText,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                              ),
-                                                    ),
                                                   ),
-                                                if (_model.dropLigueMecaValue ==
-                                                    'moto.gp')
-                                                  Align(
-                                                    alignment:
-                                                        AlignmentDirectional(
-                                                            0.0, 0.0),
-                                                    child: Text(
-                                                      'Top 15',
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Poppins',
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .secondaryText,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                              ),
-                                                    ),
-                                                  ),
-                                              ],
-                                            ),
+                                                ),
+                                            ],
                                           ),
-                                        ],
-                                      ),
+                                        ),
+                                      ],
                                     ),
                                     if (_model.dropLigueMecaValue != null &&
                                         _model.dropLigueMecaValue != '')
@@ -477,7 +464,7 @@ class _RankMecaWidgetState extends State<RankMecaWidget> {
                                                 children: [
                                                   Container(
                                                     width: 125.0,
-                                                    height: 30.0,
+                                                    height: 27.0,
                                                     decoration: BoxDecoration(
                                                       color: FlutterFlowTheme
                                                               .of(context)
@@ -521,7 +508,7 @@ class _RankMecaWidgetState extends State<RankMecaWidget> {
                                                   ),
                                                   Container(
                                                     width: 25.0,
-                                                    height: 30.0,
+                                                    height: 27.0,
                                                     decoration: BoxDecoration(
                                                       color: FlutterFlowTheme
                                                               .of(context)
@@ -567,7 +554,7 @@ class _RankMecaWidgetState extends State<RankMecaWidget> {
                                                                 0.0, 0.0),
                                                     child: Container(
                                                       width: 35.0,
-                                                      height: 30.0,
+                                                      height: 27.0,
                                                       decoration: BoxDecoration(
                                                         color: FlutterFlowTheme
                                                                 .of(context)
@@ -580,7 +567,12 @@ class _RankMecaWidgetState extends State<RankMecaWidget> {
                                                       ),
                                                       child: Padding(
                                                         padding:
-                                                            EdgeInsets.all(3.0),
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    0.0,
+                                                                    1.0,
+                                                                    0.0,
+                                                                    1.0),
                                                         child: ClipRRect(
                                                           borderRadius:
                                                               BorderRadius
@@ -600,7 +592,7 @@ class _RankMecaWidgetState extends State<RankMecaWidget> {
                                                   ),
                                                   Container(
                                                     width: 45.0,
-                                                    height: 30.0,
+                                                    height: 27.0,
                                                     decoration: BoxDecoration(
                                                       color: FlutterFlowTheme
                                                               .of(context)
@@ -639,7 +631,7 @@ class _RankMecaWidgetState extends State<RankMecaWidget> {
                                                   ),
                                                   Container(
                                                     width: 35.0,
-                                                    height: 30.0,
+                                                    height: 27.0,
                                                     decoration: BoxDecoration(
                                                       color: FlutterFlowTheme
                                                               .of(context)
@@ -676,7 +668,7 @@ class _RankMecaWidgetState extends State<RankMecaWidget> {
                                                   ),
                                                   Container(
                                                     width: 45.0,
-                                                    height: 30.0,
+                                                    height: 27.0,
                                                     decoration: BoxDecoration(
                                                       color: FlutterFlowTheme
                                                               .of(context)
@@ -713,7 +705,7 @@ class _RankMecaWidgetState extends State<RankMecaWidget> {
                                                   ),
                                                   Container(
                                                     width: 45.0,
-                                                    height: 30.0,
+                                                    height: 27.0,
                                                     decoration: BoxDecoration(
                                                       color: FlutterFlowTheme
                                                               .of(context)

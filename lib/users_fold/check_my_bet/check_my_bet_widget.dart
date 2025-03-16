@@ -196,148 +196,170 @@ class _CheckMyBetWidgetState extends State<CheckMyBetWidget> {
                               ],
                             ),
                           ),
-                          Column(
-                            mainAxisSize: MainAxisSize.max,
-                            crossAxisAlignment: CrossAxisAlignment.end,
-                            children: [
-                              if (containerMyBetsRecord.statut == true)
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 10.0, 0.0, 20.0),
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    crossAxisAlignment: CrossAxisAlignment.end,
-                                    children: [
-                                      if (containerMyBetsRecord.statut == true)
-                                        Row(
-                                          mainAxisSize: MainAxisSize.max,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: [
-                                            if ((valueOrDefault<bool>(
-                                                        currentUserDocument
-                                                            ?.helpNav,
-                                                        false) ==
-                                                    true) &&
-                                                (containerMyBetsRecord.seen ==
-                                                    false))
-                                              Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        0.0, 0.0, 10.0, 0.0),
-                                                child: AuthUserStreamWidget(
-                                                  builder: (context) => Text(
-                                                    'Ajouter les gains\nà mon stock',
-                                                    textAlign: TextAlign.end,
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .success,
-                                                          fontSize: 10.0,
-                                                          letterSpacing: 0.0,
-                                                          lineHeight: 1.1,
-                                                        ),
-                                                  ),
-                                                ),
-                                              ),
-                                            if (containerMyBetsRecord.seen ==
-                                                false)
-                                              Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        0.0, 0.0, 10.0, 0.0),
-                                                child: AuthUserStreamWidget(
-                                                  builder: (context) => InkWell(
-                                                    splashColor:
-                                                        Colors.transparent,
-                                                    focusColor:
-                                                        Colors.transparent,
-                                                    hoverColor:
-                                                        Colors.transparent,
-                                                    highlightColor:
-                                                        Colors.transparent,
-                                                    onTap: () async {
-                                                      Navigator.pop(context);
-
-                                                      await currentUserReference!
-                                                          .update({
-                                                        ...mapToFirestore(
-                                                          {
-                                                            'stock': FieldValue
-                                                                .increment(
-                                                                    containerMyBetsRecord
-                                                                        .potentialy),
-                                                            'bet_win':
-                                                                FieldValue
-                                                                    .increment(
-                                                                        1),
-                                                            'total_gains':
-                                                                FieldValue.increment(
-                                                                    containerMyBetsRecord
-                                                                        .potentialy),
-                                                            'earnings_total':
-                                                                FieldValue.increment(
-                                                                    containerMyBetsRecord
-                                                                        .potentialy),
-                                                          },
-                                                        ),
-                                                      });
-
-                                                      await containerMyBetsRecord
-                                                          .reference
-                                                          .update(
-                                                              createMyBetsRecordData(
-                                                        seen: true,
-                                                      ));
-                                                    },
-                                                    child: FaIcon(
-                                                      FontAwesomeIcons.donate,
-                                                      color:
-                                                          valueOrDefault<Color>(
-                                                        currentUserDocument
-                                                            ?.color1,
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .success,
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 50.0),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              children: [
+                                if (containerMyBetsRecord.statut == true)
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 10.0, 0.0, 20.0),
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.end,
+                                      children: [
+                                        if (containerMyBetsRecord.statut ==
+                                            true)
+                                          Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 10.0, 0.0, 20.0),
+                                            child: Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: [
+                                                if ((valueOrDefault<bool>(
+                                                            currentUserDocument
+                                                                ?.helpNav,
+                                                            false) ==
+                                                        true) &&
+                                                    (containerMyBetsRecord
+                                                            .seen ==
+                                                        false))
+                                                  Padding(
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(0.0, 0.0,
+                                                                10.0, 0.0),
+                                                    child: AuthUserStreamWidget(
+                                                      builder: (context) =>
+                                                          Text(
+                                                        'Ajouter les gains\nà mon stock',
+                                                        textAlign:
+                                                            TextAlign.end,
+                                                        style: FlutterFlowTheme
+                                                                .of(context)
+                                                            .bodyMedium
+                                                            .override(
+                                                              fontFamily:
+                                                                  'Poppins',
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .success,
+                                                              fontSize: 10.0,
+                                                              letterSpacing:
+                                                                  0.0,
+                                                              lineHeight: 1.1,
+                                                            ),
                                                       ),
-                                                      size: 30.0,
                                                     ),
                                                   ),
-                                                ),
-                                              ),
-                                            if (containerMyBetsRecord.statut ==
-                                                true)
-                                              Row(
-                                                mainAxisSize: MainAxisSize.max,
-                                                children: [
+                                                if (containerMyBetsRecord
+                                                        .seen ==
+                                                    false)
+                                                  Padding(
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(0.0, 0.0,
+                                                                10.0, 0.0),
+                                                    child: AuthUserStreamWidget(
+                                                      builder: (context) =>
+                                                          InkWell(
+                                                        splashColor:
+                                                            Colors.transparent,
+                                                        focusColor:
+                                                            Colors.transparent,
+                                                        hoverColor:
+                                                            Colors.transparent,
+                                                        highlightColor:
+                                                            Colors.transparent,
+                                                        onTap: () async {
+                                                          Navigator.pop(
+                                                              context);
+
+                                                          await currentUserReference!
+                                                              .update({
+                                                            ...mapToFirestore(
+                                                              {
+                                                                'stock': FieldValue
+                                                                    .increment(
+                                                                        containerMyBetsRecord
+                                                                            .potentialy),
+                                                                'bet_win':
+                                                                    FieldValue
+                                                                        .increment(
+                                                                            1),
+                                                                'total_gains':
+                                                                    FieldValue.increment(
+                                                                        containerMyBetsRecord
+                                                                            .potentialy),
+                                                                'earnings_total':
+                                                                    FieldValue.increment(
+                                                                        containerMyBetsRecord
+                                                                            .potentialy),
+                                                              },
+                                                            ),
+                                                          });
+
+                                                          await containerMyBetsRecord
+                                                              .reference
+                                                              .update(
+                                                                  createMyBetsRecordData(
+                                                            seen: true,
+                                                          ));
+                                                        },
+                                                        child: FaIcon(
+                                                          FontAwesomeIcons
+                                                              .donate,
+                                                          color: valueOrDefault<
+                                                              Color>(
+                                                            currentUserDocument
+                                                                ?.color1,
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .success,
+                                                          ),
+                                                          size: 30.0,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                if (containerMyBetsRecord
+                                                        .statut ==
+                                                    true)
                                                   Row(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
                                                     children: [
-                                                      Text(
-                                                        valueOrDefault<String>(
-                                                          formatNumber(
-                                                            functions.limitOf2Decimal(
-                                                                containerMyBetsRecord
-                                                                    .potentialy),
-                                                            formatType:
-                                                                FormatType
-                                                                    .decimal,
-                                                            decimalType:
-                                                                DecimalType
-                                                                    .periodDecimal,
-                                                          ),
-                                                          '00.00',
-                                                        ),
-                                                        textAlign:
-                                                            TextAlign.center,
-                                                        style:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
+                                                      Row(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        children: [
+                                                          Text(
+                                                            valueOrDefault<
+                                                                String>(
+                                                              formatNumber(
+                                                                functions.limitOf2Decimal(
+                                                                    containerMyBetsRecord
+                                                                        .potentialy),
+                                                                formatType:
+                                                                    FormatType
+                                                                        .decimal,
+                                                                decimalType:
+                                                                    DecimalType
+                                                                        .periodDecimal,
+                                                              ),
+                                                              '00.00',
+                                                            ),
+                                                            textAlign: TextAlign
+                                                                .center,
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
                                                                 .titleLarge
                                                                 .override(
                                                                   fontFamily:
@@ -348,117 +370,126 @@ class _CheckMyBetWidgetState extends State<CheckMyBetWidget> {
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),
-                                                      ),
-                                                      Padding(
-                                                        padding:
-                                                            EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    5.0,
-                                                                    0.0,
-                                                                    0.0,
-                                                                    0.0),
-                                                        child: Container(
-                                                          width: 25.0,
-                                                          height: 25.0,
-                                                          decoration:
-                                                              BoxDecoration(
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .primary,
-                                                            shape:
-                                                                BoxShape.circle,
-                                                            border: Border.all(
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .secondary,
-                                                            ),
                                                           ),
-                                                          child: Padding(
+                                                          Padding(
                                                             padding:
-                                                                EdgeInsets.all(
-                                                                    2.0),
-                                                            child: ClipRRect(
-                                                              borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          24.0),
-                                                              child:
-                                                                  Image.asset(
-                                                                'assets/images/logo_monnaiel.jpg',
-                                                                width: 50.0,
-                                                                height: 50.0,
-                                                                fit: BoxFit
-                                                                    .cover,
+                                                                EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        5.0,
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0),
+                                                            child: Container(
+                                                              width: 25.0,
+                                                              height: 25.0,
+                                                              decoration:
+                                                                  BoxDecoration(
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primary,
+                                                                shape: BoxShape
+                                                                    .circle,
+                                                                border:
+                                                                    Border.all(
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .secondary,
+                                                                ),
+                                                              ),
+                                                              child: Padding(
+                                                                padding:
+                                                                    EdgeInsets
+                                                                        .all(
+                                                                            2.0),
+                                                                child:
+                                                                    ClipRRect(
+                                                                  borderRadius:
+                                                                      BorderRadius
+                                                                          .circular(
+                                                                              24.0),
+                                                                  child: Image
+                                                                      .asset(
+                                                                    'assets/images/logo_monnaiel.jpg',
+                                                                    width: 50.0,
+                                                                    height:
+                                                                        50.0,
+                                                                    fit: BoxFit
+                                                                        .cover,
+                                                                  ),
+                                                                ),
                                                               ),
                                                             ),
                                                           ),
-                                                        ),
+                                                        ],
                                                       ),
                                                     ],
                                                   ),
-                                                ],
-                                              ),
-                                          ],
-                                        ),
-                                    ],
-                                  ),
-                                ),
-                              if (containerMyBetsRecord.statut == false)
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 10.0, 0.0, 20.0),
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Text(
-                                        '00.00',
-                                        textAlign: TextAlign.center,
-                                        style: FlutterFlowTheme.of(context)
-                                            .titleLarge
-                                            .override(
-                                              fontFamily: 'Montserrat',
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .error,
-                                              letterSpacing: 0.0,
-                                            ),
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            5.0, 0.0, 0.0, 0.0),
-                                        child: Container(
-                                          width: 25.0,
-                                          height: 25.0,
-                                          decoration: BoxDecoration(
-                                            color: FlutterFlowTheme.of(context)
-                                                .primary,
-                                            shape: BoxShape.circle,
-                                            border: Border.all(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondary,
+                                              ],
                                             ),
                                           ),
-                                          child: Padding(
-                                            padding: EdgeInsets.all(2.0),
-                                            child: ClipRRect(
-                                              borderRadius:
-                                                  BorderRadius.circular(24.0),
-                                              child: Image.asset(
-                                                'assets/images/logo_monnaiel.jpg',
-                                                width: 50.0,
-                                                height: 50.0,
-                                                fit: BoxFit.cover,
+                                      ],
+                                    ),
+                                  ),
+                                if (containerMyBetsRecord.statut == false)
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 10.0, 0.0, 20.0),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Text(
+                                          '00.00',
+                                          textAlign: TextAlign.center,
+                                          style: FlutterFlowTheme.of(context)
+                                              .titleLarge
+                                              .override(
+                                                fontFamily: 'Montserrat',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .error,
+                                                letterSpacing: 0.0,
+                                              ),
+                                        ),
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  5.0, 0.0, 0.0, 0.0),
+                                          child: Container(
+                                            width: 25.0,
+                                            height: 25.0,
+                                            decoration: BoxDecoration(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                              shape: BoxShape.circle,
+                                              border: Border.all(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondary,
+                                              ),
+                                            ),
+                                            child: Padding(
+                                              padding: EdgeInsets.all(2.0),
+                                              child: ClipRRect(
+                                                borderRadius:
+                                                    BorderRadius.circular(24.0),
+                                                child: Image.asset(
+                                                  'assets/images/logo_monnaiel.jpg',
+                                                  width: 50.0,
+                                                  height: 50.0,
+                                                  fit: BoxFit.cover,
+                                                ),
                                               ),
                                             ),
                                           ),
                                         ),
-                                      ),
-                                    ],
+                                      ],
+                                    ),
                                   ),
-                                ),
-                            ],
+                              ],
+                            ),
                           ),
                         ],
                       ),

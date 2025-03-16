@@ -75,6 +75,10 @@ class ModifTeamPageModel extends FlutterFlowModel<ModifTeamPageWidget> {
   FocusNode? drawsFieldFocusNode1;
   TextEditingController? drawsFieldTextController1;
   String? Function(BuildContext, String?)? drawsFieldTextController1Validator;
+  // State field(s) for L2MField widget.
+  FocusNode? l2MFieldFocusNode1;
+  TextEditingController? l2MFieldTextController1;
+  String? Function(BuildContext, String?)? l2MFieldTextController1Validator;
   // State field(s) for GoalsInField widget.
   FocusNode? goalsInFieldFocusNode1;
   TextEditingController? goalsInFieldTextController1;
@@ -105,6 +109,10 @@ class ModifTeamPageModel extends FlutterFlowModel<ModifTeamPageWidget> {
   FocusNode? drawsFieldFocusNode2;
   TextEditingController? drawsFieldTextController2;
   String? Function(BuildContext, String?)? drawsFieldTextController2Validator;
+  // State field(s) for L2MField widget.
+  FocusNode? l2MFieldFocusNode2;
+  TextEditingController? l2MFieldTextController2;
+  String? Function(BuildContext, String?)? l2MFieldTextController2Validator;
   // State field(s) for GoalsInField widget.
   FocusNode? goalsInFieldFocusNode2;
   TextEditingController? goalsInFieldTextController2;
@@ -141,6 +149,9 @@ class ModifTeamPageModel extends FlutterFlowModel<ModifTeamPageWidget> {
     drawsFieldFocusNode1?.dispose();
     drawsFieldTextController1?.dispose();
 
+    l2MFieldFocusNode1?.dispose();
+    l2MFieldTextController1?.dispose();
+
     goalsInFieldFocusNode1?.dispose();
     goalsInFieldTextController1?.dispose();
 
@@ -161,6 +172,9 @@ class ModifTeamPageModel extends FlutterFlowModel<ModifTeamPageWidget> {
 
     drawsFieldFocusNode2?.dispose();
     drawsFieldTextController2?.dispose();
+
+    l2MFieldFocusNode2?.dispose();
+    l2MFieldTextController2?.dispose();
 
     goalsInFieldFocusNode2?.dispose();
     goalsInFieldTextController2?.dispose();

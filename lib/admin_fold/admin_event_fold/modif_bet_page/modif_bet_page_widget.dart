@@ -801,6 +801,7 @@ class _ModifBetPageWidgetState extends State<ModifBetPageWidget> {
                           Row(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Align(
                                 alignment: AlignmentDirectional(0.0, 0.0),
@@ -848,55 +849,271 @@ class _ModifBetPageWidgetState extends State<ModifBetPageWidget> {
                                   ),
                                 ),
                               ),
-                              Align(
-                                alignment: AlignmentDirectional(0.0, 0.0),
-                                child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 20.0, 0.0, 16.0),
-                                  child: FFButtonWidget(
-                                    onPressed: () async {
-                                      await widget.betRef!
-                                          .update(createBetsRecordData(
-                                        statut: true,
-                                      ));
-                                      context.safePop();
-                                    },
-                                    text: 'Gagné',
-                                    options: FFButtonOptions(
-                                      width: 130.0,
-                                      height: 40.0,
+                              Column(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Align(
+                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    child: Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 0.0, 0.0, 0.0),
-                                      iconPadding:
-                                          EdgeInsetsDirectional.fromSTEB(
-                                              0.0, 0.0, 0.0, 0.0),
-                                      color:
-                                          FlutterFlowTheme.of(context).success,
-                                      textStyle: FlutterFlowTheme.of(context)
-                                          .titleSmall
-                                          .override(
-                                            fontFamily: 'Poppins',
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryBackground,
-                                            letterSpacing: 0.0,
+                                          0.0, 20.0, 0.0, 16.0),
+                                      child: FFButtonWidget(
+                                        onPressed: () async {
+                                          await widget.betRef!
+                                              .update(createBetsRecordData(
+                                            statut: true,
+                                          ));
+                                          context.safePop();
+                                        },
+                                        text: 'Gagné',
+                                        options: FFButtonOptions(
+                                          width: 130.0,
+                                          height: 40.0,
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 0.0, 0.0),
+                                          iconPadding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 0.0, 0.0),
+                                          color: FlutterFlowTheme.of(context)
+                                              .success,
+                                          textStyle: FlutterFlowTheme.of(
+                                                  context)
+                                              .titleSmall
+                                              .override(
+                                                fontFamily: 'Poppins',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryBackground,
+                                                letterSpacing: 0.0,
+                                              ),
+                                          elevation: 3.0,
+                                          borderSide: BorderSide(
+                                            color: Colors.transparent,
+                                            width: 1.0,
                                           ),
-                                      elevation: 3.0,
-                                      borderSide: BorderSide(
-                                        color: Colors.transparent,
-                                        width: 1.0,
+                                          borderRadius:
+                                              BorderRadius.circular(40.0),
+                                          hoverColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .success,
+                                          hoverTextColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .primaryBackground,
+                                        ),
                                       ),
-                                      borderRadius: BorderRadius.circular(40.0),
-                                      hoverColor:
-                                          FlutterFlowTheme.of(context).success,
-                                      hoverTextColor:
-                                          FlutterFlowTheme.of(context)
-                                              .primaryBackground,
                                     ),
                                   ),
-                                ),
+                                ],
                               ),
                             ],
                           ),
+                          if (modifBetPageBetsRecord.choice ==
+                              'Les 2 équipes marquent - Oui')
+                            StreamBuilder<EventsRecord>(
+                              stream: EventsRecord.getDocument(
+                                  modifBetPageBetsRecord.parentReference),
+                              builder: (context, snapshot) {
+                                // Customize what your widget looks like when it's loading.
+                                if (!snapshot.hasData) {
+                                  return Center(
+                                    child: SizedBox(
+                                      width: 50.0,
+                                      height: 50.0,
+                                      child: CircularProgressIndicator(
+                                        valueColor:
+                                            AlwaysStoppedAnimation<Color>(
+                                          FlutterFlowTheme.of(context).accent4,
+                                        ),
+                                      ),
+                                    ),
+                                  );
+                                }
+
+                                final columnEventsRecord = snapshot.data!;
+
+                                return Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 1.0, 0.0, 0.0),
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          if ((columnEventsRecord.leagueValue !=
+                                                  'champions.league') &&
+                                              (columnEventsRecord.leagueValue !=
+                                                  'europa.league') &&
+                                              (columnEventsRecord.leagueValue !=
+                                                  'conference.league'))
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  0.0, 0.0),
+                                              child: FFButtonWidget(
+                                                onPressed: () async {
+                                                  await columnEventsRecord
+                                                      .teamdomRef!
+                                                      .update({
+                                                    ...mapToFirestore(
+                                                      {
+                                                        'l2m': FieldValue
+                                                            .increment(1),
+                                                      },
+                                                    ),
+                                                  });
+
+                                                  await columnEventsRecord
+                                                      .teamextRef!
+                                                      .update({
+                                                    ...mapToFirestore(
+                                                      {
+                                                        'l2m': FieldValue
+                                                            .increment(1),
+                                                      },
+                                                    ),
+                                                  });
+
+                                                  await widget.betRef!.update(
+                                                      createBetsRecordData(
+                                                    statut: true,
+                                                  ));
+                                                  context.safePop();
+                                                },
+                                                text: 'Gagné+ Stats L2M',
+                                                options: FFButtonOptions(
+                                                  width: 200.0,
+                                                  height: 40.0,
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 0.0, 0.0, 0.0),
+                                                  iconPadding:
+                                                      EdgeInsetsDirectional
+                                                          .fromSTEB(0.0, 0.0,
+                                                              0.0, 0.0),
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .success,
+                                                  textStyle: FlutterFlowTheme
+                                                          .of(context)
+                                                      .titleSmall
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .primaryBackground,
+                                                        fontSize: 16.0,
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                  elevation: 3.0,
+                                                  borderSide: BorderSide(
+                                                    color: Colors.transparent,
+                                                    width: 1.0,
+                                                  ),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          40.0),
+                                                  hoverColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .error,
+                                                  hoverTextColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .primaryBackground,
+                                                ),
+                                              ),
+                                            ),
+                                          if ((columnEventsRecord.leagueValue ==
+                                                  'champions.league') ||
+                                              (columnEventsRecord.leagueValue ==
+                                                  'europa.league') ||
+                                              (columnEventsRecord.leagueValue ==
+                                                  'conference.league'))
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  0.0, 0.0),
+                                              child: FFButtonWidget(
+                                                onPressed: () async {
+                                                  await columnEventsRecord
+                                                      .teamdomRef!
+                                                      .update({
+                                                    ...mapToFirestore(
+                                                      {
+                                                        'l2m_cup': FieldValue
+                                                            .increment(1),
+                                                      },
+                                                    ),
+                                                  });
+
+                                                  await columnEventsRecord
+                                                      .teamextRef!
+                                                      .update({
+                                                    ...mapToFirestore(
+                                                      {
+                                                        'l2m_cup': FieldValue
+                                                            .increment(1),
+                                                      },
+                                                    ),
+                                                  });
+
+                                                  await widget.betRef!.update(
+                                                      createBetsRecordData(
+                                                    statut: true,
+                                                  ));
+                                                  context.safePop();
+                                                },
+                                                text: 'Gagné+ Stats L2M',
+                                                options: FFButtonOptions(
+                                                  width: 200.0,
+                                                  height: 40.0,
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 0.0, 0.0, 0.0),
+                                                  iconPadding:
+                                                      EdgeInsetsDirectional
+                                                          .fromSTEB(0.0, 0.0,
+                                                              0.0, 0.0),
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .success,
+                                                  textStyle: FlutterFlowTheme
+                                                          .of(context)
+                                                      .titleSmall
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .primaryBackground,
+                                                        fontSize: 16.0,
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                  elevation: 3.0,
+                                                  borderSide: BorderSide(
+                                                    color: Colors.transparent,
+                                                    width: 1.0,
+                                                  ),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          40.0),
+                                                  hoverColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .error,
+                                                  hoverTextColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .primaryBackground,
+                                                ),
+                                              ),
+                                            ),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                );
+                              },
+                            ),
                           Align(
                             alignment: AlignmentDirectional(0.0, 0.0),
                             child: Padding(

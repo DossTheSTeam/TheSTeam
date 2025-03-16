@@ -910,7 +910,7 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                     alignment: AlignmentDirectional(0.0, 0.0),
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(50.0, 0.0, 50.0, 10.0),
+                          EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 10.0),
                       child: SingleChildScrollView(
                         scrollDirection: Axis.horizontal,
                         child: Row(
@@ -1144,7 +1144,7 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(48.0, 5.0, 48.0, 5.0),
+                        EdgeInsetsDirectional.fromSTEB(20.0, 5.0, 20.0, 5.0),
                     child: AuthUserStreamWidget(
                       builder: (context) =>
                           StreamBuilder<List<MyTeamslikeRecord>>(

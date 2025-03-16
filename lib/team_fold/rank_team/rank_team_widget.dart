@@ -1,4 +1,3 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -125,447 +124,346 @@ class _RankTeamWidgetState extends State<RankTeamWidget> {
                                 ),
                               ],
                             ),
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  15.0, 0.0, 10.0, 0.0),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  AuthUserStreamWidget(
-                                    builder: (context) => InkWell(
-                                      splashColor: Colors.transparent,
-                                      focusColor: Colors.transparent,
-                                      hoverColor: Colors.transparent,
-                                      highlightColor: Colors.transparent,
-                                      onTap: () async {
-                                        Navigator.pop(context);
-                                      },
-                                      child: Icon(
-                                        Icons.arrow_back_ios_new_rounded,
-                                        color: valueOrDefault<Color>(
-                                          currentUserDocument?.color1,
-                                          FlutterFlowTheme.of(context)
-                                              .primaryText,
-                                        ),
-                                        size: 30.0,
-                                      ),
-                                    ),
-                                  ),
-                                  Align(
-                                    alignment: AlignmentDirectional(0.0, 0.0),
-                                    child: Text(
-                                      'Classement',
-                                      style: FlutterFlowTheme.of(context)
-                                          .headlineSmall
-                                          .override(
-                                            fontFamily: 'Poppins',
-                                            letterSpacing: 0.0,
-                                          ),
-                                    ),
-                                  ),
-                                  Icon(
-                                    Icons.arrow_back_ios_new_rounded,
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryBackground,
-                                    size: 30.0,
-                                  ),
-                                ],
-                              ),
-                            ),
                             Row(
                               mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.center,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      10.0, 0.0, 0.0, 0.0),
+                                  child: InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      Navigator.pop(context);
+                                    },
+                                    child: Icon(
+                                      Icons.arrow_back_ios_new_rounded,
+                                      color: valueOrDefault<Color>(
+                                        containerTeamsRecord.color1,
+                                        FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                      ),
+                                      size: 30.0,
+                                    ),
+                                  ),
+                                ),
                                 Align(
-                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  alignment: AlignmentDirectional(-1.0, 0.0),
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 10.0),
-                                    child: StreamBuilder<TeamsRecord>(
-                                      stream: TeamsRecord.getDocument(
-                                          widget.teamRef!),
-                                      builder: (context, snapshot) {
-                                        // Customize what your widget looks like when it's loading.
-                                        if (!snapshot.hasData) {
-                                          return Center(
-                                            child: SizedBox(
-                                              width: 50.0,
-                                              height: 50.0,
-                                              child: CircularProgressIndicator(
-                                                valueColor:
-                                                    AlwaysStoppedAnimation<
-                                                        Color>(
-                                                  FlutterFlowTheme.of(context)
-                                                      .accent4,
-                                                ),
-                                              ),
-                                            ),
-                                          );
-                                        }
-
-                                        final contDomTeamsRecord =
-                                            snapshot.data!;
-
-                                        return Container(
-                                          width: 160.0,
-                                          height: 80.0,
-                                          decoration: BoxDecoration(
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryBackground,
-                                          ),
-                                          child: Align(
-                                            alignment:
-                                                AlignmentDirectional(0.0, 0.0),
-                                            child: Column(
+                                        0.0, 0.0, 0.0, 1.0),
+                                    child: Container(
+                                      width: 230.0,
+                                      height: 50.0,
+                                      decoration: BoxDecoration(
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryBackground,
+                                      ),
+                                      child: Align(
+                                        alignment:
+                                            AlignmentDirectional(0.0, 0.0),
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Row(
                                               mainAxisSize: MainAxisSize.max,
                                               mainAxisAlignment:
-                                                  MainAxisAlignment.start,
+                                                  MainAxisAlignment.center,
                                               children: [
-                                                Row(
+                                                Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 0.0, 10.0, 0.0),
+                                                  child: Container(
+                                                    width: 45.0,
+                                                    height: 35.0,
+                                                    decoration: BoxDecoration(
+                                                      color: FlutterFlowTheme
+                                                              .of(context)
+                                                          .primaryBackground,
+                                                    ),
+                                                    child: ClipRRect(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              0.0),
+                                                      child: Image.network(
+                                                        containerTeamsRecord
+                                                            .logo,
+                                                        width: 300.0,
+                                                        height: 200.0,
+                                                        fit: BoxFit.fitHeight,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                                Column(
                                                   mainAxisSize:
                                                       MainAxisSize.max,
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment
-                                                          .spaceBetween,
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.center,
                                                   children: [
-                                                    Container(
-                                                      width: 50.0,
-                                                      height: 30.0,
-                                                      decoration: BoxDecoration(
-                                                        color: FlutterFlowTheme
-                                                                .of(context)
-                                                            .primaryBackground,
-                                                      ),
-                                                      child: Row(
-                                                        mainAxisSize:
-                                                            MainAxisSize.max,
-                                                        mainAxisAlignment:
-                                                            MainAxisAlignment
-                                                                .spaceBetween,
-                                                        children: [
-                                                          Icon(
-                                                            Icons.bar_chart,
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .secondaryText,
-                                                            size: 20.0,
-                                                          ),
-                                                          Container(
-                                                            width: 30.0,
-                                                            height: 30.0,
-                                                            decoration:
-                                                                BoxDecoration(
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .primaryBackground,
-                                                            ),
-                                                            child: Visibility(
-                                                              visible: (containerTeamsRecord.leagueValue != 'autres') &&
-                                                                  (containerTeamsRecord
-                                                                          .leagueValue !=
-                                                                      'autres.france') &&
-                                                                  (containerTeamsRecord
-                                                                          .leagueValue !=
-                                                                      'pays.football'),
-                                                              child: FutureBuilder<
-                                                                  List<
-                                                                      TeamsRecord>>(
-                                                                future:
-                                                                    queryTeamsRecordOnce(
-                                                                  queryBuilder: (teamsRecord) =>
-                                                                      teamsRecord
-                                                                          .where(
-                                                                            'league_value',
-                                                                            isEqualTo:
-                                                                                containerTeamsRecord.leagueValue,
-                                                                          )
-                                                                          .orderBy(
-                                                                              'points',
-                                                                              descending: true),
-                                                                  limit: 30,
+                                                    Align(
+                                                      alignment:
+                                                          AlignmentDirectional(
+                                                              0.0, 0.0),
+                                                      child: Text(
+                                                        containerTeamsRecord
+                                                            .name,
+                                                        textAlign:
+                                                            TextAlign.start,
+                                                        maxLines: 2,
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelSmall
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Poppins',
+                                                                  color:
+                                                                      valueOrDefault<
+                                                                          Color>(
+                                                                    containerTeamsRecord
+                                                                        .color1,
+                                                                    FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primaryText,
+                                                                  ),
+                                                                  letterSpacing:
+                                                                      0.0,
                                                                 ),
-                                                                builder: (context,
-                                                                    snapshot) {
-                                                                  // Customize what your widget looks like when it's loading.
-                                                                  if (!snapshot
-                                                                      .hasData) {
-                                                                    return Center(
-                                                                      child:
-                                                                          SizedBox(
-                                                                        width:
-                                                                            50.0,
-                                                                        height:
-                                                                            50.0,
-                                                                        child:
-                                                                            CircularProgressIndicator(
-                                                                          valueColor:
-                                                                              AlwaysStoppedAnimation<Color>(
-                                                                            FlutterFlowTheme.of(context).accent4,
-                                                                          ),
-                                                                        ),
-                                                                      ),
-                                                                    );
-                                                                  }
-                                                                  List<TeamsRecord>
-                                                                      rowTeamsRecordList =
-                                                                      snapshot
-                                                                          .data!;
-
-                                                                  return Row(
-                                                                    mainAxisSize:
-                                                                        MainAxisSize
-                                                                            .max,
-                                                                    mainAxisAlignment:
-                                                                        MainAxisAlignment
-                                                                            .end,
-                                                                    children: List.generate(
-                                                                        rowTeamsRecordList
-                                                                            .length,
-                                                                        (rowIndex) {
-                                                                      final rowTeamsRecord =
-                                                                          rowTeamsRecordList[
-                                                                              rowIndex];
-                                                                      return Visibility(
-                                                                        visible:
-                                                                            rowTeamsRecord.reference ==
-                                                                                containerTeamsRecord.reference,
-                                                                        child:
-                                                                            Text(
-                                                                          valueOrDefault<
-                                                                              String>(
-                                                                            functions.zeroTo1(rowIndex).toString(),
-                                                                            '1',
-                                                                          ),
-                                                                          textAlign:
-                                                                              TextAlign.center,
-                                                                          style: FlutterFlowTheme.of(context)
-                                                                              .labelMedium
-                                                                              .override(
-                                                                                fontFamily: 'Poppins',
-                                                                                letterSpacing: 0.0,
-                                                                              ),
-                                                                        ),
-                                                                      );
-                                                                    }),
-                                                                  );
-                                                                },
-                                                              ),
-                                                            ),
-                                                          ),
-                                                        ],
-                                                      ),
-                                                    ),
-                                                    Container(
-                                                      width: 45.0,
-                                                      height: 35.0,
-                                                      decoration: BoxDecoration(
-                                                        color: FlutterFlowTheme
-                                                                .of(context)
-                                                            .primaryBackground,
-                                                      ),
-                                                      child: ClipRRect(
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(0.0),
-                                                        child: Image.network(
-                                                          contDomTeamsRecord
-                                                              .logo,
-                                                          width: 300.0,
-                                                          height: 200.0,
-                                                          fit: BoxFit.fitHeight,
-                                                        ),
-                                                      ),
-                                                    ),
-                                                    Container(
-                                                      width: 50.0,
-                                                      height: 30.0,
-                                                      decoration: BoxDecoration(
-                                                        color: FlutterFlowTheme
-                                                                .of(context)
-                                                            .primaryBackground,
                                                       ),
                                                     ),
                                                   ],
                                                 ),
-                                                Align(
-                                                  alignment:
-                                                      AlignmentDirectional(
-                                                          0.0, 0.0),
-                                                  child: Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 3.0,
-                                                                0.0, 3.0),
-                                                    child: Text(
-                                                      contDomTeamsRecord.name,
-                                                      textAlign:
-                                                          TextAlign.start,
-                                                      maxLines: 2,
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .labelSmall
-                                                          .override(
-                                                            fontFamily:
-                                                                'Poppins',
-                                                            color:
-                                                                valueOrDefault<
-                                                                    Color>(
-                                                              contDomTeamsRecord
-                                                                  .color1,
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .primaryText,
-                                                            ),
-                                                            letterSpacing: 0.0,
-                                                          ),
-                                                    ),
-                                                  ),
+                                              ],
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 10.0, 0.0),
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Container(
+                                            width: 30.0,
+                                            height: 30.0,
+                                            decoration: BoxDecoration(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryBackground,
+                                            ),
+                                            child: Visibility(
+                                              visible: (containerTeamsRecord
+                                                          .leagueValue !=
+                                                      'autres') &&
+                                                  (containerTeamsRecord
+                                                          .leagueValue !=
+                                                      'autres.france') &&
+                                                  (containerTeamsRecord
+                                                          .leagueValue !=
+                                                      'pays.football'),
+                                              child: FutureBuilder<
+                                                  List<TeamsRecord>>(
+                                                future: queryTeamsRecordOnce(
+                                                  queryBuilder: (teamsRecord) =>
+                                                      teamsRecord
+                                                          .where(
+                                                            'league_value',
+                                                            isEqualTo:
+                                                                containerTeamsRecord
+                                                                    .leagueValue,
+                                                          )
+                                                          .orderBy('points',
+                                                              descending: true),
+                                                  limit: 30,
                                                 ),
-                                                if ((contDomTeamsRecord
-                                                            .leagueValue !=
-                                                        'autres') &&
-                                                    (contDomTeamsRecord
-                                                            .leagueValue !=
-                                                        'autres.france') &&
-                                                    (contDomTeamsRecord
-                                                            .leagueValue !=
-                                                        'pays.football'))
-                                                  Row(
+                                                builder: (context, snapshot) {
+                                                  // Customize what your widget looks like when it's loading.
+                                                  if (!snapshot.hasData) {
+                                                    return Center(
+                                                      child: SizedBox(
+                                                        width: 50.0,
+                                                        height: 50.0,
+                                                        child:
+                                                            CircularProgressIndicator(
+                                                          valueColor:
+                                                              AlwaysStoppedAnimation<
+                                                                  Color>(
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .accent4,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    );
+                                                  }
+                                                  List<TeamsRecord>
+                                                      rowTeamsRecordList =
+                                                      snapshot.data!;
+
+                                                  return Row(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
                                                     mainAxisAlignment:
-                                                        MainAxisAlignment
-                                                            .center,
-                                                    children: [
-                                                      Padding(
-                                                        padding:
-                                                            EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    0.0,
-                                                                    0.0,
-                                                                    5.0,
-                                                                    0.0),
+                                                        MainAxisAlignment.start,
+                                                    children: List.generate(
+                                                        rowTeamsRecordList
+                                                            .length,
+                                                        (rowIndex) {
+                                                      final rowTeamsRecord =
+                                                          rowTeamsRecordList[
+                                                              rowIndex];
+                                                      return Visibility(
+                                                        visible: rowTeamsRecord
+                                                                .reference ==
+                                                            containerTeamsRecord
+                                                                .reference,
                                                         child: Text(
                                                           valueOrDefault<
                                                               String>(
-                                                            contDomTeamsRecord
-                                                                .wins
+                                                            functions
+                                                                .zeroTo1(
+                                                                    rowIndex)
                                                                 .toString(),
-                                                            '0',
+                                                            '1',
                                                           ),
+                                                          textAlign:
+                                                              TextAlign.center,
                                                           style: FlutterFlowTheme
                                                                   .of(context)
-                                                              .bodyMedium
+                                                              .labelMedium
                                                               .override(
                                                                 fontFamily:
                                                                     'Poppins',
-                                                                fontSize: 10.0,
                                                                 letterSpacing:
                                                                     0.0,
                                                               ),
                                                         ),
-                                                      ),
-                                                      Padding(
-                                                        padding:
-                                                            EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    0.0,
-                                                                    0.0,
-                                                                    5.0,
-                                                                    0.0),
-                                                        child: Text(
-                                                          '-',
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Poppins',
-                                                                fontSize: 10.0,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                              ),
-                                                        ),
-                                                      ),
-                                                      Padding(
-                                                        padding:
-                                                            EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    0.0,
-                                                                    0.0,
-                                                                    5.0,
-                                                                    0.0),
-                                                        child: Text(
-                                                          valueOrDefault<
-                                                              String>(
-                                                            contDomTeamsRecord
-                                                                .draws
-                                                                .toString(),
-                                                            '0',
-                                                          ),
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Poppins',
-                                                                fontSize: 10.0,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                              ),
-                                                        ),
-                                                      ),
-                                                      Padding(
-                                                        padding:
-                                                            EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    0.0,
-                                                                    0.0,
-                                                                    5.0,
-                                                                    0.0),
-                                                        child: Text(
-                                                          '-',
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Poppins',
-                                                                fontSize: 10.0,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                              ),
-                                                        ),
-                                                      ),
-                                                      Text(
-                                                        valueOrDefault<String>(
-                                                          contDomTeamsRecord
-                                                              .looses
-                                                              .toString(),
-                                                          '0',
-                                                        ),
-                                                        style: FlutterFlowTheme
-                                                                .of(context)
-                                                            .bodyMedium
-                                                            .override(
-                                                              fontFamily:
-                                                                  'Poppins',
-                                                              fontSize: 10.0,
-                                                              letterSpacing:
-                                                                  0.0,
-                                                            ),
-                                                      ),
-                                                    ],
-                                                  ),
-                                              ],
+                                                      );
+                                                    }),
+                                                  );
+                                                },
+                                              ),
                                             ),
                                           ),
-                                        );
-                                      },
-                                    ),
+                                          Icon(
+                                            Icons.bar_chart,
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondaryText,
+                                            size: 20.0,
+                                          ),
+                                        ],
+                                      ),
+                                      Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 5.0, 0.0),
+                                            child: Text(
+                                              valueOrDefault<String>(
+                                                containerTeamsRecord.wins
+                                                    .toString(),
+                                                '0',
+                                              ),
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        fontSize: 10.0,
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                            ),
+                                          ),
+                                          Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 5.0, 0.0),
+                                            child: Text(
+                                              '-',
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        fontSize: 10.0,
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                            ),
+                                          ),
+                                          Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 5.0, 0.0),
+                                            child: Text(
+                                              valueOrDefault<String>(
+                                                containerTeamsRecord.draws
+                                                    .toString(),
+                                                '0',
+                                              ),
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        fontSize: 10.0,
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                            ),
+                                          ),
+                                          Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 5.0, 0.0),
+                                            child: Text(
+                                              '-',
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        fontSize: 10.0,
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                            ),
+                                          ),
+                                          Text(
+                                            valueOrDefault<String>(
+                                              containerTeamsRecord.looses
+                                                  .toString(),
+                                              '0',
+                                            ),
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Poppins',
+                                                  fontSize: 10.0,
+                                                  letterSpacing: 0.0,
+                                                ),
+                                          ),
+                                        ],
+                                      ),
+                                    ],
                                   ),
                                 ),
                               ],
@@ -573,25 +471,23 @@ class _RankTeamWidgetState extends State<RankTeamWidget> {
                             Column(
                               mainAxisSize: MainAxisSize.max,
                               children: [
-                                Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      children: [
-                                        Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 0.0, 9.0),
-                                          child: Row(
+                                SingleChildScrollView(
+                                  scrollDirection: Axis.horizontal,
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Column(
+                                        mainAxisSize: MainAxisSize.max,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.center,
+                                        children: [
+                                          Row(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
                                               Container(
                                                 width: 25.0,
-                                                height: 30.0,
+                                                height: 20.0,
                                                 decoration: BoxDecoration(
                                                   color: FlutterFlowTheme.of(
                                                           context)
@@ -617,7 +513,7 @@ class _RankTeamWidgetState extends State<RankTeamWidget> {
                                                       'basketball'))
                                                 Container(
                                                   width: 125.0,
-                                                  height: 30.0,
+                                                  height: 20.0,
                                                   decoration: BoxDecoration(
                                                     color: FlutterFlowTheme.of(
                                                             context)
@@ -638,7 +534,7 @@ class _RankTeamWidgetState extends State<RankTeamWidget> {
                                                         5.0, 0.0, 0.0, 0.0),
                                                 child: Container(
                                                   width: 35.0,
-                                                  height: 30.0,
+                                                  height: 20.0,
                                                   decoration: BoxDecoration(
                                                     color: FlutterFlowTheme.of(
                                                             context)
@@ -666,7 +562,7 @@ class _RankTeamWidgetState extends State<RankTeamWidget> {
                                                       'basketball'))
                                                 Container(
                                                   width: 35.0,
-                                                  height: 30.0,
+                                                  height: 20.0,
                                                   decoration: BoxDecoration(
                                                     color: FlutterFlowTheme.of(
                                                             context)
@@ -705,7 +601,7 @@ class _RankTeamWidgetState extends State<RankTeamWidget> {
                                                 ),
                                               Container(
                                                 width: 35.0,
-                                                height: 30.0,
+                                                height: 20.0,
                                                 decoration: BoxDecoration(
                                                   color: FlutterFlowTheme.of(
                                                           context)
@@ -741,7 +637,7 @@ class _RankTeamWidgetState extends State<RankTeamWidget> {
                                               ),
                                               Container(
                                                 width: 35.0,
-                                                height: 30.0,
+                                                height: 20.0,
                                                 decoration: BoxDecoration(
                                                   color: FlutterFlowTheme.of(
                                                           context)
@@ -777,7 +673,7 @@ class _RankTeamWidgetState extends State<RankTeamWidget> {
                                               ),
                                               Container(
                                                 width: 35.0,
-                                                height: 30.0,
+                                                height: 20.0,
                                                 decoration: BoxDecoration(
                                                   color: FlutterFlowTheme.of(
                                                           context)
@@ -818,7 +714,7 @@ class _RankTeamWidgetState extends State<RankTeamWidget> {
                                                       'basketball'))
                                                 Container(
                                                   width: 35.0,
-                                                  height: 30.0,
+                                                  height: 20.0,
                                                   decoration: BoxDecoration(
                                                     color: FlutterFlowTheme.of(
                                                             context)
@@ -865,7 +761,7 @@ class _RankTeamWidgetState extends State<RankTeamWidget> {
                                                       'basketball'))
                                                 Container(
                                                   width: 90.0,
-                                                  height: 30.0,
+                                                  height: 20.0,
                                                   decoration: BoxDecoration(
                                                     color: FlutterFlowTheme.of(
                                                             context)
@@ -911,7 +807,7 @@ class _RankTeamWidgetState extends State<RankTeamWidget> {
                                                 ),
                                               Container(
                                                 width: 35.0,
-                                                height: 30.0,
+                                                height: 20.0,
                                                 decoration: BoxDecoration(
                                                   color: FlutterFlowTheme.of(
                                                           context)
@@ -946,69 +842,162 @@ class _RankTeamWidgetState extends State<RankTeamWidget> {
                                               ),
                                             ],
                                           ),
-                                        ),
-                                        StreamBuilder<List<TeamsRecord>>(
-                                          stream: queryTeamsRecord(
-                                            queryBuilder: (teamsRecord) =>
-                                                teamsRecord
-                                                    .where(
-                                                      'league_value',
-                                                      isEqualTo:
-                                                          containerTeamsRecord
-                                                              .leagueValue,
-                                                    )
-                                                    .orderBy('points',
-                                                        descending: true),
-                                            limit: 20,
-                                          ),
-                                          builder: (context, snapshot) {
-                                            // Customize what your widget looks like when it's loading.
-                                            if (!snapshot.hasData) {
-                                              return Center(
-                                                child: SizedBox(
-                                                  width: 50.0,
-                                                  height: 50.0,
-                                                  child:
-                                                      CircularProgressIndicator(
-                                                    valueColor:
-                                                        AlwaysStoppedAnimation<
-                                                            Color>(
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .accent4,
+                                          StreamBuilder<List<TeamsRecord>>(
+                                            stream: queryTeamsRecord(
+                                              queryBuilder: (teamsRecord) =>
+                                                  teamsRecord
+                                                      .where(
+                                                        'league_value',
+                                                        isEqualTo:
+                                                            containerTeamsRecord
+                                                                .leagueValue,
+                                                      )
+                                                      .orderBy('points',
+                                                          descending: true),
+                                              limit: 20,
+                                            ),
+                                            builder: (context, snapshot) {
+                                              // Customize what your widget looks like when it's loading.
+                                              if (!snapshot.hasData) {
+                                                return Center(
+                                                  child: SizedBox(
+                                                    width: 50.0,
+                                                    height: 50.0,
+                                                    child:
+                                                        CircularProgressIndicator(
+                                                      valueColor:
+                                                          AlwaysStoppedAnimation<
+                                                              Color>(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .accent4,
+                                                      ),
                                                     ),
                                                   ),
-                                                ),
-                                              );
-                                            }
-                                            List<TeamsRecord>
-                                                columnETeamsPointsScrollTeamsRecordList =
-                                                snapshot.data!;
+                                                );
+                                              }
+                                              List<TeamsRecord>
+                                                  columnETeamsPointsScrollTeamsRecordList =
+                                                  snapshot.data!;
 
-                                            return Column(
-                                              mainAxisSize: MainAxisSize.max,
-                                              children: List.generate(
-                                                  columnETeamsPointsScrollTeamsRecordList
-                                                      .length,
-                                                  (columnETeamsPointsScrollIndex) {
-                                                final columnETeamsPointsScrollTeamsRecord =
-                                                    columnETeamsPointsScrollTeamsRecordList[
-                                                        columnETeamsPointsScrollIndex];
-                                                return Row(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  children: [
-                                                    if ((containerTeamsRecord.sportValue ==
-                                                            'mma') ||
-                                                        (containerTeamsRecord
-                                                                .sportValue ==
-                                                            'boxe') ||
-                                                        (containerTeamsRecord
-                                                                .sportValue ==
-                                                            'basketball'))
+                                              return Column(
+                                                mainAxisSize: MainAxisSize.max,
+                                                children: List.generate(
+                                                    columnETeamsPointsScrollTeamsRecordList
+                                                        .length,
+                                                    (columnETeamsPointsScrollIndex) {
+                                                  final columnETeamsPointsScrollTeamsRecord =
+                                                      columnETeamsPointsScrollTeamsRecordList[
+                                                          columnETeamsPointsScrollIndex];
+                                                  return Row(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    children: [
+                                                      if ((containerTeamsRecord
+                                                                  .sportValue ==
+                                                              'mma') ||
+                                                          (containerTeamsRecord
+                                                                  .sportValue ==
+                                                              'boxe') ||
+                                                          (containerTeamsRecord
+                                                                  .sportValue ==
+                                                              'basketball'))
+                                                        Container(
+                                                          width: 125.0,
+                                                          height: 27.0,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryBackground,
+                                                            border: Border.all(
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .primaryBackground,
+                                                            ),
+                                                          ),
+                                                          child: Row(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            children: [
+                                                              if (columnETeamsPointsScrollTeamsRecord
+                                                                      .reference ==
+                                                                  widget
+                                                                      .teamRef)
+                                                                Align(
+                                                                  alignment:
+                                                                      AlignmentDirectional(
+                                                                          -1.0,
+                                                                          0.0),
+                                                                  child:
+                                                                      Padding(
+                                                                    padding: EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            5.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                    child: Text(
+                                                                      columnETeamsPointsScrollTeamsRecord
+                                                                          .name,
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                'Poppins',
+                                                                            color:
+                                                                                valueOrDefault<Color>(
+                                                                              columnETeamsPointsScrollTeamsRecord.color1,
+                                                                              FlutterFlowTheme.of(context).primaryText,
+                                                                            ),
+                                                                            letterSpacing:
+                                                                                0.0,
+                                                                          ),
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                              if (columnETeamsPointsScrollTeamsRecord
+                                                                      .reference !=
+                                                                  widget
+                                                                      .teamRef)
+                                                                Align(
+                                                                  alignment:
+                                                                      AlignmentDirectional(
+                                                                          -1.0,
+                                                                          0.0),
+                                                                  child:
+                                                                      Padding(
+                                                                    padding: EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            5.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                    child: Text(
+                                                                      columnETeamsPointsScrollTeamsRecord
+                                                                          .name,
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                'Poppins',
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).primaryText,
+                                                                            letterSpacing:
+                                                                                0.0,
+                                                                          ),
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                            ],
+                                                          ),
+                                                        ),
                                                       Container(
-                                                        width: 125.0,
-                                                        height: 30.0,
+                                                        width: 25.0,
+                                                        height: 27.0,
                                                         decoration:
                                                             BoxDecoration(
                                                           color: FlutterFlowTheme
@@ -1020,366 +1009,141 @@ class _RankTeamWidgetState extends State<RankTeamWidget> {
                                                                 .primaryBackground,
                                                           ),
                                                         ),
-                                                        child: Align(
-                                                          alignment:
-                                                              AlignmentDirectional(
-                                                                  -1.0, 0.0),
+                                                        child: Row(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .center,
+                                                          children: [
+                                                            if (columnETeamsPointsScrollTeamsRecord
+                                                                    .reference ==
+                                                                widget.teamRef)
+                                                              Align(
+                                                                alignment:
+                                                                    AlignmentDirectional(
+                                                                        1.0,
+                                                                        0.0),
+                                                                child: Text(
+                                                                  valueOrDefault<
+                                                                      String>(
+                                                                    functions
+                                                                        .zeroTo1(
+                                                                            columnETeamsPointsScrollIndex)
+                                                                        .toString(),
+                                                                    '1',
+                                                                  ),
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Poppins',
+                                                                        color: valueOrDefault<
+                                                                            Color>(
+                                                                          columnETeamsPointsScrollTeamsRecord
+                                                                              .color1,
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .primaryText,
+                                                                        ),
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                      ),
+                                                                ),
+                                                              ),
+                                                            if (columnETeamsPointsScrollTeamsRecord
+                                                                    .reference !=
+                                                                widget.teamRef)
+                                                              Align(
+                                                                alignment:
+                                                                    AlignmentDirectional(
+                                                                        1.0,
+                                                                        0.0),
+                                                                child: Text(
+                                                                  valueOrDefault<
+                                                                      String>(
+                                                                    functions
+                                                                        .zeroTo1(
+                                                                            columnETeamsPointsScrollIndex)
+                                                                        .toString(),
+                                                                    '1',
+                                                                  ),
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Poppins',
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .primaryText,
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                      ),
+                                                                ),
+                                                              ),
+                                                          ],
+                                                        ),
+                                                      ),
+                                                      Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    5.0,
+                                                                    0.0,
+                                                                    0.0,
+                                                                    0.0),
+                                                        child: Container(
+                                                          width: 35.0,
+                                                          height: 27.0,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryBackground,
+                                                            border: Border.all(
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .primaryBackground,
+                                                            ),
+                                                          ),
                                                           child: Padding(
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        5.0,
                                                                         0.0,
+                                                                        1.0,
                                                                         0.0,
-                                                                        0.0),
-                                                            child: Text(
-                                                              columnETeamsPointsScrollTeamsRecord
-                                                                  .name,
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .bodyMedium
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        'Poppins',
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primaryText,
-                                                                    letterSpacing:
-                                                                        0.0,
-                                                                  ),
+                                                                        1.0),
+                                                            child: ClipRRect(
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          0.0),
+                                                              child:
+                                                                  Image.network(
+                                                                columnETeamsPointsScrollTeamsRecord
+                                                                    .logo,
+                                                                width: 200.0,
+                                                                height: 200.0,
+                                                                fit: BoxFit
+                                                                    .fitHeight,
+                                                              ),
                                                             ),
                                                           ),
                                                         ),
                                                       ),
-                                                    Container(
-                                                      width: 25.0,
-                                                      height: 30.0,
-                                                      decoration: BoxDecoration(
-                                                        color: FlutterFlowTheme
-                                                                .of(context)
-                                                            .primaryBackground,
-                                                        border: Border.all(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryBackground,
-                                                        ),
-                                                      ),
-                                                      child: Align(
-                                                        alignment:
-                                                            AlignmentDirectional(
-                                                                1.0, 0.0),
-                                                        child: Text(
-                                                          valueOrDefault<
-                                                              String>(
-                                                            functions
-                                                                .zeroTo1(
-                                                                    columnETeamsPointsScrollIndex)
-                                                                .toString(),
-                                                            '1',
-                                                          ),
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Poppins',
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .primaryText,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                              ),
-                                                        ),
-                                                      ),
-                                                    ),
-                                                    Padding(
-                                                      padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  5.0,
-                                                                  0.0,
-                                                                  0.0,
-                                                                  0.0),
-                                                      child: Container(
-                                                        width: 35.0,
-                                                        height: 30.0,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryBackground,
-                                                          border: Border.all(
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .primaryBackground,
-                                                          ),
-                                                        ),
-                                                        child: Padding(
-                                                          padding:
-                                                              EdgeInsets.all(
-                                                                  3.0),
-                                                          child: ClipRRect(
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        0.0),
-                                                            child:
-                                                                Image.network(
-                                                              columnETeamsPointsScrollTeamsRecord
-                                                                  .logo,
-                                                              width: 200.0,
-                                                              height: 200.0,
-                                                              fit: BoxFit
-                                                                  .fitHeight,
-                                                            ),
-                                                          ),
-                                                        ),
-                                                      ),
-                                                    ),
-                                                    if ((containerTeamsRecord.sportValue !=
-                                                            'mma') &&
-                                                        (containerTeamsRecord
-                                                                .sportValue !=
-                                                            'boxe') &&
-                                                        (containerTeamsRecord
-                                                                .sportValue !=
-                                                            'basketball'))
-                                                      Container(
-                                                        width: 35.0,
-                                                        height: 30.0,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryBackground,
-                                                          border: Border.all(
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .primaryBackground,
-                                                          ),
-                                                        ),
-                                                        child: Align(
-                                                          alignment:
-                                                              AlignmentDirectional(
-                                                                  0.0, 0.0),
-                                                          child: Text(
-                                                            valueOrDefault<
-                                                                String>(
-                                                              columnETeamsPointsScrollTeamsRecord
-                                                                  .points
-                                                                  .toString(),
-                                                              '0',
-                                                            ),
-                                                            textAlign: TextAlign
-                                                                .center,
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                ),
-                                                          ),
-                                                        ),
-                                                      ),
-                                                    Container(
-                                                      width: 35.0,
-                                                      height: 30.0,
-                                                      decoration: BoxDecoration(
-                                                        color: FlutterFlowTheme
-                                                                .of(context)
-                                                            .primaryBackground,
-                                                        border: Border.all(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryBackground,
-                                                        ),
-                                                      ),
-                                                      child: Align(
-                                                        alignment:
-                                                            AlignmentDirectional(
-                                                                0.0, 0.0),
-                                                        child: Text(
-                                                          valueOrDefault<
-                                                              String>(
-                                                            columnETeamsPointsScrollTeamsRecord
-                                                                .wins
-                                                                .toString(),
-                                                            '0',
-                                                          ),
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Poppins',
-                                                                letterSpacing:
-                                                                    0.0,
-                                                              ),
-                                                        ),
-                                                      ),
-                                                    ),
-                                                    Container(
-                                                      width: 35.0,
-                                                      height: 30.0,
-                                                      decoration: BoxDecoration(
-                                                        color: FlutterFlowTheme
-                                                                .of(context)
-                                                            .primaryBackground,
-                                                        border: Border.all(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryBackground,
-                                                        ),
-                                                      ),
-                                                      child: Align(
-                                                        alignment:
-                                                            AlignmentDirectional(
-                                                                0.0, 0.0),
-                                                        child: Text(
-                                                          valueOrDefault<
-                                                              String>(
-                                                            columnETeamsPointsScrollTeamsRecord
-                                                                .draws
-                                                                .toString(),
-                                                            '0',
-                                                          ),
-                                                          textAlign:
-                                                              TextAlign.center,
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Poppins',
-                                                                letterSpacing:
-                                                                    0.0,
-                                                              ),
-                                                        ),
-                                                      ),
-                                                    ),
-                                                    Container(
-                                                      width: 35.0,
-                                                      height: 30.0,
-                                                      decoration: BoxDecoration(
-                                                        color: FlutterFlowTheme
-                                                                .of(context)
-                                                            .primaryBackground,
-                                                        border: Border.all(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryBackground,
-                                                        ),
-                                                      ),
-                                                      child: Align(
-                                                        alignment:
-                                                            AlignmentDirectional(
-                                                                0.0, 0.0),
-                                                        child: Text(
-                                                          valueOrDefault<
-                                                              String>(
-                                                            columnETeamsPointsScrollTeamsRecord
-                                                                .looses
-                                                                .toString(),
-                                                            '0',
-                                                          ),
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Poppins',
-                                                                letterSpacing:
-                                                                    0.0,
-                                                              ),
-                                                        ),
-                                                      ),
-                                                    ),
-                                                    if ((containerTeamsRecord.sportValue !=
-                                                            'mma') &&
-                                                        (containerTeamsRecord
-                                                                .sportValue !=
-                                                            'boxe') &&
-                                                        (containerTeamsRecord
-                                                                .sportValue !=
-                                                            'basketball'))
-                                                      Container(
-                                                        width: 35.0,
-                                                        height: 30.0,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryBackground,
-                                                          borderRadius:
-                                                              BorderRadius.only(
-                                                            bottomLeft:
-                                                                Radius.circular(
-                                                                    0.0),
-                                                            bottomRight:
-                                                                Radius.circular(
-                                                                    0.0),
-                                                            topLeft:
-                                                                Radius.circular(
-                                                                    0.0),
-                                                            topRight:
-                                                                Radius.circular(
-                                                                    1.0),
-                                                          ),
-                                                          border: Border.all(
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .primaryBackground,
-                                                          ),
-                                                        ),
-                                                        child: Align(
-                                                          alignment:
-                                                              AlignmentDirectional(
-                                                                  0.0, 0.0),
-                                                          child: Text(
-                                                            valueOrDefault<
-                                                                String>(
-                                                              functions
-                                                                  .averageGoals(
-                                                                      columnETeamsPointsScrollTeamsRecord
-                                                                          .goalsPointsIn,
-                                                                      columnETeamsPointsScrollTeamsRecord
-                                                                          .goalsPointsOut)
-                                                                  .toString(),
-                                                              '0',
-                                                            ),
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primaryText,
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                ),
-                                                          ),
-                                                        ),
-                                                      ),
-                                                    if ((containerTeamsRecord.sportValue !=
-                                                            'mma') &&
-                                                        (containerTeamsRecord
-                                                                .sportValue !=
-                                                            'boxe') &&
-                                                        (containerTeamsRecord
-                                                                .sportValue !=
-                                                            'basketball'))
-                                                      Align(
-                                                        alignment:
-                                                            AlignmentDirectional(
-                                                                0.0, 0.0),
-                                                        child: Container(
-                                                          width: 90.0,
-                                                          height: 30.0,
+                                                      if ((containerTeamsRecord
+                                                                  .sportValue !=
+                                                              'mma') &&
+                                                          (containerTeamsRecord
+                                                                  .sportValue !=
+                                                              'boxe') &&
+                                                          (containerTeamsRecord
+                                                                  .sportValue !=
+                                                              'basketball'))
+                                                        Container(
+                                                          width: 35.0,
+                                                          height: 27.0,
                                                           decoration:
                                                               BoxDecoration(
                                                             color: FlutterFlowTheme
@@ -1399,6 +1163,100 @@ class _RankTeamWidgetState extends State<RankTeamWidget> {
                                                                 MainAxisAlignment
                                                                     .center,
                                                             children: [
+                                                              if (columnETeamsPointsScrollTeamsRecord
+                                                                      .reference ==
+                                                                  widget
+                                                                      .teamRef)
+                                                                Align(
+                                                                  alignment:
+                                                                      AlignmentDirectional(
+                                                                          0.0,
+                                                                          0.0),
+                                                                  child: Text(
+                                                                    valueOrDefault<
+                                                                        String>(
+                                                                      columnETeamsPointsScrollTeamsRecord
+                                                                          .points
+                                                                          .toString(),
+                                                                      '0',
+                                                                    ),
+                                                                    textAlign:
+                                                                        TextAlign
+                                                                            .center,
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'Poppins',
+                                                                          color:
+                                                                              valueOrDefault<Color>(
+                                                                            columnETeamsPointsScrollTeamsRecord.color1,
+                                                                            FlutterFlowTheme.of(context).primaryText,
+                                                                          ),
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                        ),
+                                                                  ),
+                                                                ),
+                                                              if (columnETeamsPointsScrollTeamsRecord
+                                                                      .reference !=
+                                                                  widget
+                                                                      .teamRef)
+                                                                Align(
+                                                                  alignment:
+                                                                      AlignmentDirectional(
+                                                                          0.0,
+                                                                          0.0),
+                                                                  child: Text(
+                                                                    valueOrDefault<
+                                                                        String>(
+                                                                      columnETeamsPointsScrollTeamsRecord
+                                                                          .points
+                                                                          .toString(),
+                                                                      '0',
+                                                                    ),
+                                                                    textAlign:
+                                                                        TextAlign
+                                                                            .center,
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'Poppins',
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                        ),
+                                                                  ),
+                                                                ),
+                                                            ],
+                                                          ),
+                                                        ),
+                                                      Container(
+                                                        width: 35.0,
+                                                        height: 27.0,
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primaryBackground,
+                                                          border: Border.all(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryBackground,
+                                                          ),
+                                                        ),
+                                                        child: Row(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .center,
+                                                          children: [
+                                                            if (columnETeamsPointsScrollTeamsRecord
+                                                                    .reference ==
+                                                                widget.teamRef)
                                                               Align(
                                                                 alignment:
                                                                     AlignmentDirectional(
@@ -1408,7 +1266,92 @@ class _RankTeamWidgetState extends State<RankTeamWidget> {
                                                                   valueOrDefault<
                                                                       String>(
                                                                     columnETeamsPointsScrollTeamsRecord
-                                                                        .goalsPointsIn
+                                                                        .wins
+                                                                        .toString(),
+                                                                    '0',
+                                                                  ),
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Poppins',
+                                                                        color: valueOrDefault<
+                                                                            Color>(
+                                                                          columnETeamsPointsScrollTeamsRecord
+                                                                              .color1,
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .primaryText,
+                                                                        ),
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                      ),
+                                                                ),
+                                                              ),
+                                                            if (columnETeamsPointsScrollTeamsRecord
+                                                                    .reference !=
+                                                                widget.teamRef)
+                                                              Align(
+                                                                alignment:
+                                                                    AlignmentDirectional(
+                                                                        0.0,
+                                                                        0.0),
+                                                                child: Text(
+                                                                  valueOrDefault<
+                                                                      String>(
+                                                                    columnETeamsPointsScrollTeamsRecord
+                                                                        .wins
+                                                                        .toString(),
+                                                                    '0',
+                                                                  ),
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Poppins',
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                      ),
+                                                                ),
+                                                              ),
+                                                          ],
+                                                        ),
+                                                      ),
+                                                      Container(
+                                                        width: 35.0,
+                                                        height: 27.0,
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primaryBackground,
+                                                          border: Border.all(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryBackground,
+                                                          ),
+                                                        ),
+                                                        child: Row(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .center,
+                                                          children: [
+                                                            if (columnETeamsPointsScrollTeamsRecord
+                                                                    .reference ==
+                                                                widget.teamRef)
+                                                              Align(
+                                                                alignment:
+                                                                    AlignmentDirectional(
+                                                                        0.0,
+                                                                        0.0),
+                                                                child: Text(
+                                                                  valueOrDefault<
+                                                                      String>(
+                                                                    columnETeamsPointsScrollTeamsRecord
+                                                                        .draws
                                                                         .toString(),
                                                                     '0',
                                                                   ),
@@ -1421,30 +1364,238 @@ class _RankTeamWidgetState extends State<RankTeamWidget> {
                                                                       .override(
                                                                         fontFamily:
                                                                             'Poppins',
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .primaryText,
+                                                                        color: valueOrDefault<
+                                                                            Color>(
+                                                                          columnETeamsPointsScrollTeamsRecord
+                                                                              .color1,
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .primaryText,
+                                                                        ),
                                                                         letterSpacing:
                                                                             0.0,
                                                                       ),
                                                                 ),
                                                               ),
+                                                            if (columnETeamsPointsScrollTeamsRecord
+                                                                    .reference !=
+                                                                widget.teamRef)
                                                               Align(
                                                                 alignment:
                                                                     AlignmentDirectional(
                                                                         0.0,
                                                                         0.0),
-                                                                child: Padding(
-                                                                  padding: EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          2.0,
+                                                                child: Text(
+                                                                  valueOrDefault<
+                                                                      String>(
+                                                                    columnETeamsPointsScrollTeamsRecord
+                                                                        .draws
+                                                                        .toString(),
+                                                                    '0',
+                                                                  ),
+                                                                  textAlign:
+                                                                      TextAlign
+                                                                          .center,
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Poppins',
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                      ),
+                                                                ),
+                                                              ),
+                                                          ],
+                                                        ),
+                                                      ),
+                                                      Container(
+                                                        width: 35.0,
+                                                        height: 27.0,
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primaryBackground,
+                                                          border: Border.all(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryBackground,
+                                                          ),
+                                                        ),
+                                                        child: Row(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .center,
+                                                          children: [
+                                                            if (columnETeamsPointsScrollTeamsRecord
+                                                                    .reference ==
+                                                                widget.teamRef)
+                                                              Align(
+                                                                alignment:
+                                                                    AlignmentDirectional(
+                                                                        0.0,
+                                                                        0.0),
+                                                                child: Text(
+                                                                  valueOrDefault<
+                                                                      String>(
+                                                                    columnETeamsPointsScrollTeamsRecord
+                                                                        .looses
+                                                                        .toString(),
+                                                                    '0',
+                                                                  ),
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Poppins',
+                                                                        color: valueOrDefault<
+                                                                            Color>(
+                                                                          columnETeamsPointsScrollTeamsRecord
+                                                                              .color1,
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .primaryText,
+                                                                        ),
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                      ),
+                                                                ),
+                                                              ),
+                                                            if (columnETeamsPointsScrollTeamsRecord
+                                                                    .reference !=
+                                                                widget.teamRef)
+                                                              Align(
+                                                                alignment:
+                                                                    AlignmentDirectional(
+                                                                        0.0,
+                                                                        0.0),
+                                                                child: Text(
+                                                                  valueOrDefault<
+                                                                      String>(
+                                                                    columnETeamsPointsScrollTeamsRecord
+                                                                        .looses
+                                                                        .toString(),
+                                                                    '0',
+                                                                  ),
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Poppins',
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                      ),
+                                                                ),
+                                                              ),
+                                                          ],
+                                                        ),
+                                                      ),
+                                                      if ((containerTeamsRecord
+                                                                  .sportValue !=
+                                                              'mma') &&
+                                                          (containerTeamsRecord
+                                                                  .sportValue !=
+                                                              'boxe') &&
+                                                          (containerTeamsRecord
+                                                                  .sportValue !=
+                                                              'basketball'))
+                                                        Container(
+                                                          width: 35.0,
+                                                          height: 27.0,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryBackground,
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .only(
+                                                              bottomLeft: Radius
+                                                                  .circular(
+                                                                      0.0),
+                                                              bottomRight:
+                                                                  Radius
+                                                                      .circular(
+                                                                          0.0),
+                                                              topLeft: Radius
+                                                                  .circular(
+                                                                      0.0),
+                                                              topRight: Radius
+                                                                  .circular(
+                                                                      1.0),
+                                                            ),
+                                                            border: Border.all(
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .primaryBackground,
+                                                            ),
+                                                          ),
+                                                          child: Row(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            mainAxisAlignment:
+                                                                MainAxisAlignment
+                                                                    .center,
+                                                            children: [
+                                                              if (columnETeamsPointsScrollTeamsRecord
+                                                                      .reference ==
+                                                                  widget
+                                                                      .teamRef)
+                                                                Align(
+                                                                  alignment:
+                                                                      AlignmentDirectional(
                                                                           0.0,
-                                                                          2.0,
                                                                           0.0),
                                                                   child: Text(
-                                                                    ':',
-                                                                    textAlign:
-                                                                        TextAlign
-                                                                            .center,
+                                                                    valueOrDefault<
+                                                                        String>(
+                                                                      functions
+                                                                          .averageGoals(
+                                                                              columnETeamsPointsScrollTeamsRecord.goalsPointsIn,
+                                                                              columnETeamsPointsScrollTeamsRecord.goalsPointsOut)
+                                                                          .toString(),
+                                                                      '0',
+                                                                    ),
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'Poppins',
+                                                                          color:
+                                                                              valueOrDefault<Color>(
+                                                                            columnETeamsPointsScrollTeamsRecord.color1,
+                                                                            FlutterFlowTheme.of(context).primaryText,
+                                                                          ),
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                        ),
+                                                                  ),
+                                                                ),
+                                                              if (columnETeamsPointsScrollTeamsRecord
+                                                                      .reference !=
+                                                                  widget
+                                                                      .teamRef)
+                                                                Align(
+                                                                  alignment:
+                                                                      AlignmentDirectional(
+                                                                          0.0,
+                                                                          0.0),
+                                                                  child: Text(
+                                                                    valueOrDefault<
+                                                                        String>(
+                                                                      functions
+                                                                          .averageGoals(
+                                                                              columnETeamsPointsScrollTeamsRecord.goalsPointsIn,
+                                                                              columnETeamsPointsScrollTeamsRecord.goalsPointsOut)
+                                                                          .toString(),
+                                                                      '0',
+                                                                    ),
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
                                                                         .bodyMedium
@@ -1455,12 +1606,247 @@ class _RankTeamWidgetState extends State<RankTeamWidget> {
                                                                               FlutterFlowTheme.of(context).primaryText,
                                                                           letterSpacing:
                                                                               0.0,
-                                                                          fontWeight:
-                                                                              FontWeight.w500,
                                                                         ),
                                                                   ),
                                                                 ),
+                                                            ],
+                                                          ),
+                                                        ),
+                                                      if ((containerTeamsRecord
+                                                                  .sportValue !=
+                                                              'mma') &&
+                                                          (containerTeamsRecord
+                                                                  .sportValue !=
+                                                              'boxe') &&
+                                                          (containerTeamsRecord
+                                                                  .sportValue !=
+                                                              'basketball'))
+                                                        Align(
+                                                          alignment:
+                                                              AlignmentDirectional(
+                                                                  0.0, 0.0),
+                                                          child: Container(
+                                                            width: 90.0,
+                                                            height: 27.0,
+                                                            decoration:
+                                                                BoxDecoration(
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .primaryBackground,
+                                                              border:
+                                                                  Border.all(
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primaryBackground,
                                                               ),
+                                                            ),
+                                                            child: Row(
+                                                              mainAxisSize:
+                                                                  MainAxisSize
+                                                                      .max,
+                                                              mainAxisAlignment:
+                                                                  MainAxisAlignment
+                                                                      .center,
+                                                              children: [
+                                                                if (columnETeamsPointsScrollTeamsRecord
+                                                                        .reference ==
+                                                                    widget
+                                                                        .teamRef)
+                                                                  Row(
+                                                                    mainAxisSize:
+                                                                        MainAxisSize
+                                                                            .max,
+                                                                    mainAxisAlignment:
+                                                                        MainAxisAlignment
+                                                                            .center,
+                                                                    children: [
+                                                                      Align(
+                                                                        alignment: AlignmentDirectional(
+                                                                            0.0,
+                                                                            0.0),
+                                                                        child:
+                                                                            Text(
+                                                                          valueOrDefault<
+                                                                              String>(
+                                                                            columnETeamsPointsScrollTeamsRecord.goalsPointsIn.toString(),
+                                                                            '0',
+                                                                          ),
+                                                                          textAlign:
+                                                                              TextAlign.center,
+                                                                          style: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .override(
+                                                                                fontFamily: 'Poppins',
+                                                                                color: valueOrDefault<Color>(
+                                                                                  columnETeamsPointsScrollTeamsRecord.color1,
+                                                                                  FlutterFlowTheme.of(context).primaryText,
+                                                                                ),
+                                                                                letterSpacing: 0.0,
+                                                                              ),
+                                                                        ),
+                                                                      ),
+                                                                      Align(
+                                                                        alignment: AlignmentDirectional(
+                                                                            0.0,
+                                                                            0.0),
+                                                                        child:
+                                                                            Padding(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                              2.0,
+                                                                              0.0,
+                                                                              2.0,
+                                                                              0.0),
+                                                                          child:
+                                                                              Text(
+                                                                            ':',
+                                                                            textAlign:
+                                                                                TextAlign.center,
+                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                  fontFamily: 'Poppins',
+                                                                                  color: valueOrDefault<Color>(
+                                                                                    columnETeamsPointsScrollTeamsRecord.color1,
+                                                                                    FlutterFlowTheme.of(context).primaryText,
+                                                                                  ),
+                                                                                  letterSpacing: 0.0,
+                                                                                  fontWeight: FontWeight.w500,
+                                                                                ),
+                                                                          ),
+                                                                        ),
+                                                                      ),
+                                                                      Align(
+                                                                        alignment: AlignmentDirectional(
+                                                                            0.0,
+                                                                            0.0),
+                                                                        child:
+                                                                            Text(
+                                                                          valueOrDefault<
+                                                                              String>(
+                                                                            columnETeamsPointsScrollTeamsRecord.goalsPointsOut.toString(),
+                                                                            '0',
+                                                                          ),
+                                                                          style: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .override(
+                                                                                fontFamily: 'Poppins',
+                                                                                color: valueOrDefault<Color>(
+                                                                                  columnETeamsPointsScrollTeamsRecord.color1,
+                                                                                  FlutterFlowTheme.of(context).primaryText,
+                                                                                ),
+                                                                                letterSpacing: 0.0,
+                                                                              ),
+                                                                        ),
+                                                                      ),
+                                                                    ],
+                                                                  ),
+                                                                if (columnETeamsPointsScrollTeamsRecord
+                                                                        .reference !=
+                                                                    widget
+                                                                        .teamRef)
+                                                                  Row(
+                                                                    mainAxisSize:
+                                                                        MainAxisSize
+                                                                            .max,
+                                                                    mainAxisAlignment:
+                                                                        MainAxisAlignment
+                                                                            .center,
+                                                                    children: [
+                                                                      Align(
+                                                                        alignment: AlignmentDirectional(
+                                                                            0.0,
+                                                                            0.0),
+                                                                        child:
+                                                                            Text(
+                                                                          valueOrDefault<
+                                                                              String>(
+                                                                            columnETeamsPointsScrollTeamsRecord.goalsPointsIn.toString(),
+                                                                            '0',
+                                                                          ),
+                                                                          textAlign:
+                                                                              TextAlign.center,
+                                                                          style: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .override(
+                                                                                fontFamily: 'Poppins',
+                                                                                color: FlutterFlowTheme.of(context).primaryText,
+                                                                                letterSpacing: 0.0,
+                                                                              ),
+                                                                        ),
+                                                                      ),
+                                                                      Align(
+                                                                        alignment: AlignmentDirectional(
+                                                                            0.0,
+                                                                            0.0),
+                                                                        child:
+                                                                            Padding(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                              2.0,
+                                                                              0.0,
+                                                                              2.0,
+                                                                              0.0),
+                                                                          child:
+                                                                              Text(
+                                                                            ':',
+                                                                            textAlign:
+                                                                                TextAlign.center,
+                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                  fontFamily: 'Poppins',
+                                                                                  color: FlutterFlowTheme.of(context).primaryText,
+                                                                                  letterSpacing: 0.0,
+                                                                                  fontWeight: FontWeight.w500,
+                                                                                ),
+                                                                          ),
+                                                                        ),
+                                                                      ),
+                                                                      Align(
+                                                                        alignment: AlignmentDirectional(
+                                                                            0.0,
+                                                                            0.0),
+                                                                        child:
+                                                                            Text(
+                                                                          valueOrDefault<
+                                                                              String>(
+                                                                            columnETeamsPointsScrollTeamsRecord.goalsPointsOut.toString(),
+                                                                            '0',
+                                                                          ),
+                                                                          style: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .override(
+                                                                                fontFamily: 'Poppins',
+                                                                                color: FlutterFlowTheme.of(context).primaryText,
+                                                                                letterSpacing: 0.0,
+                                                                              ),
+                                                                        ),
+                                                                      ),
+                                                                    ],
+                                                                  ),
+                                                              ],
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      Container(
+                                                        width: 35.0,
+                                                        height: 27.0,
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primaryBackground,
+                                                          border: Border.all(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryBackground,
+                                                          ),
+                                                        ),
+                                                        child: Row(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .center,
+                                                          children: [
+                                                            if (columnETeamsPointsScrollTeamsRecord
+                                                                    .reference ==
+                                                                widget.teamRef)
                                                               Align(
                                                                 alignment:
                                                                     AlignmentDirectional(
@@ -1470,75 +1856,74 @@ class _RankTeamWidgetState extends State<RankTeamWidget> {
                                                                   valueOrDefault<
                                                                       String>(
                                                                     columnETeamsPointsScrollTeamsRecord
-                                                                        .goalsPointsOut
+                                                                        .totalGames
                                                                         .toString(),
                                                                     '0',
                                                                   ),
+                                                                  textAlign:
+                                                                      TextAlign
+                                                                          .center,
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
                                                                       .bodyMedium
                                                                       .override(
                                                                         fontFamily:
                                                                             'Poppins',
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .primaryText,
+                                                                        color: valueOrDefault<
+                                                                            Color>(
+                                                                          columnETeamsPointsScrollTeamsRecord
+                                                                              .color1,
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .primaryText,
+                                                                        ),
                                                                         letterSpacing:
                                                                             0.0,
                                                                       ),
                                                                 ),
                                                               ),
-                                                            ],
-                                                          ),
-                                                        ),
-                                                      ),
-                                                    Container(
-                                                      width: 35.0,
-                                                      height: 30.0,
-                                                      decoration: BoxDecoration(
-                                                        color: FlutterFlowTheme
-                                                                .of(context)
-                                                            .primaryBackground,
-                                                        border: Border.all(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryBackground,
-                                                        ),
-                                                      ),
-                                                      child: Align(
-                                                        alignment:
-                                                            AlignmentDirectional(
-                                                                0.0, 0.0),
-                                                        child: Text(
-                                                          valueOrDefault<
-                                                              String>(
-                                                            columnETeamsPointsScrollTeamsRecord
-                                                                .totalGames
-                                                                .toString(),
-                                                            '0',
-                                                          ),
-                                                          textAlign:
-                                                              TextAlign.center,
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Poppins',
-                                                                letterSpacing:
-                                                                    0.0,
+                                                            if (columnETeamsPointsScrollTeamsRecord
+                                                                    .reference !=
+                                                                widget.teamRef)
+                                                              Align(
+                                                                alignment:
+                                                                    AlignmentDirectional(
+                                                                        0.0,
+                                                                        0.0),
+                                                                child: Text(
+                                                                  valueOrDefault<
+                                                                      String>(
+                                                                    columnETeamsPointsScrollTeamsRecord
+                                                                        .totalGames
+                                                                        .toString(),
+                                                                    '0',
+                                                                  ),
+                                                                  textAlign:
+                                                                      TextAlign
+                                                                          .center,
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Poppins',
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                      ),
+                                                                ),
                                                               ),
+                                                          ],
                                                         ),
                                                       ),
-                                                    ),
-                                                  ],
-                                                );
-                                              }),
-                                            );
-                                          },
-                                        ),
-                                      ],
-                                    ),
-                                  ],
+                                                    ],
+                                                  );
+                                                }),
+                                              );
+                                            },
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ],
                             ),

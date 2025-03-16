@@ -649,55 +649,138 @@ class _ListCommsEventCommPageWidgetState
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
                                   children: [
-                                    FlutterFlowDropDown<String>(
-                                      controller:
-                                          _model.dropLigueValueController ??=
+                                    if (valueOrDefault<bool>(
+                                            currentUserDocument?.esport,
+                                            false) ==
+                                        false)
+                                      AuthUserStreamWidget(
+                                        builder: (context) =>
+                                            FlutterFlowDropDown<String>(
+                                          controller: _model
+                                                  .dropLigueValueController1 ??=
                                               FormFieldController<String>(
-                                        _model.dropLigueValue ??= '',
-                                      ),
-                                      options: List<String>.from([
-                                        'amateur',
-                                        'pro',
-                                        'champion',
-                                        'legende'
-                                      ]),
-                                      optionLabels: [
-                                        'Amateur',
-                                        'Pro',
-                                        'Champion',
-                                        'Légende'
-                                      ],
-                                      onChanged: (val) => safeSetState(
-                                          () => _model.dropLigueValue = val),
-                                      width: 250.0,
-                                      height: 56.0,
-                                      textStyle: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily: 'Poppins',
-                                            letterSpacing: 0.0,
+                                            _model.dropLigueValue1 ??=
+                                                valueOrDefault(
+                                                    currentUserDocument
+                                                        ?.rankValue,
+                                                    ''),
                                           ),
-                                      hintText: 'Ligue',
-                                      icon: Icon(
-                                        Icons.keyboard_arrow_down_rounded,
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondaryText,
-                                        size: 24.0,
+                                          options: List<String>.from([
+                                            'amateur',
+                                            'pro',
+                                            'champion',
+                                            'legende',
+                                            ''
+                                          ]),
+                                          optionLabels: [
+                                            'Amateur',
+                                            'Pro',
+                                            'Champion',
+                                            'Légende',
+                                            'Ligues'
+                                          ],
+                                          onChanged: (val) => safeSetState(() =>
+                                              _model.dropLigueValue1 = val),
+                                          width: 250.0,
+                                          height: 56.0,
+                                          textStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    fontFamily: 'Poppins',
+                                                    letterSpacing: 0.0,
+                                                  ),
+                                          hintText: 'Ligue',
+                                          icon: Icon(
+                                            Icons.keyboard_arrow_down_rounded,
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondaryText,
+                                            size: 24.0,
+                                          ),
+                                          fillColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .primaryBackground,
+                                          elevation: 2.0,
+                                          borderColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .alternate,
+                                          borderWidth: 2.0,
+                                          borderRadius: 8.0,
+                                          margin:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  16.0, 4.0, 16.0, 4.0),
+                                          hidesUnderline: true,
+                                          isOverButton: true,
+                                          isSearchable: false,
+                                          isMultiSelect: false,
+                                        ),
                                       ),
-                                      fillColor: FlutterFlowTheme.of(context)
-                                          .primaryBackground,
-                                      elevation: 2.0,
-                                      borderColor: FlutterFlowTheme.of(context)
-                                          .alternate,
-                                      borderWidth: 2.0,
-                                      borderRadius: 8.0,
-                                      margin: EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 4.0, 16.0, 4.0),
-                                      hidesUnderline: true,
-                                      isOverButton: true,
-                                      isSearchable: false,
-                                      isMultiSelect: false,
-                                    ),
+                                    if (valueOrDefault<bool>(
+                                            currentUserDocument?.esport,
+                                            false) ==
+                                        true)
+                                      AuthUserStreamWidget(
+                                        builder: (context) =>
+                                            FlutterFlowDropDown<String>(
+                                          controller: _model
+                                                  .dropLigueValueController2 ??=
+                                              FormFieldController<String>(
+                                            _model.dropLigueValue2 ??=
+                                                valueOrDefault(
+                                                    currentUserDocument
+                                                        ?.erankValue,
+                                                    ''),
+                                          ),
+                                          options: List<String>.from([
+                                            'amateur',
+                                            'pro',
+                                            'champion',
+                                            'legende',
+                                            ''
+                                          ]),
+                                          optionLabels: [
+                                            'Amateur',
+                                            'Pro',
+                                            'Champion',
+                                            'Légende',
+                                            'E Ligues'
+                                          ],
+                                          onChanged: (val) => safeSetState(() =>
+                                              _model.dropLigueValue2 = val),
+                                          width: 250.0,
+                                          height: 56.0,
+                                          textStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    fontFamily: 'Poppins',
+                                                    letterSpacing: 0.0,
+                                                  ),
+                                          hintText: 'Ligue',
+                                          icon: Icon(
+                                            Icons.keyboard_arrow_down_rounded,
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondaryText,
+                                            size: 24.0,
+                                          ),
+                                          fillColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .primaryBackground,
+                                          elevation: 2.0,
+                                          borderColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .alternate,
+                                          borderWidth: 2.0,
+                                          borderRadius: 8.0,
+                                          margin:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  16.0, 4.0, 16.0, 4.0),
+                                          hidesUnderline: true,
+                                          isOverButton: true,
+                                          isSearchable: false,
+                                          isMultiSelect: false,
+                                        ),
+                                      ),
                                     if (true /* Warning: Trying to access variable not yet defined. */)
                                       FutureBuilder<
                                           List<MyNotificationsRecord>>(
@@ -896,7 +979,7 @@ class _ListCommsEventCommPageWidgetState
                                               children: [
                                                 if (columnSportUsersRecord
                                                         .rankValue ==
-                                                    _model.dropLigueValue)
+                                                    _model.dropLigueValue1)
                                                   Column(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -1455,7 +1538,7 @@ class _ListCommsEventCommPageWidgetState
                                               children: [
                                                 if (columnESportUsersRecord
                                                         .erankValue ==
-                                                    _model.dropLigueValue)
+                                                    _model.dropLigueValue2)
                                                   Column(
                                                     mainAxisSize:
                                                         MainAxisSize.max,

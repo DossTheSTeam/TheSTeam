@@ -2064,10 +2064,9 @@ class _MyEditProfilWidgetState extends State<MyEditProfilWidget>
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 20.0, 0.0),
                               child: FlutterFlowDropDown<String>(
-                                controller:
-                                    _model.dropColor1ValueController1 ??=
-                                        FormFieldController<String>(
-                                  _model.dropColor1Value1 ??= '',
+                                controller: _model.dropColor1ValueController ??=
+                                    FormFieldController<String>(
+                                  _model.dropColor1Value ??= '',
                                 ),
                                 options: List<String>.from([
                                   '#FFFF00',
@@ -2118,7 +2117,7 @@ class _MyEditProfilWidgetState extends State<MyEditProfilWidget>
                                   'Bordeaux'
                                 ],
                                 onChanged: (val) => safeSetState(
-                                    () => _model.dropColor1Value1 = val),
+                                    () => _model.dropColor1Value = val),
                                 width: 150.0,
                                 height: 40.0,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -2148,8 +2147,8 @@ class _MyEditProfilWidgetState extends State<MyEditProfilWidget>
                                 isMultiSelect: false,
                               ),
                             ),
-                            if (_model.dropColor1Value1 != null &&
-                                _model.dropColor1Value1 != '')
+                            if (_model.dropColor1Value != null &&
+                                _model.dropColor1Value != '')
                               Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 10.0, 0.0),
@@ -2162,7 +2161,7 @@ class _MyEditProfilWidgetState extends State<MyEditProfilWidget>
                                     await currentUserReference!
                                         .update(createUsersRecordData(
                                       color1: colorFromCssString(
-                                        _model.dropColor1Value1!,
+                                        _model.dropColor1Value!,
                                         defaultColor: Colors.black,
                                       ),
                                     ));
@@ -2170,7 +2169,7 @@ class _MyEditProfilWidgetState extends State<MyEditProfilWidget>
                                   child: Icon(
                                     Icons.send_rounded,
                                     color: colorFromCssString(
-                                      _model.dropColor1Value1!,
+                                      _model.dropColor1Value!,
                                       defaultColor: FlutterFlowTheme.of(context)
                                           .secondaryText,
                                     ),
@@ -2298,10 +2297,9 @@ class _MyEditProfilWidgetState extends State<MyEditProfilWidget>
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 20.0, 0.0),
                               child: FlutterFlowDropDown<String>(
-                                controller:
-                                    _model.dropColor1ValueController2 ??=
-                                        FormFieldController<String>(
-                                  _model.dropColor1Value2 ??= '',
+                                controller: _model.dropColor2ValueController ??=
+                                    FormFieldController<String>(
+                                  _model.dropColor2Value ??= '',
                                 ),
                                 options: List<String>.from([
                                   '#FFFF00',
@@ -2352,7 +2350,7 @@ class _MyEditProfilWidgetState extends State<MyEditProfilWidget>
                                   'Bordeaux'
                                 ],
                                 onChanged: (val) => safeSetState(
-                                    () => _model.dropColor1Value2 = val),
+                                    () => _model.dropColor2Value = val),
                                 width: 150.0,
                                 height: 40.0,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -2382,8 +2380,8 @@ class _MyEditProfilWidgetState extends State<MyEditProfilWidget>
                                 isMultiSelect: false,
                               ),
                             ),
-                            if (_model.dropColor1Value2 != null &&
-                                _model.dropColor1Value2 != '')
+                            if (_model.dropColor2Value != null &&
+                                _model.dropColor2Value != '')
                               Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 10.0, 0.0),
@@ -2396,7 +2394,7 @@ class _MyEditProfilWidgetState extends State<MyEditProfilWidget>
                                     await currentUserReference!
                                         .update(createUsersRecordData(
                                       color2: colorFromCssString(
-                                        _model.dropColor1Value2!,
+                                        _model.dropColor2Value!,
                                         defaultColor: Colors.black,
                                       ),
                                     ));
@@ -2404,7 +2402,7 @@ class _MyEditProfilWidgetState extends State<MyEditProfilWidget>
                                   child: Icon(
                                     Icons.send_rounded,
                                     color: colorFromCssString(
-                                      _model.dropColor1Value2!,
+                                      _model.dropColor2Value!,
                                       defaultColor: FlutterFlowTheme.of(context)
                                           .secondaryText,
                                     ),

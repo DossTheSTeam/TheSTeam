@@ -1,4 +1,3 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -128,67 +127,6 @@ class _StatsTeamsEventWidgetState extends State<StatsTeamsEventWidget>
                             ),
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
-                                  15.0, 0.0, 10.0, 0.0),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  AuthUserStreamWidget(
-                                    builder: (context) => InkWell(
-                                      splashColor: Colors.transparent,
-                                      focusColor: Colors.transparent,
-                                      hoverColor: Colors.transparent,
-                                      highlightColor: Colors.transparent,
-                                      onTap: () async {
-                                        Navigator.pop(context);
-                                      },
-                                      child: Icon(
-                                        Icons.arrow_back_ios_new_rounded,
-                                        color: valueOrDefault<Color>(
-                                          currentUserDocument?.color1,
-                                          FlutterFlowTheme.of(context)
-                                              .primaryText,
-                                        ),
-                                        size: 30.0,
-                                      ),
-                                    ),
-                                  ),
-                                  Align(
-                                    alignment: AlignmentDirectional(0.0, 0.0),
-                                    child: Text(
-                                      'Statistiques',
-                                      style: FlutterFlowTheme.of(context)
-                                          .headlineSmall
-                                          .override(
-                                            fontFamily: 'Poppins',
-                                            letterSpacing: 0.0,
-                                          ),
-                                    ),
-                                  ),
-                                  Icon(
-                                    Icons.arrow_back_ios_new_rounded,
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryBackground,
-                                    size: 30.0,
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Align(
-                              alignment: AlignmentDirectional(0.0, 0.0),
-                              child: Text(
-                                containerEventsRecord.leagueValue,
-                                style: FlutterFlowTheme.of(context)
-                                    .headlineSmall
-                                    .override(
-                                      fontFamily: 'Poppins',
-                                      letterSpacing: 0.0,
-                                    ),
-                              ),
-                            ),
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 5.0, 0.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -221,7 +159,7 @@ class _StatsTeamsEventWidgetState extends State<StatsTeamsEventWidget>
 
                                       return Container(
                                         width: 160.0,
-                                        height: 80.0,
+                                        height: 65.0,
                                         decoration: BoxDecoration(
                                           color: FlutterFlowTheme.of(context)
                                               .primaryBackground,
@@ -247,6 +185,42 @@ class _StatsTeamsEventWidgetState extends State<StatsTeamsEventWidget>
                                                       color: FlutterFlowTheme
                                                               .of(context)
                                                           .primaryBackground,
+                                                    ),
+                                                    child: Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  5.0,
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0),
+                                                      child: InkWell(
+                                                        splashColor:
+                                                            Colors.transparent,
+                                                        focusColor:
+                                                            Colors.transparent,
+                                                        hoverColor:
+                                                            Colors.transparent,
+                                                        highlightColor:
+                                                            Colors.transparent,
+                                                        onTap: () async {
+                                                          Navigator.pop(
+                                                              context);
+                                                        },
+                                                        child: Icon(
+                                                          Icons
+                                                              .arrow_back_ios_new_rounded,
+                                                          color: valueOrDefault<
+                                                              Color>(
+                                                            contDomTeamsRecord
+                                                                .color1,
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primaryText,
+                                                          ),
+                                                          size: 30.0,
+                                                        ),
+                                                      ),
                                                     ),
                                                   ),
                                                   Container(
@@ -396,7 +370,7 @@ class _StatsTeamsEventWidgetState extends State<StatsTeamsEventWidget>
                                                 child: Padding(
                                                   padding: EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          0.0, 3.0, 0.0, 3.0),
+                                                          0.0, 3.0, 0.0, 0.0),
                                                   child: Text(
                                                     contDomTeamsRecord.name,
                                                     textAlign: TextAlign.start,
@@ -474,7 +448,7 @@ class _StatsTeamsEventWidgetState extends State<StatsTeamsEventWidget>
 
                                       return Container(
                                         width: 160.0,
-                                        height: 80.0,
+                                        height: 65.0,
                                         decoration: BoxDecoration(
                                           color: FlutterFlowTheme.of(context)
                                               .primaryBackground,
@@ -649,7 +623,7 @@ class _StatsTeamsEventWidgetState extends State<StatsTeamsEventWidget>
                                                 child: Padding(
                                                   padding: EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          0.0, 3.0, 0.0, 3.0),
+                                                          0.0, 3.0, 0.0, 0.0),
                                                   child: Text(
                                                     contExtTeamsRecord.name,
                                                     textAlign: TextAlign.start,
@@ -692,6 +666,8 @@ class _StatsTeamsEventWidgetState extends State<StatsTeamsEventWidget>
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       StreamBuilder<TeamsRecord>(
                                         stream: TeamsRecord.getDocument(
@@ -727,7 +703,7 @@ class _StatsTeamsEventWidgetState extends State<StatsTeamsEventWidget>
                                                     MediaQuery.sizeOf(context)
                                                             .width *
                                                         0.4,
-                                                height: 200.0,
+                                                height: 240.0,
                                                 decoration: BoxDecoration(
                                                   color: FlutterFlowTheme.of(
                                                           context)
@@ -901,19 +877,61 @@ class _StatsTeamsEventWidgetState extends State<StatsTeamsEventWidget>
                                                         (containerEventsRecord
                                                                 .sportValue !=
                                                             'boxe'))
-                                                      Column(
-                                                        mainAxisSize:
-                                                            MainAxisSize.max,
-                                                        children: [
-                                                          Padding(
-                                                            padding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
+                                                      Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    0.0,
+                                                                    5.0,
+                                                                    0.0,
+                                                                    0.0),
+                                                        child: Column(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .spaceBetween,
+                                                          children: [
+                                                            Text(
+                                                              'Les 2 équipes marquent',
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .center,
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .labelSmall
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Poppins',
+                                                                    letterSpacing:
                                                                         0.0,
-                                                                        10.0,
+                                                                  ),
+                                                            ),
+                                                            Text(
+                                                              valueOrDefault<
+                                                                  String>(
+                                                                columnTeamsRecord
+                                                                    .l2m
+                                                                    .toString(),
+                                                                '0',
+                                                              ),
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .center,
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .titleSmall
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Poppins',
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primaryText,
+                                                                    letterSpacing:
                                                                         0.0,
-                                                                        0.0),
-                                                            child: Text(
+                                                                  ),
+                                                            ),
+                                                            Text(
                                                               'Points',
                                                               textAlign:
                                                                   TextAlign
@@ -928,78 +946,87 @@ class _StatsTeamsEventWidgetState extends State<StatsTeamsEventWidget>
                                                                         0.0,
                                                                   ),
                                                             ),
-                                                          ),
-                                                          Text(
-                                                            valueOrDefault<
-                                                                String>(
-                                                              columnTeamsRecord
-                                                                  .points
-                                                                  .toString(),
-                                                              '0',
+                                                            Text(
+                                                              valueOrDefault<
+                                                                  String>(
+                                                                columnTeamsRecord
+                                                                    .points
+                                                                    .toString(),
+                                                                '0',
+                                                              ),
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .center,
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .titleSmall
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Poppins',
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primaryText,
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                  ),
                                                             ),
-                                                            textAlign: TextAlign
-                                                                .center,
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .titleSmall
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primaryText,
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                ),
-                                                          ),
-                                                          Divider(
-                                                            thickness: 2.0,
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .secondaryBackground,
-                                                          ),
-                                                          Text(
-                                                            'Points / MJ',
-                                                            textAlign: TextAlign
-                                                                .center,
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .labelSmall
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                ),
-                                                          ),
-                                                          Text(
-                                                            valueOrDefault<
-                                                                String>(
-                                                              functions
-                                                                  .limitOf2Decimal(functions.averageETeamPoints(
-                                                                      columnTeamsRecord
-                                                                          .points,
-                                                                      columnTeamsRecord
-                                                                          .totalGames)!)
-                                                                  .toString(),
-                                                              '00.00',
+                                                            Divider(
+                                                              thickness: 2.0,
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .secondaryBackground,
                                                             ),
-                                                            textAlign: TextAlign
-                                                                .center,
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .titleSmall
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primaryText,
-                                                                  letterSpacing:
-                                                                      0.0,
+                                                            if (containerEventsRecord
+                                                                    .sportValue !=
+                                                                'tennis')
+                                                              Text(
+                                                                'Points / MJ',
+                                                                textAlign:
+                                                                    TextAlign
+                                                                        .center,
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelSmall
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'Poppins',
+                                                                      letterSpacing:
+                                                                          0.0,
+                                                                    ),
+                                                              ),
+                                                            if (containerEventsRecord
+                                                                    .sportValue !=
+                                                                'tennis')
+                                                              Text(
+                                                                valueOrDefault<
+                                                                    String>(
+                                                                  functions
+                                                                      .limitOf2Decimal(functions.averageETeamPoints(
+                                                                          columnTeamsRecord
+                                                                              .points,
+                                                                          columnTeamsRecord
+                                                                              .totalGames)!)
+                                                                      .toString(),
+                                                                  '00.00',
                                                                 ),
-                                                          ),
-                                                        ],
+                                                                textAlign:
+                                                                    TextAlign
+                                                                        .center,
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmall
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'Poppins',
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primaryText,
+                                                                      letterSpacing:
+                                                                          0.0,
+                                                                    ),
+                                                              ),
+                                                          ],
+                                                        ),
                                                       ),
                                                   ],
                                                 ),
@@ -1012,13 +1039,16 @@ class _StatsTeamsEventWidgetState extends State<StatsTeamsEventWidget>
                                                       'mma') &&
                                                   (containerEventsRecord
                                                           .sportValue !=
-                                                      'boxe'))
+                                                      'boxe') &&
+                                                  (containerEventsRecord
+                                                          .sportValue !=
+                                                      'tennis'))
                                                 Container(
                                                   width:
                                                       MediaQuery.sizeOf(context)
                                                               .width *
                                                           0.4,
-                                                  height: 360.0,
+                                                  height: 300.0,
                                                   decoration: BoxDecoration(
                                                     color: FlutterFlowTheme.of(
                                                             context)
@@ -1034,13 +1064,23 @@ class _StatsTeamsEventWidgetState extends State<StatsTeamsEventWidget>
                                                         MainAxisAlignment
                                                             .spaceAround,
                                                     children: [
-                                                      Text(
-                                                        'Différence Buts',
-                                                        textAlign:
-                                                            TextAlign.center,
-                                                        style:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
+                                                      if (containerEventsRecord
+                                                              .sportValue !=
+                                                          'tennis')
+                                                        Padding(
+                                                          padding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      10.0,
+                                                                      0.0,
+                                                                      0.0),
+                                                          child: Text(
+                                                            'Différence Buts',
+                                                            textAlign: TextAlign
+                                                                .center,
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
                                                                 .labelSmall
                                                                 .override(
                                                                   fontFamily:
@@ -1048,7 +1088,8 @@ class _StatsTeamsEventWidgetState extends State<StatsTeamsEventWidget>
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),
-                                                      ),
+                                                          ),
+                                                        ),
                                                       Text(
                                                         valueOrDefault<String>(
                                                           functions
@@ -1301,7 +1342,7 @@ class _StatsTeamsEventWidgetState extends State<StatsTeamsEventWidget>
                                                     MediaQuery.sizeOf(context)
                                                             .width *
                                                         0.4,
-                                                height: 200.0,
+                                                height: 240.0,
                                                 decoration: BoxDecoration(
                                                   color: FlutterFlowTheme.of(
                                                           context)
@@ -1475,19 +1516,61 @@ class _StatsTeamsEventWidgetState extends State<StatsTeamsEventWidget>
                                                         (containerEventsRecord
                                                                 .sportValue !=
                                                             'boxe'))
-                                                      Column(
-                                                        mainAxisSize:
-                                                            MainAxisSize.max,
-                                                        children: [
-                                                          Padding(
-                                                            padding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
+                                                      Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    0.0,
+                                                                    5.0,
+                                                                    0.0,
+                                                                    0.0),
+                                                        child: Column(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .spaceBetween,
+                                                          children: [
+                                                            Text(
+                                                              'Les 2 équipes marquent',
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .center,
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .labelSmall
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Poppins',
+                                                                    letterSpacing:
                                                                         0.0,
-                                                                        10.0,
+                                                                  ),
+                                                            ),
+                                                            Text(
+                                                              valueOrDefault<
+                                                                  String>(
+                                                                columnTeamsRecord
+                                                                    .l2m
+                                                                    .toString(),
+                                                                '0',
+                                                              ),
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .center,
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .titleSmall
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Poppins',
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primaryText,
+                                                                    letterSpacing:
                                                                         0.0,
-                                                                        0.0),
-                                                            child: Text(
+                                                                  ),
+                                                            ),
+                                                            Text(
                                                               'Points',
                                                               textAlign:
                                                                   TextAlign
@@ -1502,78 +1585,87 @@ class _StatsTeamsEventWidgetState extends State<StatsTeamsEventWidget>
                                                                         0.0,
                                                                   ),
                                                             ),
-                                                          ),
-                                                          Text(
-                                                            valueOrDefault<
-                                                                String>(
-                                                              columnTeamsRecord
-                                                                  .points
-                                                                  .toString(),
-                                                              '0',
+                                                            Text(
+                                                              valueOrDefault<
+                                                                  String>(
+                                                                columnTeamsRecord
+                                                                    .points
+                                                                    .toString(),
+                                                                '0',
+                                                              ),
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .center,
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .titleSmall
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Poppins',
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primaryText,
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                  ),
                                                             ),
-                                                            textAlign: TextAlign
-                                                                .center,
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .titleSmall
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primaryText,
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                ),
-                                                          ),
-                                                          Divider(
-                                                            thickness: 2.0,
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .secondaryBackground,
-                                                          ),
-                                                          Text(
-                                                            'Points / MJ',
-                                                            textAlign: TextAlign
-                                                                .center,
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .labelSmall
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                ),
-                                                          ),
-                                                          Text(
-                                                            valueOrDefault<
-                                                                String>(
-                                                              functions
-                                                                  .limitOf2Decimal(functions.averageETeamPoints(
-                                                                      columnTeamsRecord
-                                                                          .points,
-                                                                      columnTeamsRecord
-                                                                          .totalGames)!)
-                                                                  .toString(),
-                                                              '00.00',
+                                                            Divider(
+                                                              thickness: 2.0,
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .secondaryBackground,
                                                             ),
-                                                            textAlign: TextAlign
-                                                                .center,
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .titleSmall
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primaryText,
-                                                                  letterSpacing:
-                                                                      0.0,
+                                                            if (containerEventsRecord
+                                                                    .sportValue !=
+                                                                'tennis')
+                                                              Text(
+                                                                'Points / MJ',
+                                                                textAlign:
+                                                                    TextAlign
+                                                                        .center,
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelSmall
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'Poppins',
+                                                                      letterSpacing:
+                                                                          0.0,
+                                                                    ),
+                                                              ),
+                                                            if (containerEventsRecord
+                                                                    .sportValue !=
+                                                                'tennis')
+                                                              Text(
+                                                                valueOrDefault<
+                                                                    String>(
+                                                                  functions
+                                                                      .limitOf2Decimal(functions.averageETeamPoints(
+                                                                          columnTeamsRecord
+                                                                              .points,
+                                                                          columnTeamsRecord
+                                                                              .totalGames)!)
+                                                                      .toString(),
+                                                                  '00.00',
                                                                 ),
-                                                          ),
-                                                        ],
+                                                                textAlign:
+                                                                    TextAlign
+                                                                        .center,
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmall
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'Poppins',
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primaryText,
+                                                                      letterSpacing:
+                                                                          0.0,
+                                                                    ),
+                                                              ),
+                                                          ],
+                                                        ),
                                                       ),
                                                   ],
                                                 ),
@@ -1586,13 +1678,16 @@ class _StatsTeamsEventWidgetState extends State<StatsTeamsEventWidget>
                                                       'mma') &&
                                                   (containerEventsRecord
                                                           .sportValue !=
-                                                      'boxe'))
+                                                      'boxe') &&
+                                                  (containerEventsRecord
+                                                          .sportValue !=
+                                                      'tennis'))
                                                 Container(
                                                   width:
                                                       MediaQuery.sizeOf(context)
                                                               .width *
                                                           0.4,
-                                                  height: 360.0,
+                                                  height: 300.0,
                                                   decoration: BoxDecoration(
                                                     color: FlutterFlowTheme.of(
                                                             context)
@@ -1608,13 +1703,23 @@ class _StatsTeamsEventWidgetState extends State<StatsTeamsEventWidget>
                                                         MainAxisAlignment
                                                             .spaceAround,
                                                     children: [
-                                                      Text(
-                                                        'Différence Buts',
-                                                        textAlign:
-                                                            TextAlign.center,
-                                                        style:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
+                                                      if (containerEventsRecord
+                                                              .sportValue !=
+                                                          'tennis')
+                                                        Padding(
+                                                          padding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      10.0,
+                                                                      0.0,
+                                                                      0.0),
+                                                          child: Text(
+                                                            'Différence Buts',
+                                                            textAlign: TextAlign
+                                                                .center,
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
                                                                 .labelSmall
                                                                 .override(
                                                                   fontFamily:
@@ -1622,7 +1727,8 @@ class _StatsTeamsEventWidgetState extends State<StatsTeamsEventWidget>
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),
-                                                      ),
+                                                          ),
+                                                        ),
                                                       Text(
                                                         valueOrDefault<String>(
                                                           functions
