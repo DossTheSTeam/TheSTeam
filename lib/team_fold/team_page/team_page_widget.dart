@@ -173,31 +173,33 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                   ),
                                 ),
                               ),
-                              Align(
-                                alignment: AlignmentDirectional(-1.0, 1.0),
-                                child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      5.0, 0.0, 0.0, 0.0),
-                                  child: Container(
-                                    width: 130.0,
-                                    height: 90.0,
-                                    decoration: BoxDecoration(
-                                      color: FlutterFlowTheme.of(context)
-                                          .alternate,
-                                      shape: BoxShape.rectangle,
-                                    ),
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(0.0),
-                                      child: Image.network(
-                                        teamPageTeamsRecord.logo,
-                                        width: 300.0,
-                                        height: 200.0,
-                                        fit: BoxFit.fitHeight,
+                              if (teamPageTeamsRecord.profilPicture == '')
+                                Align(
+                                  alignment: AlignmentDirectional(-1.0, 1.0),
+                                  child: Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        5.0, 0.0, 0.0, 0.0),
+                                    child: Container(
+                                      width: 130.0,
+                                      height: 90.0,
+                                      decoration: BoxDecoration(
+                                        color: FlutterFlowTheme.of(context)
+                                            .alternate,
+                                        shape: BoxShape.rectangle,
+                                      ),
+                                      child: ClipRRect(
+                                        borderRadius:
+                                            BorderRadius.circular(0.0),
+                                        child: Image.network(
+                                          teamPageTeamsRecord.logo,
+                                          width: 300.0,
+                                          height: 200.0,
+                                          fit: BoxFit.fitHeight,
+                                        ),
                                       ),
                                     ),
                                   ),
                                 ),
-                              ),
                               Align(
                                 alignment: AlignmentDirectional(0.0, 1.0),
                                 child: Padding(
@@ -855,6 +857,33 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                   ],
                                 ),
                               ),
+                              if (teamPageTeamsRecord.profilPicture != '')
+                                Align(
+                                  alignment: AlignmentDirectional(-1.0, 1.0),
+                                  child: Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        20.0, 0.0, 0.0, 0.0),
+                                    child: Container(
+                                      width: 100.0,
+                                      height: 100.0,
+                                      decoration: BoxDecoration(
+                                        color: FlutterFlowTheme.of(context)
+                                            .alternate,
+                                        shape: BoxShape.circle,
+                                      ),
+                                      child: ClipRRect(
+                                        borderRadius:
+                                            BorderRadius.circular(0.0),
+                                        child: Image.network(
+                                          teamPageTeamsRecord.profilPicture,
+                                          width: 300.0,
+                                          height: 200.0,
+                                          fit: BoxFit.fitHeight,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
                             ],
                           ),
                         ),
@@ -869,7 +898,7 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                             if (teamPageTeamsRecord.esport == false)
                               Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
-                                    10.0, 0.0, 10.0, 5.0),
+                                    10.0, 10.0, 10.0, 5.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   mainAxisAlignment:
@@ -2976,7 +3005,7 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                 children: [
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        5.0, 0.0, 15.0, 5.0),
+                                        5.0, 5.0, 15.0, 5.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
@@ -3033,7 +3062,7 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                 children: [
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        5.0, 0.0, 15.0, 5.0),
+                                        5.0, 5.0, 15.0, 5.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
@@ -3087,7 +3116,7 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                             if (teamPageTeamsRecord.sportValue != 'sports.meca')
                               Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
-                                    5.0, 0.0, 15.0, 5.0),
+                                    5.0, 5.0, 15.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   mainAxisAlignment:
@@ -4251,7 +4280,7 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                               ),
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
-                                  5.0, 5.0, 15.0, 5.0),
+                                  5.0, 0.0, 15.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [

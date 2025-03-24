@@ -664,206 +664,195 @@ class _ModifRankPilotesWidgetState extends State<ModifRankPilotesWidget> {
                                                 );
                                               },
                                             ),
-                                            StreamBuilder<List<TeamsRecord>>(
-                                              stream: queryTeamsRecord(
-                                                queryBuilder: (teamsRecord) =>
-                                                    teamsRecord.where(
-                                                  'value',
-                                                  isEqualTo:
-                                                      _model.dropTeam1Value,
+                                            if (true /* Warning: Trying to access variable not yet defined. */)
+                                              StreamBuilder<List<TeamsRecord>>(
+                                                stream: queryTeamsRecord(
+                                                  queryBuilder: (teamsRecord) =>
+                                                      teamsRecord.where(
+                                                    'value',
+                                                    isEqualTo:
+                                                        _model.dropTeam1Value,
+                                                  ),
+                                                  singleRecord: true,
                                                 ),
-                                                singleRecord: true,
-                                              ),
-                                              builder: (context, snapshot) {
-                                                // Customize what your widget looks like when it's loading.
-                                                if (!snapshot.hasData) {
-                                                  return Center(
-                                                    child: SizedBox(
-                                                      width: 50.0,
-                                                      height: 50.0,
-                                                      child:
-                                                          CircularProgressIndicator(
-                                                        valueColor:
-                                                            AlwaysStoppedAnimation<
-                                                                Color>(
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .accent4,
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  );
-                                                }
-                                                List<TeamsRecord>
-                                                    rowTeamsRecordList =
-                                                    snapshot.data!;
-                                                // Return an empty Container when the item does not exist.
-                                                if (snapshot.data!.isEmpty) {
-                                                  return Container();
-                                                }
-                                                final rowTeamsRecord =
-                                                    rowTeamsRecordList
-                                                            .isNotEmpty
-                                                        ? rowTeamsRecordList
-                                                            .first
-                                                        : null;
-
-                                                return Row(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  children: [
-                                                    Padding(
-                                                      padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  0.0,
-                                                                  0.0,
-                                                                  20.0,
-                                                                  0.0),
-                                                      child: Container(
-                                                        width: 70.0,
-                                                        height: 30.0,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryBackground,
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      0.0),
-                                                        ),
-                                                        child: Align(
-                                                          alignment:
-                                                              AlignmentDirectional(
-                                                                  0.0, 0.0),
-                                                          child: Text(
-                                                            '1 er',
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                ),
+                                                builder: (context, snapshot) {
+                                                  // Customize what your widget looks like when it's loading.
+                                                  if (!snapshot.hasData) {
+                                                    return Center(
+                                                      child: SizedBox(
+                                                        width: 50.0,
+                                                        height: 50.0,
+                                                        child:
+                                                            CircularProgressIndicator(
+                                                          valueColor:
+                                                              AlwaysStoppedAnimation<
+                                                                  Color>(
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .accent4,
                                                           ),
                                                         ),
                                                       ),
-                                                    ),
-                                                    if ((rowTeamsRecord
-                                                                ?.updateTime !=
-                                                            _model
-                                                                .calendarSelectedDay
-                                                                ?.start) &&
-                                                        (modifRankPilotesEventsRecord
-                                                                .leagueValue ==
-                                                            'formule.1'))
-                                                      InkWell(
-                                                        splashColor:
-                                                            Colors.transparent,
-                                                        focusColor:
-                                                            Colors.transparent,
-                                                        hoverColor:
-                                                            Colors.transparent,
-                                                        highlightColor:
-                                                            Colors.transparent,
-                                                        onTap: () async {
-                                                          await rowTeamsRecord!
-                                                              .reference
-                                                              .update({
-                                                            ...createTeamsRecordData(
-                                                              updateTime: _model
-                                                                  .calendarSelectedDay
-                                                                  ?.start,
+                                                    );
+                                                  }
+                                                  List<TeamsRecord>
+                                                      rowTeamsRecordList =
+                                                      snapshot.data!;
+                                                  // Return an empty Container when the item does not exist.
+                                                  if (snapshot.data!.isEmpty) {
+                                                    return Container();
+                                                  }
+                                                  final rowTeamsRecord =
+                                                      rowTeamsRecordList
+                                                              .isNotEmpty
+                                                          ? rowTeamsRecordList
+                                                              .first
+                                                          : null;
+
+                                                  return Row(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    children: [
+                                                      Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    0.0,
+                                                                    0.0,
+                                                                    20.0,
+                                                                    0.0),
+                                                        child: Container(
+                                                          width: 70.0,
+                                                          height: 30.0,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryBackground,
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        0.0),
+                                                          ),
+                                                          child: Align(
+                                                            alignment:
+                                                                AlignmentDirectional(
+                                                                    0.0, 0.0),
+                                                            child: Text(
+                                                              '1 er',
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Poppins',
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                  ),
                                                             ),
-                                                            ...mapToFirestore(
-                                                              {
-                                                                'points':
-                                                                    FieldValue
-                                                                        .increment(
-                                                                            25),
-                                                                'total_games':
-                                                                    FieldValue
-                                                                        .increment(
-                                                                            1),
-                                                                'wins': FieldValue
-                                                                    .increment(
-                                                                        1),
-                                                                'draws': FieldValue
-                                                                    .increment(
-                                                                        1),
-                                                              },
-                                                            ),
-                                                          });
-                                                        },
-                                                        child: Icon(
-                                                          Icons.send_rounded,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryText,
-                                                          size: 24.0,
+                                                          ),
                                                         ),
                                                       ),
-                                                    if ((rowTeamsRecord
-                                                                ?.updateTime !=
-                                                            _model
-                                                                .calendarSelectedDay
-                                                                ?.start) &&
-                                                        (modifRankPilotesEventsRecord
-                                                                .leagueValue ==
-                                                            'moto.gp'))
-                                                      InkWell(
-                                                        splashColor:
-                                                            Colors.transparent,
-                                                        focusColor:
-                                                            Colors.transparent,
-                                                        hoverColor:
-                                                            Colors.transparent,
-                                                        highlightColor:
-                                                            Colors.transparent,
-                                                        onTap: () async {
-                                                          await rowTeamsRecord!
-                                                              .reference
-                                                              .update({
-                                                            ...createTeamsRecordData(
-                                                              updateTime: _model
-                                                                  .calendarSelectedDay
-                                                                  ?.start,
-                                                            ),
-                                                            ...mapToFirestore(
-                                                              {
-                                                                'points':
-                                                                    FieldValue
-                                                                        .increment(
-                                                                            25),
-                                                                'total_games':
-                                                                    FieldValue
-                                                                        .increment(
-                                                                            1),
-                                                                'wins': FieldValue
-                                                                    .increment(
-                                                                        1),
-                                                                'draws': FieldValue
-                                                                    .increment(
-                                                                        1),
-                                                              },
-                                                            ),
-                                                          });
-                                                        },
-                                                        child: Icon(
-                                                          Icons.send_rounded,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryText,
-                                                          size: 24.0,
+                                                      if (modifRankPilotesEventsRecord
+                                                              .leagueValue ==
+                                                          'formule.1')
+                                                        InkWell(
+                                                          splashColor: Colors
+                                                              .transparent,
+                                                          focusColor: Colors
+                                                              .transparent,
+                                                          hoverColor: Colors
+                                                              .transparent,
+                                                          highlightColor: Colors
+                                                              .transparent,
+                                                          onTap: () async {
+                                                            await rowTeamsRecord!
+                                                                .reference
+                                                                .update({
+                                                              ...createTeamsRecordData(
+                                                                updateTime: _model
+                                                                    .calendarSelectedDay
+                                                                    ?.start,
+                                                              ),
+                                                              ...mapToFirestore(
+                                                                {
+                                                                  'points': FieldValue
+                                                                      .increment(
+                                                                          25),
+                                                                  'total_games':
+                                                                      FieldValue
+                                                                          .increment(
+                                                                              1),
+                                                                  'wins': FieldValue
+                                                                      .increment(
+                                                                          1),
+                                                                  'draws': FieldValue
+                                                                      .increment(
+                                                                          1),
+                                                                },
+                                                              ),
+                                                            });
+                                                          },
+                                                          child: Icon(
+                                                            Icons.send_rounded,
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .secondaryText,
+                                                            size: 24.0,
+                                                          ),
                                                         ),
-                                                      ),
-                                                  ],
-                                                );
-                                              },
-                                            ),
+                                                      if (modifRankPilotesEventsRecord
+                                                              .leagueValue ==
+                                                          'moto.gp')
+                                                        InkWell(
+                                                          splashColor: Colors
+                                                              .transparent,
+                                                          focusColor: Colors
+                                                              .transparent,
+                                                          hoverColor: Colors
+                                                              .transparent,
+                                                          highlightColor: Colors
+                                                              .transparent,
+                                                          onTap: () async {
+                                                            await rowTeamsRecord!
+                                                                .reference
+                                                                .update({
+                                                              ...createTeamsRecordData(
+                                                                updateTime: _model
+                                                                    .calendarSelectedDay
+                                                                    ?.start,
+                                                              ),
+                                                              ...mapToFirestore(
+                                                                {
+                                                                  'points': FieldValue
+                                                                      .increment(
+                                                                          25),
+                                                                  'total_games':
+                                                                      FieldValue
+                                                                          .increment(
+                                                                              1),
+                                                                  'wins': FieldValue
+                                                                      .increment(
+                                                                          1),
+                                                                  'draws': FieldValue
+                                                                      .increment(
+                                                                          1),
+                                                                },
+                                                              ),
+                                                            });
+                                                          },
+                                                          child: Icon(
+                                                            Icons.send_rounded,
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .secondaryText,
+                                                            size: 24.0,
+                                                          ),
+                                                        ),
+                                                    ],
+                                                  );
+                                                },
+                                              ),
                                           ],
                                         ),
                                       ),
@@ -967,200 +956,189 @@ class _ModifRankPilotesWidgetState extends State<ModifRankPilotesWidget> {
                                                 );
                                               },
                                             ),
-                                            StreamBuilder<List<TeamsRecord>>(
-                                              stream: queryTeamsRecord(
-                                                queryBuilder: (teamsRecord) =>
-                                                    teamsRecord.where(
-                                                  'value',
-                                                  isEqualTo:
-                                                      _model.dropTeam2Value,
+                                            if (true /* Warning: Trying to access variable not yet defined. */)
+                                              StreamBuilder<List<TeamsRecord>>(
+                                                stream: queryTeamsRecord(
+                                                  queryBuilder: (teamsRecord) =>
+                                                      teamsRecord.where(
+                                                    'value',
+                                                    isEqualTo:
+                                                        _model.dropTeam2Value,
+                                                  ),
+                                                  singleRecord: true,
                                                 ),
-                                                singleRecord: true,
-                                              ),
-                                              builder: (context, snapshot) {
-                                                // Customize what your widget looks like when it's loading.
-                                                if (!snapshot.hasData) {
-                                                  return Center(
-                                                    child: SizedBox(
-                                                      width: 50.0,
-                                                      height: 50.0,
-                                                      child:
-                                                          CircularProgressIndicator(
-                                                        valueColor:
-                                                            AlwaysStoppedAnimation<
-                                                                Color>(
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .accent4,
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  );
-                                                }
-                                                List<TeamsRecord>
-                                                    rowTeamsRecordList =
-                                                    snapshot.data!;
-                                                // Return an empty Container when the item does not exist.
-                                                if (snapshot.data!.isEmpty) {
-                                                  return Container();
-                                                }
-                                                final rowTeamsRecord =
-                                                    rowTeamsRecordList
-                                                            .isNotEmpty
-                                                        ? rowTeamsRecordList
-                                                            .first
-                                                        : null;
-
-                                                return Row(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  children: [
-                                                    Padding(
-                                                      padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  0.0,
-                                                                  0.0,
-                                                                  20.0,
-                                                                  0.0),
-                                                      child: Container(
-                                                        width: 70.0,
-                                                        height: 30.0,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryBackground,
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      0.0),
-                                                        ),
-                                                        child: Align(
-                                                          alignment:
-                                                              AlignmentDirectional(
-                                                                  0.0, 0.0),
-                                                          child: Text(
-                                                            '2 ème',
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                ),
+                                                builder: (context, snapshot) {
+                                                  // Customize what your widget looks like when it's loading.
+                                                  if (!snapshot.hasData) {
+                                                    return Center(
+                                                      child: SizedBox(
+                                                        width: 50.0,
+                                                        height: 50.0,
+                                                        child:
+                                                            CircularProgressIndicator(
+                                                          valueColor:
+                                                              AlwaysStoppedAnimation<
+                                                                  Color>(
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .accent4,
                                                           ),
                                                         ),
                                                       ),
-                                                    ),
-                                                    if ((rowTeamsRecord
-                                                                ?.updateTime !=
-                                                            _model
-                                                                .calendarSelectedDay
-                                                                ?.start) &&
-                                                        (modifRankPilotesEventsRecord
-                                                                .leagueValue ==
-                                                            'formule.1'))
-                                                      InkWell(
-                                                        splashColor:
-                                                            Colors.transparent,
-                                                        focusColor:
-                                                            Colors.transparent,
-                                                        hoverColor:
-                                                            Colors.transparent,
-                                                        highlightColor:
-                                                            Colors.transparent,
-                                                        onTap: () async {
-                                                          await rowTeamsRecord!
-                                                              .reference
-                                                              .update({
-                                                            ...createTeamsRecordData(
-                                                              updateTime: _model
-                                                                  .calendarSelectedDay
-                                                                  ?.start,
+                                                    );
+                                                  }
+                                                  List<TeamsRecord>
+                                                      rowTeamsRecordList =
+                                                      snapshot.data!;
+                                                  // Return an empty Container when the item does not exist.
+                                                  if (snapshot.data!.isEmpty) {
+                                                    return Container();
+                                                  }
+                                                  final rowTeamsRecord =
+                                                      rowTeamsRecordList
+                                                              .isNotEmpty
+                                                          ? rowTeamsRecordList
+                                                              .first
+                                                          : null;
+
+                                                  return Row(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    children: [
+                                                      Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    0.0,
+                                                                    0.0,
+                                                                    20.0,
+                                                                    0.0),
+                                                        child: Container(
+                                                          width: 70.0,
+                                                          height: 30.0,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryBackground,
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        0.0),
+                                                          ),
+                                                          child: Align(
+                                                            alignment:
+                                                                AlignmentDirectional(
+                                                                    0.0, 0.0),
+                                                            child: Text(
+                                                              '2 ème',
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Poppins',
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                  ),
                                                             ),
-                                                            ...mapToFirestore(
-                                                              {
-                                                                'points':
-                                                                    FieldValue
-                                                                        .increment(
-                                                                            18),
-                                                                'total_games':
-                                                                    FieldValue
-                                                                        .increment(
-                                                                            1),
-                                                                'draws': FieldValue
-                                                                    .increment(
-                                                                        1),
-                                                              },
-                                                            ),
-                                                          });
-                                                        },
-                                                        child: Icon(
-                                                          Icons.send_rounded,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryText,
-                                                          size: 24.0,
+                                                          ),
                                                         ),
                                                       ),
-                                                    if ((rowTeamsRecord
-                                                                ?.updateTime !=
-                                                            _model
-                                                                .calendarSelectedDay
-                                                                ?.start) &&
-                                                        (modifRankPilotesEventsRecord
-                                                                .leagueValue ==
-                                                            'moto.gp'))
-                                                      InkWell(
-                                                        splashColor:
-                                                            Colors.transparent,
-                                                        focusColor:
-                                                            Colors.transparent,
-                                                        hoverColor:
-                                                            Colors.transparent,
-                                                        highlightColor:
-                                                            Colors.transparent,
-                                                        onTap: () async {
-                                                          await rowTeamsRecord!
-                                                              .reference
-                                                              .update({
-                                                            ...createTeamsRecordData(
-                                                              updateTime: _model
-                                                                  .calendarSelectedDay
-                                                                  ?.start,
-                                                            ),
-                                                            ...mapToFirestore(
-                                                              {
-                                                                'points':
-                                                                    FieldValue
-                                                                        .increment(
-                                                                            20),
-                                                                'total_games':
-                                                                    FieldValue
-                                                                        .increment(
-                                                                            1),
-                                                                'draws': FieldValue
-                                                                    .increment(
-                                                                        1),
-                                                              },
-                                                            ),
-                                                          });
-                                                        },
-                                                        child: Icon(
-                                                          Icons.send_rounded,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryText,
-                                                          size: 24.0,
+                                                      if (modifRankPilotesEventsRecord
+                                                              .leagueValue ==
+                                                          'formule.1')
+                                                        InkWell(
+                                                          splashColor: Colors
+                                                              .transparent,
+                                                          focusColor: Colors
+                                                              .transparent,
+                                                          hoverColor: Colors
+                                                              .transparent,
+                                                          highlightColor: Colors
+                                                              .transparent,
+                                                          onTap: () async {
+                                                            await rowTeamsRecord!
+                                                                .reference
+                                                                .update({
+                                                              ...createTeamsRecordData(
+                                                                updateTime: _model
+                                                                    .calendarSelectedDay
+                                                                    ?.start,
+                                                              ),
+                                                              ...mapToFirestore(
+                                                                {
+                                                                  'points': FieldValue
+                                                                      .increment(
+                                                                          18),
+                                                                  'total_games':
+                                                                      FieldValue
+                                                                          .increment(
+                                                                              1),
+                                                                  'draws': FieldValue
+                                                                      .increment(
+                                                                          1),
+                                                                },
+                                                              ),
+                                                            });
+                                                          },
+                                                          child: Icon(
+                                                            Icons.send_rounded,
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .secondaryText,
+                                                            size: 24.0,
+                                                          ),
                                                         ),
-                                                      ),
-                                                  ],
-                                                );
-                                              },
-                                            ),
+                                                      if (modifRankPilotesEventsRecord
+                                                              .leagueValue ==
+                                                          'moto.gp')
+                                                        InkWell(
+                                                          splashColor: Colors
+                                                              .transparent,
+                                                          focusColor: Colors
+                                                              .transparent,
+                                                          hoverColor: Colors
+                                                              .transparent,
+                                                          highlightColor: Colors
+                                                              .transparent,
+                                                          onTap: () async {
+                                                            await rowTeamsRecord!
+                                                                .reference
+                                                                .update({
+                                                              ...createTeamsRecordData(
+                                                                updateTime: _model
+                                                                    .calendarSelectedDay
+                                                                    ?.start,
+                                                              ),
+                                                              ...mapToFirestore(
+                                                                {
+                                                                  'points': FieldValue
+                                                                      .increment(
+                                                                          20),
+                                                                  'total_games':
+                                                                      FieldValue
+                                                                          .increment(
+                                                                              1),
+                                                                  'draws': FieldValue
+                                                                      .increment(
+                                                                          1),
+                                                                },
+                                                              ),
+                                                            });
+                                                          },
+                                                          child: Icon(
+                                                            Icons.send_rounded,
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .secondaryText,
+                                                            size: 24.0,
+                                                          ),
+                                                        ),
+                                                    ],
+                                                  );
+                                                },
+                                              ),
                                           ],
                                         ),
                                       ),
@@ -1264,200 +1242,189 @@ class _ModifRankPilotesWidgetState extends State<ModifRankPilotesWidget> {
                                                 );
                                               },
                                             ),
-                                            StreamBuilder<List<TeamsRecord>>(
-                                              stream: queryTeamsRecord(
-                                                queryBuilder: (teamsRecord) =>
-                                                    teamsRecord.where(
-                                                  'value',
-                                                  isEqualTo:
-                                                      _model.dropTeam3Value,
+                                            if (true /* Warning: Trying to access variable not yet defined. */)
+                                              StreamBuilder<List<TeamsRecord>>(
+                                                stream: queryTeamsRecord(
+                                                  queryBuilder: (teamsRecord) =>
+                                                      teamsRecord.where(
+                                                    'value',
+                                                    isEqualTo:
+                                                        _model.dropTeam3Value,
+                                                  ),
+                                                  singleRecord: true,
                                                 ),
-                                                singleRecord: true,
-                                              ),
-                                              builder: (context, snapshot) {
-                                                // Customize what your widget looks like when it's loading.
-                                                if (!snapshot.hasData) {
-                                                  return Center(
-                                                    child: SizedBox(
-                                                      width: 50.0,
-                                                      height: 50.0,
-                                                      child:
-                                                          CircularProgressIndicator(
-                                                        valueColor:
-                                                            AlwaysStoppedAnimation<
-                                                                Color>(
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .accent4,
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  );
-                                                }
-                                                List<TeamsRecord>
-                                                    rowTeamsRecordList =
-                                                    snapshot.data!;
-                                                // Return an empty Container when the item does not exist.
-                                                if (snapshot.data!.isEmpty) {
-                                                  return Container();
-                                                }
-                                                final rowTeamsRecord =
-                                                    rowTeamsRecordList
-                                                            .isNotEmpty
-                                                        ? rowTeamsRecordList
-                                                            .first
-                                                        : null;
-
-                                                return Row(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  children: [
-                                                    Padding(
-                                                      padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  0.0,
-                                                                  0.0,
-                                                                  20.0,
-                                                                  0.0),
-                                                      child: Container(
-                                                        width: 70.0,
-                                                        height: 30.0,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryBackground,
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      0.0),
-                                                        ),
-                                                        child: Align(
-                                                          alignment:
-                                                              AlignmentDirectional(
-                                                                  0.0, 0.0),
-                                                          child: Text(
-                                                            '3 ème',
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                ),
+                                                builder: (context, snapshot) {
+                                                  // Customize what your widget looks like when it's loading.
+                                                  if (!snapshot.hasData) {
+                                                    return Center(
+                                                      child: SizedBox(
+                                                        width: 50.0,
+                                                        height: 50.0,
+                                                        child:
+                                                            CircularProgressIndicator(
+                                                          valueColor:
+                                                              AlwaysStoppedAnimation<
+                                                                  Color>(
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .accent4,
                                                           ),
                                                         ),
                                                       ),
-                                                    ),
-                                                    if ((rowTeamsRecord
-                                                                ?.updateTime !=
-                                                            _model
-                                                                .calendarSelectedDay
-                                                                ?.start) &&
-                                                        (modifRankPilotesEventsRecord
-                                                                .leagueValue ==
-                                                            'formule.1'))
-                                                      InkWell(
-                                                        splashColor:
-                                                            Colors.transparent,
-                                                        focusColor:
-                                                            Colors.transparent,
-                                                        hoverColor:
-                                                            Colors.transparent,
-                                                        highlightColor:
-                                                            Colors.transparent,
-                                                        onTap: () async {
-                                                          await rowTeamsRecord!
-                                                              .reference
-                                                              .update({
-                                                            ...createTeamsRecordData(
-                                                              updateTime: _model
-                                                                  .calendarSelectedDay
-                                                                  ?.start,
+                                                    );
+                                                  }
+                                                  List<TeamsRecord>
+                                                      rowTeamsRecordList =
+                                                      snapshot.data!;
+                                                  // Return an empty Container when the item does not exist.
+                                                  if (snapshot.data!.isEmpty) {
+                                                    return Container();
+                                                  }
+                                                  final rowTeamsRecord =
+                                                      rowTeamsRecordList
+                                                              .isNotEmpty
+                                                          ? rowTeamsRecordList
+                                                              .first
+                                                          : null;
+
+                                                  return Row(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    children: [
+                                                      Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    0.0,
+                                                                    0.0,
+                                                                    20.0,
+                                                                    0.0),
+                                                        child: Container(
+                                                          width: 70.0,
+                                                          height: 30.0,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryBackground,
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        0.0),
+                                                          ),
+                                                          child: Align(
+                                                            alignment:
+                                                                AlignmentDirectional(
+                                                                    0.0, 0.0),
+                                                            child: Text(
+                                                              '3 ème',
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Poppins',
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                  ),
                                                             ),
-                                                            ...mapToFirestore(
-                                                              {
-                                                                'points':
-                                                                    FieldValue
-                                                                        .increment(
-                                                                            15),
-                                                                'total_games':
-                                                                    FieldValue
-                                                                        .increment(
-                                                                            1),
-                                                                'draws': FieldValue
-                                                                    .increment(
-                                                                        1),
-                                                              },
-                                                            ),
-                                                          });
-                                                        },
-                                                        child: Icon(
-                                                          Icons.send_rounded,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryText,
-                                                          size: 24.0,
+                                                          ),
                                                         ),
                                                       ),
-                                                    if ((rowTeamsRecord
-                                                                ?.updateTime !=
-                                                            _model
-                                                                .calendarSelectedDay
-                                                                ?.start) &&
-                                                        (modifRankPilotesEventsRecord
-                                                                .leagueValue ==
-                                                            'moto.gp'))
-                                                      InkWell(
-                                                        splashColor:
-                                                            Colors.transparent,
-                                                        focusColor:
-                                                            Colors.transparent,
-                                                        hoverColor:
-                                                            Colors.transparent,
-                                                        highlightColor:
-                                                            Colors.transparent,
-                                                        onTap: () async {
-                                                          await rowTeamsRecord!
-                                                              .reference
-                                                              .update({
-                                                            ...createTeamsRecordData(
-                                                              updateTime: _model
-                                                                  .calendarSelectedDay
-                                                                  ?.start,
-                                                            ),
-                                                            ...mapToFirestore(
-                                                              {
-                                                                'points':
-                                                                    FieldValue
-                                                                        .increment(
-                                                                            15),
-                                                                'total_games':
-                                                                    FieldValue
-                                                                        .increment(
-                                                                            1),
-                                                                'draws': FieldValue
-                                                                    .increment(
-                                                                        1),
-                                                              },
-                                                            ),
-                                                          });
-                                                        },
-                                                        child: Icon(
-                                                          Icons.send_rounded,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryText,
-                                                          size: 24.0,
+                                                      if (modifRankPilotesEventsRecord
+                                                              .leagueValue ==
+                                                          'formule.1')
+                                                        InkWell(
+                                                          splashColor: Colors
+                                                              .transparent,
+                                                          focusColor: Colors
+                                                              .transparent,
+                                                          hoverColor: Colors
+                                                              .transparent,
+                                                          highlightColor: Colors
+                                                              .transparent,
+                                                          onTap: () async {
+                                                            await rowTeamsRecord!
+                                                                .reference
+                                                                .update({
+                                                              ...createTeamsRecordData(
+                                                                updateTime: _model
+                                                                    .calendarSelectedDay
+                                                                    ?.start,
+                                                              ),
+                                                              ...mapToFirestore(
+                                                                {
+                                                                  'points': FieldValue
+                                                                      .increment(
+                                                                          15),
+                                                                  'total_games':
+                                                                      FieldValue
+                                                                          .increment(
+                                                                              1),
+                                                                  'draws': FieldValue
+                                                                      .increment(
+                                                                          1),
+                                                                },
+                                                              ),
+                                                            });
+                                                          },
+                                                          child: Icon(
+                                                            Icons.send_rounded,
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .secondaryText,
+                                                            size: 24.0,
+                                                          ),
                                                         ),
-                                                      ),
-                                                  ],
-                                                );
-                                              },
-                                            ),
+                                                      if (modifRankPilotesEventsRecord
+                                                              .leagueValue ==
+                                                          'moto.gp')
+                                                        InkWell(
+                                                          splashColor: Colors
+                                                              .transparent,
+                                                          focusColor: Colors
+                                                              .transparent,
+                                                          hoverColor: Colors
+                                                              .transparent,
+                                                          highlightColor: Colors
+                                                              .transparent,
+                                                          onTap: () async {
+                                                            await rowTeamsRecord!
+                                                                .reference
+                                                                .update({
+                                                              ...createTeamsRecordData(
+                                                                updateTime: _model
+                                                                    .calendarSelectedDay
+                                                                    ?.start,
+                                                              ),
+                                                              ...mapToFirestore(
+                                                                {
+                                                                  'points': FieldValue
+                                                                      .increment(
+                                                                          15),
+                                                                  'total_games':
+                                                                      FieldValue
+                                                                          .increment(
+                                                                              1),
+                                                                  'draws': FieldValue
+                                                                      .increment(
+                                                                          1),
+                                                                },
+                                                              ),
+                                                            });
+                                                          },
+                                                          child: Icon(
+                                                            Icons.send_rounded,
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .secondaryText,
+                                                            size: 24.0,
+                                                          ),
+                                                        ),
+                                                    ],
+                                                  );
+                                                },
+                                              ),
                                           ],
                                         ),
                                       ),
@@ -1561,194 +1528,183 @@ class _ModifRankPilotesWidgetState extends State<ModifRankPilotesWidget> {
                                                 );
                                               },
                                             ),
-                                            StreamBuilder<List<TeamsRecord>>(
-                                              stream: queryTeamsRecord(
-                                                queryBuilder: (teamsRecord) =>
-                                                    teamsRecord.where(
-                                                  'value',
-                                                  isEqualTo:
-                                                      _model.dropTeam4Value,
+                                            if (true /* Warning: Trying to access variable not yet defined. */)
+                                              StreamBuilder<List<TeamsRecord>>(
+                                                stream: queryTeamsRecord(
+                                                  queryBuilder: (teamsRecord) =>
+                                                      teamsRecord.where(
+                                                    'value',
+                                                    isEqualTo:
+                                                        _model.dropTeam4Value,
+                                                  ),
+                                                  singleRecord: true,
                                                 ),
-                                                singleRecord: true,
-                                              ),
-                                              builder: (context, snapshot) {
-                                                // Customize what your widget looks like when it's loading.
-                                                if (!snapshot.hasData) {
-                                                  return Center(
-                                                    child: SizedBox(
-                                                      width: 50.0,
-                                                      height: 50.0,
-                                                      child:
-                                                          CircularProgressIndicator(
-                                                        valueColor:
-                                                            AlwaysStoppedAnimation<
-                                                                Color>(
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .accent4,
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  );
-                                                }
-                                                List<TeamsRecord>
-                                                    rowTeamsRecordList =
-                                                    snapshot.data!;
-                                                // Return an empty Container when the item does not exist.
-                                                if (snapshot.data!.isEmpty) {
-                                                  return Container();
-                                                }
-                                                final rowTeamsRecord =
-                                                    rowTeamsRecordList
-                                                            .isNotEmpty
-                                                        ? rowTeamsRecordList
-                                                            .first
-                                                        : null;
-
-                                                return Row(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  children: [
-                                                    Padding(
-                                                      padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  0.0,
-                                                                  0.0,
-                                                                  20.0,
-                                                                  0.0),
-                                                      child: Container(
-                                                        width: 70.0,
-                                                        height: 30.0,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryBackground,
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      0.0),
-                                                        ),
-                                                        child: Align(
-                                                          alignment:
-                                                              AlignmentDirectional(
-                                                                  0.0, 0.0),
-                                                          child: Text(
-                                                            '4 ème',
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                ),
+                                                builder: (context, snapshot) {
+                                                  // Customize what your widget looks like when it's loading.
+                                                  if (!snapshot.hasData) {
+                                                    return Center(
+                                                      child: SizedBox(
+                                                        width: 50.0,
+                                                        height: 50.0,
+                                                        child:
+                                                            CircularProgressIndicator(
+                                                          valueColor:
+                                                              AlwaysStoppedAnimation<
+                                                                  Color>(
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .accent4,
                                                           ),
                                                         ),
                                                       ),
-                                                    ),
-                                                    if ((rowTeamsRecord
-                                                                ?.updateTime !=
-                                                            _model
-                                                                .calendarSelectedDay
-                                                                ?.start) &&
-                                                        (modifRankPilotesEventsRecord
-                                                                .leagueValue ==
-                                                            'formule.1'))
-                                                      InkWell(
-                                                        splashColor:
-                                                            Colors.transparent,
-                                                        focusColor:
-                                                            Colors.transparent,
-                                                        hoverColor:
-                                                            Colors.transparent,
-                                                        highlightColor:
-                                                            Colors.transparent,
-                                                        onTap: () async {
-                                                          await rowTeamsRecord!
-                                                              .reference
-                                                              .update({
-                                                            ...createTeamsRecordData(
-                                                              updateTime: _model
-                                                                  .calendarSelectedDay
-                                                                  ?.start,
+                                                    );
+                                                  }
+                                                  List<TeamsRecord>
+                                                      rowTeamsRecordList =
+                                                      snapshot.data!;
+                                                  // Return an empty Container when the item does not exist.
+                                                  if (snapshot.data!.isEmpty) {
+                                                    return Container();
+                                                  }
+                                                  final rowTeamsRecord =
+                                                      rowTeamsRecordList
+                                                              .isNotEmpty
+                                                          ? rowTeamsRecordList
+                                                              .first
+                                                          : null;
+
+                                                  return Row(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    children: [
+                                                      Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    0.0,
+                                                                    0.0,
+                                                                    20.0,
+                                                                    0.0),
+                                                        child: Container(
+                                                          width: 70.0,
+                                                          height: 30.0,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryBackground,
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        0.0),
+                                                          ),
+                                                          child: Align(
+                                                            alignment:
+                                                                AlignmentDirectional(
+                                                                    0.0, 0.0),
+                                                            child: Text(
+                                                              '4 ème',
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Poppins',
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                  ),
                                                             ),
-                                                            ...mapToFirestore(
-                                                              {
-                                                                'points':
-                                                                    FieldValue
-                                                                        .increment(
-                                                                            12),
-                                                                'total_games':
-                                                                    FieldValue
-                                                                        .increment(
-                                                                            1),
-                                                              },
-                                                            ),
-                                                          });
-                                                        },
-                                                        child: Icon(
-                                                          Icons.send_rounded,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryText,
-                                                          size: 24.0,
+                                                          ),
                                                         ),
                                                       ),
-                                                    if ((rowTeamsRecord
-                                                                ?.updateTime !=
-                                                            _model
-                                                                .calendarSelectedDay
-                                                                ?.start) &&
-                                                        (modifRankPilotesEventsRecord
-                                                                .leagueValue ==
-                                                            'moto.gp'))
-                                                      InkWell(
-                                                        splashColor:
-                                                            Colors.transparent,
-                                                        focusColor:
-                                                            Colors.transparent,
-                                                        hoverColor:
-                                                            Colors.transparent,
-                                                        highlightColor:
-                                                            Colors.transparent,
-                                                        onTap: () async {
-                                                          await rowTeamsRecord!
-                                                              .reference
-                                                              .update({
-                                                            ...createTeamsRecordData(
-                                                              updateTime: _model
-                                                                  .calendarSelectedDay
-                                                                  ?.start,
-                                                            ),
-                                                            ...mapToFirestore(
-                                                              {
-                                                                'points':
-                                                                    FieldValue
-                                                                        .increment(
-                                                                            13),
-                                                                'total_games':
-                                                                    FieldValue
-                                                                        .increment(
-                                                                            1),
-                                                              },
-                                                            ),
-                                                          });
-                                                        },
-                                                        child: Icon(
-                                                          Icons.send_rounded,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryText,
-                                                          size: 24.0,
+                                                      if (modifRankPilotesEventsRecord
+                                                              .leagueValue ==
+                                                          'formule.1')
+                                                        InkWell(
+                                                          splashColor: Colors
+                                                              .transparent,
+                                                          focusColor: Colors
+                                                              .transparent,
+                                                          hoverColor: Colors
+                                                              .transparent,
+                                                          highlightColor: Colors
+                                                              .transparent,
+                                                          onTap: () async {
+                                                            await rowTeamsRecord!
+                                                                .reference
+                                                                .update({
+                                                              ...createTeamsRecordData(
+                                                                updateTime: _model
+                                                                    .calendarSelectedDay
+                                                                    ?.start,
+                                                              ),
+                                                              ...mapToFirestore(
+                                                                {
+                                                                  'points': FieldValue
+                                                                      .increment(
+                                                                          12),
+                                                                  'total_games':
+                                                                      FieldValue
+                                                                          .increment(
+                                                                              1),
+                                                                },
+                                                              ),
+                                                            });
+                                                          },
+                                                          child: Icon(
+                                                            Icons.send_rounded,
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .secondaryText,
+                                                            size: 24.0,
+                                                          ),
                                                         ),
-                                                      ),
-                                                  ],
-                                                );
-                                              },
-                                            ),
+                                                      if (modifRankPilotesEventsRecord
+                                                              .leagueValue ==
+                                                          'moto.gp')
+                                                        InkWell(
+                                                          splashColor: Colors
+                                                              .transparent,
+                                                          focusColor: Colors
+                                                              .transparent,
+                                                          hoverColor: Colors
+                                                              .transparent,
+                                                          highlightColor: Colors
+                                                              .transparent,
+                                                          onTap: () async {
+                                                            await rowTeamsRecord!
+                                                                .reference
+                                                                .update({
+                                                              ...createTeamsRecordData(
+                                                                updateTime: _model
+                                                                    .calendarSelectedDay
+                                                                    ?.start,
+                                                              ),
+                                                              ...mapToFirestore(
+                                                                {
+                                                                  'points': FieldValue
+                                                                      .increment(
+                                                                          13),
+                                                                  'total_games':
+                                                                      FieldValue
+                                                                          .increment(
+                                                                              1),
+                                                                },
+                                                              ),
+                                                            });
+                                                          },
+                                                          child: Icon(
+                                                            Icons.send_rounded,
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .secondaryText,
+                                                            size: 24.0,
+                                                          ),
+                                                        ),
+                                                    ],
+                                                  );
+                                                },
+                                              ),
                                           ],
                                         ),
                                       ),
@@ -1852,194 +1808,183 @@ class _ModifRankPilotesWidgetState extends State<ModifRankPilotesWidget> {
                                                 );
                                               },
                                             ),
-                                            StreamBuilder<List<TeamsRecord>>(
-                                              stream: queryTeamsRecord(
-                                                queryBuilder: (teamsRecord) =>
-                                                    teamsRecord.where(
-                                                  'value',
-                                                  isEqualTo:
-                                                      _model.dropTeam5Value,
+                                            if (true /* Warning: Trying to access variable not yet defined. */)
+                                              StreamBuilder<List<TeamsRecord>>(
+                                                stream: queryTeamsRecord(
+                                                  queryBuilder: (teamsRecord) =>
+                                                      teamsRecord.where(
+                                                    'value',
+                                                    isEqualTo:
+                                                        _model.dropTeam5Value,
+                                                  ),
+                                                  singleRecord: true,
                                                 ),
-                                                singleRecord: true,
-                                              ),
-                                              builder: (context, snapshot) {
-                                                // Customize what your widget looks like when it's loading.
-                                                if (!snapshot.hasData) {
-                                                  return Center(
-                                                    child: SizedBox(
-                                                      width: 50.0,
-                                                      height: 50.0,
-                                                      child:
-                                                          CircularProgressIndicator(
-                                                        valueColor:
-                                                            AlwaysStoppedAnimation<
-                                                                Color>(
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .accent4,
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  );
-                                                }
-                                                List<TeamsRecord>
-                                                    rowTeamsRecordList =
-                                                    snapshot.data!;
-                                                // Return an empty Container when the item does not exist.
-                                                if (snapshot.data!.isEmpty) {
-                                                  return Container();
-                                                }
-                                                final rowTeamsRecord =
-                                                    rowTeamsRecordList
-                                                            .isNotEmpty
-                                                        ? rowTeamsRecordList
-                                                            .first
-                                                        : null;
-
-                                                return Row(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  children: [
-                                                    Padding(
-                                                      padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  0.0,
-                                                                  0.0,
-                                                                  20.0,
-                                                                  0.0),
-                                                      child: Container(
-                                                        width: 70.0,
-                                                        height: 30.0,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryBackground,
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      0.0),
-                                                        ),
-                                                        child: Align(
-                                                          alignment:
-                                                              AlignmentDirectional(
-                                                                  0.0, 0.0),
-                                                          child: Text(
-                                                            '5 ème',
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                ),
+                                                builder: (context, snapshot) {
+                                                  // Customize what your widget looks like when it's loading.
+                                                  if (!snapshot.hasData) {
+                                                    return Center(
+                                                      child: SizedBox(
+                                                        width: 50.0,
+                                                        height: 50.0,
+                                                        child:
+                                                            CircularProgressIndicator(
+                                                          valueColor:
+                                                              AlwaysStoppedAnimation<
+                                                                  Color>(
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .accent4,
                                                           ),
                                                         ),
                                                       ),
-                                                    ),
-                                                    if ((rowTeamsRecord
-                                                                ?.updateTime !=
-                                                            _model
-                                                                .calendarSelectedDay
-                                                                ?.start) &&
-                                                        (modifRankPilotesEventsRecord
-                                                                .leagueValue ==
-                                                            'formule.1'))
-                                                      InkWell(
-                                                        splashColor:
-                                                            Colors.transparent,
-                                                        focusColor:
-                                                            Colors.transparent,
-                                                        hoverColor:
-                                                            Colors.transparent,
-                                                        highlightColor:
-                                                            Colors.transparent,
-                                                        onTap: () async {
-                                                          await rowTeamsRecord!
-                                                              .reference
-                                                              .update({
-                                                            ...createTeamsRecordData(
-                                                              updateTime: _model
-                                                                  .calendarSelectedDay
-                                                                  ?.start,
+                                                    );
+                                                  }
+                                                  List<TeamsRecord>
+                                                      rowTeamsRecordList =
+                                                      snapshot.data!;
+                                                  // Return an empty Container when the item does not exist.
+                                                  if (snapshot.data!.isEmpty) {
+                                                    return Container();
+                                                  }
+                                                  final rowTeamsRecord =
+                                                      rowTeamsRecordList
+                                                              .isNotEmpty
+                                                          ? rowTeamsRecordList
+                                                              .first
+                                                          : null;
+
+                                                  return Row(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    children: [
+                                                      Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    0.0,
+                                                                    0.0,
+                                                                    20.0,
+                                                                    0.0),
+                                                        child: Container(
+                                                          width: 70.0,
+                                                          height: 30.0,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryBackground,
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        0.0),
+                                                          ),
+                                                          child: Align(
+                                                            alignment:
+                                                                AlignmentDirectional(
+                                                                    0.0, 0.0),
+                                                            child: Text(
+                                                              '5 ème',
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Poppins',
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                  ),
                                                             ),
-                                                            ...mapToFirestore(
-                                                              {
-                                                                'points':
-                                                                    FieldValue
-                                                                        .increment(
-                                                                            10),
-                                                                'total_games':
-                                                                    FieldValue
-                                                                        .increment(
-                                                                            1),
-                                                              },
-                                                            ),
-                                                          });
-                                                        },
-                                                        child: Icon(
-                                                          Icons.send_rounded,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryText,
-                                                          size: 24.0,
+                                                          ),
                                                         ),
                                                       ),
-                                                    if ((rowTeamsRecord
-                                                                ?.updateTime !=
-                                                            _model
-                                                                .calendarSelectedDay
-                                                                ?.start) &&
-                                                        (modifRankPilotesEventsRecord
-                                                                .leagueValue ==
-                                                            'moto.gp'))
-                                                      InkWell(
-                                                        splashColor:
-                                                            Colors.transparent,
-                                                        focusColor:
-                                                            Colors.transparent,
-                                                        hoverColor:
-                                                            Colors.transparent,
-                                                        highlightColor:
-                                                            Colors.transparent,
-                                                        onTap: () async {
-                                                          await rowTeamsRecord!
-                                                              .reference
-                                                              .update({
-                                                            ...createTeamsRecordData(
-                                                              updateTime: _model
-                                                                  .calendarSelectedDay
-                                                                  ?.start,
-                                                            ),
-                                                            ...mapToFirestore(
-                                                              {
-                                                                'points':
-                                                                    FieldValue
-                                                                        .increment(
-                                                                            11),
-                                                                'total_games':
-                                                                    FieldValue
-                                                                        .increment(
-                                                                            1),
-                                                              },
-                                                            ),
-                                                          });
-                                                        },
-                                                        child: Icon(
-                                                          Icons.send_rounded,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryText,
-                                                          size: 24.0,
+                                                      if (modifRankPilotesEventsRecord
+                                                              .leagueValue ==
+                                                          'formule.1')
+                                                        InkWell(
+                                                          splashColor: Colors
+                                                              .transparent,
+                                                          focusColor: Colors
+                                                              .transparent,
+                                                          hoverColor: Colors
+                                                              .transparent,
+                                                          highlightColor: Colors
+                                                              .transparent,
+                                                          onTap: () async {
+                                                            await rowTeamsRecord!
+                                                                .reference
+                                                                .update({
+                                                              ...createTeamsRecordData(
+                                                                updateTime: _model
+                                                                    .calendarSelectedDay
+                                                                    ?.start,
+                                                              ),
+                                                              ...mapToFirestore(
+                                                                {
+                                                                  'points': FieldValue
+                                                                      .increment(
+                                                                          10),
+                                                                  'total_games':
+                                                                      FieldValue
+                                                                          .increment(
+                                                                              1),
+                                                                },
+                                                              ),
+                                                            });
+                                                          },
+                                                          child: Icon(
+                                                            Icons.send_rounded,
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .secondaryText,
+                                                            size: 24.0,
+                                                          ),
                                                         ),
-                                                      ),
-                                                  ],
-                                                );
-                                              },
-                                            ),
+                                                      if (modifRankPilotesEventsRecord
+                                                              .leagueValue ==
+                                                          'moto.gp')
+                                                        InkWell(
+                                                          splashColor: Colors
+                                                              .transparent,
+                                                          focusColor: Colors
+                                                              .transparent,
+                                                          hoverColor: Colors
+                                                              .transparent,
+                                                          highlightColor: Colors
+                                                              .transparent,
+                                                          onTap: () async {
+                                                            await rowTeamsRecord!
+                                                                .reference
+                                                                .update({
+                                                              ...createTeamsRecordData(
+                                                                updateTime: _model
+                                                                    .calendarSelectedDay
+                                                                    ?.start,
+                                                              ),
+                                                              ...mapToFirestore(
+                                                                {
+                                                                  'points': FieldValue
+                                                                      .increment(
+                                                                          11),
+                                                                  'total_games':
+                                                                      FieldValue
+                                                                          .increment(
+                                                                              1),
+                                                                },
+                                                              ),
+                                                            });
+                                                          },
+                                                          child: Icon(
+                                                            Icons.send_rounded,
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .secondaryText,
+                                                            size: 24.0,
+                                                          ),
+                                                        ),
+                                                    ],
+                                                  );
+                                                },
+                                              ),
                                           ],
                                         ),
                                       ),
@@ -2143,194 +2088,184 @@ class _ModifRankPilotesWidgetState extends State<ModifRankPilotesWidget> {
                                                 );
                                               },
                                             ),
-                                            StreamBuilder<List<TeamsRecord>>(
-                                              stream: queryTeamsRecord(
-                                                queryBuilder: (teamsRecord) =>
-                                                    teamsRecord.where(
-                                                  'value',
-                                                  isEqualTo:
-                                                      _model.dropTeam6Value,
+                                            if (true /* Warning: Trying to access variable not yet defined. */)
+                                              StreamBuilder<List<TeamsRecord>>(
+                                                stream: queryTeamsRecord(
+                                                  queryBuilder: (teamsRecord) =>
+                                                      teamsRecord.where(
+                                                    'value',
+                                                    isEqualTo:
+                                                        _model.dropTeam6Value,
+                                                  ),
+                                                  singleRecord: true,
                                                 ),
-                                                singleRecord: true,
-                                              ),
-                                              builder: (context, snapshot) {
-                                                // Customize what your widget looks like when it's loading.
-                                                if (!snapshot.hasData) {
-                                                  return Center(
-                                                    child: SizedBox(
-                                                      width: 50.0,
-                                                      height: 50.0,
-                                                      child:
-                                                          CircularProgressIndicator(
-                                                        valueColor:
-                                                            AlwaysStoppedAnimation<
-                                                                Color>(
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .accent4,
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  );
-                                                }
-                                                List<TeamsRecord>
-                                                    rowTeamsRecordList =
-                                                    snapshot.data!;
-                                                // Return an empty Container when the item does not exist.
-                                                if (snapshot.data!.isEmpty) {
-                                                  return Container();
-                                                }
-                                                final rowTeamsRecord =
-                                                    rowTeamsRecordList
-                                                            .isNotEmpty
-                                                        ? rowTeamsRecordList
-                                                            .first
-                                                        : null;
-
-                                                return Row(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  children: [
-                                                    Padding(
-                                                      padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  0.0,
-                                                                  0.0,
-                                                                  20.0,
-                                                                  0.0),
-                                                      child: Container(
-                                                        width: 70.0,
-                                                        height: 30.0,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryBackground,
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      0.0),
-                                                        ),
-                                                        child: Align(
-                                                          alignment:
-                                                              AlignmentDirectional(
-                                                                  0.0, 0.0),
-                                                          child: Text(
-                                                            '6 ème',
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                ),
+                                                builder: (context, snapshot) {
+                                                  // Customize what your widget looks like when it's loading.
+                                                  if (!snapshot.hasData) {
+                                                    return Center(
+                                                      child: SizedBox(
+                                                        width: 50.0,
+                                                        height: 50.0,
+                                                        child:
+                                                            CircularProgressIndicator(
+                                                          valueColor:
+                                                              AlwaysStoppedAnimation<
+                                                                  Color>(
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .accent4,
                                                           ),
                                                         ),
                                                       ),
-                                                    ),
-                                                    if ((rowTeamsRecord
-                                                                ?.updateTime !=
-                                                            _model
-                                                                .calendarSelectedDay
-                                                                ?.start) &&
-                                                        (modifRankPilotesEventsRecord
-                                                                .leagueValue ==
-                                                            'formule.1'))
-                                                      InkWell(
-                                                        splashColor:
-                                                            Colors.transparent,
-                                                        focusColor:
-                                                            Colors.transparent,
-                                                        hoverColor:
-                                                            Colors.transparent,
-                                                        highlightColor:
-                                                            Colors.transparent,
-                                                        onTap: () async {
-                                                          await rowTeamsRecord!
-                                                              .reference
-                                                              .update({
-                                                            ...createTeamsRecordData(
-                                                              updateTime: _model
-                                                                  .calendarSelectedDay
-                                                                  ?.start,
+                                                    );
+                                                  }
+                                                  List<TeamsRecord>
+                                                      rowTeamsRecordList =
+                                                      snapshot.data!;
+                                                  // Return an empty Container when the item does not exist.
+                                                  if (snapshot.data!.isEmpty) {
+                                                    return Container();
+                                                  }
+                                                  final rowTeamsRecord =
+                                                      rowTeamsRecordList
+                                                              .isNotEmpty
+                                                          ? rowTeamsRecordList
+                                                              .first
+                                                          : null;
+
+                                                  return Row(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    children: [
+                                                      Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    0.0,
+                                                                    0.0,
+                                                                    20.0,
+                                                                    0.0),
+                                                        child: Container(
+                                                          width: 70.0,
+                                                          height: 30.0,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryBackground,
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        0.0),
+                                                          ),
+                                                          child: Align(
+                                                            alignment:
+                                                                AlignmentDirectional(
+                                                                    0.0, 0.0),
+                                                            child: Text(
+                                                              '6 ème',
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Poppins',
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                  ),
                                                             ),
-                                                            ...mapToFirestore(
-                                                              {
-                                                                'points':
-                                                                    FieldValue
-                                                                        .increment(
-                                                                            8),
-                                                                'total_games':
-                                                                    FieldValue
-                                                                        .increment(
-                                                                            1),
-                                                              },
-                                                            ),
-                                                          });
-                                                        },
-                                                        child: Icon(
-                                                          Icons.send_rounded,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryText,
-                                                          size: 24.0,
+                                                          ),
                                                         ),
                                                       ),
-                                                    if ((rowTeamsRecord
-                                                                ?.updateTime !=
-                                                            _model
-                                                                .calendarSelectedDay
-                                                                ?.start) &&
-                                                        (modifRankPilotesEventsRecord
-                                                                .leagueValue ==
-                                                            'moto.gp'))
-                                                      InkWell(
-                                                        splashColor:
-                                                            Colors.transparent,
-                                                        focusColor:
-                                                            Colors.transparent,
-                                                        hoverColor:
-                                                            Colors.transparent,
-                                                        highlightColor:
-                                                            Colors.transparent,
-                                                        onTap: () async {
-                                                          await rowTeamsRecord!
-                                                              .reference
-                                                              .update({
-                                                            ...createTeamsRecordData(
-                                                              updateTime: _model
-                                                                  .calendarSelectedDay
-                                                                  ?.start,
-                                                            ),
-                                                            ...mapToFirestore(
-                                                              {
-                                                                'points':
-                                                                    FieldValue
-                                                                        .increment(
-                                                                            10),
-                                                                'total_games':
-                                                                    FieldValue
-                                                                        .increment(
-                                                                            1),
-                                                              },
-                                                            ),
-                                                          });
-                                                        },
-                                                        child: Icon(
-                                                          Icons.send_rounded,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryText,
-                                                          size: 24.0,
+                                                      if (modifRankPilotesEventsRecord
+                                                              .leagueValue ==
+                                                          'formule.1')
+                                                        InkWell(
+                                                          splashColor: Colors
+                                                              .transparent,
+                                                          focusColor: Colors
+                                                              .transparent,
+                                                          hoverColor: Colors
+                                                              .transparent,
+                                                          highlightColor: Colors
+                                                              .transparent,
+                                                          onTap: () async {
+                                                            await rowTeamsRecord!
+                                                                .reference
+                                                                .update({
+                                                              ...createTeamsRecordData(
+                                                                updateTime: _model
+                                                                    .calendarSelectedDay
+                                                                    ?.start,
+                                                              ),
+                                                              ...mapToFirestore(
+                                                                {
+                                                                  'points':
+                                                                      FieldValue
+                                                                          .increment(
+                                                                              8),
+                                                                  'total_games':
+                                                                      FieldValue
+                                                                          .increment(
+                                                                              1),
+                                                                },
+                                                              ),
+                                                            });
+                                                          },
+                                                          child: Icon(
+                                                            Icons.send_rounded,
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .secondaryText,
+                                                            size: 24.0,
+                                                          ),
                                                         ),
-                                                      ),
-                                                  ],
-                                                );
-                                              },
-                                            ),
+                                                      if (modifRankPilotesEventsRecord
+                                                              .leagueValue ==
+                                                          'moto.gp')
+                                                        InkWell(
+                                                          splashColor: Colors
+                                                              .transparent,
+                                                          focusColor: Colors
+                                                              .transparent,
+                                                          hoverColor: Colors
+                                                              .transparent,
+                                                          highlightColor: Colors
+                                                              .transparent,
+                                                          onTap: () async {
+                                                            await rowTeamsRecord!
+                                                                .reference
+                                                                .update({
+                                                              ...createTeamsRecordData(
+                                                                updateTime: _model
+                                                                    .calendarSelectedDay
+                                                                    ?.start,
+                                                              ),
+                                                              ...mapToFirestore(
+                                                                {
+                                                                  'points': FieldValue
+                                                                      .increment(
+                                                                          10),
+                                                                  'total_games':
+                                                                      FieldValue
+                                                                          .increment(
+                                                                              1),
+                                                                },
+                                                              ),
+                                                            });
+                                                          },
+                                                          child: Icon(
+                                                            Icons.send_rounded,
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .secondaryText,
+                                                            size: 24.0,
+                                                          ),
+                                                        ),
+                                                    ],
+                                                  );
+                                                },
+                                              ),
                                           ],
                                         ),
                                       ),
@@ -2434,194 +2369,185 @@ class _ModifRankPilotesWidgetState extends State<ModifRankPilotesWidget> {
                                                 );
                                               },
                                             ),
-                                            StreamBuilder<List<TeamsRecord>>(
-                                              stream: queryTeamsRecord(
-                                                queryBuilder: (teamsRecord) =>
-                                                    teamsRecord.where(
-                                                  'value',
-                                                  isEqualTo:
-                                                      _model.dropTeam7Value,
+                                            if (true /* Warning: Trying to access variable not yet defined. */)
+                                              StreamBuilder<List<TeamsRecord>>(
+                                                stream: queryTeamsRecord(
+                                                  queryBuilder: (teamsRecord) =>
+                                                      teamsRecord.where(
+                                                    'value',
+                                                    isEqualTo:
+                                                        _model.dropTeam7Value,
+                                                  ),
+                                                  singleRecord: true,
                                                 ),
-                                                singleRecord: true,
-                                              ),
-                                              builder: (context, snapshot) {
-                                                // Customize what your widget looks like when it's loading.
-                                                if (!snapshot.hasData) {
-                                                  return Center(
-                                                    child: SizedBox(
-                                                      width: 50.0,
-                                                      height: 50.0,
-                                                      child:
-                                                          CircularProgressIndicator(
-                                                        valueColor:
-                                                            AlwaysStoppedAnimation<
-                                                                Color>(
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .accent4,
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  );
-                                                }
-                                                List<TeamsRecord>
-                                                    rowTeamsRecordList =
-                                                    snapshot.data!;
-                                                // Return an empty Container when the item does not exist.
-                                                if (snapshot.data!.isEmpty) {
-                                                  return Container();
-                                                }
-                                                final rowTeamsRecord =
-                                                    rowTeamsRecordList
-                                                            .isNotEmpty
-                                                        ? rowTeamsRecordList
-                                                            .first
-                                                        : null;
-
-                                                return Row(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  children: [
-                                                    Padding(
-                                                      padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  0.0,
-                                                                  0.0,
-                                                                  20.0,
-                                                                  0.0),
-                                                      child: Container(
-                                                        width: 70.0,
-                                                        height: 30.0,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryBackground,
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      0.0),
-                                                        ),
-                                                        child: Align(
-                                                          alignment:
-                                                              AlignmentDirectional(
-                                                                  0.0, 0.0),
-                                                          child: Text(
-                                                            '7 ème',
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                ),
+                                                builder: (context, snapshot) {
+                                                  // Customize what your widget looks like when it's loading.
+                                                  if (!snapshot.hasData) {
+                                                    return Center(
+                                                      child: SizedBox(
+                                                        width: 50.0,
+                                                        height: 50.0,
+                                                        child:
+                                                            CircularProgressIndicator(
+                                                          valueColor:
+                                                              AlwaysStoppedAnimation<
+                                                                  Color>(
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .accent4,
                                                           ),
                                                         ),
                                                       ),
-                                                    ),
-                                                    if ((rowTeamsRecord
-                                                                ?.updateTime !=
-                                                            _model
-                                                                .calendarSelectedDay
-                                                                ?.start) &&
-                                                        (modifRankPilotesEventsRecord
-                                                                .leagueValue ==
-                                                            'formule.1'))
-                                                      InkWell(
-                                                        splashColor:
-                                                            Colors.transparent,
-                                                        focusColor:
-                                                            Colors.transparent,
-                                                        hoverColor:
-                                                            Colors.transparent,
-                                                        highlightColor:
-                                                            Colors.transparent,
-                                                        onTap: () async {
-                                                          await rowTeamsRecord!
-                                                              .reference
-                                                              .update({
-                                                            ...createTeamsRecordData(
-                                                              updateTime: _model
-                                                                  .calendarSelectedDay
-                                                                  ?.start,
+                                                    );
+                                                  }
+                                                  List<TeamsRecord>
+                                                      rowTeamsRecordList =
+                                                      snapshot.data!;
+                                                  // Return an empty Container when the item does not exist.
+                                                  if (snapshot.data!.isEmpty) {
+                                                    return Container();
+                                                  }
+                                                  final rowTeamsRecord =
+                                                      rowTeamsRecordList
+                                                              .isNotEmpty
+                                                          ? rowTeamsRecordList
+                                                              .first
+                                                          : null;
+
+                                                  return Row(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    children: [
+                                                      Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    0.0,
+                                                                    0.0,
+                                                                    20.0,
+                                                                    0.0),
+                                                        child: Container(
+                                                          width: 70.0,
+                                                          height: 30.0,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryBackground,
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        0.0),
+                                                          ),
+                                                          child: Align(
+                                                            alignment:
+                                                                AlignmentDirectional(
+                                                                    0.0, 0.0),
+                                                            child: Text(
+                                                              '7 ème',
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Poppins',
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                  ),
                                                             ),
-                                                            ...mapToFirestore(
-                                                              {
-                                                                'points':
-                                                                    FieldValue
-                                                                        .increment(
-                                                                            6),
-                                                                'total_games':
-                                                                    FieldValue
-                                                                        .increment(
-                                                                            1),
-                                                              },
-                                                            ),
-                                                          });
-                                                        },
-                                                        child: Icon(
-                                                          Icons.send_rounded,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryText,
-                                                          size: 24.0,
+                                                          ),
                                                         ),
                                                       ),
-                                                    if ((rowTeamsRecord
-                                                                ?.updateTime !=
-                                                            _model
-                                                                .calendarSelectedDay
-                                                                ?.start) &&
-                                                        (modifRankPilotesEventsRecord
-                                                                .leagueValue ==
-                                                            'moto.gp'))
-                                                      InkWell(
-                                                        splashColor:
-                                                            Colors.transparent,
-                                                        focusColor:
-                                                            Colors.transparent,
-                                                        hoverColor:
-                                                            Colors.transparent,
-                                                        highlightColor:
-                                                            Colors.transparent,
-                                                        onTap: () async {
-                                                          await rowTeamsRecord!
-                                                              .reference
-                                                              .update({
-                                                            ...createTeamsRecordData(
-                                                              updateTime: _model
-                                                                  .calendarSelectedDay
-                                                                  ?.start,
-                                                            ),
-                                                            ...mapToFirestore(
-                                                              {
-                                                                'points':
-                                                                    FieldValue
-                                                                        .increment(
-                                                                            9),
-                                                                'total_games':
-                                                                    FieldValue
-                                                                        .increment(
-                                                                            1),
-                                                              },
-                                                            ),
-                                                          });
-                                                        },
-                                                        child: Icon(
-                                                          Icons.send_rounded,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryText,
-                                                          size: 24.0,
+                                                      if (modifRankPilotesEventsRecord
+                                                              .leagueValue ==
+                                                          'formule.1')
+                                                        InkWell(
+                                                          splashColor: Colors
+                                                              .transparent,
+                                                          focusColor: Colors
+                                                              .transparent,
+                                                          hoverColor: Colors
+                                                              .transparent,
+                                                          highlightColor: Colors
+                                                              .transparent,
+                                                          onTap: () async {
+                                                            await rowTeamsRecord!
+                                                                .reference
+                                                                .update({
+                                                              ...createTeamsRecordData(
+                                                                updateTime: _model
+                                                                    .calendarSelectedDay
+                                                                    ?.start,
+                                                              ),
+                                                              ...mapToFirestore(
+                                                                {
+                                                                  'points':
+                                                                      FieldValue
+                                                                          .increment(
+                                                                              6),
+                                                                  'total_games':
+                                                                      FieldValue
+                                                                          .increment(
+                                                                              1),
+                                                                },
+                                                              ),
+                                                            });
+                                                          },
+                                                          child: Icon(
+                                                            Icons.send_rounded,
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .secondaryText,
+                                                            size: 24.0,
+                                                          ),
                                                         ),
-                                                      ),
-                                                  ],
-                                                );
-                                              },
-                                            ),
+                                                      if (modifRankPilotesEventsRecord
+                                                              .leagueValue ==
+                                                          'moto.gp')
+                                                        InkWell(
+                                                          splashColor: Colors
+                                                              .transparent,
+                                                          focusColor: Colors
+                                                              .transparent,
+                                                          hoverColor: Colors
+                                                              .transparent,
+                                                          highlightColor: Colors
+                                                              .transparent,
+                                                          onTap: () async {
+                                                            await rowTeamsRecord!
+                                                                .reference
+                                                                .update({
+                                                              ...createTeamsRecordData(
+                                                                updateTime: _model
+                                                                    .calendarSelectedDay
+                                                                    ?.start,
+                                                              ),
+                                                              ...mapToFirestore(
+                                                                {
+                                                                  'points':
+                                                                      FieldValue
+                                                                          .increment(
+                                                                              9),
+                                                                  'total_games':
+                                                                      FieldValue
+                                                                          .increment(
+                                                                              1),
+                                                                },
+                                                              ),
+                                                            });
+                                                          },
+                                                          child: Icon(
+                                                            Icons.send_rounded,
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .secondaryText,
+                                                            size: 24.0,
+                                                          ),
+                                                        ),
+                                                    ],
+                                                  );
+                                                },
+                                              ),
                                           ],
                                         ),
                                       ),
@@ -2725,194 +2651,185 @@ class _ModifRankPilotesWidgetState extends State<ModifRankPilotesWidget> {
                                                 );
                                               },
                                             ),
-                                            StreamBuilder<List<TeamsRecord>>(
-                                              stream: queryTeamsRecord(
-                                                queryBuilder: (teamsRecord) =>
-                                                    teamsRecord.where(
-                                                  'value',
-                                                  isEqualTo:
-                                                      _model.dropTeam8Value,
+                                            if (true /* Warning: Trying to access variable not yet defined. */)
+                                              StreamBuilder<List<TeamsRecord>>(
+                                                stream: queryTeamsRecord(
+                                                  queryBuilder: (teamsRecord) =>
+                                                      teamsRecord.where(
+                                                    'value',
+                                                    isEqualTo:
+                                                        _model.dropTeam8Value,
+                                                  ),
+                                                  singleRecord: true,
                                                 ),
-                                                singleRecord: true,
-                                              ),
-                                              builder: (context, snapshot) {
-                                                // Customize what your widget looks like when it's loading.
-                                                if (!snapshot.hasData) {
-                                                  return Center(
-                                                    child: SizedBox(
-                                                      width: 50.0,
-                                                      height: 50.0,
-                                                      child:
-                                                          CircularProgressIndicator(
-                                                        valueColor:
-                                                            AlwaysStoppedAnimation<
-                                                                Color>(
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .accent4,
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  );
-                                                }
-                                                List<TeamsRecord>
-                                                    rowTeamsRecordList =
-                                                    snapshot.data!;
-                                                // Return an empty Container when the item does not exist.
-                                                if (snapshot.data!.isEmpty) {
-                                                  return Container();
-                                                }
-                                                final rowTeamsRecord =
-                                                    rowTeamsRecordList
-                                                            .isNotEmpty
-                                                        ? rowTeamsRecordList
-                                                            .first
-                                                        : null;
-
-                                                return Row(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  children: [
-                                                    Padding(
-                                                      padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  0.0,
-                                                                  0.0,
-                                                                  20.0,
-                                                                  0.0),
-                                                      child: Container(
-                                                        width: 70.0,
-                                                        height: 30.0,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryBackground,
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      0.0),
-                                                        ),
-                                                        child: Align(
-                                                          alignment:
-                                                              AlignmentDirectional(
-                                                                  0.0, 0.0),
-                                                          child: Text(
-                                                            '8 ème',
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                ),
+                                                builder: (context, snapshot) {
+                                                  // Customize what your widget looks like when it's loading.
+                                                  if (!snapshot.hasData) {
+                                                    return Center(
+                                                      child: SizedBox(
+                                                        width: 50.0,
+                                                        height: 50.0,
+                                                        child:
+                                                            CircularProgressIndicator(
+                                                          valueColor:
+                                                              AlwaysStoppedAnimation<
+                                                                  Color>(
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .accent4,
                                                           ),
                                                         ),
                                                       ),
-                                                    ),
-                                                    if ((rowTeamsRecord
-                                                                ?.updateTime !=
-                                                            _model
-                                                                .calendarSelectedDay
-                                                                ?.start) &&
-                                                        (modifRankPilotesEventsRecord
-                                                                .leagueValue ==
-                                                            'formule.1'))
-                                                      InkWell(
-                                                        splashColor:
-                                                            Colors.transparent,
-                                                        focusColor:
-                                                            Colors.transparent,
-                                                        hoverColor:
-                                                            Colors.transparent,
-                                                        highlightColor:
-                                                            Colors.transparent,
-                                                        onTap: () async {
-                                                          await rowTeamsRecord!
-                                                              .reference
-                                                              .update({
-                                                            ...createTeamsRecordData(
-                                                              updateTime: _model
-                                                                  .calendarSelectedDay
-                                                                  ?.start,
+                                                    );
+                                                  }
+                                                  List<TeamsRecord>
+                                                      rowTeamsRecordList =
+                                                      snapshot.data!;
+                                                  // Return an empty Container when the item does not exist.
+                                                  if (snapshot.data!.isEmpty) {
+                                                    return Container();
+                                                  }
+                                                  final rowTeamsRecord =
+                                                      rowTeamsRecordList
+                                                              .isNotEmpty
+                                                          ? rowTeamsRecordList
+                                                              .first
+                                                          : null;
+
+                                                  return Row(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    children: [
+                                                      Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    0.0,
+                                                                    0.0,
+                                                                    20.0,
+                                                                    0.0),
+                                                        child: Container(
+                                                          width: 70.0,
+                                                          height: 30.0,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryBackground,
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        0.0),
+                                                          ),
+                                                          child: Align(
+                                                            alignment:
+                                                                AlignmentDirectional(
+                                                                    0.0, 0.0),
+                                                            child: Text(
+                                                              '8 ème',
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Poppins',
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                  ),
                                                             ),
-                                                            ...mapToFirestore(
-                                                              {
-                                                                'points':
-                                                                    FieldValue
-                                                                        .increment(
-                                                                            4),
-                                                                'total_games':
-                                                                    FieldValue
-                                                                        .increment(
-                                                                            1),
-                                                              },
-                                                            ),
-                                                          });
-                                                        },
-                                                        child: Icon(
-                                                          Icons.send_rounded,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryText,
-                                                          size: 24.0,
+                                                          ),
                                                         ),
                                                       ),
-                                                    if ((rowTeamsRecord
-                                                                ?.updateTime !=
-                                                            _model
-                                                                .calendarSelectedDay
-                                                                ?.start) &&
-                                                        (modifRankPilotesEventsRecord
-                                                                .leagueValue ==
-                                                            'moto.gp'))
-                                                      InkWell(
-                                                        splashColor:
-                                                            Colors.transparent,
-                                                        focusColor:
-                                                            Colors.transparent,
-                                                        hoverColor:
-                                                            Colors.transparent,
-                                                        highlightColor:
-                                                            Colors.transparent,
-                                                        onTap: () async {
-                                                          await rowTeamsRecord!
-                                                              .reference
-                                                              .update({
-                                                            ...createTeamsRecordData(
-                                                              updateTime: _model
-                                                                  .calendarSelectedDay
-                                                                  ?.start,
-                                                            ),
-                                                            ...mapToFirestore(
-                                                              {
-                                                                'points':
-                                                                    FieldValue
-                                                                        .increment(
-                                                                            8),
-                                                                'total_games':
-                                                                    FieldValue
-                                                                        .increment(
-                                                                            1),
-                                                              },
-                                                            ),
-                                                          });
-                                                        },
-                                                        child: Icon(
-                                                          Icons.send_rounded,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryText,
-                                                          size: 24.0,
+                                                      if (modifRankPilotesEventsRecord
+                                                              .leagueValue ==
+                                                          'formule.1')
+                                                        InkWell(
+                                                          splashColor: Colors
+                                                              .transparent,
+                                                          focusColor: Colors
+                                                              .transparent,
+                                                          hoverColor: Colors
+                                                              .transparent,
+                                                          highlightColor: Colors
+                                                              .transparent,
+                                                          onTap: () async {
+                                                            await rowTeamsRecord!
+                                                                .reference
+                                                                .update({
+                                                              ...createTeamsRecordData(
+                                                                updateTime: _model
+                                                                    .calendarSelectedDay
+                                                                    ?.start,
+                                                              ),
+                                                              ...mapToFirestore(
+                                                                {
+                                                                  'points':
+                                                                      FieldValue
+                                                                          .increment(
+                                                                              4),
+                                                                  'total_games':
+                                                                      FieldValue
+                                                                          .increment(
+                                                                              1),
+                                                                },
+                                                              ),
+                                                            });
+                                                          },
+                                                          child: Icon(
+                                                            Icons.send_rounded,
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .secondaryText,
+                                                            size: 24.0,
+                                                          ),
                                                         ),
-                                                      ),
-                                                  ],
-                                                );
-                                              },
-                                            ),
+                                                      if (modifRankPilotesEventsRecord
+                                                              .leagueValue ==
+                                                          'moto.gp')
+                                                        InkWell(
+                                                          splashColor: Colors
+                                                              .transparent,
+                                                          focusColor: Colors
+                                                              .transparent,
+                                                          hoverColor: Colors
+                                                              .transparent,
+                                                          highlightColor: Colors
+                                                              .transparent,
+                                                          onTap: () async {
+                                                            await rowTeamsRecord!
+                                                                .reference
+                                                                .update({
+                                                              ...createTeamsRecordData(
+                                                                updateTime: _model
+                                                                    .calendarSelectedDay
+                                                                    ?.start,
+                                                              ),
+                                                              ...mapToFirestore(
+                                                                {
+                                                                  'points':
+                                                                      FieldValue
+                                                                          .increment(
+                                                                              8),
+                                                                  'total_games':
+                                                                      FieldValue
+                                                                          .increment(
+                                                                              1),
+                                                                },
+                                                              ),
+                                                            });
+                                                          },
+                                                          child: Icon(
+                                                            Icons.send_rounded,
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .secondaryText,
+                                                            size: 24.0,
+                                                          ),
+                                                        ),
+                                                    ],
+                                                  );
+                                                },
+                                              ),
                                           ],
                                         ),
                                       ),
@@ -3016,194 +2933,185 @@ class _ModifRankPilotesWidgetState extends State<ModifRankPilotesWidget> {
                                                 );
                                               },
                                             ),
-                                            StreamBuilder<List<TeamsRecord>>(
-                                              stream: queryTeamsRecord(
-                                                queryBuilder: (teamsRecord) =>
-                                                    teamsRecord.where(
-                                                  'value',
-                                                  isEqualTo:
-                                                      _model.dropTeam9Value,
+                                            if (true /* Warning: Trying to access variable not yet defined. */)
+                                              StreamBuilder<List<TeamsRecord>>(
+                                                stream: queryTeamsRecord(
+                                                  queryBuilder: (teamsRecord) =>
+                                                      teamsRecord.where(
+                                                    'value',
+                                                    isEqualTo:
+                                                        _model.dropTeam9Value,
+                                                  ),
+                                                  singleRecord: true,
                                                 ),
-                                                singleRecord: true,
-                                              ),
-                                              builder: (context, snapshot) {
-                                                // Customize what your widget looks like when it's loading.
-                                                if (!snapshot.hasData) {
-                                                  return Center(
-                                                    child: SizedBox(
-                                                      width: 50.0,
-                                                      height: 50.0,
-                                                      child:
-                                                          CircularProgressIndicator(
-                                                        valueColor:
-                                                            AlwaysStoppedAnimation<
-                                                                Color>(
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .accent4,
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  );
-                                                }
-                                                List<TeamsRecord>
-                                                    rowTeamsRecordList =
-                                                    snapshot.data!;
-                                                // Return an empty Container when the item does not exist.
-                                                if (snapshot.data!.isEmpty) {
-                                                  return Container();
-                                                }
-                                                final rowTeamsRecord =
-                                                    rowTeamsRecordList
-                                                            .isNotEmpty
-                                                        ? rowTeamsRecordList
-                                                            .first
-                                                        : null;
-
-                                                return Row(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  children: [
-                                                    Padding(
-                                                      padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  0.0,
-                                                                  0.0,
-                                                                  20.0,
-                                                                  0.0),
-                                                      child: Container(
-                                                        width: 70.0,
-                                                        height: 30.0,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryBackground,
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      0.0),
-                                                        ),
-                                                        child: Align(
-                                                          alignment:
-                                                              AlignmentDirectional(
-                                                                  0.0, 0.0),
-                                                          child: Text(
-                                                            '9 ème',
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                ),
+                                                builder: (context, snapshot) {
+                                                  // Customize what your widget looks like when it's loading.
+                                                  if (!snapshot.hasData) {
+                                                    return Center(
+                                                      child: SizedBox(
+                                                        width: 50.0,
+                                                        height: 50.0,
+                                                        child:
+                                                            CircularProgressIndicator(
+                                                          valueColor:
+                                                              AlwaysStoppedAnimation<
+                                                                  Color>(
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .accent4,
                                                           ),
                                                         ),
                                                       ),
-                                                    ),
-                                                    if ((rowTeamsRecord
-                                                                ?.updateTime !=
-                                                            _model
-                                                                .calendarSelectedDay
-                                                                ?.start) &&
-                                                        (modifRankPilotesEventsRecord
-                                                                .leagueValue ==
-                                                            'formule.1'))
-                                                      InkWell(
-                                                        splashColor:
-                                                            Colors.transparent,
-                                                        focusColor:
-                                                            Colors.transparent,
-                                                        hoverColor:
-                                                            Colors.transparent,
-                                                        highlightColor:
-                                                            Colors.transparent,
-                                                        onTap: () async {
-                                                          await rowTeamsRecord!
-                                                              .reference
-                                                              .update({
-                                                            ...createTeamsRecordData(
-                                                              updateTime: _model
-                                                                  .calendarSelectedDay
-                                                                  ?.start,
+                                                    );
+                                                  }
+                                                  List<TeamsRecord>
+                                                      rowTeamsRecordList =
+                                                      snapshot.data!;
+                                                  // Return an empty Container when the item does not exist.
+                                                  if (snapshot.data!.isEmpty) {
+                                                    return Container();
+                                                  }
+                                                  final rowTeamsRecord =
+                                                      rowTeamsRecordList
+                                                              .isNotEmpty
+                                                          ? rowTeamsRecordList
+                                                              .first
+                                                          : null;
+
+                                                  return Row(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    children: [
+                                                      Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    0.0,
+                                                                    0.0,
+                                                                    20.0,
+                                                                    0.0),
+                                                        child: Container(
+                                                          width: 70.0,
+                                                          height: 30.0,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryBackground,
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        0.0),
+                                                          ),
+                                                          child: Align(
+                                                            alignment:
+                                                                AlignmentDirectional(
+                                                                    0.0, 0.0),
+                                                            child: Text(
+                                                              '9 ème',
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Poppins',
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                  ),
                                                             ),
-                                                            ...mapToFirestore(
-                                                              {
-                                                                'points':
-                                                                    FieldValue
-                                                                        .increment(
-                                                                            2),
-                                                                'total_games':
-                                                                    FieldValue
-                                                                        .increment(
-                                                                            1),
-                                                              },
-                                                            ),
-                                                          });
-                                                        },
-                                                        child: Icon(
-                                                          Icons.send_rounded,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryText,
-                                                          size: 24.0,
+                                                          ),
                                                         ),
                                                       ),
-                                                    if ((rowTeamsRecord
-                                                                ?.updateTime !=
-                                                            _model
-                                                                .calendarSelectedDay
-                                                                ?.start) &&
-                                                        (modifRankPilotesEventsRecord
-                                                                .leagueValue ==
-                                                            'moto.gp'))
-                                                      InkWell(
-                                                        splashColor:
-                                                            Colors.transparent,
-                                                        focusColor:
-                                                            Colors.transparent,
-                                                        hoverColor:
-                                                            Colors.transparent,
-                                                        highlightColor:
-                                                            Colors.transparent,
-                                                        onTap: () async {
-                                                          await rowTeamsRecord!
-                                                              .reference
-                                                              .update({
-                                                            ...createTeamsRecordData(
-                                                              updateTime: _model
-                                                                  .calendarSelectedDay
-                                                                  ?.start,
-                                                            ),
-                                                            ...mapToFirestore(
-                                                              {
-                                                                'points':
-                                                                    FieldValue
-                                                                        .increment(
-                                                                            7),
-                                                                'total_games':
-                                                                    FieldValue
-                                                                        .increment(
-                                                                            1),
-                                                              },
-                                                            ),
-                                                          });
-                                                        },
-                                                        child: Icon(
-                                                          Icons.send_rounded,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryText,
-                                                          size: 24.0,
+                                                      if (modifRankPilotesEventsRecord
+                                                              .leagueValue ==
+                                                          'formule.1')
+                                                        InkWell(
+                                                          splashColor: Colors
+                                                              .transparent,
+                                                          focusColor: Colors
+                                                              .transparent,
+                                                          hoverColor: Colors
+                                                              .transparent,
+                                                          highlightColor: Colors
+                                                              .transparent,
+                                                          onTap: () async {
+                                                            await rowTeamsRecord!
+                                                                .reference
+                                                                .update({
+                                                              ...createTeamsRecordData(
+                                                                updateTime: _model
+                                                                    .calendarSelectedDay
+                                                                    ?.start,
+                                                              ),
+                                                              ...mapToFirestore(
+                                                                {
+                                                                  'points':
+                                                                      FieldValue
+                                                                          .increment(
+                                                                              2),
+                                                                  'total_games':
+                                                                      FieldValue
+                                                                          .increment(
+                                                                              1),
+                                                                },
+                                                              ),
+                                                            });
+                                                          },
+                                                          child: Icon(
+                                                            Icons.send_rounded,
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .secondaryText,
+                                                            size: 24.0,
+                                                          ),
                                                         ),
-                                                      ),
-                                                  ],
-                                                );
-                                              },
-                                            ),
+                                                      if (modifRankPilotesEventsRecord
+                                                              .leagueValue ==
+                                                          'moto.gp')
+                                                        InkWell(
+                                                          splashColor: Colors
+                                                              .transparent,
+                                                          focusColor: Colors
+                                                              .transparent,
+                                                          hoverColor: Colors
+                                                              .transparent,
+                                                          highlightColor: Colors
+                                                              .transparent,
+                                                          onTap: () async {
+                                                            await rowTeamsRecord!
+                                                                .reference
+                                                                .update({
+                                                              ...createTeamsRecordData(
+                                                                updateTime: _model
+                                                                    .calendarSelectedDay
+                                                                    ?.start,
+                                                              ),
+                                                              ...mapToFirestore(
+                                                                {
+                                                                  'points':
+                                                                      FieldValue
+                                                                          .increment(
+                                                                              7),
+                                                                  'total_games':
+                                                                      FieldValue
+                                                                          .increment(
+                                                                              1),
+                                                                },
+                                                              ),
+                                                            });
+                                                          },
+                                                          child: Icon(
+                                                            Icons.send_rounded,
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .secondaryText,
+                                                            size: 24.0,
+                                                          ),
+                                                        ),
+                                                    ],
+                                                  );
+                                                },
+                                              ),
                                           ],
                                         ),
                                       ),
@@ -3307,194 +3215,185 @@ class _ModifRankPilotesWidgetState extends State<ModifRankPilotesWidget> {
                                                 );
                                               },
                                             ),
-                                            StreamBuilder<List<TeamsRecord>>(
-                                              stream: queryTeamsRecord(
-                                                queryBuilder: (teamsRecord) =>
-                                                    teamsRecord.where(
-                                                  'value',
-                                                  isEqualTo:
-                                                      _model.dropTeam10Value1,
+                                            if (true /* Warning: Trying to access variable not yet defined. */)
+                                              StreamBuilder<List<TeamsRecord>>(
+                                                stream: queryTeamsRecord(
+                                                  queryBuilder: (teamsRecord) =>
+                                                      teamsRecord.where(
+                                                    'value',
+                                                    isEqualTo:
+                                                        _model.dropTeam10Value1,
+                                                  ),
+                                                  singleRecord: true,
                                                 ),
-                                                singleRecord: true,
-                                              ),
-                                              builder: (context, snapshot) {
-                                                // Customize what your widget looks like when it's loading.
-                                                if (!snapshot.hasData) {
-                                                  return Center(
-                                                    child: SizedBox(
-                                                      width: 50.0,
-                                                      height: 50.0,
-                                                      child:
-                                                          CircularProgressIndicator(
-                                                        valueColor:
-                                                            AlwaysStoppedAnimation<
-                                                                Color>(
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .accent4,
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  );
-                                                }
-                                                List<TeamsRecord>
-                                                    rowTeamsRecordList =
-                                                    snapshot.data!;
-                                                // Return an empty Container when the item does not exist.
-                                                if (snapshot.data!.isEmpty) {
-                                                  return Container();
-                                                }
-                                                final rowTeamsRecord =
-                                                    rowTeamsRecordList
-                                                            .isNotEmpty
-                                                        ? rowTeamsRecordList
-                                                            .first
-                                                        : null;
-
-                                                return Row(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  children: [
-                                                    Padding(
-                                                      padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  0.0,
-                                                                  0.0,
-                                                                  20.0,
-                                                                  0.0),
-                                                      child: Container(
-                                                        width: 70.0,
-                                                        height: 30.0,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryBackground,
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      0.0),
-                                                        ),
-                                                        child: Align(
-                                                          alignment:
-                                                              AlignmentDirectional(
-                                                                  0.0, 0.0),
-                                                          child: Text(
-                                                            '10 ème',
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                ),
+                                                builder: (context, snapshot) {
+                                                  // Customize what your widget looks like when it's loading.
+                                                  if (!snapshot.hasData) {
+                                                    return Center(
+                                                      child: SizedBox(
+                                                        width: 50.0,
+                                                        height: 50.0,
+                                                        child:
+                                                            CircularProgressIndicator(
+                                                          valueColor:
+                                                              AlwaysStoppedAnimation<
+                                                                  Color>(
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .accent4,
                                                           ),
                                                         ),
                                                       ),
-                                                    ),
-                                                    if ((rowTeamsRecord
-                                                                ?.updateTime !=
-                                                            _model
-                                                                .calendarSelectedDay
-                                                                ?.start) &&
-                                                        (modifRankPilotesEventsRecord
-                                                                .leagueValue ==
-                                                            'formule.1'))
-                                                      InkWell(
-                                                        splashColor:
-                                                            Colors.transparent,
-                                                        focusColor:
-                                                            Colors.transparent,
-                                                        hoverColor:
-                                                            Colors.transparent,
-                                                        highlightColor:
-                                                            Colors.transparent,
-                                                        onTap: () async {
-                                                          await rowTeamsRecord!
-                                                              .reference
-                                                              .update({
-                                                            ...createTeamsRecordData(
-                                                              updateTime: _model
-                                                                  .calendarSelectedDay
-                                                                  ?.start,
+                                                    );
+                                                  }
+                                                  List<TeamsRecord>
+                                                      rowTeamsRecordList =
+                                                      snapshot.data!;
+                                                  // Return an empty Container when the item does not exist.
+                                                  if (snapshot.data!.isEmpty) {
+                                                    return Container();
+                                                  }
+                                                  final rowTeamsRecord =
+                                                      rowTeamsRecordList
+                                                              .isNotEmpty
+                                                          ? rowTeamsRecordList
+                                                              .first
+                                                          : null;
+
+                                                  return Row(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    children: [
+                                                      Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    0.0,
+                                                                    0.0,
+                                                                    20.0,
+                                                                    0.0),
+                                                        child: Container(
+                                                          width: 70.0,
+                                                          height: 30.0,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryBackground,
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        0.0),
+                                                          ),
+                                                          child: Align(
+                                                            alignment:
+                                                                AlignmentDirectional(
+                                                                    0.0, 0.0),
+                                                            child: Text(
+                                                              '10 ème',
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Poppins',
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                  ),
                                                             ),
-                                                            ...mapToFirestore(
-                                                              {
-                                                                'points':
-                                                                    FieldValue
-                                                                        .increment(
-                                                                            1),
-                                                                'total_games':
-                                                                    FieldValue
-                                                                        .increment(
-                                                                            1),
-                                                              },
-                                                            ),
-                                                          });
-                                                        },
-                                                        child: Icon(
-                                                          Icons.send_rounded,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryText,
-                                                          size: 24.0,
+                                                          ),
                                                         ),
                                                       ),
-                                                    if ((rowTeamsRecord
-                                                                ?.updateTime !=
-                                                            _model
-                                                                .calendarSelectedDay
-                                                                ?.start) &&
-                                                        (modifRankPilotesEventsRecord
-                                                                .leagueValue ==
-                                                            'moto.gp'))
-                                                      InkWell(
-                                                        splashColor:
-                                                            Colors.transparent,
-                                                        focusColor:
-                                                            Colors.transparent,
-                                                        hoverColor:
-                                                            Colors.transparent,
-                                                        highlightColor:
-                                                            Colors.transparent,
-                                                        onTap: () async {
-                                                          await rowTeamsRecord!
-                                                              .reference
-                                                              .update({
-                                                            ...createTeamsRecordData(
-                                                              updateTime: _model
-                                                                  .calendarSelectedDay
-                                                                  ?.start,
-                                                            ),
-                                                            ...mapToFirestore(
-                                                              {
-                                                                'points':
-                                                                    FieldValue
-                                                                        .increment(
-                                                                            6),
-                                                                'total_games':
-                                                                    FieldValue
-                                                                        .increment(
-                                                                            1),
-                                                              },
-                                                            ),
-                                                          });
-                                                        },
-                                                        child: Icon(
-                                                          Icons.send_rounded,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryText,
-                                                          size: 24.0,
+                                                      if (modifRankPilotesEventsRecord
+                                                              .leagueValue ==
+                                                          'formule.1')
+                                                        InkWell(
+                                                          splashColor: Colors
+                                                              .transparent,
+                                                          focusColor: Colors
+                                                              .transparent,
+                                                          hoverColor: Colors
+                                                              .transparent,
+                                                          highlightColor: Colors
+                                                              .transparent,
+                                                          onTap: () async {
+                                                            await rowTeamsRecord!
+                                                                .reference
+                                                                .update({
+                                                              ...createTeamsRecordData(
+                                                                updateTime: _model
+                                                                    .calendarSelectedDay
+                                                                    ?.start,
+                                                              ),
+                                                              ...mapToFirestore(
+                                                                {
+                                                                  'points':
+                                                                      FieldValue
+                                                                          .increment(
+                                                                              1),
+                                                                  'total_games':
+                                                                      FieldValue
+                                                                          .increment(
+                                                                              1),
+                                                                },
+                                                              ),
+                                                            });
+                                                          },
+                                                          child: Icon(
+                                                            Icons.send_rounded,
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .secondaryText,
+                                                            size: 24.0,
+                                                          ),
                                                         ),
-                                                      ),
-                                                  ],
-                                                );
-                                              },
-                                            ),
+                                                      if (modifRankPilotesEventsRecord
+                                                              .leagueValue ==
+                                                          'moto.gp')
+                                                        InkWell(
+                                                          splashColor: Colors
+                                                              .transparent,
+                                                          focusColor: Colors
+                                                              .transparent,
+                                                          hoverColor: Colors
+                                                              .transparent,
+                                                          highlightColor: Colors
+                                                              .transparent,
+                                                          onTap: () async {
+                                                            await rowTeamsRecord!
+                                                                .reference
+                                                                .update({
+                                                              ...createTeamsRecordData(
+                                                                updateTime: _model
+                                                                    .calendarSelectedDay
+                                                                    ?.start,
+                                                              ),
+                                                              ...mapToFirestore(
+                                                                {
+                                                                  'points':
+                                                                      FieldValue
+                                                                          .increment(
+                                                                              6),
+                                                                  'total_games':
+                                                                      FieldValue
+                                                                          .increment(
+                                                                              1),
+                                                                },
+                                                              ),
+                                                            });
+                                                          },
+                                                          child: Icon(
+                                                            Icons.send_rounded,
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .secondaryText,
+                                                            size: 24.0,
+                                                          ),
+                                                        ),
+                                                    ],
+                                                  );
+                                                },
+                                              ),
                                           ],
                                         ),
                                       ),
@@ -3598,146 +3497,142 @@ class _ModifRankPilotesWidgetState extends State<ModifRankPilotesWidget> {
                                                 );
                                               },
                                             ),
-                                            StreamBuilder<List<TeamsRecord>>(
-                                              stream: queryTeamsRecord(
-                                                queryBuilder: (teamsRecord) =>
-                                                    teamsRecord.where(
-                                                  'value',
-                                                  isEqualTo:
-                                                      _model.dropTeam10Value2,
+                                            if (true /* Warning: Trying to access variable not yet defined. */)
+                                              StreamBuilder<List<TeamsRecord>>(
+                                                stream: queryTeamsRecord(
+                                                  queryBuilder: (teamsRecord) =>
+                                                      teamsRecord.where(
+                                                    'value',
+                                                    isEqualTo:
+                                                        _model.dropTeam10Value2,
+                                                  ),
+                                                  singleRecord: true,
                                                 ),
-                                                singleRecord: true,
-                                              ),
-                                              builder: (context, snapshot) {
-                                                // Customize what your widget looks like when it's loading.
-                                                if (!snapshot.hasData) {
-                                                  return Center(
-                                                    child: SizedBox(
-                                                      width: 50.0,
-                                                      height: 50.0,
-                                                      child:
-                                                          CircularProgressIndicator(
-                                                        valueColor:
-                                                            AlwaysStoppedAnimation<
-                                                                Color>(
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .accent4,
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  );
-                                                }
-                                                List<TeamsRecord>
-                                                    rowTeamsRecordList =
-                                                    snapshot.data!;
-                                                // Return an empty Container when the item does not exist.
-                                                if (snapshot.data!.isEmpty) {
-                                                  return Container();
-                                                }
-                                                final rowTeamsRecord =
-                                                    rowTeamsRecordList
-                                                            .isNotEmpty
-                                                        ? rowTeamsRecordList
-                                                            .first
-                                                        : null;
-
-                                                return Row(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  children: [
-                                                    Padding(
-                                                      padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  0.0,
-                                                                  0.0,
-                                                                  20.0,
-                                                                  0.0),
-                                                      child: Container(
-                                                        width: 70.0,
-                                                        height: 30.0,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryBackground,
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      0.0),
-                                                        ),
-                                                        child: Align(
-                                                          alignment:
-                                                              AlignmentDirectional(
-                                                                  0.0, 0.0),
-                                                          child: Text(
-                                                            '11 ème',
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                ),
+                                                builder: (context, snapshot) {
+                                                  // Customize what your widget looks like when it's loading.
+                                                  if (!snapshot.hasData) {
+                                                    return Center(
+                                                      child: SizedBox(
+                                                        width: 50.0,
+                                                        height: 50.0,
+                                                        child:
+                                                            CircularProgressIndicator(
+                                                          valueColor:
+                                                              AlwaysStoppedAnimation<
+                                                                  Color>(
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .accent4,
                                                           ),
                                                         ),
                                                       ),
-                                                    ),
-                                                    if ((rowTeamsRecord
-                                                                ?.updateTime !=
-                                                            _model
-                                                                .calendarSelectedDay
-                                                                ?.start) &&
-                                                        (modifRankPilotesEventsRecord
-                                                                .leagueValue ==
-                                                            'moto.gp'))
-                                                      InkWell(
-                                                        splashColor:
-                                                            Colors.transparent,
-                                                        focusColor:
-                                                            Colors.transparent,
-                                                        hoverColor:
-                                                            Colors.transparent,
-                                                        highlightColor:
-                                                            Colors.transparent,
-                                                        onTap: () async {
-                                                          await rowTeamsRecord!
-                                                              .reference
-                                                              .update({
-                                                            ...createTeamsRecordData(
-                                                              updateTime: _model
-                                                                  .calendarSelectedDay
-                                                                  ?.start,
+                                                    );
+                                                  }
+                                                  List<TeamsRecord>
+                                                      rowTeamsRecordList =
+                                                      snapshot.data!;
+                                                  // Return an empty Container when the item does not exist.
+                                                  if (snapshot.data!.isEmpty) {
+                                                    return Container();
+                                                  }
+                                                  final rowTeamsRecord =
+                                                      rowTeamsRecordList
+                                                              .isNotEmpty
+                                                          ? rowTeamsRecordList
+                                                              .first
+                                                          : null;
+
+                                                  return Row(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    children: [
+                                                      Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    0.0,
+                                                                    0.0,
+                                                                    20.0,
+                                                                    0.0),
+                                                        child: Container(
+                                                          width: 70.0,
+                                                          height: 30.0,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryBackground,
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        0.0),
+                                                          ),
+                                                          child: Align(
+                                                            alignment:
+                                                                AlignmentDirectional(
+                                                                    0.0, 0.0),
+                                                            child: Text(
+                                                              '11 ème',
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Poppins',
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                  ),
                                                             ),
-                                                            ...mapToFirestore(
-                                                              {
-                                                                'points':
-                                                                    FieldValue
-                                                                        .increment(
-                                                                            5),
-                                                                'total_games':
-                                                                    FieldValue
-                                                                        .increment(
-                                                                            1),
-                                                              },
-                                                            ),
-                                                          });
-                                                        },
-                                                        child: Icon(
-                                                          Icons.send_rounded,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryText,
-                                                          size: 24.0,
+                                                          ),
                                                         ),
                                                       ),
-                                                  ],
-                                                );
-                                              },
-                                            ),
+                                                      if (modifRankPilotesEventsRecord
+                                                              .leagueValue ==
+                                                          'moto.gp')
+                                                        InkWell(
+                                                          splashColor: Colors
+                                                              .transparent,
+                                                          focusColor: Colors
+                                                              .transparent,
+                                                          hoverColor: Colors
+                                                              .transparent,
+                                                          highlightColor: Colors
+                                                              .transparent,
+                                                          onTap: () async {
+                                                            await rowTeamsRecord!
+                                                                .reference
+                                                                .update({
+                                                              ...createTeamsRecordData(
+                                                                updateTime: _model
+                                                                    .calendarSelectedDay
+                                                                    ?.start,
+                                                              ),
+                                                              ...mapToFirestore(
+                                                                {
+                                                                  'points':
+                                                                      FieldValue
+                                                                          .increment(
+                                                                              5),
+                                                                  'total_games':
+                                                                      FieldValue
+                                                                          .increment(
+                                                                              1),
+                                                                },
+                                                              ),
+                                                            });
+                                                          },
+                                                          child: Icon(
+                                                            Icons.send_rounded,
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .secondaryText,
+                                                            size: 24.0,
+                                                          ),
+                                                        ),
+                                                    ],
+                                                  );
+                                                },
+                                              ),
                                           ],
                                         ),
                                       ),
@@ -3841,146 +3736,142 @@ class _ModifRankPilotesWidgetState extends State<ModifRankPilotesWidget> {
                                                 );
                                               },
                                             ),
-                                            StreamBuilder<List<TeamsRecord>>(
-                                              stream: queryTeamsRecord(
-                                                queryBuilder: (teamsRecord) =>
-                                                    teamsRecord.where(
-                                                  'value',
-                                                  isEqualTo:
-                                                      _model.dropTeam10Value3,
+                                            if (true /* Warning: Trying to access variable not yet defined. */)
+                                              StreamBuilder<List<TeamsRecord>>(
+                                                stream: queryTeamsRecord(
+                                                  queryBuilder: (teamsRecord) =>
+                                                      teamsRecord.where(
+                                                    'value',
+                                                    isEqualTo:
+                                                        _model.dropTeam10Value3,
+                                                  ),
+                                                  singleRecord: true,
                                                 ),
-                                                singleRecord: true,
-                                              ),
-                                              builder: (context, snapshot) {
-                                                // Customize what your widget looks like when it's loading.
-                                                if (!snapshot.hasData) {
-                                                  return Center(
-                                                    child: SizedBox(
-                                                      width: 50.0,
-                                                      height: 50.0,
-                                                      child:
-                                                          CircularProgressIndicator(
-                                                        valueColor:
-                                                            AlwaysStoppedAnimation<
-                                                                Color>(
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .accent4,
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  );
-                                                }
-                                                List<TeamsRecord>
-                                                    rowTeamsRecordList =
-                                                    snapshot.data!;
-                                                // Return an empty Container when the item does not exist.
-                                                if (snapshot.data!.isEmpty) {
-                                                  return Container();
-                                                }
-                                                final rowTeamsRecord =
-                                                    rowTeamsRecordList
-                                                            .isNotEmpty
-                                                        ? rowTeamsRecordList
-                                                            .first
-                                                        : null;
-
-                                                return Row(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  children: [
-                                                    Padding(
-                                                      padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  0.0,
-                                                                  0.0,
-                                                                  20.0,
-                                                                  0.0),
-                                                      child: Container(
-                                                        width: 70.0,
-                                                        height: 30.0,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryBackground,
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      0.0),
-                                                        ),
-                                                        child: Align(
-                                                          alignment:
-                                                              AlignmentDirectional(
-                                                                  0.0, 0.0),
-                                                          child: Text(
-                                                            '12 ème',
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                ),
+                                                builder: (context, snapshot) {
+                                                  // Customize what your widget looks like when it's loading.
+                                                  if (!snapshot.hasData) {
+                                                    return Center(
+                                                      child: SizedBox(
+                                                        width: 50.0,
+                                                        height: 50.0,
+                                                        child:
+                                                            CircularProgressIndicator(
+                                                          valueColor:
+                                                              AlwaysStoppedAnimation<
+                                                                  Color>(
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .accent4,
                                                           ),
                                                         ),
                                                       ),
-                                                    ),
-                                                    if ((rowTeamsRecord
-                                                                ?.updateTime !=
-                                                            _model
-                                                                .calendarSelectedDay
-                                                                ?.start) &&
-                                                        (modifRankPilotesEventsRecord
-                                                                .leagueValue ==
-                                                            'moto.gp'))
-                                                      InkWell(
-                                                        splashColor:
-                                                            Colors.transparent,
-                                                        focusColor:
-                                                            Colors.transparent,
-                                                        hoverColor:
-                                                            Colors.transparent,
-                                                        highlightColor:
-                                                            Colors.transparent,
-                                                        onTap: () async {
-                                                          await rowTeamsRecord!
-                                                              .reference
-                                                              .update({
-                                                            ...createTeamsRecordData(
-                                                              updateTime: _model
-                                                                  .calendarSelectedDay
-                                                                  ?.start,
+                                                    );
+                                                  }
+                                                  List<TeamsRecord>
+                                                      rowTeamsRecordList =
+                                                      snapshot.data!;
+                                                  // Return an empty Container when the item does not exist.
+                                                  if (snapshot.data!.isEmpty) {
+                                                    return Container();
+                                                  }
+                                                  final rowTeamsRecord =
+                                                      rowTeamsRecordList
+                                                              .isNotEmpty
+                                                          ? rowTeamsRecordList
+                                                              .first
+                                                          : null;
+
+                                                  return Row(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    children: [
+                                                      Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    0.0,
+                                                                    0.0,
+                                                                    20.0,
+                                                                    0.0),
+                                                        child: Container(
+                                                          width: 70.0,
+                                                          height: 30.0,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryBackground,
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        0.0),
+                                                          ),
+                                                          child: Align(
+                                                            alignment:
+                                                                AlignmentDirectional(
+                                                                    0.0, 0.0),
+                                                            child: Text(
+                                                              '12 ème',
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Poppins',
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                  ),
                                                             ),
-                                                            ...mapToFirestore(
-                                                              {
-                                                                'points':
-                                                                    FieldValue
-                                                                        .increment(
-                                                                            4),
-                                                                'total_games':
-                                                                    FieldValue
-                                                                        .increment(
-                                                                            1),
-                                                              },
-                                                            ),
-                                                          });
-                                                        },
-                                                        child: Icon(
-                                                          Icons.send_rounded,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryText,
-                                                          size: 24.0,
+                                                          ),
                                                         ),
                                                       ),
-                                                  ],
-                                                );
-                                              },
-                                            ),
+                                                      if (modifRankPilotesEventsRecord
+                                                              .leagueValue ==
+                                                          'moto.gp')
+                                                        InkWell(
+                                                          splashColor: Colors
+                                                              .transparent,
+                                                          focusColor: Colors
+                                                              .transparent,
+                                                          hoverColor: Colors
+                                                              .transparent,
+                                                          highlightColor: Colors
+                                                              .transparent,
+                                                          onTap: () async {
+                                                            await rowTeamsRecord!
+                                                                .reference
+                                                                .update({
+                                                              ...createTeamsRecordData(
+                                                                updateTime: _model
+                                                                    .calendarSelectedDay
+                                                                    ?.start,
+                                                              ),
+                                                              ...mapToFirestore(
+                                                                {
+                                                                  'points':
+                                                                      FieldValue
+                                                                          .increment(
+                                                                              4),
+                                                                  'total_games':
+                                                                      FieldValue
+                                                                          .increment(
+                                                                              1),
+                                                                },
+                                                              ),
+                                                            });
+                                                          },
+                                                          child: Icon(
+                                                            Icons.send_rounded,
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .secondaryText,
+                                                            size: 24.0,
+                                                          ),
+                                                        ),
+                                                    ],
+                                                  );
+                                                },
+                                              ),
                                           ],
                                         ),
                                       ),
@@ -4084,146 +3975,142 @@ class _ModifRankPilotesWidgetState extends State<ModifRankPilotesWidget> {
                                                 );
                                               },
                                             ),
-                                            StreamBuilder<List<TeamsRecord>>(
-                                              stream: queryTeamsRecord(
-                                                queryBuilder: (teamsRecord) =>
-                                                    teamsRecord.where(
-                                                  'value',
-                                                  isEqualTo:
-                                                      _model.dropTeam10Value4,
+                                            if (true /* Warning: Trying to access variable not yet defined. */)
+                                              StreamBuilder<List<TeamsRecord>>(
+                                                stream: queryTeamsRecord(
+                                                  queryBuilder: (teamsRecord) =>
+                                                      teamsRecord.where(
+                                                    'value',
+                                                    isEqualTo:
+                                                        _model.dropTeam10Value4,
+                                                  ),
+                                                  singleRecord: true,
                                                 ),
-                                                singleRecord: true,
-                                              ),
-                                              builder: (context, snapshot) {
-                                                // Customize what your widget looks like when it's loading.
-                                                if (!snapshot.hasData) {
-                                                  return Center(
-                                                    child: SizedBox(
-                                                      width: 50.0,
-                                                      height: 50.0,
-                                                      child:
-                                                          CircularProgressIndicator(
-                                                        valueColor:
-                                                            AlwaysStoppedAnimation<
-                                                                Color>(
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .accent4,
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  );
-                                                }
-                                                List<TeamsRecord>
-                                                    rowTeamsRecordList =
-                                                    snapshot.data!;
-                                                // Return an empty Container when the item does not exist.
-                                                if (snapshot.data!.isEmpty) {
-                                                  return Container();
-                                                }
-                                                final rowTeamsRecord =
-                                                    rowTeamsRecordList
-                                                            .isNotEmpty
-                                                        ? rowTeamsRecordList
-                                                            .first
-                                                        : null;
-
-                                                return Row(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  children: [
-                                                    Padding(
-                                                      padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  0.0,
-                                                                  0.0,
-                                                                  20.0,
-                                                                  0.0),
-                                                      child: Container(
-                                                        width: 70.0,
-                                                        height: 30.0,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryBackground,
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      0.0),
-                                                        ),
-                                                        child: Align(
-                                                          alignment:
-                                                              AlignmentDirectional(
-                                                                  0.0, 0.0),
-                                                          child: Text(
-                                                            '13 ème',
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                ),
+                                                builder: (context, snapshot) {
+                                                  // Customize what your widget looks like when it's loading.
+                                                  if (!snapshot.hasData) {
+                                                    return Center(
+                                                      child: SizedBox(
+                                                        width: 50.0,
+                                                        height: 50.0,
+                                                        child:
+                                                            CircularProgressIndicator(
+                                                          valueColor:
+                                                              AlwaysStoppedAnimation<
+                                                                  Color>(
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .accent4,
                                                           ),
                                                         ),
                                                       ),
-                                                    ),
-                                                    if ((rowTeamsRecord
-                                                                ?.updateTime !=
-                                                            _model
-                                                                .calendarSelectedDay
-                                                                ?.start) &&
-                                                        (modifRankPilotesEventsRecord
-                                                                .leagueValue ==
-                                                            'moto.gp'))
-                                                      InkWell(
-                                                        splashColor:
-                                                            Colors.transparent,
-                                                        focusColor:
-                                                            Colors.transparent,
-                                                        hoverColor:
-                                                            Colors.transparent,
-                                                        highlightColor:
-                                                            Colors.transparent,
-                                                        onTap: () async {
-                                                          await rowTeamsRecord!
-                                                              .reference
-                                                              .update({
-                                                            ...createTeamsRecordData(
-                                                              updateTime: _model
-                                                                  .calendarSelectedDay
-                                                                  ?.start,
+                                                    );
+                                                  }
+                                                  List<TeamsRecord>
+                                                      rowTeamsRecordList =
+                                                      snapshot.data!;
+                                                  // Return an empty Container when the item does not exist.
+                                                  if (snapshot.data!.isEmpty) {
+                                                    return Container();
+                                                  }
+                                                  final rowTeamsRecord =
+                                                      rowTeamsRecordList
+                                                              .isNotEmpty
+                                                          ? rowTeamsRecordList
+                                                              .first
+                                                          : null;
+
+                                                  return Row(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    children: [
+                                                      Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    0.0,
+                                                                    0.0,
+                                                                    20.0,
+                                                                    0.0),
+                                                        child: Container(
+                                                          width: 70.0,
+                                                          height: 30.0,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryBackground,
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        0.0),
+                                                          ),
+                                                          child: Align(
+                                                            alignment:
+                                                                AlignmentDirectional(
+                                                                    0.0, 0.0),
+                                                            child: Text(
+                                                              '13 ème',
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Poppins',
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                  ),
                                                             ),
-                                                            ...mapToFirestore(
-                                                              {
-                                                                'points':
-                                                                    FieldValue
-                                                                        .increment(
-                                                                            3),
-                                                                'total_games':
-                                                                    FieldValue
-                                                                        .increment(
-                                                                            1),
-                                                              },
-                                                            ),
-                                                          });
-                                                        },
-                                                        child: Icon(
-                                                          Icons.send_rounded,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryText,
-                                                          size: 24.0,
+                                                          ),
                                                         ),
                                                       ),
-                                                  ],
-                                                );
-                                              },
-                                            ),
+                                                      if (modifRankPilotesEventsRecord
+                                                              .leagueValue ==
+                                                          'moto.gp')
+                                                        InkWell(
+                                                          splashColor: Colors
+                                                              .transparent,
+                                                          focusColor: Colors
+                                                              .transparent,
+                                                          hoverColor: Colors
+                                                              .transparent,
+                                                          highlightColor: Colors
+                                                              .transparent,
+                                                          onTap: () async {
+                                                            await rowTeamsRecord!
+                                                                .reference
+                                                                .update({
+                                                              ...createTeamsRecordData(
+                                                                updateTime: _model
+                                                                    .calendarSelectedDay
+                                                                    ?.start,
+                                                              ),
+                                                              ...mapToFirestore(
+                                                                {
+                                                                  'points':
+                                                                      FieldValue
+                                                                          .increment(
+                                                                              3),
+                                                                  'total_games':
+                                                                      FieldValue
+                                                                          .increment(
+                                                                              1),
+                                                                },
+                                                              ),
+                                                            });
+                                                          },
+                                                          child: Icon(
+                                                            Icons.send_rounded,
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .secondaryText,
+                                                            size: 24.0,
+                                                          ),
+                                                        ),
+                                                    ],
+                                                  );
+                                                },
+                                              ),
                                           ],
                                         ),
                                       ),
@@ -4327,146 +4214,142 @@ class _ModifRankPilotesWidgetState extends State<ModifRankPilotesWidget> {
                                                 );
                                               },
                                             ),
-                                            StreamBuilder<List<TeamsRecord>>(
-                                              stream: queryTeamsRecord(
-                                                queryBuilder: (teamsRecord) =>
-                                                    teamsRecord.where(
-                                                  'value',
-                                                  isEqualTo:
-                                                      _model.dropTeam10Value5,
+                                            if (true /* Warning: Trying to access variable not yet defined. */)
+                                              StreamBuilder<List<TeamsRecord>>(
+                                                stream: queryTeamsRecord(
+                                                  queryBuilder: (teamsRecord) =>
+                                                      teamsRecord.where(
+                                                    'value',
+                                                    isEqualTo:
+                                                        _model.dropTeam10Value5,
+                                                  ),
+                                                  singleRecord: true,
                                                 ),
-                                                singleRecord: true,
-                                              ),
-                                              builder: (context, snapshot) {
-                                                // Customize what your widget looks like when it's loading.
-                                                if (!snapshot.hasData) {
-                                                  return Center(
-                                                    child: SizedBox(
-                                                      width: 50.0,
-                                                      height: 50.0,
-                                                      child:
-                                                          CircularProgressIndicator(
-                                                        valueColor:
-                                                            AlwaysStoppedAnimation<
-                                                                Color>(
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .accent4,
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  );
-                                                }
-                                                List<TeamsRecord>
-                                                    rowTeamsRecordList =
-                                                    snapshot.data!;
-                                                // Return an empty Container when the item does not exist.
-                                                if (snapshot.data!.isEmpty) {
-                                                  return Container();
-                                                }
-                                                final rowTeamsRecord =
-                                                    rowTeamsRecordList
-                                                            .isNotEmpty
-                                                        ? rowTeamsRecordList
-                                                            .first
-                                                        : null;
-
-                                                return Row(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  children: [
-                                                    Padding(
-                                                      padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  0.0,
-                                                                  0.0,
-                                                                  20.0,
-                                                                  0.0),
-                                                      child: Container(
-                                                        width: 70.0,
-                                                        height: 30.0,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryBackground,
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      0.0),
-                                                        ),
-                                                        child: Align(
-                                                          alignment:
-                                                              AlignmentDirectional(
-                                                                  0.0, 0.0),
-                                                          child: Text(
-                                                            '14 ème',
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                ),
+                                                builder: (context, snapshot) {
+                                                  // Customize what your widget looks like when it's loading.
+                                                  if (!snapshot.hasData) {
+                                                    return Center(
+                                                      child: SizedBox(
+                                                        width: 50.0,
+                                                        height: 50.0,
+                                                        child:
+                                                            CircularProgressIndicator(
+                                                          valueColor:
+                                                              AlwaysStoppedAnimation<
+                                                                  Color>(
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .accent4,
                                                           ),
                                                         ),
                                                       ),
-                                                    ),
-                                                    if ((rowTeamsRecord
-                                                                ?.updateTime !=
-                                                            _model
-                                                                .calendarSelectedDay
-                                                                ?.start) &&
-                                                        (modifRankPilotesEventsRecord
-                                                                .leagueValue ==
-                                                            'moto.gp'))
-                                                      InkWell(
-                                                        splashColor:
-                                                            Colors.transparent,
-                                                        focusColor:
-                                                            Colors.transparent,
-                                                        hoverColor:
-                                                            Colors.transparent,
-                                                        highlightColor:
-                                                            Colors.transparent,
-                                                        onTap: () async {
-                                                          await rowTeamsRecord!
-                                                              .reference
-                                                              .update({
-                                                            ...createTeamsRecordData(
-                                                              updateTime: _model
-                                                                  .calendarSelectedDay
-                                                                  ?.start,
+                                                    );
+                                                  }
+                                                  List<TeamsRecord>
+                                                      rowTeamsRecordList =
+                                                      snapshot.data!;
+                                                  // Return an empty Container when the item does not exist.
+                                                  if (snapshot.data!.isEmpty) {
+                                                    return Container();
+                                                  }
+                                                  final rowTeamsRecord =
+                                                      rowTeamsRecordList
+                                                              .isNotEmpty
+                                                          ? rowTeamsRecordList
+                                                              .first
+                                                          : null;
+
+                                                  return Row(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    children: [
+                                                      Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    0.0,
+                                                                    0.0,
+                                                                    20.0,
+                                                                    0.0),
+                                                        child: Container(
+                                                          width: 70.0,
+                                                          height: 30.0,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryBackground,
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        0.0),
+                                                          ),
+                                                          child: Align(
+                                                            alignment:
+                                                                AlignmentDirectional(
+                                                                    0.0, 0.0),
+                                                            child: Text(
+                                                              '14 ème',
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Poppins',
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                  ),
                                                             ),
-                                                            ...mapToFirestore(
-                                                              {
-                                                                'points':
-                                                                    FieldValue
-                                                                        .increment(
-                                                                            2),
-                                                                'total_games':
-                                                                    FieldValue
-                                                                        .increment(
-                                                                            1),
-                                                              },
-                                                            ),
-                                                          });
-                                                        },
-                                                        child: Icon(
-                                                          Icons.send_rounded,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryText,
-                                                          size: 24.0,
+                                                          ),
                                                         ),
                                                       ),
-                                                  ],
-                                                );
-                                              },
-                                            ),
+                                                      if (modifRankPilotesEventsRecord
+                                                              .leagueValue ==
+                                                          'moto.gp')
+                                                        InkWell(
+                                                          splashColor: Colors
+                                                              .transparent,
+                                                          focusColor: Colors
+                                                              .transparent,
+                                                          hoverColor: Colors
+                                                              .transparent,
+                                                          highlightColor: Colors
+                                                              .transparent,
+                                                          onTap: () async {
+                                                            await rowTeamsRecord!
+                                                                .reference
+                                                                .update({
+                                                              ...createTeamsRecordData(
+                                                                updateTime: _model
+                                                                    .calendarSelectedDay
+                                                                    ?.start,
+                                                              ),
+                                                              ...mapToFirestore(
+                                                                {
+                                                                  'points':
+                                                                      FieldValue
+                                                                          .increment(
+                                                                              2),
+                                                                  'total_games':
+                                                                      FieldValue
+                                                                          .increment(
+                                                                              1),
+                                                                },
+                                                              ),
+                                                            });
+                                                          },
+                                                          child: Icon(
+                                                            Icons.send_rounded,
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .secondaryText,
+                                                            size: 24.0,
+                                                          ),
+                                                        ),
+                                                    ],
+                                                  );
+                                                },
+                                              ),
                                           ],
                                         ),
                                       ),
@@ -4570,146 +4453,142 @@ class _ModifRankPilotesWidgetState extends State<ModifRankPilotesWidget> {
                                                 );
                                               },
                                             ),
-                                            StreamBuilder<List<TeamsRecord>>(
-                                              stream: queryTeamsRecord(
-                                                queryBuilder: (teamsRecord) =>
-                                                    teamsRecord.where(
-                                                  'value',
-                                                  isEqualTo:
-                                                      _model.dropTeam10Value6,
+                                            if (true /* Warning: Trying to access variable not yet defined. */)
+                                              StreamBuilder<List<TeamsRecord>>(
+                                                stream: queryTeamsRecord(
+                                                  queryBuilder: (teamsRecord) =>
+                                                      teamsRecord.where(
+                                                    'value',
+                                                    isEqualTo:
+                                                        _model.dropTeam10Value6,
+                                                  ),
+                                                  singleRecord: true,
                                                 ),
-                                                singleRecord: true,
-                                              ),
-                                              builder: (context, snapshot) {
-                                                // Customize what your widget looks like when it's loading.
-                                                if (!snapshot.hasData) {
-                                                  return Center(
-                                                    child: SizedBox(
-                                                      width: 50.0,
-                                                      height: 50.0,
-                                                      child:
-                                                          CircularProgressIndicator(
-                                                        valueColor:
-                                                            AlwaysStoppedAnimation<
-                                                                Color>(
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .accent4,
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  );
-                                                }
-                                                List<TeamsRecord>
-                                                    rowTeamsRecordList =
-                                                    snapshot.data!;
-                                                // Return an empty Container when the item does not exist.
-                                                if (snapshot.data!.isEmpty) {
-                                                  return Container();
-                                                }
-                                                final rowTeamsRecord =
-                                                    rowTeamsRecordList
-                                                            .isNotEmpty
-                                                        ? rowTeamsRecordList
-                                                            .first
-                                                        : null;
-
-                                                return Row(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  children: [
-                                                    Padding(
-                                                      padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  0.0,
-                                                                  0.0,
-                                                                  20.0,
-                                                                  0.0),
-                                                      child: Container(
-                                                        width: 70.0,
-                                                        height: 30.0,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryBackground,
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      0.0),
-                                                        ),
-                                                        child: Align(
-                                                          alignment:
-                                                              AlignmentDirectional(
-                                                                  0.0, 0.0),
-                                                          child: Text(
-                                                            '15 ème',
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                ),
+                                                builder: (context, snapshot) {
+                                                  // Customize what your widget looks like when it's loading.
+                                                  if (!snapshot.hasData) {
+                                                    return Center(
+                                                      child: SizedBox(
+                                                        width: 50.0,
+                                                        height: 50.0,
+                                                        child:
+                                                            CircularProgressIndicator(
+                                                          valueColor:
+                                                              AlwaysStoppedAnimation<
+                                                                  Color>(
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .accent4,
                                                           ),
                                                         ),
                                                       ),
-                                                    ),
-                                                    if ((rowTeamsRecord
-                                                                ?.updateTime !=
-                                                            _model
-                                                                .calendarSelectedDay
-                                                                ?.start) &&
-                                                        (modifRankPilotesEventsRecord
-                                                                .leagueValue ==
-                                                            'moto.gp'))
-                                                      InkWell(
-                                                        splashColor:
-                                                            Colors.transparent,
-                                                        focusColor:
-                                                            Colors.transparent,
-                                                        hoverColor:
-                                                            Colors.transparent,
-                                                        highlightColor:
-                                                            Colors.transparent,
-                                                        onTap: () async {
-                                                          await rowTeamsRecord!
-                                                              .reference
-                                                              .update({
-                                                            ...createTeamsRecordData(
-                                                              updateTime: _model
-                                                                  .calendarSelectedDay
-                                                                  ?.start,
+                                                    );
+                                                  }
+                                                  List<TeamsRecord>
+                                                      rowTeamsRecordList =
+                                                      snapshot.data!;
+                                                  // Return an empty Container when the item does not exist.
+                                                  if (snapshot.data!.isEmpty) {
+                                                    return Container();
+                                                  }
+                                                  final rowTeamsRecord =
+                                                      rowTeamsRecordList
+                                                              .isNotEmpty
+                                                          ? rowTeamsRecordList
+                                                              .first
+                                                          : null;
+
+                                                  return Row(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    children: [
+                                                      Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    0.0,
+                                                                    0.0,
+                                                                    20.0,
+                                                                    0.0),
+                                                        child: Container(
+                                                          width: 70.0,
+                                                          height: 30.0,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryBackground,
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        0.0),
+                                                          ),
+                                                          child: Align(
+                                                            alignment:
+                                                                AlignmentDirectional(
+                                                                    0.0, 0.0),
+                                                            child: Text(
+                                                              '15 ème',
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Poppins',
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                  ),
                                                             ),
-                                                            ...mapToFirestore(
-                                                              {
-                                                                'points':
-                                                                    FieldValue
-                                                                        .increment(
-                                                                            1),
-                                                                'total_games':
-                                                                    FieldValue
-                                                                        .increment(
-                                                                            1),
-                                                              },
-                                                            ),
-                                                          });
-                                                        },
-                                                        child: Icon(
-                                                          Icons.send_rounded,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryText,
-                                                          size: 24.0,
+                                                          ),
                                                         ),
                                                       ),
-                                                  ],
-                                                );
-                                              },
-                                            ),
+                                                      if (modifRankPilotesEventsRecord
+                                                              .leagueValue ==
+                                                          'moto.gp')
+                                                        InkWell(
+                                                          splashColor: Colors
+                                                              .transparent,
+                                                          focusColor: Colors
+                                                              .transparent,
+                                                          hoverColor: Colors
+                                                              .transparent,
+                                                          highlightColor: Colors
+                                                              .transparent,
+                                                          onTap: () async {
+                                                            await rowTeamsRecord!
+                                                                .reference
+                                                                .update({
+                                                              ...createTeamsRecordData(
+                                                                updateTime: _model
+                                                                    .calendarSelectedDay
+                                                                    ?.start,
+                                                              ),
+                                                              ...mapToFirestore(
+                                                                {
+                                                                  'points':
+                                                                      FieldValue
+                                                                          .increment(
+                                                                              1),
+                                                                  'total_games':
+                                                                      FieldValue
+                                                                          .increment(
+                                                                              1),
+                                                                },
+                                                              ),
+                                                            });
+                                                          },
+                                                          child: Icon(
+                                                            Icons.send_rounded,
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .secondaryText,
+                                                            size: 24.0,
+                                                          ),
+                                                        ),
+                                                    ],
+                                                  );
+                                                },
+                                              ),
                                           ],
                                         ),
                                       ),

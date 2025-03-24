@@ -1670,6 +1670,17 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                                 ),
                                               ],
                                             ),
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(1.0, 0.0, 0.0, 0.0),
+                                              child: Icon(
+                                                Icons.send_sharp,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryText,
+                                                size: 30.0,
+                                              ),
+                                            ),
                                           ],
                                         ),
                                       ),
@@ -1824,9 +1835,269 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                                 ),
                                               ],
                                             ),
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(1.0, 0.0, 0.0, 0.0),
+                                              child: Icon(
+                                                Icons.send_sharp,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryText,
+                                                size: 30.0,
+                                              ),
+                                            ),
                                           ],
                                         ),
                                       ),
+                                      if ((_model.scoreDomFieldTextController
+                                                  .text !=
+                                              '0') &&
+                                          (_model
+                                                      .scoreDomFieldTextController
+                                                      .text !=
+                                                  '') &&
+                                          (_model.scoreExtFieldTextController
+                                                  .text !=
+                                              '0') &&
+                                          (_model.scoreExtFieldTextController
+                                                      .text !=
+                                                  '') &&
+                                          (modifEventPageEventsRecord
+                                                  .l2mStatut !=
+                                              true))
+                                        Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          children: [
+                                            Divider(
+                                              thickness: 1.0,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryBackground,
+                                            ),
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      0.0, 10.0, 0.0, 0.0),
+                                              child: Column(
+                                                mainAxisSize: MainAxisSize.max,
+                                                children: [
+                                                  if ((modifEventPageEventsRecord
+                                                              .leagueValue !=
+                                                          'champions.league') &&
+                                                      (modifEventPageEventsRecord
+                                                              .leagueValue !=
+                                                          'europa.league') &&
+                                                      (modifEventPageEventsRecord
+                                                              .leagueValue !=
+                                                          'conference.league'))
+                                                    Align(
+                                                      alignment:
+                                                          AlignmentDirectional(
+                                                              0.0, 0.0),
+                                                      child: FFButtonWidget(
+                                                        onPressed: () async {
+                                                          await modifEventPageEventsRecord
+                                                              .teamdomRef!
+                                                              .update({
+                                                            ...mapToFirestore(
+                                                              {
+                                                                'l2m': FieldValue
+                                                                    .increment(
+                                                                        1),
+                                                              },
+                                                            ),
+                                                          });
+
+                                                          await modifEventPageEventsRecord
+                                                              .teamextRef!
+                                                              .update({
+                                                            ...mapToFirestore(
+                                                              {
+                                                                'l2m': FieldValue
+                                                                    .increment(
+                                                                        1),
+                                                              },
+                                                            ),
+                                                          });
+
+                                                          await widget
+                                                              .eventRef!
+                                                              .update(
+                                                                  createEventsRecordData(
+                                                            l2mStatut: true,
+                                                          ));
+                                                        },
+                                                        text: '+ 1Stats L2M',
+                                                        options:
+                                                            FFButtonOptions(
+                                                          width: 200.0,
+                                                          height: 40.0,
+                                                          padding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0),
+                                                          iconPadding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0),
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryText,
+                                                          textStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmall
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Poppins',
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primaryBackground,
+                                                                    fontSize:
+                                                                        16.0,
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                  ),
+                                                          elevation: 3.0,
+                                                          borderSide:
+                                                              BorderSide(
+                                                            color: Colors
+                                                                .transparent,
+                                                            width: 1.0,
+                                                          ),
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      40.0),
+                                                          hoverColor:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .success,
+                                                          hoverTextColor:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .primaryBackground,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  if ((modifEventPageEventsRecord
+                                                              .leagueValue ==
+                                                          'champions.league') ||
+                                                      (modifEventPageEventsRecord
+                                                              .leagueValue ==
+                                                          'europa.league') ||
+                                                      (modifEventPageEventsRecord
+                                                              .leagueValue ==
+                                                          'conference.league'))
+                                                    Align(
+                                                      alignment:
+                                                          AlignmentDirectional(
+                                                              0.0, 0.0),
+                                                      child: FFButtonWidget(
+                                                        onPressed: () async {
+                                                          await modifEventPageEventsRecord
+                                                              .teamdomRef!
+                                                              .update({
+                                                            ...mapToFirestore(
+                                                              {
+                                                                'l2m_cup':
+                                                                    FieldValue
+                                                                        .increment(
+                                                                            1),
+                                                              },
+                                                            ),
+                                                          });
+
+                                                          await modifEventPageEventsRecord
+                                                              .teamextRef!
+                                                              .update({
+                                                            ...mapToFirestore(
+                                                              {
+                                                                'l2m_cup':
+                                                                    FieldValue
+                                                                        .increment(
+                                                                            1),
+                                                              },
+                                                            ),
+                                                          });
+
+                                                          await widget
+                                                              .eventRef!
+                                                              .update(
+                                                                  createEventsRecordData(
+                                                            l2mStatut: true,
+                                                          ));
+                                                        },
+                                                        text: '+ 1 Stats L2M',
+                                                        options:
+                                                            FFButtonOptions(
+                                                          width: 200.0,
+                                                          height: 40.0,
+                                                          padding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0),
+                                                          iconPadding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0),
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryText,
+                                                          textStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmall
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Poppins',
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primaryBackground,
+                                                                    fontSize:
+                                                                        16.0,
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                  ),
+                                                          elevation: 3.0,
+                                                          borderSide:
+                                                              BorderSide(
+                                                            color: Colors
+                                                                .transparent,
+                                                            width: 1.0,
+                                                          ),
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      40.0),
+                                                          hoverColor:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .success,
+                                                          hoverTextColor:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .primaryBackground,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                ],
+                                              ),
+                                            ),
+                                          ],
+                                        ),
                                       Align(
                                         alignment:
                                             AlignmentDirectional(0.0, 0.0),

@@ -733,6 +733,64 @@ class _AddBetPageWidgetState extends State<AddBetPageWidget> {
                                   letterSpacing: 0.0,
                                 ),
                           ),
+                          Align(
+                            alignment: AlignmentDirectional(1.0, 0.0),
+                            child: Text(
+                              'Utiliser le point Pas la virgule\nNe pas terminer la cote par un zero',
+                              textAlign: TextAlign.end,
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    color: FlutterFlowTheme.of(context).warning,
+                                    letterSpacing: 0.0,
+                                  ),
+                            ),
+                          ),
+                          Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              Align(
+                                alignment: AlignmentDirectional(-1.0, 0.0),
+                                child: Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 30.0, 0.0),
+                                  child: Text(
+                                    'Cote',
+                                    textAlign: TextAlign.start,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryText,
+                                          letterSpacing: 0.0,
+                                        ),
+                                  ),
+                                ),
+                              ),
+                              Align(
+                                alignment: AlignmentDirectional(1.0, 0.0),
+                                child: Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 10.0, 0.0),
+                                  child: Text(
+                                    'Valider',
+                                    textAlign: TextAlign.end,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryText,
+                                          letterSpacing: 0.0,
+                                        ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
                           Column(
                             mainAxisSize: MainAxisSize.max,
                             children: [
@@ -849,10 +907,6 @@ class _AddBetPageWidgetState extends State<AddBetPageWidget> {
                                                           letterSpacing: 0.0,
                                                         ),
                                                 textAlign: TextAlign.center,
-                                                keyboardType:
-                                                    const TextInputType
-                                                        .numberWithOptions(
-                                                        decimal: true),
                                                 validator: _model
                                                     .coteDomFieldTextControllerValidator
                                                     .asValidator(context),
@@ -1031,10 +1085,6 @@ class _AddBetPageWidgetState extends State<AddBetPageWidget> {
                                                           letterSpacing: 0.0,
                                                         ),
                                                 textAlign: TextAlign.center,
-                                                keyboardType:
-                                                    const TextInputType
-                                                        .numberWithOptions(
-                                                        decimal: true),
                                                 validator: _model
                                                     .coteDrawFieldTextControllerValidator
                                                     .asValidator(context),
@@ -1214,10 +1264,6 @@ class _AddBetPageWidgetState extends State<AddBetPageWidget> {
                                                           letterSpacing: 0.0,
                                                         ),
                                                 textAlign: TextAlign.center,
-                                                keyboardType:
-                                                    const TextInputType
-                                                        .numberWithOptions(
-                                                        decimal: true),
                                                 validator: _model
                                                     .coteExtFieldTextControllerValidator
                                                     .asValidator(context),
@@ -1415,10 +1461,6 @@ class _AddBetPageWidgetState extends State<AddBetPageWidget> {
                                                           letterSpacing: 0.0,
                                                         ),
                                                 textAlign: TextAlign.center,
-                                                keyboardType:
-                                                    const TextInputType
-                                                        .numberWithOptions(
-                                                        decimal: true),
                                                 validator: _model
                                                     .coteL2MYesFieldTextControllerValidator
                                                     .asValidator(context),
@@ -1598,10 +1640,6 @@ class _AddBetPageWidgetState extends State<AddBetPageWidget> {
                                                           letterSpacing: 0.0,
                                                         ),
                                                 textAlign: TextAlign.center,
-                                                keyboardType:
-                                                    const TextInputType
-                                                        .numberWithOptions(
-                                                        decimal: true),
                                                 validator: _model
                                                     .coteL2MNoFieldTextControllerValidator
                                                     .asValidator(context),
@@ -1889,9 +1927,6 @@ class _AddBetPageWidgetState extends State<AddBetPageWidget> {
                                                   letterSpacing: 0.0,
                                                 ),
                                             textAlign: TextAlign.center,
-                                            keyboardType: const TextInputType
-                                                .numberWithOptions(
-                                                decimal: true),
                                             validator: _model
                                                 .cotePlusFieldTextControllerValidator
                                                 .asValidator(context),
@@ -2078,9 +2113,6 @@ class _AddBetPageWidgetState extends State<AddBetPageWidget> {
                                                   letterSpacing: 0.0,
                                                 ),
                                             textAlign: TextAlign.center,
-                                            keyboardType: const TextInputType
-                                                .numberWithOptions(
-                                                decimal: true),
                                             validator: _model
                                                 .coteMoinsFieldTextControllerValidator
                                                 .asValidator(context),

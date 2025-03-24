@@ -248,10 +248,7 @@ class _RankTeamsEventWidgetState extends State<RankTeamsEventWidget> {
                                                             'autres') &&
                                                         (containerEventsRecord
                                                                 .leagueValue !=
-                                                            'autres.france') &&
-                                                        (containerEventsRecord
-                                                                .leagueValue !=
-                                                            'pays.football'),
+                                                            'autres.france'),
                                                     child: Padding(
                                                       padding:
                                                           EdgeInsetsDirectional
@@ -276,7 +273,6 @@ class _RankTeamsEventWidgetState extends State<RankTeamsEventWidget> {
                                                                       'points',
                                                                       descending:
                                                                           true),
-                                                          limit: 30,
                                                         ),
                                                         builder: (context,
                                                             snapshot) {
@@ -390,9 +386,6 @@ class _RankTeamsEventWidgetState extends State<RankTeamsEventWidget> {
                                                 (containerEventsRecord
                                                         .leagueValue !=
                                                     'autres.france') &&
-                                                (containerEventsRecord
-                                                        .leagueValue !=
-                                                    'pays.football') &&
                                                 (containerEventsRecord
                                                         .leagueValue !=
                                                     'champions.league') &&
@@ -592,10 +585,7 @@ class _RankTeamsEventWidgetState extends State<RankTeamsEventWidget> {
                                                             'autres') &&
                                                         (containerEventsRecord
                                                                 .leagueValue !=
-                                                            'autres.france') &&
-                                                        (containerEventsRecord
-                                                                .leagueValue !=
-                                                            'pays.football'),
+                                                            'autres.france'),
                                                     child: Padding(
                                                       padding:
                                                           EdgeInsetsDirectional
@@ -620,7 +610,6 @@ class _RankTeamsEventWidgetState extends State<RankTeamsEventWidget> {
                                                                       'points',
                                                                       descending:
                                                                           true),
-                                                          limit: 30,
                                                         ),
                                                         builder: (context,
                                                             snapshot) {
@@ -763,9 +752,6 @@ class _RankTeamsEventWidgetState extends State<RankTeamsEventWidget> {
                                                 (containerEventsRecord
                                                         .leagueValue !=
                                                     'autres.france') &&
-                                                (containerEventsRecord
-                                                        .leagueValue !=
-                                                    'pays.football') &&
                                                 (containerEventsRecord
                                                         .leagueValue !=
                                                     'champions.league') &&

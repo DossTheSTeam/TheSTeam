@@ -587,11 +587,114 @@ class _ListEventsAdminWidgetState extends State<ListEventsAdminWidget> {
                                                       mainAxisSize:
                                                           MainAxisSize.max,
                                                       children: [
+                                                        Row(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          children: [
+                                                            if (columnEventsEventsRecord
+                                                                    .sportValue ==
+                                                                'football')
+                                                              Padding(
+                                                                padding:
+                                                                    EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            5.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                child: Icon(
+                                                                  Icons
+                                                                      .sports_soccer_rounded,
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .secondaryText,
+                                                                  size: 24.0,
+                                                                ),
+                                                              ),
+                                                            if (columnEventsEventsRecord
+                                                                    .sportValue ==
+                                                                'hockey')
+                                                              Icon(
+                                                                Icons
+                                                                    .sports_hockey,
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .secondaryText,
+                                                                size: 24.0,
+                                                              ),
+                                                            if (columnEventsEventsRecord
+                                                                    .sportValue ==
+                                                                'tennis')
+                                                              Icon(
+                                                                Icons
+                                                                    .sports_tennis_rounded,
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .accent1,
+                                                                size: 24.0,
+                                                              ),
+                                                            if (columnEventsEventsRecord
+                                                                    .sportValue ==
+                                                                'basketball')
+                                                              Icon(
+                                                                Icons
+                                                                    .sports_basketball,
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .warning,
+                                                                size: 24.0,
+                                                              ),
+                                                            if (columnEventsEventsRecord
+                                                                    .sportValue ==
+                                                                'mma')
+                                                              Icon(
+                                                                Icons
+                                                                    .sports_martial_arts_sharp,
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .secondaryText,
+                                                                size: 24.0,
+                                                              ),
+                                                            if (columnEventsEventsRecord
+                                                                    .sportValue ==
+                                                                'boxe')
+                                                              Icon(
+                                                                Icons
+                                                                    .sports_mma,
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .secondaryText,
+                                                                size: 24.0,
+                                                              ),
+                                                            if (columnEventsEventsRecord
+                                                                    .sportValue ==
+                                                                'rugby')
+                                                              Icon(
+                                                                Icons
+                                                                    .sports_rugby_rounded,
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .secondaryText,
+                                                                size: 24.0,
+                                                              ),
+                                                            if (columnEventsEventsRecord
+                                                                    .sportValue ==
+                                                                'sports.meca')
+                                                              Icon(
+                                                                Icons
+                                                                    .sports_motorsports_rounded,
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .secondaryText,
+                                                                size: 24.0,
+                                                              ),
+                                                          ],
+                                                        ),
                                                         Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
                                                                   .fromSTEB(
-                                                                      20.0,
+                                                                      10.0,
                                                                       0.0,
                                                                       10.0,
                                                                       0.0),

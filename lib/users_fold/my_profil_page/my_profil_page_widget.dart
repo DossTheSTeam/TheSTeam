@@ -1124,10 +1124,10 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                                                 ),
                                               ),
                                               child: Icon(
-                                                Icons.bolt,
+                                                Icons.monetization_on_outlined,
                                                 color:
                                                     currentUserDocument?.color1,
-                                                size: 30.0,
+                                                size: 37.0,
                                               ),
                                             ),
                                           );
@@ -1143,8 +1143,7 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget>
                     ),
                   ),
                   Padding(
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(20.0, 5.0, 20.0, 5.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 5.0),
                     child: AuthUserStreamWidget(
                       builder: (context) =>
                           StreamBuilder<List<MyTeamslikeRecord>>(

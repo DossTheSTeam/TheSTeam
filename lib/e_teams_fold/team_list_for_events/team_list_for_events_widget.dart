@@ -101,7 +101,7 @@ class _TeamListForEventsWidgetState extends State<TeamListForEventsWidget> {
                               children: [
                                 Row(
                                   mainAxisSize: MainAxisSize.max,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
                                     InkWell(
                                       splashColor: Colors.transparent,

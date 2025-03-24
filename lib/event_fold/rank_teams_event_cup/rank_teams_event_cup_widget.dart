@@ -249,7 +249,6 @@ class _RankTeamsEventCupWidgetState extends State<RankTeamsEventCupWidget> {
                                                                     'points_cup',
                                                                     descending:
                                                                         true),
-                                                        limit: 30,
                                                       ),
                                                       builder:
                                                           (context, snapshot) {
@@ -586,7 +585,6 @@ class _RankTeamsEventCupWidgetState extends State<RankTeamsEventCupWidget> {
                                                                     'points_cup',
                                                                     descending:
                                                                         true),
-                                                        limit: 30,
                                                       ),
                                                       builder:
                                                           (context, snapshot) {

@@ -206,6 +206,11 @@ class EventsRecord extends FirestoreRecord {
   String get podium => _podium ?? '';
   bool hasPodium() => _podium != null;
 
+  // "l2m_statut" field.
+  bool? _l2mStatut;
+  bool get l2mStatut => _l2mStatut ?? false;
+  bool hasL2mStatut() => _l2mStatut != null;
+
   void _initializeFields() {
     _date = snapshotData['date'] as DateTime?;
     _hour = castToType<int>(snapshotData['hour']);
@@ -245,6 +250,7 @@ class EventsRecord extends FirestoreRecord {
     _moins = snapshotData['moins'] as String?;
     _first = snapshotData['first'] as String?;
     _podium = snapshotData['podium'] as String?;
+    _l2mStatut = snapshotData['l2m_statut'] as bool?;
   }
 
   static CollectionReference get collection =>
@@ -316,6 +322,7 @@ Map<String, dynamic> createEventsRecordData({
   String? moins,
   String? first,
   String? podium,
+  bool? l2mStatut,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -354,6 +361,7 @@ Map<String, dynamic> createEventsRecordData({
       'moins': moins,
       'first': first,
       'podium': podium,
+      'l2m_statut': l2mStatut,
     }.withoutNulls,
   );
 
@@ -403,7 +411,8 @@ class EventsRecordDocumentEquality implements Equality<EventsRecord> {
         e1?.plus == e2?.plus &&
         e1?.moins == e2?.moins &&
         e1?.first == e2?.first &&
-        e1?.podium == e2?.podium;
+        e1?.podium == e2?.podium &&
+        e1?.l2mStatut == e2?.l2mStatut;
   }
 
   @override
@@ -445,7 +454,8 @@ class EventsRecordDocumentEquality implements Equality<EventsRecord> {
         e?.plus,
         e?.moins,
         e?.first,
-        e?.podium
+        e?.podium,
+        e?.l2mStatut
       ]);
 
   @override

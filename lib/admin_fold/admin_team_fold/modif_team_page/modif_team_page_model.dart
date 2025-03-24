@@ -22,10 +22,15 @@ class ModifTeamPageModel extends FlutterFlowModel<ModifTeamPageWidget> {
   // State field(s) for DropColor1 widget.
   String? dropColor1Value2;
   FormFieldController<String>? dropColor1ValueController2;
-  bool isDataUploading = false;
-  FFUploadedFile uploadedLocalFile =
+  bool isDataUploading1 = false;
+  FFUploadedFile uploadedLocalFile1 =
       FFUploadedFile(bytes: Uint8List.fromList([]));
-  String uploadedFileUrl = '';
+  String uploadedFileUrl1 = '';
+
+  bool isDataUploading2 = false;
+  FFUploadedFile uploadedLocalFile2 =
+      FFUploadedFile(bytes: Uint8List.fromList([]));
+  String uploadedFileUrl2 = '';
 
   // State field(s) for DropLigueFoot widget.
   String? dropLigueFootValue;

@@ -105,7 +105,7 @@ class _ModifETeamPageWidgetState extends State<ModifETeamPageWidget> {
                             children: [
                               Row(
                                 mainAxisSize: MainAxisSize.max,
-                                crossAxisAlignment: CrossAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   InkWell(
                                     splashColor: Colors.transparent,

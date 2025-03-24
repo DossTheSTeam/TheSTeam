@@ -257,10 +257,7 @@ class _StatsTeamsEventWidgetState extends State<StatsTeamsEventWidget>
                                                               'autres') &&
                                                           (contDomTeamsRecord
                                                                   .leagueValue !=
-                                                              'autres.france') &&
-                                                          (contDomTeamsRecord
-                                                                  .leagueValue !=
-                                                              'pays.football'),
+                                                              'autres.france'),
                                                       child: Padding(
                                                         padding:
                                                             EdgeInsetsDirectional
@@ -285,7 +282,6 @@ class _StatsTeamsEventWidgetState extends State<StatsTeamsEventWidget>
                                                                         'points',
                                                                         descending:
                                                                             true),
-                                                            limit: 30,
                                                           ),
                                                           builder: (context,
                                                               snapshot) {
@@ -481,10 +477,7 @@ class _StatsTeamsEventWidgetState extends State<StatsTeamsEventWidget>
                                                               'autres') &&
                                                           (contExtTeamsRecord
                                                                   .leagueValue !=
-                                                              'autres.france') &&
-                                                          (contExtTeamsRecord
-                                                                  .leagueValue !=
-                                                              'pays.football'),
+                                                              'autres.france'),
                                                       child: Padding(
                                                         padding:
                                                             EdgeInsetsDirectional
@@ -509,7 +502,6 @@ class _StatsTeamsEventWidgetState extends State<StatsTeamsEventWidget>
                                                                         'points',
                                                                         descending:
                                                                             true),
-                                                            limit: 30,
                                                           ),
                                                           builder: (context,
                                                               snapshot) {
