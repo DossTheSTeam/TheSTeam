@@ -464,8 +464,7 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                       ),
                       FlutterFlowCalendar(
                         color: FlutterFlowTheme.of(context).secondaryBackground,
-                        iconColor:
-                            FlutterFlowTheme.of(context).primaryBackground,
+                        iconColor: FlutterFlowTheme.of(context).primaryText,
                         weekFormat: true,
                         weekStartsMonday: true,
                         rowHeight: 40.0,
@@ -867,7 +866,9 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                           'top.14',
                                           'pays.rugby',
                                           'formule.1',
-                                          'moto.gp'
+                                          'moto.gp',
+                                          'world.superbike',
+                                          'mx.gp'
                                         ]),
                                         optionLabels: [
                                           'Premier League',
@@ -901,7 +902,9 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                           'Top 14',
                                           'Pays Rugby',
                                           'Formule 1',
-                                          'Moto GP'
+                                          'Moto GP',
+                                          'World Superbike',
+                                          'MX GP'
                                         ],
                                         onChanged: (val) => safeSetState(
                                             () => _model.dropLigueValue = val),
@@ -2213,12 +2216,16 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                           '',
                                                     ),
                                                     options: List<String>.from([
-                                                      'top.14',
-                                                      'pays.rugby'
+                                                      'formule.1',
+                                                      'moto.gp',
+                                                      'world.superbike',
+                                                      'mx.gp'
                                                     ]),
                                                     optionLabels: [
-                                                      'Top 14',
-                                                      'Pays Rugby'
+                                                      'Formule 1',
+                                                      'Moto GP',
+                                                      'World Superbike',
+                                                      'MX GP'
                                                     ],
                                                     onChanged: (val) =>
                                                         safeSetState(() => _model

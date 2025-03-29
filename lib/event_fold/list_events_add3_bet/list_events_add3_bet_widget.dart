@@ -1,4 +1,3 @@
-import '';
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_calendar.dart';
@@ -497,54 +496,60 @@ class _ListEventsAdd3BetWidgetState extends State<ListEventsAdd3BetWidget> {
                             children: [
                               Align(
                                 alignment: AlignmentDirectional(0.0, -0.69),
-                                child: FlutterFlowCalendar(
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
-                                  iconColor:
-                                      FlutterFlowTheme.of(context).alternate,
-                                  weekFormat: true,
-                                  weekStartsMonday: true,
-                                  rowHeight: 40.0,
-                                  onChange: (DateTimeRange? newSelectedDate) {
-                                    safeSetState(() => _model
-                                        .calendarSelectedDay = newSelectedDate);
-                                  },
-                                  titleStyle: FlutterFlowTheme.of(context)
-                                      .labelSmall
-                                      .override(
-                                        fontFamily: 'Poppins',
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondaryText,
-                                        letterSpacing: 0.0,
-                                      ),
-                                  dayOfWeekStyle: FlutterFlowTheme.of(context)
-                                      .labelSmall
-                                      .override(
-                                        fontFamily: 'Poppins',
-                                        letterSpacing: 0.0,
-                                      ),
-                                  dateStyle: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        fontFamily: 'Poppins',
-                                        letterSpacing: 0.0,
-                                      ),
-                                  selectedDateStyle:
-                                      FlutterFlowTheme.of(context)
-                                          .titleSmall
-                                          .override(
-                                            fontFamily: 'Poppins',
-                                            color: FlutterFlowTheme.of(context)
-                                                .success,
-                                            letterSpacing: 0.0,
-                                          ),
-                                  inactiveDateStyle:
-                                      FlutterFlowTheme.of(context)
-                                          .labelSmall
-                                          .override(
-                                            fontFamily: 'Poppins',
-                                            letterSpacing: 0.0,
-                                          ),
+                                child: AuthUserStreamWidget(
+                                  builder: (context) => FlutterFlowCalendar(
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryBackground,
+                                    iconColor: valueOrDefault<Color>(
+                                      currentUserDocument?.color1,
+                                      FlutterFlowTheme.of(context).primaryText,
+                                    ),
+                                    weekFormat: true,
+                                    weekStartsMonday: true,
+                                    rowHeight: 40.0,
+                                    onChange: (DateTimeRange? newSelectedDate) {
+                                      safeSetState(() =>
+                                          _model.calendarSelectedDay =
+                                              newSelectedDate);
+                                    },
+                                    titleStyle: FlutterFlowTheme.of(context)
+                                        .labelSmall
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryText,
+                                          letterSpacing: 0.0,
+                                        ),
+                                    dayOfWeekStyle: FlutterFlowTheme.of(context)
+                                        .labelSmall
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          letterSpacing: 0.0,
+                                        ),
+                                    dateStyle: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          letterSpacing: 0.0,
+                                        ),
+                                    selectedDateStyle:
+                                        FlutterFlowTheme.of(context)
+                                            .titleSmall
+                                            .override(
+                                              fontFamily: 'Poppins',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .success,
+                                              letterSpacing: 0.0,
+                                            ),
+                                    inactiveDateStyle:
+                                        FlutterFlowTheme.of(context)
+                                            .labelSmall
+                                            .override(
+                                              fontFamily: 'Poppins',
+                                              letterSpacing: 0.0,
+                                            ),
+                                  ),
                                 ),
                               ),
                               if (valueOrDefault<bool>(
@@ -569,105 +574,113 @@ class _ListEventsAdd3BetWidgetState extends State<ListEventsAdd3BetWidget> {
                                               Align(
                                                 alignment: AlignmentDirectional(
                                                     1.0, 0.0),
-                                                child: SingleChildScrollView(
-                                                  scrollDirection:
-                                                      Axis.horizontal,
-                                                  child: Row(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment.end,
-                                                    children: [
-                                                      Align(
-                                                        alignment:
-                                                            AlignmentDirectional(
-                                                                -1.0, 0.0),
-                                                        child:
-                                                            FlutterFlowDropDown<
-                                                                String>(
-                                                          controller: _model
-                                                                  .dropSportValueController ??=
-                                                              FormFieldController<
+                                                child: Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 0.0, 85.0, 0.0),
+                                                  child: SingleChildScrollView(
+                                                    scrollDirection:
+                                                        Axis.horizontal,
+                                                    child: Row(
+                                                      mainAxisSize:
+                                                          MainAxisSize.max,
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment.end,
+                                                      children: [
+                                                        Align(
+                                                          alignment:
+                                                              AlignmentDirectional(
+                                                                  -1.0, 0.0),
+                                                          child:
+                                                              FlutterFlowDropDown<
                                                                   String>(
-                                                            _model.dropSportValue ??=
-                                                                '',
-                                                          ),
-                                                          options: List<
-                                                              String>.from([
-                                                            'football',
-                                                            'basketball',
-                                                            'tennis',
-                                                            'hockey',
-                                                            'mma',
-                                                            'boxe',
-                                                            'rugby',
-                                                            'sports.meca',
-                                                            ''
-                                                          ]),
-                                                          optionLabels: [
-                                                            'Football',
-                                                            'Basketball',
-                                                            'Tennis',
-                                                            'Hockey',
-                                                            'MMA',
-                                                            'Boxe',
-                                                            'Rugby',
-                                                            'Sports Méca.',
-                                                            'Sports'
-                                                          ],
-                                                          onChanged:
-                                                              (val) async {
-                                                            safeSetState(() =>
-                                                                _model.dropSportValue =
-                                                                    val);
-                                                            _model.showSportFilter =
-                                                                _model
-                                                                    .dropSportValue;
-                                                            safeSetState(() {});
-                                                          },
-                                                          width: 180.0,
-                                                          height: 50.0,
-                                                          textStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        'Poppins',
-                                                                    letterSpacing:
-                                                                        0.0,
-                                                                  ),
-                                                          hintText: 'Sports',
-                                                          icon: Icon(
-                                                            Icons
-                                                                .keyboard_arrow_down_rounded,
-                                                            color: FlutterFlowTheme
+                                                            controller: _model
+                                                                    .dropSportValueController ??=
+                                                                FormFieldController<
+                                                                    String>(
+                                                              _model.dropSportValue ??=
+                                                                  '',
+                                                            ),
+                                                            options: List<
+                                                                String>.from([
+                                                              'football',
+                                                              'basketball',
+                                                              'tennis',
+                                                              'hockey',
+                                                              'mma',
+                                                              'boxe',
+                                                              'rugby',
+                                                              'sports.meca',
+                                                              ''
+                                                            ]),
+                                                            optionLabels: [
+                                                              'Football',
+                                                              'Basketball',
+                                                              'Tennis',
+                                                              'Hockey',
+                                                              'MMA',
+                                                              'Boxe',
+                                                              'Rugby',
+                                                              'Sports Méca.',
+                                                              'Sports'
+                                                            ],
+                                                            onChanged:
+                                                                (val) async {
+                                                              safeSetState(() =>
+                                                                  _model.dropSportValue =
+                                                                      val);
+                                                              _model.showSportFilter =
+                                                                  _model
+                                                                      .dropSportValue;
+                                                              safeSetState(
+                                                                  () {});
+                                                            },
+                                                            width: 180.0,
+                                                            height: 50.0,
+                                                            textStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'Poppins',
+                                                                      letterSpacing:
+                                                                          0.0,
+                                                                    ),
+                                                            hintText: 'Sports',
+                                                            icon: Icon(
+                                                              Icons
+                                                                  .keyboard_arrow_down_rounded,
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .secondaryText,
+                                                              size: 24.0,
+                                                            ),
+                                                            fillColor: FlutterFlowTheme
                                                                     .of(context)
-                                                                .secondaryText,
-                                                            size: 24.0,
+                                                                .primaryBackground,
+                                                            elevation: 2.0,
+                                                            borderColor: Colors
+                                                                .transparent,
+                                                            borderWidth: 0.0,
+                                                            borderRadius: 8.0,
+                                                            margin:
+                                                                EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        12.0,
+                                                                        0.0,
+                                                                        12.0,
+                                                                        0.0),
+                                                            hidesUnderline:
+                                                                true,
+                                                            isOverButton: false,
+                                                            isSearchable: false,
+                                                            isMultiSelect:
+                                                                false,
                                                           ),
-                                                          fillColor: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryBackground,
-                                                          elevation: 2.0,
-                                                          borderColor: Colors
-                                                              .transparent,
-                                                          borderWidth: 0.0,
-                                                          borderRadius: 8.0,
-                                                          margin:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      12.0,
-                                                                      0.0,
-                                                                      12.0,
-                                                                      0.0),
-                                                          hidesUnderline: true,
-                                                          isOverButton: false,
-                                                          isSearchable: false,
-                                                          isMultiSelect: false,
                                                         ),
-                                                      ),
-                                                    ],
+                                                      ],
+                                                    ),
                                                   ),
                                                 ),
                                               ),

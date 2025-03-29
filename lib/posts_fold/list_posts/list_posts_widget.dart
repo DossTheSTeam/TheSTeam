@@ -1,4 +1,3 @@
-import '';
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
@@ -1250,10 +1249,14 @@ class _ListPostsWidgetState extends State<ListPostsWidget> {
                                                   options: List<String>.from([
                                                     'formule.1',
                                                     'moto.gp',
+                                                    'world.superbike',
+                                                    'mx.gp',
                                                     ''
                                                   ]),
                                                   optionLabels: [
                                                     'Formule 1',
+                                                    'Moto GP',
+                                                    'World Superbike',
                                                     'Moto GP',
                                                     'Ligues'
                                                   ],

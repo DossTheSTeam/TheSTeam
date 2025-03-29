@@ -4,7 +4,6 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/public_fold/block_user/block_user_widget.dart';
-import '/team_fold/audio_fan_conference/audio_fan_conference_widget.dart';
 import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
 import '/team_fold/rank_team/rank_team_widget.dart';
 import '/team_fold/rank_team_cup/rank_team_cup_widget.dart';
@@ -686,64 +685,14 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                         EdgeInsetsDirectional
                                                             .fromSTEB(20.0, 3.0,
                                                                 0.0, 0.0),
-                                                    child: InkWell(
-                                                      splashColor:
-                                                          Colors.transparent,
-                                                      focusColor:
-                                                          Colors.transparent,
-                                                      hoverColor:
-                                                          Colors.transparent,
-                                                      highlightColor:
-                                                          Colors.transparent,
-                                                      onTap: () async {
-                                                        await showModalBottomSheet(
-                                                          isScrollControlled:
-                                                              true,
-                                                          backgroundColor:
-                                                              Colors
-                                                                  .transparent,
-                                                          enableDrag: false,
-                                                          context: context,
-                                                          builder: (context) {
-                                                            return GestureDetector(
-                                                              onTap: () {
-                                                                FocusScope.of(
-                                                                        context)
-                                                                    .unfocus();
-                                                                FocusManager
-                                                                    .instance
-                                                                    .primaryFocus
-                                                                    ?.unfocus();
-                                                              },
-                                                              child: Padding(
-                                                                padding: MediaQuery
-                                                                    .viewInsetsOf(
-                                                                        context),
-                                                                child:
-                                                                    AudioFanConferenceWidget(
-                                                                  teamRef: widget
-                                                                      .teamRef!,
-                                                                ),
-                                                              ),
-                                                            );
-                                                          },
-                                                        ).then((value) =>
-                                                            safeSetState(
-                                                                () {}));
-                                                      },
-                                                      child: FaIcon(
-                                                        FontAwesomeIcons
-                                                            .headphonesAlt,
-                                                        color: valueOrDefault<
-                                                            Color>(
-                                                          teamPageTeamsRecord
-                                                              .color1,
+                                                    child: FaIcon(
+                                                      FontAwesomeIcons
+                                                          .headphonesAlt,
+                                                      color:
                                                           FlutterFlowTheme.of(
                                                                   context)
-                                                              .primaryText,
-                                                        ),
-                                                        size: 30.0,
-                                                      ),
+                                                              .alternate,
+                                                      size: 30.0,
                                                     ),
                                                   ),
                                               ],

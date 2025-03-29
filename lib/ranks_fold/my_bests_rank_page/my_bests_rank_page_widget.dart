@@ -534,7 +534,7 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                                           ?.color1,
                                                       FlutterFlowTheme.of(
                                                               context)
-                                                          .primary,
+                                                          .primaryText,
                                                     ),
                                                     size: 30.0,
                                                   ),

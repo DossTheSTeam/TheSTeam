@@ -616,8 +616,8 @@ class _AddDateForEEventWidgetState extends State<AddDateForEEventWidget> {
                             FlutterFlowCalendar(
                               color: FlutterFlowTheme.of(context)
                                   .secondaryBackground,
-                              iconColor: FlutterFlowTheme.of(context)
-                                  .primaryBackground,
+                              iconColor:
+                                  FlutterFlowTheme.of(context).primaryText,
                               weekFormat: true,
                               weekStartsMonday: true,
                               rowHeight: 40.0,

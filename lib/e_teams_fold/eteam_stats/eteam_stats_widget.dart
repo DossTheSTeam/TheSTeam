@@ -832,9 +832,15 @@ class _EteamStatsWidgetState extends State<EteamStatsWidget>
                                                             letterSpacing: 0.0,
                                                           ),
                                                     ),
-                                                  if (eteamStatsTeamsRecord
-                                                          .leagueValue ==
-                                                      'moto.gp')
+                                                  if ((eteamStatsTeamsRecord
+                                                              .leagueValue ==
+                                                          'moto.gp') ||
+                                                      (eteamStatsTeamsRecord
+                                                              .leagueValue ==
+                                                          'mx.gp') ||
+                                                      (eteamStatsTeamsRecord
+                                                              .leagueValue ==
+                                                          'world.superbike'))
                                                     Text(
                                                       'Top 15',
                                                       textAlign:

@@ -1,4 +1,3 @@
-import '';
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
@@ -982,9 +981,18 @@ class _ModTeamsListWidgetState extends State<ModTeamsListWidget> {
                                           FormFieldController<String>(
                                         _model.dropLigueMecaValue ??= '',
                                       ),
-                                      options: List<String>.from(
-                                          ['formule.1', 'moto.gp']),
-                                      optionLabels: ['Formule 1', 'Moto GP'],
+                                      options: List<String>.from([
+                                        'formule.1',
+                                        'moto.gp',
+                                        'world.superbike',
+                                        'mx.gp'
+                                      ]),
+                                      optionLabels: [
+                                        'Formule 1',
+                                        'Moto GP',
+                                        'World Superbike',
+                                        'MX GP'
+                                      ],
                                       onChanged: (val) async {
                                         safeSetState(() =>
                                             _model.dropLigueMecaValue = val);

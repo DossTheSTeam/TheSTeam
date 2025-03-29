@@ -1,4 +1,3 @@
-import '';
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_calendar.dart';
@@ -766,54 +765,60 @@ class _ListEventsWidgetState extends State<ListEventsWidget> {
                             children: [
                               Align(
                                 alignment: AlignmentDirectional(0.0, -0.65),
-                                child: FlutterFlowCalendar(
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
-                                  iconColor:
-                                      FlutterFlowTheme.of(context).alternate,
-                                  weekFormat: true,
-                                  weekStartsMonday: true,
-                                  rowHeight: 40.0,
-                                  onChange: (DateTimeRange? newSelectedDate) {
-                                    safeSetState(() => _model
-                                        .calendarSelectedDay = newSelectedDate);
-                                  },
-                                  titleStyle: FlutterFlowTheme.of(context)
-                                      .labelSmall
-                                      .override(
-                                        fontFamily: 'Poppins',
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondaryText,
-                                        letterSpacing: 0.0,
-                                      ),
-                                  dayOfWeekStyle: FlutterFlowTheme.of(context)
-                                      .labelSmall
-                                      .override(
-                                        fontFamily: 'Poppins',
-                                        letterSpacing: 0.0,
-                                      ),
-                                  dateStyle: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        fontFamily: 'Poppins',
-                                        letterSpacing: 0.0,
-                                      ),
-                                  selectedDateStyle:
-                                      FlutterFlowTheme.of(context)
-                                          .titleSmall
-                                          .override(
-                                            fontFamily: 'Poppins',
-                                            color: FlutterFlowTheme.of(context)
-                                                .success,
-                                            letterSpacing: 0.0,
-                                          ),
-                                  inactiveDateStyle:
-                                      FlutterFlowTheme.of(context)
-                                          .labelSmall
-                                          .override(
-                                            fontFamily: 'Poppins',
-                                            letterSpacing: 0.0,
-                                          ),
+                                child: AuthUserStreamWidget(
+                                  builder: (context) => FlutterFlowCalendar(
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryBackground,
+                                    iconColor: valueOrDefault<Color>(
+                                      currentUserDocument?.color1,
+                                      FlutterFlowTheme.of(context).primaryText,
+                                    ),
+                                    weekFormat: true,
+                                    weekStartsMonday: true,
+                                    rowHeight: 40.0,
+                                    onChange: (DateTimeRange? newSelectedDate) {
+                                      safeSetState(() =>
+                                          _model.calendarSelectedDay =
+                                              newSelectedDate);
+                                    },
+                                    titleStyle: FlutterFlowTheme.of(context)
+                                        .labelSmall
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryText,
+                                          letterSpacing: 0.0,
+                                        ),
+                                    dayOfWeekStyle: FlutterFlowTheme.of(context)
+                                        .labelSmall
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          letterSpacing: 0.0,
+                                        ),
+                                    dateStyle: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          letterSpacing: 0.0,
+                                        ),
+                                    selectedDateStyle:
+                                        FlutterFlowTheme.of(context)
+                                            .titleSmall
+                                            .override(
+                                              fontFamily: 'Poppins',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .success,
+                                              letterSpacing: 0.0,
+                                            ),
+                                    inactiveDateStyle:
+                                        FlutterFlowTheme.of(context)
+                                            .labelSmall
+                                            .override(
+                                              fontFamily: 'Poppins',
+                                              letterSpacing: 0.0,
+                                            ),
+                                  ),
                                 ),
                               ),
                               if (valueOrDefault<bool>(
@@ -848,7 +853,7 @@ class _ListEventsWidgetState extends State<ListEventsWidget> {
                                                               .fromSTEB(
                                                                   0.0,
                                                                   5.0,
-                                                                  0.0,
+                                                                  86.0,
                                                                   0.0),
                                                       child:
                                                           FlutterFlowDropDown<
@@ -952,7 +957,7 @@ class _ListEventsWidgetState extends State<ListEventsWidget> {
                                   alignment: AlignmentDirectional(1.0, 0.0),
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 10.0, 0.0, 0.0),
+                                        0.0, 10.0, 85.0, 0.0),
                                     child: AuthUserStreamWidget(
                                       builder: (context) =>
                                           SingleChildScrollView(
@@ -1116,183 +1121,181 @@ class _ListEventsWidgetState extends State<ListEventsWidget> {
                                                 Row(
                                                   mainAxisSize:
                                                       MainAxisSize.max,
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment
-                                                          .spaceBetween,
                                                   children: [
-                                                    Row(
-                                                      mainAxisSize:
-                                                          MainAxisSize.max,
-                                                      children: [
-                                                        if (columnEventsEventsRecord
-                                                                .sportValue ==
-                                                            'football')
-                                                          Icon(
-                                                            Icons
-                                                                .sports_soccer_rounded,
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
+                                                    if (columnEventsEventsRecord
+                                                            .sportValue ==
+                                                        'football')
+                                                      Icon(
+                                                        Icons
+                                                            .sports_soccer_rounded,
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
                                                                 .secondaryText,
-                                                            size: 24.0,
-                                                          ),
-                                                        if (columnEventsEventsRecord
-                                                                .sportValue ==
-                                                            'hockey')
-                                                          Icon(
-                                                            Icons.sports_hockey,
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
+                                                        size: 24.0,
+                                                      ),
+                                                    if (columnEventsEventsRecord
+                                                            .sportValue ==
+                                                        'hockey')
+                                                      Icon(
+                                                        Icons.sports_hockey,
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
                                                                 .secondaryText,
-                                                            size: 24.0,
-                                                          ),
-                                                        if (columnEventsEventsRecord
-                                                                .sportValue ==
-                                                            'tennis')
-                                                          Icon(
-                                                            Icons
-                                                                .sports_tennis_rounded,
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
+                                                        size: 24.0,
+                                                      ),
+                                                    if (columnEventsEventsRecord
+                                                            .sportValue ==
+                                                        'tennis')
+                                                      Icon(
+                                                        Icons
+                                                            .sports_tennis_rounded,
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
                                                                 .accent1,
-                                                            size: 24.0,
-                                                          ),
-                                                        if (columnEventsEventsRecord
-                                                                .sportValue ==
-                                                            'basketball')
-                                                          Icon(
-                                                            Icons
-                                                                .sports_basketball,
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
+                                                        size: 24.0,
+                                                      ),
+                                                    if (columnEventsEventsRecord
+                                                            .sportValue ==
+                                                        'basketball')
+                                                      Icon(
+                                                        Icons.sports_basketball,
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
                                                                 .warning,
-                                                            size: 24.0,
-                                                          ),
-                                                        if (columnEventsEventsRecord
-                                                                .sportValue ==
-                                                            'mma')
-                                                          Icon(
-                                                            Icons
-                                                                .sports_martial_arts_sharp,
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
+                                                        size: 24.0,
+                                                      ),
+                                                    if (columnEventsEventsRecord
+                                                            .sportValue ==
+                                                        'mma')
+                                                      Icon(
+                                                        Icons
+                                                            .sports_martial_arts_sharp,
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
                                                                 .secondaryText,
-                                                            size: 24.0,
-                                                          ),
-                                                        if (columnEventsEventsRecord
-                                                                .sportValue ==
-                                                            'boxe')
-                                                          Icon(
-                                                            Icons.sports_mma,
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
+                                                        size: 24.0,
+                                                      ),
+                                                    if (columnEventsEventsRecord
+                                                            .sportValue ==
+                                                        'boxe')
+                                                      Icon(
+                                                        Icons.sports_mma,
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
                                                                 .secondaryText,
-                                                            size: 24.0,
-                                                          ),
-                                                        if (columnEventsEventsRecord
-                                                                .sportValue ==
-                                                            'rugby')
-                                                          Icon(
-                                                            Icons
-                                                                .sports_rugby_rounded,
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
+                                                        size: 24.0,
+                                                      ),
+                                                    if (columnEventsEventsRecord
+                                                            .sportValue ==
+                                                        'rugby')
+                                                      Icon(
+                                                        Icons
+                                                            .sports_rugby_rounded,
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
                                                                 .secondaryText,
-                                                            size: 24.0,
-                                                          ),
-                                                        if (columnEventsEventsRecord
-                                                                .sportValue ==
-                                                            'sports.meca')
-                                                          Icon(
-                                                            Icons
-                                                                .sports_motorsports_rounded,
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
+                                                        size: 24.0,
+                                                      ),
+                                                    if (columnEventsEventsRecord
+                                                            .sportValue ==
+                                                        'sports.meca')
+                                                      Icon(
+                                                        Icons
+                                                            .sports_motorsports_rounded,
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
                                                                 .secondaryText,
-                                                            size: 24.0,
-                                                          ),
-                                                        Padding(
-                                                          padding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      10.0,
-                                                                      0.0,
-                                                                      10.0,
-                                                                      0.0),
-                                                          child: Row(
-                                                            mainAxisSize:
-                                                                MainAxisSize
-                                                                    .max,
-                                                            children: [
-                                                              if (columnEventsEventsRecord
-                                                                      .statut ==
-                                                                  true)
-                                                                Container(
-                                                                  width: 20.0,
-                                                                  height: 20.0,
-                                                                  decoration:
-                                                                      BoxDecoration(
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .success,
-                                                                    shape: BoxShape
-                                                                        .circle,
-                                                                  ),
-                                                                ),
-                                                              if (columnEventsEventsRecord
-                                                                      .statut ==
-                                                                  false)
-                                                                Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                        size: 24.0,
+                                                      ),
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  10.0,
+                                                                  0.0,
+                                                                  10.0,
+                                                                  0.0),
+                                                      child: Row(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        children: [
+                                                          if (columnEventsEventsRecord
+                                                                  .statut ==
+                                                              true)
+                                                            Container(
+                                                              width: 20.0,
+                                                              height: 20.0,
+                                                              decoration:
+                                                                  BoxDecoration(
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .success,
+                                                                shape: BoxShape
+                                                                    .circle,
+                                                              ),
+                                                            ),
+                                                          if (columnEventsEventsRecord
+                                                                  .statut ==
+                                                              false)
+                                                            Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           5.0,
                                                                           0.0,
                                                                           0.0,
                                                                           0.0),
-                                                                  child:
-                                                                      Container(
-                                                                    width: 20.0,
-                                                                    height:
-                                                                        20.0,
-                                                                    decoration:
-                                                                        BoxDecoration(
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .error,
-                                                                      shape: BoxShape
-                                                                          .circle,
-                                                                    ),
-                                                                  ),
+                                                              child: Container(
+                                                                width: 20.0,
+                                                                height: 20.0,
+                                                                decoration:
+                                                                    BoxDecoration(
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .error,
+                                                                  shape: BoxShape
+                                                                      .circle,
                                                                 ),
-                                                            ],
-                                                          ),
-                                                        ),
-                                                        Text(
-                                                          dateTimeFormat(
-                                                              "d/M/y",
-                                                              columnEventsEventsRecord
-                                                                  .date!),
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Poppins',
-                                                                letterSpacing:
-                                                                    0.0,
                                                               ),
-                                                        ),
-                                                        Padding(
-                                                          padding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      3.0,
-                                                                      0.0,
-                                                                      3.0,
-                                                                      0.0),
-                                                          child: Text(
-                                                            '-',
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
+                                                            ),
+                                                        ],
+                                                      ),
+                                                    ),
+                                                    Text(
+                                                      dateTimeFormat(
+                                                          "d/M/y",
+                                                          columnEventsEventsRecord
+                                                              .date!),
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Poppins',
+                                                            letterSpacing: 0.0,
+                                                          ),
+                                                    ),
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  3.0,
+                                                                  0.0,
+                                                                  3.0,
+                                                                  0.0),
+                                                      child: Text(
+                                                        '-',
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
@@ -1300,38 +1303,37 @@ class _ListEventsWidgetState extends State<ListEventsWidget> {
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),
+                                                      ),
+                                                    ),
+                                                    Text(
+                                                      valueOrDefault<String>(
+                                                        columnEventsEventsRecord
+                                                            .hour
+                                                            .toString(),
+                                                        '00',
+                                                      ),
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Poppins',
+                                                            letterSpacing: 0.0,
                                                           ),
-                                                        ),
-                                                        Text(
-                                                          valueOrDefault<
-                                                              String>(
-                                                            columnEventsEventsRecord
-                                                                .hour
-                                                                .toString(),
-                                                            '00',
-                                                          ),
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Poppins',
-                                                                letterSpacing:
-                                                                    0.0,
-                                                              ),
-                                                        ),
-                                                        Padding(
-                                                          padding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      2.0,
-                                                                      0.0,
-                                                                      2.0,
-                                                                      0.0),
-                                                          child: Text(
-                                                            ':',
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
+                                                    ),
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  2.0,
+                                                                  0.0,
+                                                                  2.0,
+                                                                  0.0),
+                                                      child: Text(
+                                                        ':',
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
@@ -1339,9 +1341,7 @@ class _ListEventsWidgetState extends State<ListEventsWidget> {
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),
-                                                          ),
-                                                        ),
-                                                      ],
+                                                      ),
                                                     ),
                                                     Text(
                                                       valueOrDefault<String>(

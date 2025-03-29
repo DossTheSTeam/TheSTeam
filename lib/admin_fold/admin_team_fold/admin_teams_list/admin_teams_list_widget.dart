@@ -1,4 +1,3 @@
-import '';
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
@@ -739,9 +738,18 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                             FormFieldController<String>(
                                           _model.dropLigueMecaValue1 ??= '',
                                         ),
-                                        options: List<String>.from(
-                                            ['formule.1', 'moto.gp']),
-                                        optionLabels: ['Formule 1', 'Moto GP'],
+                                        options: List<String>.from([
+                                          'formule.1',
+                                          'moto.gp',
+                                          'world.superbike',
+                                          'mx.gp'
+                                        ]),
+                                        optionLabels: [
+                                          'Formule 1',
+                                          'Moto GP',
+                                          'World Superbike',
+                                          'MX GP'
+                                        ],
                                         onChanged: (val) async {
                                           safeSetState(() =>
                                               _model.dropLigueMecaValue1 = val);
@@ -1396,11 +1404,17 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                                 FormFieldController<String>(
                                               _model.dropLigueMecaValue2 ??= '',
                                             ),
-                                            options: List<String>.from(
-                                                ['formule.1', 'moto.gp']),
+                                            options: List<String>.from([
+                                              'formule.1',
+                                              'moto.gp',
+                                              'world.superbike',
+                                              'mx.gp'
+                                            ]),
                                             optionLabels: [
                                               'Formule 1',
-                                              'Moto GP'
+                                              'Moto GP',
+                                              'World Superbike',
+                                              'MX GP'
                                             ],
                                             onChanged: (val) => safeSetState(
                                                 () => _model

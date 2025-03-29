@@ -903,89 +903,87 @@ class _EventPageAdd3BetWidgetState extends State<EventPageAdd3BetWidget> {
                                                                 (eventPageAdd3BetEventsRecord
                                                                         .leagueValue !=
                                                                     'conference.league'))
-                                                              Padding(
-                                                                padding:
-                                                                    EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            5.0,
-                                                                            0.0),
-                                                                child: FutureBuilder<
-                                                                    List<
-                                                                        TeamsRecord>>(
-                                                                  future:
-                                                                      queryTeamsRecordOnce(
-                                                                    queryBuilder: (teamsRecord) =>
-                                                                        teamsRecord
-                                                                            .where(
-                                                                              'league_value',
-                                                                              isEqualTo: contDomTeamsRecord.leagueValue,
-                                                                            )
-                                                                            .orderBy('points',
-                                                                                descending: true),
-                                                                  ),
-                                                                  builder: (context,
-                                                                      snapshot) {
-                                                                    // Customize what your widget looks like when it's loading.
-                                                                    if (!snapshot
-                                                                        .hasData) {
-                                                                      return Center(
+                                                              FutureBuilder<
+                                                                  List<
+                                                                      TeamsRecord>>(
+                                                                future:
+                                                                    queryTeamsRecordOnce(
+                                                                  queryBuilder: (teamsRecord) =>
+                                                                      teamsRecord
+                                                                          .where(
+                                                                            'league_value',
+                                                                            isEqualTo:
+                                                                                contDomTeamsRecord.leagueValue,
+                                                                          )
+                                                                          .orderBy(
+                                                                              'points',
+                                                                              descending: true),
+                                                                ),
+                                                                builder: (context,
+                                                                    snapshot) {
+                                                                  // Customize what your widget looks like when it's loading.
+                                                                  if (!snapshot
+                                                                      .hasData) {
+                                                                    return Center(
+                                                                      child:
+                                                                          SizedBox(
+                                                                        width:
+                                                                            50.0,
+                                                                        height:
+                                                                            50.0,
                                                                         child:
-                                                                            SizedBox(
-                                                                          width:
-                                                                              50.0,
-                                                                          height:
-                                                                              50.0,
-                                                                          child:
-                                                                              CircularProgressIndicator(
-                                                                            valueColor:
-                                                                                AlwaysStoppedAnimation<Color>(
-                                                                              FlutterFlowTheme.of(context).accent4,
-                                                                            ),
+                                                                            CircularProgressIndicator(
+                                                                          valueColor:
+                                                                              AlwaysStoppedAnimation<Color>(
+                                                                            FlutterFlowTheme.of(context).accent4,
                                                                           ),
                                                                         ),
-                                                                      );
-                                                                    }
-                                                                    List<TeamsRecord>
-                                                                        rowTeamsRecordList =
-                                                                        snapshot
-                                                                            .data!;
-
-                                                                    return Row(
-                                                                      mainAxisSize:
-                                                                          MainAxisSize
-                                                                              .max,
-                                                                      mainAxisAlignment:
-                                                                          MainAxisAlignment
-                                                                              .end,
-                                                                      children: List.generate(
-                                                                          rowTeamsRecordList
-                                                                              .length,
-                                                                          (rowIndex) {
-                                                                        final rowTeamsRecord =
-                                                                            rowTeamsRecordList[rowIndex];
-                                                                        return Visibility(
-                                                                          visible:
-                                                                              contDomTeamsRecord.reference == rowTeamsRecord.reference,
-                                                                          child:
-                                                                              Text(
-                                                                            valueOrDefault<String>(
-                                                                              functions.zeroTo1(rowIndex).toString(),
-                                                                              '1',
-                                                                            ),
-                                                                            textAlign:
-                                                                                TextAlign.center,
-                                                                            style: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                  fontFamily: 'Poppins',
-                                                                                  letterSpacing: 0.0,
-                                                                                ),
-                                                                          ),
-                                                                        );
-                                                                      }),
+                                                                      ),
                                                                     );
-                                                                  },
-                                                                ),
+                                                                  }
+                                                                  List<TeamsRecord>
+                                                                      rowTeamsRecordList =
+                                                                      snapshot
+                                                                          .data!;
+
+                                                                  return Row(
+                                                                    mainAxisSize:
+                                                                        MainAxisSize
+                                                                            .max,
+                                                                    mainAxisAlignment:
+                                                                        MainAxisAlignment
+                                                                            .end,
+                                                                    children: List.generate(
+                                                                        rowTeamsRecordList
+                                                                            .length,
+                                                                        (rowIndex) {
+                                                                      final rowTeamsRecord =
+                                                                          rowTeamsRecordList[
+                                                                              rowIndex];
+                                                                      return Visibility(
+                                                                        visible:
+                                                                            contDomTeamsRecord.reference ==
+                                                                                rowTeamsRecord.reference,
+                                                                        child:
+                                                                            Text(
+                                                                          valueOrDefault<
+                                                                              String>(
+                                                                            functions.zeroTo1(rowIndex).toString(),
+                                                                            '1',
+                                                                          ),
+                                                                          textAlign:
+                                                                              TextAlign.center,
+                                                                          style: FlutterFlowTheme.of(context)
+                                                                              .labelMedium
+                                                                              .override(
+                                                                                fontFamily: 'Poppins',
+                                                                                letterSpacing: 0.0,
+                                                                              ),
+                                                                        ),
+                                                                      );
+                                                                    }),
+                                                                  );
+                                                                },
                                                               ),
                                                             if ((eventPageAdd3BetEventsRecord.leagueValue == 'champions.league') ||
                                                                 (eventPageAdd3BetEventsRecord
@@ -994,90 +992,88 @@ class _EventPageAdd3BetWidgetState extends State<EventPageAdd3BetWidget> {
                                                                 (eventPageAdd3BetEventsRecord
                                                                         .leagueValue ==
                                                                     'conference.league'))
-                                                              Padding(
-                                                                padding:
-                                                                    EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            5.0,
-                                                                            0.0),
-                                                                child: FutureBuilder<
-                                                                    List<
-                                                                        TeamsRecord>>(
-                                                                  future:
-                                                                      queryTeamsRecordOnce(
-                                                                    queryBuilder: (teamsRecord) =>
-                                                                        teamsRecord
-                                                                            .where(
-                                                                              'additional_league',
-                                                                              isEqualTo: eventPageAdd3BetEventsRecord.leagueValue,
-                                                                            )
-                                                                            .orderBy('points_cup',
-                                                                                descending: true),
-                                                                    limit: 30,
-                                                                  ),
-                                                                  builder: (context,
-                                                                      snapshot) {
-                                                                    // Customize what your widget looks like when it's loading.
-                                                                    if (!snapshot
-                                                                        .hasData) {
-                                                                      return Center(
+                                                              FutureBuilder<
+                                                                  List<
+                                                                      TeamsRecord>>(
+                                                                future:
+                                                                    queryTeamsRecordOnce(
+                                                                  queryBuilder: (teamsRecord) =>
+                                                                      teamsRecord
+                                                                          .where(
+                                                                            'additional_league',
+                                                                            isEqualTo:
+                                                                                eventPageAdd3BetEventsRecord.leagueValue,
+                                                                          )
+                                                                          .orderBy(
+                                                                              'points_cup',
+                                                                              descending: true),
+                                                                  limit: 30,
+                                                                ),
+                                                                builder: (context,
+                                                                    snapshot) {
+                                                                  // Customize what your widget looks like when it's loading.
+                                                                  if (!snapshot
+                                                                      .hasData) {
+                                                                    return Center(
+                                                                      child:
+                                                                          SizedBox(
+                                                                        width:
+                                                                            50.0,
+                                                                        height:
+                                                                            50.0,
                                                                         child:
-                                                                            SizedBox(
-                                                                          width:
-                                                                              50.0,
-                                                                          height:
-                                                                              50.0,
-                                                                          child:
-                                                                              CircularProgressIndicator(
-                                                                            valueColor:
-                                                                                AlwaysStoppedAnimation<Color>(
-                                                                              FlutterFlowTheme.of(context).accent4,
-                                                                            ),
+                                                                            CircularProgressIndicator(
+                                                                          valueColor:
+                                                                              AlwaysStoppedAnimation<Color>(
+                                                                            FlutterFlowTheme.of(context).accent4,
                                                                           ),
                                                                         ),
-                                                                      );
-                                                                    }
-                                                                    List<TeamsRecord>
-                                                                        rowTeamsRecordList =
-                                                                        snapshot
-                                                                            .data!;
-
-                                                                    return Row(
-                                                                      mainAxisSize:
-                                                                          MainAxisSize
-                                                                              .max,
-                                                                      mainAxisAlignment:
-                                                                          MainAxisAlignment
-                                                                              .end,
-                                                                      children: List.generate(
-                                                                          rowTeamsRecordList
-                                                                              .length,
-                                                                          (rowIndex) {
-                                                                        final rowTeamsRecord =
-                                                                            rowTeamsRecordList[rowIndex];
-                                                                        return Visibility(
-                                                                          visible:
-                                                                              contDomTeamsRecord.reference == rowTeamsRecord.reference,
-                                                                          child:
-                                                                              Text(
-                                                                            valueOrDefault<String>(
-                                                                              functions.zeroTo1(rowIndex).toString(),
-                                                                              '1',
-                                                                            ),
-                                                                            textAlign:
-                                                                                TextAlign.center,
-                                                                            style: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                  fontFamily: 'Poppins',
-                                                                                  letterSpacing: 0.0,
-                                                                                ),
-                                                                          ),
-                                                                        );
-                                                                      }),
+                                                                      ),
                                                                     );
-                                                                  },
-                                                                ),
+                                                                  }
+                                                                  List<TeamsRecord>
+                                                                      rowTeamsRecordList =
+                                                                      snapshot
+                                                                          .data!;
+
+                                                                  return Row(
+                                                                    mainAxisSize:
+                                                                        MainAxisSize
+                                                                            .max,
+                                                                    mainAxisAlignment:
+                                                                        MainAxisAlignment
+                                                                            .end,
+                                                                    children: List.generate(
+                                                                        rowTeamsRecordList
+                                                                            .length,
+                                                                        (rowIndex) {
+                                                                      final rowTeamsRecord =
+                                                                          rowTeamsRecordList[
+                                                                              rowIndex];
+                                                                      return Visibility(
+                                                                        visible:
+                                                                            contDomTeamsRecord.reference ==
+                                                                                rowTeamsRecord.reference,
+                                                                        child:
+                                                                            Text(
+                                                                          valueOrDefault<
+                                                                              String>(
+                                                                            functions.zeroTo1(rowIndex).toString(),
+                                                                            '1',
+                                                                          ),
+                                                                          textAlign:
+                                                                              TextAlign.center,
+                                                                          style: FlutterFlowTheme.of(context)
+                                                                              .labelMedium
+                                                                              .override(
+                                                                                fontFamily: 'Poppins',
+                                                                                letterSpacing: 0.0,
+                                                                              ),
+                                                                        ),
+                                                                      );
+                                                                    }),
+                                                                  );
+                                                                },
                                                               ),
                                                           ],
                                                         ),

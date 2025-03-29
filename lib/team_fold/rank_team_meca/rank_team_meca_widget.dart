@@ -687,9 +687,15 @@ class _RankTeamMecaWidgetState extends State<RankTeamMecaWidget> {
                                                                 ),
                                                       ),
                                                     ),
-                                                  if (containerTeamsRecord
-                                                          .leagueValue ==
-                                                      'moto.gp')
+                                                  if ((containerTeamsRecord
+                                                              .leagueValue ==
+                                                          'moto.gp') ||
+                                                      (containerTeamsRecord
+                                                              .leagueValue ==
+                                                          'mx.gp') ||
+                                                      (containerTeamsRecord
+                                                              .leagueValue ==
+                                                          'world.superbike'))
                                                     Align(
                                                       alignment:
                                                           AlignmentDirectional(

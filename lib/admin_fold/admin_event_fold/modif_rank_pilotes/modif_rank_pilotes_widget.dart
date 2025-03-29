@@ -495,8 +495,7 @@ class _ModifRankPilotesWidgetState extends State<ModifRankPilotesWidget> {
                           FlutterFlowCalendar(
                             color: FlutterFlowTheme.of(context)
                                 .secondaryBackground,
-                            iconColor:
-                                FlutterFlowTheme.of(context).primaryBackground,
+                            iconColor: FlutterFlowTheme.of(context).primaryText,
                             weekFormat: true,
                             weekStartsMonday: true,
                             rowHeight: 40.0,
@@ -801,9 +800,15 @@ class _ModifRankPilotesWidgetState extends State<ModifRankPilotesWidget> {
                                                             size: 24.0,
                                                           ),
                                                         ),
-                                                      if (modifRankPilotesEventsRecord
-                                                              .leagueValue ==
-                                                          'moto.gp')
+                                                      if ((modifRankPilotesEventsRecord
+                                                                  .leagueValue ==
+                                                              'moto.gp') ||
+                                                          (modifRankPilotesEventsRecord
+                                                                  .leagueValue ==
+                                                              'world.superbike') ||
+                                                          (modifRankPilotesEventsRecord
+                                                                  .leagueValue ==
+                                                              'mx.gp'))
                                                         InkWell(
                                                           splashColor: Colors
                                                               .transparent,
@@ -1090,9 +1095,15 @@ class _ModifRankPilotesWidgetState extends State<ModifRankPilotesWidget> {
                                                             size: 24.0,
                                                           ),
                                                         ),
-                                                      if (modifRankPilotesEventsRecord
-                                                              .leagueValue ==
-                                                          'moto.gp')
+                                                      if ((modifRankPilotesEventsRecord
+                                                                  .leagueValue ==
+                                                              'moto.gp') ||
+                                                          (modifRankPilotesEventsRecord
+                                                                  .leagueValue ==
+                                                              'world.superbike') ||
+                                                          (modifRankPilotesEventsRecord
+                                                                  .leagueValue ==
+                                                              'mx.gp'))
                                                         InkWell(
                                                           splashColor: Colors
                                                               .transparent,
@@ -1376,9 +1387,15 @@ class _ModifRankPilotesWidgetState extends State<ModifRankPilotesWidget> {
                                                             size: 24.0,
                                                           ),
                                                         ),
-                                                      if (modifRankPilotesEventsRecord
-                                                              .leagueValue ==
-                                                          'moto.gp')
+                                                      if ((modifRankPilotesEventsRecord
+                                                                  .leagueValue ==
+                                                              'moto.gp') ||
+                                                          (modifRankPilotesEventsRecord
+                                                                  .leagueValue ==
+                                                              'world.superbike') ||
+                                                          (modifRankPilotesEventsRecord
+                                                                  .leagueValue ==
+                                                              'mx.gp'))
                                                         InkWell(
                                                           splashColor: Colors
                                                               .transparent,
@@ -1659,9 +1676,15 @@ class _ModifRankPilotesWidgetState extends State<ModifRankPilotesWidget> {
                                                             size: 24.0,
                                                           ),
                                                         ),
-                                                      if (modifRankPilotesEventsRecord
-                                                              .leagueValue ==
-                                                          'moto.gp')
+                                                      if ((modifRankPilotesEventsRecord
+                                                                  .leagueValue ==
+                                                              'moto.gp') ||
+                                                          (modifRankPilotesEventsRecord
+                                                                  .leagueValue ==
+                                                              'world.superbike') ||
+                                                          (modifRankPilotesEventsRecord
+                                                                  .leagueValue ==
+                                                              'mx.gp'))
                                                         InkWell(
                                                           splashColor: Colors
                                                               .transparent,
@@ -1939,9 +1962,15 @@ class _ModifRankPilotesWidgetState extends State<ModifRankPilotesWidget> {
                                                             size: 24.0,
                                                           ),
                                                         ),
-                                                      if (modifRankPilotesEventsRecord
-                                                              .leagueValue ==
-                                                          'moto.gp')
+                                                      if ((modifRankPilotesEventsRecord
+                                                                  .leagueValue ==
+                                                              'moto.gp') ||
+                                                          (modifRankPilotesEventsRecord
+                                                                  .leagueValue ==
+                                                              'world.superbike') ||
+                                                          (modifRankPilotesEventsRecord
+                                                                  .leagueValue ==
+                                                              'mx.gp'))
                                                         InkWell(
                                                           splashColor: Colors
                                                               .transparent,
@@ -2220,9 +2249,15 @@ class _ModifRankPilotesWidgetState extends State<ModifRankPilotesWidget> {
                                                             size: 24.0,
                                                           ),
                                                         ),
-                                                      if (modifRankPilotesEventsRecord
-                                                              .leagueValue ==
-                                                          'moto.gp')
+                                                      if ((modifRankPilotesEventsRecord
+                                                                  .leagueValue ==
+                                                              'moto.gp') ||
+                                                          (modifRankPilotesEventsRecord
+                                                                  .leagueValue ==
+                                                              'world.superbike') ||
+                                                          (modifRankPilotesEventsRecord
+                                                                  .leagueValue ==
+                                                              'mx.gp'))
                                                         InkWell(
                                                           splashColor: Colors
                                                               .transparent,
@@ -2501,9 +2536,15 @@ class _ModifRankPilotesWidgetState extends State<ModifRankPilotesWidget> {
                                                             size: 24.0,
                                                           ),
                                                         ),
-                                                      if (modifRankPilotesEventsRecord
-                                                              .leagueValue ==
-                                                          'moto.gp')
+                                                      if ((modifRankPilotesEventsRecord
+                                                                  .leagueValue ==
+                                                              'moto.gp') ||
+                                                          (modifRankPilotesEventsRecord
+                                                                  .leagueValue ==
+                                                              'world.superbike') ||
+                                                          (modifRankPilotesEventsRecord
+                                                                  .leagueValue ==
+                                                              'mx.gp'))
                                                         InkWell(
                                                           splashColor: Colors
                                                               .transparent,
@@ -2783,9 +2824,15 @@ class _ModifRankPilotesWidgetState extends State<ModifRankPilotesWidget> {
                                                             size: 24.0,
                                                           ),
                                                         ),
-                                                      if (modifRankPilotesEventsRecord
-                                                              .leagueValue ==
-                                                          'moto.gp')
+                                                      if ((modifRankPilotesEventsRecord
+                                                                  .leagueValue ==
+                                                              'moto.gp') ||
+                                                          (modifRankPilotesEventsRecord
+                                                                  .leagueValue ==
+                                                              'world.superbike') ||
+                                                          (modifRankPilotesEventsRecord
+                                                                  .leagueValue ==
+                                                              'mx.gp'))
                                                         InkWell(
                                                           splashColor: Colors
                                                               .transparent,
@@ -3065,9 +3112,15 @@ class _ModifRankPilotesWidgetState extends State<ModifRankPilotesWidget> {
                                                             size: 24.0,
                                                           ),
                                                         ),
-                                                      if (modifRankPilotesEventsRecord
-                                                              .leagueValue ==
-                                                          'moto.gp')
+                                                      if ((modifRankPilotesEventsRecord
+                                                                  .leagueValue ==
+                                                              'moto.gp') ||
+                                                          (modifRankPilotesEventsRecord
+                                                                  .leagueValue ==
+                                                              'world.superbike') ||
+                                                          (modifRankPilotesEventsRecord
+                                                                  .leagueValue ==
+                                                              'mx.gp'))
                                                         InkWell(
                                                           splashColor: Colors
                                                               .transparent,
@@ -3347,9 +3400,15 @@ class _ModifRankPilotesWidgetState extends State<ModifRankPilotesWidget> {
                                                             size: 24.0,
                                                           ),
                                                         ),
-                                                      if (modifRankPilotesEventsRecord
-                                                              .leagueValue ==
-                                                          'moto.gp')
+                                                      if ((modifRankPilotesEventsRecord
+                                                                  .leagueValue ==
+                                                              'moto.gp') ||
+                                                          (modifRankPilotesEventsRecord
+                                                                  .leagueValue ==
+                                                              'world.superbike') ||
+                                                          (modifRankPilotesEventsRecord
+                                                                  .leagueValue ==
+                                                              'mx.gp'))
                                                         InkWell(
                                                           splashColor: Colors
                                                               .transparent,
@@ -3586,9 +3645,15 @@ class _ModifRankPilotesWidgetState extends State<ModifRankPilotesWidget> {
                                                           ),
                                                         ),
                                                       ),
-                                                      if (modifRankPilotesEventsRecord
-                                                              .leagueValue ==
-                                                          'moto.gp')
+                                                      if ((modifRankPilotesEventsRecord
+                                                                  .leagueValue ==
+                                                              'moto.gp') ||
+                                                          (modifRankPilotesEventsRecord
+                                                                  .leagueValue ==
+                                                              'world.superbike') ||
+                                                          (modifRankPilotesEventsRecord
+                                                                  .leagueValue ==
+                                                              'mx.gp'))
                                                         InkWell(
                                                           splashColor: Colors
                                                               .transparent,
@@ -3825,9 +3890,15 @@ class _ModifRankPilotesWidgetState extends State<ModifRankPilotesWidget> {
                                                           ),
                                                         ),
                                                       ),
-                                                      if (modifRankPilotesEventsRecord
-                                                              .leagueValue ==
-                                                          'moto.gp')
+                                                      if ((modifRankPilotesEventsRecord
+                                                                  .leagueValue ==
+                                                              'moto.gp') ||
+                                                          (modifRankPilotesEventsRecord
+                                                                  .leagueValue ==
+                                                              'world.superbike') ||
+                                                          (modifRankPilotesEventsRecord
+                                                                  .leagueValue ==
+                                                              'mx.gp'))
                                                         InkWell(
                                                           splashColor: Colors
                                                               .transparent,
@@ -4064,9 +4135,15 @@ class _ModifRankPilotesWidgetState extends State<ModifRankPilotesWidget> {
                                                           ),
                                                         ),
                                                       ),
-                                                      if (modifRankPilotesEventsRecord
-                                                              .leagueValue ==
-                                                          'moto.gp')
+                                                      if ((modifRankPilotesEventsRecord
+                                                                  .leagueValue ==
+                                                              'moto.gp') ||
+                                                          (modifRankPilotesEventsRecord
+                                                                  .leagueValue ==
+                                                              'world.superbike') ||
+                                                          (modifRankPilotesEventsRecord
+                                                                  .leagueValue ==
+                                                              'mx.gp'))
                                                         InkWell(
                                                           splashColor: Colors
                                                               .transparent,
@@ -4303,9 +4380,15 @@ class _ModifRankPilotesWidgetState extends State<ModifRankPilotesWidget> {
                                                           ),
                                                         ),
                                                       ),
-                                                      if (modifRankPilotesEventsRecord
-                                                              .leagueValue ==
-                                                          'moto.gp')
+                                                      if ((modifRankPilotesEventsRecord
+                                                                  .leagueValue ==
+                                                              'moto.gp') ||
+                                                          (modifRankPilotesEventsRecord
+                                                                  .leagueValue ==
+                                                              'world.superbike') ||
+                                                          (modifRankPilotesEventsRecord
+                                                                  .leagueValue ==
+                                                              'mx.gp'))
                                                         InkWell(
                                                           splashColor: Colors
                                                               .transparent,
@@ -4542,9 +4625,15 @@ class _ModifRankPilotesWidgetState extends State<ModifRankPilotesWidget> {
                                                           ),
                                                         ),
                                                       ),
-                                                      if (modifRankPilotesEventsRecord
-                                                              .leagueValue ==
-                                                          'moto.gp')
+                                                      if ((modifRankPilotesEventsRecord
+                                                                  .leagueValue ==
+                                                              'moto.gp') ||
+                                                          (modifRankPilotesEventsRecord
+                                                                  .leagueValue ==
+                                                              'world.superbike') ||
+                                                          (modifRankPilotesEventsRecord
+                                                                  .leagueValue ==
+                                                              'mx.gp'))
                                                         InkWell(
                                                           splashColor: Colors
                                                               .transparent,

@@ -1,4 +1,3 @@
-import '';
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_calendar.dart';
@@ -143,8 +142,7 @@ class _AdminRankPageWidgetState extends State<AdminRankPageWidget> {
                           FlutterFlowCalendar(
                             color: FlutterFlowTheme.of(context)
                                 .secondaryBackground,
-                            iconColor:
-                                FlutterFlowTheme.of(context).primaryBackground,
+                            iconColor: FlutterFlowTheme.of(context).primaryText,
                             weekFormat: true,
                             weekStartsMonday: true,
                             rowHeight: 40.0,

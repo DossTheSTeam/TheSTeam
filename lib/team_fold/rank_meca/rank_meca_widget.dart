@@ -144,9 +144,18 @@ class _RankMecaWidgetState extends State<RankMecaWidget> {
                                         FormFieldController<String>(
                                   _model.dropLigueMecaValue ??= '',
                                 ),
-                                options:
-                                    List<String>.from(['formule.1', 'moto.gp']),
-                                optionLabels: ['Formule 1', 'Moto GP'],
+                                options: List<String>.from([
+                                  'formule.1',
+                                  'moto.gp',
+                                  'world.superbike',
+                                  'mx.gp'
+                                ]),
+                                optionLabels: [
+                                  'Formule 1',
+                                  'Moto GP',
+                                  'World Superbike',
+                                  'MX GP'
+                                ],
                                 onChanged: (val) => safeSetState(
                                     () => _model.dropLigueMecaValue = val),
                                 width: 180.0,
@@ -387,8 +396,12 @@ class _RankMecaWidgetState extends State<RankMecaWidget> {
                                                         ),
                                                   ),
                                                 ),
-                                              if (_model.dropLigueMecaValue ==
-                                                  'moto.gp')
+                                              if ((_model.dropLigueMecaValue ==
+                                                      'moto.gp') &&
+                                                  (_model.dropLigueMecaValue ==
+                                                      'mx.gp') &&
+                                                  (_model.dropLigueMecaValue ==
+                                                      'world.superbike'))
                                                 Align(
                                                   alignment:
                                                       AlignmentDirectional(

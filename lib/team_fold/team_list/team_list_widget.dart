@@ -1,4 +1,3 @@
-import '';
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
@@ -1354,11 +1353,15 @@ class _TeamListWidgetState extends State<TeamListWidget> {
                                                 options: List<String>.from([
                                                   'formule.1',
                                                   'moto.gp',
+                                                  'world.superbike',
+                                                  'mx.gp',
                                                   ''
                                                 ]),
                                                 optionLabels: [
                                                   'Formule 1',
                                                   'Moto GP',
+                                                  'World Superbike',
+                                                  'MX GP',
                                                   'Sports Méca.'
                                                 ],
                                                 onChanged: (val) async {

@@ -472,8 +472,7 @@ class _ListEventsAdminWidgetState extends State<ListEventsAdminWidget> {
                       ),
                       FlutterFlowCalendar(
                         color: FlutterFlowTheme.of(context).secondaryBackground,
-                        iconColor:
-                            FlutterFlowTheme.of(context).primaryBackground,
+                        iconColor: FlutterFlowTheme.of(context).primaryText,
                         weekFormat: true,
                         weekStartsMonday: true,
                         rowHeight: 40.0,
