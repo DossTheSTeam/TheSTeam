@@ -14,14 +14,14 @@ class ListEventsModel extends FlutterFlowModel<ListEventsWidget> {
 
   ///  State fields for stateful widgets in this page.
 
-  // State field(s) for Calendar widget.
-  DateTimeRange? calendarSelectedDay;
   // State field(s) for DropSport widget.
   String? dropSportValue;
   FormFieldController<String>? dropSportValueController;
   // State field(s) for DropESport widget.
   String? dropESportValue;
   FormFieldController<String>? dropESportValueController;
+  // State field(s) for Calendar widget.
+  DateTimeRange? calendarSelectedDay;
 
   @override
   void initState(BuildContext context) {

@@ -286,6 +286,11 @@ class UsersRecord extends FirestoreRecord {
   DocumentReference? get audioTeam => _audioTeam;
   bool hasAudioTeam() => _audioTeam != null;
 
+  // "enterprise" field.
+  String? _enterprise;
+  String get enterprise => _enterprise ?? '';
+  bool hasEnterprise() => _enterprise != null;
+
   void _initializeFields() {
     _email = snapshotData['email'] as String?;
     _displayName = snapshotData['display_name'] as String?;
@@ -341,6 +346,7 @@ class UsersRecord extends FirestoreRecord {
     _adult = snapshotData['adult'] as bool?;
     _player = snapshotData['player'] as bool?;
     _audioTeam = snapshotData['audio_team'] as DocumentReference?;
+    _enterprise = snapshotData['enterprise'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -428,6 +434,7 @@ Map<String, dynamic> createUsersRecordData({
   bool? adult,
   bool? player,
   DocumentReference? audioTeam,
+  String? enterprise,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -482,6 +489,7 @@ Map<String, dynamic> createUsersRecordData({
       'adult': adult,
       'player': player,
       'audio_team': audioTeam,
+      'enterprise': enterprise,
     }.withoutNulls,
   );
 
@@ -547,7 +555,8 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e1?.dateofBirth == e2?.dateofBirth &&
         e1?.adult == e2?.adult &&
         e1?.player == e2?.player &&
-        e1?.audioTeam == e2?.audioTeam;
+        e1?.audioTeam == e2?.audioTeam &&
+        e1?.enterprise == e2?.enterprise;
   }
 
   @override
@@ -605,7 +614,8 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e?.dateofBirth,
         e?.adult,
         e?.player,
-        e?.audioTeam
+        e?.audioTeam,
+        e?.enterprise
       ]);
 
   @override

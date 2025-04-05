@@ -1645,7 +1645,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                               valueOrDefault<String>(
                                                 publicProfilPageUsersRecord
                                                     .rankValue,
-                                                'pro',
+                                                'Non participant',
                                               ),
                                               style: FlutterFlowTheme.of(
                                                       context)
@@ -1665,7 +1665,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                                   valueOrDefault<String>(
                                                     publicProfilPageUsersRecord
                                                         .divisionValue,
-                                                    '2',
+                                                    '#',
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -2154,7 +2154,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                               valueOrDefault<String>(
                                                 publicProfilPageUsersRecord
                                                     .erankValue,
-                                                'pro',
+                                                'Non participant',
                                               ),
                                               style: FlutterFlowTheme.of(
                                                       context)
@@ -2174,7 +2174,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                                   valueOrDefault<String>(
                                                     publicProfilPageUsersRecord
                                                         .edivisionValue,
-                                                    '2',
+                                                    '#',
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)

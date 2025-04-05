@@ -1113,9 +1113,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: ListSurveysWidget.routeName,
-          path: ListSurveysWidget.routePath,
-          builder: (context, params) => ListSurveysWidget(
+          name: ListSurveysNewsWidget.routeName,
+          path: ListSurveysNewsWidget.routePath,
+          builder: (context, params) => ListSurveysNewsWidget(
             teamRef: params.getParam(
               'teamRef',
               ParamType.DocumentReference,
@@ -1251,6 +1251,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               collectionNamePath: ['events'],
             ),
           ),
+        ),
+        FFRoute(
+          name: RankPageMyEnterpriseWidget.routeName,
+          path: RankPageMyEnterpriseWidget.routePath,
+          builder: (context, params) => RankPageMyEnterpriseWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],

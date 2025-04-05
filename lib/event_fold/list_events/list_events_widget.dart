@@ -606,161 +606,357 @@ class _ListEventsWidgetState extends State<ListEventsWidget> {
                           alignment: AlignmentDirectional(0.0, 0.0),
                           child: Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 0.0, 5.0),
+                                0.0, 0.0, 5.0, 5.0),
                             child: AuthUserStreamWidget(
                               builder: (context) => Row(
                                 mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.center,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        36.0, 0.0, 0.0, 0.0),
-                                    child: Text(
-                                      'A venir',
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily: 'Poppins',
-                                            color: FlutterFlowTheme.of(context)
-                                                .success,
-                                            fontSize: 10.0,
-                                            letterSpacing: 0.0,
+                                  Align(
+                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    child: Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 9.0, 0.0, 0.0),
+                                      child: Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          Text(
+                                            'Filtrer les rencontres\npar sports et par dates',
+                                            textAlign: TextAlign.center,
+                                            maxLines: 3,
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Poppins',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryText,
+                                                  fontSize: 10.0,
+                                                  letterSpacing: 0.0,
+                                                ),
                                           ),
+                                        ],
+                                      ),
                                     ),
                                   ),
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        20.0, 0.0, 0.0, 0.0),
-                                    child: Text(
-                                      'En cours/Terminés',
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily: 'Poppins',
-                                            color: FlutterFlowTheme.of(context)
-                                                .error,
-                                            fontSize: 10.0,
-                                            letterSpacing: 0.0,
-                                          ),
-                                    ),
+                                  Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 0.0, 10.0, 0.0),
+                                        child: Text(
+                                          'A venir',
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Poppins',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .success,
+                                                fontSize: 10.0,
+                                                letterSpacing: 0.0,
+                                              ),
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            20.0, 0.0, 0.0, 0.0),
+                                        child: Text(
+                                          'En cours\nTerminés',
+                                          textAlign: TextAlign.center,
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Poppins',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .error,
+                                                fontSize: 10.0,
+                                                letterSpacing: 0.0,
+                                              ),
+                                        ),
+                                      ),
+                                    ],
                                   ),
                                 ],
                               ),
                             ),
                           ),
                         ),
-                      Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 15.0, 0.0),
-                            child: InkWell(
-                              splashColor: Colors.transparent,
-                              focusColor: Colors.transparent,
-                              hoverColor: Colors.transparent,
-                              highlightColor: Colors.transparent,
-                              onTap: () async {
-                                _model.showStatutFilter = false;
-                                safeSetState(() {});
-                              },
-                              child: Container(
-                                width: 45.0,
-                                height: 25.0,
-                                decoration: BoxDecoration(
-                                  color: FlutterFlowTheme.of(context).success,
-                                  boxShadow: [
-                                    BoxShadow(
-                                      blurRadius: 4.0,
-                                      color:
-                                          FlutterFlowTheme.of(context).accent3,
-                                      offset: Offset(
-                                        0.0,
-                                        2.0,
+                      Padding(
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Align(
+                              alignment: AlignmentDirectional(-1.0, 0.0),
+                              child: Column(
+                                mainAxisSize: MainAxisSize.max,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  if (valueOrDefault<bool>(
+                                          currentUserDocument?.esport, false) ==
+                                      false)
+                                    Align(
+                                      alignment:
+                                          AlignmentDirectional(-1.0, 0.0),
+                                      child: AuthUserStreamWidget(
+                                        builder: (context) =>
+                                            SingleChildScrollView(
+                                          scrollDirection: Axis.horizontal,
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              Align(
+                                                alignment: AlignmentDirectional(
+                                                    1.0, 0.0),
+                                                child:
+                                                    FlutterFlowDropDown<String>(
+                                                  controller: _model
+                                                          .dropSportValueController ??=
+                                                      FormFieldController<
+                                                          String>(
+                                                    _model.dropSportValue ??=
+                                                        '',
+                                                  ),
+                                                  options: List<String>.from([
+                                                    'football',
+                                                    'basketball',
+                                                    'tennis',
+                                                    'hockey',
+                                                    'mma',
+                                                    'boxe',
+                                                    'rugby',
+                                                    'sports.meca',
+                                                    ''
+                                                  ]),
+                                                  optionLabels: [
+                                                    'Football',
+                                                    'Basketball',
+                                                    'Tennis',
+                                                    'Hockey',
+                                                    'MMA',
+                                                    'Boxe',
+                                                    'Rugby',
+                                                    'Sports Méca.',
+                                                    'Sports'
+                                                  ],
+                                                  onChanged: (val) async {
+                                                    safeSetState(() => _model
+                                                        .dropSportValue = val);
+                                                    _model.showSportFilter =
+                                                        _model.dropSportValue;
+                                                    safeSetState(() {});
+                                                  },
+                                                  width: 180.0,
+                                                  height: 50.0,
+                                                  textStyle: FlutterFlowTheme
+                                                          .of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                  hintText: 'Sports',
+                                                  icon: Icon(
+                                                    Icons
+                                                        .keyboard_arrow_down_rounded,
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .secondaryText,
+                                                    size: 24.0,
+                                                  ),
+                                                  fillColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .primaryBackground,
+                                                  elevation: 2.0,
+                                                  borderColor:
+                                                      Colors.transparent,
+                                                  borderWidth: 0.0,
+                                                  borderRadius: 8.0,
+                                                  margin: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          12.0, 0.0, 12.0, 0.0),
+                                                  hidesUnderline: true,
+                                                  isOverButton: false,
+                                                  isSearchable: false,
+                                                  isMultiSelect: false,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
                                       ),
-                                    )
-                                  ],
-                                  borderRadius: BorderRadius.circular(25.0),
-                                  shape: BoxShape.rectangle,
-                                ),
+                                    ),
+                                  if (valueOrDefault<bool>(
+                                          currentUserDocument?.esport, false) ==
+                                      true)
+                                    Align(
+                                      alignment: AlignmentDirectional(1.0, 0.0),
+                                      child: AuthUserStreamWidget(
+                                        builder: (context) => Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.start,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            FlutterFlowDropDown<String>(
+                                              controller: _model
+                                                      .dropESportValueController ??=
+                                                  FormFieldController<String>(
+                                                _model.dropESportValue ??= '',
+                                              ),
+                                              options: List<String>.from([
+                                                'esport.football',
+                                                'esport.basketball',
+                                                'esport.war',
+                                                ''
+                                              ]),
+                                              optionLabels: [
+                                                'E Sport Football',
+                                                'E Sport Basketball',
+                                                'E Sport War',
+                                                'E Sports'
+                                              ],
+                                              onChanged: (val) async {
+                                                safeSetState(() => _model
+                                                    .dropESportValue = val);
+                                                _model.showSportFilter =
+                                                    _model.dropESportValue;
+                                                safeSetState(() {});
+                                              },
+                                              width: 180.0,
+                                              height: 40.0,
+                                              textStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                              hintText: 'E Sports',
+                                              icon: Icon(
+                                                Icons
+                                                    .keyboard_arrow_down_rounded,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryText,
+                                                size: 24.0,
+                                              ),
+                                              fillColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryBackground,
+                                              elevation: 2.0,
+                                              borderColor: Colors.transparent,
+                                              borderWidth: 0.0,
+                                              borderRadius: 8.0,
+                                              margin: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      12.0, 0.0, 12.0, 0.0),
+                                              hidesUnderline: true,
+                                              isOverButton: false,
+                                              isSearchable: false,
+                                              isMultiSelect: false,
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                ],
                               ),
                             ),
-                          ),
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                15.0, 0.0, 0.0, 0.0),
-                            child: InkWell(
-                              splashColor: Colors.transparent,
-                              focusColor: Colors.transparent,
-                              hoverColor: Colors.transparent,
-                              highlightColor: Colors.transparent,
-                              onTap: () async {
-                                _model.showStatutFilter = true;
-                                safeSetState(() {});
-                              },
-                              child: Container(
-                                width: 45.0,
-                                height: 25.0,
-                                decoration: BoxDecoration(
-                                  color: FlutterFlowTheme.of(context).error,
-                                  boxShadow: [
-                                    BoxShadow(
-                                      blurRadius: 4.0,
-                                      color:
-                                          FlutterFlowTheme.of(context).accent3,
-                                      offset: Offset(
-                                        0.0,
-                                        2.0,
+                            Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 5.0, 0.0),
+                                  child: InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      _model.showStatutFilter = false;
+                                      safeSetState(() {});
+                                    },
+                                    child: Container(
+                                      width: 45.0,
+                                      height: 25.0,
+                                      decoration: BoxDecoration(
+                                        color: FlutterFlowTheme.of(context)
+                                            .success,
+                                        boxShadow: [
+                                          BoxShadow(
+                                            blurRadius: 4.0,
+                                            color: FlutterFlowTheme.of(context)
+                                                .accent3,
+                                            offset: Offset(
+                                              0.0,
+                                              2.0,
+                                            ),
+                                          )
+                                        ],
+                                        borderRadius:
+                                            BorderRadius.circular(25.0),
+                                        shape: BoxShape.rectangle,
                                       ),
-                                    )
-                                  ],
-                                  borderRadius: BorderRadius.circular(25.0),
-                                  shape: BoxShape.rectangle,
+                                    ),
+                                  ),
                                 ),
-                              ),
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      15.0, 0.0, 0.0, 0.0),
+                                  child: InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      _model.showStatutFilter = true;
+                                      safeSetState(() {});
+                                    },
+                                    child: Container(
+                                      width: 45.0,
+                                      height: 25.0,
+                                      decoration: BoxDecoration(
+                                        color:
+                                            FlutterFlowTheme.of(context).error,
+                                        boxShadow: [
+                                          BoxShadow(
+                                            blurRadius: 4.0,
+                                            color: FlutterFlowTheme.of(context)
+                                                .accent3,
+                                            offset: Offset(
+                                              0.0,
+                                              2.0,
+                                            ),
+                                          )
+                                        ],
+                                        borderRadius:
+                                            BorderRadius.circular(25.0),
+                                        shape: BoxShape.rectangle,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                       Column(
                         mainAxisSize: MainAxisSize.max,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          if (valueOrDefault<bool>(
-                                  currentUserDocument?.helpNav, false) ==
-                              true)
-                            Align(
-                              alignment: AlignmentDirectional(0.0, 0.0),
-                              child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 9.0, 0.0, 0.0),
-                                child: AuthUserStreamWidget(
-                                  builder: (context) => Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Text(
-                                        'Filtrer les rencontres par sports et par dates',
-                                        textAlign: TextAlign.center,
-                                        maxLines: 3,
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily: 'Poppins',
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primaryText,
-                                              fontSize: 10.0,
-                                              letterSpacing: 0.0,
-                                              lineHeight: 1.0,
-                                            ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ),
                           Stack(
                             children: [
                               Align(
@@ -821,224 +1017,6 @@ class _ListEventsWidgetState extends State<ListEventsWidget> {
                                   ),
                                 ),
                               ),
-                              if (valueOrDefault<bool>(
-                                      currentUserDocument?.esport, false) ==
-                                  false)
-                                Align(
-                                  alignment: AlignmentDirectional(-1.0, 0.0),
-                                  child: AuthUserStreamWidget(
-                                    builder: (context) => Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment: MainAxisAlignment.end,
-                                      children: [
-                                        Align(
-                                          alignment:
-                                              AlignmentDirectional(-1.0, 0.0),
-                                          child: Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 5.0, 0.0, 0.0),
-                                            child: SingleChildScrollView(
-                                              scrollDirection: Axis.horizontal,
-                                              child: Row(
-                                                mainAxisSize: MainAxisSize.max,
-                                                children: [
-                                                  Align(
-                                                    alignment:
-                                                        AlignmentDirectional(
-                                                            1.0, 0.0),
-                                                    child: Padding(
-                                                      padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  0.0,
-                                                                  5.0,
-                                                                  86.0,
-                                                                  0.0),
-                                                      child:
-                                                          FlutterFlowDropDown<
-                                                              String>(
-                                                        controller: _model
-                                                                .dropSportValueController ??=
-                                                            FormFieldController<
-                                                                String>(
-                                                          _model.dropSportValue ??=
-                                                              '',
-                                                        ),
-                                                        options:
-                                                            List<String>.from([
-                                                          'football',
-                                                          'basketball',
-                                                          'tennis',
-                                                          'hockey',
-                                                          'mma',
-                                                          'boxe',
-                                                          'rugby',
-                                                          'sports.meca',
-                                                          ''
-                                                        ]),
-                                                        optionLabels: [
-                                                          'Football',
-                                                          'Basketball',
-                                                          'Tennis',
-                                                          'Hockey',
-                                                          'MMA',
-                                                          'Boxe',
-                                                          'Rugby',
-                                                          'Sports Méca.',
-                                                          'Sports'
-                                                        ],
-                                                        onChanged: (val) async {
-                                                          safeSetState(() =>
-                                                              _model.dropSportValue =
-                                                                  val);
-                                                          _model.showSportFilter =
-                                                              _model
-                                                                  .dropSportValue;
-                                                          safeSetState(() {});
-                                                        },
-                                                        width: 180.0,
-                                                        height: 50.0,
-                                                        textStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                ),
-                                                        hintText: 'Sports',
-                                                        icon: Icon(
-                                                          Icons
-                                                              .keyboard_arrow_down_rounded,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryText,
-                                                          size: 24.0,
-                                                        ),
-                                                        fillColor:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primaryBackground,
-                                                        elevation: 2.0,
-                                                        borderColor:
-                                                            Colors.transparent,
-                                                        borderWidth: 0.0,
-                                                        borderRadius: 8.0,
-                                                        margin:
-                                                            EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    12.0,
-                                                                    0.0,
-                                                                    12.0,
-                                                                    0.0),
-                                                        hidesUnderline: true,
-                                                        isOverButton: false,
-                                                        isSearchable: false,
-                                                        isMultiSelect: false,
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              if (valueOrDefault<bool>(
-                                      currentUserDocument?.esport, false) ==
-                                  true)
-                                Align(
-                                  alignment: AlignmentDirectional(1.0, 0.0),
-                                  child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 10.0, 85.0, 0.0),
-                                    child: AuthUserStreamWidget(
-                                      builder: (context) =>
-                                          SingleChildScrollView(
-                                        scrollDirection: Axis.horizontal,
-                                        child: Row(
-                                          mainAxisSize: MainAxisSize.max,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.end,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      0.0, 10.0, 0.0, 0.0),
-                                              child:
-                                                  FlutterFlowDropDown<String>(
-                                                controller: _model
-                                                        .dropESportValueController ??=
-                                                    FormFieldController<String>(
-                                                  _model.dropESportValue ??= '',
-                                                ),
-                                                options: List<String>.from([
-                                                  'esport.football',
-                                                  'esport.basketball',
-                                                  'esport.war',
-                                                  ''
-                                                ]),
-                                                optionLabels: [
-                                                  'E Sport Football',
-                                                  'E Sport Basketball',
-                                                  'E Sport War',
-                                                  'E Sports'
-                                                ],
-                                                onChanged: (val) async {
-                                                  safeSetState(() => _model
-                                                      .dropESportValue = val);
-                                                  _model.showSportFilter =
-                                                      _model.dropESportValue;
-                                                  safeSetState(() {});
-                                                },
-                                                width: 180.0,
-                                                height: 40.0,
-                                                textStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                hintText: 'E Sports',
-                                                icon: Icon(
-                                                  Icons
-                                                      .keyboard_arrow_down_rounded,
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .secondaryText,
-                                                  size: 24.0,
-                                                ),
-                                                fillColor:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryBackground,
-                                                elevation: 2.0,
-                                                borderColor: Colors.transparent,
-                                                borderWidth: 0.0,
-                                                borderRadius: 8.0,
-                                                margin: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        12.0, 0.0, 12.0, 0.0),
-                                                hidesUnderline: true,
-                                                isOverButton: false,
-                                                isSearchable: false,
-                                                isMultiSelect: false,
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ),
                             ],
                           ),
                         ],

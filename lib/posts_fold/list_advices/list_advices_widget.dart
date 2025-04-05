@@ -447,18 +447,69 @@ class _ListAdvicesWidgetState extends State<ListAdvicesWidget> {
                                         ),
                                       ),
                                     ),
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        35.0, 0.0, 0.0, 0.0),
-                                    child: Text(
-                                      'Liste conseils',
-                                      style: FlutterFlowTheme.of(context)
-                                          .headlineMedium
-                                          .override(
-                                            fontFamily: 'Montserrat',
-                                            letterSpacing: 0.0,
+                                  Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Align(
+                                        alignment:
+                                            AlignmentDirectional(0.0, 0.0),
+                                        child: FlutterFlowDropDown<String>(
+                                          controller: _model
+                                                  .dropAdviceValueController ??=
+                                              FormFieldController<String>(null),
+                                          options: List<String>.from([
+                                            'appli.conseils',
+                                            'bets.conseils',
+                                            'news',
+                                            ''
+                                          ]),
+                                          optionLabels: [
+                                            'Conseils sur l\'appli',
+                                            'Conseils de parieur',
+                                            'Actualités',
+                                            'Catégories'
+                                          ],
+                                          onChanged: (val) async {
+                                            safeSetState(() =>
+                                                _model.dropAdviceValue = val);
+                                            _model.showCategories =
+                                                _model.dropAdviceValue;
+                                            safeSetState(() {});
+                                          },
+                                          width: 180.0,
+                                          height: 50.0,
+                                          textStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    fontFamily: 'Poppins',
+                                                    letterSpacing: 0.0,
+                                                  ),
+                                          hintText: 'Actus/Conseils',
+                                          icon: Icon(
+                                            Icons.keyboard_arrow_down_rounded,
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondaryText,
+                                            size: 24.0,
                                           ),
-                                    ),
+                                          fillColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .primaryBackground,
+                                          elevation: 2.0,
+                                          borderColor: Colors.transparent,
+                                          borderWidth: 0.0,
+                                          borderRadius: 8.0,
+                                          margin:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  12.0, 0.0, 12.0, 0.0),
+                                          hidesUnderline: true,
+                                          isOverButton: false,
+                                          isSearchable: false,
+                                          isMultiSelect: false,
+                                        ),
+                                      ),
+                                    ],
                                   ),
                                 ],
                               ),
@@ -554,53 +605,6 @@ class _ListAdvicesWidgetState extends State<ListAdvicesWidget> {
                             thickness: 1.0,
                             color: FlutterFlowTheme.of(context)
                                 .secondaryBackground,
-                          ),
-                          Align(
-                            alignment: AlignmentDirectional(0.0, 0.0),
-                            child: FlutterFlowDropDown<String>(
-                              controller: _model.dropAdviceValueController ??=
-                                  FormFieldController<String>(null),
-                              options: List<String>.from(
-                                  ['appli.conseils', 'bets.conseils', '']),
-                              optionLabels: [
-                                'Conseils sur l\'appli',
-                                'Conseils de parieur',
-                                'Catégories'
-                              ],
-                              onChanged: (val) async {
-                                safeSetState(
-                                    () => _model.dropAdviceValue = val);
-                                _model.showCategories = _model.dropAdviceValue;
-                                safeSetState(() {});
-                              },
-                              width: 180.0,
-                              height: 50.0,
-                              textStyle: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: 'Poppins',
-                                    letterSpacing: 0.0,
-                                  ),
-                              hintText: 'Catégories de conseils',
-                              icon: Icon(
-                                Icons.keyboard_arrow_down_rounded,
-                                color:
-                                    FlutterFlowTheme.of(context).secondaryText,
-                                size: 24.0,
-                              ),
-                              fillColor: FlutterFlowTheme.of(context)
-                                  .primaryBackground,
-                              elevation: 2.0,
-                              borderColor: Colors.transparent,
-                              borderWidth: 0.0,
-                              borderRadius: 8.0,
-                              margin: EdgeInsetsDirectional.fromSTEB(
-                                  12.0, 0.0, 12.0, 0.0),
-                              hidesUnderline: true,
-                              isOverButton: false,
-                              isSearchable: false,
-                              isMultiSelect: false,
-                            ),
                           ),
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(

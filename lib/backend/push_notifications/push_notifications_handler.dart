@@ -476,7 +476,7 @@ final parametersBuilderMap =
           'postRef': getParameter<DocumentReference>(data, 'postRef'),
         },
       ),
-  'ListSurveys': (data) async => ParameterData(
+  'ListSurveysNews': (data) async => ParameterData(
         allParams: {
           'teamRef': getParameter<DocumentReference>(data, 'teamRef'),
         },
@@ -530,6 +530,7 @@ final parametersBuilderMap =
           'eventMecaRef': getParameter<DocumentReference>(data, 'eventMecaRef'),
         },
       ),
+  'RankPageMyEnterprise': ParameterData.none(),
 };
 
 Map<String, dynamic> getInitialParameterData(Map<String, dynamic> data) {

@@ -12,6 +12,7 @@ import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
 import '/users_fold/adult_confirmation/adult_confirmation_widget.dart';
 import '/users_fold/delete_my_user_ref/delete_my_user_ref_widget.dart';
 import '/users_fold/e_sport_confirmation/e_sport_confirmation_widget.dart';
+import '/users_fold/enterprise_infos/enterprise_infos_widget.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -1492,6 +1493,89 @@ class _MyEditProfilWidgetState extends State<MyEditProfilWidget>
                             ),
                           ),
                         ),
+                      AuthUserStreamWidget(
+                        builder: (context) => Divider(
+                          thickness: 2.0,
+                          color: valueOrDefault<Color>(
+                            currentUserDocument?.color2,
+                            FlutterFlowTheme.of(context).secondaryBackground,
+                          ),
+                        ),
+                      ),
+                      Text(
+                        'Compétition entre collègues',
+                        maxLines: 2,
+                        style: FlutterFlowTheme.of(context).titleSmall.override(
+                              fontFamily: 'Poppins',
+                              letterSpacing: 0.0,
+                            ),
+                      ),
+                      Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Align(
+                            alignment: AlignmentDirectional(-1.0, 0.0),
+                            child: Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  25.0, 0.0, 0.0, 5.0),
+                              child: AuthUserStreamWidget(
+                                builder: (context) => Text(
+                                  valueOrDefault<String>(
+                                    valueOrDefault(
+                                        currentUserDocument?.enterprise, ''),
+                                    'Entreprise non renseignée',
+                                  ),
+                                  style: FlutterFlowTheme.of(context)
+                                      .labelMedium
+                                      .override(
+                                        fontFamily: 'Poppins',
+                                        letterSpacing: 0.0,
+                                      ),
+                                ),
+                              ),
+                            ),
+                          ),
+                          AuthUserStreamWidget(
+                            builder: (context) => InkWell(
+                              splashColor: Colors.transparent,
+                              focusColor: Colors.transparent,
+                              hoverColor: Colors.transparent,
+                              highlightColor: Colors.transparent,
+                              onTap: () async {
+                                await showModalBottomSheet(
+                                  isScrollControlled: true,
+                                  backgroundColor: Colors.transparent,
+                                  enableDrag: false,
+                                  context: context,
+                                  builder: (context) {
+                                    return GestureDetector(
+                                      onTap: () {
+                                        FocusScope.of(context).unfocus();
+                                        FocusManager.instance.primaryFocus
+                                            ?.unfocus();
+                                      },
+                                      child: Padding(
+                                        padding:
+                                            MediaQuery.viewInsetsOf(context),
+                                        child: EnterpriseInfosWidget(),
+                                      ),
+                                    );
+                                  },
+                                ).then((value) => safeSetState(() {}));
+                              },
+                              child: Icon(
+                                Icons.info_outlined,
+                                color: valueOrDefault<Color>(
+                                  currentUserDocument?.color1,
+                                  FlutterFlowTheme.of(context).primaryText,
+                                ),
+                                size: 30.0,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
                       AuthUserStreamWidget(
                         builder: (context) => Divider(
                           thickness: 2.0,

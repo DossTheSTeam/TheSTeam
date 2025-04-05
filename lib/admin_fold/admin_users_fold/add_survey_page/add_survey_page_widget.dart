@@ -1087,7 +1087,7 @@ class _AddSurveyPageWidgetState extends State<AddSurveyPageWidget> {
                               });
 
                               context.pushNamed(
-                                ListSurveysWidget.routeName,
+                                ListSurveysNewsWidget.routeName,
                                 queryParameters: {
                                   'teamRef': serializeParam(
                                     widget.teamRef,
@@ -1106,7 +1106,7 @@ class _AddSurveyPageWidgetState extends State<AddSurveyPageWidget> {
 
                               safeSetState(() {});
                             },
-                            text: 'Valider',
+                            text: 'Valider Sondage',
                             options: FFButtonOptions(
                               height: 30.0,
                               padding: EdgeInsetsDirectional.fromSTEB(
@@ -1129,6 +1129,119 @@ class _AddSurveyPageWidgetState extends State<AddSurveyPageWidget> {
                               ),
                               borderRadius: BorderRadius.circular(40.0),
                               hoverColor: FlutterFlowTheme.of(context).success,
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 50.0, 0.0, 0.0),
+                            child: FFButtonWidget(
+                              onPressed: () async {
+                                var postsRecordReference =
+                                    PostsRecord.collection.doc();
+                                await postsRecordReference.set({
+                                  ...createPostsRecordData(
+                                    title: _model.titleFieldTextController.text,
+                                    description: _model
+                                        .descriptionFieldTextController.text,
+                                    image: _model.uploadedFileUrl,
+                                    teamRef: widget.teamRef,
+                                    esport: valueOrDefault<bool>(
+                                        currentUserDocument?.esport, false),
+                                    member: currentUserReference,
+                                    leagueValue:
+                                        addSurveyPageTeamsRecord.leagueValue,
+                                    foldCategorie: 'news',
+                                  ),
+                                  ...mapToFirestore(
+                                    {
+                                      'created_time':
+                                          FieldValue.serverTimestamp(),
+                                    },
+                                  ),
+                                });
+                                _model.postNewsRef =
+                                    PostsRecord.getDocumentFromData({
+                                  ...createPostsRecordData(
+                                    title: _model.titleFieldTextController.text,
+                                    description: _model
+                                        .descriptionFieldTextController.text,
+                                    image: _model.uploadedFileUrl,
+                                    teamRef: widget.teamRef,
+                                    esport: valueOrDefault<bool>(
+                                        currentUserDocument?.esport, false),
+                                    member: currentUserReference,
+                                    leagueValue:
+                                        addSurveyPageTeamsRecord.leagueValue,
+                                    foldCategorie: 'news',
+                                  ),
+                                  ...mapToFirestore(
+                                    {
+                                      'created_time': DateTime.now(),
+                                    },
+                                  ),
+                                }, postsRecordReference);
+
+                                await TeamPostsRecord.createDoc(
+                                        widget.teamRef!)
+                                    .set({
+                                  ...createTeamPostsRecordData(
+                                    posts: _model.postNewsRef?.reference,
+                                    news: true,
+                                    foldCategorie: 'news',
+                                  ),
+                                  ...mapToFirestore(
+                                    {
+                                      'created_time':
+                                          FieldValue.serverTimestamp(),
+                                    },
+                                  ),
+                                });
+
+                                context.pushNamed(
+                                  ListAdvicesWidget.routeName,
+                                  queryParameters: {
+                                    'teamRef': serializeParam(
+                                      widget.teamRef,
+                                      ParamType.DocumentReference,
+                                    ),
+                                  }.withoutNulls,
+                                  extra: <String, dynamic>{
+                                    kTransitionInfoKey: TransitionInfo(
+                                      hasTransition: true,
+                                      transitionType: PageTransitionType.scale,
+                                      alignment: Alignment.bottomCenter,
+                                      duration: Duration(milliseconds: 600),
+                                    ),
+                                  },
+                                );
+
+                                safeSetState(() {});
+                              },
+                              text: 'Valider Nouveauté',
+                              options: FFButtonOptions(
+                                height: 30.0,
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    25.0, 0.0, 25.0, 0.0),
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 0.0),
+                                color: FlutterFlowTheme.of(context).success,
+                                textStyle: FlutterFlowTheme.of(context)
+                                    .labelMedium
+                                    .override(
+                                      fontFamily: 'Poppins',
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryBackground,
+                                      letterSpacing: 0.0,
+                                    ),
+                                elevation: 3.0,
+                                borderSide: BorderSide(
+                                  color: Colors.transparent,
+                                  width: 1.0,
+                                ),
+                                borderRadius: BorderRadius.circular(40.0),
+                                hoverColor:
+                                    FlutterFlowTheme.of(context).success,
+                              ),
                             ),
                           ),
                         ],

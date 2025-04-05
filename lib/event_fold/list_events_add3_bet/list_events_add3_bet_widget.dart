@@ -558,133 +558,78 @@ class _ListEventsAdd3BetWidgetState extends State<ListEventsAdd3BetWidget> {
                                 Align(
                                   alignment: AlignmentDirectional(-1.0, 0.0),
                                   child: AuthUserStreamWidget(
-                                    builder: (context) => Column(
+                                    builder: (context) => Row(
                                       mainAxisSize: MainAxisSize.max,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
                                       children: [
                                         Align(
                                           alignment:
-                                              AlignmentDirectional(1.0, 0.0),
-                                          child: Column(
-                                            mainAxisSize: MainAxisSize.max,
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.end,
-                                            children: [
-                                              Align(
-                                                alignment: AlignmentDirectional(
-                                                    1.0, 0.0),
-                                                child: Padding(
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 0.0, 85.0, 0.0),
-                                                  child: SingleChildScrollView(
-                                                    scrollDirection:
-                                                        Axis.horizontal,
-                                                    child: Row(
-                                                      mainAxisSize:
-                                                          MainAxisSize.max,
-                                                      mainAxisAlignment:
-                                                          MainAxisAlignment.end,
-                                                      children: [
-                                                        Align(
-                                                          alignment:
-                                                              AlignmentDirectional(
-                                                                  -1.0, 0.0),
-                                                          child:
-                                                              FlutterFlowDropDown<
-                                                                  String>(
-                                                            controller: _model
-                                                                    .dropSportValueController ??=
-                                                                FormFieldController<
-                                                                    String>(
-                                                              _model.dropSportValue ??=
-                                                                  '',
-                                                            ),
-                                                            options: List<
-                                                                String>.from([
-                                                              'football',
-                                                              'basketball',
-                                                              'tennis',
-                                                              'hockey',
-                                                              'mma',
-                                                              'boxe',
-                                                              'rugby',
-                                                              'sports.meca',
-                                                              ''
-                                                            ]),
-                                                            optionLabels: [
-                                                              'Football',
-                                                              'Basketball',
-                                                              'Tennis',
-                                                              'Hockey',
-                                                              'MMA',
-                                                              'Boxe',
-                                                              'Rugby',
-                                                              'Sports Méca.',
-                                                              'Sports'
-                                                            ],
-                                                            onChanged:
-                                                                (val) async {
-                                                              safeSetState(() =>
-                                                                  _model.dropSportValue =
-                                                                      val);
-                                                              _model.showSportFilter =
-                                                                  _model
-                                                                      .dropSportValue;
-                                                              safeSetState(
-                                                                  () {});
-                                                            },
-                                                            width: 180.0,
-                                                            height: 50.0,
-                                                            textStyle:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          'Poppins',
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                    ),
-                                                            hintText: 'Sports',
-                                                            icon: Icon(
-                                                              Icons
-                                                                  .keyboard_arrow_down_rounded,
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .secondaryText,
-                                                              size: 24.0,
-                                                            ),
-                                                            fillColor: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .primaryBackground,
-                                                            elevation: 2.0,
-                                                            borderColor: Colors
-                                                                .transparent,
-                                                            borderWidth: 0.0,
-                                                            borderRadius: 8.0,
-                                                            margin:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        12.0,
-                                                                        0.0,
-                                                                        12.0,
-                                                                        0.0),
-                                                            hidesUnderline:
-                                                                true,
-                                                            isOverButton: false,
-                                                            isSearchable: false,
-                                                            isMultiSelect:
-                                                                false,
-                                                          ),
-                                                        ),
-                                                      ],
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
+                                              AlignmentDirectional(-1.51, 0.07),
+                                          child: FlutterFlowDropDown<String>(
+                                            controller: _model
+                                                    .dropSportValueController ??=
+                                                FormFieldController<String>(
+                                              _model.dropSportValue ??= '',
+                                            ),
+                                            options: List<String>.from([
+                                              'football',
+                                              'basketball',
+                                              'tennis',
+                                              'hockey',
+                                              'mma',
+                                              'boxe',
+                                              'rugby',
+                                              'sports.meca',
+                                              ''
+                                            ]),
+                                            optionLabels: [
+                                              'Football',
+                                              'Basketball',
+                                              'Tennis',
+                                              'Hockey',
+                                              'MMA',
+                                              'Boxe',
+                                              'Rugby',
+                                              'Sports Méca.',
+                                              'Sports'
                                             ],
+                                            onChanged: (val) async {
+                                              safeSetState(() =>
+                                                  _model.dropSportValue = val);
+                                              _model.showSportFilter =
+                                                  _model.dropSportValue;
+                                              safeSetState(() {});
+                                            },
+                                            width: 180.0,
+                                            height: 50.0,
+                                            textStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .override(
+                                                      fontFamily: 'Poppins',
+                                                      letterSpacing: 0.0,
+                                                    ),
+                                            hintText: 'Sports',
+                                            icon: Icon(
+                                              Icons.keyboard_arrow_down_rounded,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryText,
+                                              size: 24.0,
+                                            ),
+                                            fillColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .primaryBackground,
+                                            elevation: 2.0,
+                                            borderColor: Colors.transparent,
+                                            borderWidth: 0.0,
+                                            borderRadius: 8.0,
+                                            margin:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    12.0, 0.0, 12.0, 0.0),
+                                            hidesUnderline: true,
+                                            isOverButton: false,
+                                            isSearchable: false,
+                                            isMultiSelect: false,
                                           ),
                                         ),
                                       ],

@@ -821,6 +821,23 @@ class _AdminRankPageWidgetState extends State<AdminRankPageWidget> {
                                                 ),
                                               ),
                                               Container(
+                                                width: 50.0,
+                                                height: 30.0,
+                                                decoration: BoxDecoration(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryBackground,
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          25.0),
+                                                  border: Border.all(
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryBackground,
+                                                  ),
+                                                ),
+                                              ),
+                                              Container(
                                                 width: 100.0,
                                                 height: 30.0,
                                                 decoration: BoxDecoration(
@@ -1467,14 +1484,21 @@ class _AdminRankPageWidgetState extends State<AdminRankPageWidget> {
                                                                         () async {
                                                                       await columnUsersEarningsScrollUsersRecord
                                                                           .reference
-                                                                          .update(
-                                                                              createUsersRecordData(
-                                                                        divisionValue:
-                                                                            '2',
-                                                                        updateTime: _model
-                                                                            .calendarSelectedDay
-                                                                            ?.start,
-                                                                      ));
+                                                                          .update({
+                                                                        ...createUsersRecordData(
+                                                                          divisionValue:
+                                                                              '2',
+                                                                          updateTime: _model
+                                                                              .calendarSelectedDay
+                                                                              ?.start,
+                                                                        ),
+                                                                        ...mapToFirestore(
+                                                                          {
+                                                                            'stock':
+                                                                                FieldValue.increment(300.0),
+                                                                          },
+                                                                        ),
+                                                                      });
 
                                                                       await columnUsersEarningsScrollUsersRecord
                                                                           .reference
@@ -1533,14 +1557,21 @@ class _AdminRankPageWidgetState extends State<AdminRankPageWidget> {
                                                                         () async {
                                                                       await columnUsersEarningsScrollUsersRecord
                                                                           .reference
-                                                                          .update(
-                                                                              createUsersRecordData(
-                                                                        divisionValue:
-                                                                            '1',
-                                                                        updateTime: _model
-                                                                            .calendarSelectedDay
-                                                                            ?.start,
-                                                                      ));
+                                                                          .update({
+                                                                        ...createUsersRecordData(
+                                                                          divisionValue:
+                                                                              '1',
+                                                                          updateTime: _model
+                                                                              .calendarSelectedDay
+                                                                              ?.start,
+                                                                        ),
+                                                                        ...mapToFirestore(
+                                                                          {
+                                                                            'stock':
+                                                                                FieldValue.increment(400.0),
+                                                                          },
+                                                                        ),
+                                                                      });
 
                                                                       await columnUsersEarningsScrollUsersRecord
                                                                           .reference
@@ -1920,16 +1951,23 @@ class _AdminRankPageWidgetState extends State<AdminRankPageWidget> {
                                                                         () async {
                                                                       await columnUsersEarningsScrollUsersRecord
                                                                           .reference
-                                                                          .update(
-                                                                              createUsersRecordData(
-                                                                        divisionValue:
-                                                                            '3',
-                                                                        rankValue:
-                                                                            'pro',
-                                                                        updateTime: _model
-                                                                            .calendarSelectedDay
-                                                                            ?.start,
-                                                                      ));
+                                                                          .update({
+                                                                        ...createUsersRecordData(
+                                                                          divisionValue:
+                                                                              '3',
+                                                                          rankValue:
+                                                                              'pro',
+                                                                          updateTime: _model
+                                                                              .calendarSelectedDay
+                                                                              ?.start,
+                                                                        ),
+                                                                        ...mapToFirestore(
+                                                                          {
+                                                                            'stock':
+                                                                                FieldValue.increment(400.0),
+                                                                          },
+                                                                        ),
+                                                                      });
 
                                                                       await columnUsersEarningsScrollUsersRecord
                                                                           .reference
@@ -1993,16 +2031,23 @@ class _AdminRankPageWidgetState extends State<AdminRankPageWidget> {
                                                                         () async {
                                                                       await columnUsersEarningsScrollUsersRecord
                                                                           .reference
-                                                                          .update(
-                                                                              createUsersRecordData(
-                                                                        divisionValue:
-                                                                            '3',
-                                                                        rankValue:
-                                                                            'champion',
-                                                                        updateTime: _model
-                                                                            .calendarSelectedDay
-                                                                            ?.start,
-                                                                      ));
+                                                                          .update({
+                                                                        ...createUsersRecordData(
+                                                                          divisionValue:
+                                                                              '3',
+                                                                          rankValue:
+                                                                              'champion',
+                                                                          updateTime: _model
+                                                                              .calendarSelectedDay
+                                                                              ?.start,
+                                                                        ),
+                                                                        ...mapToFirestore(
+                                                                          {
+                                                                            'stock':
+                                                                                FieldValue.increment(500.0),
+                                                                          },
+                                                                        ),
+                                                                      });
 
                                                                       await columnUsersEarningsScrollUsersRecord
                                                                           .reference
@@ -2066,16 +2111,23 @@ class _AdminRankPageWidgetState extends State<AdminRankPageWidget> {
                                                                         () async {
                                                                       await columnUsersEarningsScrollUsersRecord
                                                                           .reference
-                                                                          .update(
-                                                                              createUsersRecordData(
-                                                                        divisionValue:
-                                                                            '3',
-                                                                        rankValue:
-                                                                            'legende',
-                                                                        updateTime: _model
-                                                                            .calendarSelectedDay
-                                                                            ?.start,
-                                                                      ));
+                                                                          .update({
+                                                                        ...createUsersRecordData(
+                                                                          divisionValue:
+                                                                              '3',
+                                                                          rankValue:
+                                                                              'legende',
+                                                                          updateTime: _model
+                                                                              .calendarSelectedDay
+                                                                              ?.start,
+                                                                        ),
+                                                                        ...mapToFirestore(
+                                                                          {
+                                                                            'stock':
+                                                                                FieldValue.increment(600.0),
+                                                                          },
+                                                                        ),
+                                                                      });
 
                                                                       await columnUsersEarningsScrollUsersRecord
                                                                           .reference
@@ -2375,6 +2427,91 @@ class _AdminRankPageWidgetState extends State<AdminRankPageWidget> {
                                                                           ),
                                                                     ),
                                                                   ),
+                                                              ],
+                                                            ),
+                                                          ),
+                                                        ),
+                                                        Container(
+                                                          width: 50.0,
+                                                          height: 30.0,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryBackground,
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .only(
+                                                              bottomLeft: Radius
+                                                                  .circular(
+                                                                      0.0),
+                                                              bottomRight:
+                                                                  Radius
+                                                                      .circular(
+                                                                          0.0),
+                                                              topLeft: Radius
+                                                                  .circular(
+                                                                      0.0),
+                                                              topRight: Radius
+                                                                  .circular(
+                                                                      1.0),
+                                                            ),
+                                                            border: Border.all(
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .secondaryBackground,
+                                                            ),
+                                                          ),
+                                                          child: Visibility(
+                                                            visible:
+                                                                columnUsersEarningsScrollUsersRecord
+                                                                        .stock <
+                                                                    300.0,
+                                                            child: Row(
+                                                              mainAxisSize:
+                                                                  MainAxisSize
+                                                                      .max,
+                                                              mainAxisAlignment:
+                                                                  MainAxisAlignment
+                                                                      .end,
+                                                              children: [
+                                                                InkWell(
+                                                                  splashColor:
+                                                                      Colors
+                                                                          .transparent,
+                                                                  focusColor: Colors
+                                                                      .transparent,
+                                                                  hoverColor: Colors
+                                                                      .transparent,
+                                                                  highlightColor:
+                                                                      Colors
+                                                                          .transparent,
+                                                                  onTap:
+                                                                      () async {
+                                                                    await columnUsersEarningsScrollUsersRecord
+                                                                        .reference
+                                                                        .update({
+                                                                      ...mapToFirestore(
+                                                                        {
+                                                                          'stock':
+                                                                              FieldValue.increment(200.0),
+                                                                        },
+                                                                      ),
+                                                                    });
+                                                                  },
+                                                                  child: Text(
+                                                                    '+ 200',
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'Poppins',
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                        ),
+                                                                  ),
+                                                                ),
                                                               ],
                                                             ),
                                                           ),

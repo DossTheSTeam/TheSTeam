@@ -1,5 +1,6 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
+import '/event_fold/event_teams_events/event_teams_events_widget.dart';
 import '/event_fold/rank_teams_event/rank_teams_event_widget.dart';
 import '/event_fold/rank_teams_event_cup/rank_teams_event_cup_widget.dart';
 import '/event_fold/stats_teams_event/stats_teams_event_widget.dart';
@@ -1611,7 +1612,7 @@ class _EventPageAdd3BetWidgetState extends State<EventPageAdd3BetWidget> {
                                                               .viewInsetsOf(
                                                                   context),
                                                           child:
-                                                              RankTeamsEventWidget(
+                                                              EventTeamsEventsWidget(
                                                             eventRef: widget
                                                                 .eventRef!,
                                                           ),

@@ -194,8 +194,8 @@ export '/team_fold/ligues_rank_page/ligues_rank_page_widget.dart'
     show LiguesRankPageWidget;
 export '/posts_fold/the_s_team_post_page/the_s_team_post_page_widget.dart'
     show TheSTeamPostPageWidget;
-export '/posts_fold/list_surveys/list_surveys_widget.dart'
-    show ListSurveysWidget;
+export '/posts_fold/list_surveys_news/list_surveys_news_widget.dart'
+    show ListSurveysNewsWidget;
 export '/admin_fold/admin_users_fold/add_survey_page/add_survey_page_widget.dart'
     show AddSurveyPageWidget;
 export '/posts_fold/list_advices/list_advices_widget.dart'
@@ -218,3 +218,5 @@ export '/admin_fold/admin_event_fold/add_bet_meca_page/add_bet_meca_page_widget.
     show AddBetMecaPageWidget;
 export '/admin_fold/admin_event_fold/modif_rank_pilotes/modif_rank_pilotes_widget.dart'
     show ModifRankPilotesWidget;
+export '/ranks_fold/rank_page_my_enterprise/rank_page_my_enterprise_widget.dart'
+    show RankPageMyEnterpriseWidget;

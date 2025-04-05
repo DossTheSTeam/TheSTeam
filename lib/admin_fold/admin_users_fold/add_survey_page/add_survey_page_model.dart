@@ -35,6 +35,8 @@ class AddSurveyPageModel extends FlutterFlowModel<AddSurveyPageWidget> {
   String? Function(BuildContext, String?)? choice3FieldTextControllerValidator;
   // Stores action output result for [Backend Call - Create Document] action in Button widget.
   PostsRecord? postRef;
+  // Stores action output result for [Backend Call - Create Document] action in Button widget.
+  PostsRecord? postNewsRef;
 
   @override
   void initState(BuildContext context) {}
